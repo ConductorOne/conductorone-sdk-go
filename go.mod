@@ -1,4 +1,4 @@
-module conductorone-api
+module github.com/conductorone/conductorone-sdk-go
 
 go 1.14
 

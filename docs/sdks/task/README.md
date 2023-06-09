@@ -22,9 +22,9 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/operations"
-	"conductorone-api/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -80,9 +80,9 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/operations"
-	"conductorone-api/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -135,9 +135,9 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/operations"
-	"conductorone-api/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -191,9 +191,9 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/shared"
-	"conductorone-api/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -515,8 +515,8 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -572,8 +572,8 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -627,8 +627,8 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
