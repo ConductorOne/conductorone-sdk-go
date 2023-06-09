@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ConductorOne/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 const (
