@@ -1,0 +1,12 @@
+# C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse
+
+The RequestCatalogSearchServiceSearchEntitlementsResponse message.
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `Expanded`                                                                                                    | []map[string]*interface{}*                                                                                    | :heavy_minus_sign:                                                                                            | The expanded field.                                                                                           |
+| `List`                                                                                                        | [][C1APIAppV1AppEntitlementWithUserBindings](../../models/shared/c1apiappv1appentitlementwithuserbindings.md) | :heavy_minus_sign:                                                                                            | The list field.                                                                                               |
+| `NextPageToken`                                                                                               | **string*                                                                                                     | :heavy_minus_sign:                                                                                            | The nextPageToken field.                                                                                      |
