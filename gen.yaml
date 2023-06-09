@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 36b3d46700509d37f73d17accc8e811a
+  docVersion: 0.1.0-alpha
+  speakeasyVersion: 1.47.0
+  generationVersion: 2.39.0
 generation:
   comments:
     disableComments: false
@@ -8,6 +13,6 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 go:
-  version: 0.0.1
+  version: 1.0.0
   maxMethodParams: 0
   packageName: conductorone-api
