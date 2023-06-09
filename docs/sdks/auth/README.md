@@ -16,7 +16,7 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/ConductorOne/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go"
 )
 
 func main() {

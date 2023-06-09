@@ -16,8 +16,8 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/ConductorOne/conductorone-sdk-go"
-	"github.com/ConductorOne/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
