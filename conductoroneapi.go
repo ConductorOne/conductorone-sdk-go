@@ -3,8 +3,8 @@
 package conductoroneapi
 
 import (
-	"conductorone-api/pkg/utils"
 	"fmt"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -127,7 +127,7 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.0.0",
+			SDKVersion:        "1.0.1",
 			GenVersion:        "2.39.0",
 			ServerDefaults: []map[string]string{
 				{

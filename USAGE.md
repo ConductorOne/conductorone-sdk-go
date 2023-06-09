@@ -5,8 +5,8 @@ package main
 import(
 	"context"
 	"log"
-	"conductorone-api"
-	"conductorone-api/pkg/models/operations"
+	"github.com/ConductorOne/conductorone-sdk-go"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
