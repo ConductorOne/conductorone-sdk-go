@@ -4,11 +4,11 @@ package conductoroneapi
 
 import (
 	"bytes"
-	"conductorone-api/pkg/models/operations"
-	"conductorone-api/pkg/models/shared"
-	"conductorone-api/pkg/utils"
 	"context"
 	"fmt"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/models/operations"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/models/shared"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/utils"
 	"io"
 	"net/http"
 )

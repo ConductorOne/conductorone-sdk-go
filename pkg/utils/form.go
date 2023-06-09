@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"conductorone-api/pkg/types"
+	"github.com/ConductorOne/conductorone-sdk-go/pkg/types"
 )
 
 func populateForm(paramName string, explode bool, objType reflect.Type, objValue reflect.Value, delimiter string, getFieldName func(reflect.StructField) string) url.Values {
