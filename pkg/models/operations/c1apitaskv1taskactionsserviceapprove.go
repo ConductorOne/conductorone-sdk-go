@@ -8,8 +8,8 @@ import (
 )
 
 type C1APITaskV1TaskActionsServiceApproveRequest struct {
-	C1APITaskV1TaskActionsServiceApproveRequestInput *shared.C1APITaskV1TaskActionsServiceApproveRequestInput `request:"mediaType=application/json"`
-	TaskID                                           string                                                   `pathParam:"style=simple,explode=false,name=task_id"`
+	TaskActionsServiceApproveRequest *shared.TaskActionsServiceApproveRequest `request:"mediaType=application/json"`
+	TaskID                           string                                   `pathParam:"style=simple,explode=false,name=task_id"`
 }
 
 type C1APITaskV1TaskActionsServiceApproveResponse struct {
@@ -17,5 +17,5 @@ type C1APITaskV1TaskActionsServiceApproveResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 	// Successful response
-	C1APITaskV1TaskActionsServiceApproveResponse *shared.C1APITaskV1TaskActionsServiceApproveResponse
+	TaskActionsServiceApproveResponse *shared.TaskActionsServiceApproveResponse
 }

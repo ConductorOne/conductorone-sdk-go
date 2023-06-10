@@ -2,9 +2,9 @@
 
 ### Available Operations
 
-* [C1APIAuthV1AuthIntrospect](#c1apiauthv1authintrospect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
+* [AuthIntrospect](#authintrospect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
 
-## C1APIAuthV1AuthIntrospect
+## AuthIntrospect
 
 Invokes the c1.api.auth.v1.Auth.Introspect method.
 
@@ -23,12 +23,12 @@ func main() {
     s := conductoroneapi.New()
 
     ctx := context.Background()
-    res, err := s.Auth.C1APIAuthV1AuthIntrospect(ctx)
+    res, err := s.Auth.AuthIntrospect(ctx)
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.C1APIAuthV1IntrospectResponse != nil {
+    if res.IntrospectResponse != nil {
         // handle response
     }
 }

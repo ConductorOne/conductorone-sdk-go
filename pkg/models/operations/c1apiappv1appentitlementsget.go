@@ -14,8 +14,8 @@ type C1APIAppV1AppEntitlementsGetRequest struct {
 
 type C1APIAppV1AppEntitlementsGetResponse struct {
 	ContentType string
-	StatusCode  int
-	RawResponse *http.Response
 	// Successful response
-	C1APIAppV1GetAppEntitlementResponse *shared.C1APIAppV1GetAppEntitlementResponse
+	GetAppEntitlementResponse *shared.GetAppEntitlementResponse
+	StatusCode                int
+	RawResponse               *http.Response
 }
