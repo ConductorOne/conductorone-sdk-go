@@ -12,5 +12,5 @@ type C1APITaskV1TaskSearchServiceSearchResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 	// Successful response
-	C1APITaskV1TaskSearchResponse *shared.C1APITaskV1TaskSearchResponse
+	TaskSearchResponse *shared.TaskSearchResponse
 }

@@ -9,8 +9,8 @@ import (
 
 type C1APIAuthV1AuthIntrospectResponse struct {
 	ContentType string
-	StatusCode  int
-	RawResponse *http.Response
 	// Successful response
-	C1APIAuthV1IntrospectResponse *shared.C1APIAuthV1IntrospectResponse
+	IntrospectResponse *shared.IntrospectResponse
+	StatusCode         int
+	RawResponse        *http.Response
 }

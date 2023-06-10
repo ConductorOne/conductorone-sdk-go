@@ -23,8 +23,8 @@ func newUser(sdkConfig sdkConfiguration) *user {
 	}
 }
 
-// C1APIUserV1UserServiceGet - Invokes the c1.api.user.v1.UserService.Get method.
-func (s *user) C1APIUserV1UserServiceGet(ctx context.Context, request operations.C1APIUserV1UserServiceGetRequest) (*operations.C1APIUserV1UserServiceGetResponse, error) {
+// UserSvcGet - Invokes the c1.api.user.v1.UserService.Get method.
+func (s *user) UserSvcGet(ctx context.Context, request operations.C1APIUserV1UserServiceGetRequest) (*operations.C1APIUserV1UserServiceGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/users/{id}", request, nil)
 	if err != nil {
@@ -66,12 +66,12 @@ func (s *user) C1APIUserV1UserServiceGet(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.C1APIUserV1UserServiceGetResponse
+			var out *shared.UserServiceGetResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
 				return nil, err
 			}
 
-			res.C1APIUserV1UserServiceGetResponse = out
+			res.UserServiceGetResponse = out
 		}
 	}
 
