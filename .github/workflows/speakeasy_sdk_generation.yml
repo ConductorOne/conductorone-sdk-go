@@ -22,7 +22,7 @@ jobs:
         - go
       mode: pr
       openapi_docs: |
-        - https://insulator.conductor.one/api/v1/openapi.yaml
+        - https://gist.githubusercontent.com/loganintech/8d7298d28c4570cb846bdb6edba2ddf9/raw/34f54714417a568a11d239af3696b7f16ccdbe85/openapi.yaml
       speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
