@@ -12,5 +12,5 @@ type C1APITaskV1TaskServiceCreateGrantTaskResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 	// Successful response
-	C1APITaskV1TaskServiceCreateGrantResponse *shared.C1APITaskV1TaskServiceCreateGrantResponse
+	TaskServiceCreateGrantResponse *shared.TaskServiceCreateGrantResponse
 }

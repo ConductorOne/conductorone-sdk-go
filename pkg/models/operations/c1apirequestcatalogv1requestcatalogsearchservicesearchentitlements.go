@@ -9,8 +9,8 @@ import (
 
 type C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse struct {
 	ContentType string
-	StatusCode  int
-	RawResponse *http.Response
 	// Successful response
-	C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse *shared.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse
+	RequestCatalogSearchServiceSearchEntitlementsResponse *shared.RequestCatalogSearchServiceSearchEntitlementsResponse
+	StatusCode                                            int
+	RawResponse                                           *http.Response
 }

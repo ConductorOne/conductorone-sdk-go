@@ -24,8 +24,8 @@ func newAuth(sdkConfig sdkConfiguration) *auth {
 	}
 }
 
-// C1APIAuthV1AuthIntrospect - Invokes the c1.api.auth.v1.Auth.Introspect method.
-func (s *auth) C1APIAuthV1AuthIntrospect(ctx context.Context) (*operations.C1APIAuthV1AuthIntrospectResponse, error) {
+// Introspect - Invokes the c1.api.auth.v1.Auth.Introspect method.
+func (s *auth) Introspect(ctx context.Context) (*operations.C1APIAuthV1AuthIntrospectResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/auth/introspect"
 
@@ -64,12 +64,12 @@ func (s *auth) C1APIAuthV1AuthIntrospect(ctx context.Context) (*operations.C1API
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.C1APIAuthV1IntrospectResponse
+			var out *shared.IntrospectResponse
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out); err != nil {
 				return nil, err
 			}
 
-			res.C1APIAuthV1IntrospectResponse = out
+			res.IntrospectResponse = out
 		}
 	}
 

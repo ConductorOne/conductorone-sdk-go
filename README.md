@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/ConductorOne/conductorone-sdk-go
+go get github.com/conductorone/conductorone-sdk-go
 ```
 <!-- End SDK Installation -->
 
@@ -24,7 +24,7 @@ func main() {
     s := conductoroneapi.New()
 
     ctx := context.Background()
-    res, err := s.App.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
+    res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
         AppEntitlementID: "corrupti",
         AppID: "provident",
         IdentityUserID: "distinctio",
@@ -33,7 +33,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.C1APIAppV1ListAppUsersForIdentityWithGrantResponse != nil {
+    if res.ListAppUsersForIdentityWithGrantResponse != nil {
         // handle response
     }
 }
@@ -44,35 +44,99 @@ func main() {
 ## Available Resources and Operations
 
 
-### [App](docs/sdks/app/README.md)
+### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
-* [C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrant](docs/sdks/app/README.md#c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant) - Invokes the c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant method.
-* [C1APIAppV1AppEntitlementsGet](docs/sdks/app/README.md#c1apiappv1appentitlementsget) - Invokes the c1.api.app.v1.AppEntitlements.Get method.
-* [C1APIAppV1AppResourceServiceGet](docs/sdks/app/README.md#c1apiappv1appresourceserviceget) - Invokes the c1.api.app.v1.AppResourceService.Get method.
-* [C1APIAppV1AppResourceTypeServiceGet](docs/sdks/app/README.md#c1apiappv1appresourcetypeserviceget) - Invokes the c1.api.app.v1.AppResourceTypeService.Get method.
-* [C1APIAppV1AppsGet](docs/sdks/app/README.md#c1apiappv1appsget) - Invokes the c1.api.app.v1.Apps.Get method.
+* [ListAppUsersForIdentityWithGrant](docs/sdks/appentitlementuserbinding/README.md#listappusersforidentitywithgrant) - Invokes the c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant method.
+
+### [AppEntitlements](docs/sdks/appentitlements/README.md)
+
+* [Get](docs/sdks/appentitlements/README.md#get) - Invokes the c1.api.app.v1.AppEntitlements.Get method.
+
+### [AppReport](docs/sdks/appreport/README.md)
+
+* [List](docs/sdks/appreport/README.md#list) - Invokes the c1.api.app.v1.AppReportService.List method.
+
+### [AppReportAction](docs/sdks/appreportaction/README.md)
+
+* [GenerateReport](docs/sdks/appreportaction/README.md#generatereport) - Invokes the c1.api.app.v1.AppReportActionService.GenerateReport method.
+
+### [AppResource](docs/sdks/appresource/README.md)
+
+* [Get](docs/sdks/appresource/README.md#get) - Invokes the c1.api.app.v1.AppResourceService.Get method.
+* [List](docs/sdks/appresource/README.md#list) - Invokes the c1.api.app.v1.AppResourceService.List method.
+
+### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
+
+* [SearchAppResourceTypes](docs/sdks/appresourcesearch/README.md#searchappresourcetypes) - Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes method.
+
+### [AppResourceType](docs/sdks/appresourcetype/README.md)
+
+* [Get](docs/sdks/appresourcetype/README.md#get) - Invokes the c1.api.app.v1.AppResourceTypeService.Get method.
+
+### [AppSearch](docs/sdks/appsearch/README.md)
+
+* [Search](docs/sdks/appsearch/README.md#search) - Invokes the c1.api.app.v1.AppSearch.Search method.
+
+### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
+
+* [Get](docs/sdks/appusagecontrols/README.md#get) - Invokes the c1.api.app.v1.AppUsageControlsService.Get method.
+
+### [Apps](docs/sdks/apps/README.md)
+
+* [Get](docs/sdks/apps/README.md#get) - Invokes the c1.api.app.v1.Apps.Get method.
+* [List](docs/sdks/apps/README.md#list) - Invokes the c1.api.app.v1.Apps.List method.
 
 ### [Auth](docs/sdks/auth/README.md)
 
-* [C1APIAuthV1AuthIntrospect](docs/sdks/auth/README.md#c1apiauthv1authintrospect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
+* [Introspect](docs/sdks/auth/README.md#introspect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
 
-### [Requestcatalog](docs/sdks/requestcatalog/README.md)
+### [Directory](docs/sdks/directory/README.md)
 
-* [C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlements](docs/sdks/requestcatalog/README.md#c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements) - Invokes the c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements method.
+* [Create](docs/sdks/directory/README.md#create) - Invokes the c1.api.directory.v1.DirectoryService.Create method.
+* [Delete](docs/sdks/directory/README.md#delete) - Invokes the c1.api.directory.v1.DirectoryService.Delete method.
+* [Get](docs/sdks/directory/README.md#get) - Invokes the c1.api.directory.v1.DirectoryService.Get method.
+* [List](docs/sdks/directory/README.md#list) - Invokes the c1.api.directory.v1.DirectoryService.List method.
+
+### [Policies](docs/sdks/policies/README.md)
+
+* [Create](docs/sdks/policies/README.md#create) - Invokes the c1.api.policy.v1.Policies.Create method.
+* [Delete](docs/sdks/policies/README.md#delete) - Invokes the c1.api.policy.v1.Policies.Delete method.
+* [Get](docs/sdks/policies/README.md#get) - Invokes the c1.api.policy.v1.Policies.Get method.
+* [List](docs/sdks/policies/README.md#list) - Invokes the c1.api.policy.v1.Policies.List method.
+
+### [RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
+
+* [SearchEntitlements](docs/sdks/requestcatalogsearch/README.md#searchentitlements) - Invokes the c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements method.
+
+### [Roles](docs/sdks/roles/README.md)
+
+* [Get](docs/sdks/roles/README.md#get) - Invokes the c1.api.iam.v1.Roles.Get method.
+* [List](docs/sdks/roles/README.md#list) - Invokes the c1.api.iam.v1.Roles.List method.
 
 ### [Task](docs/sdks/task/README.md)
 
-* [C1APITaskV1TaskActionsServiceApprove](docs/sdks/task/README.md#c1apitaskv1taskactionsserviceapprove) - Invokes the c1.api.task.v1.TaskActionsService.Approve method.
-* [C1APITaskV1TaskActionsServiceComment](docs/sdks/task/README.md#c1apitaskv1taskactionsservicecomment) - Invokes the c1.api.task.v1.TaskActionsService.Comment method.
-* [C1APITaskV1TaskActionsServiceDeny](docs/sdks/task/README.md#c1apitaskv1taskactionsservicedeny) - Invokes the c1.api.task.v1.TaskActionsService.Deny method.
-* [C1APITaskV1TaskSearchServiceSearch](docs/sdks/task/README.md#c1apitaskv1tasksearchservicesearch) - Invokes the c1.api.task.v1.TaskSearchService.Search method.
-* [C1APITaskV1TaskServiceCreateGrantTask](docs/sdks/task/README.md#c1apitaskv1taskservicecreategranttask) - Invokes the c1.api.task.v1.TaskService.CreateGrantTask method.
-* [C1APITaskV1TaskServiceCreateRevokeTask](docs/sdks/task/README.md#c1apitaskv1taskservicecreaterevoketask) - Invokes the c1.api.task.v1.TaskService.CreateRevokeTask method.
-* [C1APITaskV1TaskServiceGet](docs/sdks/task/README.md#c1apitaskv1taskserviceget) - Invokes the c1.api.task.v1.TaskService.Get method.
+* [CreateGrantTask](docs/sdks/task/README.md#creategranttask) - Invokes the c1.api.task.v1.TaskService.CreateGrantTask method.
+* [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Invokes the c1.api.task.v1.TaskService.CreateRevokeTask method.
+* [Get](docs/sdks/task/README.md#get) - Invokes the c1.api.task.v1.TaskService.Get method.
+
+### [TaskActions](docs/sdks/taskactions/README.md)
+
+* [Approve](docs/sdks/taskactions/README.md#approve) - Invokes the c1.api.task.v1.TaskActionsService.Approve method.
+* [Comment](docs/sdks/taskactions/README.md#comment) - Invokes the c1.api.task.v1.TaskActionsService.Comment method.
+* [Deny](docs/sdks/taskactions/README.md#deny) - Invokes the c1.api.task.v1.TaskActionsService.Deny method.
+
+### [TaskSearch](docs/sdks/tasksearch/README.md)
+
+* [Search](docs/sdks/tasksearch/README.md#search) - Invokes the c1.api.task.v1.TaskSearchService.Search method.
 
 ### [User](docs/sdks/user/README.md)
 
-* [C1APIUserV1UserServiceGet](docs/sdks/user/README.md#c1apiuserv1userserviceget) - Invokes the c1.api.user.v1.UserService.Get method.
+* [Get](docs/sdks/user/README.md#get) - Invokes the c1.api.user.v1.UserService.Get method.
+* [List](docs/sdks/user/README.md#list) - Invokes the c1.api.user.v1.UserService.List method.
+
+### [UserSearch](docs/sdks/usersearch/README.md)
+
+* [Search](docs/sdks/usersearch/README.md#search) - Invokes the c1.api.user.v1.UserSearch.Search method.
 <!-- End SDK Available Operations -->
 
 ### Maturity

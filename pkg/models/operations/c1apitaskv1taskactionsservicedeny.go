@@ -8,8 +8,8 @@ import (
 )
 
 type C1APITaskV1TaskActionsServiceDenyRequest struct {
-	C1APITaskV1TaskActionsServiceDenyRequestInput *shared.C1APITaskV1TaskActionsServiceDenyRequestInput `request:"mediaType=application/json"`
-	TaskID                                        string                                                `pathParam:"style=simple,explode=false,name=task_id"`
+	TaskActionsServiceDenyRequest *shared.TaskActionsServiceDenyRequest `request:"mediaType=application/json"`
+	TaskID                        string                                `pathParam:"style=simple,explode=false,name=task_id"`
 }
 
 type C1APITaskV1TaskActionsServiceDenyResponse struct {
@@ -17,5 +17,5 @@ type C1APITaskV1TaskActionsServiceDenyResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 	// Successful response
-	C1APITaskV1TaskActionsServiceDenyResponse *shared.C1APITaskV1TaskActionsServiceDenyResponse
+	TaskActionsServiceDenyResponse *shared.TaskActionsServiceDenyResponse
 }
