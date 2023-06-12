@@ -12,5 +12,5 @@ type C1APITaskV1TaskServiceCreateRevokeTaskResponse struct {
 	StatusCode  int
 	RawResponse *http.Response
 	// Successful response
-	C1APITaskV1TaskServiceCreateRevokeResponse *shared.C1APITaskV1TaskServiceCreateRevokeResponse
+	TaskServiceCreateRevokeResponse *shared.TaskServiceCreateRevokeResponse
 }

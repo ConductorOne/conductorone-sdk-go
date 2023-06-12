@@ -14,9 +14,9 @@ type C1APIAppV1AppResourceServiceGetRequest struct {
 }
 
 type C1APIAppV1AppResourceServiceGetResponse struct {
-	ContentType string
-	StatusCode  int
-	RawResponse *http.Response
 	// Successful response
-	C1APIAppV1AppResourceServiceGetResponse *shared.C1APIAppV1AppResourceServiceGetResponse
+	AppResourceServiceGetResponse *shared.AppResourceServiceGetResponse
+	ContentType                   string
+	StatusCode                    int
+	RawResponse                   *http.Response
 }

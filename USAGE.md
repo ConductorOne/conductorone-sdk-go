@@ -13,7 +13,7 @@ func main() {
     s := conductoroneapi.New()
 
     ctx := context.Background()
-    res, err := s.App.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
+    res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
         AppEntitlementID: "corrupti",
         AppID: "provident",
         IdentityUserID: "distinctio",
@@ -22,7 +22,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.C1APIAppV1ListAppUsersForIdentityWithGrantResponse != nil {
+    if res.ListAppUsersForIdentityWithGrantResponse != nil {
         // handle response
     }
 }

@@ -11,8 +11,8 @@ import (
 
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
-	// The ConductorOne API server for the current tenant.
-	"https://{tenantDomain}.conductor.one",
+	// The server for c1.api.accessbundle.v1.AccessBundleSearchService.
+	"/",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -44,7 +44,6 @@ type sdkConfiguration struct {
 
 	ServerURL         string
 	ServerIndex       int
-	ServerDefaults    []map[string]string
 	Language          string
 	OpenAPIDocVersion string
 	SDKVersion        string
@@ -56,16 +55,22 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 		return c.ServerURL, nil
 	}
 
-	return ServerList[c.ServerIndex], c.ServerDefaults[c.ServerIndex]
+	return ServerList[c.ServerIndex], nil
 }
 
-// ConductoroneAPI - ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
+// ConductoroneAPI - API For c1.api.accessbundle.v1.AccessBundleSearchService: This is an auto-generated API for c1.api.accessbundle.v1.AccessBundleSearchService.
 type ConductoroneAPI struct {
-	App            *app
-	Auth           *auth
-	Requestcatalog *requestcatalog
-	Task           *task
-	User           *user
+	AppEntitlementUserBinding *appEntitlementUserBinding
+	AppEntitlements           *appEntitlements
+	AppResource               *appResource
+	AppResourceType           *appResourceType
+	Apps                      *apps
+	Auth                      *auth
+	RequestCatalogSearch      *requestCatalogSearch
+	Task                      *task
+	TaskActions               *taskActions
+	TaskSearch                *taskSearch
+	User                      *user
 
 	sdkConfiguration sdkConfiguration
 }
@@ -101,19 +106,6 @@ func WithServerIndex(serverIndex int) SDKOption {
 	}
 }
 
-// WithTenantDomain allows setting the $name variable for url substitution
-func WithTenantDomain(tenantDomain string) SDKOption {
-	return func(sdk *ConductoroneAPI) {
-		for idx := range sdk.sdkConfiguration.ServerDefaults {
-			if _, ok := sdk.sdkConfiguration.ServerDefaults[idx]["tenantDomain"]; !ok {
-				continue
-			}
-
-			sdk.sdkConfiguration.ServerDefaults[idx]["tenantDomain"] = fmt.Sprintf("%v", tenantDomain)
-		}
-	}
-}
-
 // WithClient allows the overriding of the default HTTP client used by the SDK
 func WithClient(client HTTPClient) SDKOption {
 	return func(sdk *ConductoroneAPI) {
@@ -126,14 +118,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk := &ConductoroneAPI{
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
-			OpenAPIDocVersion: "0.1.0-alpha",
+			OpenAPIDocVersion: "0.0.1",
 			SDKVersion:        "1.0.2",
-			GenVersion:        "2.39.0",
-			ServerDefaults: []map[string]string{
-				{
-					"tenantDomain": "invalid-example",
-				},
-			},
+			GenVersion:        "2.39.2",
 		},
 	}
 	for _, opt := range opts {
@@ -148,13 +135,25 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdk.sdkConfiguration.SecurityClient = sdk.sdkConfiguration.DefaultClient
 	}
 
-	sdk.App = newApp(sdk.sdkConfiguration)
+	sdk.AppEntitlementUserBinding = newAppEntitlementUserBinding(sdk.sdkConfiguration)
+
+	sdk.AppEntitlements = newAppEntitlements(sdk.sdkConfiguration)
+
+	sdk.AppResource = newAppResource(sdk.sdkConfiguration)
+
+	sdk.AppResourceType = newAppResourceType(sdk.sdkConfiguration)
+
+	sdk.Apps = newApps(sdk.sdkConfiguration)
 
 	sdk.Auth = newAuth(sdk.sdkConfiguration)
 
-	sdk.Requestcatalog = newRequestcatalog(sdk.sdkConfiguration)
+	sdk.RequestCatalogSearch = newRequestCatalogSearch(sdk.sdkConfiguration)
 
 	sdk.Task = newTask(sdk.sdkConfiguration)
+
+	sdk.TaskActions = newTaskActions(sdk.sdkConfiguration)
+
+	sdk.TaskSearch = newTaskSearch(sdk.sdkConfiguration)
 
 	sdk.User = newUser(sdk.sdkConfiguration)
 

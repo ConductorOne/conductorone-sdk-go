@@ -15,8 +15,8 @@ type C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantR
 
 type C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse struct {
 	ContentType string
-	StatusCode  int
-	RawResponse *http.Response
 	// Successful response
-	C1APIAppV1ListAppUsersForIdentityWithGrantResponse *shared.C1APIAppV1ListAppUsersForIdentityWithGrantResponse
+	ListAppUsersForIdentityWithGrantResponse *shared.ListAppUsersForIdentityWithGrantResponse
+	StatusCode                               int
+	RawResponse                              *http.Response
 }

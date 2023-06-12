@@ -2,9 +2,9 @@
 
 ### Available Operations
 
-* [C1APIUserV1UserServiceGet](#c1apiuserv1userserviceget) - Invokes the c1.api.user.v1.UserService.Get method.
+* [Get](#get) - Invokes the c1.api.user.v1.UserService.Get method.
 
-## C1APIUserV1UserServiceGet
+## Get
 
 Invokes the c1.api.user.v1.UserService.Get method.
 
@@ -24,14 +24,14 @@ func main() {
     s := conductoroneapi.New()
 
     ctx := context.Background()
-    res, err := s.User.C1APIUserV1UserServiceGet(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "adcf4b92-1879-4fce-953f-73ef7fbc7abd",
+    res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
+        ID: "5a73429c-db1a-4842-abb6-79d2322715bf",
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.C1APIUserV1UserServiceGetResponse != nil {
+    if res.UserServiceGetResponse != nil {
         // handle response
     }
 }
