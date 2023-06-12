@@ -25,8 +25,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "sed",
-        ID: "9396fea7-596e-4b10-baaa-2352c5955907",
+        AppID: "explicabo",
+        ID: "c5955907-aff1-4a3a-afa9-467739251aa5",
     })
     if err != nil {
         log.Fatal(err)

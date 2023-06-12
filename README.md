@@ -52,25 +52,66 @@ func main() {
 
 * [Get](docs/sdks/appentitlements/README.md#get) - Invokes the c1.api.app.v1.AppEntitlements.Get method.
 
+### [AppReport](docs/sdks/appreport/README.md)
+
+* [List](docs/sdks/appreport/README.md#list) - Invokes the c1.api.app.v1.AppReportService.List method.
+
+### [AppReportAction](docs/sdks/appreportaction/README.md)
+
+* [GenerateReport](docs/sdks/appreportaction/README.md#generatereport) - Invokes the c1.api.app.v1.AppReportActionService.GenerateReport method.
+
 ### [AppResource](docs/sdks/appresource/README.md)
 
 * [Get](docs/sdks/appresource/README.md#get) - Invokes the c1.api.app.v1.AppResourceService.Get method.
+* [List](docs/sdks/appresource/README.md#list) - Invokes the c1.api.app.v1.AppResourceService.List method.
+
+### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
+
+* [SearchAppResourceTypes](docs/sdks/appresourcesearch/README.md#searchappresourcetypes) - Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes method.
 
 ### [AppResourceType](docs/sdks/appresourcetype/README.md)
 
 * [Get](docs/sdks/appresourcetype/README.md#get) - Invokes the c1.api.app.v1.AppResourceTypeService.Get method.
 
+### [AppSearch](docs/sdks/appsearch/README.md)
+
+* [Search](docs/sdks/appsearch/README.md#search) - Invokes the c1.api.app.v1.AppSearch.Search method.
+
+### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
+
+* [Get](docs/sdks/appusagecontrols/README.md#get) - Invokes the c1.api.app.v1.AppUsageControlsService.Get method.
+
 ### [Apps](docs/sdks/apps/README.md)
 
 * [Get](docs/sdks/apps/README.md#get) - Invokes the c1.api.app.v1.Apps.Get method.
+* [List](docs/sdks/apps/README.md#list) - Invokes the c1.api.app.v1.Apps.List method.
 
 ### [Auth](docs/sdks/auth/README.md)
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
 
+### [Directory](docs/sdks/directory/README.md)
+
+* [Create](docs/sdks/directory/README.md#create) - Invokes the c1.api.directory.v1.DirectoryService.Create method.
+* [Delete](docs/sdks/directory/README.md#delete) - Invokes the c1.api.directory.v1.DirectoryService.Delete method.
+* [Get](docs/sdks/directory/README.md#get) - Invokes the c1.api.directory.v1.DirectoryService.Get method.
+* [List](docs/sdks/directory/README.md#list) - Invokes the c1.api.directory.v1.DirectoryService.List method.
+
+### [Policies](docs/sdks/policies/README.md)
+
+* [Create](docs/sdks/policies/README.md#create) - Invokes the c1.api.policy.v1.Policies.Create method.
+* [Delete](docs/sdks/policies/README.md#delete) - Invokes the c1.api.policy.v1.Policies.Delete method.
+* [Get](docs/sdks/policies/README.md#get) - Invokes the c1.api.policy.v1.Policies.Get method.
+* [List](docs/sdks/policies/README.md#list) - Invokes the c1.api.policy.v1.Policies.List method.
+
 ### [RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
 
 * [SearchEntitlements](docs/sdks/requestcatalogsearch/README.md#searchentitlements) - Invokes the c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements method.
+
+### [Roles](docs/sdks/roles/README.md)
+
+* [Get](docs/sdks/roles/README.md#get) - Invokes the c1.api.iam.v1.Roles.Get method.
+* [List](docs/sdks/roles/README.md#list) - Invokes the c1.api.iam.v1.Roles.List method.
 
 ### [Task](docs/sdks/task/README.md)
 
@@ -91,6 +132,11 @@ func main() {
 ### [User](docs/sdks/user/README.md)
 
 * [Get](docs/sdks/user/README.md#get) - Invokes the c1.api.user.v1.UserService.Get method.
+* [List](docs/sdks/user/README.md#list) - Invokes the c1.api.user.v1.UserService.List method.
+
+### [UserSearch](docs/sdks/usersearch/README.md)
+
+* [Search](docs/sdks/usersearch/README.md#search) - Invokes the c1.api.user.v1.UserSearch.Search method.
 <!-- End SDK Available Operations -->
 
 ### Maturity

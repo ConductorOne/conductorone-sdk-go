@@ -62,15 +62,24 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 type ConductoroneAPI struct {
 	AppEntitlementUserBinding *appEntitlementUserBinding
 	AppEntitlements           *appEntitlements
+	AppReport                 *appReport
+	AppReportAction           *appReportAction
 	AppResource               *appResource
+	AppResourceSearch         *appResourceSearch
 	AppResourceType           *appResourceType
+	AppSearch                 *appSearch
+	AppUsageControls          *appUsageControls
 	Apps                      *apps
 	Auth                      *auth
+	Directory                 *directory
+	Policies                  *policies
 	RequestCatalogSearch      *requestCatalogSearch
+	Roles                     *roles
 	Task                      *task
 	TaskActions               *taskActions
 	TaskSearch                *taskSearch
 	User                      *user
+	UserSearch                *userSearch
 
 	sdkConfiguration sdkConfiguration
 }
@@ -139,15 +148,31 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.AppEntitlements = newAppEntitlements(sdk.sdkConfiguration)
 
+	sdk.AppReport = newAppReport(sdk.sdkConfiguration)
+
+	sdk.AppReportAction = newAppReportAction(sdk.sdkConfiguration)
+
 	sdk.AppResource = newAppResource(sdk.sdkConfiguration)
 
+	sdk.AppResourceSearch = newAppResourceSearch(sdk.sdkConfiguration)
+
 	sdk.AppResourceType = newAppResourceType(sdk.sdkConfiguration)
+
+	sdk.AppSearch = newAppSearch(sdk.sdkConfiguration)
+
+	sdk.AppUsageControls = newAppUsageControls(sdk.sdkConfiguration)
 
 	sdk.Apps = newApps(sdk.sdkConfiguration)
 
 	sdk.Auth = newAuth(sdk.sdkConfiguration)
 
+	sdk.Directory = newDirectory(sdk.sdkConfiguration)
+
+	sdk.Policies = newPolicies(sdk.sdkConfiguration)
+
 	sdk.RequestCatalogSearch = newRequestCatalogSearch(sdk.sdkConfiguration)
+
+	sdk.Roles = newRoles(sdk.sdkConfiguration)
 
 	sdk.Task = newTask(sdk.sdkConfiguration)
 
@@ -156,6 +181,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TaskSearch = newTaskSearch(sdk.sdkConfiguration)
 
 	sdk.User = newUser(sdk.sdkConfiguration)
+
+	sdk.UserSearch = newUserSearch(sdk.sdkConfiguration)
 
 	return sdk
 }

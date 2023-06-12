@@ -3,6 +3,7 @@
 ### Available Operations
 
 * [Get](#get) - Invokes the c1.api.user.v1.UserService.Get method.
+* [List](#list) - Invokes the c1.api.user.v1.UserService.List method.
 
 ## Get
 
@@ -25,7 +26,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "5a73429c-db1a-4842-abb6-79d2322715bf",
+        ID: "953f73ef-7fbc-47ab-974d-d39c0f5d2cff",
     })
     if err != nil {
         log.Fatal(err)
@@ -48,4 +49,46 @@ func main() {
 ### Response
 
 **[*operations.C1APIUserV1UserServiceGetResponse](../../models/operations/c1apiuserv1userservicegetresponse.md), error**
+
+
+## List
+
+Invokes the c1.api.user.v1.UserService.List method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/conductorone/conductorone-sdk-go"
+)
+
+func main() {
+    s := conductoroneapi.New()
+
+    ctx := context.Background()
+    res, err := s.User.List(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.UserServiceListResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+
+
+### Response
+
+**[*operations.C1APIUserV1UserServiceListResponse](../../models/operations/c1apiuserv1userservicelistresponse.md), error**
 

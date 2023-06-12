@@ -29,17 +29,16 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
-            Comment: conductoroneapi.String("aliquid"),
+            Comment: conductoroneapi.String("expedita"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quos",
-                    "perferendis",
-                    "magni",
+                    "repellat",
+                    "quibusdam",
                 },
             },
-            PolicyStepID: conductoroneapi.String("assumenda"),
+            PolicyStepID: conductoroneapi.String("sed"),
         },
-        TaskID: "ipsam",
+        TaskID: "saepe",
     })
     if err != nil {
         log.Fatal(err)
@@ -87,14 +86,14 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
-            Comment: conductoroneapi.String("alias"),
+            Comment: conductoroneapi.String("pariatur"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "dolorum",
+                    "consequuntur",
                 },
             },
         },
-        TaskID: "excepturi",
+        TaskID: "praesentium",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,17 +141,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
-            Comment: conductoroneapi.String("tempora"),
+            Comment: conductoroneapi.String("natus"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "tempore",
-                    "labore",
-                    "delectus",
+                    "sunt",
                 },
             },
-            PolicyStepID: conductoroneapi.String("eum"),
+            PolicyStepID: conductoroneapi.String("quo"),
         },
-        TaskID: "non",
+        TaskID: "illum",
     })
     if err != nil {
         log.Fatal(err)
