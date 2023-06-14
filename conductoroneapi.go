@@ -142,7 +142,7 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.0.3",
+			SDKVersion:        "1.1.0",
 			GenVersion:        "2.40.1",
 			ServerDefaults: []map[string]string{
 				{
