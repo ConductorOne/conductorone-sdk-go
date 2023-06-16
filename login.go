@@ -1,6 +1,7 @@
 package conductoroneapi
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"errors"
@@ -20,7 +21,7 @@ type ClientCredentials struct {
 type DeviceCodeResponse struct {
 	DeviceCode      string `json:"device_code"`
 	UserCode        string `json:"user_code"`
-	VerificationURI string `json:"verification_uri"`
+	VerificationURI string `json:"verification_uri_complete"`
 	ExpiresIn       int64  `json:"expires_in"`
 	Interval        int64  `json:"interval"`
 }
@@ -57,8 +58,6 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 		return nil, err
 	}
 
-	fmt.Printf("Response: %s\n", data)
-
 	codeResp := DeviceCodeResponse{}
 	err = json.Unmarshal(data, &codeResp)
 	if err != nil {
@@ -84,6 +83,7 @@ func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAP
 	vals.Add("grant_type", "urn:ietf:params:oauth:grant-type:device_code")
 
 	startLoop := time.Now()
+	tokenResp := tokenResponse{}
 	for {
 		select {
 		case <-time.After(time.Duration(deviceCodeResp.Interval) * time.Second):
@@ -108,6 +108,75 @@ func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAP
 			return "", "", err
 		}
 
-		fmt.Printf("Token URL Resp: %s\n", body)
+		if resp.StatusCode >= 300 {
+			errResp := oauth2Error{}
+			err = json.Unmarshal(body, &errResp)
+			if err != nil {
+				return "", "", err
+			}
+
+			if errResp.ErrorType == "authorization_pending" {
+				continue
+			}
+
+			return "", "", errors.New(errResp.ErrorDescription)
+		}
+
+		err = json.Unmarshal(body, &tokenResp)
+		if err != nil {
+			return "", "", err
+		}
+		break
 	}
+
+	pccURL := "https://" + client.sdkConfiguration.ServerURL + "/api/v1/iam/personal_clients"
+
+	personalClientReq, err := http.NewRequestWithContext(ctx, "POST", pccURL, bytes.NewReader([]byte("{\"display_name\": \"Created From Cone\"}")))
+	if err != nil {
+		return "", "", err
+	}
+	personalClientReq.Header.Set("Content-Type", "application/json")
+	personalClientReq.Header.Set("Authorization", "Bearer "+tokenResp.AccessToken)
+	resp, err := httpClient.Do(personalClientReq)
+	if err != nil {
+		return "", "", err
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", "", err
+	}
+
+	fmt.Printf("Body: %s\n", body)
+
+	clientRespJSON := clientResp{}
+	err = json.Unmarshal(body, &clientRespJSON)
+	if err != nil {
+		return "", "", err
+	}
+
+	return clientRespJSON.Client.ClientID, clientRespJSON.ClientSecret, nil
+}
+
+type tokenResponse struct {
+	AccessToken  string `json:"access_token"`
+	TokenType    string `json:"token_type"`
+	RefreshToken string `json:"refresh_token"`
+	ExpiresIn    int64  `json:"expires_in"`
+}
+
+type oauth2Error struct {
+	ErrorType        string          `json:"error"`
+	ErrorDescription string          `json:"error_description"`
+	ErrorDetails     json.RawMessage `json:"error_details,omitempty"`
+	State            string          `json:"state,omitempty"`
+}
+
+type clientStats struct {
+	ClientID string `json:"clientId"`
+}
+type clientResp struct {
+	Client       clientStats `json:"client"`
+	ClientSecret string      `json:"clientSecret"`
 }
