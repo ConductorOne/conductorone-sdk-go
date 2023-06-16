@@ -148,8 +148,6 @@ func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAP
 		return "", "", err
 	}
 
-	fmt.Printf("Body: %s\n", body)
-
 	clientRespJSON := clientResp{}
 	err = json.Unmarshal(body, &clientRespJSON)
 	if err != nil {
