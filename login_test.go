@@ -2,11 +2,20 @@ package conductoroneapi
 
 import (
 	"context"
-	"fmt"
 	"testing"
 )
 
 func TestLoginFlow(t *testing.T) {
-	creds, err := LoginFlow(context.Background(), "c1dev.logan.dev.ductone.com:2443", "2RCzHlak5q7CY14SdBc8HoZEJRf")
-	fmt.Printf("Creds: %+v, Err: %+v", creds, err)
+	t.Run("login flow", func(t *testing.T) {
+		creds, err := LoginFlow(context.Background(), "c1dev.logan.dev.ductone.com:2443", "2RCzHlak5q7CY14SdBc8HoZEJRf")
+
+		if err != nil {
+			t.Errorf("LoginFlow() error = %v", err)
+			return
+		}
+		if creds == nil || creds.ClientID == "" || creds.ClientSecret == "" {
+			t.Errorf("LoginFlow() creds = %v", creds)
+			return
+		}
+	})
 }

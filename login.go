@@ -27,7 +27,6 @@ type DeviceCodeResponse struct {
 }
 
 func LoginFlow(ctx context.Context, tenantName string, clientID string) (*ClientCredentials, error) {
-
 	opts := []SDKOption{}
 	// If they pass a URL, use the whole URL
 	if strings.Contains(tenantName, ".") {
@@ -36,13 +35,36 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 		opts = append(opts, WithTenantDomain(tenantName))
 	}
 	client := New(opts...)
+
+	codeResp, err := getDeviceCode(ctx, client, clientID)
+	if err != nil {
+		return nil, err
+	}
+
+	tokenResp, err := doTokenRequest(ctx, clientID, client, codeResp)
+	if err != nil {
+		return nil, err
+	}
+
+	clientCredential, err := doClientCredentialRequest(ctx, client, tokenResp)
+	if err != nil {
+		return nil, err
+	}
+
+	return &ClientCredentials{
+		ClientID:     clientCredential.Client.ClientID,
+		ClientSecret: clientCredential.ClientSecret,
+	}, nil
+}
+
+func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
 	deviceCodeURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/device_authorization"
 	vals := url.Values{}
 	vals.Add("client_id", clientID)
 
-	req, err := http.NewRequest("POST", deviceCodeURL, strings.NewReader(vals.Encode()))
+	req, err := http.NewRequestWithContext(ctx, "POST", deviceCodeURL, strings.NewReader(vals.Encode()))
 	if err != nil {
 		return nil, err
 	}
@@ -58,22 +80,17 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 		return nil, err
 	}
 
-	codeResp := DeviceCodeResponse{}
-	err = json.Unmarshal(data, &codeResp)
+	codeResp := &DeviceCodeResponse{}
+	err = json.Unmarshal(data, codeResp)
 	if err != nil {
 		return nil, err
 	}
 
 	fmt.Printf("Open: %s\n", codeResp.VerificationURI)
-
-	if _, _, err := doTokenRequest(ctx, clientID, client, codeResp); err != nil {
-		return nil, err
-	}
-
-	return nil, errors.New("failure")
+	return codeResp, nil
 }
 
-func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAPI, deviceCodeResp DeviceCodeResponse) (string, string, error) {
+func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAPI, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
 	tokenURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/token"
@@ -83,78 +100,82 @@ func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAP
 	vals.Add("grant_type", "urn:ietf:params:oauth:grant-type:device_code")
 
 	startLoop := time.Now()
-	tokenResp := tokenResponse{}
 	for {
 		select {
 		case <-time.After(time.Duration(deviceCodeResp.Interval) * time.Second):
 			if time.Now().After(startLoop.Add(time.Duration(deviceCodeResp.ExpiresIn) * time.Second)) {
-				return "", "", errors.New("timeout")
+				return nil, errors.New("timeout")
 			}
 		case <-ctx.Done():
-			return "", "", nil
+			return nil, nil
 		}
 
-		req, err := http.NewRequest("POST", tokenURL, strings.NewReader(vals.Encode()))
+		req, err := http.NewRequestWithContext(ctx, "POST", tokenURL, strings.NewReader(vals.Encode()))
 		if err != nil {
-			return "", "", err
+			return nil, err
 		}
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 		resp, err := httpClient.Do(req)
 		if err != nil {
-			return "", "", err
+			return nil, err
 		}
 		body, err := io.ReadAll(resp.Body)
 		if err != nil {
-			return "", "", err
+			return nil, err
 		}
 
 		if resp.StatusCode >= 300 {
 			errResp := oauth2Error{}
 			err = json.Unmarshal(body, &errResp)
 			if err != nil {
-				return "", "", err
+				return nil, err
 			}
 
 			if errResp.ErrorType == "authorization_pending" {
 				continue
 			}
 
-			return "", "", errors.New(errResp.ErrorDescription)
+			return nil, errors.New(errResp.ErrorDescription)
 		}
 
-		err = json.Unmarshal(body, &tokenResp)
+		tokenResp := &tokenResponse{}
+		err = json.Unmarshal(body, tokenResp)
 		if err != nil {
-			return "", "", err
+			return nil, err
 		}
-		break
-	}
 
+		return tokenResp, nil
+	}
+}
+
+func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse) (*clientResp, error) {
+	httpClient := client.sdkConfiguration.DefaultClient
 	pccURL := "https://" + client.sdkConfiguration.ServerURL + "/api/v1/iam/personal_clients"
 
 	personalClientReq, err := http.NewRequestWithContext(ctx, "POST", pccURL, bytes.NewReader([]byte("{\"display_name\": \"Created From Cone\"}")))
 	if err != nil {
-		return "", "", err
+		return nil, err
 	}
 	personalClientReq.Header.Set("Content-Type", "application/json")
 	personalClientReq.Header.Set("Authorization", "Bearer "+tokenResp.AccessToken)
 	resp, err := httpClient.Do(personalClientReq)
 	if err != nil {
-		return "", "", err
+		return nil, err
 	}
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return "", "", err
+		return nil, err
 	}
 
-	clientRespJSON := clientResp{}
-	err = json.Unmarshal(body, &clientRespJSON)
+	clientRespJSON := &clientResp{}
+	err = json.Unmarshal(body, clientRespJSON)
 	if err != nil {
-		return "", "", err
+		return nil, err
 	}
 
-	return clientRespJSON.Client.ClientID, clientRespJSON.ClientSecret, nil
+	return clientRespJSON, nil
 }
 
 type tokenResponse struct {
