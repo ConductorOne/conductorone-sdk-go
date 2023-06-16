@@ -125,8 +125,8 @@ func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAP
 		}
 
 		if resp.StatusCode >= 300 {
-			errResp := oauth2Error{}
-			err = json.Unmarshal(body, &errResp)
+			errResp := &oauth2Error{}
+			err = json.Unmarshal(body, errResp)
 			if err != nil {
 				return nil, err
 			}
