@@ -127,7 +127,7 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 				return nil, errors.New("timeout")
 			}
 		case <-ctx.Done():
-			return nil, errors.New("context canceled")
+			return nil, ctx.Err()
 		}
 
 		req, err := newReq(ctx, "POST", tokenURL, strings.NewReader(vals.Encode()))
@@ -168,6 +168,10 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 	}
 }
 
+type clientDisplayName struct {
+	DisplayName string `json:"display_name"`
+}
+
 func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse, personalClientCredentialDisplayName string) (*clientResp, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 	baseURL := utils.ReplaceParameters(client.sdkConfiguration.GetServerDetails())
@@ -177,7 +181,11 @@ func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tok
 		return nil, err
 	}
 
-	personalClientReq, err := newReq(ctx, "POST", pccURL, bytes.NewReader([]byte(fmt.Sprintf("{\"display_name\": \"%s\"}", personalClientCredentialDisplayName))))
+	displayNameArg, err := json.Marshal(clientDisplayName{DisplayName: personalClientCredentialDisplayName})
+	if err != nil {
+		return nil, err
+	}
+	personalClientReq, err := newReq(ctx, "POST", pccURL, bytes.NewReader(displayNameArg))
 	if err != nil {
 		return nil, err
 	}
