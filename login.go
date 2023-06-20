@@ -41,7 +41,7 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 		return nil, fmt.Errorf("error getting device code: %w", err)
 	}
 
-	tokenResp, err := doTokenRequest(ctx, clientID, client, codeResp)
+	tokenResp, err := doTokenRequest(ctx, client, clientID, codeResp)
 	if err != nil {
 		return nil, fmt.Errorf("error doing token request: %w", err)
 	}
@@ -90,7 +90,7 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 	return codeResp, nil
 }
 
-func doTokenRequest(ctx context.Context, clientID string, client *ConductoroneAPI, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {
+func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID string, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
 	tokenURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/token"
