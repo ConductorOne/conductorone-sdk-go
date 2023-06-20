@@ -27,14 +27,7 @@ type DeviceCodeResponse struct {
 }
 
 func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(authorizeUrl string) error) (*ClientCredentials, error) {
-	opts := []SDKOption{}
-	// If they pass a URL, use the whole URL
-	if strings.Contains(tenantName, ".") {
-		opts = append(opts, WithServerURL(tenantName))
-	} else {
-		opts = append(opts, WithTenantDomain(tenantName))
-	}
-	client := New(opts...)
+	client := New(WithTenantSmart(tenantName))
 
 	codeResp, responseUrl, err := getDeviceCode(ctx, client, clientID)
 	if err != nil {
@@ -61,7 +54,7 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string, personal
 	}, nil
 }
 
-func newReq(ctx context.Context, url, method string, reader io.Reader) (*http.Request, error) {
+func newReq(ctx context.Context, method, url string, reader io.Reader) (*http.Request, error) {
 	req, err := http.NewRequestWithContext(ctx, method, url, reader)
 	if err != nil {
 		return nil, err
@@ -73,7 +66,10 @@ func newReq(ctx context.Context, url, method string, reader io.Reader) (*http.Re
 func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, string, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
-	deviceCodeURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/device_authorization"
+	deviceCodeURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/auth/v1/device_authorization")
+	if err != nil {
+		return nil, "", err
+	}
 	vals := url.Values{}
 	vals.Add("client_id", clientID)
 
@@ -106,7 +102,10 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID string, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
-	tokenURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/token"
+	tokenURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/auth/v1/token")
+	if err != nil {
+		return nil, err
+	}
 	vals := url.Values{}
 	vals.Add("client_id", clientID)
 	vals.Add("device_code", deviceCodeResp.DeviceCode)
@@ -163,7 +162,10 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 
 func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse, personalClientCredentialDisplayName string) (*clientResp, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
-	pccURL := "https://" + client.sdkConfiguration.ServerURL + "/api/v1/iam/personal_clients"
+	pccURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/api/v1/iam/personal_clients")
+	if err != nil {
+		return nil, err
+	}
 
 	personalClientReq, err := newReq(ctx, "POST", pccURL, bytes.NewReader([]byte(fmt.Sprintf("{\"display_name\": \"%s\"}", personalClientCredentialDisplayName))))
 	if err != nil {
