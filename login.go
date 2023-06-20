@@ -26,7 +26,7 @@ type DeviceCodeResponse struct {
 	Interval        int64  `json:"interval"`
 }
 
-func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string) (*ClientCredentials, error) {
+func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(authorizeUrl string) error) (*ClientCredentials, error) {
 	opts := []SDKOption{}
 	// If they pass a URL, use the whole URL
 	if strings.Contains(tenantName, ".") {
@@ -36,9 +36,13 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string, personal
 	}
 	client := New(opts...)
 
-	codeResp, err := getDeviceCode(ctx, client, clientID)
+	codeResp, responseUrl, err := getDeviceCode(ctx, client, clientID)
 	if err != nil {
 		return nil, fmt.Errorf("error getting device code: %w", err)
+	}
+
+	if err := cb(responseUrl); err != nil {
+		return nil, err
 	}
 
 	tokenResp, err := doTokenRequest(ctx, client, clientID, codeResp)
@@ -66,7 +70,7 @@ func newReq(ctx context.Context, url, method string, reader io.Reader) (*http.Re
 	return req, nil
 }
 
-func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, error) {
+func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, string, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
 	deviceCodeURL := "https://" + client.sdkConfiguration.ServerURL + "/auth/v1/device_authorization"
@@ -75,28 +79,28 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 
 	req, err := newReq(ctx, "POST", deviceCodeURL, strings.NewReader(vals.Encode()))
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
 	defer resp.Body.Close()
+
 	data, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
 
 	codeResp := &DeviceCodeResponse{}
 	err = json.Unmarshal(data, codeResp)
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
 
-	fmt.Printf("Open: %s\n", codeResp.VerificationURI)
-	return codeResp, nil
+	return codeResp, codeResp.VerificationURI, nil
 }
 
 func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID string, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {

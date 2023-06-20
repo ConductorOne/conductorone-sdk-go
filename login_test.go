@@ -2,12 +2,16 @@ package conductoroneapi
 
 import (
 	"context"
+	"fmt"
 	"testing"
 )
 
 func TestLoginFlow(t *testing.T) {
 	t.Run("login flow", func(t *testing.T) {
-		creds, err := LoginFlow(context.Background(), "c1dev.logan.dev.ductone.com:2443", "2RCzHlak5q7CY14SdBc8HoZEJRf", "Created With Cone")
+		creds, err := LoginFlow(context.Background(), "c1dev.logan.dev.ductone.com:2443", "2RCzHlak5q7CY14SdBc8HoZEJRf", "Created With Cone", func(authorizeUrl string) error {
+			fmt.Printf("Open: %s\n", authorizeUrl)
+			return nil
+		})
 
 		if err != nil {
 			t.Errorf("LoginFlow() error = %v", err)
