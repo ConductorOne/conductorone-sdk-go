@@ -8,8 +8,8 @@ import (
 
 func TestLoginFlow(t *testing.T) {
 	t.Run("login flow", func(t *testing.T) {
-		creds, err := LoginFlow(context.Background(), "c1dev.logan.dev.ductone.com:2443", "2RCzHlak5q7CY14SdBc8HoZEJRf", "Created With Cone", func(authorizeUrl string) error {
-			fmt.Printf("Open: %s\n", authorizeUrl)
+		creds, err := LoginFlow(context.Background(), "insulator", "2RCzHlak5q7CY14SdBc8HoZEJRf", "Created With Cone", func(validateUrl string) error {
+			fmt.Printf("Open: %s\n", validateUrl)
 			return nil
 		})
 

@@ -11,6 +11,8 @@ import (
 	"net/url"
 	"strings"
 	"time"
+
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
 type ClientCredentials struct {
@@ -26,8 +28,12 @@ type DeviceCodeResponse struct {
 	Interval        int64  `json:"interval"`
 }
 
-func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(authorizeUrl string) error) (*ClientCredentials, error) {
-	client := New(WithTenantSmart(tenantName))
+func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(validateUrl string) error) (*ClientCredentials, error) {
+	tenantURLOption, err := WithTenant(tenantName)
+	if err != nil {
+		return nil, err
+	}
+	client := New(tenantURLOption)
 
 	codeResp, responseUrl, err := getDeviceCode(ctx, client, clientID)
 	if err != nil {
@@ -65,8 +71,9 @@ func newReq(ctx context.Context, method, url string, reader io.Reader) (*http.Re
 
 func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, string, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
+	baseURL := utils.ReplaceParameters(client.sdkConfiguration.GetServerDetails())
 
-	deviceCodeURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/auth/v1/device_authorization")
+	deviceCodeURL, err := url.JoinPath(baseURL, "/auth/v1/device_authorization")
 	if err != nil {
 		return nil, "", err
 	}
@@ -101,8 +108,9 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 
 func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID string, deviceCodeResp *DeviceCodeResponse) (*tokenResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
+	baseURL := utils.ReplaceParameters(client.sdkConfiguration.GetServerDetails())
 
-	tokenURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/auth/v1/token")
+	tokenURL, err := url.JoinPath(baseURL, "/auth/v1/token")
 	if err != nil {
 		return nil, err
 	}
@@ -162,7 +170,9 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 
 func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse, personalClientCredentialDisplayName string) (*clientResp, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
-	pccURL, err := url.JoinPath(client.sdkConfiguration.ServerURL, "/api/v1/iam/personal_clients")
+	baseURL := utils.ReplaceParameters(client.sdkConfiguration.GetServerDetails())
+
+	pccURL, err := url.JoinPath(baseURL, "/api/v1/iam/personal_clients")
 	if err != nil {
 		return nil, err
 	}

@@ -5,16 +5,28 @@ import (
 	"strings"
 )
 
-// WithTenantSmart takes a URL, tenant name, or full tenant URL and sets the tenant domain for the SDk
-// Valid input examples: insulator.conductor.one, insulator, https://insulator.conductor.one,
-func WithTenantSmart(tenant string) SDKOption {
-	foundUrl, err := url.Parse(tenant)
-	if err == nil {
-		if !strings.HasPrefix(tenant, "http") {
-			foundUrl.Scheme = "https://" + foundUrl.Scheme
+func WithTenant(input string) (SDKOption, error) {
+	input = strings.ToLower(input)
+
+	var err error
+	u := &url.URL{}
+	if !strings.Contains(input, "//") {
+		if !strings.Contains(input, ".") {
+			input += ".conductor.one"
 		}
-		return WithServerURL(foundUrl.String())
+		u.Host = input
+	} else {
+		u, err = url.Parse(input)
+		if err != nil {
+			return nil, err
+		}
 	}
 
-	return WithTenantDomain(tenant)
+	parts := strings.Split(u.Host, ".")
+	if len(parts) == 3 && parts[1] == "conductor" && parts[2] == "one" {
+		return WithTenantDomain(parts[0]), nil
+	}
+
+	u.Scheme = "https"
+	return WithServerURL(u.String()), nil
 }
