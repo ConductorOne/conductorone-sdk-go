@@ -26,7 +26,7 @@ type DeviceCodeResponse struct {
 	Interval        int64  `json:"interval"`
 }
 
-func LoginFlow(ctx context.Context, tenantName string, clientID string) (*ClientCredentials, error) {
+func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string) (*ClientCredentials, error) {
 	opts := []SDKOption{}
 	// If they pass a URL, use the whole URL
 	if strings.Contains(tenantName, ".") {
@@ -46,7 +46,7 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 		return nil, fmt.Errorf("error doing token request: %w", err)
 	}
 
-	clientCredential, err := doClientCredentialRequest(ctx, client, tokenResp)
+	clientCredential, err := doClientCredentialRequest(ctx, client, tokenResp, personalClientCredentialDisplayName)
 	if err != nil {
 		return nil, fmt.Errorf("error doing client credential request: %w", err)
 	}
@@ -57,6 +57,15 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 	}, nil
 }
 
+func newReq(ctx context.Context, url, method string, reader io.Reader) (*http.Request, error) {
+	req, err := http.NewRequestWithContext(ctx, method, url, reader)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("User-Agent", "conductorone-sdk-go")
+	return req, nil
+}
+
 func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string) (*DeviceCodeResponse, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 
@@ -64,7 +73,7 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 	vals := url.Values{}
 	vals.Add("client_id", clientID)
 
-	req, err := http.NewRequestWithContext(ctx, "POST", deviceCodeURL, strings.NewReader(vals.Encode()))
+	req, err := newReq(ctx, "POST", deviceCodeURL, strings.NewReader(vals.Encode()))
 	if err != nil {
 		return nil, err
 	}
@@ -107,10 +116,10 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 				return nil, errors.New("timeout")
 			}
 		case <-ctx.Done():
-			return nil, nil
+			return nil, errors.New("context canceled")
 		}
 
-		req, err := http.NewRequestWithContext(ctx, "POST", tokenURL, strings.NewReader(vals.Encode()))
+		req, err := newReq(ctx, "POST", tokenURL, strings.NewReader(vals.Encode()))
 		if err != nil {
 			return nil, err
 		}
@@ -148,11 +157,11 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 	}
 }
 
-func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse) (*clientResp, error) {
+func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tokenResp *tokenResponse, personalClientCredentialDisplayName string) (*clientResp, error) {
 	httpClient := client.sdkConfiguration.DefaultClient
 	pccURL := "https://" + client.sdkConfiguration.ServerURL + "/api/v1/iam/personal_clients"
 
-	personalClientReq, err := http.NewRequestWithContext(ctx, "POST", pccURL, bytes.NewReader([]byte("{\"display_name\": \"Created From Cone\"}")))
+	personalClientReq, err := newReq(ctx, "POST", pccURL, bytes.NewReader([]byte(fmt.Sprintf("{\"display_name\": \"%s\"}", personalClientCredentialDisplayName))))
 	if err != nil {
 		return nil, err
 	}
