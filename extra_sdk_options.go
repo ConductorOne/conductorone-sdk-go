@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+const GoSDKClientID = "2RCzHlak5q7CY14SdBc8HoZEJRf"
+
 func WithTenant(input string) (SDKOption, error) {
 	input = strings.ToLower(input)
 

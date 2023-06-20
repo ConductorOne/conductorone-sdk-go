@@ -8,7 +8,7 @@ import (
 
 func TestLoginFlow(t *testing.T) {
 	t.Run("login flow", func(t *testing.T) {
-		creds, err := LoginFlow(context.Background(), "insulator", "2RCzHlak5q7CY14SdBc8HoZEJRf", "Created With Cone", func(validateUrl string) error {
+		creds, err := LoginFlow(context.Background(), "insulator", GoSDKClientID, "Created With Cone", func(validateUrl string) error {
 			fmt.Printf("Open: %s\n", validateUrl)
 			return nil
 		})
