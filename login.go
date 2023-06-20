@@ -38,17 +38,17 @@ func LoginFlow(ctx context.Context, tenantName string, clientID string) (*Client
 
 	codeResp, err := getDeviceCode(ctx, client, clientID)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error getting device code: %w", err)
 	}
 
 	tokenResp, err := doTokenRequest(ctx, clientID, client, codeResp)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error doing token request: %w", err)
 	}
 
 	clientCredential, err := doClientCredentialRequest(ctx, client, tokenResp)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error doing client credential request: %w", err)
 	}
 
 	return &ClientCredentials{
@@ -195,6 +195,7 @@ type oauth2Error struct {
 type clientStats struct {
 	ClientID string `json:"clientId"`
 }
+
 type clientResp struct {
 	Client       clientStats `json:"client"`
 	ClientSecret string      `json:"clientSecret"`
