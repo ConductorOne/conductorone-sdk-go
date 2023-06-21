@@ -162,3 +162,12 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 
 	return New(sdkOpts...), nil
 }
+
+func NewWithLogin(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(validateUrl string) error, opts ...CustomSDKOption) (*ConductoroneAPI, error) {
+	creds, err := LoginFlow(ctx, tenantName, clientID, personalClientCredentialDisplayName, cb)
+	if err != nil {
+		return nil, err
+	}
+
+	return NewWithCredentials(ctx, creds, opts...)
+}

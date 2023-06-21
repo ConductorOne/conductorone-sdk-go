@@ -28,7 +28,13 @@ type DeviceCodeResponse struct {
 	Interval        int64  `json:"interval"`
 }
 
-func LoginFlow(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(validateUrl string) error) (*ClientCredentials, error) {
+func LoginFlow(
+	ctx context.Context,
+	tenantName string,
+	clientID string,
+	personalClientCredentialDisplayName string,
+	cb func(validateUrl string) error,
+) (*ClientCredentials, error) {
 	tenantURLOption, err := WithTenant(tenantName)
 	if err != nil {
 		return nil, err
