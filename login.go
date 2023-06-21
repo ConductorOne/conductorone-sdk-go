@@ -108,7 +108,7 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 	codeResp := &DeviceCodeResponse{}
 	err = json.Unmarshal(data, codeResp)
 	if err != nil {
-		return nil, "", err
+		return nil, "", fmt.Errorf("error unmarshalling response data: %w - %s", err, data)
 	}
 
 	return codeResp, codeResp.VerificationURI, nil
