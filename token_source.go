@@ -9,7 +9,6 @@ import (
 	"net"
 	"net/http"
 	"net/url"
-	"os"
 	"strings"
 	"time"
 
@@ -43,6 +42,7 @@ type c1Token struct {
 }
 
 type c1TokenSource struct {
+	ctx          context.Context
 	clientID     string
 	clientSecret *jose.JSONWebKey
 	tokenHost    string
@@ -148,17 +148,13 @@ func (c *c1TokenSource) Token() (*oauth2.Token, error) {
 		"client_assertion":      []string{s},
 	}
 
-	tokenHost := c.tokenHost
-	if envHost, ok := os.LookupEnv("CONE_API_ENDPOINT"); ok {
-		tokenHost = envHost
-	}
 	tokenUrl := url.URL{
 		Scheme: "https",
-		Host:   tokenHost,
+		Host:   c.tokenHost,
 		Path:   "auth/v1/token",
 	}
 
-	req, err := http.NewRequestWithContext(context.Background(), http.MethodPost, tokenUrl.String(), strings.NewReader(body.Encode()))
+	req, err := http.NewRequestWithContext(c.ctx, http.MethodPost, tokenUrl.String(), strings.NewReader(body.Encode()))
 	if err != nil {
 		return nil, err
 	}
@@ -190,7 +186,7 @@ func (c *c1TokenSource) Token() (*oauth2.Token, error) {
 	}, nil
 }
 
-func NewC1TokenSource(ctx context.Context, clientID string, clientSecret string) (oauth2.TokenSource, error) {
+func NewC1TokenSource(ctx context.Context, clientID string, clientSecret string, hostOverride string) (oauth2.TokenSource, error) {
 	tokenHost, err := parseClientID(clientID)
 	if err != nil {
 		return nil, err
@@ -201,11 +197,16 @@ func NewC1TokenSource(ctx context.Context, clientID string, clientSecret string)
 		return nil, err
 	}
 
+	if hostOverride != "" {
+		tokenHost = hostOverride
+	}
+
 	httpClient, err := uhttp.NewClient(ctx, uhttp.WithLogger(true, ctxzap.Extract(ctx)), uhttp.WithUserAgent("cone-c1-credential-provider"))
 	if err != nil {
 		return nil, err
 	}
 	return oauth2.ReuseTokenSource(nil, &c1TokenSource{
+		ctx:          ctx,
 		clientID:     clientID,
 		clientSecret: secret,
 		tokenHost:    tokenHost,

@@ -126,14 +126,14 @@ type CustomOptions struct {
 }
 
 func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...CustomSDKOption) (*ConductoroneAPI, error) {
-	tokenSource, err := NewC1TokenSource(ctx, cred.ClientID, cred.ClientSecret)
-	if err != nil {
-		return nil, err
-	}
-
 	options := &CustomOptions{}
 	for _, opt := range opts {
 		opt(options)
+	}
+
+	tokenSource, err := NewC1TokenSource(ctx, cred.ClientID, cred.ClientSecret, options.ServerURL)
+	if err != nil {
+		return nil, err
 	}
 
 	if options.userAgent == "" {
@@ -161,13 +161,4 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 	sdkOpts = append(sdkOpts, WithClient(uclient))
 
 	return New(sdkOpts...), nil
-}
-
-func NewWithLogin(ctx context.Context, tenantName string, clientID string, personalClientCredentialDisplayName string, cb func(validateUrl string) error, opts ...CustomSDKOption) (*ConductoroneAPI, error) {
-	creds, err := LoginFlow(ctx, tenantName, clientID, personalClientCredentialDisplayName, cb)
-	if err != nil {
-		return nil, err
-	}
-
-	return NewWithCredentials(ctx, creds, opts...)
 }
