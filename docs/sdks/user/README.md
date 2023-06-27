@@ -26,7 +26,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "953f73ef-7fbc-47ab-974d-d39c0f5d2cff",
+        ID: "1aac366c-8dd6-4b14-8290-7474778a7bd4",
     })
     if err != nil {
         log.Fatal(err)

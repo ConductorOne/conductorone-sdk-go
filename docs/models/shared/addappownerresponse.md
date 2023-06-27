@@ -1,4 +1,6 @@
-# AppEntitlementDurationUnset
+# AddAppOwnerResponse
+
+The AddAppOwnerResponse message.
 
 
 ## Fields

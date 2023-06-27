@@ -26,37 +26,43 @@ func main() {
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         ExcludeIds: []string{
-            "eligendi",
-            "ducimus",
+            "suscipit",
+            "assumenda",
         },
         ExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "officia",
+                "praesentium",
             },
         },
         Ids: []string{
-            "ipsam",
-            "ea",
+            "veritatis",
+            "ipsa",
+            "id",
+            "quidem",
         },
-        PageSize: conductoroneapi.Float64(1369),
-        PageToken: conductoroneapi.String("vel"),
-        Query: conductoroneapi.String("possimus"),
+        PageSize: conductoroneapi.Float64(2065.94),
+        PageToken: conductoroneapi.String("quo"),
+        Query: conductoroneapi.String("illum"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("36813f16-d9f5-4fce-ac55-6146c3e250fb"),
+                ID: conductoroneapi.String("a4251904-e523-4c7e-8bc7-178e4796f2a7"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("008c42e1-41aa-4c36-ac8d-d6b144290747"),
+                ID: conductoroneapi.String("0c688282-aa48-4256-af22-2e9817ee17cb"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("e61e6b7b-95bc-40ab-bc20-c4f3789fd871"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("f99dd2ef-d121-4aa6-b1e6-74bdb04f1575"),
             },
         },
         RoleIds: []string{
-            "esse",
-            "esse",
+            "aut",
+            "voluptatum",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDisabled,
-            shared.SearchUsersRequestUserStatusesEnabled,
-            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
         },
     })
     if err != nil {

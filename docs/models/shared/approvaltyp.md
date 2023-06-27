@@ -1,0 +1,13 @@
+# ApprovalTyp
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `AppOwners`                                                                  | [*AppOwnerApproval](../../models/shared/appownerapproval.md)                 | :heavy_minus_sign:                                                           | The AppOwnerApproval message.                                                |
+| `EntitlementOwners`                                                          | [*EntitlementOwnerApproval](../../models/shared/entitlementownerapproval.md) | :heavy_minus_sign:                                                           | The EntitlementOwnerApproval message.                                        |
+| `Group`                                                                      | [*AppGroupApproval](../../models/shared/appgroupapproval.md)                 | :heavy_minus_sign:                                                           | The AppGroupApproval message.                                                |
+| `Manager`                                                                    | [*ManagerApproval](../../models/shared/managerapproval.md)                   | :heavy_minus_sign:                                                           | The ManagerApproval message.                                                 |
+| `Self`                                                                       | [*SelfApproval](../../models/shared/selfapproval.md)                         | :heavy_minus_sign:                                                           | The SelfApproval message.                                                    |
+| `Users`                                                                      | [*UserApproval](../../models/shared/userapproval.md)                         | :heavy_minus_sign:                                                           | The UserApproval message.                                                    |

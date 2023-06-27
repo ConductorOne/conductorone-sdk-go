@@ -2,7 +2,8 @@
 
 ## Overview
 
-ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
+API For c1.api.accessbundle.v1.AccessBundleSearchService: This is an auto-generated API for c1.api.accessbundle.v1.AccessBundleSearchService.
+
 
 ### Available Operations
 

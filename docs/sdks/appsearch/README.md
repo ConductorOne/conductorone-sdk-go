@@ -26,14 +26,20 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
         AppIds: []string{
-            "quo",
+            "laborum",
+            "quasi",
+            "reiciendis",
+            "voluptatibus",
         },
         ExcludeAppIds: []string{
-            "tenetur",
+            "nihil",
+            "praesentium",
+            "voluptatibus",
+            "ipsa",
         },
-        PageSize: conductoroneapi.Float64(3687.25),
-        PageToken: conductoroneapi.String("id"),
-        Query: conductoroneapi.String("possimus"),
+        PageSize: conductoroneapi.Float64(6048.46),
+        PageToken: conductoroneapi.String("voluptate"),
+        Query: conductoroneapi.String("cum"),
     })
     if err != nil {
         log.Fatal(err)
