@@ -26,13 +26,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "amet",
+        RoleID: "omnis",
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.Role != nil {
+    if res.GetRolesResponse != nil {
         // handle response
     }
 }

@@ -25,7 +25,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "aut",
+        AppID: "perferendis",
     })
     if err != nil {
         log.Fatal(err)

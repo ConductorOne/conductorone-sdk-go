@@ -26,7 +26,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "19da1ffe-78f0-497b-8074-f15471b5e6e1",
+        ID: "074f1547-1b5e-46e1-bb99-d488e1e91e45",
     })
     if err != nil {
         log.Fatal(err)

@@ -29,16 +29,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
-            Comment: conductoroneapi.String("expedita"),
+            Comment: conductoroneapi.String("natus"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "repellat",
-                    "quibusdam",
+                    "atque",
                 },
             },
-            PolicyStepID: conductoroneapi.String("sed"),
+            PolicyStepID: conductoroneapi.String("sit"),
         },
-        TaskID: "saepe",
+        TaskID: "fugiat",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,14 +85,16 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
-            Comment: conductoroneapi.String("pariatur"),
+            Comment: conductoroneapi.String("ab"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "consequuntur",
+                    "dolorum",
+                    "iusto",
+                    "voluptate",
                 },
             },
         },
-        TaskID: "praesentium",
+        TaskID: "dolorum",
     })
     if err != nil {
         log.Fatal(err)
@@ -141,15 +142,17 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
-            Comment: conductoroneapi.String("natus"),
+            Comment: conductoroneapi.String("deleniti"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "sunt",
+                    "necessitatibus",
+                    "distinctio",
+                    "asperiores",
                 },
             },
-            PolicyStepID: conductoroneapi.String("quo"),
+            PolicyStepID: conductoroneapi.String("nihil"),
         },
-        TaskID: "illum",
+        TaskID: "ipsum",
     })
     if err != nil {
         log.Fatal(err)
