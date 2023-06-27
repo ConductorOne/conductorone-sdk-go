@@ -101,7 +101,7 @@ func getDeviceCode(ctx context.Context, client *ConductoroneAPI, clientID string
 		return nil, "", err
 	}
 
-	if resp.StatusCode >= 300 {
+	if resp.StatusCode != http.StatusOK {
 		return nil, "", fmt.Errorf("error getting device code: %s", string(data))
 	}
 
@@ -153,7 +153,7 @@ func doTokenRequest(ctx context.Context, client *ConductoroneAPI, clientID strin
 			return nil, err
 		}
 
-		if resp.StatusCode >= 300 {
+		if resp.StatusCode != http.StatusOK {
 			errResp := &oauth2Error{}
 			err = json.Unmarshal(body, errResp)
 			if err != nil {
@@ -217,7 +217,7 @@ func doClientCredentialRequest(ctx context.Context, client *ConductoroneAPI, tok
 		return nil, err
 	}
 
-	if resp.StatusCode >= 300 {
+	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("error getting client credential code: %s", string(body))
 	}
 
