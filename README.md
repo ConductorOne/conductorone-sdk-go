@@ -108,6 +108,10 @@ func main() {
 * [Get](docs/sdks/directory/README.md#get) - Invokes the c1.api.directory.v1.DirectoryService.Get method.
 * [List](docs/sdks/directory/README.md#list) - Invokes the c1.api.directory.v1.DirectoryService.List method.
 
+### [PersonalClient](docs/sdks/personalclient/README.md)
+
+* [Create](docs/sdks/personalclient/README.md#create) - Invokes the c1.api.iam.v1.PersonalClientService.Create method.
+
 ### [Policies](docs/sdks/policies/README.md)
 
 * [Create](docs/sdks/policies/README.md#create) - Invokes the c1.api.policy.v1.Policies.Create method.

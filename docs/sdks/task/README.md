@@ -27,17 +27,17 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
-        AppEntitlementID: conductoroneapi.String("facilis"),
-        AppID: conductoroneapi.String("perspiciatis"),
-        AppUserID: conductoroneapi.String("voluptatem"),
-        Description: conductoroneapi.String("porro"),
+        AppEntitlementID: conductoroneapi.String("aliquid"),
+        AppID: conductoroneapi.String("dolorem"),
+        AppUserID: conductoroneapi.String("dolorem"),
+        Description: conductoroneapi.String("dolor"),
         ExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "blanditiis",
+                "ipsum",
             },
         },
-        GrantDuration: conductoroneapi.String("error"),
-        IdentityUserID: conductoroneapi.String("eaque"),
+        GrantDuration: conductoroneapi.String("hic"),
+        IdentityUserID: conductoroneapi.String("excepturi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -83,19 +83,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
-        AppEntitlementID: conductoroneapi.String("occaecati"),
-        AppID: conductoroneapi.String("rerum"),
-        AppUserID: conductoroneapi.String("adipisci"),
-        Description: conductoroneapi.String("asperiores"),
+        AppEntitlementID: conductoroneapi.String("cum"),
+        AppID: conductoroneapi.String("voluptate"),
+        AppUserID: conductoroneapi.String("dignissimos"),
+        Description: conductoroneapi.String("reiciendis"),
         ExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "modi",
-                "iste",
                 "dolorum",
-                "deleniti",
             },
         },
-        IdentityUserID: conductoroneapi.String("pariatur"),
+        IdentityUserID: conductoroneapi.String("numquam"),
     })
     if err != nil {
         log.Fatal(err)
@@ -141,7 +138,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "9cbf4863-3323-4f9b-b7f3-a4100674ebf6",
+        ID: "100674eb-f692-480d-9ba7-7a89ebf737ae",
     })
     if err != nil {
         log.Fatal(err)

@@ -12,6 +12,7 @@ appusagecontrols.go
 apps.go
 auth.go
 directory.go
+personalclient.go
 policies.go
 requestcatalogsearch.go
 roles.go
@@ -57,6 +58,7 @@ pkg/models/operations/c1apidirectoryv1directoryservicecreate.go
 pkg/models/operations/c1apidirectoryv1directoryservicedelete.go
 pkg/models/operations/c1apidirectoryv1directoryserviceget.go
 pkg/models/operations/c1apidirectoryv1directoryservicelist.go
+pkg/models/operations/c1apiiamv1personalclientservicecreate.go
 pkg/models/operations/c1apipolicyv1policiescreate.go
 pkg/models/operations/c1apipolicyv1policiesdelete.go
 pkg/models/operations/c1apipolicyv1policiesget.go
@@ -122,6 +124,9 @@ pkg/models/shared/directoryservicedeleteresponse.go
 pkg/models/shared/directoryservicedeleterequest.go
 pkg/models/shared/directoryservicegetresponse.go
 pkg/models/shared/directoryservicelistresponse.go
+pkg/models/shared/personalclientservicecreateresponse.go
+pkg/models/shared/personalclient.go
+pkg/models/shared/personalclientservicecreaterequest.go
 pkg/models/shared/createpolicyresponse.go
 pkg/models/shared/policy.go
 pkg/models/shared/policypostactions.go
@@ -209,6 +214,7 @@ docs/sdks/appusagecontrols/README.md
 docs/sdks/apps/README.md
 docs/sdks/auth/README.md
 docs/sdks/directory/README.md
+docs/sdks/personalclient/README.md
 docs/sdks/policies/README.md
 docs/sdks/requestcatalogsearch/README.md
 docs/sdks/roles/README.md
@@ -256,6 +262,7 @@ docs/models/operations/c1apidirectoryv1directoryservicedeleteresponse.md
 docs/models/operations/c1apidirectoryv1directoryservicegetrequest.md
 docs/models/operations/c1apidirectoryv1directoryservicegetresponse.md
 docs/models/operations/c1apidirectoryv1directoryservicelistresponse.md
+docs/models/operations/c1apiiamv1personalclientservicecreateresponse.md
 docs/models/operations/c1apipolicyv1policiescreateresponse.md
 docs/models/operations/c1apipolicyv1policiesdeleterequest.md
 docs/models/operations/c1apipolicyv1policiesdeleteresponse.md
@@ -335,6 +342,9 @@ docs/models/shared/directoryservicedeleteresponse.md
 docs/models/shared/directoryservicedeleterequest.md
 docs/models/shared/directoryservicegetresponse.md
 docs/models/shared/directoryservicelistresponse.md
+docs/models/shared/personalclientservicecreateresponse.md
+docs/models/shared/personalclient.md
+docs/models/shared/personalclientservicecreaterequest.md
 docs/models/shared/createpolicyresponse.md
 docs/models/shared/policypolicytype.md
 docs/models/shared/policy.md

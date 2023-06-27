@@ -29,15 +29,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
-            Comment: conductoroneapi.String("natus"),
+            Comment: conductoroneapi.String("eius"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "atque",
+                    "perferendis",
                 },
             },
-            PolicyStepID: conductoroneapi.String("sit"),
+            PolicyStepID: conductoroneapi.String("amet"),
         },
-        TaskID: "fugiat",
+        TaskID: "optio",
     })
     if err != nil {
         log.Fatal(err)
@@ -85,16 +85,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
-            Comment: conductoroneapi.String("ab"),
+            Comment: conductoroneapi.String("accusamus"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "dolorum",
-                    "iusto",
-                    "voluptate",
+                    "saepe",
+                    "suscipit",
                 },
             },
         },
-        TaskID: "dolorum",
+        TaskID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,17 +141,16 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
-            Comment: conductoroneapi.String("deleniti"),
+            Comment: conductoroneapi.String("provident"),
             ExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "necessitatibus",
-                    "distinctio",
-                    "asperiores",
+                    "repellendus",
+                    "totam",
                 },
             },
-            PolicyStepID: conductoroneapi.String("nihil"),
+            PolicyStepID: conductoroneapi.String("similique"),
         },
-        TaskID: "ipsum",
+        TaskID: "alias",
     })
     if err != nil {
         log.Fatal(err)
