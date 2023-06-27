@@ -26,43 +26,37 @@ func main() {
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         ExcludeIds: []string{
-            "suscipit",
-            "assumenda",
+            "ex",
+            "deleniti",
+            "itaque",
+            "dolorum",
         },
         ExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "praesentium",
+                "omnis",
             },
         },
         Ids: []string{
-            "veritatis",
-            "ipsa",
-            "id",
-            "quidem",
+            "quasi",
+            "at",
+            "et",
+            "voluptate",
         },
-        PageSize: conductoroneapi.Float64(2065.94),
-        PageToken: conductoroneapi.String("quo"),
-        Query: conductoroneapi.String("illum"),
+        PageSize: conductoroneapi.Float64(559.65),
+        PageToken: conductoroneapi.String("minima"),
+        Query: conductoroneapi.String("veritatis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("a4251904-e523-4c7e-8bc7-178e4796f2a7"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("0c688282-aa48-4256-af22-2e9817ee17cb"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("e61e6b7b-95bc-40ab-bc20-c4f3789fd871"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("f99dd2ef-d121-4aa6-b1e6-74bdb04f1575"),
+                ID: conductoroneapi.String("39d08086-a184-4039-8c26-071f93f5f064"),
             },
         },
         RoleIds: []string{
-            "aut",
-            "voluptatum",
+            "repellendus",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
             shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesDisabled,
         },
     })
     if err != nil {
