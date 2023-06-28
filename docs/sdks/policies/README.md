@@ -34,264 +34,246 @@ func main() {
             "dolorum": shared.PolicySteps{
                 Steps: []shared.PolicyStep{
                     shared.PolicyStep{
-                        Step: &shared.PolicyStepStep{
-                            Approval: &shared.Approval{
-                                AllowReassignment: conductoroneapi.Bool(false),
-                                Assigned: conductoroneapi.Bool(false),
-                                RequireApprovalReason: conductoroneapi.Bool(false),
-                                RequireReassignmentReason: conductoroneapi.Bool(false),
-                                Typ: &shared.ApprovalTyp{
-                                    AppOwners: &shared.AppOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                    },
-                                    EntitlementOwners: &shared.EntitlementOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "facilis",
-                                            "tempore",
-                                        },
-                                    },
-                                    Group: &shared.AppGroupApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AppGroupID: conductoroneapi.String("labore"),
-                                        AppID: conductoroneapi.String("delectus"),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "non",
-                                            "eligendi",
-                                        },
-                                    },
-                                    Manager: &shared.ManagerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AssignedUserIds: []string{
-                                            "aliquid",
-                                            "provident",
-                                            "necessitatibus",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "officia",
-                                            "dolor",
-                                            "debitis",
-                                        },
-                                    },
-                                    Self: &shared.SelfApproval{
-                                        AssignedUserIds: []string{
-                                            "dolorum",
-                                            "in",
-                                            "in",
-                                            "illum",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "rerum",
-                                            "dicta",
-                                            "magnam",
-                                            "cumque",
-                                        },
-                                    },
-                                    Users: &shared.UserApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        UserIds: []string{
-                                            "ea",
-                                            "aliquid",
-                                            "laborum",
-                                            "accusamus",
-                                        },
-                                    },
+                        Approval: &shared.Approval{
+                            AllowReassignment: conductoroneapi.Bool(false),
+                            AppOwners: &shared.AppOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                            },
+                            Assigned: conductoroneapi.Bool(false),
+                            EntitlementOwners: &shared.EntitlementOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "facilis",
+                                    "tempore",
                                 },
                             },
-                            Provision: &shared.Provision{
-                                Assigned: conductoroneapi.Bool(false),
-                                ProvisionPolicy: &shared.ProvisionPolicy{
-                                    Typ: &shared.ProvisionPolicyTyp{
-                                        Connector: &shared.ConnectorProvision{},
-                                        Delegated: &shared.DelegatedProvision{
-                                            AppID: conductoroneapi.String("non"),
-                                            EntitlementID: conductoroneapi.String("occaecati"),
-                                        },
-                                        Manual: &shared.ManualProvision{
-                                            Instructions: conductoroneapi.String("enim"),
-                                            UserIds: []string{
-                                                "delectus",
-                                                "quidem",
-                                                "provident",
-                                                "nam",
-                                            },
-                                        },
+                            Group: &shared.AppGroupApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AppGroupID: conductoroneapi.String("labore"),
+                                AppID: conductoroneapi.String("delectus"),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "non",
+                                    "eligendi",
+                                },
+                            },
+                            Manager: &shared.ManagerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AssignedUserIds: []string{
+                                    "aliquid",
+                                    "provident",
+                                    "necessitatibus",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "officia",
+                                    "dolor",
+                                    "debitis",
+                                },
+                            },
+                            RequireApprovalReason: conductoroneapi.Bool(false),
+                            RequireReassignmentReason: conductoroneapi.Bool(false),
+                            Self: &shared.SelfApproval{
+                                AssignedUserIds: []string{
+                                    "dolorum",
+                                    "in",
+                                    "in",
+                                    "illum",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "rerum",
+                                    "dicta",
+                                    "magnam",
+                                    "cumque",
+                                },
+                            },
+                            Users: &shared.UserApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                UserIds: []string{
+                                    "ea",
+                                    "aliquid",
+                                    "laborum",
+                                    "accusamus",
+                                },
+                            },
+                        },
+                        Provision: &shared.Provision{
+                            Assigned: conductoroneapi.Bool(false),
+                            ProvisionPolicy: &shared.ProvisionPolicy{
+                                Connector: &shared.ConnectorProvision{},
+                                Delegated: &shared.DelegatedProvision{
+                                    AppID: conductoroneapi.String("non"),
+                                    EntitlementID: conductoroneapi.String("occaecati"),
+                                },
+                                Manual: &shared.ManualProvision{
+                                    Instructions: conductoroneapi.String("enim"),
+                                    UserIds: []string{
+                                        "delectus",
+                                        "quidem",
+                                        "provident",
+                                        "nam",
                                     },
                                 },
                             },
                         },
                     },
                     shared.PolicyStep{
-                        Step: &shared.PolicyStepStep{
-                            Approval: &shared.Approval{
-                                AllowReassignment: conductoroneapi.Bool(false),
-                                Assigned: conductoroneapi.Bool(false),
-                                RequireApprovalReason: conductoroneapi.Bool(false),
-                                RequireReassignmentReason: conductoroneapi.Bool(false),
-                                Typ: &shared.ApprovalTyp{
-                                    AppOwners: &shared.AppOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                    },
-                                    EntitlementOwners: &shared.EntitlementOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "blanditiis",
-                                            "deleniti",
-                                            "sapiente",
-                                        },
-                                    },
-                                    Group: &shared.AppGroupApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AppGroupID: conductoroneapi.String("amet"),
-                                        AppID: conductoroneapi.String("deserunt"),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "vel",
-                                            "natus",
-                                        },
-                                    },
-                                    Manager: &shared.ManagerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AssignedUserIds: []string{
-                                            "molestiae",
-                                            "perferendis",
-                                            "nihil",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "distinctio",
-                                            "id",
-                                        },
-                                    },
-                                    Self: &shared.SelfApproval{
-                                        AssignedUserIds: []string{
-                                            "labore",
-                                            "suscipit",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "nobis",
-                                            "eum",
-                                            "vero",
-                                        },
-                                    },
-                                    Users: &shared.UserApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        UserIds: []string{
-                                            "architecto",
-                                        },
-                                    },
+                        Approval: &shared.Approval{
+                            AllowReassignment: conductoroneapi.Bool(false),
+                            AppOwners: &shared.AppOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                            },
+                            Assigned: conductoroneapi.Bool(false),
+                            EntitlementOwners: &shared.EntitlementOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "blanditiis",
+                                    "deleniti",
+                                    "sapiente",
                                 },
                             },
-                            Provision: &shared.Provision{
-                                Assigned: conductoroneapi.Bool(false),
-                                ProvisionPolicy: &shared.ProvisionPolicy{
-                                    Typ: &shared.ProvisionPolicyTyp{
-                                        Connector: &shared.ConnectorProvision{},
-                                        Delegated: &shared.DelegatedProvision{
-                                            AppID: conductoroneapi.String("magnam"),
-                                            EntitlementID: conductoroneapi.String("et"),
-                                        },
-                                        Manual: &shared.ManualProvision{
-                                            Instructions: conductoroneapi.String("excepturi"),
-                                            UserIds: []string{
-                                                "provident",
-                                                "quos",
-                                            },
-                                        },
+                            Group: &shared.AppGroupApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AppGroupID: conductoroneapi.String("amet"),
+                                AppID: conductoroneapi.String("deserunt"),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "vel",
+                                    "natus",
+                                },
+                            },
+                            Manager: &shared.ManagerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AssignedUserIds: []string{
+                                    "molestiae",
+                                    "perferendis",
+                                    "nihil",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "distinctio",
+                                    "id",
+                                },
+                            },
+                            RequireApprovalReason: conductoroneapi.Bool(false),
+                            RequireReassignmentReason: conductoroneapi.Bool(false),
+                            Self: &shared.SelfApproval{
+                                AssignedUserIds: []string{
+                                    "labore",
+                                    "suscipit",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "nobis",
+                                    "eum",
+                                    "vero",
+                                },
+                            },
+                            Users: &shared.UserApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                UserIds: []string{
+                                    "architecto",
+                                },
+                            },
+                        },
+                        Provision: &shared.Provision{
+                            Assigned: conductoroneapi.Bool(false),
+                            ProvisionPolicy: &shared.ProvisionPolicy{
+                                Connector: &shared.ConnectorProvision{},
+                                Delegated: &shared.DelegatedProvision{
+                                    AppID: conductoroneapi.String("magnam"),
+                                    EntitlementID: conductoroneapi.String("et"),
+                                },
+                                Manual: &shared.ManualProvision{
+                                    Instructions: conductoroneapi.String("excepturi"),
+                                    UserIds: []string{
+                                        "provident",
+                                        "quos",
                                     },
                                 },
                             },
                         },
                     },
                     shared.PolicyStep{
-                        Step: &shared.PolicyStepStep{
-                            Approval: &shared.Approval{
-                                AllowReassignment: conductoroneapi.Bool(false),
-                                Assigned: conductoroneapi.Bool(false),
-                                RequireApprovalReason: conductoroneapi.Bool(false),
-                                RequireReassignmentReason: conductoroneapi.Bool(false),
-                                Typ: &shared.ApprovalTyp{
-                                    AppOwners: &shared.AppOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                    },
-                                    EntitlementOwners: &shared.EntitlementOwnerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "accusantium",
-                                            "mollitia",
-                                            "reiciendis",
-                                        },
-                                    },
-                                    Group: &shared.AppGroupApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AppGroupID: conductoroneapi.String("mollitia"),
-                                        AppID: conductoroneapi.String("ad"),
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "dolor",
-                                            "necessitatibus",
-                                        },
-                                    },
-                                    Manager: &shared.ManagerApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        AssignedUserIds: []string{
-                                            "nemo",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "iure",
-                                        },
-                                    },
-                                    Self: &shared.SelfApproval{
-                                        AssignedUserIds: []string{
-                                            "debitis",
-                                            "eius",
-                                            "maxime",
-                                            "deleniti",
-                                        },
-                                        Fallback: conductoroneapi.Bool(false),
-                                        FallbackUserIds: []string{
-                                            "in",
-                                            "architecto",
-                                            "architecto",
-                                        },
-                                    },
-                                    Users: &shared.UserApproval{
-                                        AllowSelfApproval: conductoroneapi.Bool(false),
-                                        UserIds: []string{
-                                            "ullam",
-                                            "expedita",
-                                            "nihil",
-                                            "repellat",
-                                        },
-                                    },
+                        Approval: &shared.Approval{
+                            AllowReassignment: conductoroneapi.Bool(false),
+                            AppOwners: &shared.AppOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                            },
+                            Assigned: conductoroneapi.Bool(false),
+                            EntitlementOwners: &shared.EntitlementOwnerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "accusantium",
+                                    "mollitia",
+                                    "reiciendis",
                                 },
                             },
-                            Provision: &shared.Provision{
-                                Assigned: conductoroneapi.Bool(false),
-                                ProvisionPolicy: &shared.ProvisionPolicy{
-                                    Typ: &shared.ProvisionPolicyTyp{
-                                        Connector: &shared.ConnectorProvision{},
-                                        Delegated: &shared.DelegatedProvision{
-                                            AppID: conductoroneapi.String("quibusdam"),
-                                            EntitlementID: conductoroneapi.String("sed"),
-                                        },
-                                        Manual: &shared.ManualProvision{
-                                            Instructions: conductoroneapi.String("saepe"),
-                                            UserIds: []string{
-                                                "accusantium",
-                                                "consequuntur",
-                                                "praesentium",
-                                                "natus",
-                                            },
-                                        },
+                            Group: &shared.AppGroupApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AppGroupID: conductoroneapi.String("mollitia"),
+                                AppID: conductoroneapi.String("ad"),
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "dolor",
+                                    "necessitatibus",
+                                },
+                            },
+                            Manager: &shared.ManagerApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                AssignedUserIds: []string{
+                                    "nemo",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "iure",
+                                },
+                            },
+                            RequireApprovalReason: conductoroneapi.Bool(false),
+                            RequireReassignmentReason: conductoroneapi.Bool(false),
+                            Self: &shared.SelfApproval{
+                                AssignedUserIds: []string{
+                                    "debitis",
+                                    "eius",
+                                    "maxime",
+                                    "deleniti",
+                                },
+                                Fallback: conductoroneapi.Bool(false),
+                                FallbackUserIds: []string{
+                                    "in",
+                                    "architecto",
+                                    "architecto",
+                                },
+                            },
+                            Users: &shared.UserApproval{
+                                AllowSelfApproval: conductoroneapi.Bool(false),
+                                UserIds: []string{
+                                    "ullam",
+                                    "expedita",
+                                    "nihil",
+                                    "repellat",
+                                },
+                            },
+                        },
+                        Provision: &shared.Provision{
+                            Assigned: conductoroneapi.Bool(false),
+                            ProvisionPolicy: &shared.ProvisionPolicy{
+                                Connector: &shared.ConnectorProvision{},
+                                Delegated: &shared.DelegatedProvision{
+                                    AppID: conductoroneapi.String("quibusdam"),
+                                    EntitlementID: conductoroneapi.String("sed"),
+                                },
+                                Manual: &shared.ManualProvision{
+                                    Instructions: conductoroneapi.String("saepe"),
+                                    UserIds: []string{
+                                        "accusantium",
+                                        "consequuntur",
+                                        "praesentium",
+                                        "natus",
                                     },
                                 },
                             },
@@ -303,9 +285,7 @@ func main() {
         PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeGrant.ToPointer(),
         PostActions: []shared.PolicyPostActions{
             shared.PolicyPostActions{
-                Action: &shared.PolicyPostActionsAction{
-                    CertifyRemediateImmediately: conductoroneapi.Bool(false),
-                },
+                CertifyRemediateImmediately: conductoroneapi.Bool(false),
             },
         },
         ReassignTasksToDelegates: conductoroneapi.Bool(false),

@@ -1,4 +1,4 @@
-# AppEntitlementMaxGrantDurationDurationUnset
+# AppEntitlementDurationUnset
 
 
 ## Fields
