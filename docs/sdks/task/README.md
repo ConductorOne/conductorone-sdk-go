@@ -31,6 +31,7 @@ func main() {
         AppID: conductoroneapi.String("dolorem"),
         AppUserID: conductoroneapi.String("dolorem"),
         Description: conductoroneapi.String("dolor"),
+        EmergencyAccess: conductoroneapi.Bool(false),
         ExpandMask: &shared.TaskExpandMask{
             Paths: []string{
                 "ipsum",
