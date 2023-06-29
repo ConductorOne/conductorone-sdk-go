@@ -26,7 +26,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "quos",
+        RoleID: "quam",
     })
     if err != nil {
         log.Fatal(err)

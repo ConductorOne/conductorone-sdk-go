@@ -118,6 +118,7 @@ func main() {
 * [Delete](docs/sdks/policies/README.md#delete) - Invokes the c1.api.policy.v1.Policies.Delete method.
 * [Get](docs/sdks/policies/README.md#get) - Invokes the c1.api.policy.v1.Policies.Get method.
 * [List](docs/sdks/policies/README.md#list) - Invokes the c1.api.policy.v1.Policies.List method.
+* [Update](docs/sdks/policies/README.md#update) - Invokes the c1.api.policy.v1.Policies.Update method.
 
 ### [RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
 
