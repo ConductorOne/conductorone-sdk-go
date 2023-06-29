@@ -6,6 +6,7 @@
 * [Delete](#delete) - Invokes the c1.api.policy.v1.Policies.Delete method.
 * [Get](#get) - Invokes the c1.api.policy.v1.Policies.Get method.
 * [List](#list) - Invokes the c1.api.policy.v1.Policies.List method.
+* [Update](#update) - Invokes the c1.api.policy.v1.Policies.Update method.
 
 ## Create
 
@@ -447,4 +448,160 @@ func main() {
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesListResponse](../../models/operations/c1apipolicyv1policieslistresponse.md), error**
+
+
+## Update
+
+Invokes the c1.api.policy.v1.Policies.Update method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+)
+
+func main() {
+    s := conductoroneapi.New()
+
+    ctx := context.Background()
+    res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
+        UpdatePolicyRequest: &shared.UpdatePolicyRequest{
+            Policy: &shared.Policy{
+                CreatedAt: types.MustTimeFromString("2021-12-05T23:42:47.745Z"),
+                DeletedAt: types.MustTimeFromString("2021-03-26T01:09:56.415Z"),
+                Description: conductoroneapi.String("nobis"),
+                DisplayName: conductoroneapi.String("libero"),
+                ID: conductoroneapi.String("f4863332-3f9b-477f-ba41-00674ebf6928"),
+                PolicySteps: map[string]shared.PolicySteps{
+                    "fugiat": shared.PolicySteps{
+                        Steps: []shared.PolicyStep{
+                            shared.PolicyStep{
+                                Approval: &shared.Approval{
+                                    AllowReassignment: conductoroneapi.Bool(false),
+                                    AppOwners: &shared.AppOwnerApproval{
+                                        AllowSelfApproval: conductoroneapi.Bool(false),
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                    EntitlementOwners: &shared.EntitlementOwnerApproval{
+                                        AllowSelfApproval: conductoroneapi.Bool(false),
+                                        Fallback: conductoroneapi.Bool(false),
+                                        FallbackUserIds: []string{
+                                            "dolorum",
+                                            "iusto",
+                                            "voluptate",
+                                        },
+                                    },
+                                    Group: &shared.AppGroupApproval{
+                                        AllowSelfApproval: conductoroneapi.Bool(false),
+                                        AppGroupID: conductoroneapi.String("dolorum"),
+                                        AppID: conductoroneapi.String("deleniti"),
+                                        Fallback: conductoroneapi.Bool(false),
+                                        FallbackUserIds: []string{
+                                            "necessitatibus",
+                                            "distinctio",
+                                            "asperiores",
+                                        },
+                                    },
+                                    Manager: &shared.ManagerApproval{
+                                        AllowSelfApproval: conductoroneapi.Bool(false),
+                                        AssignedUserIds: []string{
+                                            "ipsum",
+                                            "voluptate",
+                                        },
+                                        Fallback: conductoroneapi.Bool(false),
+                                        FallbackUserIds: []string{
+                                            "saepe",
+                                            "eius",
+                                            "aspernatur",
+                                        },
+                                    },
+                                    RequireApprovalReason: conductoroneapi.Bool(false),
+                                    RequireReassignmentReason: conductoroneapi.Bool(false),
+                                    Self: &shared.SelfApproval{
+                                        AssignedUserIds: []string{
+                                            "amet",
+                                        },
+                                        Fallback: conductoroneapi.Bool(false),
+                                        FallbackUserIds: []string{
+                                            "accusamus",
+                                            "ad",
+                                            "saepe",
+                                            "suscipit",
+                                        },
+                                    },
+                                    Users: &shared.UserApproval{
+                                        AllowSelfApproval: conductoroneapi.Bool(false),
+                                        UserIds: []string{
+                                            "provident",
+                                            "minima",
+                                            "repellendus",
+                                        },
+                                    },
+                                },
+                                Provision: &shared.Provision{
+                                    Assigned: conductoroneapi.Bool(false),
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        Connector: &shared.ConnectorProvision{},
+                                        Delegated: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("totam"),
+                                            EntitlementID: conductoroneapi.String("similique"),
+                                        },
+                                        Manual: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("alias"),
+                                            UserIds: []string{
+                                                "quaerat",
+                                                "tempora",
+                                                "vel",
+                                                "quod",
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+                PolicyType: shared.PolicyPolicyTypePolicyTypeProvision.ToPointer(),
+                PostActions: []shared.PolicyPostActions{
+                    shared.PolicyPostActions{
+                        CertifyRemediateImmediately: conductoroneapi.Bool(false),
+                    },
+                },
+                ReassignTasksToDelegates: conductoroneapi.Bool(false),
+                SystemBuiltin: conductoroneapi.Bool(false),
+                UpdatedAt: types.MustTimeFromString("2021-02-04T11:05:24.484Z"),
+            },
+            UpdateMask: conductoroneapi.String("esse"),
+        },
+        ID: "a73cf3be-453f-4870-b326-b5a73429cdb1",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.UpdatePolicyResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
+| `request`                                                                                                      | [operations.C1APIPolicyV1PoliciesUpdateRequest](../../models/operations/c1apipolicyv1policiesupdaterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+
+
+### Response
+
+**[*operations.C1APIPolicyV1PoliciesUpdateResponse](../../models/operations/c1apipolicyv1policiesupdateresponse.md), error**
 

@@ -26,37 +26,49 @@ func main() {
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         ExcludeIds: []string{
-            "ex",
-            "deleniti",
-            "itaque",
-            "dolorum",
+            "consectetur",
+            "esse",
+            "blanditiis",
+            "provident",
         },
         ExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "omnis",
+                "nulla",
+                "quas",
+                "esse",
+                "quasi",
             },
         },
         Ids: []string{
-            "quasi",
-            "at",
-            "et",
-            "voluptate",
+            "error",
+            "sint",
+            "pariatur",
+            "possimus",
         },
-        PageSize: conductoroneapi.Float64(559.65),
-        PageToken: conductoroneapi.String("minima"),
-        Query: conductoroneapi.String("veritatis"),
+        PageSize: conductoroneapi.Float64(1576.32),
+        PageToken: conductoroneapi.String("eveniet"),
+        Query: conductoroneapi.String("asperiores"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("39d08086-a184-4039-8c26-071f93f5f064"),
+                ID: conductoroneapi.String("121aa6f1-e674-4bdb-84f1-5756082d68ea"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("19f1d170-5133-49d0-8086-a1840394c260"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("71f93f5f-0642-4dac-baf5-15cc413aa63a"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("ae8d6786-4dbb-4675-bd5e-60b375ed4f6f"),
             },
         },
         RoleIds: []string{
-            "repellendus",
+            "saepe",
+            "necessitatibus",
+            "dolore",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
             shared.SearchUsersRequestUserStatusesDeleted,
-            shared.SearchUsersRequestUserStatusesEnabled,
-            shared.SearchUsersRequestUserStatusesDisabled,
         },
     })
     if err != nil {

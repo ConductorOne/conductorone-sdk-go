@@ -63,6 +63,7 @@ pkg/models/operations/c1apipolicyv1policiescreate.go
 pkg/models/operations/c1apipolicyv1policiesdelete.go
 pkg/models/operations/c1apipolicyv1policiesget.go
 pkg/models/operations/c1apipolicyv1policieslist.go
+pkg/models/operations/c1apipolicyv1policiesupdate.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
 pkg/models/operations/c1apiiamv1rolesget.go
 pkg/models/operations/c1apiiamv1roleslist.go
@@ -145,6 +146,8 @@ pkg/models/shared/deletepolicyresponse.go
 pkg/models/shared/deletepolicyrequest.go
 pkg/models/shared/getpolicyresponse.go
 pkg/models/shared/listpolicyresponse.go
+pkg/models/shared/updatepolicyresponse.go
+pkg/models/shared/updatepolicyrequest.go
 pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.go
 pkg/models/shared/appentitlementwithuserbindings.go
 pkg/models/shared/requestcatalogsearchservicesearchentitlementsrequest.go
@@ -269,6 +272,8 @@ docs/models/operations/c1apipolicyv1policiesdeleteresponse.md
 docs/models/operations/c1apipolicyv1policiesgetrequest.md
 docs/models/operations/c1apipolicyv1policiesgetresponse.md
 docs/models/operations/c1apipolicyv1policieslistresponse.md
+docs/models/operations/c1apipolicyv1policiesupdaterequest.md
+docs/models/operations/c1apipolicyv1policiesupdateresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
 docs/models/operations/c1apiiamv1rolesgetrequest.md
 docs/models/operations/c1apiiamv1rolesgetresponse.md
@@ -363,6 +368,8 @@ docs/models/shared/deletepolicyresponse.md
 docs/models/shared/deletepolicyrequest.md
 docs/models/shared/getpolicyresponse.md
 docs/models/shared/listpolicyresponse.md
+docs/models/shared/updatepolicyresponse.md
+docs/models/shared/updatepolicyrequest.md
 docs/models/shared/requestcatalogsearchservicesearchentitlementsresponse.md
 docs/models/shared/appentitlementwithuserbindings.md
 docs/models/shared/requestcatalogsearchservicesearchentitlementsrequest.md
