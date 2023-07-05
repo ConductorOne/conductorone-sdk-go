@@ -4,6 +4,7 @@
 
 * [Get](#get) - Invokes the c1.api.iam.v1.Roles.Get method.
 * [List](#list) - Invokes the c1.api.iam.v1.Roles.List method.
+* [Update](#update) - Invokes the c1.api.iam.v1.Roles.Update method.
 
 ## Get
 
@@ -26,7 +27,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "quam",
+        RoleID: "voluptas",
     })
     if err != nil {
         log.Fatal(err)
@@ -91,4 +92,74 @@ func main() {
 ### Response
 
 **[*operations.C1APIIamV1RolesListResponse](../../models/operations/c1apiiamv1roleslistresponse.md), error**
+
+
+## Update
+
+Invokes the c1.api.iam.v1.Roles.Update method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+)
+
+func main() {
+    s := conductoroneapi.New()
+
+    ctx := context.Background()
+    res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
+        UpdateRoleRequest: &shared.UpdateRoleRequest{
+            Role: &shared.Role{
+                CreatedAt: types.MustTimeFromString("2022-07-05T18:37:23.267Z"),
+                DeletedAt: types.MustTimeFromString("2022-01-07T16:50:11.026Z"),
+                DisplayName: conductoroneapi.String("natus"),
+                ID: conductoroneapi.String("3f5f0642-dac7-4af5-95cc-413aa63aae8d"),
+                Name: conductoroneapi.String("Dora Luettgen"),
+                Permissions: []string{
+                    "facilis",
+                    "cum",
+                    "commodi",
+                    "in",
+                },
+                ServiceRoles: []string{
+                    "reiciendis",
+                    "assumenda",
+                },
+                SystemBuiltin: conductoroneapi.Bool(false),
+                UpdatedAt: types.MustTimeFromString("2022-01-28T09:17:23.255Z"),
+            },
+            UpdateMask: conductoroneapi.String("aliquid"),
+        },
+        RoleID: "aperiam",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.UpdateRolesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.C1APIIamV1RolesUpdateRequest](../../models/operations/c1apiiamv1rolesupdaterequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+
+### Response
+
+**[*operations.C1APIIamV1RolesUpdateResponse](../../models/operations/c1apiiamv1rolesupdateresponse.md), error**
 

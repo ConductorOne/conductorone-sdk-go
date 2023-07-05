@@ -28,12 +28,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
-        AppID: conductoroneapi.String("consequatur"),
+        AppID: conductoroneapi.String("distinctio"),
         ExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
-                "quibusdam",
-                "explicabo",
-                "deserunt",
+                "labore",
+                "modi",
+                "qui",
+                "aliquid",
             },
         },
     })
@@ -83,7 +84,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "distinctio",
+        AppID: "cupiditate",
     })
     if err != nil {
         log.Fatal(err)
@@ -129,7 +130,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "quibusdam",
+        AppID: "quos",
     })
     if err != nil {
         log.Fatal(err)

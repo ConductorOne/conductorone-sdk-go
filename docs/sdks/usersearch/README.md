@@ -26,49 +26,39 @@ func main() {
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         ExcludeIds: []string{
-            "consectetur",
-            "esse",
-            "blanditiis",
-            "provident",
+            "distinctio",
+            "voluptatum",
+            "rem",
         },
         ExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "nulla",
-                "quas",
-                "esse",
-                "quasi",
+                "ad",
+                "repellat",
             },
         },
         Ids: []string{
-            "error",
-            "sint",
-            "pariatur",
-            "possimus",
+            "corporis",
         },
-        PageSize: conductoroneapi.Float64(1576.32),
-        PageToken: conductoroneapi.String("eveniet"),
-        Query: conductoroneapi.String("asperiores"),
+        PageSize: conductoroneapi.Float64(5973.03),
+        PageToken: conductoroneapi.String("nihil"),
+        Query: conductoroneapi.String("mollitia"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("121aa6f1-e674-4bdb-84f1-5756082d68ea"),
+                ID: conductoroneapi.String("0ff2a54a-31e9-4476-8a3e-865e7956f925"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("19f1d170-5133-49d0-8086-a1840394c260"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("71f93f5f-0642-4dac-baf5-15cc413aa63a"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("ae8d6786-4dbb-4675-bd5e-60b375ed4f6f"),
+                ID: conductoroneapi.String("1a5a9da6-60ff-457b-baad-4f9efc1b4512"),
             },
         },
         RoleIds: []string{
-            "saepe",
-            "necessitatibus",
-            "dolore",
+            "quae",
+            "perferendis",
+            "velit",
+            "aspernatur",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesDisabled,
         },
     })
     if err != nil {

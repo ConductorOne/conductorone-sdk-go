@@ -27,18 +27,21 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
-        AppEntitlementID: conductoroneapi.String("molestias"),
-        AppID: conductoroneapi.String("temporibus"),
-        AppUserID: conductoroneapi.String("qui"),
-        Description: conductoroneapi.String("neque"),
+        AppEntitlementID: conductoroneapi.String("cum"),
+        AppID: conductoroneapi.String("consectetur"),
+        AppUserID: conductoroneapi.String("in"),
+        Description: conductoroneapi.String("exercitationem"),
         EmergencyAccess: conductoroneapi.Bool(false),
         ExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "magni",
+                "facere",
+                "numquam",
+                "doloribus",
+                "suscipit",
             },
         },
-        GrantDuration: conductoroneapi.String("odio"),
-        IdentityUserID: conductoroneapi.String("sunt"),
+        GrantDuration: conductoroneapi.String("reiciendis"),
+        IdentityUserID: conductoroneapi.String("quidem"),
     })
     if err != nil {
         log.Fatal(err)
@@ -84,19 +87,19 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
-        AppEntitlementID: conductoroneapi.String("ullam"),
-        AppID: conductoroneapi.String("nam"),
-        AppUserID: conductoroneapi.String("hic"),
-        Description: conductoroneapi.String("voluptatem"),
+        AppEntitlementID: conductoroneapi.String("saepe"),
+        AppID: conductoroneapi.String("necessitatibus"),
+        AppUserID: conductoroneapi.String("dolore"),
+        Description: conductoroneapi.String("sunt"),
         ExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "soluta",
-                "nobis",
-                "et",
-                "saepe",
+                "adipisci",
+                "non",
+                "amet",
+                "beatae",
             },
         },
-        IdentityUserID: conductoroneapi.String("ipsum"),
+        IdentityUserID: conductoroneapi.String("dignissimos"),
     })
     if err != nil {
         log.Fatal(err)
@@ -142,7 +145,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "1b8b90f3-443a-4110-8e0a-dcf4b921879f",
+        ID: "fe35b60e-b1ea-4426-955b-a3c28744ed53",
     })
     if err != nil {
         log.Fatal(err)
