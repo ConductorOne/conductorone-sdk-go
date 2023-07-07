@@ -142,9 +142,9 @@ pkg/models/shared/approval.go
 pkg/models/shared/userapproval.go
 pkg/models/shared/selfapproval.go
 pkg/models/shared/managerapproval.go
-pkg/models/shared/appgroupapproval.go
 pkg/models/shared/entitlementownerapproval.go
 pkg/models/shared/appownerapproval.go
+pkg/models/shared/appgroupapproval.go
 pkg/models/shared/createpolicyrequest.go
 pkg/models/shared/deletepolicyresponse.go
 pkg/models/shared/deletepolicyrequest.go
@@ -164,6 +164,7 @@ pkg/models/shared/updaterolerequest.go
 pkg/models/shared/taskservicecreategrantresponse.go
 pkg/models/shared/taskview.go
 pkg/models/shared/task.go
+pkg/models/shared/externalref.go
 pkg/models/shared/tasktype.go
 pkg/models/shared/tasktyperevoke.go
 pkg/models/shared/taskrevokesource.go
@@ -186,7 +187,6 @@ pkg/models/shared/restartaction.go
 pkg/models/shared/reassignedaction.go
 pkg/models/shared/deniedaction.go
 pkg/models/shared/approvedaction.go
-pkg/models/shared/externalref.go
 pkg/models/shared/taskservicecreategrantrequest.go
 pkg/models/shared/taskexpandmask.go
 pkg/models/shared/taskservicecreaterevokeresponse.go
@@ -371,9 +371,9 @@ docs/models/shared/approval.md
 docs/models/shared/userapproval.md
 docs/models/shared/selfapproval.md
 docs/models/shared/managerapproval.md
-docs/models/shared/appgroupapproval.md
 docs/models/shared/entitlementownerapproval.md
 docs/models/shared/appownerapproval.md
+docs/models/shared/appgroupapproval.md
 docs/models/shared/createpolicyrequestpolicytype.md
 docs/models/shared/createpolicyrequest.md
 docs/models/shared/deletepolicyresponse.md
@@ -398,6 +398,8 @@ docs/models/shared/taskactions.md
 docs/models/shared/taskprocessing.md
 docs/models/shared/taskstate.md
 docs/models/shared/task.md
+docs/models/shared/externalrefexternalrefsource.md
+docs/models/shared/externalref.md
 docs/models/shared/tasktype.md
 docs/models/shared/tasktyperevokeoutcome.md
 docs/models/shared/tasktyperevoke.md
@@ -426,8 +428,6 @@ docs/models/shared/restartaction.md
 docs/models/shared/reassignedaction.md
 docs/models/shared/deniedaction.md
 docs/models/shared/approvedaction.md
-docs/models/shared/externalrefexternalrefsource.md
-docs/models/shared/externalref.md
 docs/models/shared/taskservicecreategrantrequest.md
 docs/models/shared/taskexpandmask.md
 docs/models/shared/taskservicecreaterevokeresponse.md

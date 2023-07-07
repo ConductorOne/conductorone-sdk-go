@@ -27,7 +27,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "voluptas",
+        RoleID: "vel",
     })
     if err != nil {
         log.Fatal(err)
@@ -119,27 +119,27 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequest: &shared.UpdateRoleRequest{
             Role: &shared.Role{
-                CreatedAt: types.MustTimeFromString("2022-07-05T18:37:23.267Z"),
-                DeletedAt: types.MustTimeFromString("2022-01-07T16:50:11.026Z"),
-                DisplayName: conductoroneapi.String("natus"),
-                ID: conductoroneapi.String("3f5f0642-dac7-4af5-95cc-413aa63aae8d"),
-                Name: conductoroneapi.String("Dora Luettgen"),
+                CreatedAt: types.MustTimeFromString("2022-01-20T13:10:25.426Z"),
+                DeletedAt: types.MustTimeFromString("2021-11-03T10:56:47.600Z"),
+                DisplayName: conductoroneapi.String("minima"),
+                ID: conductoroneapi.String("bc0ab3c2-0c4f-4378-9fd8-71f99dd2efd1"),
+                Name: conductoroneapi.String("Ann Murphy"),
                 Permissions: []string{
-                    "facilis",
-                    "cum",
-                    "commodi",
+                    "quae",
+                    "earum",
+                    "vel",
                     "in",
                 },
                 ServiceRoles: []string{
-                    "reiciendis",
-                    "assumenda",
+                    "libero",
+                    "illum",
                 },
                 SystemBuiltin: conductoroneapi.Bool(false),
-                UpdatedAt: types.MustTimeFromString("2022-01-28T09:17:23.255Z"),
+                UpdatedAt: types.MustTimeFromString("2022-12-07T16:30:09.640Z"),
             },
-            UpdateMask: conductoroneapi.String("aliquid"),
+            UpdateMask: conductoroneapi.String("aliquam"),
         },
-        RoleID: "aperiam",
+        RoleID: "sapiente",
     })
     if err != nil {
         log.Fatal(err)

@@ -25,40 +25,43 @@ func main() {
 
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
-        ExcludeIds: []string{
-            "distinctio",
-            "voluptatum",
-            "rem",
-        },
-        ExpandMask: &shared.UserExpandMask{
+        UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "ad",
-                "repellat",
+                "dolores",
             },
+        },
+        ExcludeIds: []string{
+            "laboriosam",
+            "velit",
         },
         Ids: []string{
-            "corporis",
+            "molestias",
+            "magnam",
+            "saepe",
+            "consequuntur",
         },
-        PageSize: conductoroneapi.Float64(5973.03),
-        PageToken: conductoroneapi.String("nihil"),
-        Query: conductoroneapi.String("mollitia"),
+        PageSize: conductoroneapi.Float64(5801.07),
+        PageToken: conductoroneapi.String("officiis"),
+        Query: conductoroneapi.String("perspiciatis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("0ff2a54a-31e9-4476-8a3e-865e7956f925"),
+                ID: conductoroneapi.String("3e922a57-a15b-4e3e-8608-07e2b6e3ab88"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("1a5a9da6-60ff-457b-baad-4f9efc1b4512"),
+                ID: conductoroneapi.String("45f0597a-60ff-42a5-8a31-e94764a3e865"),
             },
         },
         RoleIds: []string{
-            "quae",
-            "perferendis",
-            "velit",
-            "aspernatur",
+            "esse",
+            "provident",
+            "quis",
+            "eum",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesEnabled,
             shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
     if err != nil {

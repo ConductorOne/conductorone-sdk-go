@@ -43,10 +43,10 @@ func (e *RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus) Unma
 
 // RequestCatalogSearchServiceSearchEntitlementsRequest - The RequestCatalogSearchServiceSearchEntitlementsRequest message.
 type RequestCatalogSearchServiceSearchEntitlementsRequest struct {
+	// The AppEntitlementExpandMask message.
+	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
 	// The entitlementAlias field.
 	EntitlementAlias *string `json:"entitlementAlias,omitempty"`
-	// The AppEntitlementExpandMask message.
-	ExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
 	// The grantedStatus field.
 	GrantedStatus *RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus `json:"grantedStatus,omitempty"`
 	// The pageSize field.
