@@ -74,12 +74,6 @@ func WithTenant(input string) (SDKOption, error) {
 
 type CustomSDKOption func(*CustomOptions)
 
-//func WithClient(client HTTPClient) SDKOption {
-//	return func(sdk *ConductoroneAPI) {
-//		sdk.sdkConfiguration.DefaultClient = client
-//	}
-//}
-
 func WithTenantCustom(input string) (CustomSDKOption, error) {
 	resp, err := normalizeTenant(input)
 	if err != nil {
