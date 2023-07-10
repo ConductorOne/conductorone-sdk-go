@@ -27,40 +27,42 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "dolores",
+                "molestias",
+                "magnam",
+                "saepe",
+                "consequuntur",
             },
         },
         ExcludeIds: []string{
-            "laboriosam",
-            "velit",
+            "officiis",
+            "perspiciatis",
+            "in",
         },
         Ids: []string{
-            "molestias",
-            "magnam",
-            "saepe",
-            "consequuntur",
+            "eveniet",
         },
-        PageSize: conductoroneapi.Float64(5801.07),
-        PageToken: conductoroneapi.String("officiis"),
-        Query: conductoroneapi.String("perspiciatis"),
+        PageSize: conductoroneapi.Float64(5808.87),
+        PageToken: conductoroneapi.String("consequuntur"),
+        Query: conductoroneapi.String("fugit"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("3e922a57-a15b-4e3e-8608-07e2b6e3ab88"),
+                ID: conductoroneapi.String("57a15be3-e060-4807-a2b6-e3ab8845f059"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("45f0597a-60ff-42a5-8a31-e94764a3e865"),
+                ID: conductoroneapi.String("7a60ff2a-54a3-41e9-8764-a3e865e7956f"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("9251a5a9-da66-40ff-97bf-aad4f9efc1b4"),
             },
         },
         RoleIds: []string{
-            "esse",
-            "provident",
-            "quis",
-            "eum",
+            "inventore",
+            "fugit",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDisabled,
             shared.SearchUsersRequestUserStatusesUnknown,
-            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesUnknown,
             shared.SearchUsersRequestUserStatusesUnknown,
         },
     })

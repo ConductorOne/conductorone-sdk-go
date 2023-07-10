@@ -441,6 +441,7 @@ docs/models/shared/taskactionsservicedenyresponse.md
 docs/models/shared/taskactionsservicedenyrequest.md
 docs/models/shared/tasksearchresponse.md
 docs/models/shared/tasksearchrequestcurrentstep.md
+docs/models/shared/tasksearchrequestemergencystatus.md
 docs/models/shared/tasksearchrequestsortby.md
 docs/models/shared/tasksearchrequesttaskstates.md
 docs/models/shared/tasksearchrequest.md
