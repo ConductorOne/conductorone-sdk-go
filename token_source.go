@@ -150,7 +150,7 @@ func (c *c1TokenSource) Token() (*oauth2.Token, error) {
 
 	tokenUrl := url.URL{
 		Scheme: "https",
-		Host:   strings.TrimLeft(c.tokenHost, "https://"),
+		Host:   c.tokenHost,
 		Path:   "auth/v1/token",
 	}
 
@@ -209,7 +209,7 @@ func NewC1TokenSource(ctx context.Context, clientID string, clientSecret string,
 		ctx:          ctx,
 		clientID:     clientID,
 		clientSecret: secret,
-		tokenHost:    tokenHost,
+		tokenHost:    strings.TrimLeft(tokenHost, "https://"),
 		httpClient:   httpClient,
 	}), nil
 }
