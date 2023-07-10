@@ -26,15 +26,14 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "modi",
-            "qui",
-        },
-        DisplayName: conductoroneapi.String("aliquid"),
-        Expires: conductoroneapi.String("cupiditate"),
-        ScopedRoles: []string{
             "perferendis",
             "magni",
             "assumenda",
+        },
+        DisplayName: conductoroneapi.String("ipsam"),
+        Expires: conductoroneapi.String("alias"),
+        ScopedRoles: []string{
+            "dolorum",
         },
     })
     if err != nil {

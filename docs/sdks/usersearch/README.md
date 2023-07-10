@@ -25,50 +25,43 @@ func main() {
 
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
-        ExcludeIds: []string{
-            "consectetur",
-            "esse",
-            "blanditiis",
-            "provident",
-        },
-        ExpandMask: &shared.UserExpandMask{
+        UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "nulla",
-                "quas",
-                "esse",
-                "quasi",
+                "dolores",
             },
+        },
+        ExcludeIds: []string{
+            "laboriosam",
+            "velit",
         },
         Ids: []string{
-            "error",
-            "sint",
-            "pariatur",
-            "possimus",
+            "molestias",
+            "magnam",
+            "saepe",
+            "consequuntur",
         },
-        PageSize: conductoroneapi.Float64(1576.32),
-        PageToken: conductoroneapi.String("eveniet"),
-        Query: conductoroneapi.String("asperiores"),
+        PageSize: conductoroneapi.Float64(5801.07),
+        PageToken: conductoroneapi.String("officiis"),
+        Query: conductoroneapi.String("perspiciatis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("121aa6f1-e674-4bdb-84f1-5756082d68ea"),
+                ID: conductoroneapi.String("3e922a57-a15b-4e3e-8608-07e2b6e3ab88"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("19f1d170-5133-49d0-8086-a1840394c260"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("71f93f5f-0642-4dac-baf5-15cc413aa63a"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("ae8d6786-4dbb-4675-bd5e-60b375ed4f6f"),
+                ID: conductoroneapi.String("45f0597a-60ff-42a5-8a31-e94764a3e865"),
             },
         },
         RoleIds: []string{
-            "saepe",
-            "necessitatibus",
-            "dolore",
+            "esse",
+            "provident",
+            "quis",
+            "eum",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
     if err != nil {
