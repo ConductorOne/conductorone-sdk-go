@@ -186,7 +186,7 @@ func (c *c1TokenSource) Token() (*oauth2.Token, error) {
 	}, nil
 }
 
-func NewC1TokenSource(ctx context.Context, clientID string, clientSecret string, hostOverride string) (oauth2.TokenSource, error) {
+func NewTokenSource(ctx context.Context, clientID string, clientSecret string, hostOverride string) (oauth2.TokenSource, error) {
 	tokenHost, err := parseClientID(clientID)
 	if err != nil {
 		return nil, err
