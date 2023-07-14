@@ -27,43 +27,38 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "molestias",
-                "magnam",
-                "saepe",
-                "consequuntur",
+                "voluptate",
+                "pariatur",
             },
         },
         ExcludeIds: []string{
-            "officiis",
-            "perspiciatis",
-            "in",
+            "similique",
+            "optio",
+            "ex",
+            "quaerat",
         },
         Ids: []string{
-            "eveniet",
+            "officiis",
+            "placeat",
         },
-        PageSize: conductoroneapi.Float64(5808.87),
-        PageToken: conductoroneapi.String("consequuntur"),
-        Query: conductoroneapi.String("fugit"),
+        PageSize: conductoroneapi.Float64(6972.74),
+        PageToken: conductoroneapi.String("exercitationem"),
+        Query: conductoroneapi.String("quam"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("57a15be3-e060-4807-a2b6-e3ab8845f059"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("7a60ff2a-54a3-41e9-8764-a3e865e7956f"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("9251a5a9-da66-40ff-97bf-aad4f9efc1b4"),
+                ID: conductoroneapi.String("409e3eb1-e5a2-4b12-ab07-f116db99545f"),
             },
         },
         RoleIds: []string{
-            "inventore",
-            "fugit",
+            "sint",
+            "enim",
+            "hic",
+            "animi",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesUnknown,
-            shared.SearchUsersRequestUserStatusesUnknown,
-            shared.SearchUsersRequestUserStatusesUnknown,
-            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesEnabled,
         },
     })
     if err != nil {
