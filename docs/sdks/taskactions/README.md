@@ -31,16 +31,15 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "voluptas",
-                    "asperiores",
-                    "aperiam",
-                    "ea",
+                    "incidunt",
+                    "quasi",
+                    "rem",
                 },
             },
-            Comment: conductoroneapi.String("quaerat"),
-            PolicyStepID: conductoroneapi.String("consequuntur"),
+            Comment: conductoroneapi.String("fugiat"),
+            PolicyStepID: conductoroneapi.String("dicta"),
         },
-        TaskID: "repellendus",
+        TaskID: "nisi",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,14 +89,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "maxime",
-                    "dignissimos",
-                    "officia",
+                    "consectetur",
                 },
             },
-            Comment: conductoroneapi.String("asperiores"),
+            Comment: conductoroneapi.String("aperiam"),
         },
-        TaskID: "nemo",
+        TaskID: "cupiditate",
     })
     if err != nil {
         log.Fatal(err)
@@ -147,13 +144,16 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quaerat",
+                    "soluta",
+                    "alias",
+                    "omnis",
+                    "eos",
                 },
             },
-            Comment: conductoroneapi.String("porro"),
-            PolicyStepID: conductoroneapi.String("quod"),
+            Comment: conductoroneapi.String("occaecati"),
+            PolicyStepID: conductoroneapi.String("iste"),
         },
-        TaskID: "labore",
+        TaskID: "magni",
     })
     if err != nil {
         log.Fatal(err)
