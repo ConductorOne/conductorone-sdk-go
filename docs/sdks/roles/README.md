@@ -27,7 +27,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "vel",
+        RoleID: "rerum",
     })
     if err != nil {
         log.Fatal(err)
@@ -119,27 +119,23 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequest: &shared.UpdateRoleRequest{
             Role: &shared.Role{
-                CreatedAt: types.MustTimeFromString("2022-01-20T13:10:25.426Z"),
-                DeletedAt: types.MustTimeFromString("2021-11-03T10:56:47.600Z"),
-                DisplayName: conductoroneapi.String("minima"),
-                ID: conductoroneapi.String("bc0ab3c2-0c4f-4378-9fd8-71f99dd2efd1"),
-                Name: conductoroneapi.String("Ann Murphy"),
+                CreatedAt: types.MustTimeFromString("2021-09-24T14:32:36.483Z"),
+                DeletedAt: types.MustTimeFromString("2022-01-15T21:54:49.962Z"),
+                DisplayName: conductoroneapi.String("officiis"),
+                ID: conductoroneapi.String("1ade008e-6f8c-45f3-90d8-cdb5a3418143"),
+                Name: conductoroneapi.String("Alice Bailey"),
                 Permissions: []string{
-                    "quae",
-                    "earum",
-                    "vel",
-                    "in",
+                    "laudantium",
                 },
                 ServiceRoles: []string{
-                    "libero",
-                    "illum",
+                    "dolor",
                 },
                 SystemBuiltin: conductoroneapi.Bool(false),
-                UpdatedAt: types.MustTimeFromString("2022-12-07T16:30:09.640Z"),
+                UpdatedAt: types.MustTimeFromString("2021-11-22T09:48:38.420Z"),
             },
-            UpdateMask: conductoroneapi.String("aliquam"),
+            UpdateMask: conductoroneapi.String("consequuntur"),
         },
-        RoleID: "sapiente",
+        RoleID: "ipsa",
     })
     if err != nil {
         log.Fatal(err)
