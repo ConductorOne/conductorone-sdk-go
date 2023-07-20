@@ -21,19 +21,24 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("corrupti"),
-        PageSize: conductoroneapi.Float64(8792.35),
-        PageToken: conductoroneapi.String("tempora"),
+        DisplayName: conductoroneapi.String("aliquid"),
+        PageSize: conductoroneapi.Float64(375.65),
+        PageToken: conductoroneapi.String("repellat"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeUnspecified,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeGrant,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
             shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
         },
-        Query: conductoroneapi.String("voluptatem"),
+        Query: conductoroneapi.String("officia"),
     })
     if err != nil {
         log.Fatal(err)

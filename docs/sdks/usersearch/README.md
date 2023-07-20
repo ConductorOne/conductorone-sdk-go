@@ -21,40 +21,45 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "similique",
-                "minima",
+                "deleniti",
             },
         },
-        Email: conductoroneapi.String("Elisa43@hotmail.com"),
+        Email: conductoroneapi.String("Jabari72@gmail.com"),
         ExcludeIds: []string{
-            "mollitia",
+            "sit",
+            "modi",
         },
         Ids: []string{
-            "fugiat",
-            "nostrum",
+            "nesciunt",
+            "mollitia",
         },
-        PageSize: conductoroneapi.Float64(4753.25),
-        PageToken: conductoroneapi.String("veniam"),
-        Query: conductoroneapi.String("reiciendis"),
+        PageSize: conductoroneapi.Float64(4926.32),
+        PageToken: conductoroneapi.String("fugiat"),
+        Query: conductoroneapi.String("nostrum"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("400e764a-d733-44ec-9b78-1b36a08088d1"),
+                ID: conductoroneapi.String("5f1400e7-64ad-4733-8ec1-b781b36a0808"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("8d100efa-da20-40ef-8422-eb2164cf9ab8"),
             },
         },
         RoleIds: []string{
-            "eaque",
+            "aliquid",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
             shared.SearchUsersRequestUserStatusesDeleted,
-            shared.SearchUsersRequestUserStatusesDisabled,
-            shared.SearchUsersRequestUserStatusesDeleted,
-            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesEnabled,
         },
     })
     if err != nil {

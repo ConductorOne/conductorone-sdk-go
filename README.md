@@ -23,7 +23,11 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
@@ -99,6 +103,12 @@ func main() {
 ### [AppEntitlements](docs/sdks/appentitlements/README.md)
 
 * [Get](docs/sdks/appentitlements/README.md#get) - Invokes the c1.api.app.v1.AppEntitlements.Get method.
+* [List](docs/sdks/appentitlements/README.md#list) - Invokes the c1.api.app.v1.AppEntitlements.List method.
+* [ListForAppResource](docs/sdks/appentitlements/README.md#listforappresource) - Invokes the c1.api.app.v1.AppEntitlements.ListForAppResource method.
+* [ListForAppUser](docs/sdks/appentitlements/README.md#listforappuser) - Invokes the c1.api.app.v1.AppEntitlements.ListForAppUser method.
+* [ListGroups](docs/sdks/appentitlements/README.md#listgroups) - Invokes the c1.api.app.v1.AppEntitlements.ListGroups method.
+* [ListUsers](docs/sdks/appentitlements/README.md#listusers) - Invokes the c1.api.app.v1.AppEntitlements.ListUsers method.
+* [Update](docs/sdks/appentitlements/README.md#update) - Invokes the c1.api.app.v1.AppEntitlements.Update method.
 
 ### [AppOwners](docs/sdks/appowners/README.md)
 
@@ -152,6 +162,18 @@ func main() {
 ### [Auth](docs/sdks/auth/README.md)
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
+
+### [Connector](docs/sdks/connector/README.md)
+
+* [CreateDelegated](docs/sdks/connector/README.md#createdelegated) - Invokes the c1.api.app.v1.ConnectorService.CreateDelegated method.
+* [Delete](docs/sdks/connector/README.md#delete) - Invokes the c1.api.app.v1.ConnectorService.Delete method.
+* [Get](docs/sdks/connector/README.md#get) - Invokes the c1.api.app.v1.ConnectorService.Get method.
+* [GetCredentials](docs/sdks/connector/README.md#getcredentials) - Invokes the c1.api.app.v1.ConnectorService.GetCredentials method.
+* [List](docs/sdks/connector/README.md#list) - Invokes the c1.api.app.v1.ConnectorService.List method.
+* [RevokeCredential](docs/sdks/connector/README.md#revokecredential) - Invokes the c1.api.app.v1.ConnectorService.RevokeCredential method.
+* [RotateCredential](docs/sdks/connector/README.md#rotatecredential) - Invokes the c1.api.app.v1.ConnectorService.RotateCredential method.
+* [Update](docs/sdks/connector/README.md#update) - Invokes the c1.api.app.v1.ConnectorService.Update method.
+* [UpdateDelegated](docs/sdks/connector/README.md#updatedelegated) - Invokes the c1.api.app.v1.ConnectorService.UpdateDelegated method.
 
 ### [Directory](docs/sdks/directory/README.md)
 
@@ -210,6 +232,7 @@ func main() {
 * [Approve](docs/sdks/taskactions/README.md#approve) - Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 * [Comment](docs/sdks/taskactions/README.md#comment) - Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 * [Deny](docs/sdks/taskactions/README.md#deny) - Invokes the c1.api.task.v1.TaskActionsService.Deny method.
+* [EscalateToEmergencyAccess](docs/sdks/taskactions/README.md#escalatetoemergencyaccess) - Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 
 ### [TaskSearch](docs/sdks/tasksearch/README.md)
 

@@ -19,15 +19,20 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "magni",
+        RoleID: "tempore",
     })
     if err != nil {
         log.Fatal(err)
@@ -65,10 +70,15 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Roles.List(ctx)
@@ -107,31 +117,36 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoroneapi.String("vel"),
-                ID: conductoroneapi.String("11435e13-9dbc-4225-9b1a-bda8c070e108"),
-                Name: conductoroneapi.String("Ms. Lynne Rau"),
+                DisplayName: conductoroneapi.String("vero"),
+                ID: conductoroneapi.String("2fd57075-7792-4917-bdea-c646ecb57340"),
+                Name: conductoroneapi.String("Ignacio Dietrich"),
                 Permissions: []string{
-                    "assumenda",
+                    "earum",
                 },
                 ServiceRoles: []string{
-                    "est",
+                    "animi",
+                    "dolores",
                 },
                 SystemBuiltin: conductoroneapi.Bool(false),
             },
-            UpdateMask: conductoroneapi.String("facere"),
+            UpdateMask: conductoroneapi.String("nam"),
         },
-        RoleID: "corrupti",
+        RoleID: "dicta",
     })
     if err != nil {
         log.Fatal(err)

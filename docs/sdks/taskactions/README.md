@@ -5,6 +5,7 @@
 * [Approve](#approve) - Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 * [Comment](#comment) - Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 * [Deny](#deny) - Invokes the c1.api.task.v1.TaskActionsService.Deny method.
+* [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 
 ## Approve
 
@@ -19,27 +20,29 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "dignissimos",
-                    "optio",
-                    "necessitatibus",
+                    "cupiditate",
                 },
             },
-            Comment: conductoroneapi.String("corporis"),
-            PolicyStepID: conductoroneapi.String("qui"),
+            Comment: conductoroneapi.String("molestiae"),
+            PolicyStepID: conductoroneapi.String("eligendi"),
         },
-        TaskID: "expedita",
+        TaskID: "possimus",
     })
     if err != nil {
         log.Fatal(err)
@@ -77,26 +80,29 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "cupiditate",
-                    "minima",
-                    "placeat",
+                    "magnam",
+                    "itaque",
                 },
             },
-            Comment: conductoroneapi.String("enim"),
+            Comment: conductoroneapi.String("sed"),
         },
-        TaskID: "neque",
+        TaskID: "asperiores",
     })
     if err != nil {
         log.Fatal(err)
@@ -134,26 +140,30 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "minus",
-                    "eum",
+                    "consequuntur",
+                    "facere",
                 },
             },
-            Comment: conductoroneapi.String("modi"),
-            PolicyStepID: conductoroneapi.String("corporis"),
+            Comment: conductoroneapi.String("laudantium"),
+            PolicyStepID: conductoroneapi.String("odit"),
         },
-        TaskID: "magnam",
+        TaskID: "pariatur",
     })
     if err != nil {
         log.Fatal(err)
@@ -176,4 +186,64 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskActionsServiceDenyResponse](../../models/operations/c1apitaskv1taskactionsservicedenyresponse.md), error**
+
+
+## EscalateToEmergencyAccess
+
+Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+)
+
+func main() {
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.TaskActions.EscalateToEmergencyAccess(ctx, operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest{
+        TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
+            TaskExpandMask: &shared.TaskExpandMask{
+                Paths: []string{
+                    "exercitationem",
+                },
+            },
+            Comment: conductoroneapi.String("ab"),
+            PolicyStepID: conductoroneapi.String("velit"),
+        },
+        TaskID: "facilis",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.TaskServiceActionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                            | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                | :heavy_check_mark:                                                                                                                                                   | The context to use for the request.                                                                                                                                  |
+| `request`                                                                                                                                                            | [operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest](../../models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessrequest.md) | :heavy_check_mark:                                                                                                                                                   | The request object to use for the request.                                                                                                                           |
+
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md), error**
 

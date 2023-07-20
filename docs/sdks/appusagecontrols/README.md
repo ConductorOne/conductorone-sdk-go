@@ -18,15 +18,20 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "sint",
+        AppID: "ab",
     })
     if err != nil {
         log.Fatal(err)
@@ -64,26 +69,30 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("officia"),
+                AppID: conductoroneapi.String("maiores"),
                 Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(2230.81),
+                NotifyAfterDays: conductoroneapi.Float64(6974.29),
                 Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(8915.55),
+                RevokeAfterDays: conductoroneapi.Float64(3732.91),
             },
-            UpdateMask: conductoroneapi.String("a"),
+            UpdateMask: conductoroneapi.String("voluptate"),
         },
-        AppID: "dolorum",
+        AppID: "autem",
     })
     if err != nil {
         log.Fatal(err)

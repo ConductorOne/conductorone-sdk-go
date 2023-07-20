@@ -23,23 +23,26 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "provident",
-                "accusamus",
+                "necessitatibus",
             },
         },
-        AppEntitlementID: conductoroneapi.String("necessitatibus"),
-        AppID: conductoroneapi.String("tempore"),
-        AppUserID: conductoroneapi.String("sint"),
-        Description: conductoroneapi.String("ea"),
+        AppEntitlementID: conductoroneapi.String("nobis"),
+        AppID: conductoroneapi.String("ipsa"),
+        AppUserID: conductoroneapi.String("ducimus"),
+        Description: conductoroneapi.String("maiores"),
         EmergencyAccess: conductoroneapi.Bool(false),
-        GrantDuration: conductoroneapi.String("autem"),
-        IdentityUserID: conductoroneapi.String("ipsam"),
+        GrantDuration: conductoroneapi.String("veritatis"),
+        IdentityUserID: conductoroneapi.String("quasi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -81,22 +84,25 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "laudantium",
-                "corporis",
-                "officiis",
+                "pariatur",
+                "libero",
             },
         },
-        AppEntitlementID: conductoroneapi.String("voluptatibus"),
-        AppID: conductoroneapi.String("cum"),
-        AppUserID: conductoroneapi.String("at"),
-        Description: conductoroneapi.String("alias"),
-        IdentityUserID: conductoroneapi.String("quia"),
+        AppEntitlementID: conductoroneapi.String("excepturi"),
+        AppID: conductoroneapi.String("occaecati"),
+        AppUserID: conductoroneapi.String("nemo"),
+        Description: conductoroneapi.String("aliquam"),
+        IdentityUserID: conductoroneapi.String("nostrum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -134,15 +140,20 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "bae0be2d-7822-459e-bea4-b5197f92443d",
+        ID: "fc95fa88-970e-4189-9bb3-0fcb33ea055b",
     })
     if err != nil {
         log.Fatal(err)

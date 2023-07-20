@@ -18,17 +18,22 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "repellat",
-        AppResourceTypeID: "mollitia",
-        ID: "94677392-51aa-452c-bf5a-d019da1ffe78",
+        AppID: "provident",
+        AppResourceTypeID: "necessitatibus",
+        ID: "9a3efa77-dfb1-44cd-a6ae-395efb9ba88f",
     })
     if err != nil {
         log.Fatal(err)
@@ -66,16 +71,21 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "voluptatibus",
-        AppResourceTypeID: "ipsa",
+        AppID: "amet",
+        AppResourceTypeID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)
