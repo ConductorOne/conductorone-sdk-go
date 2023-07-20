@@ -1,6 +1,7 @@
 # UserDirectoryStatus
 
-The directoryStatus field.
+ The status of the user in the directory.
+
 
 
 ## Values

@@ -2,9 +2,9 @@
 
 ### Available Operations
 
-* [Add](#add) - Invokes the c1.api.app.v1.AppOwners.Add method.
-* [List](#list) - Invokes the c1.api.app.v1.AppOwners.List method.
-* [Remove](#remove) - Invokes the c1.api.app.v1.AppOwners.Remove method.
+* [Add](#add) - Add
+* [List](#list) - List
+* [Remove](#remove) - Remove
 
 ## Add
 
@@ -33,8 +33,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "doloribus",
-        UserID: "sapiente",
+        AppID: "labore",
+        UserID: "delectus",
     })
     if err != nil {
         log.Fatal(err)
@@ -85,7 +85,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "architecto",
+        AppID: "eum",
     })
     if err != nil {
         log.Fatal(err)
@@ -137,8 +137,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "mollitia",
-        UserID: "dolorem",
+        AppID: "non",
+        UserID: "eligendi",
     })
     if err != nil {
         log.Fatal(err)

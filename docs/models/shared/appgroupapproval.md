@@ -1,14 +1,15 @@
 # AppGroupApproval
 
-The AppGroupApproval message.
+ The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
+
 
 
 ## Fields
 
-| Field                        | Type                         | Required                     | Description                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `AllowSelfApproval`          | **bool*                      | :heavy_minus_sign:           | The allowSelfApproval field. |
-| `AppGroupID`                 | **string*                    | :heavy_minus_sign:           | The appGroupId field.        |
-| `AppID`                      | **string*                    | :heavy_minus_sign:           | The appId field.             |
-| `Fallback`                   | **bool*                      | :heavy_minus_sign:           | The fallback field.          |
-| `FallbackUserIds`            | []*string*                   | :heavy_minus_sign:           | The fallbackUserIds field.   |
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `AllowSelfApproval`                                                                                   | **bool*                                                                                               | :heavy_minus_sign:                                                                                    |  Configuration to allow self approval if the target user is a member of the group during this step.<br/> |
+| `AppGroupID`                                                                                          | **string*                                                                                             | :heavy_minus_sign:                                                                                    |  The ID of the group specified for approval.<br/>                                                     |
+| `AppID`                                                                                               | **string*                                                                                             | :heavy_minus_sign:                                                                                    |  The ID of the app that conatins the group specified for approval.<br/>                               |
+| `Fallback`                                                                                            | **bool*                                                                                               | :heavy_minus_sign:                                                                                    |  Configuration to allow a fallback if the group is empty.<br/>                                        |
+| `FallbackUserIds`                                                                                     | []*string*                                                                                            | :heavy_minus_sign:                                                                                    |  Configuration to specific which users to fallback to if fallback is enabled and the group is empty.<br/> |
