@@ -19,12 +19,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
@@ -77,12 +81,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
@@ -134,12 +142,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{

@@ -44,7 +44,7 @@ func (s *policySearch) Search(ctx context.Context, request shared.SearchPolicies
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {

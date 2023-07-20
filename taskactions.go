@@ -46,7 +46,7 @@ func (s *taskActions) Approve(ctx context.Context, request operations.C1APITaskV
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {
@@ -110,7 +110,7 @@ func (s *taskActions) Comment(ctx context.Context, request operations.C1APITaskV
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {
@@ -174,7 +174,7 @@ func (s *taskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.DefaultClient
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {

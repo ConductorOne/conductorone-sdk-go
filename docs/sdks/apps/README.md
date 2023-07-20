@@ -25,7 +25,11 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
@@ -75,12 +79,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
@@ -123,11 +131,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
@@ -169,10 +182,15 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Apps.List(ctx)
@@ -211,12 +229,16 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{

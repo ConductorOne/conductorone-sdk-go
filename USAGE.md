@@ -12,7 +12,11 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{

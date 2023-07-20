@@ -22,7 +22,11 @@ import(
 )
 
 func main() {
-    s := conductoroneapi.New()
+    s := conductoroneapi.New(
+        conductoroneapi.WithSecurity(shared.Security{
+            Oauth: "",
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.TaskSearch.Search(ctx, shared.TaskSearchRequest{
