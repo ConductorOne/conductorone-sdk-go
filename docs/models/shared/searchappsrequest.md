@@ -8,6 +8,7 @@ The SearchAppsRequest message.
 | Field                    | Type                     | Required                 | Description              |
 | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
 | `AppIds`                 | []*string*               | :heavy_minus_sign:       | The appIds field.        |
+| `DisplayName`            | **string*                | :heavy_minus_sign:       | The displayName field.   |
 | `ExcludeAppIds`          | []*string*               | :heavy_minus_sign:       | The excludeAppIds field. |
 | `PageSize`               | **float64*               | :heavy_minus_sign:       | The pageSize field.      |
 | `PageToken`              | **string*                | :heavy_minus_sign:       | The pageToken field.     |

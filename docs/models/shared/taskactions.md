@@ -20,3 +20,4 @@
 | `TaskActionsTaskActionTypeProvisionAppUserTargetCreated` | TASK_ACTION_TYPE_PROVISION_APP_USER_TARGET_CREATED       |
 | `TaskActionsTaskActionTypeRollbackSkipped`               | TASK_ACTION_TYPE_ROLLBACK_SKIPPED                        |
 | `TaskActionsTaskActionTypeHardReset`                     | TASK_ACTION_TYPE_HARD_RESET                              |
+| `TaskActionsTaskActionTypeEscalateToEmergencyAccess`     | TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS            |

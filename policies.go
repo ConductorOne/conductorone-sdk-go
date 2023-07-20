@@ -269,7 +269,7 @@ func (s *policies) Update(ctx context.Context, request operations.C1APIPolicyV1P
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "UpdatePolicyRequest", "json")
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "UpdatePolicyRequestInput", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

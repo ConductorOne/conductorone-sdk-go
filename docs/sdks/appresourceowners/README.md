@@ -25,9 +25,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "corporis",
-        ResourceID: "iste",
-        ResourceTypeID: "iure",
+        AppID: "omnis",
+        ResourceID: "voluptate",
+        ResourceTypeID: "cum",
     })
     if err != nil {
         log.Fatal(err)

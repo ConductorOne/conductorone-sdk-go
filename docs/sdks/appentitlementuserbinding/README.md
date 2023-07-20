@@ -25,9 +25,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
-        AppEntitlementID: "quibusdam",
-        AppID: "unde",
-        IdentityUserID: "nulla",
+        AppEntitlementID: "ad",
+        AppID: "natus",
+        IdentityUserID: "sed",
     })
     if err != nil {
         log.Fatal(err)

@@ -26,29 +26,28 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "quidem",
-            "architecto",
-            "ipsa",
-            "reiciendis",
+            "doloremque",
         },
         ExcludeResourceTypeIds: []string{
-            "mollitia",
-            "laborum",
-            "dolores",
+            "ut",
+            "maiores",
         },
         ExcludeResourceTypeTraitIds: []string{
             "corporis",
         },
-        PageSize: conductoroneapi.Float64(1289.26),
-        PageToken: conductoroneapi.String("nobis"),
-        Query: conductoroneapi.String("enim"),
+        PageSize: conductoroneapi.Float64(2961.4),
+        PageToken: conductoroneapi.String("iusto"),
+        Query: conductoroneapi.String("dicta"),
         ResourceTypeIds: []string{
-            "nemo",
-            "minima",
-            "excepturi",
+            "enim",
+            "accusamus",
+            "commodi",
         },
         ResourceTypeTraitIds: []string{
-            "iure",
+            "quae",
+            "ipsum",
+            "quidem",
+            "molestias",
         },
     })
     if err != nil {

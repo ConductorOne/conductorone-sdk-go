@@ -19,23 +19,65 @@ import(
 	"context"
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
     s := conductoroneapi.New()
 
     ctx := context.Background()
-    res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
-        AppEntitlementID: "corrupti",
-        AppID: "provident",
-        IdentityUserID: "distinctio",
+    res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
+        AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
+            Paths: []string{
+                "provident",
+                "distinctio",
+                "quibusdam",
+            },
+        },
+        AccessReviewID: conductoroneapi.String("unde"),
+        Alias: conductoroneapi.String("nulla"),
+        AppIds: []string{
+            "illum",
+            "vel",
+            "error",
+        },
+        AppUserIds: []string{
+            "suscipit",
+            "iure",
+            "magnam",
+        },
+        ComplianceFrameworkIds: []string{
+            "ipsa",
+            "delectus",
+            "tempora",
+            "suscipit",
+        },
+        ExcludeAppIds: []string{
+            "minus",
+            "placeat",
+        },
+        ExcludeAppUserIds: []string{
+            "iusto",
+            "excepturi",
+            "nisi",
+        },
+        OnlyGetExpiring: conductoroneapi.Bool(false),
+        PageSize: conductoroneapi.Float64(9255.97),
+        PageToken: conductoroneapi.String("temporibus"),
+        Query: conductoroneapi.String("ab"),
+        ResourceTypeIds: []string{
+            "veritatis",
+            "deserunt",
+        },
+        RiskLevelIds: []string{
+            "ipsam",
+        },
     })
     if err != nil {
         log.Fatal(err)
     }
 
-    if res.ListAppUsersForIdentityWithGrantResponse != nil {
+    if res.AppEntitlementSearchServiceSearchResponse != nil {
         // handle response
     }
 }
@@ -45,6 +87,10 @@ func main() {
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+
+### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
+
+* [Search](docs/sdks/appentitlementsearch/README.md#search) - Invokes the c1.api.app.v1.AppEntitlementSearchService.Search method.
 
 ### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
@@ -97,8 +143,11 @@ func main() {
 
 ### [Apps](docs/sdks/apps/README.md)
 
+* [Create](docs/sdks/apps/README.md#create) - Invokes the c1.api.app.v1.Apps.Create method.
+* [Delete](docs/sdks/apps/README.md#delete) - Invokes the c1.api.app.v1.Apps.Delete method.
 * [Get](docs/sdks/apps/README.md#get) - Invokes the c1.api.app.v1.Apps.Get method.
 * [List](docs/sdks/apps/README.md#list) - Invokes the c1.api.app.v1.Apps.List method.
+* [Update](docs/sdks/apps/README.md#update) - Invokes the c1.api.app.v1.Apps.Update method.
 
 ### [Auth](docs/sdks/auth/README.md)
 
@@ -122,6 +171,10 @@ func main() {
 * [Get](docs/sdks/policies/README.md#get) - Invokes the c1.api.policy.v1.Policies.Get method.
 * [List](docs/sdks/policies/README.md#list) - Invokes the c1.api.policy.v1.Policies.List method.
 * [Update](docs/sdks/policies/README.md#update) - Invokes the c1.api.policy.v1.Policies.Update method.
+
+### [PolicySearch](docs/sdks/policysearch/README.md)
+
+* [Search](docs/sdks/policysearch/README.md#search) - Invokes the c1.api.policy.v1.PolicySearch.Search method.
 
 ### [RequestCatalogManagement](docs/sdks/requestcatalogmanagement/README.md)
 

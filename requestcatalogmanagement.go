@@ -585,7 +585,7 @@ func (s *requestCatalogManagement) Update(ctx context.Context, request operation
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "RequestCatalogManagementServiceUpdateRequest", "json")
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "RequestCatalogManagementServiceUpdateRequestInput", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

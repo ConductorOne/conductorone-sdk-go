@@ -26,7 +26,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "perferendis",
+        AppID: "sint",
     })
     if err != nil {
         log.Fatal(err)
@@ -75,15 +75,15 @@ func main() {
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("doloremque"),
+                AppID: conductoroneapi.String("officia"),
                 Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(4417.11),
+                NotifyAfterDays: conductoroneapi.Float64(2230.81),
                 Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(2828.07),
+                RevokeAfterDays: conductoroneapi.Float64(8915.55),
             },
-            UpdateMask: conductoroneapi.String("maiores"),
+            UpdateMask: conductoroneapi.String("a"),
         },
-        AppID: "dicta",
+        AppID: "dolorum",
     })
     if err != nil {
         log.Fatal(err)
