@@ -261,6 +261,7 @@ pkg/models/shared/searchusersresponse.go
 pkg/models/shared/searchusersrequest.go
 pkg/models/shared/userref.go
 pkg/models/shared/userexpandmask.go
+pkg/models/shared/security.go
 docs/sdks/conductoroneapi/README.md
 docs/sdks/appentitlementsearch/README.md
 docs/sdks/appentitlementuserbinding/README.md
@@ -576,3 +577,4 @@ docs/models/shared/searchusersrequestuserstatuses.md
 docs/models/shared/searchusersrequest.md
 docs/models/shared/userref.md
 docs/models/shared/userexpandmask.md
+docs/models/shared/security.md
