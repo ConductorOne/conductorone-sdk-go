@@ -27,16 +27,15 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "voluptatem",
-                "molestias",
-                "cum",
+                "soluta",
+                "libero",
             },
         },
-        EntitlementAlias: conductoroneapi.String("aliquid"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusUnspecified.ToPointer(),
-        PageSize: conductoroneapi.Float64(5308.6),
-        PageToken: conductoroneapi.String("omnis"),
-        Query: conductoroneapi.String("veritatis"),
+        EntitlementAlias: conductoroneapi.String("rem"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusGranted.ToPointer(),
+        PageSize: conductoroneapi.Float64(4876.76),
+        PageToken: conductoroneapi.String("fugit"),
+        Query: conductoroneapi.String("alias"),
     })
     if err != nil {
         log.Fatal(err)

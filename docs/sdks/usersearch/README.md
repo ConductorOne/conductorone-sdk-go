@@ -27,38 +27,34 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "voluptate",
-                "pariatur",
+                "similique",
+                "minima",
             },
         },
+        Email: conductoroneapi.String("Elisa43@hotmail.com"),
         ExcludeIds: []string{
-            "similique",
-            "optio",
-            "ex",
-            "quaerat",
+            "mollitia",
         },
         Ids: []string{
-            "officiis",
-            "placeat",
+            "fugiat",
+            "nostrum",
         },
-        PageSize: conductoroneapi.Float64(6972.74),
-        PageToken: conductoroneapi.String("exercitationem"),
-        Query: conductoroneapi.String("quam"),
+        PageSize: conductoroneapi.Float64(4753.25),
+        PageToken: conductoroneapi.String("veniam"),
+        Query: conductoroneapi.String("reiciendis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("409e3eb1-e5a2-4b12-ab07-f116db99545f"),
+                ID: conductoroneapi.String("400e764a-d733-44ec-9b78-1b36a08088d1"),
             },
         },
         RoleIds: []string{
-            "sint",
-            "enim",
-            "hic",
-            "animi",
+            "eaque",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
+            shared.SearchUsersRequestUserStatusesDeleted,
             shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
             shared.SearchUsersRequestUserStatusesDisabled,
-            shared.SearchUsersRequestUserStatusesEnabled,
         },
     })
     if err != nil {

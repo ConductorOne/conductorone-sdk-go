@@ -26,8 +26,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "culpa",
-        ID: "ff1a3a2f-a946-4773-9251-aa52c3f5ad01",
+        AppID: "excepturi",
+        ID: "d488e1e9-1e45-40ad-aabd-44269802d502",
     })
     if err != nil {
         log.Fatal(err)
@@ -73,7 +73,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "error",
+        AppID: "dolorum",
     })
     if err != nil {
         log.Fatal(err)

@@ -25,8 +25,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "corrupti",
-        ID: "d69a674e-0f46-47cc-8796-ed151a05dfc2",
+        AppID: "iste",
+        ID: "396fea75-96eb-410f-aaa2-352c5955907a",
     })
     if err != nil {
         log.Fatal(err)

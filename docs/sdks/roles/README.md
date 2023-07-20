@@ -27,7 +27,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "rerum",
+        RoleID: "magni",
     })
     if err != nil {
         log.Fatal(err)
@@ -109,7 +109,6 @@ import(
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -117,25 +116,22 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
-        UpdateRoleRequest: &shared.UpdateRoleRequest{
-            Role: &shared.Role{
-                CreatedAt: types.MustTimeFromString("2021-09-24T14:32:36.483Z"),
-                DeletedAt: types.MustTimeFromString("2022-01-15T21:54:49.962Z"),
-                DisplayName: conductoroneapi.String("officiis"),
-                ID: conductoroneapi.String("1ade008e-6f8c-45f3-90d8-cdb5a3418143"),
-                Name: conductoroneapi.String("Alice Bailey"),
+        UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
+            Role: &shared.RoleInput{
+                DisplayName: conductoroneapi.String("vel"),
+                ID: conductoroneapi.String("11435e13-9dbc-4225-9b1a-bda8c070e108"),
+                Name: conductoroneapi.String("Ms. Lynne Rau"),
                 Permissions: []string{
-                    "laudantium",
+                    "assumenda",
                 },
                 ServiceRoles: []string{
-                    "dolor",
+                    "est",
                 },
                 SystemBuiltin: conductoroneapi.Bool(false),
-                UpdatedAt: types.MustTimeFromString("2021-11-22T09:48:38.420Z"),
             },
-            UpdateMask: conductoroneapi.String("consequuntur"),
+            UpdateMask: conductoroneapi.String("facere"),
         },
-        RoleID: "ipsa",
+        RoleID: "corrupti",
     })
     if err != nil {
         log.Fatal(err)
