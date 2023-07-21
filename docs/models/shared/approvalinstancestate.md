@@ -1,6 +1,7 @@
 # ApprovalInstanceState
 
-The state field.
+ The state of the approval instance
+
 
 
 ## Values

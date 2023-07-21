@@ -2,8 +2,8 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.app.v1.AppUsageControlsService.Get method.
-* [Update](#update) - Invokes the c1.api.app.v1.AppUsageControlsService.Update method.
+* [Get](#get) - Get
+* [Update](#update) - Update
 
 ## Get
 
@@ -31,7 +31,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "sint",
+        AppID: "ab",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,15 +84,15 @@ func main() {
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("officia"),
+                AppID: conductoroneapi.String("maiores"),
                 Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(2230.81),
+                NotifyAfterDays: conductoroneapi.Float64(6974.29),
                 Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(8915.55),
+                RevokeAfterDays: conductoroneapi.Float64(3732.91),
             },
-            UpdateMask: conductoroneapi.String("a"),
+            UpdateMask: conductoroneapi.String("voluptate"),
         },
-        AppID: "dolorum",
+        AppID: "autem",
     })
     if err != nil {
         log.Fatal(err)

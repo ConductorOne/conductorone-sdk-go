@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [ListAppUsersForIdentityWithGrant](#listappusersforidentitywithgrant) - Invokes the c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant method.
+* [ListAppUsersForIdentityWithGrant](#listappusersforidentitywithgrant) - List App Users For Identity With Grant
 
 ## ListAppUsersForIdentityWithGrant
 

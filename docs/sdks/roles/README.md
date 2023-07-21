@@ -2,9 +2,9 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.iam.v1.Roles.Get method.
-* [List](#list) - Invokes the c1.api.iam.v1.Roles.List method.
-* [Update](#update) - Invokes the c1.api.iam.v1.Roles.Update method.
+* [Get](#get) - Get
+* [List](#list) - List
+* [Update](#update) - Update
 
 ## Get
 
@@ -32,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "magni",
+        RoleID: "necessitatibus",
     })
     if err != nil {
         log.Fatal(err)
@@ -132,20 +132,24 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoroneapi.String("vel"),
-                ID: conductoroneapi.String("11435e13-9dbc-4225-9b1a-bda8c070e108"),
-                Name: conductoroneapi.String("Ms. Lynne Rau"),
+                DisplayName: conductoroneapi.String("animi"),
+                ID: conductoroneapi.String("c55a9741-d311-4352-965b-b8a720261143"),
+                Name: conductoroneapi.String("Kellie Bogisich"),
                 Permissions: []string{
-                    "assumenda",
+                    "distinctio",
+                    "maxime",
+                    "quia",
+                    "quia",
                 },
                 ServiceRoles: []string{
-                    "est",
+                    "omnis",
+                    "libero",
                 },
                 SystemBuiltin: conductoroneapi.Bool(false),
             },
-            UpdateMask: conductoroneapi.String("facere"),
+            UpdateMask: conductoroneapi.String("dicta"),
         },
-        RoleID: "corrupti",
+        RoleID: "id",
     })
     if err != nil {
         log.Fatal(err)

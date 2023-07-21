@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Search](#search) - Invokes the c1.api.app.v1.AppSearch.Search method.
+* [Search](#search) - Search
 
 ## Search
 
@@ -30,20 +30,20 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
         AppIds: []string{
-            "tempora",
-            "facilis",
-            "tempore",
+            "natus",
+            "magni",
+            "sunt",
         },
-        DisplayName: conductoroneapi.String("labore"),
+        DisplayName: conductoroneapi.String("quo"),
         ExcludeAppIds: []string{
-            "eum",
-            "non",
-            "eligendi",
-            "sint",
+            "pariatur",
+            "maxime",
+            "ea",
+            "excepturi",
         },
-        PageSize: conductoroneapi.Float64(3960.98),
-        PageToken: conductoroneapi.String("provident"),
-        Query: conductoroneapi.String("necessitatibus"),
+        PageSize: conductoroneapi.Float64(1399.72),
+        PageToken: conductoroneapi.String("ea"),
+        Query: conductoroneapi.String("accusantium"),
     })
     if err != nil {
         log.Fatal(err)

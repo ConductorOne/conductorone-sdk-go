@@ -1,6 +1,6 @@
 # TaskState
 
- State
+ The current state of the task as defined by the `state_enum`
 
 
 

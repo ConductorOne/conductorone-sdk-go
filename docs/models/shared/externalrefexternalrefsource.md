@@ -1,6 +1,7 @@
 # ExternalRefExternalRefSource
 
-The externalRefSource field.
+ The source of the external reference.
+
 
 
 ## Values
