@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [List](#list) - Invokes the c1.api.app.v1.AppResourceOwners.List method.
+* [List](#list) - List
 
 ## List
 
@@ -30,9 +30,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "omnis",
-        ResourceID: "voluptate",
-        ResourceTypeID: "cum",
+        AppID: "nisi",
+        ResourceID: "vel",
+        ResourceTypeID: "natus",
     })
     if err != nil {
         log.Fatal(err)

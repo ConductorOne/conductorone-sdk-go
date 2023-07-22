@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [SearchEntitlements](#searchentitlements) - Invokes the c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements method.
+* [SearchEntitlements](#searchentitlements) - Search Entitlements
 
 ## SearchEntitlements
 
@@ -31,15 +31,16 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "soluta",
-                "libero",
+                "placeat",
+                "perspiciatis",
+                "expedita",
             },
         },
-        EntitlementAlias: conductoroneapi.String("rem"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusGranted.ToPointer(),
-        PageSize: conductoroneapi.Float64(4876.76),
-        PageToken: conductoroneapi.String("fugit"),
-        Query: conductoroneapi.String("alias"),
+        EntitlementAlias: conductoroneapi.String("deleniti"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusNotGranted.ToPointer(),
+        PageSize: conductoroneapi.Float64(4555.79),
+        PageToken: conductoroneapi.String("ullam"),
+        Query: conductoroneapi.String("unde"),
     })
     if err != nil {
         log.Fatal(err)
