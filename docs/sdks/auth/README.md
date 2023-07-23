@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Introspect](#introspect) - Invokes the c1.api.auth.v1.Auth.Introspect method.
+* [Introspect](#introspect) - Introspect
 
 ## Introspect
 

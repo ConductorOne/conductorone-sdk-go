@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [GenerateReport](#generatereport) - Invokes the c1.api.app.v1.AppReportActionService.GenerateReport method.
+* [GenerateReport](#generatereport) - Generate Report
 
 ## GenerateReport
 
@@ -31,7 +31,7 @@ func main() {
     ctx := context.Background()
     res, err := s.AppReportAction.GenerateReport(ctx, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
         AppActionsServiceGenerateReportRequest: &shared.AppActionsServiceGenerateReportRequest{},
-        AppID: "consequuntur",
+        AppID: "aliquid",
     })
     if err != nil {
         log.Fatal(err)

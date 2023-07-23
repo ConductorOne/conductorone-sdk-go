@@ -1,6 +1,7 @@
 # TaskProcessing
 
-The processing field.
+ The processing state of a task as defined by the `processing_enum`
+
 
 
 ## Values

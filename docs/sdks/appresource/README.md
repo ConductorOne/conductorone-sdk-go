@@ -2,8 +2,8 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.app.v1.AppResourceService.Get method.
-* [List](#list) - Invokes the c1.api.app.v1.AppResourceService.List method.
+* [Get](#get) - Get
+* [List](#list) - List
 
 ## Get
 
@@ -31,9 +31,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "repellat",
-        AppResourceTypeID: "mollitia",
-        ID: "94677392-51aa-452c-bf5a-d019da1ffe78",
+        AppID: "provident",
+        AppResourceTypeID: "necessitatibus",
+        ID: "9a3efa77-dfb1-44cd-a6ae-395efb9ba88f",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,8 +84,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "voluptatibus",
-        AppResourceTypeID: "ipsa",
+        AppID: "amet",
+        AppResourceTypeID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)

@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Search](#search) - Invokes the c1.api.app.v1.AppEntitlementSearchService.Search method.
+* [Search](#search) - Search
 
 ## Search
 
