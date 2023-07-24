@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Create](#create) - Invokes the c1.api.iam.v1.PersonalClientService.Create method.
+* [Create](#create) - Create
 
 ## Create
 

@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [List](#list) - Invokes the c1.api.app.v1.AppReportService.List method.
+* [List](#list) - List
 
 ## List
 

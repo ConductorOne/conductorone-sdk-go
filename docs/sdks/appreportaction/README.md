@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [GenerateReport](#generatereport) - Invokes the c1.api.app.v1.AppReportActionService.GenerateReport method.
+* [GenerateReport](#generatereport) - Generate Report
 
 ## GenerateReport
 

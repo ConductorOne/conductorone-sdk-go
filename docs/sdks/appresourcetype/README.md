@@ -2,8 +2,8 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.app.v1.AppResourceTypeService.Get method.
-* [List](#list) - Invokes the c1.api.app.v1.AppResourceTypeService.List method.
+* [Get](#get) - Get
+* [List](#list) - List
 
 ## Get
 

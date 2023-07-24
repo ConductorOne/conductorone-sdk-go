@@ -2,13 +2,13 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.app.v1.AppEntitlements.Get method.
-* [List](#list) - Invokes the c1.api.app.v1.AppEntitlements.List method.
-* [ListForAppResource](#listforappresource) - Invokes the c1.api.app.v1.AppEntitlements.ListForAppResource method.
-* [ListForAppUser](#listforappuser) - Invokes the c1.api.app.v1.AppEntitlements.ListForAppUser method.
-* [ListGroups](#listgroups) - Invokes the c1.api.app.v1.AppEntitlements.ListGroups method.
-* [ListUsers](#listusers) - Invokes the c1.api.app.v1.AppEntitlements.ListUsers method.
-* [Update](#update) - Invokes the c1.api.app.v1.AppEntitlements.Update method.
+* [Get](#get) - Get
+* [List](#list) - List
+* [ListForAppResource](#listforappresource) - List For App Resource
+* [ListForAppUser](#listforappuser) - List For App User
+* [ListGroups](#listgroups) - List Groups
+* [ListUsers](#listusers) - List Users
+* [Update](#update) - Update
 
 ## Get
 

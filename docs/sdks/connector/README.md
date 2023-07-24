@@ -2,15 +2,15 @@
 
 ### Available Operations
 
-* [CreateDelegated](#createdelegated) - Invokes the c1.api.app.v1.ConnectorService.CreateDelegated method.
-* [Delete](#delete) - Invokes the c1.api.app.v1.ConnectorService.Delete method.
-* [Get](#get) - Invokes the c1.api.app.v1.ConnectorService.Get method.
-* [GetCredentials](#getcredentials) - Invokes the c1.api.app.v1.ConnectorService.GetCredentials method.
-* [List](#list) - Invokes the c1.api.app.v1.ConnectorService.List method.
-* [RevokeCredential](#revokecredential) - Invokes the c1.api.app.v1.ConnectorService.RevokeCredential method.
-* [RotateCredential](#rotatecredential) - Invokes the c1.api.app.v1.ConnectorService.RotateCredential method.
-* [Update](#update) - Invokes the c1.api.app.v1.ConnectorService.Update method.
-* [UpdateDelegated](#updatedelegated) - Invokes the c1.api.app.v1.ConnectorService.UpdateDelegated method.
+* [CreateDelegated](#createdelegated) - Create Delegated
+* [Delete](#delete) - Delete
+* [Get](#get) - Get
+* [GetCredentials](#getcredentials) - Get Credentials
+* [List](#list) - List
+* [RevokeCredential](#revokecredential) - Revoke Credential
+* [RotateCredential](#rotatecredential) - Rotate Credential
+* [Update](#update) - Update
+* [UpdateDelegated](#updatedelegated) - Update Delegated
 
 ## CreateDelegated
 

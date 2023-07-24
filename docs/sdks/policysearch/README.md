@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Search](#search) - Invokes the c1.api.policy.v1.PolicySearch.Search method.
+* [Search](#search) - Search
 
 ## Search
 
@@ -29,16 +29,14 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("aliquid"),
-        PageSize: conductoroneapi.Float64(375.65),
-        PageToken: conductoroneapi.String("repellat"),
+        DisplayName: conductoroneapi.String("blanditiis"),
+        PageSize: conductoroneapi.Float64(4492.92),
+        PageToken: conductoroneapi.String("dolore"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
             shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
         },
-        Query: conductoroneapi.String("officia"),
+        Query: conductoroneapi.String("ullam"),
     })
     if err != nil {
         log.Fatal(err)

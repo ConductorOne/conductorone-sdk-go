@@ -2,8 +2,8 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.app.v1.AppUsageControlsService.Get method.
-* [Update](#update) - Invokes the c1.api.app.v1.AppUsageControlsService.Update method.
+* [Get](#get) - Get
+* [Update](#update) - Update
 
 ## Get
 

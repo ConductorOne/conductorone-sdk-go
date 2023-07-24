@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [List](#list) - Invokes the c1.api.app.v1.AppResourceOwners.List method.
+* [List](#list) - List
 
 ## List
 

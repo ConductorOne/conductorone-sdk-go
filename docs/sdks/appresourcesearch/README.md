@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [SearchAppResourceTypes](#searchappresourcetypes) - Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes method.
+* [SearchAppResourceTypes](#searchappresourcetypes) - Search App Resource Types
 
 ## SearchAppResourceTypes
 

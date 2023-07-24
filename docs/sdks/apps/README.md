@@ -2,11 +2,11 @@
 
 ### Available Operations
 
-* [Create](#create) - Invokes the c1.api.app.v1.Apps.Create method.
-* [Delete](#delete) - Invokes the c1.api.app.v1.Apps.Delete method.
-* [Get](#get) - Invokes the c1.api.app.v1.Apps.Get method.
-* [List](#list) - Invokes the c1.api.app.v1.Apps.List method.
-* [Update](#update) - Invokes the c1.api.app.v1.Apps.Update method.
+* [Create](#create) - Create
+* [Delete](#delete) - Delete
+* [Get](#get) - Get
+* [List](#list) - List
+* [Update](#update) - Update
 
 ## Create
 

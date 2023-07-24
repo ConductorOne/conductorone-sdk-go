@@ -2,8 +2,8 @@
 
 ### Available Operations
 
-* [Get](#get) - Invokes the c1.api.user.v1.UserService.Get method.
-* [List](#list) - Invokes the c1.api.user.v1.UserService.List method.
+* [Get](#get) - Get
+* [List](#list) - List
 
 ## Get
 
@@ -31,7 +31,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "eda7e23f-2257-4411-baf4-b7544e472e80",
+        ID: "0f739ae9-e057-4eb8-89e2-810331f3981d",
     })
     if err != nil {
         log.Fatal(err)

@@ -2,10 +2,10 @@
 
 ### Available Operations
 
-* [Create](#create) - Invokes the c1.api.directory.v1.DirectoryService.Create method.
-* [Delete](#delete) - Invokes the c1.api.directory.v1.DirectoryService.Delete method.
-* [Get](#get) - Invokes the c1.api.directory.v1.DirectoryService.Get method.
-* [List](#list) - Invokes the c1.api.directory.v1.DirectoryService.List method.
+* [Create](#create) - Create
+* [Delete](#delete) - Delete
+* [Get](#get) - Get
+* [List](#list) - List
 
 ## Create
 

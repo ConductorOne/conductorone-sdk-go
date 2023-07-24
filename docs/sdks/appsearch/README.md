@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Search](#search) - Invokes the c1.api.app.v1.AppSearch.Search method.
+* [Search](#search) - Search
 
 ## Search
 

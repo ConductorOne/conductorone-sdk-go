@@ -2,10 +2,10 @@
 
 ### Available Operations
 
-* [Approve](#approve) - Invokes the c1.api.task.v1.TaskActionsService.Approve method.
-* [Comment](#comment) - Invokes the c1.api.task.v1.TaskActionsService.Comment method.
-* [Deny](#deny) - Invokes the c1.api.task.v1.TaskActionsService.Deny method.
-* [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
+* [Approve](#approve) - Approve
+* [Comment](#comment) - Comment
+* [Deny](#deny) - Deny
+* [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Escalate To Emergency Access
 
 ## Approve
 
@@ -36,13 +36,13 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "cupiditate",
+                    "quibusdam",
                 },
             },
-            Comment: conductoroneapi.String("molestiae"),
-            PolicyStepID: conductoroneapi.String("eligendi"),
+            Comment: conductoroneapi.String("odio"),
+            PolicyStepID: conductoroneapi.String("praesentium"),
         },
-        TaskID: "possimus",
+        TaskID: "odit",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,13 +96,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "magnam",
-                    "itaque",
+                    "corporis",
                 },
             },
-            Comment: conductoroneapi.String("sed"),
+            Comment: conductoroneapi.String("error"),
         },
-        TaskID: "asperiores",
+        TaskID: "earum",
     })
     if err != nil {
         log.Fatal(err)
@@ -156,14 +155,13 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "consequuntur",
-                    "facere",
+                    "recusandae",
                 },
             },
-            Comment: conductoroneapi.String("laudantium"),
-            PolicyStepID: conductoroneapi.String("odit"),
+            Comment: conductoroneapi.String("similique"),
+            PolicyStepID: conductoroneapi.String("ut"),
         },
-        TaskID: "pariatur",
+        TaskID: "quidem",
     })
     if err != nil {
         log.Fatal(err)
@@ -217,13 +215,14 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "exercitationem",
+                    "beatae",
+                    "unde",
                 },
             },
-            Comment: conductoroneapi.String("ab"),
-            PolicyStepID: conductoroneapi.String("velit"),
+            Comment: conductoroneapi.String("molestiae"),
+            PolicyStepID: conductoroneapi.String("delectus"),
         },
-        TaskID: "facilis",
+        TaskID: "cupiditate",
     })
     if err != nil {
         log.Fatal(err)

@@ -2,9 +2,9 @@
 
 ### Available Operations
 
-* [Add](#add) - Invokes the c1.api.app.v1.AppOwners.Add method.
-* [List](#list) - Invokes the c1.api.app.v1.AppOwners.List method.
-* [Remove](#remove) - Invokes the c1.api.app.v1.AppOwners.Remove method.
+* [Add](#add) - Add
+* [List](#list) - List
+* [Remove](#remove) - Remove
 
 ## Add
 
