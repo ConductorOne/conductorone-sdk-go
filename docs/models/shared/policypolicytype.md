@@ -1,6 +1,7 @@
 # PolicyPolicyType
 
-The policyType field.
+ Indicates the type of this policy. Can also be used to get the value from policySteps.
+
 
 
 ## Values

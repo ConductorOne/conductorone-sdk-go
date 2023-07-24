@@ -2,11 +2,11 @@
 
 ### Available Operations
 
-* [Create](#create) - Invokes the c1.api.app.v1.Apps.Create method.
-* [Delete](#delete) - Invokes the c1.api.app.v1.Apps.Delete method.
-* [Get](#get) - Invokes the c1.api.app.v1.Apps.Get method.
-* [List](#list) - Invokes the c1.api.app.v1.Apps.List method.
-* [Update](#update) - Invokes the c1.api.app.v1.Apps.Update method.
+* [Create](#create) - Create
+* [Delete](#delete) - Delete
+* [Get](#get) - Get
+* [List](#list) - List
+* [Update](#update) - Update
 
 ## Create
 
@@ -33,15 +33,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("in"),
-        Description: conductoroneapi.String("in"),
-        DisplayName: conductoroneapi.String("illum"),
-        GrantPolicyID: conductoroneapi.String("maiores"),
-        MonthlyCostUsd: conductoroneapi.Float64(6994.79),
+        CertifyPolicyID: conductoroneapi.String("nam"),
+        Description: conductoroneapi.String("eaque"),
+        DisplayName: conductoroneapi.String("pariatur"),
+        GrantPolicyID: conductoroneapi.String("nemo"),
+        MonthlyCostUsd: conductoroneapi.Float64(9755.22),
         Owners: []string{
-            "magnam",
+            "fugiat",
         },
-        RevokePolicyID: conductoroneapi.String("cumque"),
+        RevokePolicyID: conductoroneapi.String("amet"),
     })
     if err != nil {
         log.Fatal(err)
@@ -93,7 +93,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "d66ae395-efb9-4ba8-8f3a-66997074ba44",
+        ID: "0c5fbb25-8705-4320-ac73-d5fe9b90c289",
     })
     if err != nil {
         log.Fatal(err)
@@ -144,7 +144,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "69b6e214-1959-4890-afa5-63e2516fe4c8",
+        ID: "09b3fe49-a8d9-4cbf-8863-3323f9b77f3a",
     })
     if err != nil {
         log.Fatal(err)
@@ -244,24 +244,24 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                AppAccountID: conductoroneapi.String("facilis"),
-                AppAccountName: conductoroneapi.String("in"),
-                CertifyPolicyID: conductoroneapi.String("architecto"),
-                Description: conductoroneapi.String("architecto"),
-                DisplayName: conductoroneapi.String("repudiandae"),
-                FieldMask: conductoroneapi.String("ullam"),
-                GrantPolicyID: conductoroneapi.String("expedita"),
-                IconURL: conductoroneapi.String("nihil"),
-                ID: conductoroneapi.String("fd2ed028-921c-4ddc-a926-01fb576b0d5f"),
-                LogoURI: conductoroneapi.String("perferendis"),
-                MonthlyCostUsd: conductoroneapi.Float64(8558.04),
-                ParentAppID: conductoroneapi.String("amet"),
-                RevokePolicyID: conductoroneapi.String("aut"),
-                UserCount: conductoroneapi.String("cumque"),
+                AppAccountID: conductoroneapi.String("numquam"),
+                AppAccountName: conductoroneapi.String("veritatis"),
+                CertifyPolicyID: conductoroneapi.String("ipsa"),
+                Description: conductoroneapi.String("ipsa"),
+                DisplayName: conductoroneapi.String("iure"),
+                FieldMask: conductoroneapi.String("odio"),
+                GrantPolicyID: conductoroneapi.String("quaerat"),
+                IconURL: conductoroneapi.String("accusamus"),
+                ID: conductoroneapi.String("bf69280d-1ba7-47a8-9ebf-737ae4203ce5"),
+                LogoURI: conductoroneapi.String("saepe"),
+                MonthlyCostUsd: conductoroneapi.Float64(3834.64),
+                ParentAppID: conductoroneapi.String("deserunt"),
+                RevokePolicyID: conductoroneapi.String("provident"),
+                UserCount: conductoroneapi.String("minima"),
             },
-            UpdateMask: conductoroneapi.String("corporis"),
+            UpdateMask: conductoroneapi.String("repellendus"),
         },
-        ID: "fbb25870-5320-42c7-bd5f-e9b90c28909b",
+        ID: "8a0d446c-e2af-47a7-bcf3-be453f870b32",
     })
     if err != nil {
         log.Fatal(err)
