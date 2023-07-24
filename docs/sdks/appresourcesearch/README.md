@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [SearchAppResourceTypes](#searchappresourcetypes) - Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes method.
+* [SearchAppResourceTypes](#searchappresourcetypes) - Search App Resource Types
 
 ## SearchAppResourceTypes
 
@@ -30,28 +30,31 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "doloremque",
+            "molestiae",
+            "perferendis",
+            "nihil",
         },
         ExcludeResourceTypeIds: []string{
-            "ut",
-            "maiores",
+            "distinctio",
+            "id",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "corporis",
+            "labore",
+            "suscipit",
         },
-        PageSize: conductoroneapi.Float64(2961.4),
-        PageToken: conductoroneapi.String("iusto"),
-        Query: conductoroneapi.String("dicta"),
+        PageSize: conductoroneapi.Float64(6180.16),
+        PageToken: conductoroneapi.String("nobis"),
+        Query: conductoroneapi.String("eum"),
         ResourceTypeIds: []string{
-            "enim",
-            "accusamus",
-            "commodi",
+            "aspernatur",
+            "architecto",
+            "magnam",
+            "et",
         },
         ResourceTypeTraitIds: []string{
-            "quae",
-            "ipsum",
-            "quidem",
-            "molestias",
+            "ullam",
+            "provident",
+            "quos",
         },
     })
     if err != nil {

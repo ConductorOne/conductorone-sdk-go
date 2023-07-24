@@ -2,7 +2,7 @@
 
 ### Available Operations
 
-* [Create](#create) - Invokes the c1.api.iam.v1.PersonalClientService.Create method.
+* [Create](#create) - Create
 
 ## Create
 
@@ -30,17 +30,15 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "deleniti",
-            "pariatur",
-            "provident",
+            "similique",
         },
-        DisplayName: conductoroneapi.String("nobis"),
-        Expires: conductoroneapi.String("libero"),
+        DisplayName: conductoroneapi.String("culpa"),
+        Expires: conductoroneapi.String("aliquid"),
         ScopedRoles: []string{
-            "quaerat",
-            "quos",
-            "aliquid",
-            "dolorem",
+            "quae",
+            "earum",
+            "vel",
+            "in",
         },
     })
     if err != nil {
