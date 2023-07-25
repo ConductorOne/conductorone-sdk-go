@@ -9,7 +9,8 @@ import (
 
 type C1APIPolicyV1PolicySearchSearchResponse struct {
 	ContentType string
-	// Successful response
+	//  The ListPolicyResponse message contains a list of results and a nextPageToken if applicable
+	//
 	ListPolicyResponse *shared.ListPolicyResponse
 	StatusCode         int
 	RawResponse        *http.Response
