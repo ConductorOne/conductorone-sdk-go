@@ -7,7 +7,8 @@
 
 ## Get
 
-Invokes the c1.api.user.v1.UserService.Get method.
+ Get a user by ID.
+
 
 ### Example Usage
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "0f739ae9-e057-4eb8-89e2-810331f3981d",
+        ID: "7ce52b89-5c53-47c6-854e-fb0b34896c3c",
     })
     if err != nil {
         log.Fatal(err)
@@ -58,7 +59,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.user.v1.UserService.List method.
+ List users.
+
 
 ### Example Usage
 
@@ -70,6 +72,7 @@ import(
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -80,7 +83,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.List(ctx)
+    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{
+        PageSize: conductoroneapi.Float64(6845.53),
+        PageToken: conductoroneapi.String("nostrum"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -93,9 +99,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [operations.C1APIUserV1UserServiceListRequest](../../models/operations/c1apiuserv1userservicelistrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response

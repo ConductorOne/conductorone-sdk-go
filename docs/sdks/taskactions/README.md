@@ -36,13 +36,15 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quibusdam",
+                    "itaque",
+                    "alias",
+                    "nisi",
                 },
             },
-            Comment: conductoroneapi.String("odio"),
-            PolicyStepID: conductoroneapi.String("praesentium"),
+            Comment: conductoroneapi.String("itaque"),
+            PolicyStepID: "velit",
         },
-        TaskID: "odit",
+        TaskID: "laborum",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,12 +98,13 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "corporis",
+                    "dolor",
+                    "iusto",
                 },
             },
-            Comment: conductoroneapi.String("error"),
+            Comment: conductoroneapi.String("sit"),
         },
-        TaskID: "earum",
+        TaskID: "doloremque",
     })
     if err != nil {
         log.Fatal(err)
@@ -155,11 +158,11 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "recusandae",
+                    "officia",
                 },
             },
-            Comment: conductoroneapi.String("similique"),
-            PolicyStepID: conductoroneapi.String("ut"),
+            Comment: conductoroneapi.String("recusandae"),
+            PolicyStepID: conductoroneapi.String("ea"),
         },
         TaskID: "quidem",
     })
@@ -215,14 +218,14 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "beatae",
-                    "unde",
+                    "facilis",
+                    "placeat",
                 },
             },
-            Comment: conductoroneapi.String("molestiae"),
-            PolicyStepID: conductoroneapi.String("delectus"),
+            Comment: conductoroneapi.String("perspiciatis"),
+            PolicyStepID: conductoroneapi.String("expedita"),
         },
-        TaskID: "cupiditate",
+        TaskID: "deleniti",
     })
     if err != nil {
         log.Fatal(err)

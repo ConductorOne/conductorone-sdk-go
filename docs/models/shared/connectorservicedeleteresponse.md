@@ -1,6 +1,7 @@
 # ConnectorServiceDeleteResponse
 
-The ConnectorServiceDeleteResponse message.
+ Empty response body. Status code indicates success.
+
 
 
 ## Fields

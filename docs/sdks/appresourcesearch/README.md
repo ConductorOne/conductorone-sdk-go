@@ -6,7 +6,8 @@
 
 ## SearchAppResourceTypes
 
-Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes method.
+ Search app resources based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -30,31 +31,32 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "molestiae",
-            "perferendis",
-            "nihil",
-        },
-        ExcludeResourceTypeIds: []string{
-            "distinctio",
+            "quidem",
+            "provident",
+            "nam",
             "id",
         },
-        ExcludeResourceTypeTraitIds: []string{
-            "labore",
-            "suscipit",
+        ExcludeResourceTypeIds: []string{
+            "deleniti",
+            "sapiente",
+            "amet",
         },
-        PageSize: conductoroneapi.Float64(6180.16),
-        PageToken: conductoroneapi.String("nobis"),
-        Query: conductoroneapi.String("eum"),
+        ExcludeResourceTypeTraitIds: []string{
+            "nisi",
+            "vel",
+            "natus",
+        },
+        PageSize: conductoroneapi.Float64(6063.93),
+        PageToken: conductoroneapi.String("molestiae"),
+        Query: conductoroneapi.String("perferendis"),
         ResourceTypeIds: []string{
-            "aspernatur",
-            "architecto",
             "magnam",
-            "et",
+            "distinctio",
         },
         ResourceTypeTraitIds: []string{
-            "ullam",
-            "provident",
-            "quos",
+            "labore",
+            "labore",
+            "suscipit",
         },
     })
     if err != nil {

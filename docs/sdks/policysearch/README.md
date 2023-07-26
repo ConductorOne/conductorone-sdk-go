@@ -6,7 +6,8 @@
 
 ## Search
 
-Invokes the c1.api.policy.v1.PolicySearch.Search method.
+ Search policies based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -29,14 +30,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("blanditiis"),
-        PageSize: conductoroneapi.Float64(4492.92),
-        PageToken: conductoroneapi.String("dolore"),
+        DisplayName: conductoroneapi.String("hic"),
+        PageSize: conductoroneapi.Float64(3487.83),
+        PageToken: conductoroneapi.String("nobis"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
         },
-        Query: conductoroneapi.String("ullam"),
+        Query: conductoroneapi.String("sed"),
     })
     if err != nil {
         log.Fatal(err)

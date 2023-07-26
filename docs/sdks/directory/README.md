@@ -9,7 +9,8 @@
 
 ## Create
 
-Invokes the c1.api.directory.v1.DirectoryService.Create method.
+ Create a directory.
+
 
 ### Example Usage
 
@@ -34,13 +35,10 @@ func main() {
     res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
         DirectoryExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
-                "possimus",
-                "quia",
-                "eveniet",
-                "asperiores",
+                "saepe",
             },
         },
-        AppID: conductoroneapi.String("facere"),
+        AppID: conductoroneapi.String("vel"),
     })
     if err != nil {
         log.Fatal(err)
@@ -67,7 +65,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.directory.v1.DirectoryService.Delete method.
+ Delete a directory by app_id.
+
 
 ### Example Usage
 
@@ -92,7 +91,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "veritatis",
+        AppID: "harum",
     })
     if err != nil {
         log.Fatal(err)
@@ -119,7 +118,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.directory.v1.DirectoryService.Get method.
+ Get a directory by app_id.
+
 
 ### Example Usage
 
@@ -143,7 +143,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "consequuntur",
+        AppID: "molestiae",
     })
     if err != nil {
         log.Fatal(err)
@@ -170,7 +170,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.directory.v1.DirectoryService.List method.
+ List directories.
+
 
 ### Example Usage
 
@@ -182,6 +183,7 @@ import(
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -192,7 +194,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.List(ctx)
+    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{
+        PageSize: conductoroneapi.Float64(6996.22),
+        PageToken: conductoroneapi.String("occaecati"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -205,9 +210,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [operations.C1APIDirectoryV1DirectoryServiceListRequest](../../models/operations/c1apidirectoryv1directoryservicelistrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 
 
 ### Response

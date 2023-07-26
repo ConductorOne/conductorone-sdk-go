@@ -1,6 +1,7 @@
 # CreatePolicyResponse
 
-The CreatePolicyResponse message.
+ The CreatePolicyResponse message contains the created policy object.
+
 
 
 ## Fields

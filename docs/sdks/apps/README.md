@@ -10,7 +10,8 @@
 
 ## Create
 
-Invokes the c1.api.app.v1.Apps.Create method.
+ Create a new app.
+
 
 ### Example Usage
 
@@ -33,15 +34,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("nam"),
-        Description: conductoroneapi.String("eaque"),
-        DisplayName: conductoroneapi.String("pariatur"),
-        GrantPolicyID: conductoroneapi.String("nemo"),
-        MonthlyCostUsd: conductoroneapi.Float64(9755.22),
+        CertifyPolicyID: conductoroneapi.String("ea"),
+        Description: conductoroneapi.String("excepturi"),
+        DisplayName: conductoroneapi.String("odit"),
+        GrantPolicyID: conductoroneapi.String("ea"),
+        MonthlyCostUsd: conductoroneapi.Float64(332.22),
         Owners: []string{
-            "fugiat",
+            "maiores",
         },
-        RevokePolicyID: conductoroneapi.String("amet"),
+        RevokePolicyID: conductoroneapi.String("quidem"),
     })
     if err != nil {
         log.Fatal(err)
@@ -68,7 +69,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.app.v1.Apps.Delete method.
+ Delete an app.
+
 
 ### Example Usage
 
@@ -93,7 +95,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "0c5fbb25-8705-4320-ac73-d5fe9b90c289",
+        ID: "576b0d5f-0d30-4c5f-bb25-87053202c73d",
     })
     if err != nil {
         log.Fatal(err)
@@ -120,7 +122,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.app.v1.Apps.Get method.
+ Get an app by ID.
+
 
 ### Example Usage
 
@@ -144,7 +147,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "09b3fe49-a8d9-4cbf-8863-3323f9b77f3a",
+        ID: "5fe9b90c-2890-49b3-be49-a8d9cbf48633",
     })
     if err != nil {
         log.Fatal(err)
@@ -171,7 +174,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.Apps.List method.
+ List all apps.
+
 
 ### Example Usage
 
@@ -183,6 +187,7 @@ import(
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -193,7 +198,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Apps.List(ctx)
+    res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
+        PageSize: conductoroneapi.Float64(2224.43),
+        PageToken: conductoroneapi.String("qui"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -206,9 +214,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
+| `request`                                                                                    | [operations.C1APIAppV1AppsListRequest](../../models/operations/c1apiappv1appslistrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -218,7 +227,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.Apps.Update method.
+ Update an existing app.
+
 
 ### Example Usage
 
@@ -244,24 +254,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                AppAccountID: conductoroneapi.String("numquam"),
-                AppAccountName: conductoroneapi.String("veritatis"),
-                CertifyPolicyID: conductoroneapi.String("ipsa"),
-                Description: conductoroneapi.String("ipsa"),
-                DisplayName: conductoroneapi.String("iure"),
-                FieldMask: conductoroneapi.String("odio"),
-                GrantPolicyID: conductoroneapi.String("quaerat"),
-                IconURL: conductoroneapi.String("accusamus"),
-                ID: conductoroneapi.String("bf69280d-1ba7-47a8-9ebf-737ae4203ce5"),
-                LogoURI: conductoroneapi.String("saepe"),
-                MonthlyCostUsd: conductoroneapi.Float64(3834.64),
-                ParentAppID: conductoroneapi.String("deserunt"),
-                RevokePolicyID: conductoroneapi.String("provident"),
-                UserCount: conductoroneapi.String("minima"),
+                CertifyPolicyID: conductoroneapi.String("ipsum"),
+                Description: conductoroneapi.String("hic"),
+                DisplayName: conductoroneapi.String("excepturi"),
+                GrantPolicyID: conductoroneapi.String("cum"),
+                IconURL: conductoroneapi.String("voluptate"),
+                MonthlyCostUsd: conductoroneapi.Float64(4904.59),
+                RevokePolicyID: conductoroneapi.String("reiciendis"),
             },
-            UpdateMask: conductoroneapi.String("repellendus"),
+            UpdateMask: conductoroneapi.String("amet"),
         },
-        ID: "8a0d446c-e2af-47a7-bcf3-be453f870b32",
+        ID: "a4100674-ebf6-4928-8d1b-a77a89ebf737",
     })
     if err != nil {
         log.Fatal(err)
