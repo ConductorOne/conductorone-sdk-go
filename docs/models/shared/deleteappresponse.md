@@ -1,6 +1,7 @@
 # DeleteAppResponse
 
-The DeleteAppResponse message.
+ Empty response body. Status code indicates success.
+
 
 
 ## Fields

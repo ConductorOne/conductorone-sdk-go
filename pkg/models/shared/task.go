@@ -147,7 +147,8 @@ type Task struct {
 	//  A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps.
 	//
 	PolicyInstance *PolicyInstance `json:"policy,omitempty"`
-	// The TaskType message.
+	//  Task Type provides configuration for the type of task: certify, grant, or revoke
+	//
 	//
 	// This message contains a oneof named task_type. Only a single field of the following list may be set at a time:
 	//   - grant

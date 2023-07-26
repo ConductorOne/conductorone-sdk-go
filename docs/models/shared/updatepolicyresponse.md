@@ -1,6 +1,7 @@
 # UpdatePolicyResponse
 
-The UpdatePolicyResponse message.
+ The UpdatePolicyResponse message contains the updated policy object.
+
 
 
 ## Fields

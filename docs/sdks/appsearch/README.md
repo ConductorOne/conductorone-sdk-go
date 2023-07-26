@@ -6,7 +6,8 @@
 
 ## Search
 
-Invokes the c1.api.app.v1.AppSearch.Search method.
+ Search apps based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -30,20 +31,19 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
         AppIds: []string{
-            "natus",
-            "magni",
-            "sunt",
+            "expedita",
+            "nihil",
         },
-        DisplayName: conductoroneapi.String("quo"),
+        DisplayName: conductoroneapi.String("repellat"),
         ExcludeAppIds: []string{
+            "sed",
+            "saepe",
             "pariatur",
-            "maxime",
-            "ea",
-            "excepturi",
+            "accusantium",
         },
-        PageSize: conductoroneapi.Float64(1399.72),
-        PageToken: conductoroneapi.String("ea"),
-        Query: conductoroneapi.String("accusantium"),
+        PageSize: conductoroneapi.Float64(1624.93),
+        PageToken: conductoroneapi.String("praesentium"),
+        Query: conductoroneapi.String("natus"),
     })
     if err != nil {
         log.Fatal(err)

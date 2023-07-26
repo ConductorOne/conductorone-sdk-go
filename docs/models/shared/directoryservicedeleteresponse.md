@@ -1,6 +1,7 @@
 # DirectoryServiceDeleteResponse
 
-The DirectoryServiceDeleteResponse message.
+ Empty response with a status code indicating success.
+
 
 
 ## Fields

@@ -1,14 +1,15 @@
 # AppUsageControls
 
-The AppUsageControls message.
+ The AppUsageControls object describes some peripheral configuration for an app.
+
 
 
 ## Fields
 
-| Field                      | Type                       | Required                   | Description                |
-| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `AppID`                    | **string*                  | :heavy_minus_sign:         | The appId field.           |
-| `Notify`                   | **bool*                    | :heavy_minus_sign:         | The notify field.          |
-| `NotifyAfterDays`          | **float64*                 | :heavy_minus_sign:         | The notifyAfterDays field. |
-| `Revoke`                   | **bool*                    | :heavy_minus_sign:         | The revoke field.          |
-| `RevokeAfterDays`          | **float64*                 | :heavy_minus_sign:         | The revokeAfterDays field. |
+| Field                                                                                                                        | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `AppID`                                                                                                                      | **string*                                                                                                                    | :heavy_minus_sign:                                                                                                           |  The app that this object belongs to.<br/>                                                                                   |
+| `Notify`                                                                                                                     | **bool*                                                                                                                      | :heavy_minus_sign:                                                                                                           |  Whether or not to notify some if they have access to the app, but has not used it within a configurable amount of time.<br/> |
+| `NotifyAfterDays`                                                                                                            | **float64*                                                                                                                   | :heavy_minus_sign:                                                                                                           |  The duration in days after which we notify users of nonusage.<br/>                                                          |
+| `Revoke`                                                                                                                     | **bool*                                                                                                                      | :heavy_minus_sign:                                                                                                           |  Whether or not to revoke a grant if they have access to the app, but has not used it within a configurable amount of time.<br/> |
+| `RevokeAfterDays`                                                                                                            | **float64*                                                                                                                   | :heavy_minus_sign:                                                                                                           |  The duration in days after which we revoke users that have not used that grant.<br/>                                        |

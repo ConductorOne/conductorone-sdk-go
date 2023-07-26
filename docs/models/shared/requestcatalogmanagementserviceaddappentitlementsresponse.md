@@ -1,6 +1,7 @@
 # RequestCatalogManagementServiceAddAppEntitlementsResponse
 
-The RequestCatalogManagementServiceAddAppEntitlementsResponse message.
+ Empty response with a status code indicating success.
+
 
 
 ## Fields

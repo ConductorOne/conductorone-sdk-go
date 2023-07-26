@@ -8,7 +8,8 @@
 
 ## Get
 
-Invokes the c1.api.iam.v1.Roles.Get method.
+ Get a role by id.
+
 
 ### Example Usage
 
@@ -32,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "necessitatibus",
+        RoleID: "hic",
     })
     if err != nil {
         log.Fatal(err)
@@ -59,7 +60,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.iam.v1.Roles.List method.
+ List all roles for the current user.
+
 
 ### Example Usage
 
@@ -71,6 +73,7 @@ import(
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -81,7 +84,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Roles.List(ctx)
+    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{
+        PageSize: conductoroneapi.Float64(9001.03),
+        PageToken: conductoroneapi.String("asperiores"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -94,9 +100,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
+| `request`                                                                                      | [operations.C1APIIamV1RolesListRequest](../../models/operations/c1apiiamv1roleslistrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
@@ -106,7 +113,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.iam.v1.Roles.Update method.
+ Update a role by passing a Role object.
+
 
 ### Example Usage
 
@@ -132,24 +140,18 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoroneapi.String("animi"),
-                ID: conductoroneapi.String("c55a9741-d311-4352-965b-b8a720261143"),
-                Name: conductoroneapi.String("Kellie Bogisich"),
+                DisplayName: conductoroneapi.String("ex"),
                 Permissions: []string{
-                    "distinctio",
-                    "maxime",
-                    "quia",
-                    "quia",
+                    "debitis",
+                    "delectus",
                 },
                 ServiceRoles: []string{
-                    "omnis",
-                    "libero",
+                    "minus",
                 },
-                SystemBuiltin: conductoroneapi.Bool(false),
             },
-            UpdateMask: conductoroneapi.String("dicta"),
+            UpdateMask: conductoroneapi.String("fuga"),
         },
-        RoleID: "id",
+        RoleID: "laborum",
     })
     if err != nil {
         log.Fatal(err)

@@ -1,6 +1,7 @@
 # ConnectorServiceRevokeCredentialResponse
 
-The ConnectorServiceRevokeCredentialResponse message.
+ Empty response body. Status code indicates success.
+
 
 
 ## Fields

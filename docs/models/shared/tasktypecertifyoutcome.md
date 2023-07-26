@@ -1,6 +1,7 @@
 # TaskTypeCertifyOutcome
 
-The outcome field.
+ The outcome of the certification.
+
 
 
 ## Values

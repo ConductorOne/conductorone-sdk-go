@@ -1,11 +1,12 @@
 # ConnectorServiceCreateResponse
 
-The ConnectorServiceCreateResponse message.
+ The ConnectorServiceCreateResponse is the response returned from creating a connector.
+
 
 
 ## Fields
 
-| Field                                                  | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `ConnectorView`                                        | [*ConnectorView](../../models/shared/connectorview.md) | :heavy_minus_sign:                                     | The ConnectorView message.                             |
-| `Expanded`                                             | []map[string]*interface{}*                             | :heavy_minus_sign:                                     | The expanded field.                                    |
+| Field                                                                                                                           | Type                                                                                                                            | Required                                                                                                                        | Description                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `ConnectorView`                                                                                                                 | [*ConnectorView](../../models/shared/connectorview.md)                                                                          | :heavy_minus_sign:                                                                                                              |  The ConnectorView object provides a connector response object, as well as JSONPATHs to related objects provided by expanders.<br/> |
+| `Expanded`                                                                                                                      | []map[string]*interface{}*                                                                                                      | :heavy_minus_sign:                                                                                                              |  The array of expanded items indicated by the request.<br/>                                                                     |

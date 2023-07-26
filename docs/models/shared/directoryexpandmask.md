@@ -1,10 +1,11 @@
 # DirectoryExpandMask
 
-The DirectoryExpandMask message.
+ The fields to be included in the directory response.
+
 
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `Paths`            | []*string*         | :heavy_minus_sign: | The paths field.   |
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `Paths`                                                        | []*string*                                                     | :heavy_minus_sign:                                             |  An array of fields to be included in the directory response.<br/> |

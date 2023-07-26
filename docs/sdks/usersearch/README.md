@@ -6,7 +6,8 @@
 
 ## Search
 
-Invokes the c1.api.user.v1.UserSearch.Search method.
+ Search users based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -31,47 +32,34 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "minus",
-                "esse",
+                "impedit",
+                "delectus",
+                "tempore",
             },
         },
-        Email: conductoroneapi.String("Al.Price@gmail.com"),
+        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
         ExcludeIds: []string{
-            "repellat",
-            "velit",
+            "odio",
         },
         Ids: []string{
-            "provident",
-            "consectetur",
-            "eligendi",
-            "dignissimos",
+            "in",
+            "ducimus",
         },
-        PageSize: conductoroneapi.Float64(2358.34),
-        PageToken: conductoroneapi.String("soluta"),
-        Query: conductoroneapi.String("natus"),
+        PageSize: conductoroneapi.Float64(5678.46),
+        PageToken: conductoroneapi.String("dolores"),
+        Query: conductoroneapi.String("error"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("a3f2ceda-7e23-4f22-9741-1faf4b7544e4"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("72e80285-7a5b-4404-a3a7-d575f1400e76"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("4ad7334e-c1b7-481b-b6a0-8088d100efad"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("a200ef04-22eb-4216-8cf9-ab8366c723ff"),
+                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
             },
         },
         RoleIds: []string{
-            "laborum",
-            "natus",
-            "accusamus",
-            "doloremque",
+            "ipsa",
+            "ducimus",
+            "maiores",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDisabled,
-            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
     if err != nil {

@@ -1,6 +1,7 @@
 # GetPolicyResponse
 
-The GetPolicyResponse message.
+ The GetPolicyResponse message contains the policy object.
+
 
 
 ## Fields

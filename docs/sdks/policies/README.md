@@ -10,7 +10,8 @@
 
 ## Create
 
-Invokes the c1.api.policy.v1.Policies.Create method.
+ Create a policy.
+
 
 ### Example Usage
 
@@ -33,10 +34,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Create(ctx, shared.CreatePolicyRequestInput{
-        Description: conductoroneapi.String("eius"),
-        DisplayName: conductoroneapi.String("libero"),
+        Description: conductoroneapi.String("consequatur"),
+        DisplayName: conductoroneapi.String("minus"),
         PolicySteps: map[string]shared.PolicyStepsInput{
-            "soluta": shared.PolicyStepsInput{
+            "sapiente": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Approval: &shared.ApprovalInput{
@@ -51,14 +52,16 @@ func main() {
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
                                 DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoroneapi.String("aliquam"),
-                                    EntitlementID: conductoroneapi.String("sapiente"),
+                                    AppID: conductoroneapi.String("esse"),
+                                    EntitlementID: conductoroneapi.String("blanditiis"),
                                 },
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoroneapi.String("dicta"),
+                                    Instructions: conductoroneapi.String("provident"),
                                     UserIds: []string{
-                                        "reprehenderit",
-                                        "ullam",
+                                        "nulla",
+                                        "quas",
+                                        "esse",
+                                        "quasi",
                                     },
                                 },
                             },
@@ -67,7 +70,7 @@ func main() {
                     },
                 },
             },
-            "nisi": shared.PolicyStepsInput{
+            "a": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Approval: &shared.ApprovalInput{
@@ -82,24 +85,19 @@ func main() {
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
                                 DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoroneapi.String("voluptatum"),
-                                    EntitlementID: conductoroneapi.String("qui"),
+                                    AppID: conductoroneapi.String("sint"),
+                                    EntitlementID: conductoroneapi.String("pariatur"),
                                 },
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoroneapi.String("quibusdam"),
+                                    Instructions: conductoroneapi.String("possimus"),
                                     UserIds: []string{
-                                        "deleniti",
-                                        "itaque",
+                                        "eveniet",
                                     },
                                 },
                             },
                             Assigned: conductoroneapi.Bool(false),
                         },
                     },
-                },
-            },
-            "dolorum": shared.PolicyStepsInput{
-                Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Approval: &shared.ApprovalInput{
                             AppGroupApproval: &shared.AppGroupApproval1{},
@@ -113,26 +111,19 @@ func main() {
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
                                 DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoroneapi.String("omnis"),
-                                    EntitlementID: conductoroneapi.String("tenetur"),
+                                    AppID: conductoroneapi.String("asperiores"),
+                                    EntitlementID: conductoroneapi.String("facere"),
                                 },
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoroneapi.String("quasi"),
+                                    Instructions: conductoroneapi.String("veritatis"),
                                     UserIds: []string{
-                                        "et",
-                                        "voluptate",
-                                        "ipsa",
-                                        "minima",
+                                        "quasi",
                                     },
                                 },
                             },
                             Assigned: conductoroneapi.Bool(false),
                         },
                     },
-                },
-            },
-            "veritatis": shared.PolicyStepsInput{
-                Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Approval: &shared.ApprovalInput{
                             AppGroupApproval: &shared.AppGroupApproval1{},
@@ -146,13 +137,16 @@ func main() {
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
                                 DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoroneapi.String("adipisci"),
-                                    EntitlementID: conductoroneapi.String("iste"),
+                                    AppID: conductoroneapi.String("similique"),
+                                    EntitlementID: conductoroneapi.String("culpa"),
                                 },
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoroneapi.String("temporibus"),
+                                    Instructions: conductoroneapi.String("aliquid"),
                                     UserIds: []string{
-                                        "rem",
+                                        "quae",
+                                        "earum",
+                                        "vel",
+                                        "in",
                                     },
                                 },
                             },
@@ -162,7 +156,7 @@ func main() {
                 },
             },
         },
-        PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeUnspecified.ToPointer(),
+        PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeGrant.ToPointer(),
         PostActions: []shared.PolicyPostActions{
             shared.PolicyPostActions{
                 CertifyRemediateImmediately: conductoroneapi.Bool(false),
@@ -201,7 +195,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.policy.v1.Policies.Delete method.
+ Delete a policy by ID.
+
 
 ### Example Usage
 
@@ -226,7 +221,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
         DeletePolicyRequest: &shared.DeletePolicyRequest{},
-        ID: "6a184039-4c26-4071-b93f-5f0642dac7af",
+        ID: "db04f157-5608-42d6-8ea1-9f1d17051339",
     })
     if err != nil {
         log.Fatal(err)
@@ -253,7 +248,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.policy.v1.Policies.Get method.
+ Get a policy by ID.
+
 
 ### Example Usage
 
@@ -277,7 +273,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
-        ID: "515cc413-aa63-4aae-8d67-864dbb675fd5",
+        ID: "d08086a1-8403-494c-a607-1f93f5f0642d",
     })
     if err != nil {
         log.Fatal(err)
@@ -304,7 +300,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.policy.v1.Policies.List method.
+ List policies.
+
 
 ### Example Usage
 
@@ -316,6 +313,7 @@ import(
 	"log"
 	"github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -326,7 +324,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.List(ctx)
+    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{
+        PageSize: conductoroneapi.Float64(6387.62),
+        PageToken: conductoroneapi.String("maxime"),
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -339,9 +340,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [operations.C1APIPolicyV1PoliciesListRequest](../../models/operations/c1apipolicyv1policieslistrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -351,7 +353,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.policy.v1.Policies.Update method.
+ Update a policy by providing a policy object and an update mask.
+
 
 ### Example Usage
 
@@ -377,10 +380,10 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequestInput: &shared.UpdatePolicyRequestInput{
             Policy: &shared.PolicyInput{
-                Description: conductoroneapi.String("recusandae"),
-                DisplayName: conductoroneapi.String("aliquid"),
+                Description: conductoroneapi.String("dignissimos"),
+                DisplayName: conductoroneapi.String("officia"),
                 PolicySteps: map[string]shared.PolicyStepsInput{
-                    "cum": shared.PolicyStepsInput{
+                    "nemo": shared.PolicyStepsInput{
                         Steps: []shared.PolicyStepInput{
                             shared.PolicyStepInput{
                                 Approval: &shared.ApprovalInput{
@@ -395,15 +398,99 @@ func main() {
                                     ProvisionPolicy: &shared.ProvisionPolicy{
                                         ConnectorProvision: &shared.ConnectorProvision{},
                                         DelegatedProvision: &shared.DelegatedProvision{
-                                            AppID: conductoroneapi.String("in"),
-                                            EntitlementID: conductoroneapi.String("exercitationem"),
+                                            AppID: conductoroneapi.String("quaerat"),
+                                            EntitlementID: conductoroneapi.String("porro"),
                                         },
                                         ManualProvision: &shared.ManualProvision{
-                                            Instructions: conductoroneapi.String("earum"),
+                                            Instructions: conductoroneapi.String("quod"),
                                             UserIds: []string{
-                                                "numquam",
-                                                "doloribus",
-                                                "suscipit",
+                                                "ab",
+                                                "adipisci",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                        },
+                    },
+                    "fuga": shared.PolicyStepsInput{
+                        Steps: []shared.PolicyStepInput{
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("suscipit"),
+                                            EntitlementID: conductoroneapi.String("velit"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("culpa"),
+                                            UserIds: []string{
+                                                "recusandae",
+                                                "totam",
+                                                "fugiat",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("vel"),
+                                            EntitlementID: conductoroneapi.String("ducimus"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("quos"),
+                                            UserIds: []string{
+                                                "labore",
+                                                "possimus",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("facilis"),
+                                            EntitlementID: conductoroneapi.String("cum"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("commodi"),
+                                            UserIds: []string{
+                                                "corporis",
                                                 "reiciendis",
                                             },
                                         },
@@ -413,8 +500,128 @@ func main() {
                             },
                         },
                     },
+                    "assumenda": shared.PolicyStepsInput{
+                        Steps: []shared.PolicyStepInput{
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("recusandae"),
+                                            EntitlementID: conductoroneapi.String("aliquid"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("aperiam"),
+                                            UserIds: []string{
+                                                "consectetur",
+                                                "in",
+                                                "exercitationem",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("earum"),
+                                            EntitlementID: conductoroneapi.String("facere"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("numquam"),
+                                            UserIds: []string{
+                                                "suscipit",
+                                                "reiciendis",
+                                                "quidem",
+                                                "saepe",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                        },
+                    },
+                    "necessitatibus": shared.PolicyStepsInput{
+                        Steps: []shared.PolicyStepInput{
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("sunt"),
+                                            EntitlementID: conductoroneapi.String("asperiores"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("adipisci"),
+                                            UserIds: []string{
+                                                "amet",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                            shared.PolicyStepInput{
+                                Approval: &shared.ApprovalInput{
+                                    AppGroupApproval: &shared.AppGroupApproval1{},
+                                    AppOwnerApproval: &shared.AppOwnerApproval1{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval1{},
+                                    ManagerApproval: &shared.ManagerApproval1{},
+                                    SelfApproval: &shared.SelfApproval1{},
+                                    UserApproval: &shared.UserApproval1{},
+                                },
+                                Provision: &shared.Provision{
+                                    ProvisionPolicy: &shared.ProvisionPolicy{
+                                        ConnectorProvision: &shared.ConnectorProvision{},
+                                        DelegatedProvision: &shared.DelegatedProvision{
+                                            AppID: conductoroneapi.String("beatae"),
+                                            EntitlementID: conductoroneapi.String("dignissimos"),
+                                        },
+                                        ManualProvision: &shared.ManualProvision{
+                                            Instructions: conductoroneapi.String("a"),
+                                            UserIds: []string{
+                                                "consectetur",
+                                                "corporis",
+                                                "harum",
+                                                "laboriosam",
+                                            },
+                                        },
+                                    },
+                                    Assigned: conductoroneapi.Bool(false),
+                                },
+                            },
+                        },
+                    },
                 },
-                PolicyType: shared.PolicyPolicyTypePolicyTypeAccessRequest.ToPointer(),
+                PolicyType: shared.PolicyPolicyTypePolicyTypeUnspecified.ToPointer(),
                 PostActions: []shared.PolicyPostActions{
                     shared.PolicyPostActions{
                         CertifyRemediateImmediately: conductoroneapi.Bool(false),
@@ -431,9 +638,9 @@ func main() {
                 },
                 ReassignTasksToDelegates: conductoroneapi.Bool(false),
             },
-            UpdateMask: conductoroneapi.String("necessitatibus"),
+            UpdateMask: conductoroneapi.String("libero"),
         },
-        ID: "41f33317-fe35-4b60-ab1e-a426555ba3c2",
+        ID: "1ea42655-5ba3-4c28-b44e-d53b88f3a8d8",
     })
     if err != nil {
         log.Fatal(err)

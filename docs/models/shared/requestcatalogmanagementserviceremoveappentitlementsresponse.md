@@ -1,6 +1,7 @@
 # RequestCatalogManagementServiceRemoveAppEntitlementsResponse
 
-The RequestCatalogManagementServiceRemoveAppEntitlementsResponse message.
+ Empty response with a status code indicating success
+
 
 
 ## Fields

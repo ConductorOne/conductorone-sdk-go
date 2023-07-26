@@ -1,6 +1,7 @@
 # DeleteAppRequest
 
-The DeleteAppRequest message.
+ Empty request body
+
 
 
 ## Fields

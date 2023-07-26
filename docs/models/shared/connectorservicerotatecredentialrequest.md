@@ -1,6 +1,7 @@
 # ConnectorServiceRotateCredentialRequest
 
-The ConnectorServiceRotateCredentialRequest message.
+ ConnectorServiceRotateCredentialRequest is a request for rotating connector credentials. It uses URL values for input.
+
 
 
 ## Fields
