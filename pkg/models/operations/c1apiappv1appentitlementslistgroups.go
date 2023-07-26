@@ -28,7 +28,8 @@ func (o *C1APIAppV1AppEntitlementsListGroupsRequest) GetAppID() string {
 
 type C1APIAppV1AppEntitlementsListGroupsResponse struct {
 	ContentType string
-	// Successful response
+	//  The ListAppEntitlementGroupsResponse message contains a list of results and a nextPageToken if applicable.
+	//
 	ListAppEntitlementGroupsResponse *shared.ListAppEntitlementGroupsResponse
 	StatusCode                       int
 	RawResponse                      *http.Response

@@ -7,7 +7,8 @@
 
 ## Get
 
-Invokes the c1.api.user.v1.UserService.Get method.
+ Get a user by ID.
+
 
 ### Example Usage
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "0f739ae9-e057-4eb8-89e2-810331f3981d",
+        ID: "e139dbc2-259b-41ab-9a8c-070e1084cb06",
     })
     if err != nil {
         log.Fatal(err)
@@ -58,7 +59,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.user.v1.UserService.List method.
+ List users.
+
 
 ### Example Usage
 

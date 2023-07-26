@@ -6,7 +6,8 @@
 
 ## Search
 
-Invokes the c1.api.user.v1.UserSearch.Search method.
+ Search users based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -31,47 +32,44 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "minus",
-                "esse",
+                "dolores",
+                "assumenda",
             },
         },
-        Email: conductoroneapi.String("Al.Price@gmail.com"),
+        Email: conductoroneapi.String("Marcella.Schumm@gmail.com"),
         ExcludeIds: []string{
-            "repellat",
-            "velit",
+            "accusamus",
+            "necessitatibus",
+            "tempore",
         },
         Ids: []string{
-            "provident",
-            "consectetur",
-            "eligendi",
-            "dignissimos",
+            "ea",
+            "autem",
+            "ipsam",
         },
-        PageSize: conductoroneapi.Float64(2358.34),
-        PageToken: conductoroneapi.String("soluta"),
-        Query: conductoroneapi.String("natus"),
+        PageSize: conductoroneapi.Float64(7029.52),
+        PageToken: conductoroneapi.String("laudantium"),
+        Query: conductoroneapi.String("corporis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("a3f2ceda-7e23-4f22-9741-1faf4b7544e4"),
+                ID: conductoroneapi.String("fbd02bae-0be2-4d78-a259-e3ea4b5197f9"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("72e80285-7a5b-4404-a3a7-d575f1400e76"),
+                ID: conductoroneapi.String("2443da7c-e52b-4895-8537-c6454efb0b34"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("4ad7334e-c1b7-481b-b6a0-8088d100efad"),
+                ID: conductoroneapi.String("896c3ca5-acfb-4e2f-9570-7577929177de"),
             },
             shared.UserRef{
-                ID: conductoroneapi.String("a200ef04-22eb-4216-8cf9-ab8366c723ff"),
+                ID: conductoroneapi.String("ac646ecb-5734-409e-beb1-e5a2b12eb07f"),
             },
         },
         RoleIds: []string{
-            "laborum",
-            "natus",
-            "accusamus",
-            "doloremque",
+            "quasi",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDisabled,
             shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesDisabled,
         },
     })
     if err != nil {

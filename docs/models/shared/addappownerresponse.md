@@ -1,6 +1,7 @@
 # AddAppOwnerResponse
 
-The AddAppOwnerResponse message.
+ Empty response with a status code indicating success
+
 
 
 ## Fields

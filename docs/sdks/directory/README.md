@@ -9,7 +9,8 @@
 
 ## Create
 
-Invokes the c1.api.directory.v1.DirectoryService.Create method.
+ Create a directory.
+
 
 ### Example Usage
 
@@ -34,13 +35,11 @@ func main() {
     res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
         DirectoryExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
-                "possimus",
-                "quia",
-                "eveniet",
-                "asperiores",
+                "accusantium",
+                "porro",
             },
         },
-        AppID: conductoroneapi.String("facere"),
+        AppID: conductoroneapi.String("eum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -67,7 +66,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.directory.v1.DirectoryService.Delete method.
+ Delete a directory by app_id.
+
 
 ### Example Usage
 
@@ -92,7 +92,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "veritatis",
+        AppID: "quas",
     })
     if err != nil {
         log.Fatal(err)
@@ -119,7 +119,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.directory.v1.DirectoryService.Get method.
+ Get a directory by app_id.
+
 
 ### Example Usage
 
@@ -143,7 +144,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "consequuntur",
+        AppID: "praesentium",
     })
     if err != nil {
         log.Fatal(err)
@@ -170,7 +171,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.directory.v1.DirectoryService.List method.
+ List directories.
+
 
 ### Example Usage
 

@@ -2,9 +2,10 @@
 
 package shared
 
-// FacetRangeItem - The FacetRangeItem message.
+// FacetRangeItem -  The FacetRangeItem message.
 type FacetRangeItem struct {
-	// The ranges field.
+	//  An array of facet ranges.
+	//
 	Ranges []FacetRange `json:"ranges,omitempty"`
 }
 

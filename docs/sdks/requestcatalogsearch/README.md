@@ -6,7 +6,8 @@
 
 ## SearchEntitlements
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements method.
+ Search request catalogs based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -31,16 +32,14 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "placeat",
-                "perspiciatis",
-                "expedita",
+                "fugiat",
             },
         },
-        EntitlementAlias: conductoroneapi.String("deleniti"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusNotGranted.ToPointer(),
-        PageSize: conductoroneapi.Float64(4555.79),
-        PageToken: conductoroneapi.String("ullam"),
-        Query: conductoroneapi.String("unde"),
+        EntitlementAlias: conductoroneapi.String("ipsam"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusUnspecified.ToPointer(),
+        PageSize: conductoroneapi.Float64(551.07),
+        PageToken: conductoroneapi.String("quas"),
+        Query: conductoroneapi.String("eveniet"),
     })
     if err != nil {
         log.Fatal(err)

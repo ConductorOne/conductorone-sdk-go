@@ -19,7 +19,8 @@ func (o *C1APIAppV1AppReportServiceListRequest) GetAppID() string {
 }
 
 type C1APIAppV1AppReportServiceListResponse struct {
-	// Successful response
+	//  The AppReportServiceListResponse message contains a list of results and a nextPageToken if applicable.
+	//
 	AppReportServiceListResponse *shared.AppReportServiceListResponse
 	ContentType                  string
 	StatusCode                   int

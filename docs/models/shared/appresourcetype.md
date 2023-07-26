@@ -1,15 +1,16 @@
 # AppResourceType
 
-The AppResourceType message.
+ The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role.
+
 
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `AppID`                                    | **string*                                  | :heavy_minus_sign:                         | The appId field.                           |
-| `CreatedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
-| `DeletedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
-| `DisplayName`                              | **string*                                  | :heavy_minus_sign:                         | The displayName field.                     |
-| `ID`                                       | **string*                                  | :heavy_minus_sign:                         | The id field.                              |
-| `UpdatedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `AppID`                                                           | **string*                                                         | :heavy_minus_sign:                                                |  The ID of the app that is associated with the app resource type<br/> |
+| `CreatedAt`                                                       | [*time.Time](https://pkg.go.dev/time#Time)                        | :heavy_minus_sign:                                                | N/A                                                               |
+| `DeletedAt`                                                       | [*time.Time](https://pkg.go.dev/time#Time)                        | :heavy_minus_sign:                                                | N/A                                                               |
+| `DisplayName`                                                     | **string*                                                         | :heavy_minus_sign:                                                |  The display name of the app resource type.<br/>                  |
+| `ID`                                                              | **string*                                                         | :heavy_minus_sign:                                                |  The unique ID for the app resource type.<br/>                    |
+| `UpdatedAt`                                                       | [*time.Time](https://pkg.go.dev/time#Time)                        | :heavy_minus_sign:                                                | N/A                                                               |

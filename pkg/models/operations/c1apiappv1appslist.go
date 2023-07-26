@@ -9,7 +9,8 @@ import (
 
 type C1APIAppV1AppsListResponse struct {
 	ContentType string
-	// Successful response
+	//  The ListAppsResponse message contains a list of results and a nextPageToken if applicable.
+	//
 	ListAppsResponse *shared.ListAppsResponse
 	StatusCode       int
 	RawResponse      *http.Response

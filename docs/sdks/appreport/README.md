@@ -6,7 +6,8 @@
 
 ## List
 
-Invokes the c1.api.app.v1.AppReportService.List method.
+ Get a list of reports for the given app.
+
 
 ### Example Usage
 
@@ -30,7 +31,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "sint",
+        AppID: "incidunt",
     })
     if err != nil {
         log.Fatal(err)

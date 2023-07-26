@@ -10,7 +10,8 @@
 
 ## Create
 
-Invokes the c1.api.app.v1.Apps.Create method.
+ Create a new app.
+
 
 ### Example Usage
 
@@ -33,15 +34,18 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("nam"),
-        Description: conductoroneapi.String("eaque"),
-        DisplayName: conductoroneapi.String("pariatur"),
-        GrantPolicyID: conductoroneapi.String("nemo"),
-        MonthlyCostUsd: conductoroneapi.Float64(9755.22),
+        CertifyPolicyID: conductoroneapi.String("repudiandae"),
+        Description: conductoroneapi.String("ullam"),
+        DisplayName: conductoroneapi.String("expedita"),
+        GrantPolicyID: conductoroneapi.String("nihil"),
+        MonthlyCostUsd: conductoroneapi.Float64(9988.48),
         Owners: []string{
-            "fugiat",
+            "sed",
+            "saepe",
+            "pariatur",
+            "accusantium",
         },
-        RevokePolicyID: conductoroneapi.String("amet"),
+        RevokePolicyID: conductoroneapi.String("consequuntur"),
     })
     if err != nil {
         log.Fatal(err)
@@ -68,7 +72,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.app.v1.Apps.Delete method.
+ Delete an app.
+
 
 ### Example Usage
 
@@ -93,7 +98,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "0c5fbb25-8705-4320-ac73-d5fe9b90c289",
+        ID: "8921cddc-6926-401f-b576-b0d5f0d30c5f",
     })
     if err != nil {
         log.Fatal(err)
@@ -120,7 +125,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.app.v1.Apps.Get method.
+ Get an app by ID.
+
 
 ### Example Usage
 
@@ -144,7 +150,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "09b3fe49-a8d9-4cbf-8863-3323f9b77f3a",
+        ID: "bb258705-3202-4c73-95fe-9b90c28909b3",
     })
     if err != nil {
         log.Fatal(err)
@@ -171,7 +177,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.Apps.List method.
+ List all apps.
+
 
 ### Example Usage
 
@@ -218,7 +225,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.Apps.Update method.
+ Update an existing app.
+
 
 ### Example Usage
 
@@ -244,24 +252,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                AppAccountID: conductoroneapi.String("numquam"),
-                AppAccountName: conductoroneapi.String("veritatis"),
-                CertifyPolicyID: conductoroneapi.String("ipsa"),
-                Description: conductoroneapi.String("ipsa"),
-                DisplayName: conductoroneapi.String("iure"),
-                FieldMask: conductoroneapi.String("odio"),
-                GrantPolicyID: conductoroneapi.String("quaerat"),
-                IconURL: conductoroneapi.String("accusamus"),
-                ID: conductoroneapi.String("bf69280d-1ba7-47a8-9ebf-737ae4203ce5"),
-                LogoURI: conductoroneapi.String("saepe"),
-                MonthlyCostUsd: conductoroneapi.Float64(3834.64),
-                ParentAppID: conductoroneapi.String("deserunt"),
-                RevokePolicyID: conductoroneapi.String("provident"),
-                UserCount: conductoroneapi.String("minima"),
+                CertifyPolicyID: conductoroneapi.String("asperiores"),
+                Description: conductoroneapi.String("earum"),
+                DisplayName: conductoroneapi.String("modi"),
+                GrantPolicyID: conductoroneapi.String("iste"),
+                IconURL: conductoroneapi.String("dolorum"),
+                MonthlyCostUsd: conductoroneapi.Float64(5356.33),
+                RevokePolicyID: conductoroneapi.String("pariatur"),
             },
-            UpdateMask: conductoroneapi.String("repellendus"),
+            UpdateMask: conductoroneapi.String("provident"),
         },
-        ID: "8a0d446c-e2af-47a7-bcf3-be453f870b32",
+        ID: "cbf48633-323f-49b7-bf3a-4100674ebf69",
     })
     if err != nil {
         log.Fatal(err)

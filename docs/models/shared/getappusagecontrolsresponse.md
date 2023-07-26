@@ -1,11 +1,12 @@
 # GetAppUsageControlsResponse
 
-The GetAppUsageControlsResponse message.
+ The GetAppUsageControlsResponse message contains the retrieved AppUsageControls object.
+
 
 
 ## Fields
 
-| Field                                                        | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `AppUsageControls`                                           | [*AppUsageControls](../../models/shared/appusagecontrols.md) | :heavy_minus_sign:                                           | The AppUsageControls message.                                |
-| `HasUsageData`                                               | **bool*                                                      | :heavy_minus_sign:                                           | The hasUsageData field.                                      |
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `AppUsageControls`                                                                | [*AppUsageControls](../../models/shared/appusagecontrols.md)                      | :heavy_minus_sign:                                                                |  The AppUsageControls object describes some peripheral configuration for an app.<br/> |
+| `HasUsageData`                                                                    | **bool*                                                                           | :heavy_minus_sign:                                                                |  HasUsageData is false if the access entitlement for this app has no usage data.<br/> |

@@ -1,6 +1,7 @@
 # AppActionsServiceGenerateReportResponse
 
-The AppActionsServiceGenerateReportResponse message.
+ Empty response body. Status code indicates success.
+
 
 
 ## Fields

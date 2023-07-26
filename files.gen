@@ -200,6 +200,7 @@ pkg/models/shared/connectorservicerotatecredentialresponse.go
 pkg/models/shared/connectorservicerotatecredentialrequest.go
 pkg/models/shared/connectorserviceupdateresponse.go
 pkg/models/shared/connectorserviceupdaterequest.go
+pkg/models/shared/oauth2authorizedas1.go
 pkg/models/shared/connectorserviceupdatedelegatedrequest.go
 pkg/models/shared/directoryservicecreateresponse.go
 pkg/models/shared/directoryview.go
@@ -278,8 +279,8 @@ pkg/models/shared/taskrevokesourcereview.go
 pkg/models/shared/taskrevokesourcerequest.go
 pkg/models/shared/taskrevokesourcenonusage.go
 pkg/models/shared/taskrevokesourceexpired.go
-pkg/models/shared/tasktypegrant.go
-pkg/models/shared/tasktypecertify.go
+pkg/models/shared/tasktypegrant1.go
+pkg/models/shared/tasktypecertify1.go
 pkg/models/shared/policyinstance.go
 pkg/models/shared/policystepinstance.go
 pkg/models/shared/provisioninstance.go
@@ -308,6 +309,8 @@ pkg/models/shared/taskserviceactionresponse.go
 pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.go
 pkg/models/shared/tasksearchresponse.go
 pkg/models/shared/tasksearchrequest.go
+pkg/models/shared/tasktypegrant.go
+pkg/models/shared/tasktypecertify.go
 pkg/models/shared/taskref.go
 pkg/models/shared/userservicegetresponse.go
 pkg/models/shared/userview.go
@@ -569,6 +572,7 @@ docs/models/shared/connectorservicerotatecredentialresponse.md
 docs/models/shared/connectorservicerotatecredentialrequest.md
 docs/models/shared/connectorserviceupdateresponse.md
 docs/models/shared/connectorserviceupdaterequestinput.md
+docs/models/shared/oauth2authorizedas1.md
 docs/models/shared/connectorserviceupdatedelegatedrequestinput.md
 docs/models/shared/directoryservicecreateresponse.md
 docs/models/shared/directoryview.md
@@ -656,7 +660,9 @@ docs/models/shared/taskstate.md
 docs/models/shared/task.md
 docs/models/shared/externalrefexternalrefsource.md
 docs/models/shared/externalref.md
+docs/models/shared/tasktypeinput.md
 docs/models/shared/tasktype.md
+docs/models/shared/tasktyperevokeinput.md
 docs/models/shared/tasktyperevokeoutcome.md
 docs/models/shared/tasktyperevoke.md
 docs/models/shared/taskrevokesource.md
@@ -665,9 +671,9 @@ docs/models/shared/taskrevokesourcerequest.md
 docs/models/shared/taskrevokesourcenonusage.md
 docs/models/shared/taskrevokesourceexpired.md
 docs/models/shared/tasktypegrantoutcome.md
-docs/models/shared/tasktypegrant.md
+docs/models/shared/tasktypegrant1.md
 docs/models/shared/tasktypecertifyoutcome.md
-docs/models/shared/tasktypecertify.md
+docs/models/shared/tasktypecertify1.md
 docs/models/shared/policyinstance.md
 docs/models/shared/policystepinstancestate.md
 docs/models/shared/policystepinstance.md
@@ -702,7 +708,9 @@ docs/models/shared/tasksearchrequestcurrentstep.md
 docs/models/shared/tasksearchrequestemergencystatus.md
 docs/models/shared/tasksearchrequestsortby.md
 docs/models/shared/tasksearchrequesttaskstates.md
-docs/models/shared/tasksearchrequest.md
+docs/models/shared/tasksearchrequestinput.md
+docs/models/shared/tasktypegrant.md
+docs/models/shared/tasktypecertify.md
 docs/models/shared/taskref.md
 docs/models/shared/userservicegetresponse.md
 docs/models/shared/userview.md

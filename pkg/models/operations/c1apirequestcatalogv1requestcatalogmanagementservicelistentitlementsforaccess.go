@@ -20,7 +20,8 @@ func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsFor
 
 type C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse struct {
 	ContentType string
-	// Successful response
+	//  The RequestCatalogManagementServiceListEntitlementsForAccessResponse message contains a list of results and a nextPageToken if applicable.
+	//
 	RequestCatalogManagementServiceListEntitlementsForAccessResponse *shared.RequestCatalogManagementServiceListEntitlementsForAccessResponse
 	StatusCode                                                       int
 	RawResponse                                                      *http.Response

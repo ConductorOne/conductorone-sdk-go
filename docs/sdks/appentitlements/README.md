@@ -12,7 +12,8 @@
 
 ## Get
 
-Invokes the c1.api.app.v1.AppEntitlements.Get method.
+ Get an app entitlement by ID.
+
 
 ### Example Usage
 
@@ -64,7 +65,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.AppEntitlements.List method.
+ List app entitlements associated with an app.
+
 
 ### Example Usage
 
@@ -115,7 +117,8 @@ func main() {
 
 ## ListForAppResource
 
-Invokes the c1.api.app.v1.AppEntitlements.ListForAppResource method.
+ List app entitlements associated with an app resource.
+
 
 ### Example Usage
 
@@ -168,7 +171,8 @@ func main() {
 
 ## ListForAppUser
 
-Invokes the c1.api.app.v1.AppEntitlements.ListForAppUser method.
+ List app entitlements associated with an app user.
+
 
 ### Example Usage
 
@@ -220,7 +224,8 @@ func main() {
 
 ## ListGroups
 
-Invokes the c1.api.app.v1.AppEntitlements.ListGroups method.
+ List app groups associated with an app entitlement.
+
 
 ### Example Usage
 
@@ -272,7 +277,8 @@ func main() {
 
 ## ListUsers
 
-Invokes the c1.api.app.v1.AppEntitlements.ListUsers method.
+ List the users, as AppEntitlementUsers objects, of an app entitlement.
+
 
 ### Example Usage
 
@@ -324,7 +330,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.AppEntitlements.Update method.
+ Update an app entitlement by ID.
+
 
 ### Example Usage
 
@@ -364,12 +371,12 @@ func main() {
                         },
                     },
                 },
-                Alias: conductoroneapi.String("quia"),
-                AppID: conductoroneapi.String("quis"),
-                AppResourceID: conductoroneapi.String("vitae"),
-                AppResourceTypeID: conductoroneapi.String("laborum"),
-                CertifyPolicyID: conductoroneapi.String("animi"),
+                AppID: conductoroneapi.String("quia"),
+                AppResourceID: conductoroneapi.String("quis"),
+                AppResourceTypeID: conductoroneapi.String("vitae"),
+                CertifyPolicyID: conductoroneapi.String("laborum"),
                 ComplianceFrameworkValueIds: []string{
+                    "enim",
                     "odit",
                     "quo",
                 },
@@ -379,25 +386,23 @@ func main() {
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
                 EmergencyGrantEnabled: conductoroneapi.Bool(false),
                 EmergencyGrantPolicyID: conductoroneapi.String("id"),
-                GrantCount: conductoroneapi.String("possimus"),
-                GrantPolicyID: conductoroneapi.String("aut"),
-                ID: conductoroneapi.String("19da1ffe-78f0-497b-8074-f15471b5e6e1"),
-                RevokePolicyID: conductoroneapi.String("ipsum"),
-                RiskLevelValueID: conductoroneapi.String("quidem"),
-                Slug: conductoroneapi.String("molestias"),
-                SystemBuiltin: conductoroneapi.Bool(false),
+                GrantPolicyID: conductoroneapi.String("possimus"),
+                RevokePolicyID: conductoroneapi.String("aut"),
+                RiskLevelValueID: conductoroneapi.String("quasi"),
+                Slug: conductoroneapi.String("error"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "pariatur",
-                    "modi",
-                    "praesentium",
+                    "laborum",
+                    "quasi",
+                    "reiciendis",
+                    "voluptatibus",
                 },
             },
-            UpdateMask: conductoroneapi.String("rem"),
+            UpdateMask: conductoroneapi.String("vero"),
         },
-        AppID: "voluptates",
-        ID: "1e91e450-ad2a-4bd4-8269-802d502a94bb",
+        AppID: "nihil",
+        ID: "8f097b00-74f1-4547-9b5e-6e13b99d488e",
     })
     if err != nil {
         log.Fatal(err)

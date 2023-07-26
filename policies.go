@@ -26,7 +26,8 @@ func newPolicies(sdkConfig sdkConfiguration) *policies {
 }
 
 // Create - Create
-// Invokes the c1.api.policy.v1.Policies.Create method.
+//
+//	Create a policy.
 func (s *policies) Create(ctx context.Context, request shared.CreatePolicyRequestInput) (*operations.C1APIPolicyV1PoliciesCreateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/policies"
@@ -88,7 +89,8 @@ func (s *policies) Create(ctx context.Context, request shared.CreatePolicyReques
 }
 
 // Delete - Delete
-// Invokes the c1.api.policy.v1.Policies.Delete method.
+//
+//	Delete a policy by ID.
 func (s *policies) Delete(ctx context.Context, request operations.C1APIPolicyV1PoliciesDeleteRequest) (*operations.C1APIPolicyV1PoliciesDeleteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/policies/{id}", request, nil)
@@ -153,7 +155,8 @@ func (s *policies) Delete(ctx context.Context, request operations.C1APIPolicyV1P
 }
 
 // Get - Get
-// Invokes the c1.api.policy.v1.Policies.Get method.
+//
+//	Get a policy by ID.
 func (s *policies) Get(ctx context.Context, request operations.C1APIPolicyV1PoliciesGetRequest) (*operations.C1APIPolicyV1PoliciesGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/policies/{id}", request, nil)
@@ -211,7 +214,8 @@ func (s *policies) Get(ctx context.Context, request operations.C1APIPolicyV1Poli
 }
 
 // List - List
-// Invokes the c1.api.policy.v1.Policies.List method.
+//
+//	List policies.
 func (s *policies) List(ctx context.Context) (*operations.C1APIPolicyV1PoliciesListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/policies"
@@ -266,7 +270,8 @@ func (s *policies) List(ctx context.Context) (*operations.C1APIPolicyV1PoliciesL
 }
 
 // Update - Update
-// Invokes the c1.api.policy.v1.Policies.Update method.
+//
+//	Update a policy by providing a policy object and an update mask.
 func (s *policies) Update(ctx context.Context, request operations.C1APIPolicyV1PoliciesUpdateRequest) (*operations.C1APIPolicyV1PoliciesUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/policies/{id}", request, nil)

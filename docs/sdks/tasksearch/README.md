@@ -6,7 +6,8 @@
 
 ## Search
 
-Invokes the c1.api.task.v1.TaskSearchService.Search method.
+ Search tasks based on filters specified in the request body.
+
 
 ### Example Usage
 
@@ -29,196 +30,134 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TaskSearch.Search(ctx, shared.TaskSearchRequest{
+    res, err := s.TaskSearch.Search(ctx, shared.TaskSearchRequestInput{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "numquam",
+                "vero",
+                "voluptatem",
+                "ipsam",
             },
         },
         AccessReviewIds: []string{
-            "nesciunt",
-            "at",
+            "alias",
+            "quasi",
         },
         AccountOwnerIds: []string{
-            "dignissimos",
-            "optio",
-            "necessitatibus",
+            "maiores",
         },
-        ActorID: conductoroneapi.String("corporis"),
+        ActorID: conductoroneapi.String("enim"),
         AppEntitlementIds: []string{
-            "expedita",
+            "nulla",
+            "deserunt",
+            "esse",
         },
         AppResourceIds: []string{
-            "cupiditate",
-            "minima",
-            "placeat",
+            "reprehenderit",
+            "est",
         },
         AppResourceTypeIds: []string{
-            "neque",
-            "in",
+            "sint",
+            "accusamus",
         },
         AppUserSubjectIds: []string{
-            "eum",
-            "modi",
-            "corporis",
-            "magnam",
+            "hic",
+            "necessitatibus",
+            "asperiores",
+            "ex",
         },
         ApplicationIds: []string{
-            "maiores",
-            "tempore",
-            "aperiam",
-            "libero",
+            "debitis",
+            "delectus",
         },
         AssigneesInIds: []string{
-            "labore",
+            "minus",
         },
-        CreatedAfter: types.MustTimeFromString("2021-11-05T06:31:50.944Z"),
-        CreatedBefore: types.MustTimeFromString("2022-03-22T14:23:17.198Z"),
-        CurrentStep: shared.TaskSearchRequestCurrentStepTaskSearchCurrentStepUnspecified.ToPointer(),
-        EmergencyStatus: shared.TaskSearchRequestEmergencyStatusEmergency.ToPointer(),
+        CreatedAfter: types.MustTimeFromString("2021-08-25T17:55:33.849Z"),
+        CreatedBefore: types.MustTimeFromString("2022-10-03T14:46:04.624Z"),
+        CurrentStep: shared.TaskSearchRequestCurrentStepTaskSearchCurrentStepApproval.ToPointer(),
+        EmergencyStatus: shared.TaskSearchRequestEmergencyStatusUnspecified.ToPointer(),
         ExcludeAppEntitlementIds: []string{
-            "nostrum",
-            "est",
-            "impedit",
+            "magni",
+            "soluta",
+            "repudiandae",
+            "nam",
         },
         ExcludeIds: []string{
-            "tempore",
-            "vero",
-            "odit",
-            "repellat",
+            "iusto",
+            "voluptate",
         },
         IncludeDeleted: conductoroneapi.Bool(false),
         MyWorkUserIds: []string{
-            "nemo",
-            "reprehenderit",
-            "aperiam",
-            "odio",
+            "dignissimos",
         },
         OpenerIds: []string{
-            "in",
-            "ducimus",
+            "quo",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
+        PageSize: conductoroneapi.Float64(5354.68),
+        PageToken: conductoroneapi.String("quibusdam"),
         PreviouslyActedOnIds: []string{
-            "veritatis",
-            "ducimus",
-            "voluptate",
+            "odit",
+            "voluptatibus",
         },
-        Query: conductoroneapi.String("pariatur"),
+        Query: conductoroneapi.String("vel"),
         Refs: []shared.TaskRef{
             shared.TaskRef{
-                ID: conductoroneapi.String("ac646ecb-5734-409e-beb1-e5a2b12eb07f"),
+                ID: conductoroneapi.String("d1db1f2c-4310-4661-a963-49e1cf9e06e3"),
             },
             shared.TaskRef{
-                ID: conductoroneapi.String("116db995-45fc-495f-a889-70e189dbb30f"),
-            },
-            shared.TaskRef{
-                ID: conductoroneapi.String("cb33ea05-5b19-47cd-84e2-f52d82d3513b"),
-            },
-            shared.TaskRef{
-                ID: conductoroneapi.String("b6f48b65-6bcd-4b35-bf2e-4b27537a8cd9"),
+                ID: conductoroneapi.String("a437000a-e6b6-4bc9-b8f7-59eac55a9741"),
             },
         },
         SortBy: shared.TaskSearchRequestSortByTaskSearchSortByAccountOwner.ToPointer(),
         SubjectIds: []string{
-            "dolor",
-            "dicta",
+            "vitae",
         },
         TaskStates: []shared.TaskSearchRequestTaskStates{
-            shared.TaskSearchRequestTaskStatesTaskStateClosed,
             shared.TaskSearchRequestTaskStatesTaskStateUnspecified,
-            shared.TaskSearchRequestTaskStatesTaskStateOpen,
         },
-        TaskTypes: []shared.TaskType{
-            shared.TaskType{
-                TaskTypeCertify: &shared.TaskTypeCertify{
-                    AccessReviewID: conductoroneapi.String("fugiat"),
-                    AccessReviewSelection: conductoroneapi.String("ad"),
-                    AppEntitlementID: conductoroneapi.String("aspernatur"),
-                    AppID: conductoroneapi.String("enim"),
-                    AppUserID: conductoroneapi.String("delectus"),
-                    IdentityUserID: conductoroneapi.String("iusto"),
-                    Outcome: shared.TaskTypeCertifyOutcomeCertifyOutcomeDecertified.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2022-11-09T04:25:16.566Z"),
-                },
-                TaskTypeGrant: &shared.TaskTypeGrant{
-                    AppEntitlementID: conductoroneapi.String("ab"),
-                    AppID: conductoroneapi.String("incidunt"),
-                    AppUserID: conductoroneapi.String("accusamus"),
-                    GrantDuration: conductoroneapi.String("saepe"),
-                    IdentityUserID: conductoroneapi.String("tempore"),
-                    Outcome: shared.TaskTypeGrantOutcomeGrantOutcomeGranted.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2022-01-11T22:06:57.023Z"),
-                },
-                TaskTypeRevoke: &shared.TaskTypeRevoke{
+        TaskTypes: []shared.TaskTypeInput{
+            shared.TaskTypeInput{
+                TaskTypeCertify: &shared.TaskTypeCertify{},
+                TaskTypeGrant: &shared.TaskTypeGrant{},
+                TaskTypeRevoke: &shared.TaskTypeRevokeInput{
                     TaskRevokeSource: &shared.TaskRevokeSource{
                         TaskRevokeSourceExpired: &shared.TaskRevokeSourceExpired{
-                            ExpiredAt: types.MustTimeFromString("2021-09-01T16:29:21.118Z"),
+                            ExpiredAt: types.MustTimeFromString("2022-05-22T20:46:18.043Z"),
                         },
                         TaskRevokeSourceNonUsage: &shared.TaskRevokeSourceNonUsage{
-                            ExpiresAt: types.MustTimeFromString("2022-04-08T01:20:58.799Z"),
-                            LastLogin: types.MustTimeFromString("2020-08-19T04:51:15.983Z"),
+                            ExpiresAt: types.MustTimeFromString("2022-08-19T19:35:40.341Z"),
+                            LastLogin: types.MustTimeFromString("2021-07-19T20:29:58.626Z"),
                         },
                         TaskRevokeSourceRequest: &shared.TaskRevokeSourceRequest{
-                            RequestUserID: conductoroneapi.String("sequi"),
+                            RequestUserID: conductoroneapi.String("rem"),
                         },
                         TaskRevokeSourceReview: &shared.TaskRevokeSourceReview{
-                            AccessReviewID: conductoroneapi.String("nihil"),
-                            CertTicketID: conductoroneapi.String("deleniti"),
+                            AccessReviewID: conductoroneapi.String("dolorum"),
+                            CertTicketID: conductoroneapi.String("odio"),
                         },
                     },
-                    AppEntitlementID: conductoroneapi.String("illo"),
-                    AppID: conductoroneapi.String("labore"),
-                    AppUserID: conductoroneapi.String("assumenda"),
-                    IdentityUserID: conductoroneapi.String("aliquam"),
-                    Outcome: shared.TaskTypeRevokeOutcomeRevokeOutcomeError.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2021-12-21T01:19:26.741Z"),
                 },
             },
-            shared.TaskType{
-                TaskTypeCertify: &shared.TaskTypeCertify{
-                    AccessReviewID: conductoroneapi.String("repudiandae"),
-                    AccessReviewSelection: conductoroneapi.String("consequatur"),
-                    AppEntitlementID: conductoroneapi.String("maxime"),
-                    AppID: conductoroneapi.String("aspernatur"),
-                    AppUserID: conductoroneapi.String("nam"),
-                    IdentityUserID: conductoroneapi.String("expedita"),
-                    Outcome: shared.TaskTypeCertifyOutcomeCertifyOutcomeDecertified.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2021-02-26T17:19:48.572Z"),
-                },
-                TaskTypeGrant: &shared.TaskTypeGrant{
-                    AppEntitlementID: conductoroneapi.String("rerum"),
-                    AppID: conductoroneapi.String("dignissimos"),
-                    AppUserID: conductoroneapi.String("corporis"),
-                    GrantDuration: conductoroneapi.String("vero"),
-                    IdentityUserID: conductoroneapi.String("similique"),
-                    Outcome: shared.TaskTypeGrantOutcomeGrantOutcomeCancelled.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2022-10-14T22:48:07.675Z"),
-                },
-                TaskTypeRevoke: &shared.TaskTypeRevoke{
+            shared.TaskTypeInput{
+                TaskTypeCertify: &shared.TaskTypeCertify{},
+                TaskTypeGrant: &shared.TaskTypeGrant{},
+                TaskTypeRevoke: &shared.TaskTypeRevokeInput{
                     TaskRevokeSource: &shared.TaskRevokeSource{
                         TaskRevokeSourceExpired: &shared.TaskRevokeSourceExpired{
-                            ExpiredAt: types.MustTimeFromString("2022-03-25T12:03:53.573Z"),
+                            ExpiredAt: types.MustTimeFromString("2022-12-31T19:13:01.264Z"),
                         },
                         TaskRevokeSourceNonUsage: &shared.TaskRevokeSourceNonUsage{
-                            ExpiresAt: types.MustTimeFromString("2022-12-27T13:22:49.195Z"),
-                            LastLogin: types.MustTimeFromString("2022-09-05T04:00:47.034Z"),
+                            ExpiresAt: types.MustTimeFromString("2022-07-29T17:28:50.439Z"),
+                            LastLogin: types.MustTimeFromString("2022-12-08T19:16:07.063Z"),
                         },
                         TaskRevokeSourceRequest: &shared.TaskRevokeSourceRequest{
-                            RequestUserID: conductoroneapi.String("quae"),
+                            RequestUserID: conductoroneapi.String("modi"),
                         },
                         TaskRevokeSourceReview: &shared.TaskRevokeSourceReview{
-                            AccessReviewID: conductoroneapi.String("amet"),
-                            CertTicketID: conductoroneapi.String("illum"),
+                            AccessReviewID: conductoroneapi.String("neque"),
+                            CertTicketID: conductoroneapi.String("exercitationem"),
                         },
                     },
-                    AppEntitlementID: conductoroneapi.String("praesentium"),
-                    AppID: conductoroneapi.String("quidem"),
-                    AppUserID: conductoroneapi.String("cum"),
-                    IdentityUserID: conductoroneapi.String("amet"),
-                    Outcome: shared.TaskTypeRevokeOutcomeRevokeOutcomeUnspecified.ToPointer(),
-                    OutcomeTime: types.MustTimeFromString("2022-06-27T01:16:52.839Z"),
                 },
             },
         },
@@ -235,10 +174,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `ctx`                                                                | [context.Context](https://pkg.go.dev/context#Context)                | :heavy_check_mark:                                                   | The context to use for the request.                                  |
-| `request`                                                            | [shared.TaskSearchRequest](../../models/shared/tasksearchrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [shared.TaskSearchRequestInput](../../models/shared/tasksearchrequestinput.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response

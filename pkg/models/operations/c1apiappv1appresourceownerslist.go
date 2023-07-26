@@ -36,7 +36,8 @@ func (o *C1APIAppV1AppResourceOwnersListRequest) GetResourceTypeID() string {
 
 type C1APIAppV1AppResourceOwnersListResponse struct {
 	ContentType string
-	// Successful response
+	//  The ListAppResourceOwnersResponse message contains a list of results and a nextPageToken if applicable
+	//
 	ListAppResourceOwnersResponse *shared.ListAppResourceOwnersResponse
 	StatusCode                    int
 	RawResponse                   *http.Response

@@ -8,7 +8,8 @@
 
 ## CreateGrantTask
 
-Invokes the c1.api.task.v1.TaskService.CreateGrantTask method.
+ Create a grant task
+
 
 ### Example Usage
 
@@ -33,18 +34,18 @@ func main() {
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "fugiat",
-                "officia",
-                "quos",
+                "magnam",
+                "exercitationem",
+                "ab",
             },
         },
-        AppEntitlementID: conductoroneapi.String("placeat"),
-        AppID: conductoroneapi.String("sit"),
-        AppUserID: conductoroneapi.String("iusto"),
-        Description: conductoroneapi.String("ipsa"),
+        AppEntitlementID: "porro",
+        AppID: "autem",
+        AppUserID: conductoroneapi.String("nobis"),
+        Description: conductoroneapi.String("laboriosam"),
         EmergencyAccess: conductoroneapi.Bool(false),
-        GrantDuration: conductoroneapi.String("voluptates"),
-        IdentityUserID: conductoroneapi.String("inventore"),
+        GrantDuration: conductoroneapi.String("recusandae"),
+        IdentityUserID: conductoroneapi.String("consequuntur"),
     })
     if err != nil {
         log.Fatal(err)
@@ -71,7 +72,8 @@ func main() {
 
 ## CreateRevokeTask
 
-Invokes the c1.api.task.v1.TaskService.CreateRevokeTask method.
+ Create a revoke task
+
 
 ### Example Usage
 
@@ -96,14 +98,14 @@ func main() {
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "totam",
+                "exercitationem",
             },
         },
-        AppEntitlementID: conductoroneapi.String("dolore"),
-        AppID: conductoroneapi.String("eligendi"),
-        AppUserID: conductoroneapi.String("distinctio"),
-        Description: conductoroneapi.String("voluptatem"),
-        IdentityUserID: conductoroneapi.String("autem"),
+        AppEntitlementID: "necessitatibus",
+        AppID: "quasi",
+        AppUserID: conductoroneapi.String("nisi"),
+        Description: conductoroneapi.String("at"),
+        IdentityUserID: conductoroneapi.String("vero"),
     })
     if err != nil {
         log.Fatal(err)
@@ -130,7 +132,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.task.v1.TaskService.Get method.
+ Get a task by ID
+
 
 ### Example Usage
 
@@ -154,7 +157,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "72d1ad87-9eeb-4966-9b85-efbd02bae0be",
+        ID: "ab3fec95-78a6-4458-8273-a8418d162309",
     })
     if err != nil {
         log.Fatal(err)

@@ -19,7 +19,8 @@ func (o *C1APIAppV1ConnectorServiceListRequest) GetAppID() string {
 }
 
 type C1APIAppV1ConnectorServiceListResponse struct {
-	// Successful response
+	//  The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable
+	//
 	ConnectorServiceListResponse *shared.ConnectorServiceListResponse
 	ContentType                  string
 	StatusCode                   int

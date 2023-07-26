@@ -6,7 +6,8 @@
 
 ## Create
 
-Invokes the c1.api.iam.v1.PersonalClientService.Create method.
+ Create creates a new PersonalClient object for the current User.
+
 
 ### Example Usage
 
@@ -30,15 +31,14 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "similique",
+            "deleniti",
         },
-        DisplayName: conductoroneapi.String("culpa"),
-        Expires: conductoroneapi.String("aliquid"),
+        DisplayName: conductoroneapi.String("fugit"),
+        Expires: conductoroneapi.String("fuga"),
         ScopedRoles: []string{
-            "quae",
-            "earum",
-            "vel",
-            "in",
+            "incidunt",
+            "atque",
+            "explicabo",
         },
     })
     if err != nil {

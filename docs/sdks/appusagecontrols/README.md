@@ -7,7 +7,8 @@
 
 ## Get
 
-Invokes the c1.api.app.v1.AppUsageControlsService.Get method.
+ Get usage controls, as an AppUsageControls object which describes some peripheral configuration, for an app.
+
 
 ### Example Usage
 
@@ -31,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "ab",
+        AppID: "maxime",
     })
     if err != nil {
         log.Fatal(err)
@@ -58,7 +59,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.AppUsageControlsService.Update method.
+ Update usage controls for an app.
+
 
 ### Example Usage
 
@@ -84,15 +86,15 @@ func main() {
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("maiores"),
+                AppID: conductoroneapi.String("deleniti"),
                 Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(6974.29),
+                NotifyAfterDays: conductoroneapi.Float64(7038.89),
                 Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(3732.91),
+                RevokeAfterDays: conductoroneapi.Float64(4479.26),
             },
-            UpdateMask: conductoroneapi.String("voluptate"),
+            UpdateMask: conductoroneapi.String("architecto"),
         },
-        AppID: "autem",
+        AppID: "architecto",
     })
     if err != nil {
         log.Fatal(err)

@@ -1,6 +1,7 @@
 # UpdatePolicyRequestInput
 
-The UpdatePolicyRequest message.
+ The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input.
+
 
 
 ## Fields

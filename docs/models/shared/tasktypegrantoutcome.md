@@ -1,6 +1,7 @@
 # TaskTypeGrantOutcome
 
-The outcome field.
+ The outcome of the grant.
+
 
 
 ## Values

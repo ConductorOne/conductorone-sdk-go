@@ -6,7 +6,8 @@
 
 ## List
 
-Invokes the c1.api.app.v1.AppResourceOwners.List method.
+ List all owners of an app resource.
+
 
 ### Example Usage
 
@@ -30,9 +31,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "nisi",
-        ResourceID: "vel",
-        ResourceTypeID: "natus",
+        AppID: "dolor",
+        ResourceID: "debitis",
+        ResourceTypeID: "a",
     })
     if err != nil {
         log.Fatal(err)

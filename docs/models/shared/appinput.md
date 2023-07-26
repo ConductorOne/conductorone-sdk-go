@@ -1,23 +1,17 @@
 # AppInput
 
-The App message.
+ The App object provides all of the details for an app, as well as some configuration.
+
 
 
 ## Fields
 
-| Field                      | Type                       | Required                   | Description                |
-| -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `AppAccountID`             | **string*                  | :heavy_minus_sign:         | The appAccountId field.    |
-| `AppAccountName`           | **string*                  | :heavy_minus_sign:         | The appAccountName field.  |
-| `CertifyPolicyID`          | **string*                  | :heavy_minus_sign:         | The certifyPolicyId field. |
-| `Description`              | **string*                  | :heavy_minus_sign:         | The description field.     |
-| `DisplayName`              | **string*                  | :heavy_minus_sign:         | The displayName field.     |
-| `FieldMask`                | **string*                  | :heavy_minus_sign:         | N/A                        |
-| `GrantPolicyID`            | **string*                  | :heavy_minus_sign:         | The grantPolicyId field.   |
-| `IconURL`                  | **string*                  | :heavy_minus_sign:         | The iconUrl field.         |
-| `ID`                       | **string*                  | :heavy_minus_sign:         | The id field.              |
-| `LogoURI`                  | **string*                  | :heavy_minus_sign:         | The logoUri field.         |
-| `MonthlyCostUsd`           | **float64*                 | :heavy_minus_sign:         | The monthlyCostUsd field.  |
-| `ParentAppID`              | **string*                  | :heavy_minus_sign:         | The parentAppId field.     |
-| `RevokePolicyID`           | **string*                  | :heavy_minus_sign:         | The revokePolicyId field.  |
-| `UserCount`                | **string*                  | :heavy_minus_sign:         | The userCount field.       |
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `CertifyPolicyID`                                                                       | **string*                                                                               | :heavy_minus_sign:                                                                      |  The ID of the Certify Policy associated with this App.<br/>                            |
+| `Description`                                                                           | **string*                                                                               | :heavy_minus_sign:                                                                      |  The app's description.<br/>                                                            |
+| `DisplayName`                                                                           | **string*                                                                               | :heavy_minus_sign:                                                                      |  The app's display name.<br/>                                                           |
+| `GrantPolicyID`                                                                         | **string*                                                                               | :heavy_minus_sign:                                                                      |  The ID of the Grant Policy associated with this App.<br/>                              |
+| `IconURL`                                                                               | **string*                                                                               | :heavy_minus_sign:                                                                      |  The URL of an icon to display for the app.<br/>                                        |
+| `MonthlyCostUsd`                                                                        | **float64*                                                                              | :heavy_minus_sign:                                                                      |  The cost of an app per-seat, so that total cost can be calculated by the grant count.<br/> |
+| `RevokePolicyID`                                                                        | **string*                                                                               | :heavy_minus_sign:                                                                      |  The ID of the Revoke Policy associated with this App.<br/>                             |

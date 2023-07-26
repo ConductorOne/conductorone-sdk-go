@@ -14,7 +14,8 @@
 
 ## CreateDelegated
 
-Invokes the c1.api.app.v1.ConnectorService.CreateDelegated method.
+ Create a connector that is pending a connector config.
+
 
 ### Example Usage
 
@@ -41,19 +42,19 @@ func main() {
         ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "libero",
-                    "voluptas",
+                    "atque",
                 },
             },
-            CatalogID: conductoroneapi.String("deserunt"),
-            Description: conductoroneapi.String("quam"),
-            DisplayName: conductoroneapi.String("ipsum"),
+            CatalogID: conductoroneapi.String("sit"),
+            Description: conductoroneapi.String("fugiat"),
+            DisplayName: conductoroneapi.String("ab"),
             UserIds: []string{
-                "qui",
-                "cupiditate",
+                "dolorum",
+                "iusto",
+                "voluptate",
             },
         },
-        AppID: "maxime",
+        AppID: "dolorum",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,7 +81,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.app.v1.ConnectorService.Delete method.
+ Delete a connector.
+
 
 ### Example Usage
 
@@ -105,8 +107,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "pariatur",
-        ID: "b1a8422b-b679-4d23-a271-5bf0cbb1e31b",
+        AppID: "deleniti",
+        ID: "9ebf737a-e420-43ce-9e6a-95d8a0d446ce",
     })
     if err != nil {
         log.Fatal(err)
@@ -133,7 +135,8 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.app.v1.ConnectorService.Get method.
+ Get a connector.
+
 
 ### Example Usage
 
@@ -157,8 +160,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "quos",
-        ID: "b90f3443-a110-48e0-adcf-4b921879fce9",
+        AppID: "qui",
+        ID: "af7a73cf-3be4-453f-870b-326b5a73429c",
     })
     if err != nil {
         log.Fatal(err)
@@ -185,7 +188,8 @@ func main() {
 
 ## GetCredentials
 
-Invokes the c1.api.app.v1.ConnectorService.GetCredentials method.
+ Get credentials for a connector.
+
 
 ### Example Usage
 
@@ -209,9 +213,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "quis",
-        ConnectorID: "ipsum",
-        ID: "f73ef7fb-c7ab-4d74-9d39-c0f5d2cff7c7",
+        AppID: "pariatur",
+        ConnectorID: "soluta",
+        ID: "1a8422bb-679d-4232-a715-bf0cbb1e31b8",
     })
     if err != nil {
         log.Fatal(err)
@@ -238,7 +242,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.ConnectorService.List method.
+ List connectors for an app.
+
 
 ### Example Usage
 
@@ -262,7 +267,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "alias",
+        AppID: "tempore",
     })
     if err != nil {
         log.Fatal(err)
@@ -289,7 +294,8 @@ func main() {
 
 ## RevokeCredential
 
-Invokes the c1.api.app.v1.ConnectorService.RevokeCredential method.
+ Revoke credentials for a connector.
+
 
 ### Example Usage
 
@@ -314,9 +320,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "officia",
-        ConnectorID: "tempora",
-        ID: "5626d436-813f-416d-9f5f-ce6c556146c3",
+        AppID: "cupiditate",
+        ConnectorID: "aperiam",
+        ID: "f3443a11-08e0-4adc-b4b9-21879fce953f",
     })
     if err != nil {
         log.Fatal(err)
@@ -343,7 +349,8 @@ func main() {
 
 ## RotateCredential
 
-Invokes the c1.api.app.v1.ConnectorService.RotateCredential method.
+ Rotate credentials for a connector.
+
 
 ### Example Usage
 
@@ -368,8 +375,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "recusandae",
-        ConnectorID: "aspernatur",
+        AppID: "voluptate",
+        ConnectorID: "consectetur",
     })
     if err != nil {
         log.Fatal(err)
@@ -396,7 +403,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.ConnectorService.Update method.
+ Update a connector.
+
 
 ### Example Usage
 
@@ -424,40 +432,40 @@ func main() {
         ConnectorServiceUpdateRequestInput: &shared.ConnectorServiceUpdateRequestInput{
             Connector: &shared.ConnectorInput{
                 ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-12-12T11:58:39.585Z"),
-                    LastError: conductoroneapi.String("a"),
-                    StartedAt: types.MustTimeFromString("2022-12-21T19:37:25.645Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2021-06-17T11:25:30.782Z"),
+                    CompletedAt: types.MustTimeFromString("2020-02-26T11:54:04.858Z"),
+                    LastError: conductoroneapi.String("dignissimos"),
+                    StartedAt: types.MustTimeFromString("2020-11-08T11:03:10.206Z"),
+                    Status: shared.ConnectorStatusStatusSyncStatusError.ToPointer(),
+                    UpdatedAt: types.MustTimeFromString("2022-05-15T21:16:33.535Z"),
                 },
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAs{
-                    AuthEmail: conductoroneapi.String("aliquam"),
-                    AuthorizedAt: types.MustTimeFromString("2022-02-12T18:08:46.973Z"),
-                },
-                AppID: conductoroneapi.String("inventore"),
-                CatalogID: conductoroneapi.String("non"),
+                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAs1{},
+                AppID: conductoroneapi.String("facilis"),
                 Config: map[string]interface{}{
-                    "dolorum": "laborum",
+                    "ducimus": "dolore",
+                    "quibusdam": "illum",
+                    "sequi": "natus",
+                    "impedit": "aut",
                 },
-                Description: conductoroneapi.String("placeat"),
-                DisplayName: conductoroneapi.String("velit"),
-                DownloadURL: conductoroneapi.String("eum"),
-                ID: conductoroneapi.String("6c8dd6b1-4429-4074-b477-8a7bd466d28c"),
+                Description: conductoroneapi.String("voluptatibus"),
+                DisplayName: conductoroneapi.String("exercitationem"),
+                ID: conductoroneapi.String("d2cff7c7-0a45-4626-9436-813f16d9f5fc"),
                 UserIds: []string{
-                    "ipsa",
+                    "ea",
+                    "impedit",
+                    "corporis",
+                    "veniam",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "quidem",
-                    "neque",
-                    "quo",
+                    "inventore",
+                    "magnam",
                 },
             },
-            UpdateMask: conductoroneapi.String("illum"),
+            UpdateMask: conductoroneapi.String("ea"),
         },
         AppID: "quo",
-        ID: "a4251904-e523-4c7e-8bc7-178e4796f2a7",
+        ID: "3e250fb0-08c4-42e1-81aa-c366c8dd6b14",
     })
     if err != nil {
         log.Fatal(err)
@@ -484,7 +492,8 @@ func main() {
 
 ## UpdateDelegated
 
-Invokes the c1.api.app.v1.ConnectorService.UpdateDelegated method.
+ Update a delegated connector.
+
 
 ### Example Usage
 
@@ -512,45 +521,40 @@ func main() {
         ConnectorServiceUpdateDelegatedRequestInput: &shared.ConnectorServiceUpdateDelegatedRequestInput{
             Connector: &shared.ConnectorInput{
                 ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-03-20T23:14:37.473Z"),
-                    LastError: conductoroneapi.String("eum"),
-                    StartedAt: types.MustTimeFromString("2021-12-24T16:30:16.544Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2022-09-18T00:06:33.286Z"),
+                    CompletedAt: types.MustTimeFromString("2022-11-14T00:12:37.683Z"),
+                    LastError: conductoroneapi.String("provident"),
+                    StartedAt: types.MustTimeFromString("2022-07-11T02:03:34.375Z"),
+                    Status: shared.ConnectorStatusStatusSyncStatusRunning.ToPointer(),
+                    UpdatedAt: types.MustTimeFromString("2022-09-27T07:50:41.350Z"),
                 },
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAs{
-                    AuthEmail: conductoroneapi.String("fuga"),
-                    AuthorizedAt: types.MustTimeFromString("2022-06-12T08:30:58.411Z"),
-                },
-                AppID: conductoroneapi.String("atque"),
-                CatalogID: conductoroneapi.String("explicabo"),
+                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAs1{},
+                AppID: conductoroneapi.String("esse"),
                 Config: map[string]interface{}{
-                    "nisi": "fugit",
-                    "sapiente": "consequuntur",
+                    "rem": "fuga",
+                    "reprehenderit": "quidem",
                 },
-                Description: conductoroneapi.String("ratione"),
-                DisplayName: conductoroneapi.String("explicabo"),
-                DownloadURL: conductoroneapi.String("saepe"),
-                ID: conductoroneapi.String("9817ee17-cbe6-41e6-b7b9-5bc0ab3c20c4"),
+                Description: conductoroneapi.String("fugiat"),
+                DisplayName: conductoroneapi.String("ut"),
+                ID: conductoroneapi.String("66d28c10-ab3c-4dca-8251-904e523c7e0b"),
                 UserIds: []string{
-                    "consectetur",
-                    "esse",
-                    "blanditiis",
-                    "provident",
+                    "dignissimos",
+                    "inventore",
+                    "nihil",
+                    "totam",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "nulla",
-                    "quas",
-                    "esse",
-                    "quasi",
+                    "aliquam",
+                    "odio",
+                    "occaecati",
+                    "commodi",
                 },
             },
-            UpdateMask: conductoroneapi.String("a"),
+            UpdateMask: conductoroneapi.String("sapiente"),
         },
-        ConnectorAppID: "error",
-        ConnectorID: "sint",
+        ConnectorAppID: "dolores",
+        ConnectorID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)

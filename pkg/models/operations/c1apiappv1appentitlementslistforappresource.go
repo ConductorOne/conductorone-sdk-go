@@ -36,7 +36,8 @@ func (o *C1APIAppV1AppEntitlementsListForAppResourceRequest) GetAppResourceTypeI
 
 type C1APIAppV1AppEntitlementsListForAppResourceResponse struct {
 	ContentType string
-	// Successful response
+	//  The ListAppEntitlementsResponse message contains a list of results and a nextPageToken if applicable.
+	//
 	ListAppEntitlementsResponse *shared.ListAppEntitlementsResponse
 	StatusCode                  int
 	RawResponse                 *http.Response

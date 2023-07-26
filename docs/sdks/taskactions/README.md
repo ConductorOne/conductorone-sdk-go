@@ -36,13 +36,16 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quibusdam",
+                    "soluta",
+                    "alias",
+                    "omnis",
+                    "eos",
                 },
             },
-            Comment: conductoroneapi.String("odio"),
-            PolicyStepID: conductoroneapi.String("praesentium"),
+            Comment: conductoroneapi.String("occaecati"),
+            PolicyStepID: "iste",
         },
-        TaskID: "odit",
+        TaskID: "magni",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,12 +99,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "corporis",
+                    "fuga",
                 },
             },
-            Comment: conductoroneapi.String("error"),
+            Comment: conductoroneapi.String("accusamus"),
         },
-        TaskID: "earum",
+        TaskID: "voluptatibus",
     })
     if err != nil {
         log.Fatal(err)
@@ -155,13 +158,15 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "recusandae",
+                    "omnis",
+                    "delectus",
+                    "minima",
                 },
             },
-            Comment: conductoroneapi.String("similique"),
-            PolicyStepID: conductoroneapi.String("ut"),
+            Comment: conductoroneapi.String("praesentium"),
+            PolicyStepID: conductoroneapi.String("maxime"),
         },
-        TaskID: "quidem",
+        TaskID: "magnam",
     })
     if err != nil {
         log.Fatal(err)
@@ -215,14 +220,16 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "beatae",
-                    "unde",
+                    "quos",
+                    "commodi",
+                    "itaque",
+                    "commodi",
                 },
             },
-            Comment: conductoroneapi.String("molestiae"),
-            PolicyStepID: conductoroneapi.String("delectus"),
+            Comment: conductoroneapi.String("totam"),
+            PolicyStepID: conductoroneapi.String("earum"),
         },
-        TaskID: "cupiditate",
+        TaskID: "modi",
     })
     if err != nil {
         log.Fatal(err)

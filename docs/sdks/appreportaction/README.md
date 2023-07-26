@@ -6,7 +6,8 @@
 
 ## GenerateReport
 
-Invokes the c1.api.app.v1.AppReportActionService.GenerateReport method.
+ Generate a report for the given app.
+
 
 ### Example Usage
 
@@ -31,7 +32,7 @@ func main() {
     ctx := context.Background()
     res, err := s.AppReportAction.GenerateReport(ctx, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
         AppActionsServiceGenerateReportRequest: &shared.AppActionsServiceGenerateReportRequest{},
-        AppID: "aliquid",
+        AppID: "enim",
     })
     if err != nil {
         log.Fatal(err)

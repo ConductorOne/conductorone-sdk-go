@@ -8,7 +8,8 @@
 
 ## Get
 
-Invokes the c1.api.iam.v1.Roles.Get method.
+ Get a role by id.
+
 
 ### Example Usage
 
@@ -32,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "necessitatibus",
+        RoleID: "impedit",
     })
     if err != nil {
         log.Fatal(err)
@@ -59,7 +60,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.iam.v1.Roles.List method.
+ List all roles for the current user.
+
 
 ### Example Usage
 
@@ -106,7 +108,8 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.iam.v1.Roles.Update method.
+ Update a role by passing a Role object.
+
 
 ### Example Usage
 
@@ -132,24 +135,19 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoroneapi.String("animi"),
-                ID: conductoroneapi.String("c55a9741-d311-4352-965b-b8a720261143"),
-                Name: conductoroneapi.String("Kellie Bogisich"),
+                DisplayName: conductoroneapi.String("officiis"),
                 Permissions: []string{
-                    "distinctio",
-                    "maxime",
-                    "quia",
-                    "quia",
+                    "necessitatibus",
+                    "sed",
                 },
                 ServiceRoles: []string{
-                    "omnis",
-                    "libero",
+                    "nesciunt",
+                    "expedita",
                 },
-                SystemBuiltin: conductoroneapi.Bool(false),
             },
-            UpdateMask: conductoroneapi.String("dicta"),
+            UpdateMask: conductoroneapi.String("eum"),
         },
-        RoleID: "id",
+        RoleID: "vel",
     })
     if err != nil {
         log.Fatal(err)
