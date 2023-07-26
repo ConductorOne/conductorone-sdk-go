@@ -46,6 +46,9 @@ type RequestCatalogSearchServiceSearchEntitlementsRequest struct {
 	//  The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
 	//
 	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
+	//  Search entitlements that belong to this app name (exact match).
+	//
+	AppDisplayName *string `json:"appDisplayName,omitempty"`
 	//  Search for entitlements with this alias (exact match).
 	//
 	EntitlementAlias *string `json:"entitlementAlias,omitempty"`
@@ -68,6 +71,13 @@ func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetAppEntitlement
 		return nil
 	}
 	return o.AppEntitlementExpandMask
+}
+
+func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetAppDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppDisplayName
 }
 
 func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetEntitlementAlias() *string {

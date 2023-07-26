@@ -33,85 +33,77 @@ func main() {
     res, err := s.TaskSearch.Search(ctx, shared.TaskSearchRequestInput{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "voluptate",
-                "ullam",
-                "unde",
-                "necessitatibus",
+                "est",
+                "error",
             },
         },
         AccessReviewIds: []string{
-            "impedit",
-            "ipsam",
-            "corporis",
+            "labore",
+            "veritatis",
         },
         AccountOwnerIds: []string{
-            "error",
-            "esse",
-            "labore",
-        },
-        ActorID: conductoroneapi.String("veritatis"),
-        AppEntitlementIds: []string{
             "consectetur",
             "vitae",
             "inventore",
             "dolorem",
         },
-        AppResourceIds: []string{
-            "qui",
+        ActorID: conductoroneapi.String("ad"),
+        AppEntitlementIds: []string{
             "iste",
         },
-        AppResourceTypeIds: []string{
+        AppResourceIds: []string{
             "nemo",
             "soluta",
         },
-        AppUserSubjectIds: []string{
+        AppResourceTypeIds: []string{
             "rem",
             "dolorum",
             "odio",
         },
-        ApplicationIds: []string{
+        AppUserSubjectIds: []string{
             "alias",
         },
-        AssigneesInIds: []string{
+        ApplicationIds: []string{
             "vel",
         },
-        CreatedAfter: types.MustTimeFromString("2022-12-08T19:16:07.063Z"),
-        CreatedBefore: types.MustTimeFromString("2022-10-16T23:42:04.526Z"),
-        CurrentStep: shared.TaskSearchRequestCurrentStepTaskSearchCurrentStepApproval.ToPointer(),
-        EmergencyStatus: shared.TaskSearchRequestEmergencyStatusEmergency.ToPointer(),
-        ExcludeAppEntitlementIds: []string{
-            "ipsum",
+        AssigneesInIds: []string{
+            "quae",
         },
-        ExcludeIds: []string{
+        CreatedAfter: types.MustTimeFromString("2022-10-16T23:42:04.526Z"),
+        CreatedBefore: types.MustTimeFromString("2022-01-25T16:13:44.576Z"),
+        CurrentStep: shared.TaskSearchRequestCurrentStepTaskSearchCurrentStepUnspecified.ToPointer(),
+        EmergencyStatus: shared.TaskSearchRequestEmergencyStatusUnspecified.ToPointer(),
+        ExcludeAppEntitlementIds: []string{
             "nulla",
             "distinctio",
             "maxime",
         },
-        IncludeDeleted: conductoroneapi.Bool(false),
-        MyWorkUserIds: []string{
+        ExcludeIds: []string{
             "quia",
         },
-        OpenerIds: []string{
+        IncludeDeleted: conductoroneapi.Bool(false),
+        MyWorkUserIds: []string{
             "omnis",
             "libero",
         },
-        PageSize: conductoroneapi.Float64(1156.61),
-        PageToken: conductoroneapi.String("id"),
-        PreviouslyActedOnIds: []string{
-            "fugiat",
-            "officia",
-            "quos",
+        OpenerIds: []string{
+            "id",
         },
-        Query: conductoroneapi.String("placeat"),
+        PageSize: conductoroneapi.Float64(7278.88),
+        PageToken: conductoroneapi.String("fugiat"),
+        PreviouslyActedOnIds: []string{
+            "quos",
+            "placeat",
+            "sit",
+        },
+        Query: conductoroneapi.String("iusto"),
         Refs: []shared.TaskRef{
             shared.TaskRef{
-                ID: conductoroneapi.String("70e1084c-b067-42d1-ad87-9eeb9665b85e"),
+                ID: conductoroneapi.String("e1084cb0-672d-41ad-879e-eb9665b85efb"),
             },
         },
         SortBy: shared.TaskSearchRequestSortByTaskSearchSortByAccountOwner.ToPointer(),
         SubjectIds: []string{
-            "at",
-            "alias",
             "quia",
         },
         TaskStates: []shared.TaskSearchRequestTaskStates{

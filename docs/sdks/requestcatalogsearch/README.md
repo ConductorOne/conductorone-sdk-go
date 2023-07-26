@@ -37,11 +37,12 @@ func main() {
                 "reprehenderit",
             },
         },
-        EntitlementAlias: conductoroneapi.String("est"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusAll.ToPointer(),
-        PageSize: conductoroneapi.Float64(5718.44),
-        PageToken: conductoroneapi.String("accusamus"),
-        Query: conductoroneapi.String("impedit"),
+        AppDisplayName: conductoroneapi.String("est"),
+        EntitlementAlias: conductoroneapi.String("quis"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusGranted.ToPointer(),
+        PageSize: conductoroneapi.Float64(8806.79),
+        PageToken: conductoroneapi.String("impedit"),
+        Query: conductoroneapi.String("hic"),
     })
     if err != nil {
         log.Fatal(err)
