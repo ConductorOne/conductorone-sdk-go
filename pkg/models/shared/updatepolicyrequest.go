@@ -2,7 +2,7 @@
 
 package shared
 
-// UpdatePolicyRequestInput - The UpdatePolicyRequest message.
+// UpdatePolicyRequestInput -  The UpdatePolicyRequest message contains the policy object to update and a field mask to indicate which fields to update. It uses URL value for input.
 type UpdatePolicyRequestInput struct {
 	//  A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes.
 	//

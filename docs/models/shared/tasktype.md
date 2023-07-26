@@ -1,6 +1,7 @@
 # TaskType
 
-The TaskType message.
+ Task Type provides configuration for the type of task: certify, grant, or revoke
+
 
 This message contains a oneof named task_type. Only a single field of the following list may be set at a time:
   - grant
@@ -11,8 +12,8 @@ This message contains a oneof named task_type. Only a single field of the follow
 
 ## Fields
 
-| Field                                                      | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `TaskTypeCertify`                                          | [*TaskTypeCertify](../../models/shared/tasktypecertify.md) | :heavy_minus_sign:                                         | The TaskTypeCertify message.                               |
-| `TaskTypeGrant`                                            | [*TaskTypeGrant](../../models/shared/tasktypegrant.md)     | :heavy_minus_sign:                                         | The TaskTypeGrant message.                                 |
-| `TaskTypeRevoke`                                           | [*TaskTypeRevoke](../../models/shared/tasktyperevoke.md)   | :heavy_minus_sign:                                         | The TaskTypeRevoke message.                                |
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `TaskTypeCertify`                                                                              | [*TaskTypeCertify1](../../models/shared/tasktypecertify1.md)                                   | :heavy_minus_sign:                                                                             |  The TaskTypeCertify message indicates that a task is a certify task and all related details.<br/> |
+| `TaskTypeGrant`                                                                                | [*TaskTypeGrant1](../../models/shared/tasktypegrant1.md)                                       | :heavy_minus_sign:                                                                             |  The TaskTypeGrant message indicates that a task is a grant task and all related details.<br/> |
+| `TaskTypeRevoke`                                                                               | [*TaskTypeRevoke](../../models/shared/tasktyperevoke.md)                                       | :heavy_minus_sign:                                                                             |  The TaskTypeRevoke message indicates that a task is a revoke task and all related details.<br/> |

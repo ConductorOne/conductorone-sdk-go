@@ -1,11 +1,12 @@
 # GetAppEntitlementResponse
 
-The GetAppEntitlementResponse message.
+ The get app entitlement response returns an entitlement view containing paths in the expanded array for the objects expanded as indicated by the expand mask in the request.
+
 
 
 ## Fields
 
-| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `AppEntitlementView`                                             | [*AppEntitlementView](../../models/shared/appentitlementview.md) | :heavy_minus_sign:                                               | The AppEntitlementView message.                                  |
-| `Expanded`                                                       | []map[string]*interface{}*                                       | :heavy_minus_sign:                                               | The expanded field.                                              |
+| Field                                                                                                                      | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `AppEntitlementView`                                                                                                       | [*AppEntitlementView](../../models/shared/appentitlementview.md)                                                           | :heavy_minus_sign:                                                                                                         |  The app entitlement view contains the serialized app entitlement and paths to objects referenced by the app entitlement.<br/> |
+| `Expanded`                                                                                                                 | []map[string]*interface{}*                                                                                                 | :heavy_minus_sign:                                                                                                         |  List of serialized related objects.<br/>                                                                                  |

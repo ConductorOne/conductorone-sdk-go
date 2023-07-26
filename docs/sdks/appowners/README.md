@@ -8,7 +8,8 @@
 
 ## Add
 
-Invokes the c1.api.app.v1.AppOwners.Add method.
+ Adds an owner to an app.
+
 
 ### Example Usage
 
@@ -33,8 +34,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "labore",
-        UserID: "delectus",
+        AppID: "explicabo",
+        UserID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)
@@ -61,7 +62,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.AppOwners.List method.
+ List owners of an app.
+
 
 ### Example Usage
 
@@ -85,7 +87,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "eum",
+        AppID: "distinctio",
+        PageSize: conductoroneapi.Float64(8413.86),
+        PageToken: conductoroneapi.String("labore"),
     })
     if err != nil {
         log.Fatal(err)
@@ -112,7 +116,8 @@ func main() {
 
 ## Remove
 
-Invokes the c1.api.app.v1.AppOwners.Remove method.
+ Removes an owner from an app.
+
 
 ### Example Usage
 
@@ -137,8 +142,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "non",
-        UserID: "eligendi",
+        AppID: "modi",
+        UserID: "qui",
     })
     if err != nil {
         log.Fatal(err)

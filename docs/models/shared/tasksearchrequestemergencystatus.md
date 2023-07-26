@@ -1,6 +1,7 @@
 # TaskSearchRequestEmergencyStatus
 
-The emergencyStatus field.
+ Search tasks that are or are not emergency access.
+
 
 
 ## Values

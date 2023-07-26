@@ -1,6 +1,7 @@
 # RequestCatalogManagementServiceDeleteResponse
 
-The RequestCatalogManagementServiceDeleteResponse message.
+ Empty response with a status code indicating success.
+
 
 
 ## Fields

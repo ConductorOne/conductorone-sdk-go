@@ -9,7 +9,8 @@ import (
 
 type C1APIAppV1AppsCreateResponse struct {
 	ContentType string
-	// Successful response
+	//  Returns the new app's values.
+	//
 	CreateAppResponse *shared.CreateAppResponse
 	StatusCode        int
 	RawResponse       *http.Response

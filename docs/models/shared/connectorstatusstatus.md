@@ -1,6 +1,7 @@
 # ConnectorStatusStatus
 
-The status field.
+ The status of the connector sync.
+
 
 
 ## Values

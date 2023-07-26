@@ -1,6 +1,7 @@
 # AppUserStatusStatus
 
-The status field.
+ The application user status field.
+
 
 
 ## Values

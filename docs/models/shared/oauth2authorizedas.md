@@ -1,11 +1,12 @@
 # OAuth2AuthorizedAs
 
-The OAuth2AuthorizedAs message.
+ OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
+
 
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `AuthEmail`                                | **string*                                  | :heavy_minus_sign:                         | The authEmail field.                       |
-| `AuthorizedAt`                             | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `AuthEmail`                                                                     | **string*                                                                       | :heavy_minus_sign:                                                              |  authEmail is the email of the user that authorized the connector using OAuth.<br/> |
+| `AuthorizedAt`                                                                  | [*time.Time](https://pkg.go.dev/time#Time)                                      | :heavy_minus_sign:                                                              | N/A                                                                             |

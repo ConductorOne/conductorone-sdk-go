@@ -1,6 +1,7 @@
 # ProvisionPolicy
 
-The ProvisionPolicy message.
+ ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+
 
 This message contains a oneof named typ. Only a single field of the following list may be set at a time:
   - connector

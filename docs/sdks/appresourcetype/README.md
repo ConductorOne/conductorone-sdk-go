@@ -7,7 +7,8 @@
 
 ## Get
 
-Invokes the c1.api.app.v1.AppResourceTypeService.Get method.
+ Get an app resource type.
+
 
 ### Example Usage
 
@@ -31,8 +32,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "sint",
-        ID: "0afa563e-2516-4fe4-88b7-11e5b7fd2ed0",
+        AppID: "natus",
+        ID: "b6e21419-5989-40af-a563-e2516fe4c8b7",
     })
     if err != nil {
         log.Fatal(err)
@@ -59,7 +60,8 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.AppResourceTypeService.List method.
+ List app resource types.
+
 
 ### Example Usage
 
@@ -83,7 +85,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "consequuntur",
+        AppID: "architecto",
+        PageSize: conductoroneapi.Float64(995.69),
+        PageToken: conductoroneapi.String("repudiandae"),
     })
     if err != nil {
         log.Fatal(err)

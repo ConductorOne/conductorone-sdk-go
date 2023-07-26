@@ -55,11 +55,14 @@ func (e *ProvisionInstanceState) UnmarshalJSON(data []byte) error {
 //   - errored
 //   - reassignedByError
 type ProvisionInstance struct {
-	// The CancelledAction message.
+	//  The outcome of a provision instance that is cancelled.
+	//
 	CancelledAction *CancelledAction `json:"cancelled,omitempty"`
-	// The CompletedAction message.
+	//  The outcome of a provision instance that has been completed succesfully.
+	//
 	CompletedAction *CompletedAction `json:"completed,omitempty"`
-	// The ErroredAction message.
+	//  The outcome of a provision instance that has errored.
+	//
 	ErroredAction *ErroredAction `json:"errored,omitempty"`
 	//  The provision step references a provision policy for this step.
 	//

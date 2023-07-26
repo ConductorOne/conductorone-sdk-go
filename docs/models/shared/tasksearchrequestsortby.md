@@ -1,6 +1,7 @@
 # TaskSearchRequestSortBy
 
-The sortBy field.
+ Sort tasks in a specific order.
+
 
 
 ## Values
