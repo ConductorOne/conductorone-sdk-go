@@ -20,8 +20,7 @@ func (o *C1APIAppV1AppUsageControlsServiceGetRequest) GetAppID() string {
 
 type C1APIAppV1AppUsageControlsServiceGetResponse struct {
 	ContentType string
-	//  The GetAppUsageControlsResponse message contains the retrieved AppUsageControls object.
-	//
+	// The GetAppUsageControlsResponse message contains the retrieved AppUsageControls object.
 	GetAppUsageControlsResponse *shared.GetAppUsageControlsResponse
 	StatusCode                  int
 	RawResponse                 *http.Response

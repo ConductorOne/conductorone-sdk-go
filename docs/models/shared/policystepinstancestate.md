@@ -1,7 +1,6 @@
 # PolicyStepInstanceState
 
- The state of the step, which is either active or done.
-
+The state of the step, which is either active or done.
 
 
 ## Values

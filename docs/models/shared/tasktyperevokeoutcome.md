@@ -1,7 +1,6 @@
 # TaskTypeRevokeOutcome
 
- The outcome of the revoke.
-
+The outcome of the revoke.
 
 
 ## Values

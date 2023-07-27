@@ -6,11 +6,10 @@ import (
 	"time"
 )
 
-// CancelledAction -  The outcome of a provision instance that is cancelled.
+// CancelledAction - The outcome of a provision instance that is cancelled.
 type CancelledAction struct {
 	CancelledAt *time.Time `json:"cancelledAt,omitempty"`
-	//  The userID, usually the system, that cancells a provision instance.
-	//
+	// The userID, usually the system, that cancells a provision instance.
 	CancelledByUserID *string `json:"cancelledByUserId,omitempty"`
 }
 

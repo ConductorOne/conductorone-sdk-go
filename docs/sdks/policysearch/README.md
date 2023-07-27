@@ -6,8 +6,7 @@
 
 ## Search
 
- Search policies based on filters specified in the request body.
-
+Search policies based on filters specified in the request body.
 
 ### Example Usage
 

@@ -7,7 +7,7 @@ import (
 	"fmt"
 )
 
-// C1APIPolicyV1CreatePolicyRequestPolicyType -  The enum of the policy type.
+// C1APIPolicyV1CreatePolicyRequestPolicyType - The enum of the policy type.
 type C1APIPolicyV1CreatePolicyRequestPolicyType string
 
 const (
@@ -47,25 +47,19 @@ func (e *C1APIPolicyV1CreatePolicyRequestPolicyType) UnmarshalJSON(data []byte) 
 	}
 }
 
-// CreatePolicyRequest -  The CreatePolicyRequest message is used to create a new policy.
+// CreatePolicyRequest - The CreatePolicyRequest message is used to create a new policy.
 type CreatePolicyRequest struct {
-	//  The description of the new policy.
-	//
+	// The description of the new policy.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the new policy.
-	//
+	// The display name of the new policy.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples.
-	//
+	// The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples.
 	PolicySteps map[string]PolicySteps `json:"policySteps,omitempty"`
-	//  The enum of the policy type.
-	//
+	// The enum of the policy type.
 	PolicyType *C1APIPolicyV1CreatePolicyRequestPolicyType `json:"policyType,omitempty"`
-	//  Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately.
-	//
+	// Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately.
 	PostActions []PolicyPostActions `json:"postActions,omitempty"`
-	//  Allows reassigning tasks to delegates.
-	//
+	// Allows reassigning tasks to delegates.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
 }
 
@@ -111,7 +105,7 @@ func (o *CreatePolicyRequest) GetReassignTasksToDelegates() *bool {
 	return o.ReassignTasksToDelegates
 }
 
-// CreatePolicyRequestPolicyType -  The enum of the policy type.
+// CreatePolicyRequestPolicyType - The enum of the policy type.
 type CreatePolicyRequestPolicyType string
 
 const (
@@ -151,25 +145,19 @@ func (e *CreatePolicyRequestPolicyType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// CreatePolicyRequestInput -  The CreatePolicyRequest message is used to create a new policy.
+// CreatePolicyRequestInput - The CreatePolicyRequest message is used to create a new policy.
 type CreatePolicyRequestInput struct {
-	//  The description of the new policy.
-	//
+	// The description of the new policy.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the new policy.
-	//
+	// The display name of the new policy.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples.
-	//
+	// The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples.
 	PolicySteps map[string]PolicyStepsInput `json:"policySteps,omitempty"`
-	//  The enum of the policy type.
-	//
+	// The enum of the policy type.
 	PolicyType *CreatePolicyRequestPolicyType `json:"policyType,omitempty"`
-	//  Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately.
-	//
+	// Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately.
 	PostActions []PolicyPostActions `json:"postActions,omitempty"`
-	//  Allows reassigning tasks to delegates.
-	//
+	// Allows reassigning tasks to delegates.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
 }
 

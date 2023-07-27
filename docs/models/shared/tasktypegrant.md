@@ -1,7 +1,6 @@
 # TaskTypeGrant
 
- The TaskTypeGrant message indicates that a task is a grant task and all related details.
-
+The TaskTypeGrant message indicates that a task is a grant task and all related details.
 
 
 ## Fields

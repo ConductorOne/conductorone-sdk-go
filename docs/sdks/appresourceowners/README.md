@@ -6,8 +6,7 @@
 
 ## List
 
- List all owners of an app resource.
-
+List all owners of an app resource.
 
 ### Example Usage
 

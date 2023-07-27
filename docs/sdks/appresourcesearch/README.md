@@ -6,8 +6,7 @@
 
 ## SearchAppResourceTypes
 
- Search app resources based on filters specified in the request body.
-
+Search app resources based on filters specified in the request body.
 
 ### Example Usage
 

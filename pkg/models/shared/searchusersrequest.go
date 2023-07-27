@@ -40,38 +40,28 @@ func (e *SearchUsersRequestUserStatuses) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// SearchUsersRequest -  Search for users based on some filters.
+// SearchUsersRequest - Search for users based on some filters.
 type SearchUsersRequest struct {
-	//  The user expand mask is used to indicate which related objects should be expanded in the response.
+	// The user expand mask is used to indicate which related objects should be expanded in the response.
 	//  The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
-	//
 	UserExpandMask *UserExpandMask `json:"expandMask,omitempty"`
-	//  Search for users based on their email (exact match).
-	//
+	// Search for users based on their email (exact match).
 	Email *string `json:"email,omitempty"`
-	//  An array of users IDs to exclude from the results.
-	//
+	// An array of users IDs to exclude from the results.
 	ExcludeIds []string `json:"excludeIds,omitempty"`
-	//  Deprecated. Use refs array instead.
-	//
+	// Deprecated. Use refs array instead.
 	Ids []string `json:"ids,omitempty"`
-	//  The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	//
+	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *float64 `json:"pageSize,omitempty"`
-	//  The pageToken field.
-	//
+	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
-	//  Query the apps with a fuzzy search on display name and emails.
-	//
+	// Query the apps with a fuzzy search on display name and emails.
 	Query *string `json:"query,omitempty"`
-	//  An array of user refs to restrict the return values to by ID.
-	//
+	// An array of user refs to restrict the return values to by ID.
 	Refs []UserRef `json:"refs,omitempty"`
-	//  Search for users that have any of the role IDs on this list.
-	//
+	// Search for users that have any of the role IDs on this list.
 	RoleIds []string `json:"roleIds,omitempty"`
-	//  Search for users that have any of the statuses on this list. This can only be ENABLED, DISABLED, and DELETED
-	//
+	// Search for users that have any of the statuses on this list. This can only be ENABLED, DISABLED, and DELETED
 	UserStatuses []SearchUsersRequestUserStatuses `json:"userStatuses,omitempty"`
 }
 

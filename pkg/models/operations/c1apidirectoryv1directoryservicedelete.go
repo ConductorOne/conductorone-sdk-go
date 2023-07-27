@@ -28,8 +28,7 @@ func (o *C1APIDirectoryV1DirectoryServiceDeleteRequest) GetAppID() string {
 
 type C1APIDirectoryV1DirectoryServiceDeleteResponse struct {
 	ContentType string
-	//  Empty response with a status code indicating success.
-	//
+	// Empty response with a status code indicating success.
 	DirectoryServiceDeleteResponse *shared.DirectoryServiceDeleteResponse
 	StatusCode                     int
 	RawResponse                    *http.Response

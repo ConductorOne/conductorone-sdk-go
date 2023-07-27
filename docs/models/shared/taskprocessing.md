@@ -1,7 +1,6 @@
 # TaskProcessing
 
- The processing state of a task as defined by the `processing_enum`
-
+The processing state of a task as defined by the `processing_enum`
 
 
 ## Values

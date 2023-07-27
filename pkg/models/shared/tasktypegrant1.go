@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// TaskTypeGrantOutcome -  The outcome of the grant.
+// TaskTypeGrantOutcome - The outcome of the grant.
 type TaskTypeGrantOutcome string
 
 const (
@@ -45,23 +45,18 @@ func (e *TaskTypeGrantOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeGrant1 -  The TaskTypeGrant message indicates that a task is a grant task and all related details.
+// TaskTypeGrant1 - The TaskTypeGrant message indicates that a task is a grant task and all related details.
 type TaskTypeGrant1 struct {
-	//  The ID of the app entitlement.
-	//
+	// The ID of the app entitlement.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
-	//  The ID of the app.
-	//
+	// The ID of the app.
 	AppID *string `json:"appId,omitempty"`
-	//  The ID of the app user.
-	//
+	// The ID of the app user.
 	AppUserID     *string `json:"appUserId,omitempty"`
 	GrantDuration *string `json:"grantDuration,omitempty"`
-	//  The ID of the user.
-	//
+	// The ID of the user.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
-	//  The outcome of the grant.
-	//
+	// The outcome of the grant.
 	Outcome     *TaskTypeGrantOutcome `json:"outcome,omitempty"`
 	OutcomeTime *time.Time            `json:"outcomeTime,omitempty"`
 }

@@ -26,8 +26,7 @@ func newTaskSearch(sdkConfig sdkConfiguration) *taskSearch {
 }
 
 // Search - Search
-//
-//	Search tasks based on filters specified in the request body.
+// Search tasks based on filters specified in the request body.
 func (s *taskSearch) Search(ctx context.Context, request shared.TaskSearchRequestInput) (*operations.C1APITaskV1TaskSearchServiceSearchResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/search/tasks"

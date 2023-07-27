@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// TaskSearchRequestCurrentStep -  Search tasks that have this type of step as the current step.
+// TaskSearchRequestCurrentStep - Search tasks that have this type of step as the current step.
 type TaskSearchRequestCurrentStep string
 
 const (
@@ -39,7 +39,7 @@ func (e *TaskSearchRequestCurrentStep) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskSearchRequestEmergencyStatus -  Search tasks that are or are not emergency access.
+// TaskSearchRequestEmergencyStatus - Search tasks that are or are not emergency access.
 type TaskSearchRequestEmergencyStatus string
 
 const (
@@ -73,14 +73,15 @@ func (e *TaskSearchRequestEmergencyStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskSearchRequestSortBy -  Sort tasks in a specific order.
+// TaskSearchRequestSortBy - Sort tasks in a specific order.
 type TaskSearchRequestSortBy string
 
 const (
-	TaskSearchRequestSortByTaskSearchSortByUnspecified  TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_UNSPECIFIED"
-	TaskSearchRequestSortByTaskSearchSortByAccount      TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_ACCOUNT"
-	TaskSearchRequestSortByTaskSearchSortByResource     TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_RESOURCE"
-	TaskSearchRequestSortByTaskSearchSortByAccountOwner TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_ACCOUNT_OWNER"
+	TaskSearchRequestSortByTaskSearchSortByUnspecified     TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_UNSPECIFIED"
+	TaskSearchRequestSortByTaskSearchSortByAccount         TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_ACCOUNT"
+	TaskSearchRequestSortByTaskSearchSortByResource        TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_RESOURCE"
+	TaskSearchRequestSortByTaskSearchSortByAccountOwner    TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_ACCOUNT_OWNER"
+	TaskSearchRequestSortByTaskSearchSortByReverseTicketID TaskSearchRequestSortBy = "TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID"
 )
 
 func (e TaskSearchRequestSortBy) ToPointer() *TaskSearchRequestSortBy {
@@ -100,6 +101,8 @@ func (e *TaskSearchRequestSortBy) UnmarshalJSON(data []byte) error {
 	case "TASK_SEARCH_SORT_BY_RESOURCE":
 		fallthrough
 	case "TASK_SEARCH_SORT_BY_ACCOUNT_OWNER":
+		fallthrough
+	case "TASK_SEARCH_SORT_BY_REVERSE_TICKET_ID":
 		*e = TaskSearchRequestSortBy(v)
 		return nil
 	default:
@@ -137,87 +140,61 @@ func (e *TaskSearchRequestTaskStates) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskSearchRequestInput -  Search for tasks based on a plethora filters.
+// TaskSearchRequestInput - Search for tasks based on a plethora filters.
 type TaskSearchRequestInput struct {
-	//  The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
-	//
+	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
 	TaskExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
-	//  Search tasks that belong to any of the access reviews included in this list.
-	//
+	// Search tasks that belong to any of the access reviews included in this list.
 	AccessReviewIds []string `json:"accessReviewIds,omitempty"`
-	//  Search tasks that have any of these account owners.
-	//
+	// Search tasks that have any of these account owners.
 	AccountOwnerIds []string `json:"accountOwnerIds,omitempty"`
-	//  Search tasks that have this actor ID.
-	//
+	// Search tasks that have this actor ID.
 	ActorID *string `json:"actorId,omitempty"`
-	//  Search tasks that have any of these app entitlement IDs.
-	//
+	// Search tasks that have any of these app entitlement IDs.
 	AppEntitlementIds []string `json:"appEntitlementIds,omitempty"`
-	//  Search tasks that have any of these app resource IDs.
-	//
+	// Search tasks that have any of these app resource IDs.
 	AppResourceIds []string `json:"appResourceIds,omitempty"`
-	//  Search tasks that have any of these app resource type IDs.
-	//
+	// Search tasks that have any of these app resource type IDs.
 	AppResourceTypeIds []string `json:"appResourceTypeIds,omitempty"`
-	//  Search tasks that have any of these app users as subjects.
-	//
+	// Search tasks that have any of these app users as subjects.
 	AppUserSubjectIds []string `json:"appUserSubjectIds,omitempty"`
-	//  Search tasks that have any of these apps as targets.
-	//
+	// Search tasks that have any of these apps as targets.
 	ApplicationIds []string `json:"applicationIds,omitempty"`
-	//  Search tasks by  List of UserIDs which are currently assigned these Tasks
-	//
+	// Search tasks by  List of UserIDs which are currently assigned these Tasks
 	AssigneesInIds []string   `json:"assigneesInIds,omitempty"`
 	CreatedAfter   *time.Time `json:"createdAfter,omitempty"`
 	CreatedBefore  *time.Time `json:"createdBefore,omitempty"`
-	//  Search tasks that have this type of step as the current step.
-	//
+	// Search tasks that have this type of step as the current step.
 	CurrentStep *TaskSearchRequestCurrentStep `json:"currentStep,omitempty"`
-	//  Search tasks that are or are not emergency access.
-	//
+	// Search tasks that are or are not emergency access.
 	EmergencyStatus *TaskSearchRequestEmergencyStatus `json:"emergencyStatus,omitempty"`
-	//  Search tasks that do not have any of these app entitlement IDs.
-	//
+	// Search tasks that do not have any of these app entitlement IDs.
 	ExcludeAppEntitlementIds []string `json:"excludeAppEntitlementIds,omitempty"`
-	//  Exclude Specific TaskIDs from this serach result.
-	//
+	// Exclude Specific TaskIDs from this serach result.
 	ExcludeIds []string `json:"excludeIds,omitempty"`
-	//  Whether or not to include deleted tasks.
-	//
+	// Whether or not to include deleted tasks.
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
-	//  Search tasks where the user would see this task in the My Work section
-	//
+	// Search tasks where the user would see this task in the My Work section
 	MyWorkUserIds []string `json:"myWorkUserIds,omitempty"`
-	//  Search tasks that were created by any of the users in this array.
-	//
+	// Search tasks that were created by any of the users in this array.
 	OpenerIds []string `json:"openerIds,omitempty"`
-	//  The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	//
+	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *float64 `json:"pageSize,omitempty"`
-	//  The pageToken field.
-	//
+	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
-	//  Search tasks that were acted on by any of these users.
-	//
+	// Search tasks that were acted on by any of these users.
 	PreviouslyActedOnIds []string `json:"previouslyActedOnIds,omitempty"`
-	//  Fuzzy search tasks by display name or description. Also can search by numeric ID.
-	//
+	// Fuzzy search tasks by display name or description. Also can search by numeric ID.
 	Query *string `json:"query,omitempty"`
-	//  Query tasks by display name, description, or numeric ID.
-	//
+	// Query tasks by display name, description, or numeric ID.
 	Refs []TaskRef `json:"refs,omitempty"`
-	//  Sort tasks in a specific order.
-	//
+	// Sort tasks in a specific order.
 	SortBy *TaskSearchRequestSortBy `json:"sortBy,omitempty"`
-	//  Search tasks where these users are the subject.
-	//
+	// Search tasks where these users are the subject.
 	SubjectIds []string `json:"subjectIds,omitempty"`
-	//  Search tasks with this task state.
-	//
+	// Search tasks with this task state.
 	TaskStates []TaskSearchRequestTaskStates `json:"taskStates,omitempty"`
-	//  Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort.
-	//
+	// Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort.
 	TaskTypes []TaskTypeInput `json:"taskTypes,omitempty"`
 }
 

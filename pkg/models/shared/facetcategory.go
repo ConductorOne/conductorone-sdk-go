@@ -2,26 +2,21 @@
 
 package shared
 
-// FacetCategory -  The FacetCategory indicates a grouping of facets by type. For example, facets "OnePassword" and "Okta" would group under an "Apps" category.
+// FacetCategory - The FacetCategory indicates a grouping of facets by type. For example, facets "OnePassword" and "Okta" would group under an "Apps" category.
 //
 // This message contains a oneof named item. Only a single field of the following list may be set at a time:
 //   - value
 //   - range
 type FacetCategory struct {
-	//  The FacetRangeItem message.
-	//
+	// The FacetRangeItem message.
 	FacetRangeItem *FacetRangeItem `json:"range,omitempty"`
-	//  The FacetValueItem message.
-	//
+	// The FacetValueItem message.
 	FacetValueItem *FacetValueItem `json:"value,omitempty"`
-	//  The display name of the category.
-	//
+	// The display name of the category.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  An icon for the category.
-	//
+	// An icon for the category.
 	IconURL *string `json:"iconUrl,omitempty"`
-	//  The param that is being set when checking a facet in this category.
-	//
+	// The param that is being set when checking a facet in this category.
 	Param *string `json:"param,omitempty"`
 }
 

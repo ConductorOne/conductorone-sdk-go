@@ -27,8 +27,7 @@ func (o *C1APIAppV1AppReportActionServiceGenerateReportRequest) GetAppID() strin
 }
 
 type C1APIAppV1AppReportActionServiceGenerateReportResponse struct {
-	//  Empty response body. Status code indicates success.
-	//
+	// Empty response body. Status code indicates success.
 	AppActionsServiceGenerateReportResponse *shared.AppActionsServiceGenerateReportResponse
 	ContentType                             string
 	StatusCode                              int

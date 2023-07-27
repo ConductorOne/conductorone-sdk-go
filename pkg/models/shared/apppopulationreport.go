@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// AppPopulationReportState -  The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR.
+// AppPopulationReportState - The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR.
 type AppPopulationReportState string
 
 const (
@@ -42,23 +42,18 @@ func (e *AppPopulationReportState) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// AppPopulationReport -  The AppPopulationReport is a generated report for a specific app that gives details about the app's users. These details include what groups, roles, and other entitlements the users have access to.
+// AppPopulationReport - The AppPopulationReport is a generated report for a specific app that gives details about the app's users. These details include what groups, roles, and other entitlements the users have access to.
 type AppPopulationReport struct {
-	//  The appId is the Id of the app which the report is generated for.
-	//
+	// The appId is the Id of the app which the report is generated for.
 	AppID     *string    `json:"appId,omitempty"`
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	//  The downloadUrl is the url used for downloading the AppPopulationReport.
-	//
+	// The downloadUrl is the url used for downloading the AppPopulationReport.
 	DownloadURL *string `json:"downloadUrl,omitempty"`
-	//  The hashes field contains the file hashes of the report.
-	//
+	// The hashes field contains the file hashes of the report.
 	Hashes map[string]string `json:"hashes,omitempty"`
-	//  The id field.
-	//
+	// The id field.
 	ID *string `json:"id,omitempty"`
-	//  The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR.
-	//
+	// The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR.
 	State *AppPopulationReportState `json:"state,omitempty"`
 }
 

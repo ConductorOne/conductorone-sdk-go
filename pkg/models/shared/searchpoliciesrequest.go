@@ -46,22 +46,17 @@ func (e *SearchPoliciesRequestPolicyTypes) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// SearchPoliciesRequest -  Search Policies by a few properties.
+// SearchPoliciesRequest - Search Policies by a few properties.
 type SearchPoliciesRequest struct {
-	//  Search for policies with an exact match on the display name.
-	//
+	// Search for policies with an exact match on the display name.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	//
+	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *float64 `json:"pageSize,omitempty"`
-	//  The pageToken field.
-	//
+	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
-	//  The policy type to search on. This can be POLICY_TYPE_GRANT, POLICY_TYPE_REVOKE, POLICY_TYPE_CERTIFY, POLICY_TYPE_ACCESS_REQUEST, or POLICY_TYPE_PROVISION.
-	//
+	// The policy type to search on. This can be POLICY_TYPE_GRANT, POLICY_TYPE_REVOKE, POLICY_TYPE_CERTIFY, POLICY_TYPE_ACCESS_REQUEST, or POLICY_TYPE_PROVISION.
 	PolicyTypes []SearchPoliciesRequestPolicyTypes `json:"policyTypes,omitempty"`
-	//  Query the policies with a fuzzy search on display name and description.
-	//
+	// Query the policies with a fuzzy search on display name and description.
 	Query *string `json:"query,omitempty"`
 }
 

@@ -1,7 +1,6 @@
 # RequestCatalogManagementServiceDeleteRequest
 
- Delete a request catalog by Id. It uses URL value for input.
-
+Delete a request catalog by Id. It uses URL value for input.
 
 
 ## Fields

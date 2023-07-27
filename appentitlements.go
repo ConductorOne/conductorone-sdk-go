@@ -25,8 +25,7 @@ func newAppEntitlements(sdkConfig sdkConfiguration) *appEntitlements {
 }
 
 // Get - Get
-//
-//	Get an app entitlement by ID.
+// Get an app entitlement by ID.
 func (s *appEntitlements) Get(ctx context.Context, request operations.C1APIAppV1AppEntitlementsGetRequest) (*operations.C1APIAppV1AppEntitlementsGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/{id}", request, nil)
@@ -84,8 +83,7 @@ func (s *appEntitlements) Get(ctx context.Context, request operations.C1APIAppV1
 }
 
 // List - List
-//
-//	List app entitlements associated with an app.
+// List app entitlements associated with an app.
 func (s *appEntitlements) List(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListRequest) (*operations.C1APIAppV1AppEntitlementsListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements", request, nil)
@@ -147,8 +145,7 @@ func (s *appEntitlements) List(ctx context.Context, request operations.C1APIAppV
 }
 
 // ListForAppResource - List For App Resource
-//
-//	List app entitlements associated with an app resource.
+// List app entitlements associated with an app resource.
 func (s *appEntitlements) ListForAppResource(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListForAppResourceRequest) (*operations.C1APIAppV1AppEntitlementsListForAppResourceResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/resource_types/{app_resource_type_id}/resources/{app_resource_id}", request, nil)
@@ -210,8 +207,7 @@ func (s *appEntitlements) ListForAppResource(ctx context.Context, request operat
 }
 
 // ListForAppUser - List For App User
-//
-//	List app entitlements associated with an app user.
+// List app entitlements associated with an app user.
 func (s *appEntitlements) ListForAppUser(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListForAppUserRequest) (*operations.C1APIAppV1AppEntitlementsListForAppUserResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/users/{app_user_id}", request, nil)
@@ -273,8 +269,7 @@ func (s *appEntitlements) ListForAppUser(ctx context.Context, request operations
 }
 
 // ListGroups - List Groups
-//
-//	List app groups associated with an app entitlement.
+// List app groups associated with an app entitlement.
 func (s *appEntitlements) ListGroups(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListGroupsRequest) (*operations.C1APIAppV1AppEntitlementsListGroupsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/groups", request, nil)
@@ -336,8 +331,7 @@ func (s *appEntitlements) ListGroups(ctx context.Context, request operations.C1A
 }
 
 // ListUsers - List Users
-//
-//	List the users, as AppEntitlementUsers objects, of an app entitlement.
+// List the users, as AppEntitlementUsers objects, of an app entitlement.
 func (s *appEntitlements) ListUsers(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListUsersRequest) (*operations.C1APIAppV1AppEntitlementsListUsersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users", request, nil)
@@ -399,8 +393,7 @@ func (s *appEntitlements) ListUsers(ctx context.Context, request operations.C1AP
 }
 
 // Update - Update
-//
-//	Update an app entitlement by ID.
+// Update an app entitlement by ID.
 func (s *appEntitlements) Update(ctx context.Context, request operations.C1APIAppV1AppEntitlementsUpdateRequest) (*operations.C1APIAppV1AppEntitlementsUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/entitlements/{id}", request, nil)

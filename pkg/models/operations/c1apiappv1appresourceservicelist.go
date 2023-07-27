@@ -43,8 +43,7 @@ func (o *C1APIAppV1AppResourceServiceListRequest) GetPageToken() *string {
 }
 
 type C1APIAppV1AppResourceServiceListResponse struct {
-	//  The AppResourceServiceListResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The AppResourceServiceListResponse message contains a list of results and a nextPageToken if applicable.
 	AppResourceServiceListResponse *shared.AppResourceServiceListResponse
 	ContentType                    string
 	StatusCode                     int

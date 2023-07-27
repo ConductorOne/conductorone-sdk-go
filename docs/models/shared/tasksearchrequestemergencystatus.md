@@ -1,7 +1,6 @@
 # TaskSearchRequestEmergencyStatus
 
- Search tasks that are or are not emergency access.
-
+Search tasks that are or are not emergency access.
 
 
 ## Values

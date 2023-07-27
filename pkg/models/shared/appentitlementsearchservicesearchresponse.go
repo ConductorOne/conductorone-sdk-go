@@ -4,17 +4,13 @@ package shared
 
 // AppEntitlementSearchServiceSearchResponse - The AppEntitlementSearchServiceSearchResponse message.
 type AppEntitlementSearchServiceSearchResponse struct {
-	//  Indicates one value of a facet.
-	//
+	// Indicates one value of a facet.
 	Facets *Facets `json:"facets,omitempty"`
-	//  List of related objects.
-	//
+	// List of related objects.
 	Expanded []map[string]interface{} `json:"expanded,omitempty"`
-	//  List of app entitlement view objects.
-	//
+	// List of app entitlement view objects.
 	List []AppEntitlementView `json:"list,omitempty"`
-	//  The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
-	//
+	// The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
 	NextPageToken *string `json:"nextPageToken,omitempty"`
 }
 

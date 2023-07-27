@@ -26,8 +26,7 @@ func newApps(sdkConfig sdkConfiguration) *apps {
 }
 
 // Create - Create
-//
-//	Create a new app.
+// Create a new app.
 func (s *apps) Create(ctx context.Context, request shared.CreateAppRequest) (*operations.C1APIAppV1AppsCreateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/apps"
@@ -89,8 +88,7 @@ func (s *apps) Create(ctx context.Context, request shared.CreateAppRequest) (*op
 }
 
 // Delete - Delete
-//
-//	Delete an app.
+// Delete an app.
 func (s *apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDeleteRequest) (*operations.C1APIAppV1AppsDeleteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{id}", request, nil)
@@ -155,8 +153,7 @@ func (s *apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDele
 }
 
 // Get - Get
-//
-//	Get an app by ID.
+// Get an app by ID.
 func (s *apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequest) (*operations.C1APIAppV1AppsGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{id}", request, nil)
@@ -214,8 +211,7 @@ func (s *apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequ
 }
 
 // List - List
-//
-//	List all apps.
+// List all apps.
 func (s *apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRequest) (*operations.C1APIAppV1AppsListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/apps"
@@ -274,8 +270,7 @@ func (s *apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRe
 }
 
 // Update - Update
-//
-//	Update an existing app.
+// Update an existing app.
 func (s *apps) Update(ctx context.Context, request operations.C1APIAppV1AppsUpdateRequest) (*operations.C1APIAppV1AppsUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{id}", request, nil)

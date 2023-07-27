@@ -8,8 +8,7 @@
 
 ## Get
 
- Get a role by id.
-
+Get a role by id.
 
 ### Example Usage
 
@@ -60,8 +59,7 @@ func main() {
 
 ## List
 
- List all roles for the current user.
-
+List all roles for the current user.
 
 ### Example Usage
 
@@ -113,8 +111,7 @@ func main() {
 
 ## Update
 
- Update a role by passing a Role object.
-
+Update a role by passing a Role object.
 
 ### Example Usage
 

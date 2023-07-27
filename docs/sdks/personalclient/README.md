@@ -6,8 +6,7 @@
 
 ## Create
 
- Create creates a new PersonalClient object for the current User.
-
+Create creates a new PersonalClient object for the current User.
 
 ### Example Usage
 

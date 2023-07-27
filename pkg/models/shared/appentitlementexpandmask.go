@@ -2,10 +2,9 @@
 
 package shared
 
-// AppEntitlementExpandMask -  The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
+// AppEntitlementExpandMask - The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
 type AppEntitlementExpandMask struct {
-	//  Array of strings to describe which items to expand on the return value. Can be any combination of "*", "app_id", "app_resource_type_id", or "app_resource_id".
-	//
+	// Array of strings to describe which items to expand on the return value. Can be any combination of "*", "app_id", "app_resource_type_id", or "app_resource_id".
 	Paths []string `json:"paths,omitempty"`
 }
 

@@ -6,8 +6,7 @@
 
 ## Search
 
- Search app entitlements based on filters specified in the request body.
-
+Search app entitlements based on filters specified in the request body.
 
 ### Example Usage
 

@@ -11,8 +11,7 @@ type C1APITaskV1TaskSearchServiceSearchResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The TaskSearchResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The TaskSearchResponse message contains a list of results and a nextPageToken if applicable.
 	TaskSearchResponse *shared.TaskSearchResponse
 }
 

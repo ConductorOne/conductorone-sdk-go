@@ -26,8 +26,7 @@ func newAppEntitlementSearch(sdkConfig sdkConfiguration) *appEntitlementSearch {
 }
 
 // Search - Search
-//
-//	Search app entitlements based on filters specified in the request body.
+// Search app entitlements based on filters specified in the request body.
 func (s *appEntitlementSearch) Search(ctx context.Context, request shared.AppEntitlementSearchServiceSearchRequest) (*operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/search/entitlements"

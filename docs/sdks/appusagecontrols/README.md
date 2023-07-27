@@ -7,8 +7,7 @@
 
 ## Get
 
- Get usage controls, as an AppUsageControls object which describes some peripheral configuration, for an app.
-
+Get usage controls, as an AppUsageControls object which describes some peripheral configuration, for an app.
 
 ### Example Usage
 
@@ -59,8 +58,7 @@ func main() {
 
 ## Update
 
- Update usage controls for an app.
-
+Update usage controls for an app.
 
 ### Example Usage
 

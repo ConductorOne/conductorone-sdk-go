@@ -7,8 +7,7 @@
 
 ## Get
 
- Get a user by ID.
-
+Get a user by ID.
 
 ### Example Usage
 
@@ -59,8 +58,7 @@ func main() {
 
 ## List
 
- List users.
-
+List users.
 
 ### Example Usage
 

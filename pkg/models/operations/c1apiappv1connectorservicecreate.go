@@ -27,8 +27,7 @@ func (o *C1APIAppV1ConnectorServiceCreateRequest) GetAppID() string {
 }
 
 type C1APIAppV1ConnectorServiceCreateResponse struct {
-	//  The ConnectorServiceCreateResponse is the response returned from creating a connector.
-	//
+	// The ConnectorServiceCreateResponse is the response returned from creating a connector.
 	ConnectorServiceCreateResponse *shared.ConnectorServiceCreateResponse
 	ContentType                    string
 	StatusCode                     int

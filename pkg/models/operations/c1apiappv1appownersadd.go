@@ -35,8 +35,7 @@ func (o *C1APIAppV1AppOwnersAddRequest) GetUserID() string {
 }
 
 type C1APIAppV1AppOwnersAddResponse struct {
-	//  Empty response with a status code indicating success
-	//
+	// Empty response with a status code indicating success
 	AddAppOwnerResponse *shared.AddAppOwnerResponse
 	ContentType         string
 	StatusCode          int

@@ -28,8 +28,7 @@ func (o *C1APIIamV1RolesListRequest) GetPageToken() *string {
 
 type C1APIIamV1RolesListResponse struct {
 	ContentType string
-	//  The ListRolesResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The ListRolesResponse message contains a list of results and a nextPageToken if applicable.
 	ListRolesResponse *shared.ListRolesResponse
 	StatusCode        int
 	RawResponse       *http.Response

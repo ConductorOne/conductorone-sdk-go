@@ -2,6 +2,6 @@
 
 package shared
 
-// RequestCatalogManagementServiceRemoveAccessEntitlementsResponse -  Empty response with a status code indicating success.
+// RequestCatalogManagementServiceRemoveAccessEntitlementsResponse - Empty response with a status code indicating success.
 type RequestCatalogManagementServiceRemoveAccessEntitlementsResponse struct {
 }

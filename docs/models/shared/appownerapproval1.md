@@ -1,7 +1,6 @@
 # AppOwnerApproval1
 
- App owner approval provides the configuration for an approval step when the app owner is the target.
-
+App owner approval provides the configuration for an approval step when the app owner is the target.
 
 
 ## Fields

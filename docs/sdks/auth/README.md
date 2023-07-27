@@ -6,8 +6,7 @@
 
 ## Introspect
 
- Introspect returns the current user's principle_id, user_id and a list of roles, permissions, and enabled features.
-
+Introspect returns the current user's principle_id, user_id and a list of roles, permissions, and enabled features.
 
 ### Example Usage
 

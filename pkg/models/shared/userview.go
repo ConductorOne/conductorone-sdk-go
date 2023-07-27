@@ -2,22 +2,17 @@
 
 package shared
 
-// UserView -  The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders.
+// UserView - The UserView object provides a user response object, as well as JSONPATHs to related objects provided by expanders.
 type UserView struct {
-	//  The User object provides all of the details for an user, as well as some configuration.
-	//
+	// The User object provides all of the details for an user, as well as some configuration.
 	User *User `json:"user,omitempty"`
-	//  JSONPATH expression indicating the location of the user objects of delegates of the current user in the expanded array.
-	//
+	// JSONPATH expression indicating the location of the user objects of delegates of the current user in the expanded array.
 	DelegatedUserPath *string `json:"delegatedUserPath,omitempty"`
-	//  JSONPATH expression indicating the location of directory objects in the expanded array.
-	//
+	// JSONPATH expression indicating the location of directory objects in the expanded array.
 	DirectoriesPath *string `json:"directoriesPath,omitempty"`
-	//  JSONPATH expression indicating the location of the user objects that managed the current user in the expanded array.
-	//
+	// JSONPATH expression indicating the location of the user objects that managed the current user in the expanded array.
 	ManagersPath *string `json:"managersPath,omitempty"`
-	//  JSONPATH expression indicating the location of the roles of the current user in the expanded array.
-	//
+	// JSONPATH expression indicating the location of the roles of the current user in the expanded array.
 	RolesPath *string `json:"rolesPath,omitempty"`
 }
 

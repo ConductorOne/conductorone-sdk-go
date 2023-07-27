@@ -9,8 +9,7 @@ import (
 
 type C1APIDirectoryV1DirectoryServiceCreateResponse struct {
 	ContentType string
-	//  The DirectoryServiceCreateResponse message.
-	//
+	// The DirectoryServiceCreateResponse message.
 	DirectoryServiceCreateResponse *shared.DirectoryServiceCreateResponse
 	StatusCode                     int
 	RawResponse                    *http.Response

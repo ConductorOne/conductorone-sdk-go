@@ -2,6 +2,6 @@
 
 package shared
 
-// AppActionsServiceGenerateReportResponse -  Empty response body. Status code indicates success.
+// AppActionsServiceGenerateReportResponse - Empty response body. Status code indicates success.
 type AppActionsServiceGenerateReportResponse struct {
 }

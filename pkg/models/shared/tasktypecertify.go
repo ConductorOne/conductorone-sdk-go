@@ -2,6 +2,6 @@
 
 package shared
 
-// TaskTypeCertify -  The TaskTypeCertify message indicates that a task is a certify task and all related details.
+// TaskTypeCertify - The TaskTypeCertify message indicates that a task is a certify task and all related details.
 type TaskTypeCertify struct {
 }

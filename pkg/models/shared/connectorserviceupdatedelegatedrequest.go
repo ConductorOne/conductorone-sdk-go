@@ -2,13 +2,11 @@
 
 package shared
 
-// ConnectorServiceUpdateDelegatedRequestInput -  The ConnectorServiceUpdateDelegatedRequest message contains the fields required to update a connector.
+// ConnectorServiceUpdateDelegatedRequestInput - The ConnectorServiceUpdateDelegatedRequest message contains the fields required to update a connector.
 type ConnectorServiceUpdateDelegatedRequestInput struct {
-	//  A Connector is used to sync objects into Apps
-	//
+	// A Connector is used to sync objects into Apps
 	Connector *ConnectorInput `json:"connector,omitempty"`
-	//  The ConnectorExpandMask is used to expand related objects on a connector.
-	//
+	// The ConnectorExpandMask is used to expand related objects on a connector.
 	ConnectorExpandMask *ConnectorExpandMask `json:"expandMask,omitempty"`
 	UpdateMask          *string              `json:"updateMask,omitempty"`
 }

@@ -6,8 +6,7 @@
 
 ## List
 
- Get a list of reports for the given app.
-
+Get a list of reports for the given app.
 
 ### Example Usage
 

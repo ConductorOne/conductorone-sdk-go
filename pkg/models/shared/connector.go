@@ -6,30 +6,23 @@ import (
 	"time"
 )
 
-// ConnectorInput -  A Connector is used to sync objects into Apps
+// ConnectorInput - A Connector is used to sync objects into Apps
 type ConnectorInput struct {
-	//  The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
-	//
+	// The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 	ConnectorStatus *ConnectorStatus `json:"status,omitempty"`
-	//  OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
-	//
+	// OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 	OAuth2AuthorizedAs *OAuth2AuthorizedAs1 `json:"oauthAuthorizedAs,omitempty"`
-	//  The id of the app the connector is associated with.
-	//
+	// The id of the app the connector is associated with.
 	AppID *string `json:"appId,omitempty"`
 	// Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
 	Config map[string]interface{} `json:"config,omitempty"`
-	//  The description of the connector.
-	//
+	// The description of the connector.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the connector.
-	//
+	// The display name of the connector.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The id of the connector.
-	//
+	// The id of the connector.
 	ID *string `json:"id,omitempty"`
-	//  The userIds field is used to define the integration owners of the connector.
-	//
+	// The userIds field is used to define the integration owners of the connector.
 	UserIds []string `json:"userIds,omitempty"`
 }
 
@@ -89,39 +82,30 @@ func (o *ConnectorInput) GetUserIds() []string {
 	return o.UserIds
 }
 
-// Connector -  A Connector is used to sync objects into Apps
+// Connector - A Connector is used to sync objects into Apps
 type Connector struct {
-	//  The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
-	//
+	// The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 	ConnectorStatus *ConnectorStatus `json:"status,omitempty"`
-	//  OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
-	//
+	// OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 	OAuth2AuthorizedAs *OAuth2AuthorizedAs `json:"oauthAuthorizedAs,omitempty"`
-	//  The id of the app the connector is associated with.
-	//
+	// The id of the app the connector is associated with.
 	AppID *string `json:"appId,omitempty"`
-	//  The catalogId describes which catalog entry this connector is an instance of. For example, every Okta connector will have the same catalogId indicating it is an Okta connector.
-	//
+	// The catalogId describes which catalog entry this connector is an instance of. For example, every Okta connector will have the same catalogId indicating it is an Okta connector.
 	CatalogID *string `json:"catalogId,omitempty"`
 	// Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
 	Config    map[string]interface{} `json:"config,omitempty"`
 	CreatedAt *time.Time             `json:"createdAt,omitempty"`
 	DeletedAt *time.Time             `json:"deletedAt,omitempty"`
-	//  The description of the connector.
-	//
+	// The description of the connector.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the connector.
-	//
+	// The display name of the connector.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The downloadUrl for a spreadsheet if the connector was created from uploading a file.
-	//
+	// The downloadUrl for a spreadsheet if the connector was created from uploading a file.
 	DownloadURL *string `json:"downloadUrl,omitempty"`
-	//  The id of the connector.
-	//
+	// The id of the connector.
 	ID        *string    `json:"id,omitempty"`
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
-	//  The userIds field is used to define the integration owners of the connector.
-	//
+	// The userIds field is used to define the integration owners of the connector.
 	UserIds []string `json:"userIds,omitempty"`
 }
 

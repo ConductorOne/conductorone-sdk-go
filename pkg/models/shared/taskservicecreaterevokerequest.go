@@ -2,25 +2,19 @@
 
 package shared
 
-// TaskServiceCreateRevokeRequest -  Create a revoke task.
+// TaskServiceCreateRevokeRequest - Create a revoke task.
 type TaskServiceCreateRevokeRequest struct {
-	//  The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
-	//
+	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
 	TaskExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
-	//  The ID of the app entitlement to revoke access to.
-	//
+	// The ID of the app entitlement to revoke access to.
 	AppEntitlementID string `json:"appEntitlementId"`
-	//  The ID of the app associated with the entitlement.
-	//
+	// The ID of the app associated with the entitlement.
 	AppID string `json:"appId"`
-	//  The ID of the app user to revoke access from. This field and identityUserId cannot both be set for a given request.
-	//
+	// The ID of the app user to revoke access from. This field and identityUserId cannot both be set for a given request.
 	AppUserID *string `json:"appUserId,omitempty"`
-	//  The description of the request.
-	//
+	// The description of the request.
 	Description *string `json:"description,omitempty"`
-	//  The ID of the user associated with the app user we are revoking access from. This field cannot be set if appUserID is also set.
-	//
+	// The ID of the user associated with the app user we are revoking access from. This field cannot be set if appUserID is also set.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
 }
 
