@@ -6,8 +6,7 @@
 
 ## GenerateReport
 
- Generate a report for the given app.
-
+Generate a report for the given app.
 
 ### Example Usage
 

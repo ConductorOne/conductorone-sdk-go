@@ -1,7 +1,6 @@
 # TaskRevokeSourceNonUsage
 
- The TaskRevokeSourceNonUsage message indicates that the source of the revoke task is due to the grant not being used.
-
+The TaskRevokeSourceNonUsage message indicates that the source of the revoke task is due to the grant not being used.
 
 
 ## Fields

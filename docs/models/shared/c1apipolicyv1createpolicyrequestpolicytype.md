@@ -1,7 +1,6 @@
 # C1APIPolicyV1CreatePolicyRequestPolicyType
 
- The enum of the policy type.
-
+The enum of the policy type.
 
 
 ## Values

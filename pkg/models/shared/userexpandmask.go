@@ -2,12 +2,11 @@
 
 package shared
 
-// UserExpandMask -  The user expand mask is used to indicate which related objects should be expanded in the response.
+// UserExpandMask - The user expand mask is used to indicate which related objects should be expanded in the response.
 //
 //	The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
 type UserExpandMask struct {
-	//  An array of paths to be expanded in the response.
-	//
+	// An array of paths to be expanded in the response.
 	Paths []string `json:"paths,omitempty"`
 }
 

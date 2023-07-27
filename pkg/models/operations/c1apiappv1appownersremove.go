@@ -36,8 +36,7 @@ func (o *C1APIAppV1AppOwnersRemoveRequest) GetUserID() string {
 
 type C1APIAppV1AppOwnersRemoveResponse struct {
 	ContentType string
-	//  Empty response with a status code indicating success.
-	//
+	// Empty response with a status code indicating success.
 	RemoveAppOwnerResponse *shared.RemoveAppOwnerResponse
 	StatusCode             int
 	RawResponse            *http.Response

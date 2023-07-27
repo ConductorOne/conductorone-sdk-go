@@ -6,50 +6,37 @@ import (
 	"time"
 )
 
-// App -  The App object provides all of the details for an app, as well as some configuration.
+// App - The App object provides all of the details for an app, as well as some configuration.
 type App struct {
-	//  The ID of the Account named by AccountName.
-	//
+	// The ID of the Account named by AccountName.
 	AppAccountID *string `json:"appAccountId,omitempty"`
-	//  The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain.
-	//
+	// The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain.
 	AppAccountName *string `json:"appAccountName,omitempty"`
-	//  The ID of the Certify Policy associated with this App.
-	//
+	// The ID of the Certify Policy associated with this App.
 	CertifyPolicyID *string    `json:"certifyPolicyId,omitempty"`
 	CreatedAt       *time.Time `json:"createdAt,omitempty"`
 	DeletedAt       *time.Time `json:"deletedAt,omitempty"`
-	//  The app's description.
-	//
+	// The app's description.
 	Description *string `json:"description,omitempty"`
-	//  The app's display name.
-	//
+	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
 	FieldMask   *string `json:"fieldMask,omitempty"`
-	//  The ID of the Grant Policy associated with this App.
-	//
+	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
-	//  The URL of an icon to display for the app.
-	//
+	// The URL of an icon to display for the app.
 	IconURL *string `json:"iconUrl,omitempty"`
-	//  The ID of the app.
-	//
+	// The ID of the app.
 	ID *string `json:"id,omitempty"`
-	//  The URL of a logo to display for the app.
-	//
+	// The URL of a logo to display for the app.
 	LogoURI *string `json:"logoUri,omitempty"`
-	//  The cost of an app per-seat, so that total cost can be calculated by the grant count.
-	//
+	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
 	MonthlyCostUsd *float64 `json:"monthlyCostUsd,omitempty"`
-	//  The ID of the app that created this app, if any.
-	//
+	// The ID of the app that created this app, if any.
 	ParentAppID *string `json:"parentAppId,omitempty"`
-	//  The ID of the Revoke Policy associated with this App.
-	//
+	// The ID of the Revoke Policy associated with this App.
 	RevokePolicyID *string    `json:"revokePolicyId,omitempty"`
 	UpdatedAt      *time.Time `json:"updatedAt,omitempty"`
-	//  The number of users with grants to this app.
-	//
+	// The number of users with grants to this app.
 	UserCount *string `json:"userCount,omitempty"`
 }
 
@@ -172,28 +159,21 @@ func (o *App) GetUserCount() *string {
 	return o.UserCount
 }
 
-// AppInput -  The App object provides all of the details for an app, as well as some configuration.
+// AppInput - The App object provides all of the details for an app, as well as some configuration.
 type AppInput struct {
-	//  The ID of the Certify Policy associated with this App.
-	//
+	// The ID of the Certify Policy associated with this App.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
-	//  The app's description.
-	//
+	// The app's description.
 	Description *string `json:"description,omitempty"`
-	//  The app's display name.
-	//
+	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The ID of the Grant Policy associated with this App.
-	//
+	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
-	//  The URL of an icon to display for the app.
-	//
+	// The URL of an icon to display for the app.
 	IconURL *string `json:"iconUrl,omitempty"`
-	//  The cost of an app per-seat, so that total cost can be calculated by the grant count.
-	//
+	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
 	MonthlyCostUsd *float64 `json:"monthlyCostUsd,omitempty"`
-	//  The ID of the Revoke Policy associated with this App.
-	//
+	// The ID of the Revoke Policy associated with this App.
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 }
 

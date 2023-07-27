@@ -15,8 +15,7 @@
 
 ## AddAccessEntitlements
 
- Add visibility bindings (access entitlements) to a catalog.
-
+Add visibility bindings (access entitlements) to a catalog.
 
 ### Example Usage
 
@@ -87,8 +86,7 @@ func main() {
 
 ## AddAppEntitlements
 
- Add requestable entitlements to a catalog.
-
+Add requestable entitlements to a catalog.
 
 ### Example Usage
 
@@ -155,8 +153,7 @@ func main() {
 
 ## Create
 
- Creates a new request catalog.
-
+Creates a new request catalog.
 
 ### Example Usage
 
@@ -217,8 +214,7 @@ func main() {
 
 ## Delete
 
- Delete a catalog.
-
+Delete a catalog.
 
 ### Example Usage
 
@@ -270,8 +266,7 @@ func main() {
 
 ## Get
 
- Get a catalog.
-
+Get a catalog.
 
 ### Example Usage
 
@@ -322,8 +317,7 @@ func main() {
 
 ## ListEntitlementsForAccess
 
- List visibility bindings (access entitlements) for a catalog.
-
+List visibility bindings (access entitlements) for a catalog.
 
 ### Example Usage
 
@@ -376,8 +370,7 @@ func main() {
 
 ## ListEntitlementsPerCatalog
 
- List entitlements in a catalog that are requestable.
-
+List entitlements in a catalog that are requestable.
 
 ### Example Usage
 
@@ -430,8 +423,7 @@ func main() {
 
 ## RemoveAccessEntitlements
 
- Remove visibility bindings (access entitlements) to a catalog.
-
+Remove visibility bindings (access entitlements) to a catalog.
 
 ### Example Usage
 
@@ -490,8 +482,7 @@ func main() {
 
 ## RemoveAppEntitlements
 
- Remove requestable entitlements from a catalog.
-
+Remove requestable entitlements from a catalog.
 
 ### Example Usage
 
@@ -562,8 +553,7 @@ func main() {
 
 ## Update
 
- Update a catalog.
-
+Update a catalog.
 
 ### Example Usage
 

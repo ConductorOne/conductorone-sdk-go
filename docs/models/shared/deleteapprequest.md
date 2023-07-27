@@ -1,7 +1,6 @@
 # DeleteAppRequest
 
- Empty request body
-
+Empty request body
 
 
 ## Fields

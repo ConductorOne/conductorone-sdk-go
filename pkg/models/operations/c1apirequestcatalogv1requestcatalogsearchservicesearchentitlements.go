@@ -9,8 +9,7 @@ import (
 
 type C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse struct {
 	ContentType string
-	//  The RequestCatalogSearchServiceSearchEntitlementsResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The RequestCatalogSearchServiceSearchEntitlementsResponse message contains a list of results and a nextPageToken if applicable.
 	RequestCatalogSearchServiceSearchEntitlementsResponse *shared.RequestCatalogSearchServiceSearchEntitlementsResponse
 	StatusCode                                            int
 	RawResponse                                           *http.Response

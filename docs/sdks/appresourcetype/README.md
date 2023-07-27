@@ -7,8 +7,7 @@
 
 ## Get
 
- Get an app resource type.
-
+Get an app resource type.
 
 ### Example Usage
 
@@ -60,8 +59,7 @@ func main() {
 
 ## List
 
- List app resource types.
-
+List app resource types.
 
 ### Example Usage
 

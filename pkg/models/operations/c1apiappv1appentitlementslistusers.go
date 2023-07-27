@@ -44,8 +44,7 @@ func (o *C1APIAppV1AppEntitlementsListUsersRequest) GetPageToken() *string {
 
 type C1APIAppV1AppEntitlementsListUsersResponse struct {
 	ContentType string
-	//  The ListAppEntitlementUsersResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The ListAppEntitlementUsersResponse message contains a list of results and a nextPageToken if applicable.
 	ListAppEntitlementUsersResponse *shared.ListAppEntitlementUsersResponse
 	StatusCode                      int
 	RawResponse                     *http.Response

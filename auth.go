@@ -26,8 +26,7 @@ func newAuth(sdkConfig sdkConfiguration) *auth {
 }
 
 // Introspect - Introspect
-//
-//	Introspect returns the current user's principle_id, user_id and a list of roles, permissions, and enabled features.
+// Introspect returns the current user's principle_id, user_id and a list of roles, permissions, and enabled features.
 func (s *auth) Introspect(ctx context.Context) (*operations.C1APIAuthV1AuthIntrospectResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/auth/introspect"

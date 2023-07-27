@@ -30,8 +30,7 @@ type C1APITaskV1TaskActionsServiceDenyResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The TaskActionsServiceDenyResponse returns a task view with paths indicating the location of expanded items in the array.
-	//
+	// The TaskActionsServiceDenyResponse returns a task view with paths indicating the location of expanded items in the array.
 	TaskActionsServiceDenyResponse *shared.TaskActionsServiceDenyResponse
 }
 

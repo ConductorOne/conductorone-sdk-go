@@ -2,10 +2,9 @@
 
 package shared
 
-// DirectoryExpandMask -  The fields to be included in the directory response.
+// DirectoryExpandMask - The fields to be included in the directory response.
 type DirectoryExpandMask struct {
-	//  An array of fields to be included in the directory response.
-	//
+	// An array of fields to be included in the directory response.
 	Paths []string `json:"paths,omitempty"`
 }
 

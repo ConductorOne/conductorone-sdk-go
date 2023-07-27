@@ -2,10 +2,9 @@
 
 package shared
 
-// UserRef -  A reference to a user.
+// UserRef - A reference to a user.
 type UserRef struct {
-	//  The id of the user.
-	//
+	// The id of the user.
 	ID *string `json:"id,omitempty"`
 }
 

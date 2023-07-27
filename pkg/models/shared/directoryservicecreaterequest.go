@@ -2,13 +2,11 @@
 
 package shared
 
-// DirectoryServiceCreateRequest -  Uplevel an app into a full directory.
+// DirectoryServiceCreateRequest - Uplevel an app into a full directory.
 type DirectoryServiceCreateRequest struct {
-	//  The fields to be included in the directory response.
-	//
+	// The fields to be included in the directory response.
 	DirectoryExpandMask *DirectoryExpandMask `json:"expandMask,omitempty"`
-	//  The AppID to make into a directory, providing identities and more for the C1 app.
-	//
+	// The AppID to make into a directory, providing identities and more for the C1 app.
 	AppID *string `json:"appId,omitempty"`
 }
 

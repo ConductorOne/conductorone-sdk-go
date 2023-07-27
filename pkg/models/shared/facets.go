@@ -2,13 +2,11 @@
 
 package shared
 
-// Facets -  Indicates one value of a facet.
+// Facets - Indicates one value of a facet.
 type Facets struct {
-	//  The count of items in this facet.
-	//
+	// The count of items in this facet.
 	Count *string `json:"count,omitempty"`
-	//  The facet being referenced.
-	//
+	// The facet being referenced.
 	Facets []FacetCategory `json:"facets,omitempty"`
 }
 

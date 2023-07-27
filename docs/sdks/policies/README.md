@@ -10,8 +10,7 @@
 
 ## Create
 
- Create a policy.
-
+Create a policy.
 
 ### Example Usage
 
@@ -195,8 +194,7 @@ func main() {
 
 ## Delete
 
- Delete a policy by ID.
-
+Delete a policy by ID.
 
 ### Example Usage
 
@@ -248,8 +246,7 @@ func main() {
 
 ## Get
 
- Get a policy by ID.
-
+Get a policy by ID.
 
 ### Example Usage
 
@@ -300,8 +297,7 @@ func main() {
 
 ## List
 
- List policies.
-
+List policies.
 
 ### Example Usage
 
@@ -353,8 +349,7 @@ func main() {
 
 ## Update
 
- Update a policy by providing a policy object and an update mask.
-
+Update a policy by providing a policy object and an update mask.
 
 ### Example Usage
 

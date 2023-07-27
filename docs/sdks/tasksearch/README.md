@@ -6,8 +6,7 @@
 
 ## Search
 
- Search tasks based on filters specified in the request body.
-
+Search tasks based on filters specified in the request body.
 
 ### Example Usage
 
@@ -102,7 +101,7 @@ func main() {
                 ID: conductoroneapi.String("e1084cb0-672d-41ad-879e-eb9665b85efb"),
             },
         },
-        SortBy: shared.TaskSearchRequestSortByTaskSearchSortByAccountOwner.ToPointer(),
+        SortBy: shared.TaskSearchRequestSortByTaskSearchSortByReverseTicketID.ToPointer(),
         SubjectIds: []string{
             "quia",
         },

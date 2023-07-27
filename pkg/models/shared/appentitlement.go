@@ -9,14 +9,13 @@ import (
 type AppEntitlementDurationUnset struct {
 }
 
-// AppEntitlement -  The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
+// AppEntitlement - The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 //
 // This message contains a oneof named max_grant_duration. Only a single field of the following list may be set at a time:
 //   - durationUnset
 //   - durationGrant
 type AppEntitlement struct {
-	//  ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-	//
+	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 	//
 	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
 	//   - connector
@@ -24,59 +23,43 @@ type AppEntitlement struct {
 	//   - delegated
 	//
 	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
-	//  The alias of the app entitlement used by Cone. Also exact-match queryable.
-	//
+	// The alias of the app entitlement used by Cone. Also exact-match queryable.
 	Alias *string `json:"alias,omitempty"`
-	//  The ID of the app that is associated with the app entitlement.
-	//
+	// The ID of the app that is associated with the app entitlement.
 	AppID *string `json:"appId,omitempty"`
-	//  The ID of the app resource that is associated with the app entitlement
-	//
+	// The ID of the app resource that is associated with the app entitlement
 	AppResourceID *string `json:"appResourceId,omitempty"`
-	//  The ID of the app resource type that is associated with the app entitlement
-	//
+	// The ID of the app resource type that is associated with the app entitlement
 	AppResourceTypeID *string `json:"appResourceTypeId,omitempty"`
-	//  The ID of the policy that will be used for certify tickets related to the app entitlement.
-	//
+	// The ID of the policy that will be used for certify tickets related to the app entitlement.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
-	//  The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)
-	//
+	// The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)
 	ComplianceFrameworkValueIds []string   `json:"complianceFrameworkValueIds,omitempty"`
 	CreatedAt                   *time.Time `json:"createdAt,omitempty"`
 	DeletedAt                   *time.Time `json:"deletedAt,omitempty"`
-	//  The description of the app entitlement.
-	//
+	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the app entitlement.
-	//
+	// The display name of the app entitlement.
 	DisplayName   *string                      `json:"displayName,omitempty"`
 	DurationGrant *string                      `json:"durationGrant,omitempty"`
 	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
-	//  This enables tasks to be created in an emergency and use a selected emergency access policy.
-	//
+	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
-	//  The ID of the policy that will be used for emergency access grant tasks.
-	//
+	// The ID of the policy that will be used for emergency access grant tasks.
 	EmergencyGrantPolicyID *string `json:"emergencyGrantPolicyId,omitempty"`
-	//  The amount of grants open for this entitlement
-	//
+	// The amount of grants open for this entitlement
 	GrantCount *string `json:"grantCount,omitempty"`
-	//  The ID of the policy that will be used for grant tickets related to the app entitlement.
-	//
+	// The ID of the policy that will be used for grant tickets related to the app entitlement.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
-	//  The unique ID for the App Entitlement.
-	//
+	// The unique ID for the App Entitlement.
 	ID *string `json:"id,omitempty"`
-	//  The ID of the policy that will be used for revoke tickets related to the app entitlement
-	//
+	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
-	//  The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
-	//
+	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
 	Slug *string `json:"slug,omitempty"`
-	//  This field indicates if this is a system builtin entitlement.
-	//
+	// This field indicates if this is a system builtin entitlement.
 	SystemBuiltin *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
 }
@@ -242,14 +225,13 @@ func (o *AppEntitlement) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-// AppEntitlementInput -  The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
+// AppEntitlementInput - The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 //
 // This message contains a oneof named max_grant_duration. Only a single field of the following list may be set at a time:
 //   - durationUnset
 //   - durationGrant
 type AppEntitlementInput struct {
-	//  ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-	//
+	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
 	//
 	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
 	//   - connector
@@ -257,45 +239,33 @@ type AppEntitlementInput struct {
 	//   - delegated
 	//
 	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
-	//  The ID of the app that is associated with the app entitlement.
-	//
+	// The ID of the app that is associated with the app entitlement.
 	AppID *string `json:"appId,omitempty"`
-	//  The ID of the app resource that is associated with the app entitlement
-	//
+	// The ID of the app resource that is associated with the app entitlement
 	AppResourceID *string `json:"appResourceId,omitempty"`
-	//  The ID of the app resource type that is associated with the app entitlement
-	//
+	// The ID of the app resource type that is associated with the app entitlement
 	AppResourceTypeID *string `json:"appResourceTypeId,omitempty"`
-	//  The ID of the policy that will be used for certify tickets related to the app entitlement.
-	//
+	// The ID of the policy that will be used for certify tickets related to the app entitlement.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
-	//  The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)
-	//
+	// The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)
 	ComplianceFrameworkValueIds []string `json:"complianceFrameworkValueIds,omitempty"`
-	//  The description of the app entitlement.
-	//
+	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
-	//  The display name of the app entitlement.
-	//
+	// The display name of the app entitlement.
 	DisplayName   *string                      `json:"displayName,omitempty"`
 	DurationGrant *string                      `json:"durationGrant,omitempty"`
 	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
-	//  This enables tasks to be created in an emergency and use a selected emergency access policy.
-	//
+	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
-	//  The ID of the policy that will be used for emergency access grant tasks.
-	//
+	// The ID of the policy that will be used for emergency access grant tasks.
 	EmergencyGrantPolicyID *string `json:"emergencyGrantPolicyId,omitempty"`
-	//  The ID of the policy that will be used for grant tickets related to the app entitlement.
-	//
+	// The ID of the policy that will be used for grant tickets related to the app entitlement.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
-	//  The ID of the policy that will be used for revoke tickets related to the app entitlement
-	//
+	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
-	//  The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
-	//
+	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
 	Slug *string `json:"slug,omitempty"`
 }
 

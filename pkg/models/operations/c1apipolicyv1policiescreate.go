@@ -9,8 +9,7 @@ import (
 
 type C1APIPolicyV1PoliciesCreateResponse struct {
 	ContentType string
-	//  The CreatePolicyResponse message contains the created policy object.
-	//
+	// The CreatePolicyResponse message contains the created policy object.
 	CreatePolicyResponse *shared.CreatePolicyResponse
 	StatusCode           int
 	RawResponse          *http.Response

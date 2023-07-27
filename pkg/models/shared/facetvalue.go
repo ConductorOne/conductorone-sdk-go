@@ -2,19 +2,15 @@
 
 package shared
 
-// FacetValue -  A FacetValue message contains count and value of the facet entry.
+// FacetValue - A FacetValue message contains count and value of the facet entry.
 type FacetValue struct {
-	//  The count of the values in this facet.
-	//
+	// The count of the values in this facet.
 	Count *string `json:"count,omitempty"`
-	//  The name of this facet.
-	//
+	// The name of this facet.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The icon for this facet.
-	//
+	// The icon for this facet.
 	IconURL *string `json:"iconUrl,omitempty"`
-	//  The value of this facet.
-	//
+	// The value of this facet.
 	Value *string `json:"value,omitempty"`
 }
 

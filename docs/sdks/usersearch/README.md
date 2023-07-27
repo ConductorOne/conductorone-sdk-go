@@ -6,8 +6,7 @@
 
 ## Search
 
- Search users based on filters specified in the request body.
-
+Search users based on filters specified in the request body.
 
 ### Example Usage
 

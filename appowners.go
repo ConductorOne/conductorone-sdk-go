@@ -25,8 +25,7 @@ func newAppOwners(sdkConfig sdkConfiguration) *appOwners {
 }
 
 // Add - Add
-//
-//	Adds an owner to an app.
+// Adds an owner to an app.
 func (s *appOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwnersAddRequest) (*operations.C1APIAppV1AppOwnersAddResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/owners/{user_id}", request, nil)
@@ -91,8 +90,7 @@ func (s *appOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwn
 }
 
 // List - List
-//
-//	List owners of an app.
+// List owners of an app.
 func (s *appOwners) List(ctx context.Context, request operations.C1APIAppV1AppOwnersListRequest) (*operations.C1APIAppV1AppOwnersListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/owners", request, nil)
@@ -154,8 +152,7 @@ func (s *appOwners) List(ctx context.Context, request operations.C1APIAppV1AppOw
 }
 
 // Remove - Remove
-//
-//	Removes an owner from an app.
+// Removes an owner from an app.
 func (s *appOwners) Remove(ctx context.Context, request operations.C1APIAppV1AppOwnersRemoveRequest) (*operations.C1APIAppV1AppOwnersRemoveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/owners/{user_id}", request, nil)

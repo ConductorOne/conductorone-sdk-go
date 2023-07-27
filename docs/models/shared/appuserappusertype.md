@@ -1,7 +1,6 @@
 # AppUserAppUserType
 
- The appplication user type. Type can be user, system or service.
-
+The appplication user type. Type can be user, system or service.
 
 
 ## Values

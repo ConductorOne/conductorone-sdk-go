@@ -9,8 +9,7 @@
 
 ## Create
 
- Create a directory.
-
+Create a directory.
 
 ### Example Usage
 
@@ -65,8 +64,7 @@ func main() {
 
 ## Delete
 
- Delete a directory by app_id.
-
+Delete a directory by app_id.
 
 ### Example Usage
 
@@ -118,8 +116,7 @@ func main() {
 
 ## Get
 
- Get a directory by app_id.
-
+Get a directory by app_id.
 
 ### Example Usage
 
@@ -170,8 +167,7 @@ func main() {
 
 ## List
 
- List directories.
-
+List directories.
 
 ### Example Usage
 

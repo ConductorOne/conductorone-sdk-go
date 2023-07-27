@@ -8,10 +8,9 @@ import (
 	"time"
 )
 
-// TaskTypeRevokeInput -  The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
+// TaskTypeRevokeInput - The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
 type TaskTypeRevokeInput struct {
-	//  The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-	//
+	// The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 	//
 	// This message contains a oneof named origin. Only a single field of the following list may be set at a time:
 	//   - review
@@ -29,7 +28,7 @@ func (o *TaskTypeRevokeInput) GetTaskRevokeSource() *TaskRevokeSource {
 	return o.TaskRevokeSource
 }
 
-// TaskTypeRevokeOutcome -  The outcome of the revoke.
+// TaskTypeRevokeOutcome - The outcome of the revoke.
 type TaskTypeRevokeOutcome string
 
 const (
@@ -66,10 +65,9 @@ func (e *TaskTypeRevokeOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeRevoke -  The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
+// TaskTypeRevoke - The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
 type TaskTypeRevoke struct {
-	//  The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-	//
+	// The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
 	//
 	// This message contains a oneof named origin. Only a single field of the following list may be set at a time:
 	//   - review
@@ -78,20 +76,15 @@ type TaskTypeRevoke struct {
 	//   - nonUsage
 	//
 	TaskRevokeSource *TaskRevokeSource `json:"source,omitempty"`
-	//  The ID of the app entitlement.
-	//
+	// The ID of the app entitlement.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
-	//  The ID of the app.
-	//
+	// The ID of the app.
 	AppID *string `json:"appId,omitempty"`
-	//  The ID of the app user.
-	//
+	// The ID of the app user.
 	AppUserID *string `json:"appUserId,omitempty"`
-	//  The ID of the user.
-	//
+	// The ID of the user.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
-	//  The outcome of the revoke.
-	//
+	// The outcome of the revoke.
 	Outcome     *TaskTypeRevokeOutcome `json:"outcome,omitempty"`
 	OutcomeTime *time.Time             `json:"outcomeTime,omitempty"`
 }

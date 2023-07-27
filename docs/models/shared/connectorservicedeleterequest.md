@@ -1,7 +1,6 @@
 # ConnectorServiceDeleteRequest
 
- ConnectorServiceDeleteRequest is a request for deleting a connector. It uses URL values for input.
-
+ConnectorServiceDeleteRequest is a request for deleting a connector. It uses URL values for input.
 
 
 ## Fields

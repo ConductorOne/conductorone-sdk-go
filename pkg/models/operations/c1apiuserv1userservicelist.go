@@ -30,8 +30,7 @@ type C1APIUserV1UserServiceListResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The UserServiceListResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The UserServiceListResponse message contains a list of results and a nextPageToken if applicable.
 	UserServiceListResponse *shared.UserServiceListResponse
 }
 

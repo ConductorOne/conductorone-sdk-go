@@ -2,6 +2,6 @@
 
 package shared
 
-// RemoveAppOwnerResponse -  Empty response with a status code indicating success.
+// RemoveAppOwnerResponse - Empty response with a status code indicating success.
 type RemoveAppOwnerResponse struct {
 }

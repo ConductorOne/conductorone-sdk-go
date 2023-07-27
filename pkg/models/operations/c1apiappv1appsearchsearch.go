@@ -9,8 +9,7 @@ import (
 
 type C1APIAppV1AppSearchSearchResponse struct {
 	ContentType string
-	//  The SearchAppsResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The SearchAppsResponse message contains a list of results and a nextPageToken if applicable.
 	SearchAppsResponse *shared.SearchAppsResponse
 	StatusCode         int
 	RawResponse        *http.Response

@@ -2,6 +2,6 @@
 
 package shared
 
-// TaskTypeGrant -  The TaskTypeGrant message indicates that a task is a grant task and all related details.
+// TaskTypeGrant - The TaskTypeGrant message indicates that a task is a grant task and all related details.
 type TaskTypeGrant struct {
 }

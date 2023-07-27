@@ -1,7 +1,6 @@
 # PolicyPolicyType
 
- Indicates the type of this policy. Can also be used to get the value from policySteps.
-
+Indicates the type of this policy. Can also be used to get the value from policySteps.
 
 
 ## Values

@@ -2,13 +2,11 @@
 
 package shared
 
-// RequestCatalogManagementServiceUpdateRequestInput -  Update a request catalog object by ID.
+// RequestCatalogManagementServiceUpdateRequestInput - Update a request catalog object by ID.
 type RequestCatalogManagementServiceUpdateRequestInput struct {
-	//  The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
-	//
+	// The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
 	RequestCatalog *RequestCatalogInput `json:"catalog,omitempty"`
-	//  The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call.
-	//
+	// The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call.
 	RequestCatalogExpandMask *RequestCatalogExpandMask `json:"expandMask,omitempty"`
 	UpdateMask               *string                   `json:"updateMask,omitempty"`
 }

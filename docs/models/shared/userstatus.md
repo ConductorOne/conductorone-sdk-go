@@ -1,7 +1,6 @@
 # UserStatus
 
- The status of the user in the system.
-
+The status of the user in the system.
 
 
 ## Values

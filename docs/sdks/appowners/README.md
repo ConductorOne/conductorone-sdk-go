@@ -8,8 +8,7 @@
 
 ## Add
 
- Adds an owner to an app.
-
+Adds an owner to an app.
 
 ### Example Usage
 
@@ -62,8 +61,7 @@ func main() {
 
 ## List
 
- List owners of an app.
-
+List owners of an app.
 
 ### Example Usage
 
@@ -116,8 +114,7 @@ func main() {
 
 ## Remove
 
- Removes an owner from an app.
-
+Removes an owner from an app.
 
 ### Example Usage
 

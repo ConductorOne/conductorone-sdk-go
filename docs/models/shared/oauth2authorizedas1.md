@@ -1,7 +1,6 @@
 # OAuth2AuthorizedAs1
 
- OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
-
+OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 
 
 ## Fields

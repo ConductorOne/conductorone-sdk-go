@@ -1,7 +1,6 @@
 # ProvisionInstanceState
 
- This property indicates the current state of this step.
-
+This property indicates the current state of this step.
 
 
 ## Values

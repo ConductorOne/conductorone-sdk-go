@@ -6,10 +6,9 @@ import (
 	"time"
 )
 
-// Directory -  This object indicates that an app is also a directory.
+// Directory - This object indicates that an app is also a directory.
 type Directory struct {
-	//  The ID of the app associated with the directory.
-	//
+	// The ID of the app associated with the directory.
 	AppID     *string    `json:"appId,omitempty"`
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`

@@ -25,8 +25,7 @@ func newAppReport(sdkConfig sdkConfiguration) *appReport {
 }
 
 // List - List
-//
-//	Get a list of reports for the given app.
+// Get a list of reports for the given app.
 func (s *appReport) List(ctx context.Context, request operations.C1APIAppV1AppReportServiceListRequest) (*operations.C1APIAppV1AppReportServiceListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/report", request, nil)

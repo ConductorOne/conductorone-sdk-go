@@ -6,8 +6,7 @@
 
 ## SearchEntitlements
 
- Search request catalogs based on filters specified in the request body.
-
+Search request catalogs based on filters specified in the request body.
 
 ### Example Usage
 

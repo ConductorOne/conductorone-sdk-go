@@ -26,8 +26,7 @@ func newTask(sdkConfig sdkConfiguration) *task {
 }
 
 // CreateGrantTask - Create Grant Task
-//
-//	Create a grant task
+// Create a grant task
 func (s *task) CreateGrantTask(ctx context.Context, request shared.TaskServiceCreateGrantRequest) (*operations.C1APITaskV1TaskServiceCreateGrantTaskResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/task/grant"
@@ -89,8 +88,7 @@ func (s *task) CreateGrantTask(ctx context.Context, request shared.TaskServiceCr
 }
 
 // CreateRevokeTask - Create Revoke Task
-//
-//	Create a revoke task
+// Create a revoke task
 func (s *task) CreateRevokeTask(ctx context.Context, request shared.TaskServiceCreateRevokeRequest) (*operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/task/revoke"
@@ -152,8 +150,7 @@ func (s *task) CreateRevokeTask(ctx context.Context, request shared.TaskServiceC
 }
 
 // Get - Get
-//
-//	Get a task by ID
+// Get a task by ID
 func (s *task) Get(ctx context.Context, request operations.C1APITaskV1TaskServiceGetRequest) (*operations.C1APITaskV1TaskServiceGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{id}", request, nil)

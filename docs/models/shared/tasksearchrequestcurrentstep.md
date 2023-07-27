@@ -1,7 +1,6 @@
 # TaskSearchRequestCurrentStep
 
- Search tasks that have this type of step as the current step.
-
+Search tasks that have this type of step as the current step.
 
 
 ## Values

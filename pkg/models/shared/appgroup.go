@@ -6,21 +6,17 @@ import (
 	"time"
 )
 
-// AppGroup -  The AppGroup message.
+// AppGroup - The AppGroup message.
 type AppGroup struct {
-	//  The app referenced by this group.
-	//
+	// The app referenced by this group.
 	AppID     *string    `json:"appId,omitempty"`
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`
-	//  The display name of the group in the app.
-	//
+	// The display name of the group in the app.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The id field.
-	//
+	// The id field.
 	ID *string `json:"id,omitempty"`
-	//  Deprecated.
-	//
+	// Deprecated.
 	NotificationToken *string    `json:"notificationToken,omitempty"`
 	UpdatedAt         *time.Time `json:"updatedAt,omitempty"`
 }

@@ -2,6 +2,6 @@
 
 package shared
 
-// OAuth2AuthorizedAs1 -  OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
+// OAuth2AuthorizedAs1 - OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 type OAuth2AuthorizedAs1 struct {
 }

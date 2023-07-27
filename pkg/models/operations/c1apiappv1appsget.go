@@ -20,8 +20,7 @@ func (o *C1APIAppV1AppsGetRequest) GetID() string {
 
 type C1APIAppV1AppsGetResponse struct {
 	ContentType string
-	//  The GetAppResponse message contains the details of the requested app in the app field.
-	//
+	// The GetAppResponse message contains the details of the requested app in the app field.
 	GetAppResponse *shared.GetAppResponse
 	StatusCode     int
 	RawResponse    *http.Response

@@ -2,6 +2,6 @@
 
 package shared
 
-// ConnectorServiceRevokeCredentialResponse -  Empty response body. Status code indicates success.
+// ConnectorServiceRevokeCredentialResponse - Empty response body. Status code indicates success.
 type ConnectorServiceRevokeCredentialResponse struct {
 }

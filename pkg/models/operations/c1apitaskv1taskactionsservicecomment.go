@@ -30,8 +30,7 @@ type C1APITaskV1TaskActionsServiceCommentResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request.
-	//
+	// Task actions service comment response returns the task view inluding the expanded array of items that are indicated by the expand mask on the request.
 	TaskActionsServiceCommentResponse *shared.TaskActionsServiceCommentResponse
 }
 

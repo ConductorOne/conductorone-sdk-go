@@ -6,8 +6,7 @@
 
 ## Search
 
- Search apps based on filters specified in the request body.
-
+Search apps based on filters specified in the request body.
 
 ### Example Usage
 

@@ -30,8 +30,7 @@ type C1APIAppV1AppUsageControlsServiceUpdateResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The UpdateAppUsageControlsResponse message contains the updated AppUsageControls object.
-	//
+	// The UpdateAppUsageControlsResponse message contains the updated AppUsageControls object.
 	UpdateAppUsageControlsResponse *shared.UpdateAppUsageControlsResponse
 }
 

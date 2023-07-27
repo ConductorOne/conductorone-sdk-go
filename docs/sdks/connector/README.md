@@ -15,8 +15,7 @@
 
 ## Create
 
- Create a configured connector.
-
+Create a configured connector.
 
 ### Example Usage
 
@@ -87,8 +86,7 @@ func main() {
 
 ## CreateDelegated
 
- Create a connector that is pending a connector config.
-
+Create a connector that is pending a connector config.
 
 ### Example Usage
 
@@ -157,8 +155,7 @@ func main() {
 
 ## Delete
 
- Delete a connector.
-
+Delete a connector.
 
 ### Example Usage
 
@@ -211,8 +208,7 @@ func main() {
 
 ## Get
 
- Get a connector.
-
+Get a connector.
 
 ### Example Usage
 
@@ -264,8 +260,7 @@ func main() {
 
 ## GetCredentials
 
- Get credentials for a connector.
-
+Get credentials for a connector.
 
 ### Example Usage
 
@@ -318,8 +313,7 @@ func main() {
 
 ## List
 
- List connectors for an app.
-
+List connectors for an app.
 
 ### Example Usage
 
@@ -372,8 +366,7 @@ func main() {
 
 ## RevokeCredential
 
- Revoke credentials for a connector.
-
+Revoke credentials for a connector.
 
 ### Example Usage
 
@@ -427,8 +420,7 @@ func main() {
 
 ## RotateCredential
 
- Rotate credentials for a connector.
-
+Rotate credentials for a connector.
 
 ### Example Usage
 
@@ -481,8 +473,7 @@ func main() {
 
 ## Update
 
- Update a connector.
-
+Update a connector.
 
 ### Example Usage
 
@@ -568,8 +559,7 @@ func main() {
 
 ## UpdateDelegated
 
- Update a delegated connector.
-
+Update a delegated connector.
 
 ### Example Usage
 

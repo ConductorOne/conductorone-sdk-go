@@ -2,6 +2,6 @@
 
 package shared
 
-// DeleteAppRequest -  Empty request body
+// DeleteAppRequest - Empty request body
 type DeleteAppRequest struct {
 }

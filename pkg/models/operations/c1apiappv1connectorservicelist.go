@@ -35,8 +35,7 @@ func (o *C1APIAppV1ConnectorServiceListRequest) GetPageToken() *string {
 }
 
 type C1APIAppV1ConnectorServiceListResponse struct {
-	//  The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable
-	//
+	// The ConnectorServiceListResponse message contains a list of results and a nextPageToken if applicable
 	ConnectorServiceListResponse *shared.ConnectorServiceListResponse
 	ContentType                  string
 	StatusCode                   int

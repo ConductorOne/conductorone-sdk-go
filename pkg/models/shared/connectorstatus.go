@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// ConnectorStatusStatus -  The status of the connector sync.
+// ConnectorStatusStatus - The status of the connector sync.
 type ConnectorStatusStatus string
 
 const (
@@ -42,15 +42,13 @@ func (e *ConnectorStatusStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// ConnectorStatus -  The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
+// ConnectorStatus - The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 type ConnectorStatus struct {
 	CompletedAt *time.Time `json:"completedAt,omitempty"`
-	//  The last error encountered by the connector.
-	//
+	// The last error encountered by the connector.
 	LastError *string    `json:"lastError,omitempty"`
 	StartedAt *time.Time `json:"startedAt,omitempty"`
-	//  The status of the connector sync.
-	//
+	// The status of the connector sync.
 	Status    *ConnectorStatusStatus `json:"status,omitempty"`
 	UpdatedAt *time.Time             `json:"updatedAt,omitempty"`
 }

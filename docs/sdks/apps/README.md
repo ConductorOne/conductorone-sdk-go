@@ -10,8 +10,7 @@
 
 ## Create
 
- Create a new app.
-
+Create a new app.
 
 ### Example Usage
 
@@ -69,8 +68,7 @@ func main() {
 
 ## Delete
 
- Delete an app.
-
+Delete an app.
 
 ### Example Usage
 
@@ -122,8 +120,7 @@ func main() {
 
 ## Get
 
- Get an app by ID.
-
+Get an app by ID.
 
 ### Example Usage
 
@@ -174,8 +171,7 @@ func main() {
 
 ## List
 
- List all apps.
-
+List all apps.
 
 ### Example Usage
 
@@ -227,8 +223,7 @@ func main() {
 
 ## Update
 
- Update an existing app.
-
+Update an existing app.
 
 ### Example Usage
 

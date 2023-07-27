@@ -22,8 +22,7 @@ type C1APIUserV1UserServiceGetResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array.
-	//
+	// The UserServiceGetResponse returns a user view which has a user including JSONPATHs to the expanded items in the expanded array.
 	UserServiceGetResponse *shared.UserServiceGetResponse
 }
 

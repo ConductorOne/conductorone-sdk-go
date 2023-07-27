@@ -6,16 +6,13 @@ import (
 	"time"
 )
 
-// RoleInput -  Role is a role that can be assigned to a user in ConductorOne.
+// RoleInput - Role is a role that can be assigned to a user in ConductorOne.
 type RoleInput struct {
-	//  The display name of the role.
-	//
+	// The display name of the role.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The list of permissions this role has.
-	//
+	// The list of permissions this role has.
 	Permissions []string `json:"permissions,omitempty"`
-	//  The list of serviceRoles that this role has.
-	//
+	// The list of serviceRoles that this role has.
 	ServiceRoles []string `json:"serviceRoles,omitempty"`
 }
 
@@ -40,27 +37,21 @@ func (o *RoleInput) GetServiceRoles() []string {
 	return o.ServiceRoles
 }
 
-// Role -  Role is a role that can be assigned to a user in ConductorOne.
+// Role - Role is a role that can be assigned to a user in ConductorOne.
 type Role struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`
-	//  The display name of the role.
-	//
+	// The display name of the role.
 	DisplayName *string `json:"displayName,omitempty"`
-	//  The id of the role.
-	//
+	// The id of the role.
 	ID *string `json:"id,omitempty"`
-	//  The internal name of the role.
-	//
+	// The internal name of the role.
 	Name *string `json:"name,omitempty"`
-	//  The list of permissions this role has.
-	//
+	// The list of permissions this role has.
 	Permissions []string `json:"permissions,omitempty"`
-	//  The list of serviceRoles that this role has.
-	//
+	// The list of serviceRoles that this role has.
 	ServiceRoles []string `json:"serviceRoles,omitempty"`
-	//  The system builtin field. If this field is set, the role is not editable.
-	//
+	// The system builtin field. If this field is set, the role is not editable.
 	SystemBuiltin *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
 }

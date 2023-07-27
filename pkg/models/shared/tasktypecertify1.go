@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-// TaskTypeCertifyOutcome -  The outcome of the certification.
+// TaskTypeCertifyOutcome - The outcome of the certification.
 type TaskTypeCertifyOutcome string
 
 const (
@@ -45,28 +45,21 @@ func (e *TaskTypeCertifyOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeCertify1 -  The TaskTypeCertify message indicates that a task is a certify task and all related details.
+// TaskTypeCertify1 - The TaskTypeCertify message indicates that a task is a certify task and all related details.
 type TaskTypeCertify1 struct {
-	//  The ID of the access review.
-	//
+	// The ID of the access review.
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
-	//  The ID of the specific access review object that owns this certify task. This is also set on a revoke task if the revoke task is created from the denied outcome of a certify task.
-	//
+	// The ID of the specific access review object that owns this certify task. This is also set on a revoke task if the revoke task is created from the denied outcome of a certify task.
 	AccessReviewSelection *string `json:"accessReviewSelection,omitempty"`
-	//  The ID of the app entitlement.
-	//
+	// The ID of the app entitlement.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
-	//  The ID of the app.
-	//
+	// The ID of the app.
 	AppID *string `json:"appId,omitempty"`
-	//  The ID of the app user.
-	//
+	// The ID of the app user.
 	AppUserID *string `json:"appUserId,omitempty"`
-	//  The ID of the user.
-	//
+	// The ID of the user.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
-	//  The outcome of the certification.
-	//
+	// The outcome of the certification.
 	Outcome     *TaskTypeCertifyOutcome `json:"outcome,omitempty"`
 	OutcomeTime *time.Time              `json:"outcomeTime,omitempty"`
 }

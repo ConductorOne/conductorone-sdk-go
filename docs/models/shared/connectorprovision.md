@@ -1,7 +1,6 @@
 # ConnectorProvision
 
- Indicates that a connector should perform the provisioning. This object has no fields.
-
+Indicates that a connector should perform the provisioning. This object has no fields.
 
 
 ## Fields

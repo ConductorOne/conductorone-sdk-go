@@ -2,10 +2,9 @@
 
 package shared
 
-// UpdateAppResponse -  Returns the updated app's new values.
+// UpdateAppResponse - Returns the updated app's new values.
 type UpdateAppResponse struct {
-	//  The App object provides all of the details for an app, as well as some configuration.
-	//
+	// The App object provides all of the details for an app, as well as some configuration.
 	App *App `json:"app,omitempty"`
 }
 

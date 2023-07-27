@@ -30,8 +30,7 @@ type C1APIIamV1RolesUpdateResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  UpdateRolesResponse is the response message containing the updated role.
-	//
+	// UpdateRolesResponse is the response message containing the updated role.
 	UpdateRolesResponse *shared.UpdateRolesResponse
 }
 

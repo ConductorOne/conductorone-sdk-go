@@ -28,8 +28,7 @@ func (o *C1APIDirectoryV1DirectoryServiceListRequest) GetPageToken() *string {
 
 type C1APIDirectoryV1DirectoryServiceListResponse struct {
 	ContentType string
-	//  The DirectoryServiceListResponse message contains a list of results and a nextPageToken if applicable.
-	//
+	// The DirectoryServiceListResponse message contains a list of results and a nextPageToken if applicable.
 	DirectoryServiceListResponse *shared.DirectoryServiceListResponse
 	StatusCode                   int
 	RawResponse                  *http.Response

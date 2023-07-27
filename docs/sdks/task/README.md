@@ -8,8 +8,7 @@
 
 ## CreateGrantTask
 
- Create a grant task
-
+Create a grant task
 
 ### Example Usage
 
@@ -70,8 +69,7 @@ func main() {
 
 ## CreateRevokeTask
 
- Create a revoke task
-
+Create a revoke task
 
 ### Example Usage
 
@@ -131,8 +129,7 @@ func main() {
 
 ## Get
 
- Get a task by ID
-
+Get a task by ID
 
 ### Example Usage
 

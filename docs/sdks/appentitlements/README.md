@@ -12,8 +12,7 @@
 
 ## Get
 
- Get an app entitlement by ID.
-
+Get an app entitlement by ID.
 
 ### Example Usage
 
@@ -65,8 +64,7 @@ func main() {
 
 ## List
 
- List app entitlements associated with an app.
-
+List app entitlements associated with an app.
 
 ### Example Usage
 
@@ -119,8 +117,7 @@ func main() {
 
 ## ListForAppResource
 
- List app entitlements associated with an app resource.
-
+List app entitlements associated with an app resource.
 
 ### Example Usage
 
@@ -175,8 +172,7 @@ func main() {
 
 ## ListForAppUser
 
- List app entitlements associated with an app user.
-
+List app entitlements associated with an app user.
 
 ### Example Usage
 
@@ -230,8 +226,7 @@ func main() {
 
 ## ListGroups
 
- List app groups associated with an app entitlement.
-
+List app groups associated with an app entitlement.
 
 ### Example Usage
 
@@ -285,8 +280,7 @@ func main() {
 
 ## ListUsers
 
- List the users, as AppEntitlementUsers objects, of an app entitlement.
-
+List the users, as AppEntitlementUsers objects, of an app entitlement.
 
 ### Example Usage
 
@@ -340,8 +334,7 @@ func main() {
 
 ## Update
 
- Update an app entitlement by ID.
-
+Update an app entitlement by ID.
 
 ### Example Usage
 

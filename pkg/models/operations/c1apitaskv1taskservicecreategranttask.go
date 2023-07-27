@@ -11,8 +11,7 @@ type C1APITaskV1TaskServiceCreateGrantTaskResponse struct {
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
-	//  The TaskServiceCreateGrantResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array.
-	//
+	// The TaskServiceCreateGrantResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array.
 	TaskServiceCreateGrantResponse *shared.TaskServiceCreateGrantResponse
 }
 

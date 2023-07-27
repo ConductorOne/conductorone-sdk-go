@@ -1,7 +1,6 @@
 # RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus
 
- Search entitlements with this granted status for your signed in user.
-
+Search entitlements with this granted status for your signed in user.
 
 
 ## Values

@@ -2,10 +2,9 @@
 
 package shared
 
-// FacetValueItem -  The FacetValueItem message.
+// FacetValueItem - The FacetValueItem message.
 type FacetValueItem struct {
-	//  An array of facet values.
-	//
+	// An array of facet values.
 	Values []FacetValue `json:"values,omitempty"`
 }
 
