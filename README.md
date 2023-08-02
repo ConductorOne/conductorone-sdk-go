@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/conductorone/conductorone-sdk-go
+go get github.com/ConductorOne/conductorone-sdk-go
 ```
 <!-- End SDK Installation -->
 
@@ -25,6 +25,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
