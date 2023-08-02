@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,34 +32,45 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "similique",
+                "ut",
+                "quidem",
+                "quis",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Layla_Kreiger14@gmail.com"),
         ExcludeIds: []string{
-            "odio",
+            "numquam",
+            "nesciunt",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "officia",
+            "dignissimos",
+            "optio",
+            "necessitatibus",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(3591.11),
+        PageToken: conductoroneapi.String("qui"),
+        Query: conductoroneapi.String("expedita"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("95c537c6-454e-4fb0-b348-96c3ca5acfbe"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("2fd57075-7792-4917-bdea-c646ecb57340"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("9e3eb1e5-a2b1-42eb-87f1-16db99545fc9"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "hic",
+            "animi",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesEnabled,
         },
     })
     if err != nil {
