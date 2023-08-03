@@ -75,6 +75,7 @@ type ConductoroneAPI struct {
 	AppSearch                 *appSearch
 	AppUsageControls          *appUsageControls
 	Apps                      *apps
+	Attributes                *attributes
 	Auth                      *auth
 	Connector                 *connector
 	Directory                 *directory
@@ -157,8 +158,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.6.0",
-			GenVersion:        "2.73.1",
+			SDKVersion:        "1.7.0",
+			GenVersion:        "2.77.1",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -207,6 +208,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.AppUsageControls = newAppUsageControls(sdk.sdkConfiguration)
 
 	sdk.Apps = newApps(sdk.sdkConfiguration)
+
+	sdk.Attributes = newAttributes(sdk.sdkConfiguration)
 
 	sdk.Auth = newAuth(sdk.sdkConfiguration)
 

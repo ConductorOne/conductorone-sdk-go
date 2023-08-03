@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: de1b4c7d90b3f8db38277777e2309330
+  docChecksum: 3965e7ef9fa645f942145880577e093f
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.55.0
-  generationVersion: 2.59.0
+  speakeasyVersion: 1.68.1
+  generationVersion: 2.77.1
 generation:
   comments:
     disableComments: false
@@ -13,6 +13,6 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 go:
-  version: 1.6.0
+  version: 1.7.0
   maxMethodParams: 0
   packageName: github.com/conductorone/conductorone-sdk-go

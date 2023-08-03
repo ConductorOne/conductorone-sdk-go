@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/conductorone/conductorone-sdk-go
+go get github.com/ConductorOne/conductorone-sdk-go
 ```
 <!-- End SDK Installation -->
 
@@ -25,6 +25,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -158,6 +159,14 @@ func main() {
 * [Get](docs/sdks/apps/README.md#get) - Get
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
+
+### [Attributes](docs/sdks/attributes/README.md)
+
+* [CreateAttributeValue](docs/sdks/attributes/README.md#createattributevalue) - Create Attribute Value
+* [DeleteAttributeValue](docs/sdks/attributes/README.md#deleteattributevalue) - Delete Attribute Value
+* [GetAttributeValue](docs/sdks/attributes/README.md#getattributevalue) - Get Attribute Value
+* [ListAttributeTypes](docs/sdks/attributes/README.md#listattributetypes) - List Attribute Types
+* [ListAttributeValues](docs/sdks/attributes/README.md#listattributevalues) - List Attribute Values
 
 ### [Auth](docs/sdks/auth/README.md)
 
