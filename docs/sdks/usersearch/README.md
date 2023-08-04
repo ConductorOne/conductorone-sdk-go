@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,33 +32,33 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "ipsum",
+                "adipisci",
+                "saepe",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Ally72@yahoo.com"),
         ExcludeIds: []string{
-            "odio",
+            "cupiditate",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "eligendi",
+            "possimus",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(2514.64),
+        PageToken: conductoroneapi.String("magnam"),
+        Query: conductoroneapi.String("itaque"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("f52d82d3-513b-4b6f-88b6-56bcdb35ff2e"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "rerum",
+            "eos",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
+            shared.SearchUsersRequestUserStatusesEnabled,
             shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
