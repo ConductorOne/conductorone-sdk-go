@@ -1,6 +1,6 @@
-# AppOwnerApproval1
+# TaskTypeCertifyInput
 
-App owner approval provides the configuration for an approval step when the app owner is the target.
+The TaskTypeCertify message indicates that a task is a certify task and all related details.
 
 
 ## Fields
