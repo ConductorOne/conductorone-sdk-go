@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,17 +32,15 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "esse",
-                "nemo",
-                "reprehenderit",
+                "vero",
             },
         },
-        AppDisplayName: conductoroneapi.String("est"),
-        EntitlementAlias: conductoroneapi.String("quis"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusGranted.ToPointer(),
-        PageSize: conductoroneapi.Float64(8806.79),
-        PageToken: conductoroneapi.String("impedit"),
-        Query: conductoroneapi.String("hic"),
+        AppDisplayName: conductoroneapi.String("consectetur"),
+        EntitlementAlias: conductoroneapi.String("vitae"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusUnspecified.ToPointer(),
+        PageSize: conductoroneapi.Float64(2124.34),
+        PageToken: conductoroneapi.String("ad"),
+        Query: conductoroneapi.String("qui"),
     })
     if err != nil {
         log.Fatal(err)

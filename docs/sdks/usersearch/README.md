@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,33 +32,42 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "fugiat",
+                "ad",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Emil.Wintheiser@gmail.com"),
         ExcludeIds: []string{
-            "odio",
+            "illo",
+            "ab",
+            "incidunt",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "saepe",
+            "tempore",
+            "veniam",
+            "eos",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(9700.79),
+        PageToken: conductoroneapi.String("earum"),
+        Query: conductoroneapi.String("reprehenderit"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("5fc37814-d4c9-48e0-82bb-89eb75dad636"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("c600503d-8bb3-4118-8f73-9ae9e057eb80"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("9e281033-1f39-481d-8c70-0b607f3c93c7"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "soluta",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
+            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesDisabled,
             shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
