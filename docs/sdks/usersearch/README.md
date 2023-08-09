@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,34 +32,47 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "repellat",
+                "quisquam",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Jamison29@gmail.com"),
         ExcludeIds: []string{
-            "odio",
+            "aliquam",
+            "quisquam",
+            "provident",
+            "laudantium",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "consequatur",
+            "maxime",
+            "aspernatur",
+            "nam",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(7119.91),
+        PageToken: conductoroneapi.String("quas"),
+        Query: conductoroneapi.String("provident"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("b75dad63-6c60-4050-bd8b-b31180f739ae"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("9e057eb8-09e2-4810-b31f-3981d4c700b6"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("07f3c93c-73b9-4da3-b2ce-da7e23f22574"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("11faf4b7-544e-4472-a802-857a5b40463a"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "fugiat",
+            "nostrum",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
         },
     })
     if err != nil {
