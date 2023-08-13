@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -30,15 +31,14 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "distinctio",
-            "eligendi",
+            "eum",
+            "mollitia",
+            "ab",
         },
-        DisplayName: conductoroneapi.String("sit"),
-        Expires: conductoroneapi.String("culpa"),
+        DisplayName: conductoroneapi.String("corrupti"),
+        Expires: conductoroneapi.String("non"),
         ScopedRoles: []string{
-            "adipisci",
-            "cumque",
-            "consequuntur",
+            "dolor",
         },
     })
     if err != nil {

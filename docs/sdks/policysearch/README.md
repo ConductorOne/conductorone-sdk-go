@@ -23,19 +23,23 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("hic"),
-        PageSize: conductoroneapi.Float64(3487.83),
-        PageToken: conductoroneapi.String("nobis"),
+        DisplayName: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(8872.65),
+        PageToken: conductoroneapi.String("officiis"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeCertify,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeGrant,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeUnspecified,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
         },
-        Query: conductoroneapi.String("sed"),
+        Query: conductoroneapi.String("maiores"),
     })
     if err != nil {
         log.Fatal(err)
