@@ -1,6 +1,6 @@
-# OAuth2AuthorizedAs1
+# AppOwnerApprovalInput
 
-OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
+App owner approval provides the configuration for an approval step when the app owner is the target.
 
 
 ## Fields
