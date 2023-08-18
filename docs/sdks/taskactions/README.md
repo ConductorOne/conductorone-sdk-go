@@ -27,6 +27,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -36,16 +37,15 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "velit",
-                    "laborum",
-                    "non",
-                    "dolor",
+                    "impedit",
+                    "delectus",
+                    "tempore",
                 },
             },
-            Comment: conductoroneapi.String("iusto"),
-            PolicyStepID: "sit",
+            Comment: conductoroneapi.String("vero"),
+            PolicyStepID: "odit",
         },
-        TaskID: "doloremque",
+        TaskID: "repellat",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,6 +90,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -99,12 +100,15 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "officia",
+                    "nemo",
+                    "reprehenderit",
+                    "aperiam",
+                    "odio",
                 },
             },
-            Comment: conductoroneapi.String("recusandae"),
+            Comment: conductoroneapi.String("minima"),
         },
-        TaskID: "ea",
+        TaskID: "in",
     })
     if err != nil {
         log.Fatal(err)
@@ -149,6 +153,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -158,15 +163,14 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "voluptas",
-                    "facilis",
-                    "placeat",
+                    "excepturi",
+                    "dolores",
                 },
             },
-            Comment: conductoroneapi.String("perspiciatis"),
-            PolicyStepID: conductoroneapi.String("expedita"),
+            Comment: conductoroneapi.String("error"),
+            PolicyStepID: conductoroneapi.String("veritatis"),
         },
-        TaskID: "deleniti",
+        TaskID: "ducimus",
     })
     if err != nil {
         log.Fatal(err)
@@ -211,6 +215,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -220,16 +225,14 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "voluptate",
-                    "ullam",
-                    "unde",
-                    "necessitatibus",
+                    "pariatur",
+                    "itaque",
                 },
             },
-            Comment: conductoroneapi.String("animi"),
-            PolicyStepID: conductoroneapi.String("impedit"),
+            Comment: conductoroneapi.String("similique"),
+            PolicyStepID: conductoroneapi.String("optio"),
         },
-        TaskID: "ipsam",
+        TaskID: "ex",
     })
     if err != nil {
         log.Fatal(err)
