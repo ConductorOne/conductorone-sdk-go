@@ -26,6 +26,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -33,8 +34,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "explicabo",
-        UserID: "deserunt",
+        AppID: "enim",
+        UserID: "consequatur",
     })
     if err != nil {
         log.Fatal(err)
@@ -79,15 +80,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "distinctio",
-        PageSize: conductoroneapi.Float64(8413.86),
-        PageToken: conductoroneapi.String("labore"),
+        AppID: "est",
+        PageSize: conductoroneapi.Float64(8423.42),
+        PageToken: conductoroneapi.String("explicabo"),
     })
     if err != nil {
         log.Fatal(err)
@@ -132,6 +134,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -139,8 +142,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "modi",
-        UserID: "qui",
+        AppID: "deserunt",
+        UserID: "distinctio",
     })
     if err != nil {
         log.Fatal(err)
