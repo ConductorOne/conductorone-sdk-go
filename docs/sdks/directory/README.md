@@ -26,6 +26,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -34,10 +35,11 @@ func main() {
     res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
         DirectoryExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
-                "saepe",
+                "veritatis",
+                "consectetur",
             },
         },
-        AppID: conductoroneapi.String("vel"),
+        AppID: conductoroneapi.String("adipisci"),
     })
     if err != nil {
         log.Fatal(err)
@@ -82,6 +84,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -89,7 +92,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "harum",
+        AppID: "iste",
     })
     if err != nil {
         log.Fatal(err)
@@ -134,13 +137,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "molestiae",
+        AppID: "temporibus",
     })
     if err != nil {
         log.Fatal(err)
@@ -185,14 +189,15 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{
-        PageSize: conductoroneapi.Float64(6996.22),
-        PageToken: conductoroneapi.String("occaecati"),
+        PageSize: conductoroneapi.Float64(330.74),
+        PageToken: conductoroneapi.String("rem"),
     })
     if err != nil {
         log.Fatal(err)
