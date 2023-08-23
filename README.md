@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/conductorone/conductorone-sdk-go
+go get github.com/ConductorOne/conductorone-sdk-go
 ```
 <!-- End SDK Installation -->
 
@@ -25,6 +25,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -106,7 +107,6 @@ func main() {
 * [List](docs/sdks/appentitlements/README.md#list) - List
 * [ListForAppResource](docs/sdks/appentitlements/README.md#listforappresource) - List For App Resource
 * [ListForAppUser](docs/sdks/appentitlements/README.md#listforappuser) - List For App User
-* [ListGroups](docs/sdks/appentitlements/README.md#listgroups) - List Groups
 * [ListUsers](docs/sdks/appentitlements/README.md#listusers) - List Users
 * [Update](docs/sdks/appentitlements/README.md#update) - Update
 
@@ -151,6 +151,10 @@ func main() {
 * [Get](docs/sdks/appusagecontrols/README.md#get) - Get
 * [Update](docs/sdks/appusagecontrols/README.md#update) - Update
 
+### [AppUser](docs/sdks/appuser/README.md)
+
+* [Update](docs/sdks/appuser/README.md#update) - Update
+
 ### [Apps](docs/sdks/apps/README.md)
 
 * [Create](docs/sdks/apps/README.md#create) - Create
@@ -158,6 +162,18 @@ func main() {
 * [Get](docs/sdks/apps/README.md#get) - Get
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
+
+### [AttributeSearch](docs/sdks/attributesearch/README.md)
+
+* [SearchAttributeValues](docs/sdks/attributesearch/README.md#searchattributevalues) - Search Attribute Values
+
+### [Attributes](docs/sdks/attributes/README.md)
+
+* [CreateAttributeValue](docs/sdks/attributes/README.md#createattributevalue) - Create Attribute Value
+* [DeleteAttributeValue](docs/sdks/attributes/README.md#deleteattributevalue) - Delete Attribute Value
+* [GetAttributeValue](docs/sdks/attributes/README.md#getattributevalue) - Get Attribute Value
+* [ListAttributeTypes](docs/sdks/attributes/README.md#listattributetypes) - List Attribute Types
+* [ListAttributeValues](docs/sdks/attributes/README.md#listattributevalues) - List Attribute Values
 
 ### [Auth](docs/sdks/auth/README.md)
 

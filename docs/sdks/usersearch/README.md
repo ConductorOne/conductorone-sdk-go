@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,34 +32,49 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "vero",
+                "odit",
+                "repellat",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Francisca48@hotmail.com"),
         ExcludeIds: []string{
-            "odio",
-        },
-        Ids: []string{
             "in",
             "ducimus",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        Ids: []string{
+            "dolores",
+            "error",
+            "veritatis",
+        },
+        PageSize: conductoroneapi.Float64(4981.8),
+        PageToken: conductoroneapi.String("voluptate"),
+        Query: conductoroneapi.String("pariatur"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("ac646ecb-5734-409e-beb1-e5a2b12eb07f"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("116db995-45fc-495f-a889-70e189dbb30f"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("cb33ea05-5b19-47cd-84e2-f52d82d3513b"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("b6f48b65-6bcd-4b35-bf2e-4b27537a8cd9"),
             },
         },
         RoleIds: []string{
-            "ipsa",
             "ducimus",
-            "maiores",
+            "dolor",
+            "dicta",
+            "error",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
             shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
         },
     })
     if err != nil {

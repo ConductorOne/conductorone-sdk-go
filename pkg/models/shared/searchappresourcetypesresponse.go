@@ -10,8 +10,6 @@ type SearchAppResourceTypesResponse struct {
 	//  The server returns one page of results and the nextPageToken until all results are retreived.
 	//  To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
 	NextPageToken *string `json:"nextPageToken,omitempty"`
-	// Deprecated.
-	NotificationToken *string `json:"notificationToken,omitempty"`
 }
 
 func (o *SearchAppResourceTypesResponse) GetList() []AppResourceType {
@@ -26,11 +24,4 @@ func (o *SearchAppResourceTypesResponse) GetNextPageToken() *string {
 		return nil
 	}
 	return o.NextPageToken
-}
-
-func (o *SearchAppResourceTypesResponse) GetNotificationToken() *string {
-	if o == nil {
-		return nil
-	}
-	return o.NotificationToken
 }
