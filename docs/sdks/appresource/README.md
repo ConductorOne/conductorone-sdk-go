@@ -25,15 +25,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "magni",
-        AppResourceTypeID: "assumenda",
-        ID: "502a94bb-4f63-4c96-9e9a-3efa77dfb14c",
+        AppID: "rem",
+        AppResourceTypeID: "voluptates",
+        ID: "1e91e450-ad2a-4bd4-8269-802d502a94bb",
     })
     if err != nil {
         log.Fatal(err)
@@ -78,16 +79,17 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "facere",
-        AppResourceTypeID: "ea",
-        PageSize: conductoroneapi.Float64(3965.06),
-        PageToken: conductoroneapi.String("laborum"),
+        AppID: "labore",
+        AppResourceTypeID: "delectus",
+        PageSize: conductoroneapi.Float64(4332.88),
+        PageToken: conductoroneapi.String("non"),
     })
     if err != nil {
         log.Fatal(err)
