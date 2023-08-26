@@ -24,6 +24,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,7 +32,7 @@ func main() {
     ctx := context.Background()
     res, err := s.AppReportAction.GenerateReport(ctx, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
         AppActionsServiceGenerateReportRequest: &shared.AppActionsServiceGenerateReportRequest{},
-        AppID: "perferendis",
+        AppID: "praesentium",
     })
     if err != nil {
         log.Fatal(err)

@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,49 +32,51 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "sapiente",
-                "quo",
-                "odit",
-                "at",
+                "debitis",
+                "ipsa",
             },
         },
-        AccessReviewID: conductoroneapi.String("at"),
-        Alias: conductoroneapi.String("maiores"),
+        AccessReviewID: conductoroneapi.String("delectus"),
+        Alias: conductoroneapi.String("tempora"),
         AppIds: []string{
-            "quod",
-            "quod",
+            "molestiae",
+            "minus",
         },
         AppUserIds: []string{
-            "totam",
-            "porro",
+            "voluptatum",
+            "iusto",
+            "excepturi",
+            "nisi",
         },
         ComplianceFrameworkIds: []string{
-            "dicta",
-            "nam",
-            "officia",
+            "temporibus",
+            "ab",
+            "quis",
+            "veritatis",
         },
         ExcludeAppIds: []string{
-            "fugit",
-            "deleniti",
-            "hic",
+            "perferendis",
+            "ipsam",
+            "repellendus",
         },
         ExcludeAppUserIds: []string{
-            "totam",
-            "beatae",
-            "commodi",
-            "molestiae",
+            "quo",
+            "odit",
+            "at",
+            "at",
         },
         OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(2645.55),
-        PageToken: conductoroneapi.String("qui"),
-        Query: conductoroneapi.String("impedit"),
+        PageSize: conductoroneapi.Float64(9786.19),
+        PageToken: conductoroneapi.String("molestiae"),
+        Query: conductoroneapi.String("quod"),
         ResourceTypeIds: []string{
             "esse",
-            "ipsum",
-            "excepturi",
+            "totam",
+            "porro",
+            "dolorum",
         },
         RiskLevelIds: []string{
-            "perferendis",
+            "nam",
         },
     })
     if err != nil {
