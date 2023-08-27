@@ -8,8 +8,6 @@ type ListAppOwnersResponse struct {
 	List []User `json:"list,omitempty"`
 	// The nextPageToken is shown for the next page if the number of results is larger than the max page size. The server returns one page of results and the nextPageToken until all results are retreived. To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
 	NextPageToken *string `json:"nextPageToken,omitempty"`
-	// Deprecated
-	NotificationToken *string `json:"notificationToken,omitempty"`
 }
 
 func (o *ListAppOwnersResponse) GetList() []User {
@@ -24,11 +22,4 @@ func (o *ListAppOwnersResponse) GetNextPageToken() *string {
 		return nil
 	}
 	return o.NextPageToken
-}
-
-func (o *ListAppOwnersResponse) GetNotificationToken() *string {
-	if o == nil {
-		return nil
-	}
-	return o.NotificationToken
 }

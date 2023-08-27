@@ -24,15 +24,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
-        AppEntitlementID: "ad",
-        AppID: "natus",
-        IdentityUserID: "sed",
+        AppEntitlementID: "officia",
+        AppID: "occaecati",
+        IdentityUserID: "fugit",
     })
     if err != nil {
         log.Fatal(err)
