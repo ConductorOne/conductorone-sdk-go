@@ -26,13 +26,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "necessitatibus",
+        RoleID: "libero",
     })
     if err != nil {
         log.Fatal(err)
@@ -77,14 +78,15 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{
-        PageSize: conductoroneapi.Float64(9918.91),
-        PageToken: conductoroneapi.String("ex"),
+        PageSize: conductoroneapi.Float64(1024.13),
+        PageToken: conductoroneapi.String("voluptatibus"),
     })
     if err != nil {
         log.Fatal(err)
@@ -129,6 +131,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -137,22 +140,21 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoroneapi.String("voluptas"),
+                DisplayName: conductoroneapi.String("quia"),
                 Permissions: []string{
-                    "delectus",
-                    "quae",
-                    "minus",
-                    "fuga",
+                    "aliquam",
+                    "velit",
+                    "illo",
+                    "accusantium",
                 },
                 ServiceRoles: []string{
-                    "consectetur",
-                    "velit",
-                    "atque",
+                    "ea",
+                    "beatae",
                 },
             },
-            UpdateMask: conductoroneapi.String("ipsum"),
+            UpdateMask: conductoroneapi.String("vero"),
         },
-        RoleID: "impedit",
+        RoleID: "excepturi",
     })
     if err != nil {
         log.Fatal(err)
