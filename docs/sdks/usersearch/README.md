@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,33 +32,41 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
                 "tempore",
+                "nisi",
+                "voluptatibus",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Joanie.Raynor@gmail.com"),
         ExcludeIds: []string{
-            "odio",
+            "libero",
+            "minus",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "facilis",
+            "ipsum",
+            "ad",
+            "voluptatibus",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(9745.89),
+        PageToken: conductoroneapi.String("consequuntur"),
+        Query: conductoroneapi.String("debitis"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("b27537a8-cd9e-4731-9c17-7d525f77b114"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("eeb52ff7-85fc-4378-94d4-c98e0c2bb89e"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "dignissimos",
+            "corporis",
+            "vero",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
+            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesEnabled,
             shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
