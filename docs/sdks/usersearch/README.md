@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,33 +32,44 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "impedit",
-                "delectus",
-                "tempore",
+                "dignissimos",
+                "libero",
             },
         },
-        Email: conductoroneapi.String("Bruce.Zieme44@hotmail.com"),
+        Email: conductoroneapi.String("Annie_Goyette73@gmail.com"),
         ExcludeIds: []string{
-            "odio",
+            "eos",
+            "reiciendis",
         },
         Ids: []string{
-            "in",
-            "ducimus",
+            "reprehenderit",
+            "praesentium",
+            "nemo",
+            "repellat",
         },
-        PageSize: conductoroneapi.Float64(5678.46),
-        PageToken: conductoroneapi.String("dolores"),
-        Query: conductoroneapi.String("error"),
+        PageSize: conductoroneapi.Float64(7897.7),
+        PageToken: conductoroneapi.String("sequi"),
+        Query: conductoroneapi.String("nihil"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("77deac64-6ecb-4573-809e-3eb1e5a2b12e"),
+                ID: conductoroneapi.String("14d4c98e-0c2b-4b89-ab75-dad636c60050"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("3d8bb311-80f7-439a-a9e0-57eb809e2810"),
+            },
+            shared.UserRef{
+                ID: conductoroneapi.String("331f3981-d4c7-400b-a07f-3c93c73b9da3"),
             },
         },
         RoleIds: []string{
-            "ipsa",
-            "ducimus",
-            "maiores",
+            "aspernatur",
+            "quo",
+            "itaque",
+            "illum",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
+            shared.SearchUsersRequestUserStatusesEnabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
             shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
