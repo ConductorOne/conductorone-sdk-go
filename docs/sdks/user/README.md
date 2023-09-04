@@ -25,13 +25,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "7ce52b89-5c53-47c6-854e-fb0b34896c3c",
+        ID: "b35ff2e4-b275-437a-8cd9-e7319c177d52",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,14 +77,15 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{
-        PageSize: conductoroneapi.Float64(6845.53),
-        PageToken: conductoroneapi.String("nostrum"),
+        PageSize: conductoroneapi.Float64(3165.01),
+        PageToken: conductoroneapi.String("delectus"),
     })
     if err != nil {
         log.Fatal(err)

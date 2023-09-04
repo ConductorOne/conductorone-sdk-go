@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,49 +32,50 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "sapiente",
-                "quo",
-                "odit",
-                "at",
+                "molestiae",
+                "minus",
             },
         },
-        AccessReviewID: conductoroneapi.String("at"),
-        Alias: conductoroneapi.String("maiores"),
+        AccessReviewID: conductoroneapi.String("placeat"),
+        Alias: conductoroneapi.String("voluptatum"),
         AppIds: []string{
-            "quod",
-            "quod",
+            "excepturi",
+            "nisi",
         },
         AppUserIds: []string{
-            "totam",
-            "porro",
+            "temporibus",
+            "ab",
+            "quis",
+            "veritatis",
         },
         ComplianceFrameworkIds: []string{
-            "dicta",
-            "nam",
-            "officia",
+            "perferendis",
+            "ipsam",
+            "repellendus",
         },
         ExcludeAppIds: []string{
-            "fugit",
-            "deleniti",
-            "hic",
+            "quo",
+            "odit",
+            "at",
+            "at",
         },
         ExcludeAppUserIds: []string{
-            "totam",
-            "beatae",
-            "commodi",
             "molestiae",
+            "quod",
+            "quod",
+            "esse",
         },
         OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(2645.55),
-        PageToken: conductoroneapi.String("qui"),
-        Query: conductoroneapi.String("impedit"),
+        PageSize: conductoroneapi.Float64(5204.78),
+        PageToken: conductoroneapi.String("porro"),
+        Query: conductoroneapi.String("dolorum"),
         ResourceTypeIds: []string{
-            "esse",
-            "ipsum",
-            "excepturi",
+            "nam",
         },
         RiskLevelIds: []string{
-            "perferendis",
+            "occaecati",
+            "fugit",
+            "deleniti",
         },
     })
     if err != nil {
