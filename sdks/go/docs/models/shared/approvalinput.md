@@ -1,0 +1,24 @@
+# ApprovalInput
+
+The Approval message.
+
+This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+  - users
+  - manager
+  - appOwners
+  - group
+  - self
+  - entitlementOwners
+
+
+
+## Fields
+
+| Field                                                                                                                                           | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AppOwners`                                                                                                                                     | [*AppOwnerApproval1](../../models/shared/appownerapproval1.md)                                                                                  | :heavy_minus_sign:                                                                                                                              | App owner approval provides the configuration for an approval step when the app owner is the target.                                            |
+| `EntitlementOwners`                                                                                                                             | [*EntitlementOwnerApproval1](../../models/shared/entitlementownerapproval1.md)                                                                  | :heavy_minus_sign:                                                                                                                              | The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners.                  |
+| `Group`                                                                                                                                         | [*AppGroupApproval1](../../models/shared/appgroupapproval1.md)                                                                                  | :heavy_minus_sign:                                                                                                                              | The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.                         |
+| `Manager`                                                                                                                                       | [*ManagerApproval1](../../models/shared/managerapproval1.md)                                                                                    | :heavy_minus_sign:                                                                                                                              | The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task. |
+| `Self`                                                                                                                                          | [*SelfApproval1](../../models/shared/selfapproval1.md)                                                                                          | :heavy_minus_sign:                                                                                                                              | The self approval object describes the configuration of a policy step that needs to be approved by the target of the request.                   |
+| `Users`                                                                                                                                         | [*UserApproval1](../../models/shared/userapproval1.md)                                                                                          | :heavy_minus_sign:                                                                                                                              | The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users.           |
