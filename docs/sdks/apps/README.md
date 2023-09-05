@@ -27,21 +27,25 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("ea"),
-        Description: conductoroneapi.String("excepturi"),
-        DisplayName: conductoroneapi.String("odit"),
-        GrantPolicyID: conductoroneapi.String("ea"),
-        MonthlyCostUsd: conductoroneapi.Float64(332.22),
+        CertifyPolicyID: conductoroneapi.String("nihil"),
+        Description: conductoroneapi.String("repellat"),
+        DisplayName: conductoroneapi.String("quibusdam"),
+        GrantPolicyID: conductoroneapi.String("sed"),
+        MonthlyCostUsd: conductoroneapi.Float64(9046.48),
         Owners: []string{
-            "maiores",
+            "accusantium",
+            "consequuntur",
+            "praesentium",
+            "natus",
         },
-        RevokePolicyID: conductoroneapi.String("quidem"),
+        RevokePolicyID: conductoroneapi.String("magni"),
     })
     if err != nil {
         log.Fatal(err)
@@ -86,6 +90,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -93,7 +98,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "576b0d5f-0d30-4c5f-bb25-87053202c73d",
+        ID: "1cddc692-601f-4b57-ab0d-5f0d30c5fbb2",
     })
     if err != nil {
         log.Fatal(err)
@@ -138,13 +143,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "5fe9b90c-2890-49b3-be49-a8d9cbf48633",
+        ID: "58705320-2c73-4d5f-a9b9-0c28909b3fe4",
     })
     if err != nil {
         log.Fatal(err)
@@ -189,14 +195,15 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
-        PageSize: conductoroneapi.Float64(2224.43),
-        PageToken: conductoroneapi.String("qui"),
+        PageSize: conductoroneapi.Float64(6139.66),
+        PageToken: conductoroneapi.String("dolorum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -241,6 +248,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -249,17 +257,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                CertifyPolicyID: conductoroneapi.String("ipsum"),
-                Description: conductoroneapi.String("hic"),
-                DisplayName: conductoroneapi.String("excepturi"),
-                GrantPolicyID: conductoroneapi.String("cum"),
-                IconURL: conductoroneapi.String("voluptate"),
-                MonthlyCostUsd: conductoroneapi.Float64(4904.59),
-                RevokePolicyID: conductoroneapi.String("reiciendis"),
+                CertifyPolicyID: conductoroneapi.String("deleniti"),
+                Description: conductoroneapi.String("pariatur"),
+                DisplayName: conductoroneapi.String("provident"),
+                GrantPolicyID: conductoroneapi.String("nobis"),
+                IconURL: conductoroneapi.String("libero"),
+                MonthlyCostUsd: conductoroneapi.Float64(9644.9),
+                RevokePolicyID: conductoroneapi.String("quaerat"),
             },
-            UpdateMask: conductoroneapi.String("amet"),
+            UpdateMask: conductoroneapi.String("quos"),
         },
-        ID: "a4100674-ebf6-4928-8d1b-a77a89ebf737",
+        ID: "633323f9-b77f-43a4-9006-74ebf69280d1",
     })
     if err != nil {
         log.Fatal(err)
