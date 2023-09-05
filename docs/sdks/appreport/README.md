@@ -24,15 +24,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "aliquid",
-        PageSize: conductoroneapi.Float64(5865.13),
-        PageToken: conductoroneapi.String("quos"),
+        AppID: "excepturi",
+        PageSize: conductoroneapi.Float64(8651.03),
+        PageToken: conductoroneapi.String("modi"),
     })
     if err != nil {
         log.Fatal(err)
