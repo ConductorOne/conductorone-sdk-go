@@ -33,6 +33,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -42,24 +43,20 @@ func main() {
         RequestCatalogManagementServiceAddAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("explicabo"),
-                    ID: conductoroneapi.String("fb7b194a-276b-4269-96fe-1f08f4294e36"),
+                    AppID: conductoroneapi.String("nam"),
+                    ID: conductoroneapi.String("f603a79f-9dfe-40ab-bda8-a50ce187f86b"),
                 },
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("occaecati"),
-                    ID: conductoroneapi.String("8f447f60-3e8b-4445-a80c-a55efd20e457"),
+                    AppID: conductoroneapi.String("maxime"),
+                    ID: conductoroneapi.String("173d689e-ee95-426f-8d98-6e881ead4f0e"),
                 },
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("officiis"),
-                    ID: conductoroneapi.String("1858b6a8-9fbe-43a5-aa8e-4824d0ab4075"),
-                },
-                shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("sit"),
-                    ID: conductoroneapi.String("88e51862-065e-4904-b3b1-194b8abf603a"),
+                    AppID: conductoroneapi.String("dicta"),
+                    ID: conductoroneapi.String("012563f9-4e29-4e97-be92-2a57a15be3e0"),
                 },
             },
         },
-        CatalogID: "voluptate",
+        CatalogID: "iure",
     })
     if err != nil {
         log.Fatal(err)
@@ -104,6 +101,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -113,20 +111,12 @@ func main() {
         RequestCatalogManagementServiceAddAppEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("reiciendis"),
-                    ID: conductoroneapi.String("9dfe0ab7-da8a-450c-a187-f86bc173d689"),
-                },
-                shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("officiis"),
-                    ID: conductoroneapi.String("ee9526f8-d986-4e88-9ead-4f0e1012563f"),
-                },
-                shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("molestias"),
-                    ID: conductoroneapi.String("4e29e973-e922-4a57-a15b-e3e060807e2b"),
+                    AppID: conductoroneapi.String("totam"),
+                    ID: conductoroneapi.String("07e2b6e3-ab88-445f-8597-a60ff2a54a31"),
                 },
             },
         },
-        CatalogID: "iure",
+        CatalogID: "recusandae",
     })
     if err != nil {
         log.Fatal(err)
@@ -170,6 +160,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -178,14 +169,13 @@ func main() {
     res, err := s.RequestCatalogManagement.Create(ctx, shared.RequestCatalogManagementServiceCreateRequest{
         RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
             Paths: []string{
-                "ratione",
-                "laborum",
-                "distinctio",
-                "voluptatum",
+                "quaerat",
+                "molestiae",
+                "ex",
             },
         },
-        Description: conductoroneapi.String("rem"),
-        DisplayName: conductoroneapi.String("aliquam"),
+        Description: conductoroneapi.String("ut"),
+        DisplayName: conductoroneapi.String("culpa"),
         Published: conductoroneapi.Bool(false),
         VisibleToEveryone: conductoroneapi.Bool(false),
     })
@@ -232,6 +222,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -239,7 +230,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
         RequestCatalogManagementServiceDeleteRequest: &shared.RequestCatalogManagementServiceDeleteRequest{},
-        ID: "5f0597a6-0ff2-4a54-a31e-94764a3e865e",
+        ID: "3e865e79-56f9-4251-a5a9-da660ff57bfa",
     })
     if err != nil {
         log.Fatal(err)
@@ -284,13 +275,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "7956f925-1a5a-49da-a60f-f57bfaad4f9e",
+        ID: "ad4f9efc-1b45-412c-9032-648dc2f61519",
     })
     if err != nil {
         log.Fatal(err)
@@ -335,15 +327,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "sapiente",
-        PageSize: conductoroneapi.Float64(7645.62),
-        PageToken: conductoroneapi.String("vitae"),
+        CatalogID: "provident",
+        PageSize: conductoroneapi.Float64(9364.69),
+        PageToken: conductoroneapi.String("soluta"),
     })
     if err != nil {
         log.Fatal(err)
@@ -388,15 +381,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "rerum",
-        PageSize: conductoroneapi.Float64(2722.29),
-        PageToken: conductoroneapi.String("quis"),
+        CatalogID: "hic",
+        PageSize: conductoroneapi.Float64(8481.51),
+        PageToken: conductoroneapi.String("eaque"),
     })
     if err != nil {
         log.Fatal(err)
@@ -441,6 +435,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -450,12 +445,24 @@ func main() {
         RequestCatalogManagementServiceRemoveAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("fugit"),
-                    ID: conductoroneapi.String("c1032648-dc2f-4615-999e-bfd0e9fe6c63"),
+                    AppID: conductoroneapi.String("perspiciatis"),
+                    ID: conductoroneapi.String("fe6c632c-a3ae-4d01-9799-6312fde04771"),
+                },
+                shared.AppEntitlementRef{
+                    AppID: conductoroneapi.String("iusto"),
+                    ID: conductoroneapi.String("78ff61d0-1747-4636-8a15-db6a660659a1"),
+                },
+                shared.AppEntitlementRef{
+                    AppID: conductoroneapi.String("error"),
+                    ID: conductoroneapi.String("deaab585-1d6c-4645-b08b-61891baa0fe1"),
+                },
+                shared.AppEntitlementRef{
+                    AppID: conductoroneapi.String("fuga"),
+                    ID: conductoroneapi.String("de008e6f-8c5f-4350-98cd-b5a341814301"),
                 },
             },
         },
-        CatalogID: "fugit",
+        CatalogID: "sit",
     })
     if err != nil {
         log.Fatal(err)
@@ -500,6 +507,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -509,24 +517,16 @@ func main() {
         RequestCatalogManagementServiceRemoveAppEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("fuga"),
-                    ID: conductoroneapi.String("3aed0117-9963-412f-9e04-771778ff61d0"),
+                    AppID: conductoroneapi.String("fugit"),
+                    ID: conductoroneapi.String("1813d520-8ece-47e2-93b6-68451c6c6e20"),
                 },
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("dicta"),
-                    ID: conductoroneapi.String("7476360a-15db-46a6-a065-9a1adeaab585"),
-                },
-                shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("vitae"),
-                    ID: conductoroneapi.String("d6c645b0-8b61-4891-baa0-fe1ade008e6f"),
-                },
-                shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("rem"),
-                    ID: conductoroneapi.String("c5f350d8-cdb5-4a34-9814-3010421813d5"),
+                    AppID: conductoroneapi.String("exercitationem"),
+                    ID: conductoroneapi.String("e16deab3-fec9-4578-a645-84273a8418d1"),
                 },
             },
         },
-        CatalogID: "consequuntur",
+        CatalogID: "nisi",
     })
     if err != nil {
         log.Fatal(err)
@@ -571,6 +571,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -584,63 +585,61 @@ func main() {
                         ProvisionPolicy: &shared.ProvisionPolicy{
                             ConnectorProvision: &shared.ConnectorProvision{},
                             DelegatedProvision: &shared.DelegatedProvision{
-                                AppID: conductoroneapi.String("quas"),
-                                EntitlementID: conductoroneapi.String("eveniet"),
+                                AppID: conductoroneapi.String("consectetur"),
+                                EntitlementID: conductoroneapi.String("aperiam"),
                             },
                             ManualProvision: &shared.ManualProvision{
-                                Instructions: conductoroneapi.String("impedit"),
+                                Instructions: conductoroneapi.String("cupiditate"),
                                 UserIds: []string{
-                                    "esse",
-                                    "necessitatibus",
-                                    "sed",
-                                    "veniam",
+                                    "soluta",
+                                    "alias",
+                                    "omnis",
+                                    "eos",
                                 },
                             },
                         },
-                        AppID: conductoroneapi.String("nesciunt"),
-                        AppResourceID: conductoroneapi.String("expedita"),
-                        AppResourceTypeID: conductoroneapi.String("eum"),
-                        CertifyPolicyID: conductoroneapi.String("vel"),
+                        AppID: conductoroneapi.String("occaecati"),
+                        AppResourceID: conductoroneapi.String("iste"),
+                        AppResourceTypeID: conductoroneapi.String("magni"),
+                        CertifyPolicyID: conductoroneapi.String("inventore"),
                         ComplianceFrameworkValueIds: []string{
-                            "magnam",
-                            "exercitationem",
-                            "ab",
+                            "accusamus",
+                            "voluptatibus",
+                            "distinctio",
                         },
-                        Description: conductoroneapi.String("porro"),
-                        DisplayName: conductoroneapi.String("autem"),
-                        DurationGrant: conductoroneapi.String("nobis"),
+                        Description: conductoroneapi.String("omnis"),
+                        DisplayName: conductoroneapi.String("delectus"),
+                        DurationGrant: conductoroneapi.String("minima"),
                         DurationUnset: &shared.AppEntitlementDurationUnset{},
                         EmergencyGrantEnabled: conductoroneapi.Bool(false),
-                        EmergencyGrantPolicyID: conductoroneapi.String("laboriosam"),
-                        GrantPolicyID: conductoroneapi.String("recusandae"),
-                        RevokePolicyID: conductoroneapi.String("consequuntur"),
-                        RiskLevelValueID: conductoroneapi.String("voluptatem"),
-                        Slug: conductoroneapi.String("exercitationem"),
+                        EmergencyGrantPolicyID: conductoroneapi.String("praesentium"),
+                        GrantPolicyID: conductoroneapi.String("maxime"),
+                        RevokePolicyID: conductoroneapi.String("magnam"),
+                        RiskLevelValueID: conductoroneapi.String("temporibus"),
+                        Slug: conductoroneapi.String("quos"),
                     },
                 },
                 AppIds: []string{
-                    "quasi",
-                    "nisi",
-                    "at",
-                    "vero",
+                    "itaque",
+                    "commodi",
                 },
-                CreatedByUserID: conductoroneapi.String("est"),
-                Description: conductoroneapi.String("harum"),
-                DisplayName: conductoroneapi.String("sequi"),
-                ID: conductoroneapi.String("fec9578a-6458-4427-ba84-18d162309fb0"),
+                CreatedByUserID: conductoroneapi.String("totam"),
+                Description: conductoroneapi.String("earum"),
+                DisplayName: conductoroneapi.String("modi"),
+                ID: conductoroneapi.String("be056013-f59d-4a75-ba59-ecfef66ef1ca"),
                 Published: conductoroneapi.Bool(false),
                 VisibleToEveryone: conductoroneapi.Bool(false),
             },
             RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
                 Paths: []string{
-                    "eos",
-                    "occaecati",
-                    "iste",
+                    "consectetur",
+                    "velit",
+                    "atque",
                 },
             },
-            UpdateMask: conductoroneapi.String("magni"),
+            UpdateMask: conductoroneapi.String("ipsum"),
         },
-        ID: "1aefb9f5-8c4d-486e-a8e4-be056013f59d",
+        ID: "c2beb477-373c-48d7-af64-d1db1f2c4310",
     })
     if err != nil {
         log.Fatal(err)
