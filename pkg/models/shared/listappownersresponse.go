@@ -2,7 +2,7 @@
 
 package shared
 
-// ListAppOwnersResponse - The ListAppOwnersResponse message.
+// The ListAppOwnersResponse message.
 type ListAppOwnersResponse struct {
 	// The list of results containing up to X results, where X is the page size defined in the request
 	List []User `json:"list,omitempty"`

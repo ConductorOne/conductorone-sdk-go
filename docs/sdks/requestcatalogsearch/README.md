@@ -32,16 +32,15 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "ea",
-                "beatae",
+                "consequuntur",
             },
         },
-        AppDisplayName: conductoroneapi.String("vero"),
-        EntitlementAlias: conductoroneapi.String("excepturi"),
+        AppDisplayName: conductoroneapi.String("fugit"),
+        EntitlementAlias: conductoroneapi.String("id"),
         GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusAll.ToPointer(),
-        PageSize: conductoroneapi.Float64(2465.57),
-        PageToken: conductoroneapi.String("ut"),
-        Query: conductoroneapi.String("perspiciatis"),
+        PageSize: conductoroneapi.Float64(4402.64),
+        PageToken: conductoroneapi.String("error"),
+        Query: conductoroneapi.String("illo"),
     })
     if err != nil {
         log.Fatal(err)

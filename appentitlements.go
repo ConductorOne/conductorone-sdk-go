@@ -24,7 +24,7 @@ func newAppEntitlements(sdkConfig sdkConfiguration) *appEntitlements {
 	}
 }
 
-// Get - Get
+// Get
 // Get an app entitlement by ID.
 func (s *appEntitlements) Get(ctx context.Context, request operations.C1APIAppV1AppEntitlementsGetRequest) (*operations.C1APIAppV1AppEntitlementsGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -82,7 +82,7 @@ func (s *appEntitlements) Get(ctx context.Context, request operations.C1APIAppV1
 	return res, nil
 }
 
-// List - List
+// List
 // List app entitlements associated with an app.
 func (s *appEntitlements) List(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListRequest) (*operations.C1APIAppV1AppEntitlementsListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -330,7 +330,7 @@ func (s *appEntitlements) ListUsers(ctx context.Context, request operations.C1AP
 	return res, nil
 }
 
-// Update - Update
+// Update
 // Update an app entitlement by ID.
 func (s *appEntitlements) Update(ctx context.Context, request operations.C1APIAppV1AppEntitlementsUpdateRequest) (*operations.C1APIAppV1AppEntitlementsUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())

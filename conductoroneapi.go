@@ -128,7 +128,7 @@ func WithServerIndex(serverIndex int) SDKOption {
 	}
 }
 
-// WithTenantDomain allows setting the $name variable for url substitution
+// WithTenantDomain allows setting the tenantDomain variable for url substitution
 func WithTenantDomain(tenantDomain string) SDKOption {
 	return func(sdk *ConductoroneAPI) {
 		for idx := range sdk.sdkConfiguration.ServerDefaults {
@@ -161,8 +161,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.7.0",
-			GenVersion:        "2.96.6",
+			SDKVersion:        "1.7.1",
+			GenVersion:        "2.101.0",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",

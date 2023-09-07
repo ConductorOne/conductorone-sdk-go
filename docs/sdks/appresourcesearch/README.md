@@ -31,33 +31,22 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "officia",
-            "dolor",
-            "debitis",
+            "explicabo",
         },
         ExcludeResourceTypeIds: []string{
-            "dolorum",
-            "in",
-            "in",
-            "illum",
+            "deserunt",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "rerum",
-            "dicta",
-            "magnam",
-            "cumque",
+            "distinctio",
         },
-        PageSize: conductoroneapi.Float64(8137.98),
-        PageToken: conductoroneapi.String("ea"),
-        Query: conductoroneapi.String("aliquid"),
+        PageSize: conductoroneapi.Float64(8413.86),
+        PageToken: conductoroneapi.String("labore"),
+        Query: conductoroneapi.String("modi"),
         ResourceTypeIds: []string{
-            "accusamus",
-            "non",
-            "occaecati",
+            "qui",
         },
         ResourceTypeTraitIds: []string{
-            "accusamus",
-            "delectus",
+            "aliquid",
         },
     })
     if err != nil {

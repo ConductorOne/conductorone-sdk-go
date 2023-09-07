@@ -32,9 +32,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "rem",
-        AppResourceTypeID: "voluptates",
-        ID: "1e91e450-ad2a-4bd4-8269-802d502a94bb",
+        AppID: "nihil",
+        AppResourceTypeID: "praesentium",
+        ID: "f097b007-4f15-4471-b5e6-e13b99d488e1",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,10 +86,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "labore",
-        AppResourceTypeID: "delectus",
-        PageSize: conductoroneapi.Float64(4332.88),
-        PageToken: conductoroneapi.String("non"),
+        AppID: "repudiandae",
+        AppResourceTypeID: "sint",
+        PageSize: conductoroneapi.Float64(831.12),
+        PageToken: conductoroneapi.String("itaque"),
     })
     if err != nil {
         log.Fatal(err)

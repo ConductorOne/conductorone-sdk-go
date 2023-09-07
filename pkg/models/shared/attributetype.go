@@ -2,7 +2,7 @@
 
 package shared
 
-// AttributeType - AttributeType defines the type of an attribute.
+// AttributeType defines the type of an attribute.
 type AttributeType struct {
 	// The ID of the AttributeType.
 	ID *string `json:"id,omitempty"`

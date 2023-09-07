@@ -31,17 +31,15 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
         AppIds: []string{
-            "mollitia",
+            "cumque",
         },
-        DisplayName: conductoroneapi.String("reiciendis"),
+        DisplayName: conductoroneapi.String("facere"),
         ExcludeAppIds: []string{
-            "ad",
-            "eum",
-            "dolor",
+            "ea",
         },
-        PageSize: conductoroneapi.Float64(8965.47),
-        PageToken: conductoroneapi.String("odit"),
-        Query: conductoroneapi.String("nemo"),
+        PageSize: conductoroneapi.Float64(3965.06),
+        PageToken: conductoroneapi.String("laborum"),
+        Query: conductoroneapi.String("accusamus"),
     })
     if err != nil {
         log.Fatal(err)

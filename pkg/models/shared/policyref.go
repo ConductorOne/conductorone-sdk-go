@@ -2,7 +2,7 @@
 
 package shared
 
-// PolicyRef - The PolicyRef message.
+// The PolicyRef message.
 type PolicyRef struct {
 	// The id field.
 	ID *string `json:"id,omitempty"`

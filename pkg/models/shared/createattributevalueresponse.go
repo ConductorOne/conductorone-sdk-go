@@ -2,7 +2,7 @@
 
 package shared
 
-// CreateAttributeValueResponse - CreateAttributeValueResponse is the response for creating an attribute value.
+// CreateAttributeValueResponse is the response for creating an attribute value.
 type CreateAttributeValueResponse struct {
 	// AttributeValue is the value of an attribute of a defined type.
 	AttributeValue *AttributeValue `json:"value,omitempty"`

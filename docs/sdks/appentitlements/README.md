@@ -36,8 +36,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "beatae",
-        ID: "6742cb73-9205-4929-b96f-ea7596eb10fa",
+        AppID: "perferendis",
+        ID: "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,9 +89,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "mollitia",
-        PageSize: conductoroneapi.Float64(6706.38),
-        PageToken: conductoroneapi.String("dolores"),
+        AppID: "esse",
+        PageSize: conductoroneapi.Float64(2165.5),
+        PageToken: conductoroneapi.String("excepturi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -143,11 +143,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "dolorem",
-        AppResourceID: "corporis",
-        AppResourceTypeID: "explicabo",
-        PageSize: conductoroneapi.Float64(7506.86),
-        PageToken: conductoroneapi.String("enim"),
+        AppID: "aspernatur",
+        AppResourceID: "perferendis",
+        AppResourceTypeID: "ad",
+        PageSize: conductoroneapi.Float64(6176.36),
+        PageToken: conductoroneapi.String("sed"),
     })
     if err != nil {
         log.Fatal(err)
@@ -199,10 +199,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "omnis",
-        AppUserID: "nemo",
-        PageSize: conductoroneapi.Float64(3250.47),
-        PageToken: conductoroneapi.String("excepturi"),
+        AppID: "iste",
+        AppUserID: "dolor",
+        PageSize: conductoroneapi.Float64(6169.34),
+        PageToken: conductoroneapi.String("laboriosam"),
     })
     if err != nil {
         log.Fatal(err)
@@ -254,10 +254,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "accusantium",
-        AppID: "iure",
-        PageSize: conductoroneapi.Float64(6342.74),
-        PageToken: conductoroneapi.String("doloribus"),
+        AppEntitlementID: "hic",
+        AppID: "saepe",
+        PageSize: conductoroneapi.Float64(6818.2),
+        PageToken: conductoroneapi.String("in"),
     })
     if err != nil {
         log.Fatal(err)
@@ -314,45 +314,43 @@ func main() {
                 ProvisionPolicy: &shared.ProvisionPolicy{
                     ConnectorProvision: &shared.ConnectorProvision{},
                     DelegatedProvision: &shared.DelegatedProvision{
-                        AppID: conductoroneapi.String("sapiente"),
-                        EntitlementID: conductoroneapi.String("architecto"),
+                        AppID: conductoroneapi.String("corporis"),
+                        EntitlementID: conductoroneapi.String("iste"),
                     },
                     ManualProvision: &shared.ManualProvision{
-                        Instructions: conductoroneapi.String("mollitia"),
+                        Instructions: conductoroneapi.String("iure"),
                         UserIds: []string{
-                            "culpa",
+                            "saepe",
                         },
                     },
                 },
-                AppID: conductoroneapi.String("consequuntur"),
-                AppResourceID: conductoroneapi.String("repellat"),
-                AppResourceTypeID: conductoroneapi.String("mollitia"),
-                CertifyPolicyID: conductoroneapi.String("occaecati"),
+                AppID: conductoroneapi.String("quidem"),
+                AppResourceID: conductoroneapi.String("architecto"),
+                AppResourceTypeID: conductoroneapi.String("ipsa"),
+                CertifyPolicyID: conductoroneapi.String("reiciendis"),
                 ComplianceFrameworkValueIds: []string{
-                    "commodi",
-                    "quam",
+                    "est",
                 },
-                Description: conductoroneapi.String("molestiae"),
-                DisplayName: conductoroneapi.String("velit"),
-                DurationGrant: conductoroneapi.String("error"),
+                Description: conductoroneapi.String("mollitia"),
+                DisplayName: conductoroneapi.String("laborum"),
+                DurationGrant: conductoroneapi.String("dolores"),
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
                 EmergencyGrantEnabled: conductoroneapi.Bool(false),
-                EmergencyGrantPolicyID: conductoroneapi.String("quia"),
-                GrantPolicyID: conductoroneapi.String("quis"),
-                RevokePolicyID: conductoroneapi.String("vitae"),
-                RiskLevelValueID: conductoroneapi.String("laborum"),
-                Slug: conductoroneapi.String("animi"),
+                EmergencyGrantPolicyID: conductoroneapi.String("dolorem"),
+                GrantPolicyID: conductoroneapi.String("corporis"),
+                RevokePolicyID: conductoroneapi.String("explicabo"),
+                RiskLevelValueID: conductoroneapi.String("nobis"),
+                Slug: conductoroneapi.String("enim"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "odit",
-                    "quo",
+                    "omnis",
                 },
             },
-            UpdateMask: conductoroneapi.String("sequi"),
+            UpdateMask: conductoroneapi.String("nemo"),
         },
-        AppID: "tenetur",
-        ID: "5ad019da-1ffe-478f-897b-0074f15471b5",
+        AppID: "minima",
+        ID: "907aff1a-3a2f-4a94-a773-9251aa52c3f5",
     })
     if err != nil {
         log.Fatal(err)

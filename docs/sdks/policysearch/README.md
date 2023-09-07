@@ -30,25 +30,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("sapiente"),
-        PageSize: conductoroneapi.Float64(8953.86),
-        PageToken: conductoroneapi.String("illo"),
+        DisplayName: conductoroneapi.String("dicta"),
+        PageSize: conductoroneapi.Float64(9816.4),
+        PageToken: conductoroneapi.String("natus"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeUnspecified,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeCertify,
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeProvision,
             shared.SearchPoliciesRequestPolicyTypesPolicyTypeGrant,
         },
-        Query: conductoroneapi.String("sed"),
+        Query: conductoroneapi.String("voluptatibus"),
         Refs: []shared.PolicyRef{
             shared.PolicyRef{
-                ID: conductoroneapi.String("4e3698f4-47f6-403e-8b44-5e80ca55efd2"),
-            },
-            shared.PolicyRef{
-                ID: conductoroneapi.String("0e457e18-58b6-4a89-bbe3-a5aa8e4824d0"),
-            },
-            shared.PolicyRef{
-                ID: conductoroneapi.String("ab407508-8e51-4862-865e-904f3b1194b8"),
+                ID: conductoroneapi.String("5f0642da-c7af-4515-8c41-3aa63aae8d67"),
             },
         },
     })

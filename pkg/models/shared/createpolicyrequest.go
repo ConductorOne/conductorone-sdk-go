@@ -47,7 +47,7 @@ func (e *CreatePolicyRequestPolicyType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// CreatePolicyRequest - The CreatePolicyRequest message is used to create a new policy.
+// The CreatePolicyRequest message is used to create a new policy.
 type CreatePolicyRequest struct {
 	// The description of the new policy.
 	Description *string `json:"description,omitempty"`

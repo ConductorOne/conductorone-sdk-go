@@ -82,7 +82,7 @@ func (o *ConnectorInput) GetUserIds() []string {
 	return o.UserIds
 }
 
-// Connector - A Connector is used to sync objects into Apps
+// A Connector is used to sync objects into Apps
 type Connector struct {
 	// The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 	ConnectorStatus *ConnectorStatus `json:"status,omitempty"`

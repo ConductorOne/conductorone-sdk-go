@@ -202,12 +202,11 @@ func main() {
     res, err := s.AppEntitlementOwners.Set(ctx, operations.C1APIAppV1AppEntitlementOwnersSetRequest{
         SetAppEntitlementOwnersRequest: &shared.SetAppEntitlementOwnersRequest{
             UserIds: []string{
-                "debitis",
-                "ipsa",
+                "magnam",
             },
         },
-        AppID: "delectus",
-        EntitlementID: "tempora",
+        AppID: "debitis",
+        EntitlementID: "ipsa",
     })
     if err != nil {
         log.Fatal(err)

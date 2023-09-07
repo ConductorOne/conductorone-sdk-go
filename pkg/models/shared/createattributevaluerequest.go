@@ -2,7 +2,7 @@
 
 package shared
 
-// CreateAttributeValueRequest - The CreateAttributeValueRequest message.
+// The CreateAttributeValueRequest message.
 type CreateAttributeValueRequest struct {
 	// The attributeTypeId field.
 	AttributeTypeID *string `json:"attributeTypeId,omitempty"`

@@ -32,8 +32,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "quidem",
-        ID: "9ba88f3a-6699-4707-8ba4-469b6e214195",
+        AppID: "cupiditate",
+        ID: "802d502a-94bb-44f6-bc96-9e9a3efa77df",
     })
     if err != nil {
         log.Fatal(err)
@@ -85,9 +85,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "provident",
-        PageSize: conductoroneapi.Float64(5518.16),
-        PageToken: conductoroneapi.String("sint"),
+        AppID: "rerum",
+        PageSize: conductoroneapi.Float64(1162.02),
+        PageToken: conductoroneapi.String("magnam"),
     })
     if err != nil {
         log.Fatal(err)

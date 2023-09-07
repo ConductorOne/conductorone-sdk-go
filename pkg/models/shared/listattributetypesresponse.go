@@ -2,7 +2,7 @@
 
 package shared
 
-// ListAttributeTypesResponse - ListAttributeTypesResponse is the response for listing attribute types.
+// ListAttributeTypesResponse is the response for listing attribute types.
 type ListAttributeTypesResponse struct {
 	// The list of AttributeTypes.
 	List []AttributeType `json:"list,omitempty"`

@@ -34,18 +34,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("nihil"),
-        Description: conductoroneapi.String("repellat"),
-        DisplayName: conductoroneapi.String("quibusdam"),
-        GrantPolicyID: conductoroneapi.String("sed"),
-        MonthlyCostUsd: conductoroneapi.Float64(9046.48),
+        CertifyPolicyID: conductoroneapi.String("sapiente"),
+        Description: conductoroneapi.String("amet"),
+        DisplayName: conductoroneapi.String("deserunt"),
+        GrantPolicyID: conductoroneapi.String("nisi"),
+        MonthlyCostUsd: conductoroneapi.Float64(4238.55),
         Owners: []string{
-            "accusantium",
-            "consequuntur",
-            "praesentium",
             "natus",
         },
-        RevokePolicyID: conductoroneapi.String("magni"),
+        RevokePolicyID: conductoroneapi.String("omnis"),
     })
     if err != nil {
         log.Fatal(err)
@@ -98,7 +95,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "1cddc692-601f-4b57-ab0d-5f0d30c5fbb2",
+        ID: "7074ba44-69b6-4e21-8195-9890afa563e2",
     })
     if err != nil {
         log.Fatal(err)
@@ -150,7 +147,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "58705320-2c73-4d5f-a9b9-0c28909b3fe4",
+        ID: "516fe4c8-b711-4e5b-bfd2-ed028921cddc",
     })
     if err != nil {
         log.Fatal(err)
@@ -202,8 +199,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
-        PageSize: conductoroneapi.Float64(6139.66),
-        PageToken: conductoroneapi.String("dolorum"),
+        PageSize: conductoroneapi.Float64(4113.97),
+        PageToken: conductoroneapi.String("excepturi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -257,17 +254,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                CertifyPolicyID: conductoroneapi.String("deleniti"),
-                Description: conductoroneapi.String("pariatur"),
-                DisplayName: conductoroneapi.String("provident"),
-                GrantPolicyID: conductoroneapi.String("nobis"),
-                IconURL: conductoroneapi.String("libero"),
-                MonthlyCostUsd: conductoroneapi.Float64(9644.9),
-                RevokePolicyID: conductoroneapi.String("quaerat"),
+                CertifyPolicyID: conductoroneapi.String("odit"),
+                Description: conductoroneapi.String("ea"),
+                DisplayName: conductoroneapi.String("accusantium"),
+                GrantPolicyID: conductoroneapi.String("ab"),
+                IconURL: conductoroneapi.String("maiores"),
+                MonthlyCostUsd: conductoroneapi.Float64(6974.29),
+                RevokePolicyID: conductoroneapi.String("ipsam"),
             },
-            UpdateMask: conductoroneapi.String("quos"),
+            UpdateMask: conductoroneapi.String("voluptate"),
         },
-        ID: "633323f9-b77f-43a4-9006-74ebf69280d1",
+        ID: "6b0d5f0d-30c5-4fbb-a587-053202c73d5f",
     })
     if err != nil {
         log.Fatal(err)

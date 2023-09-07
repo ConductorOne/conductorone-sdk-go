@@ -37,16 +37,13 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "et",
-                    "ipsum",
-                    "unde",
-                    "nulla",
+                    "provident",
                 },
             },
-            Comment: conductoroneapi.String("distinctio"),
-            PolicyStepID: "maxime",
+            Comment: conductoroneapi.String("quis"),
+            PolicyStepID: "eum",
         },
-        TaskID: "quia",
+        TaskID: "reiciendis",
     })
     if err != nil {
         log.Fatal(err)
@@ -101,12 +98,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "nostrum",
+                    "provident",
                 },
             },
-            Comment: conductoroneapi.String("omnis"),
+            Comment: conductoroneapi.String("aspernatur"),
         },
-        TaskID: "libero",
+        TaskID: "ullam",
     })
     if err != nil {
         log.Fatal(err)
@@ -161,13 +158,13 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "id",
+                    "quasi",
                 },
             },
-            Comment: conductoroneapi.String("libero"),
-            PolicyStepID: conductoroneapi.String("fugiat"),
+            Comment: conductoroneapi.String("animi"),
+            PolicyStepID: conductoroneapi.String("nostrum"),
         },
-        TaskID: "officia",
+        TaskID: "mollitia",
     })
     if err != nil {
         log.Fatal(err)
@@ -222,15 +219,13 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "placeat",
-                    "sit",
-                    "iusto",
+                    "provident",
                 },
             },
-            Comment: conductoroneapi.String("ipsa"),
-            PolicyStepID: conductoroneapi.String("voluptates"),
+            Comment: conductoroneapi.String("possimus"),
+            PolicyStepID: conductoroneapi.String("animi"),
         },
-        TaskID: "inventore",
+        TaskID: "ex",
     })
     if err != nil {
         log.Fatal(err)

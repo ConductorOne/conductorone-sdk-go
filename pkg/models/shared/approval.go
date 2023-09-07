@@ -2,7 +2,7 @@
 
 package shared
 
-// Approval - The Approval message.
+// The Approval message.
 //
 // This message contains a oneof named typ. Only a single field of the following list may be set at a time:
 //   - users

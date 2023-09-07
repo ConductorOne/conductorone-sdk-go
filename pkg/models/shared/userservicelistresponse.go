@@ -2,7 +2,7 @@
 
 package shared
 
-// UserServiceListResponse - The UserServiceListResponse message contains a list of results and a nextPageToken if applicable.
+// The UserServiceListResponse message contains a list of results and a nextPageToken if applicable.
 type UserServiceListResponse struct {
 	// List of serialized related objects.
 	Expanded []map[string]interface{} `json:"expanded,omitempty"`

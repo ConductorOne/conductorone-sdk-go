@@ -58,7 +58,7 @@ func (e *TaskTypeGrantOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeGrant - The TaskTypeGrant message indicates that a task is a grant task and all related details.
+// The TaskTypeGrant message indicates that a task is a grant task and all related details.
 type TaskTypeGrant struct {
 	// The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket.
 	TaskGrantSource *TaskGrantSource `json:"source,omitempty"`

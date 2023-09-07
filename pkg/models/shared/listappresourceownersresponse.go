@@ -2,7 +2,7 @@
 
 package shared
 
-// ListAppResourceOwnersResponse - The ListAppResourceOwnersResponse message contains a list of results and a nextPageToken if applicable
+// The ListAppResourceOwnersResponse message contains a list of results and a nextPageToken if applicable
 type ListAppResourceOwnersResponse struct {
 	// The list of results containing up to X results, where X is the page size defined in the request.
 	List []User `json:"list,omitempty"`

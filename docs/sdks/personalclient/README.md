@@ -31,14 +31,12 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "architecto",
-            "omnis",
-            "tenetur",
+            "incidunt",
         },
-        DisplayName: conductoroneapi.String("quasi"),
-        Expires: conductoroneapi.String("at"),
+        DisplayName: conductoroneapi.String("atque"),
+        Expires: conductoroneapi.String("explicabo"),
         ScopedRoles: []string{
-            "voluptate",
+            "minima",
         },
     })
     if err != nil {

@@ -49,7 +49,7 @@ func (e *TaskTypeCertifyOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeCertify - The TaskTypeCertify message indicates that a task is a certify task and all related details.
+// The TaskTypeCertify message indicates that a task is a certify task and all related details.
 type TaskTypeCertify struct {
 	// The ID of the access review.
 	AccessReviewID *string `json:"accessReviewId,omitempty"`

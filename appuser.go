@@ -24,7 +24,7 @@ func newAppUser(sdkConfig sdkConfiguration) *appUser {
 	}
 }
 
-// Update - Update
+// Update
 // Update an app user by ID. Only the fields specified in the update mask are updated.
 //
 //	Currently, only the appUserType, and identityUserId fields can be updated.

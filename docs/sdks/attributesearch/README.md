@@ -31,24 +31,18 @@ func main() {
     ctx := context.Background()
     res, err := s.AttributeSearch.SearchAttributeValues(ctx, shared.SearchAttributeValuesRequest{
         AttributeTypeIds: []string{
-            "dolorum",
-            "iusto",
-            "voluptate",
+            "recusandae",
         },
         ExcludeIds: []string{
-            "deleniti",
             "omnis",
-            "necessitatibus",
         },
         Ids: []string{
-            "asperiores",
-            "nihil",
-            "ipsum",
+            "facilis",
         },
-        PageSize: conductoroneapi.Float64(4560.15),
-        PageToken: conductoroneapi.String("id"),
-        Query: conductoroneapi.String("saepe"),
-        Value: conductoroneapi.String("eius"),
+        PageSize: conductoroneapi.Float64(5966.56),
+        PageToken: conductoroneapi.String("voluptatem"),
+        Query: conductoroneapi.String("porro"),
+        Value: conductoroneapi.String("consequuntur"),
     })
     if err != nil {
         log.Fatal(err)

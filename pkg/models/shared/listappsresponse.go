@@ -2,7 +2,7 @@
 
 package shared
 
-// ListAppsResponse - The ListAppsResponse message contains a list of results and a nextPageToken if applicable.
+// The ListAppsResponse message contains a list of results and a nextPageToken if applicable.
 type ListAppsResponse struct {
 	// The list of results containing up to X results, where X is the page size defined in the request.
 	List []App `json:"list,omitempty"`

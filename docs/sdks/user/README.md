@@ -32,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "b35ff2e4-b275-437a-8cd9-e7319c177d52",
+        ID: "12fde047-7177-48ff-a1d0-17476360a15d",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,8 +84,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{
-        PageSize: conductoroneapi.Float64(3165.01),
-        PageToken: conductoroneapi.String("delectus"),
+        PageSize: conductoroneapi.Float64(7137.67),
+        PageToken: conductoroneapi.String("aliquid"),
     })
     if err != nil {
         log.Fatal(err)

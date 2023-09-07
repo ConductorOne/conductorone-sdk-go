@@ -24,7 +24,7 @@ func newAppEntitlementOwners(sdkConfig sdkConfiguration) *appEntitlementOwners {
 	}
 }
 
-// Add - Add
+// Add
 // Add an owner to a given app entitlement.
 func (s *appEntitlementOwners) Add(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersAddRequest) (*operations.C1APIAppV1AppEntitlementOwnersAddResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -89,7 +89,7 @@ func (s *appEntitlementOwners) Add(ctx context.Context, request operations.C1API
 	return res, nil
 }
 
-// List - List
+// List
 // List owners for a given app entitlement.
 func (s *appEntitlementOwners) List(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersListRequest) (*operations.C1APIAppV1AppEntitlementOwnersListResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -151,7 +151,7 @@ func (s *appEntitlementOwners) List(ctx context.Context, request operations.C1AP
 	return res, nil
 }
 
-// Remove - Remove
+// Remove
 // Remove an owner from a given app entitlement.
 func (s *appEntitlementOwners) Remove(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersRemoveRequest) (*operations.C1APIAppV1AppEntitlementOwnersRemoveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -216,7 +216,7 @@ func (s *appEntitlementOwners) Remove(ctx context.Context, request operations.C1
 	return res, nil
 }
 
-// Set - Set
+// Set
 // Sets the owners for a given app entitlement to the specified list of users.
 func (s *appEntitlementOwners) Set(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersSetRequest) (*operations.C1APIAppV1AppEntitlementOwnersSetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())

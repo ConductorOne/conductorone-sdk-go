@@ -32,45 +32,29 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "dignissimos",
-                "libero",
+                "officia",
             },
         },
-        Email: conductoroneapi.String("Annie_Goyette73@gmail.com"),
+        Email: conductoroneapi.String("Green.Bahringer@yahoo.com"),
         ExcludeIds: []string{
-            "eos",
-            "reiciendis",
+            "iste",
         },
         Ids: []string{
-            "reprehenderit",
-            "praesentium",
-            "nemo",
-            "repellat",
+            "id",
         },
-        PageSize: conductoroneapi.Float64(7897.7),
-        PageToken: conductoroneapi.String("sequi"),
-        Query: conductoroneapi.String("nihil"),
+        PageSize: conductoroneapi.Float64(700.42),
+        PageToken: conductoroneapi.String("error"),
+        Query: conductoroneapi.String("possimus"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("14d4c98e-0c2b-4b89-ab75-dad636c60050"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("3d8bb311-80f7-439a-a9e0-57eb809e2810"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("331f3981-d4c7-400b-a07f-3c93c73b9da3"),
+                ID: conductoroneapi.String("eaab5851-d6c6-445b-88b6-1891baa0fe1a"),
             },
         },
         RoleIds: []string{
-            "aspernatur",
-            "quo",
-            "itaque",
-            "illum",
+            "pariatur",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesEnabled,
             shared.SearchUsersRequestUserStatusesDeleted,
-            shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
     if err != nil {

@@ -2,7 +2,7 @@
 
 package shared
 
-// ListPolicyResponse - The ListPolicyResponse message.
+// The ListPolicyResponse message.
 type ListPolicyResponse struct {
 	// The list of results containing up to X results, where X is the page size defined in the request
 	List []Policy `json:"list,omitempty"`

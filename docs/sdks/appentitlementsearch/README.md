@@ -32,50 +32,35 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "molestiae",
-                "minus",
+                "delectus",
             },
         },
-        AccessReviewID: conductoroneapi.String("placeat"),
-        Alias: conductoroneapi.String("voluptatum"),
+        AccessReviewID: conductoroneapi.String("tempora"),
+        Alias: conductoroneapi.String("suscipit"),
         AppIds: []string{
-            "excepturi",
-            "nisi",
+            "molestiae",
         },
         AppUserIds: []string{
-            "temporibus",
-            "ab",
-            "quis",
-            "veritatis",
+            "minus",
         },
         ComplianceFrameworkIds: []string{
-            "perferendis",
-            "ipsam",
-            "repellendus",
+            "placeat",
         },
         ExcludeAppIds: []string{
-            "quo",
-            "odit",
-            "at",
-            "at",
+            "voluptatum",
         },
         ExcludeAppUserIds: []string{
-            "molestiae",
-            "quod",
-            "quod",
-            "esse",
+            "iusto",
         },
         OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(5204.78),
-        PageToken: conductoroneapi.String("porro"),
-        Query: conductoroneapi.String("dolorum"),
+        PageSize: conductoroneapi.Float64(5680.45),
+        PageToken: conductoroneapi.String("nisi"),
+        Query: conductoroneapi.String("recusandae"),
         ResourceTypeIds: []string{
-            "nam",
+            "temporibus",
         },
         RiskLevelIds: []string{
-            "occaecati",
-            "fugit",
-            "deleniti",
+            "ab",
         },
     })
     if err != nil {

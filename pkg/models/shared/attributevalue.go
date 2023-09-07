@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// AttributeValue - AttributeValue is the value of an attribute of a defined type.
+// AttributeValue is the value of an attribute of a defined type.
 type AttributeValue struct {
 	// The ID of the AttributeType that this AttributeValue belongs to.
 	AttributeTypeID *string    `json:"attributeTypeId,omitempty"`

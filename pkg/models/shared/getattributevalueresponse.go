@@ -2,7 +2,7 @@
 
 package shared
 
-// GetAttributeValueResponse - GetAttributeValueResponse is the response for getting an attribute value by id.
+// GetAttributeValueResponse is the response for getting an attribute value by id.
 type GetAttributeValueResponse struct {
 	// AttributeValue is the value of an attribute of a defined type.
 	AttributeValue *AttributeValue `json:"value,omitempty"`

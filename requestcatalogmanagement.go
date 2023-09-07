@@ -155,7 +155,7 @@ func (s *requestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 	return res, nil
 }
 
-// Create - Create
+// Create
 // Creates a new request catalog.
 func (s *requestCatalogManagement) Create(ctx context.Context, request shared.RequestCatalogManagementServiceCreateRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -217,7 +217,7 @@ func (s *requestCatalogManagement) Create(ctx context.Context, request shared.Re
 	return res, nil
 }
 
-// Delete - Delete
+// Delete
 // Delete a catalog.
 func (s *requestCatalogManagement) Delete(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -282,7 +282,7 @@ func (s *requestCatalogManagement) Delete(ctx context.Context, request operation
 	return res, nil
 }
 
-// Get - Get
+// Get
 // Get a catalog.
 func (s *requestCatalogManagement) Get(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
@@ -594,7 +594,7 @@ func (s *requestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 	return res, nil
 }
 
-// Update - Update
+// Update
 // Update a catalog.
 func (s *requestCatalogManagement) Update(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())

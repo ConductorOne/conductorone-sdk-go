@@ -2,7 +2,7 @@
 
 package shared
 
-// ListRolesResponse - The ListRolesResponse message contains a list of results and a nextPageToken if applicable.
+// The ListRolesResponse message contains a list of results and a nextPageToken if applicable.
 type ListRolesResponse struct {
 	// The list of results containing up to X results, where X is the page size defined in the request.
 	List []Role `json:"list,omitempty"`

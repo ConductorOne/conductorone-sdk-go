@@ -2,7 +2,7 @@
 
 package shared
 
-// AppResourceTypeServiceListResponse - The AppResourceTypeServiceListResponse message contains a list of results and a nextPageToken if applicable.
+// The AppResourceTypeServiceListResponse message contains a list of results and a nextPageToken if applicable.
 type AppResourceTypeServiceListResponse struct {
 	// List of serialized related objects.
 	Expanded []map[string]interface{} `json:"expanded,omitempty"`

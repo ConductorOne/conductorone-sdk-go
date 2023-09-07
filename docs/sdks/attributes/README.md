@@ -34,8 +34,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.CreateAttributeValue(ctx, shared.CreateAttributeValueRequest{
-        AttributeTypeID: conductoroneapi.String("aspernatur"),
-        Value: conductoroneapi.String("perferendis"),
+        AttributeTypeID: conductoroneapi.String("blanditiis"),
+        Value: conductoroneapi.String("error"),
     })
     if err != nil {
         log.Fatal(err)
@@ -88,7 +88,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
         DeleteAttributeValueRequest: &shared.DeleteAttributeValueRequest{},
-        ID: "3ce5e6a9-5d8a-40d4-86ce-2af7a73cf3be",
+        ID: "09b3fe49-a8d9-4cbf-8863-3323f9b77f3a",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,7 +140,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
-        ID: "453f870b-326b-45a7-b429-cdb1a8422bb6",
+        ID: "4100674e-bf69-4280-91ba-77a89ebf737a",
     })
     if err != nil {
         log.Fatal(err)
@@ -192,8 +192,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{
-        PageSize: conductoroneapi.Float64(4631.5),
-        PageToken: conductoroneapi.String("molestias"),
+        PageSize: conductoroneapi.Float64(9064.18),
+        PageToken: conductoroneapi.String("eius"),
     })
     if err != nil {
         log.Fatal(err)
@@ -245,9 +245,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "temporibus",
-        PageSize: conductoroneapi.Float64(1832.8),
-        PageToken: conductoroneapi.String("neque"),
+        AttributeTypeID: "aspernatur",
+        PageSize: conductoroneapi.Float64(206.51),
+        PageToken: conductoroneapi.String("amet"),
     })
     if err != nil {
         log.Fatal(err)

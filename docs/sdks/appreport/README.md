@@ -31,9 +31,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "excepturi",
-        PageSize: conductoroneapi.Float64(8651.03),
-        PageToken: conductoroneapi.String("modi"),
+        AppID: "quasi",
+        PageSize: conductoroneapi.Float64(9719.45),
+        PageToken: conductoroneapi.String("voluptatibus"),
     })
     if err != nil {
         log.Fatal(err)

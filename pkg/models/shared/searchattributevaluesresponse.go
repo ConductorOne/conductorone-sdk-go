@@ -2,7 +2,7 @@
 
 package shared
 
-// SearchAttributeValuesResponse - SearchAttributeValuesResponse is the response for searching AttributeValues.
+// SearchAttributeValuesResponse is the response for searching AttributeValues.
 type SearchAttributeValuesResponse struct {
 	// The list of returned AttributeValues.
 	List []AttributeValue `json:"list,omitempty"`

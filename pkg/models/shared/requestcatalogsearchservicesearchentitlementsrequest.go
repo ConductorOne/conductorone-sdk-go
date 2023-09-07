@@ -41,7 +41,7 @@ func (e *RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus) Unma
 	}
 }
 
-// RequestCatalogSearchServiceSearchEntitlementsRequest - The RequestCatalogSearchServiceSearchEntitlementsRequest searches entitlements, but only ones that are available to you through the open catalogs.
+// The RequestCatalogSearchServiceSearchEntitlementsRequest searches entitlements, but only ones that are available to you through the open catalogs.
 type RequestCatalogSearchServiceSearchEntitlementsRequest struct {
 	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
 	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`

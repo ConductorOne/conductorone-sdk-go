@@ -2,7 +2,7 @@
 
 package shared
 
-// SearchUsersResponse - The SearchUsersResponse message.
+// The SearchUsersResponse message.
 type SearchUsersResponse struct {
 	// List of related objects
 	Expanded []map[string]interface{} `json:"expanded,omitempty"`
