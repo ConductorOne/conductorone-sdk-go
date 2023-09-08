@@ -24,17 +24,18 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "accusamus",
-        PageSize: conductoroneapi.Float64(2497.96),
-        PageToken: conductoroneapi.String("occaecati"),
-        ResourceID: "enim",
-        ResourceTypeID: "accusamus",
+        AppID: "incidunt",
+        PageSize: conductoroneapi.Float64(3185.69),
+        PageToken: conductoroneapi.String("consequatur"),
+        ResourceID: "est",
+        ResourceTypeID: "quibusdam",
     })
     if err != nil {
         log.Fatal(err)

@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -30,19 +31,15 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
         AppIds: []string{
-            "expedita",
-            "nihil",
+            "cumque",
         },
-        DisplayName: conductoroneapi.String("repellat"),
+        DisplayName: conductoroneapi.String("facere"),
         ExcludeAppIds: []string{
-            "sed",
-            "saepe",
-            "pariatur",
-            "accusantium",
+            "ea",
         },
-        PageSize: conductoroneapi.Float64(1624.93),
-        PageToken: conductoroneapi.String("praesentium"),
-        Query: conductoroneapi.String("natus"),
+        PageSize: conductoroneapi.Float64(3965.06),
+        PageToken: conductoroneapi.String("laborum"),
+        Query: conductoroneapi.String("accusamus"),
     })
     if err != nil {
         log.Fatal(err)

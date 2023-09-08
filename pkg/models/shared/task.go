@@ -27,6 +27,7 @@ const (
 	TaskActionsTaskActionTypeRollbackSkipped               TaskActions = "TASK_ACTION_TYPE_ROLLBACK_SKIPPED"
 	TaskActionsTaskActionTypeHardReset                     TaskActions = "TASK_ACTION_TYPE_HARD_RESET"
 	TaskActionsTaskActionTypeEscalateToEmergencyAccess     TaskActions = "TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS"
+	TaskActionsTaskActionTypeChangePolicy                  TaskActions = "TASK_ACTION_TYPE_CHANGE_POLICY"
 )
 
 func (e TaskActions) ToPointer() *TaskActions {
@@ -70,6 +71,8 @@ func (e *TaskActions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_HARD_RESET":
 		fallthrough
 	case "TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS":
+		fallthrough
+	case "TASK_ACTION_TYPE_CHANGE_POLICY":
 		*e = TaskActions(v)
 		return nil
 	default:
@@ -178,6 +181,8 @@ type Task struct {
 	ID *string `json:"id,omitempty"`
 	// A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries).
 	NumericID *string `json:"numericId,omitempty"`
+	// The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task.
+	PolicyGenerationID *string `json:"policyGenerationId,omitempty"`
 	// The processing state of a task as defined by the `processing_enum`
 	Processing *TaskProcessing `json:"processing,omitempty"`
 	// The current state of the task as defined by the `state_enum`
@@ -292,6 +297,13 @@ func (o *Task) GetNumericID() *string {
 		return nil
 	}
 	return o.NumericID
+}
+
+func (o *Task) GetPolicyGenerationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyGenerationID
 }
 
 func (o *Task) GetProcessing() *TaskProcessing {

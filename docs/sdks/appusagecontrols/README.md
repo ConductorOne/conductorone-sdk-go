@@ -25,13 +25,14 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "magni",
+        AppID: "non",
     })
     if err != nil {
         log.Fatal(err)
@@ -76,6 +77,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -84,15 +86,15 @@ func main() {
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("sunt"),
+                AppID: conductoroneapi.String("occaecati"),
                 Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(7790.51),
+                NotifyAfterDays: conductoroneapi.Float64(3132.18),
                 Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(8480.09),
+                RevokeAfterDays: conductoroneapi.Float64(8817.36),
             },
-            UpdateMask: conductoroneapi.String("pariatur"),
+            UpdateMask: conductoroneapi.String("delectus"),
         },
-        AppID: "maxime",
+        AppID: "quidem",
     })
     if err != nil {
         log.Fatal(err)

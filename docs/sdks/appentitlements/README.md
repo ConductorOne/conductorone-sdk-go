@@ -6,7 +6,6 @@
 * [List](#list) - List
 * [ListForAppResource](#listforappresource) - List For App Resource
 * [ListForAppUser](#listforappuser) - List For App User
-* [ListGroups](#listgroups) - List Groups
 * [ListUsers](#listusers) - List Users
 * [Update](#update) - Update
 
@@ -30,14 +29,15 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "iste",
-        ID: "396fea75-96eb-410f-aaa2-352c5955907a",
+        AppID: "perferendis",
+        ID: "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
     })
     if err != nil {
         log.Fatal(err)
@@ -82,15 +82,16 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "doloribus",
-        PageSize: conductoroneapi.Float64(9589.5),
-        PageToken: conductoroneapi.String("architecto"),
+        AppID: "esse",
+        PageSize: conductoroneapi.Float64(2165.5),
+        PageToken: conductoroneapi.String("excepturi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -135,17 +136,18 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "mollitia",
-        AppResourceID: "dolorem",
-        AppResourceTypeID: "culpa",
-        PageSize: conductoroneapi.Float64(1613.09),
-        PageToken: conductoroneapi.String("repellat"),
+        AppID: "aspernatur",
+        AppResourceID: "perferendis",
+        AppResourceTypeID: "ad",
+        PageSize: conductoroneapi.Float64(6176.36),
+        PageToken: conductoroneapi.String("sed"),
     })
     if err != nil {
         log.Fatal(err)
@@ -190,16 +192,17 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "mollitia",
-        AppUserID: "occaecati",
-        PageSize: conductoroneapi.Float64(2532.91),
-        PageToken: conductoroneapi.String("commodi"),
+        AppID: "iste",
+        AppUserID: "dolor",
+        PageSize: conductoroneapi.Float64(6169.34),
+        PageToken: conductoroneapi.String("laboriosam"),
     })
     if err != nil {
         log.Fatal(err)
@@ -224,60 +227,6 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../models/operations/c1apiappv1appentitlementslistforappuserresponse.md), error**
 
 
-## ListGroups
-
-List app groups associated with an app entitlement.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"context"
-	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-)
-
-func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
-            Oauth: "",
-        }),
-    )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListGroups(ctx, operations.C1APIAppV1AppEntitlementsListGroupsRequest{
-        AppEntitlementID: "quam",
-        AppID: "molestiae",
-        PageSize: conductoroneapi.Float64(2444.25),
-        PageToken: conductoroneapi.String("error"),
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    if res.ListAppEntitlementGroupsResponse != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                          | :heavy_check_mark:                                                                                                             | The context to use for the request.                                                                                            |
-| `request`                                                                                                                      | [operations.C1APIAppV1AppEntitlementsListGroupsRequest](../../models/operations/c1apiappv1appentitlementslistgroupsrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-
-
-### Response
-
-**[*operations.C1APIAppV1AppEntitlementsListGroupsResponse](../../models/operations/c1apiappv1appentitlementslistgroupsresponse.md), error**
-
-
 ## ListUsers
 
 List the users, as AppEntitlementUsers objects, of an app entitlement.
@@ -298,16 +247,17 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "quia",
-        AppID: "quis",
-        PageSize: conductoroneapi.Float64(1103.75),
-        PageToken: conductoroneapi.String("laborum"),
+        AppEntitlementID: "hic",
+        AppID: "saepe",
+        PageSize: conductoroneapi.Float64(6818.2),
+        PageToken: conductoroneapi.String("in"),
     })
     if err != nil {
         log.Fatal(err)
@@ -352,6 +302,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -363,49 +314,43 @@ func main() {
                 ProvisionPolicy: &shared.ProvisionPolicy{
                     ConnectorProvision: &shared.ConnectorProvision{},
                     DelegatedProvision: &shared.DelegatedProvision{
-                        AppID: conductoroneapi.String("animi"),
-                        EntitlementID: conductoroneapi.String("enim"),
+                        AppID: conductoroneapi.String("corporis"),
+                        EntitlementID: conductoroneapi.String("iste"),
                     },
                     ManualProvision: &shared.ManualProvision{
-                        Instructions: conductoroneapi.String("odit"),
+                        Instructions: conductoroneapi.String("iure"),
                         UserIds: []string{
-                            "sequi",
-                            "tenetur",
-                            "ipsam",
-                            "id",
+                            "saepe",
                         },
                     },
                 },
-                AppID: conductoroneapi.String("possimus"),
-                AppResourceID: conductoroneapi.String("aut"),
-                AppResourceTypeID: conductoroneapi.String("quasi"),
-                CertifyPolicyID: conductoroneapi.String("error"),
+                AppID: conductoroneapi.String("quidem"),
+                AppResourceID: conductoroneapi.String("architecto"),
+                AppResourceTypeID: conductoroneapi.String("ipsa"),
+                CertifyPolicyID: conductoroneapi.String("reiciendis"),
                 ComplianceFrameworkValueIds: []string{
-                    "laborum",
-                    "quasi",
-                    "reiciendis",
-                    "voluptatibus",
+                    "est",
                 },
-                Description: conductoroneapi.String("vero"),
-                DisplayName: conductoroneapi.String("nihil"),
-                DurationGrant: conductoroneapi.String("praesentium"),
+                Description: conductoroneapi.String("mollitia"),
+                DisplayName: conductoroneapi.String("laborum"),
+                DurationGrant: conductoroneapi.String("dolores"),
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
                 EmergencyGrantEnabled: conductoroneapi.Bool(false),
-                EmergencyGrantPolicyID: conductoroneapi.String("voluptatibus"),
-                GrantPolicyID: conductoroneapi.String("ipsa"),
-                RevokePolicyID: conductoroneapi.String("omnis"),
-                RiskLevelValueID: conductoroneapi.String("voluptate"),
-                Slug: conductoroneapi.String("cum"),
+                EmergencyGrantPolicyID: conductoroneapi.String("dolorem"),
+                GrantPolicyID: conductoroneapi.String("corporis"),
+                RevokePolicyID: conductoroneapi.String("explicabo"),
+                RiskLevelValueID: conductoroneapi.String("nobis"),
+                Slug: conductoroneapi.String("enim"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "doloremque",
+                    "omnis",
                 },
             },
-            UpdateMask: conductoroneapi.String("reprehenderit"),
+            UpdateMask: conductoroneapi.String("nemo"),
         },
-        AppID: "ut",
-        ID: "f15471b5-e6e1-43b9-9d48-8e1e91e450ad",
+        AppID: "minima",
+        ID: "907aff1a-3a2f-4a94-a773-9251aa52c3f5",
     })
     if err != nil {
         log.Fatal(err)

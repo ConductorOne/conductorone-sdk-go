@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -30,32 +31,22 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "quidem",
-            "provident",
-            "nam",
-            "id",
+            "explicabo",
         },
         ExcludeResourceTypeIds: []string{
-            "deleniti",
-            "sapiente",
-            "amet",
+            "deserunt",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "nisi",
-            "vel",
-            "natus",
-        },
-        PageSize: conductoroneapi.Float64(6063.93),
-        PageToken: conductoroneapi.String("molestiae"),
-        Query: conductoroneapi.String("perferendis"),
-        ResourceTypeIds: []string{
-            "magnam",
             "distinctio",
         },
+        PageSize: conductoroneapi.Float64(8413.86),
+        PageToken: conductoroneapi.String("labore"),
+        Query: conductoroneapi.String("modi"),
+        ResourceTypeIds: []string{
+            "qui",
+        },
         ResourceTypeTraitIds: []string{
-            "labore",
-            "labore",
-            "suscipit",
+            "aliquid",
         },
     })
     if err != nil {

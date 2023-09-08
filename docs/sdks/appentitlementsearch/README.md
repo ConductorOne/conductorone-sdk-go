@@ -23,6 +23,7 @@ import(
 func main() {
     s := conductoroneapi.New(
         conductoroneapi.WithSecurity(shared.Security{
+            BearerAuth: "",
             Oauth: "",
         }),
     )
@@ -31,49 +32,35 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "sapiente",
-                "quo",
-                "odit",
-                "at",
+                "delectus",
             },
         },
-        AccessReviewID: conductoroneapi.String("at"),
-        Alias: conductoroneapi.String("maiores"),
+        AccessReviewID: conductoroneapi.String("tempora"),
+        Alias: conductoroneapi.String("suscipit"),
         AppIds: []string{
-            "quod",
-            "quod",
-        },
-        AppUserIds: []string{
-            "totam",
-            "porro",
-        },
-        ComplianceFrameworkIds: []string{
-            "dicta",
-            "nam",
-            "officia",
-        },
-        ExcludeAppIds: []string{
-            "fugit",
-            "deleniti",
-            "hic",
-        },
-        ExcludeAppUserIds: []string{
-            "totam",
-            "beatae",
-            "commodi",
             "molestiae",
         },
+        AppUserIds: []string{
+            "minus",
+        },
+        ComplianceFrameworkIds: []string{
+            "placeat",
+        },
+        ExcludeAppIds: []string{
+            "voluptatum",
+        },
+        ExcludeAppUserIds: []string{
+            "iusto",
+        },
         OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(2645.55),
-        PageToken: conductoroneapi.String("qui"),
-        Query: conductoroneapi.String("impedit"),
+        PageSize: conductoroneapi.Float64(5680.45),
+        PageToken: conductoroneapi.String("nisi"),
+        Query: conductoroneapi.String("recusandae"),
         ResourceTypeIds: []string{
-            "esse",
-            "ipsum",
-            "excepturi",
+            "temporibus",
         },
         RiskLevelIds: []string{
-            "perferendis",
+            "ab",
         },
     })
     if err != nil {
