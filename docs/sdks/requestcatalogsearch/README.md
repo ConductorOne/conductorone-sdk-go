@@ -38,6 +38,7 @@ func main() {
         AppDisplayName: conductoroneapi.String("fugit"),
         EntitlementAlias: conductoroneapi.String("id"),
         GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusAll.ToPointer(),
+        IncludeDeleted: conductoroneapi.Bool(false),
         PageSize: conductoroneapi.Float64(4402.64),
         PageToken: conductoroneapi.String("error"),
         Query: conductoroneapi.String("illo"),

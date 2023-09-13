@@ -52,6 +52,7 @@ func main() {
         ExcludeAppUserIds: []string{
             "iusto",
         },
+        IncludeDeleted: conductoroneapi.Bool(false),
         OnlyGetExpiring: conductoroneapi.Bool(false),
         PageSize: conductoroneapi.Float64(5680.45),
         PageToken: conductoroneapi.String("nisi"),
