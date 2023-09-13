@@ -258,6 +258,7 @@ pkg/models/shared/approval.go
 pkg/models/shared/userapproval.go
 pkg/models/shared/selfapproval.go
 pkg/models/shared/managerapproval.go
+pkg/models/shared/expressionapproval.go
 pkg/models/shared/entitlementownerapproval.go
 pkg/models/shared/appownerapproval.go
 pkg/models/shared/appgroupapproval.go
@@ -684,6 +685,8 @@ docs/models/shared/selfapproval.md
 docs/models/shared/selfapprovalinput.md
 docs/models/shared/managerapproval.md
 docs/models/shared/managerapprovalinput.md
+docs/models/shared/expressionapproval.md
+docs/models/shared/expressionapprovalinput.md
 docs/models/shared/entitlementownerapproval.md
 docs/models/shared/entitlementownerapprovalinput.md
 docs/models/shared/appownerapproval.md

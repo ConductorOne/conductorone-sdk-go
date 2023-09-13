@@ -17,6 +17,7 @@ type PolicyStep struct {
 	//   - group
 	//   - self
 	//   - entitlementOwners
+	//   - expression
 	//
 	Approval *Approval `json:"approval,omitempty"`
 	// The provision step references a provision policy for this step.
@@ -52,6 +53,7 @@ type PolicyStepInput struct {
 	//   - group
 	//   - self
 	//   - entitlementOwners
+	//   - expression
 	//
 	Approval *ApprovalInput `json:"approval,omitempty"`
 	// The provision step references a provision policy for this step.
