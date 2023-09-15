@@ -1,0 +1,42 @@
+name: Update Go Dependencies
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update_dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.21' # Adjust the Go version as needed
+
+    - name: Update dependencies
+      run: go get -u
+
+    - name: Check for changes
+      id: git_diff
+      run: |
+        git diff
+        if [[ -n $(git diff) ]]; then
+          echo "::set-output name=has_changes::true"
+          git config user.name 'GitHub Actions Bot'
+          git config user.email 'github-actions@github.com'
+          git add .
+          git commit -m "Update Go dependencies"
+        fi
+
+    - name: Create Pull Request
+      if: steps.git_diff.outputs.has_changes == 'true'
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update Go dependencies"
+        title: "Update Go dependencies"
+        body: "This PR updates the Go dependencies to their latest versions."
+        branch: "update-go-dependencies"
