@@ -37,13 +37,13 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "provident",
+                    "eum",
                 },
             },
-            Comment: conductoroneapi.String("quis"),
-            PolicyStepID: "eum",
+            Comment: conductoroneapi.String("reiciendis"),
+            PolicyStepID: "provident",
         },
-        TaskID: "reiciendis",
+        TaskID: "aspernatur",
     })
     if err != nil {
         log.Fatal(err)
@@ -98,12 +98,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "provident",
+                    "ullam",
                 },
             },
-            Comment: conductoroneapi.String("aspernatur"),
+            Comment: conductoroneapi.String("quasi"),
         },
-        TaskID: "ullam",
+        TaskID: "animi",
     })
     if err != nil {
         log.Fatal(err)
@@ -158,13 +158,13 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quasi",
+                    "nostrum",
                 },
             },
-            Comment: conductoroneapi.String("animi"),
-            PolicyStepID: conductoroneapi.String("nostrum"),
+            Comment: conductoroneapi.String("mollitia"),
+            PolicyStepID: conductoroneapi.String("provident"),
         },
-        TaskID: "mollitia",
+        TaskID: "possimus",
     })
     if err != nil {
         log.Fatal(err)
@@ -219,13 +219,13 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "provident",
+                    "animi",
                 },
             },
-            Comment: conductoroneapi.String("possimus"),
-            PolicyStepID: conductoroneapi.String("animi"),
+            Comment: conductoroneapi.String("ex"),
+            PolicyStepID: conductoroneapi.String("aliquid"),
         },
-        TaskID: "ex",
+        TaskID: "accusantium",
     })
     if err != nil {
         log.Fatal(err)

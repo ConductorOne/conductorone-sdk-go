@@ -51,6 +51,8 @@ type RequestCatalogSearchServiceSearchEntitlementsRequest struct {
 	EntitlementAlias *string `json:"entitlementAlias,omitempty"`
 	// Search entitlements with this granted status for your signed in user.
 	GrantedStatus *RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatus `json:"grantedStatus,omitempty"`
+	// Include deleted entitlements
+	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *float64 `json:"pageSize,omitempty"`
 	// The pageToken field.
@@ -85,6 +87,13 @@ func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetGrantedStatus(
 		return nil
 	}
 	return o.GrantedStatus
+}
+
+func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetIncludeDeleted() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IncludeDeleted
 }
 
 func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetPageSize() *float64 {

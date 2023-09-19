@@ -157,7 +157,7 @@ func WithSecurity(security shared.Security) SDKOption {
 }
 
 func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
-	return func(sdk *SDK) {
+	return func(sdk *ConductoroneAPI) {
 		sdk.sdkConfiguration.RetryConfig = &retryConfig
 	}
 }
@@ -168,8 +168,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.8.0",
-			GenVersion:        "2.107.0",
+			SDKVersion:        "1.8.1",
+			GenVersion:        "2.116.0",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",

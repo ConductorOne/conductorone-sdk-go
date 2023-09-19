@@ -190,6 +190,7 @@ func main() {
 * [Create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [Delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
 * [Get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
+* [List](docs/sdks/requestcatalogmanagement/README.md#list) - List
 * [ListEntitlementsForAccess](docs/sdks/requestcatalogmanagement/README.md#listentitlementsforaccess) - List Entitlements For Access
 * [ListEntitlementsPerCatalog](docs/sdks/requestcatalogmanagement/README.md#listentitlementspercatalog) - List Entitlements Per Catalog
 * [RemoveAccessEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeaccessentitlements) - Remove Access Entitlements
