@@ -34,20 +34,20 @@ func main() {
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "totam",
+                "molestiae",
             },
         },
         TaskGrantSource: &shared.TaskGrantSource{
-            ExternalURL: conductoroneapi.String("quae"),
-            IntegrationID: conductoroneapi.String("molestiae"),
+            ExternalURL: conductoroneapi.String("eveniet"),
+            IntegrationID: conductoroneapi.String("qui"),
         },
-        AppEntitlementID: "eveniet",
-        AppID: "qui",
-        AppUserID: conductoroneapi.String("cum"),
-        Description: conductoroneapi.String("iure"),
+        AppEntitlementID: "cum",
+        AppID: "iure",
+        AppUserID: conductoroneapi.String("necessitatibus"),
+        Description: conductoroneapi.String("ratione"),
         EmergencyAccess: conductoroneapi.Bool(false),
-        GrantDuration: conductoroneapi.String("necessitatibus"),
-        IdentityUserID: conductoroneapi.String("ratione"),
+        GrantDuration: conductoroneapi.String("laborum"),
+        IdentityUserID: conductoroneapi.String("distinctio"),
     })
     if err != nil {
         log.Fatal(err)
@@ -100,14 +100,14 @@ func main() {
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "laborum",
+                "voluptatum",
             },
         },
-        AppEntitlementID: "distinctio",
-        AppID: "voluptatum",
-        AppUserID: conductoroneapi.String("rem"),
-        Description: conductoroneapi.String("aliquam"),
-        IdentityUserID: conductoroneapi.String("ad"),
+        AppEntitlementID: "rem",
+        AppID: "aliquam",
+        AppUserID: conductoroneapi.String("ad"),
+        Description: conductoroneapi.String("repellat"),
+        IdentityUserID: conductoroneapi.String("alias"),
     })
     if err != nil {
         log.Fatal(err)
@@ -159,7 +159,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "f0597a60-ff2a-454a-b1e9-4764a3e865e7",
+        ID: "597a60ff-2a54-4a31-a947-64a3e865e795",
     })
     if err != nil {
         log.Fatal(err)

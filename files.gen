@@ -109,6 +109,7 @@ pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddapp
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreate.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelete.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceget.go
+pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelist.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccess.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalog.go
 pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlements.go
@@ -249,6 +250,7 @@ pkg/models/shared/personalclient.go
 pkg/models/shared/personalclientservicecreaterequest.go
 pkg/models/shared/createpolicyresponse.go
 pkg/models/shared/policy.go
+pkg/models/shared/rule.go
 pkg/models/shared/policypostactions.go
 pkg/models/shared/policysteps.go
 pkg/models/shared/policystep.go
@@ -258,6 +260,7 @@ pkg/models/shared/approval.go
 pkg/models/shared/userapproval.go
 pkg/models/shared/selfapproval.go
 pkg/models/shared/managerapproval.go
+pkg/models/shared/expressionapproval.go
 pkg/models/shared/entitlementownerapproval.go
 pkg/models/shared/appownerapproval.go
 pkg/models/shared/appgroupapproval.go
@@ -282,6 +285,7 @@ pkg/models/shared/requestcatalogmanagementservicecreaterequest.go
 pkg/models/shared/requestcatalogexpandmask.go
 pkg/models/shared/requestcatalogmanagementservicedeleteresponse.go
 pkg/models/shared/requestcatalogmanagementservicedeleterequest.go
+pkg/models/shared/requestcatalogmanagementservicelistresponse.go
 pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.go
 pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.go
 pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.go
@@ -499,6 +503,7 @@ docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelet
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
+docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
 docs/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogrequest.md
@@ -669,6 +674,7 @@ docs/models/shared/createpolicyresponse.md
 docs/models/shared/policypolicytype.md
 docs/models/shared/policy.md
 docs/models/shared/policyinput.md
+docs/models/shared/rule.md
 docs/models/shared/policypostactions.md
 docs/models/shared/policysteps.md
 docs/models/shared/policystepsinput.md
@@ -684,6 +690,8 @@ docs/models/shared/selfapproval.md
 docs/models/shared/selfapprovalinput.md
 docs/models/shared/managerapproval.md
 docs/models/shared/managerapprovalinput.md
+docs/models/shared/expressionapproval.md
+docs/models/shared/expressionapprovalinput.md
 docs/models/shared/entitlementownerapproval.md
 docs/models/shared/entitlementownerapprovalinput.md
 docs/models/shared/appownerapproval.md
@@ -715,6 +723,7 @@ docs/models/shared/requestcatalogmanagementservicecreaterequest.md
 docs/models/shared/requestcatalogexpandmask.md
 docs/models/shared/requestcatalogmanagementservicedeleteresponse.md
 docs/models/shared/requestcatalogmanagementservicedeleterequest.md
+docs/models/shared/requestcatalogmanagementservicelistresponse.md
 docs/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.md
 docs/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.md
 docs/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
