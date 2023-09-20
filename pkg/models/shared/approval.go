@@ -11,6 +11,7 @@ package shared
 //   - group
 //   - self
 //   - entitlementOwners
+//   - expression
 type Approval struct {
 	// The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
 	AppGroupApproval *AppGroupApproval `json:"group,omitempty"`
@@ -18,6 +19,8 @@ type Approval struct {
 	AppOwnerApproval *AppOwnerApproval `json:"appOwners,omitempty"`
 	// The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners.
 	EntitlementOwnerApproval *EntitlementOwnerApproval `json:"entitlementOwners,omitempty"`
+	// The ExpressionApproval message.
+	ExpressionApproval *ExpressionApproval `json:"expression,omitempty"`
 	// The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task.
 	ManagerApproval *ManagerApproval `json:"manager,omitempty"`
 	// The self approval object describes the configuration of a policy step that needs to be approved by the target of the request.
@@ -53,6 +56,13 @@ func (o *Approval) GetEntitlementOwnerApproval() *EntitlementOwnerApproval {
 		return nil
 	}
 	return o.EntitlementOwnerApproval
+}
+
+func (o *Approval) GetExpressionApproval() *ExpressionApproval {
+	if o == nil {
+		return nil
+	}
+	return o.ExpressionApproval
 }
 
 func (o *Approval) GetManagerApproval() *ManagerApproval {
@@ -113,6 +123,7 @@ func (o *Approval) GetRequireReassignmentReason() *bool {
 //   - group
 //   - self
 //   - entitlementOwners
+//   - expression
 type ApprovalInput struct {
 	// The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
 	AppGroupApproval *AppGroupApprovalInput `json:"group,omitempty"`
@@ -120,6 +131,8 @@ type ApprovalInput struct {
 	AppOwnerApproval *AppOwnerApprovalInput `json:"appOwners,omitempty"`
 	// The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners.
 	EntitlementOwnerApproval *EntitlementOwnerApprovalInput `json:"entitlementOwners,omitempty"`
+	// The ExpressionApproval message.
+	ExpressionApproval *ExpressionApprovalInput `json:"expression,omitempty"`
 	// The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task.
 	ManagerApproval *ManagerApprovalInput `json:"manager,omitempty"`
 	// The self approval object describes the configuration of a policy step that needs to be approved by the target of the request.
@@ -147,6 +160,13 @@ func (o *ApprovalInput) GetEntitlementOwnerApproval() *EntitlementOwnerApprovalI
 		return nil
 	}
 	return o.EntitlementOwnerApproval
+}
+
+func (o *ApprovalInput) GetExpressionApproval() *ExpressionApprovalInput {
+	if o == nil {
+		return nil
+	}
+	return o.ExpressionApproval
 }
 
 func (o *ApprovalInput) GetManagerApproval() *ManagerApprovalInput {

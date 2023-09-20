@@ -44,6 +44,7 @@ func main() {
                             AppGroupApproval: &shared.AppGroupApprovalInput{},
                             AppOwnerApproval: &shared.AppOwnerApprovalInput{},
                             EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
+                            ExpressionApproval: &shared.ExpressionApprovalInput{},
                             ManagerApproval: &shared.ManagerApprovalInput{},
                             SelfApproval: &shared.SelfApprovalInput{},
                             UserApproval: &shared.UserApprovalInput{},
@@ -302,6 +303,7 @@ func main() {
                                     AppGroupApproval: &shared.AppGroupApprovalInput{},
                                     AppOwnerApproval: &shared.AppOwnerApprovalInput{},
                                     EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
+                                    ExpressionApproval: &shared.ExpressionApprovalInput{},
                                     ManagerApproval: &shared.ManagerApprovalInput{},
                                     SelfApproval: &shared.SelfApprovalInput{},
                                     UserApproval: &shared.UserApprovalInput{},
@@ -339,10 +341,16 @@ func main() {
                     },
                 },
                 ReassignTasksToDelegates: conductoroneapi.Bool(false),
+                Rules: []shared.Rule{
+                    shared.Rule{
+                        Condition: conductoroneapi.String("architecto"),
+                        PolicyKey: conductoroneapi.String("omnis"),
+                    },
+                },
             },
-            UpdateMask: conductoroneapi.String("architecto"),
+            UpdateMask: conductoroneapi.String("tenetur"),
         },
-        ID: "9f1d1705-1339-4d08-886a-1840394c2607",
+        ID: "1d170513-39d0-4808-aa18-40394c26071f",
     })
     if err != nil {
         log.Fatal(err)
