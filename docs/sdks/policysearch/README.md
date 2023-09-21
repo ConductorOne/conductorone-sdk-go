@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -30,16 +30,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoroneapi.String("natus"),
-        PageSize: conductoroneapi.Float64(2446.51),
-        PageToken: conductoroneapi.String("voluptatibus"),
+        DisplayName: conductoronesdkgo.String("ea"),
+        PageSize: conductoronesdkgo.Float64(3100.67),
+        PageToken: conductoronesdkgo.String("consequuntur"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
         },
-        Query: conductoroneapi.String("asperiores"),
+        Query: conductoronesdkgo.String("officia"),
         Refs: []shared.PolicyRef{
             shared.PolicyRef{
-                ID: conductoroneapi.String("0642dac7-af51-45cc-813a-a63aae8d6786"),
+                ID: conductoronesdkgo.String("c7af515c-c413-4aa6-baae-8d67864dbb67"),
             },
         },
     })

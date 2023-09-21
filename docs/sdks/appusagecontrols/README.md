@@ -17,14 +17,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -32,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "non",
+        AppID: "accusamus",
     })
     if err != nil {
         log.Fatal(err)
@@ -69,14 +69,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -86,15 +86,15 @@ func main() {
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoroneapi.String("occaecati"),
-                Notify: conductoroneapi.Bool(false),
-                NotifyAfterDays: conductoroneapi.Float64(3132.18),
-                Revoke: conductoroneapi.Bool(false),
-                RevokeAfterDays: conductoroneapi.Float64(8817.36),
+                AppID: conductoronesdkgo.String("delectus"),
+                Notify: conductoronesdkgo.Bool(false),
+                NotifyAfterDays: conductoronesdkgo.Float64(6925.32),
+                Revoke: conductoronesdkgo.Bool(false),
+                RevokeAfterDays: conductoronesdkgo.Float64(5884.65),
             },
-            UpdateMask: conductoroneapi.String("delectus"),
+            UpdateMask: conductoronesdkgo.String("nam"),
         },
-        AppID: "quidem",
+        AppID: "id",
     })
     if err != nil {
         log.Fatal(err)
