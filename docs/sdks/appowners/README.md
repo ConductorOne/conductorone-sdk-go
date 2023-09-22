@@ -18,14 +18,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,8 +34,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "id",
-        UserID: "possimus",
+        AppID: "quasi",
+        UserID: "error",
     })
     if err != nil {
         log.Fatal(err)
@@ -72,14 +72,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -87,9 +87,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "aut",
-        PageSize: conductoroneapi.Float64(971.01),
-        PageToken: conductoroneapi.String("error"),
+        AppID: "temporibus",
+        PageSize: conductoronesdkgo.Float64(6736.6),
+        PageToken: conductoronesdkgo.String("quasi"),
     })
     if err != nil {
         log.Fatal(err)
@@ -126,14 +126,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -142,8 +142,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "temporibus",
-        UserID: "laborum",
+        AppID: "reiciendis",
+        UserID: "voluptatibus",
     })
     if err != nil {
         log.Fatal(err)

@@ -26,14 +26,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -44,12 +44,12 @@ func main() {
         RequestCatalogManagementServiceAddAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("labore"),
-                    ID: conductoroneapi.String("dbb675fd-5e60-4b37-9ed4-f6fbee41f333"),
+                    AppID: conductoronesdkgo.String("corporis"),
+                    ID: conductoronesdkgo.String("fd5e60b3-75ed-44f6-bbee-41f33317fe35"),
                 },
             },
         },
-        CatalogID: "beatae",
+        CatalogID: "harum",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,14 +86,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -104,12 +104,12 @@ func main() {
         RequestCatalogManagementServiceAddAppEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("dignissimos"),
-                    ID: conductoroneapi.String("fe35b60e-b1ea-4426-955b-a3c28744ed53"),
+                    AppID: conductoronesdkgo.String("laboriosam"),
+                    ID: conductoronesdkgo.String("0eb1ea42-6555-4ba3-8287-44ed53b88f3a"),
                 },
             },
         },
-        CatalogID: "cum",
+        CatalogID: "corrupti",
     })
     if err != nil {
         log.Fatal(err)
@@ -146,13 +146,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -162,13 +162,13 @@ func main() {
     res, err := s.RequestCatalogManagement.Create(ctx, shared.RequestCatalogManagementServiceCreateRequest{
         RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
             Paths: []string{
-                "blanditiis",
+                "pariatur",
             },
         },
-        Description: conductoroneapi.String("quas"),
-        DisplayName: conductoroneapi.String("hic"),
-        Published: conductoroneapi.Bool(false),
-        VisibleToEveryone: conductoroneapi.Bool(false),
+        Description: conductoronesdkgo.String("totam"),
+        DisplayName: conductoronesdkgo.String("hic"),
+        Published: conductoronesdkgo.Bool(false),
+        VisibleToEveryone: conductoronesdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -205,14 +205,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -221,7 +221,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
         RequestCatalogManagementServiceDeleteRequest: &shared.RequestCatalogManagementServiceDeleteRequest{},
-        ID: "3a8d8f5c-0b2f-42fb-bb19-4a276b26916f",
+        ID: "5c0b2f2f-b7b1-494a-a76b-26916fe1f08f",
     })
     if err != nil {
         log.Fatal(err)
@@ -258,14 +258,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -273,7 +273,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "e1f08f42-94e3-4698-b447-f603e8b445e8",
+        ID: "4294e369-8f44-47f6-83e8-b445e80ca55e",
     })
     if err != nil {
         log.Fatal(err)
@@ -310,13 +310,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -358,14 +358,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -373,9 +373,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "sit",
-        PageSize: conductoroneapi.Float64(7505.95),
-        PageToken: conductoroneapi.String("error"),
+        CatalogID: "reiciendis",
+        PageSize: conductoronesdkgo.Float64(8623.19),
+        PageToken: conductoronesdkgo.String("magni"),
     })
     if err != nil {
         log.Fatal(err)
@@ -412,14 +412,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -427,9 +427,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "veniam",
-        PageSize: conductoroneapi.Float64(3295.43),
-        PageToken: conductoroneapi.String("recusandae"),
+        CatalogID: "aperiam",
+        PageSize: conductoronesdkgo.Float64(9014.83),
+        PageToken: conductoronesdkgo.String("numquam"),
     })
     if err != nil {
         log.Fatal(err)
@@ -466,14 +466,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -484,12 +484,12 @@ func main() {
         RequestCatalogManagementServiceRemoveAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("reiciendis"),
-                    ID: conductoroneapi.String("d20e457e-1858-4b6a-89fb-e3a5aa8e4824"),
+                    AppID: conductoronesdkgo.String("veniam"),
+                    ID: conductoronesdkgo.String("7e1858b6-a89f-4be3-a5aa-8e4824d0ab40"),
                 },
             },
         },
-        CatalogID: "fugiat",
+        CatalogID: "esse",
     })
     if err != nil {
         log.Fatal(err)
@@ -526,14 +526,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -544,12 +544,12 @@ func main() {
         RequestCatalogManagementServiceRemoveAppEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoroneapi.String("voluptatem"),
-                    ID: conductoroneapi.String("ab407508-8e51-4862-865e-904f3b1194b8"),
+                    AppID: conductoronesdkgo.String("ipsam"),
+                    ID: conductoronesdkgo.String("088e5186-2065-4e90-8f3b-1194b8abf603"),
                 },
             },
         },
-        CatalogID: "laborum",
+        CatalogID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)
@@ -586,14 +586,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -608,53 +608,53 @@ func main() {
                         ProvisionPolicy: &shared.ProvisionPolicy{
                             ConnectorProvision: &shared.ConnectorProvision{},
                             DelegatedProvision: &shared.DelegatedProvision{
-                                AppID: conductoroneapi.String("nam"),
-                                EntitlementID: conductoroneapi.String("tenetur"),
+                                AppID: conductoronesdkgo.String("voluptate"),
+                                EntitlementID: conductoronesdkgo.String("unde"),
                             },
                             ManualProvision: &shared.ManualProvision{
-                                Instructions: conductoroneapi.String("laboriosam"),
+                                Instructions: conductoronesdkgo.String("reiciendis"),
                                 UserIds: []string{
-                                    "alias",
+                                    "provident",
                                 },
                             },
                         },
-                        AppID: conductoroneapi.String("amet"),
-                        AppResourceID: conductoroneapi.String("deserunt"),
-                        AppResourceTypeID: conductoroneapi.String("voluptate"),
-                        CertifyPolicyID: conductoroneapi.String("unde"),
+                        AppID: conductoronesdkgo.String("repellendus"),
+                        AppResourceID: conductoronesdkgo.String("delectus"),
+                        AppResourceTypeID: conductoronesdkgo.String("voluptates"),
+                        CertifyPolicyID: conductoronesdkgo.String("perferendis"),
                         ComplianceFrameworkValueIds: []string{
-                            "reiciendis",
+                            "est",
                         },
-                        Description: conductoroneapi.String("provident"),
-                        DisplayName: conductoroneapi.String("repellendus"),
-                        DurationGrant: conductoroneapi.String("delectus"),
+                        Description: conductoronesdkgo.String("quidem"),
+                        DisplayName: conductoronesdkgo.String("reprehenderit"),
+                        DurationGrant: conductoronesdkgo.String("facere"),
                         DurationUnset: &shared.AppEntitlementDurationUnset{},
-                        EmergencyGrantEnabled: conductoroneapi.Bool(false),
-                        EmergencyGrantPolicyID: conductoroneapi.String("voluptates"),
-                        GrantPolicyID: conductoroneapi.String("perferendis"),
-                        RevokePolicyID: conductoroneapi.String("est"),
-                        RiskLevelValueID: conductoroneapi.String("quidem"),
-                        Slug: conductoroneapi.String("reprehenderit"),
+                        EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
+                        EmergencyGrantPolicyID: conductoronesdkgo.String("fuga"),
+                        GrantPolicyID: conductoronesdkgo.String("praesentium"),
+                        RevokePolicyID: conductoronesdkgo.String("mollitia"),
+                        RiskLevelValueID: conductoronesdkgo.String("veniam"),
+                        Slug: conductoronesdkgo.String("voluptatem"),
                     },
                 },
                 AppIds: []string{
-                    "facere",
+                    "quisquam",
                 },
-                CreatedByUserID: conductoroneapi.String("fuga"),
-                Description: conductoroneapi.String("praesentium"),
-                DisplayName: conductoroneapi.String("mollitia"),
-                ID: conductoroneapi.String("50ce187f-86bc-4173-9689-eee9526f8d98"),
-                Published: conductoroneapi.Bool(false),
-                VisibleToEveryone: conductoroneapi.Bool(false),
+                CreatedByUserID: conductoronesdkgo.String("repudiandae"),
+                Description: conductoronesdkgo.String("quasi"),
+                DisplayName: conductoronesdkgo.String("atque"),
+                ID: conductoronesdkgo.String("7f86bc17-3d68-49ee-a952-6f8d986e881e"),
+                Published: conductoronesdkgo.Bool(false),
+                VisibleToEveryone: conductoronesdkgo.Bool(false),
             },
             RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
                 Paths: []string{
-                    "suscipit",
+                    "dolorum",
                 },
             },
-            UpdateMask: conductoroneapi.String("repudiandae"),
+            UpdateMask: conductoronesdkgo.String("repellendus"),
         },
-        ID: "881ead4f-0e10-4125-a3f9-4e29e973e922",
+        ID: "4f0e1012-563f-494e-a9e9-73e922a57a15",
     })
     if err != nil {
         log.Fatal(err)
