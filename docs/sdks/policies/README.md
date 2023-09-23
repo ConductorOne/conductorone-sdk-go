@@ -20,13 +20,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,12 +34,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Create(ctx, shared.CreatePolicyRequestInput{
-        Description: conductoroneapi.String("nisi"),
-        DisplayName: conductoroneapi.String("fugit"),
+        Description: conductoronesdkgo.String("saepe"),
+        DisplayName: conductoronesdkgo.String("occaecati"),
         PolicySteps: map[string]shared.PolicyStepsInput{
-            "sapiente": shared.PolicyStepsInput{
+            "atque": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
+                        Accept: &shared.Accept{},
                         Approval: &shared.ApprovalInput{
                             AppGroupApproval: &shared.AppGroupApprovalInput{},
                             AppOwnerApproval: &shared.AppOwnerApprovalInput{},
@@ -53,24 +54,25 @@ func main() {
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
                                 DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoroneapi.String("consequuntur"),
-                                    EntitlementID: conductoroneapi.String("ratione"),
+                                    AppID: conductoronesdkgo.String("et"),
+                                    EntitlementID: conductoronesdkgo.String("esse"),
                                 },
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoroneapi.String("explicabo"),
+                                    Instructions: conductoronesdkgo.String("eveniet"),
                                     UserIds: []string{
-                                        "saepe",
+                                        "accusamus",
                                     },
                                 },
                             },
                             ProvisionTarget: &shared.ProvisionTarget{
-                                AppEntitlementID: conductoroneapi.String("occaecati"),
-                                AppID: conductoroneapi.String("atque"),
-                                AppUserID: conductoroneapi.String("et"),
-                                GrantDuration: conductoroneapi.String("esse"),
+                                AppEntitlementID: conductoronesdkgo.String("veritatis"),
+                                AppID: conductoronesdkgo.String("esse"),
+                                AppUserID: conductoronesdkgo.String("quod"),
+                                GrantDuration: conductoronesdkgo.String("nam"),
                             },
-                            Assigned: conductoroneapi.Bool(false),
+                            Assigned: conductoronesdkgo.Bool(false),
                         },
+                        Reject: &shared.Reject{},
                     },
                 },
             },
@@ -78,10 +80,10 @@ func main() {
         PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeProvision.ToPointer(),
         PostActions: []shared.PolicyPostActions{
             shared.PolicyPostActions{
-                CertifyRemediateImmediately: conductoroneapi.Bool(false),
+                CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
             },
         },
-        ReassignTasksToDelegates: conductoroneapi.Bool(false),
+        ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -118,14 +120,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -134,7 +136,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
         DeletePolicyRequest: &shared.DeletePolicyRequest{},
-        ID: "e17cbe61-e6b7-4b95-bc0a-b3c20c4f3789",
+        ID: "61e6b7b9-5bc0-4ab3-820c-4f3789fd871f",
     })
     if err != nil {
         log.Fatal(err)
@@ -171,14 +173,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -186,7 +188,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
-        ID: "fd871f99-dd2e-4fd1-a1aa-6f1e674bdb04",
+        ID: "99dd2efd-121a-4a6f-9e67-4bdb04f15756",
     })
     if err != nil {
         log.Fatal(err)
@@ -223,14 +225,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -238,8 +240,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{
-        PageSize: conductoroneapi.Float64(9589.83),
-        PageToken: conductoroneapi.String("dicta"),
+        PageSize: conductoronesdkgo.Float64(163.28),
+        PageToken: conductoronesdkgo.String("voluptatum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -276,14 +278,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -293,12 +295,13 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequestInput: &shared.UpdatePolicyRequestInput{
             Policy: &shared.PolicyInput{
-                Description: conductoroneapi.String("ullam"),
-                DisplayName: conductoroneapi.String("reprehenderit"),
+                Description: conductoronesdkgo.String("qui"),
+                DisplayName: conductoronesdkgo.String("quibusdam"),
                 PolicySteps: map[string]shared.PolicyStepsInput{
-                    "ullam": shared.PolicyStepsInput{
+                    "ex": shared.PolicyStepsInput{
                         Steps: []shared.PolicyStepInput{
                             shared.PolicyStepInput{
+                                Accept: &shared.Accept{},
                                 Approval: &shared.ApprovalInput{
                                     AppGroupApproval: &shared.AppGroupApprovalInput{},
                                     AppOwnerApproval: &shared.AppOwnerApprovalInput{},
@@ -312,45 +315,46 @@ func main() {
                                     ProvisionPolicy: &shared.ProvisionPolicy{
                                         ConnectorProvision: &shared.ConnectorProvision{},
                                         DelegatedProvision: &shared.DelegatedProvision{
-                                            AppID: conductoroneapi.String("nisi"),
-                                            EntitlementID: conductoroneapi.String("aut"),
+                                            AppID: conductoronesdkgo.String("deleniti"),
+                                            EntitlementID: conductoronesdkgo.String("itaque"),
                                         },
                                         ManualProvision: &shared.ManualProvision{
-                                            Instructions: conductoroneapi.String("voluptatum"),
+                                            Instructions: conductoronesdkgo.String("dolorum"),
                                             UserIds: []string{
-                                                "qui",
+                                                "architecto",
                                             },
                                         },
                                     },
                                     ProvisionTarget: &shared.ProvisionTarget{
-                                        AppEntitlementID: conductoroneapi.String("quibusdam"),
-                                        AppID: conductoroneapi.String("ex"),
-                                        AppUserID: conductoroneapi.String("deleniti"),
-                                        GrantDuration: conductoroneapi.String("itaque"),
+                                        AppEntitlementID: conductoronesdkgo.String("omnis"),
+                                        AppID: conductoronesdkgo.String("tenetur"),
+                                        AppUserID: conductoronesdkgo.String("quasi"),
+                                        GrantDuration: conductoronesdkgo.String("at"),
                                     },
-                                    Assigned: conductoroneapi.Bool(false),
+                                    Assigned: conductoronesdkgo.Bool(false),
                                 },
+                                Reject: &shared.Reject{},
                             },
                         },
                     },
                 },
-                PolicyType: shared.PolicyPolicyTypePolicyTypeAccessRequest.ToPointer(),
+                PolicyType: shared.PolicyPolicyTypePolicyTypeUnspecified.ToPointer(),
                 PostActions: []shared.PolicyPostActions{
                     shared.PolicyPostActions{
-                        CertifyRemediateImmediately: conductoroneapi.Bool(false),
+                        CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
                     },
                 },
-                ReassignTasksToDelegates: conductoroneapi.Bool(false),
+                ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
                 Rules: []shared.Rule{
                     shared.Rule{
-                        Condition: conductoroneapi.String("architecto"),
-                        PolicyKey: conductoroneapi.String("omnis"),
+                        Condition: conductoronesdkgo.String("voluptate"),
+                        PolicyKey: conductoronesdkgo.String("ipsa"),
                     },
                 },
             },
-            UpdateMask: conductoroneapi.String("tenetur"),
+            UpdateMask: conductoronesdkgo.String("minima"),
         },
-        ID: "1d170513-39d0-4808-aa18-40394c26071f",
+        ID: "1339d080-86a1-4840-b94c-26071f93f5f0",
     })
     if err != nil {
         log.Fatal(err)

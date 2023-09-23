@@ -19,14 +19,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -37,13 +37,13 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "eum",
+                    "animi",
                 },
             },
-            Comment: conductoroneapi.String("reiciendis"),
-            PolicyStepID: "provident",
+            Comment: conductoronesdkgo.String("nostrum"),
+            PolicyStepID: "mollitia",
         },
-        TaskID: "aspernatur",
+        TaskID: "provident",
     })
     if err != nil {
         log.Fatal(err)
@@ -80,14 +80,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -98,12 +98,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "ullam",
+                    "possimus",
                 },
             },
-            Comment: conductoroneapi.String("quasi"),
+            Comment: conductoronesdkgo.String("animi"),
         },
-        TaskID: "animi",
+        TaskID: "ex",
     })
     if err != nil {
         log.Fatal(err)
@@ -140,14 +140,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -158,13 +158,13 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "nostrum",
+                    "aliquid",
                 },
             },
-            Comment: conductoroneapi.String("mollitia"),
-            PolicyStepID: conductoroneapi.String("provident"),
+            Comment: conductoronesdkgo.String("accusantium"),
+            PolicyStepID: conductoronesdkgo.String("repellat"),
         },
-        TaskID: "possimus",
+        TaskID: "doloribus",
     })
     if err != nil {
         log.Fatal(err)
@@ -201,14 +201,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -219,13 +219,13 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "animi",
+                    "ullam",
                 },
             },
-            Comment: conductoroneapi.String("ex"),
-            PolicyStepID: conductoroneapi.String("aliquid"),
+            Comment: conductoronesdkgo.String("in"),
+            PolicyStepID: conductoronesdkgo.String("nam"),
         },
-        TaskID: "accusantium",
+        TaskID: "earum",
     })
     if err != nil {
         log.Fatal(err)
