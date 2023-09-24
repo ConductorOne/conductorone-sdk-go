@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -31,22 +31,22 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "explicabo",
+            "quibusdam",
         },
         ExcludeResourceTypeIds: []string{
-            "deserunt",
+            "labore",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "distinctio",
+            "modi",
         },
-        PageSize: conductoroneapi.Float64(8413.86),
-        PageToken: conductoroneapi.String("labore"),
-        Query: conductoroneapi.String("modi"),
+        PageSize: conductoronesdkgo.Float64(1831.91),
+        PageToken: conductoronesdkgo.String("aliquid"),
+        Query: conductoronesdkgo.String("cupiditate"),
         ResourceTypeIds: []string{
-            "qui",
+            "quos",
         },
         ResourceTypeTraitIds: []string{
-            "aliquid",
+            "perferendis",
         },
     })
     if err != nil {

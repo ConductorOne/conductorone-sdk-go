@@ -19,14 +19,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -35,10 +35,10 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
         AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{
-            UserID: conductoroneapi.String("quibusdam"),
+            UserID: conductoronesdkgo.String("corrupti"),
         },
-        AppID: "unde",
-        EntitlementID: "nulla",
+        AppID: "illum",
+        EntitlementID: "vel",
     })
     if err != nil {
         log.Fatal(err)
@@ -75,14 +75,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -90,10 +90,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.List(ctx, operations.C1APIAppV1AppEntitlementOwnersListRequest{
-        AppID: "corrupti",
-        EntitlementID: "illum",
-        PageSize: conductoroneapi.Float64(4236.55),
-        PageToken: conductoroneapi.String("error"),
+        AppID: "error",
+        EntitlementID: "deserunt",
+        PageSize: conductoronesdkgo.Float64(3843.82),
+        PageToken: conductoronesdkgo.String("iure"),
     })
     if err != nil {
         log.Fatal(err)
@@ -130,14 +130,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -146,9 +146,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Remove(ctx, operations.C1APIAppV1AppEntitlementOwnersRemoveRequest{
         RemoveAppEntitlementOwnerRequest: &shared.RemoveAppEntitlementOwnerRequest{},
-        AppID: "deserunt",
-        EntitlementID: "suscipit",
-        UserID: "iure",
+        AppID: "magnam",
+        EntitlementID: "debitis",
+        UserID: "ipsa",
     })
     if err != nil {
         log.Fatal(err)
@@ -185,14 +185,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -202,11 +202,11 @@ func main() {
     res, err := s.AppEntitlementOwners.Set(ctx, operations.C1APIAppV1AppEntitlementOwnersSetRequest{
         SetAppEntitlementOwnersRequest: &shared.SetAppEntitlementOwnersRequest{
             UserIds: []string{
-                "magnam",
+                "delectus",
             },
         },
-        AppID: "debitis",
-        EntitlementID: "ipsa",
+        AppID: "tempora",
+        EntitlementID: "suscipit",
     })
     if err != nil {
         log.Fatal(err)
