@@ -18,13 +18,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,20 +34,20 @@ func main() {
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "molestiae",
+                "ratione",
             },
         },
         TaskGrantSource: &shared.TaskGrantSource{
-            ExternalURL: conductoroneapi.String("eveniet"),
-            IntegrationID: conductoroneapi.String("qui"),
+            ExternalURL: conductoronesdkgo.String("laborum"),
+            IntegrationID: conductoronesdkgo.String("distinctio"),
         },
-        AppEntitlementID: "cum",
-        AppID: "iure",
-        AppUserID: conductoroneapi.String("necessitatibus"),
-        Description: conductoroneapi.String("ratione"),
-        EmergencyAccess: conductoroneapi.Bool(false),
-        GrantDuration: conductoroneapi.String("laborum"),
-        IdentityUserID: conductoroneapi.String("distinctio"),
+        AppEntitlementID: "voluptatum",
+        AppID: "rem",
+        AppUserID: conductoronesdkgo.String("aliquam"),
+        Description: conductoronesdkgo.String("ad"),
+        EmergencyAccess: conductoronesdkgo.Bool(false),
+        GrantDuration: conductoronesdkgo.String("repellat"),
+        IdentityUserID: conductoronesdkgo.String("alias"),
     })
     if err != nil {
         log.Fatal(err)
@@ -84,13 +84,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -100,14 +100,14 @@ func main() {
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "voluptatum",
+                "corporis",
             },
         },
-        AppEntitlementID: "rem",
-        AppID: "aliquam",
-        AppUserID: conductoroneapi.String("ad"),
-        Description: conductoroneapi.String("repellat"),
-        IdentityUserID: conductoroneapi.String("alias"),
+        AppEntitlementID: "perspiciatis",
+        AppID: "nihil",
+        AppUserID: conductoronesdkgo.String("mollitia"),
+        Description: conductoronesdkgo.String("voluptas"),
+        IdentityUserID: conductoronesdkgo.String("alias"),
     })
     if err != nil {
         log.Fatal(err)
@@ -144,14 +144,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -159,7 +159,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "597a60ff-2a54-4a31-a947-64a3e865e795",
+        ID: "ff2a54a3-1e94-4764-a3e8-65e7956f9251",
     })
     if err != nil {
         log.Fatal(err)
