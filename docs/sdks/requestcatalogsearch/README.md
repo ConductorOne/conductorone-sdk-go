@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -32,16 +32,16 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "id",
+                "quidem",
             },
         },
-        AppDisplayName: conductoroneapi.String("quis"),
-        EntitlementAlias: conductoroneapi.String("reprehenderit"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusGranted.ToPointer(),
-        IncludeDeleted: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(764.86),
-        PageToken: conductoroneapi.String("corporis"),
-        Query: conductoroneapi.String("quidem"),
+        AppDisplayName: conductoronesdkgo.String("eveniet"),
+        EntitlementAlias: conductoronesdkgo.String("non"),
+        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusNotGranted.ToPointer(),
+        IncludeDeleted: conductoronesdkgo.Bool(false),
+        PageSize: conductoronesdkgo.Float64(396.15),
+        PageToken: conductoronesdkgo.String("iure"),
+        Query: conductoronesdkgo.String("ipsa"),
     })
     if err != nil {
         log.Fatal(err)
