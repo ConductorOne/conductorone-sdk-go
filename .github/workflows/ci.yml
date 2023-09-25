@@ -1,0 +1,54 @@
+name: Go CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Setup Go environment
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: '^1.17'
+
+    # Checkout the current repository
+    - name: Check out current repository
+      uses: actions/checkout@v2
+
+    # Clone the 'cone' repository
+    - name: Clone 'cone' repository
+      run: git clone https://github.com/ConductorOne/cone.git
+
+    # Clone the 'conductorone-sdk-go' repository
+    - name: Clone 'conductorone-sdk-go' repository
+      run: git clone https://github.com/conductorone/conductorone-sdk-go.git
+
+    # Switch to the PR branch if this is a PR
+    - name: Switch to PR branch
+      if: github.event_name == 'pull_request'
+      run: |
+        cd conductorone-sdk-go
+        git fetch origin ${GITHUB_REF:11}
+        git checkout FETCH_HEAD
+
+    # Replace the vendored SDK in 'cone' with the checked-out version
+    - name: Replace vendored SDK
+      run: |
+        rm -rf cone/vendor/github.com/conductorone/conductorone-sdk-go
+        cp -r conductorone-sdk-go cone/vendor/github.com/conductorone/conductorone-sdk-go
+
+    # Change directory to 'cone'
+    - name: Change directory to 'cone'
+      run: cd cone
+
+    # Run make
+    - name: Run make
+      run: make
