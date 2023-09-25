@@ -20,13 +20,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,8 +34,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.CreateAttributeValue(ctx, shared.CreateAttributeValueRequest{
-        AttributeTypeID: conductoroneapi.String("voluptate"),
-        Value: conductoroneapi.String("dolorum"),
+        AttributeTypeID: conductoronesdkgo.String("occaecati"),
+        Value: conductoronesdkgo.String("rerum"),
     })
     if err != nil {
         log.Fatal(err)
@@ -72,14 +72,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -88,7 +88,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
         DeleteAttributeValueRequest: &shared.DeleteAttributeValueRequest{},
-        ID: "89ebf737-ae42-403c-a5e6-a95d8a0d446c",
+        ID: "3fe49a8d-9cbf-4486-b332-3f9b77f3a410",
     })
     if err != nil {
         log.Fatal(err)
@@ -125,13 +125,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -139,7 +140,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
-        ID: "e2af7a73-cf3b-4e45-bf87-0b326b5a7342",
+        ID: "0674ebf6-9280-4d1b-a77a-89ebf737ae42",
     })
     if err != nil {
         log.Fatal(err)
@@ -176,13 +177,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -190,8 +192,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{
-        PageSize: conductoroneapi.Float64(5867.84),
-        PageToken: conductoroneapi.String("maxime"),
+        PageSize: conductoronesdkgo.Float64(206.51),
+        PageToken: conductoronesdkgo.String("amet"),
     })
     if err != nil {
         log.Fatal(err)
@@ -228,13 +230,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -242,9 +245,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "pariatur",
-        PageSize: conductoroneapi.Float64(7470.8),
-        PageToken: conductoroneapi.String("dicta"),
+        AttributeTypeID: "optio",
+        PageSize: conductoronesdkgo.Float64(8815.86),
+        PageToken: conductoronesdkgo.String("ad"),
     })
     if err != nil {
         log.Fatal(err)

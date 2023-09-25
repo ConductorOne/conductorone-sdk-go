@@ -2,7 +2,7 @@
 
 package shared
 
-// CreateAppRequest - The CreateAppRequest message is used to create a new app.
+// The CreateAppRequest message is used to create a new app.
 type CreateAppRequest struct {
 	// Creates the app with this certify policy.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
@@ -18,4 +18,53 @@ type CreateAppRequest struct {
 	Owners []string `json:"owners,omitempty"`
 	// Creates the app with this revoke policy.
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
+}
+
+func (o *CreateAppRequest) GetCertifyPolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CertifyPolicyID
+}
+
+func (o *CreateAppRequest) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *CreateAppRequest) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *CreateAppRequest) GetGrantPolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.GrantPolicyID
+}
+
+func (o *CreateAppRequest) GetMonthlyCostUsd() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.MonthlyCostUsd
+}
+
+func (o *CreateAppRequest) GetOwners() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Owners
+}
+
+func (o *CreateAppRequest) GetRevokePolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RevokePolicyID
 }

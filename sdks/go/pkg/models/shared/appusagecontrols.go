@@ -2,7 +2,7 @@
 
 package shared
 
-// AppUsageControls - The AppUsageControls object describes some peripheral configuration for an app.
+// The AppUsageControls object describes some peripheral configuration for an app.
 type AppUsageControls struct {
 	// The app that this object belongs to.
 	AppID *string `json:"appId,omitempty"`
@@ -14,4 +14,39 @@ type AppUsageControls struct {
 	Revoke *bool `json:"revoke,omitempty"`
 	// The duration in days after which we revoke users that have not used that grant.
 	RevokeAfterDays *float64 `json:"revokeAfterDays,omitempty"`
+}
+
+func (o *AppUsageControls) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *AppUsageControls) GetNotify() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Notify
+}
+
+func (o *AppUsageControls) GetNotifyAfterDays() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.NotifyAfterDays
+}
+
+func (o *AppUsageControls) GetRevoke() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Revoke
+}
+
+func (o *AppUsageControls) GetRevokeAfterDays() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.RevokeAfterDays
 }

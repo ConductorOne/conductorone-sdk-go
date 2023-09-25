@@ -19,14 +19,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -35,18 +35,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
-            Comment: conductoroneapi.String("provident"),
-            ExpandMask: &shared.TaskExpandMask{
+            TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "necessitatibus",
-                    "tempore",
-                    "sint",
-                    "ea",
+                    "animi",
                 },
             },
-            PolicyStepID: "autem",
+            Comment: conductoronesdkgo.String("nostrum"),
+            PolicyStepID: "mollitia",
         },
-        TaskID: "ipsam",
+        TaskID: "provident",
     })
     if err != nil {
         log.Fatal(err)
@@ -83,14 +80,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -99,16 +96,14 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
-            Comment: conductoroneapi.String("rerum"),
-            ExpandMask: &shared.TaskExpandMask{
+            TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "corporis",
-                    "officiis",
-                    "voluptatibus",
+                    "possimus",
                 },
             },
+            Comment: conductoronesdkgo.String("animi"),
         },
-        TaskID: "cum",
+        TaskID: "ex",
     })
     if err != nil {
         log.Fatal(err)
@@ -145,14 +140,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -161,15 +156,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
-            Comment: conductoroneapi.String("at"),
-            ExpandMask: &shared.TaskExpandMask{
+            TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "quia",
+                    "aliquid",
                 },
             },
-            PolicyStepID: conductoroneapi.String("quidem"),
+            Comment: conductoronesdkgo.String("accusantium"),
+            PolicyStepID: conductoronesdkgo.String("repellat"),
         },
-        TaskID: "fuga",
+        TaskID: "doloribus",
     })
     if err != nil {
         log.Fatal(err)
@@ -206,14 +201,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -222,15 +217,15 @@ func main() {
     ctx := context.Background()
     res, err := s.TaskActions.EscalateToEmergencyAccess(ctx, operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest{
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
-            Comment: conductoroneapi.String("repudiandae"),
-            ExpandMask: &shared.TaskExpandMask{
+            TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "expedita",
+                    "ullam",
                 },
             },
-            PolicyStepID: conductoroneapi.String("officiis"),
+            Comment: conductoronesdkgo.String("in"),
+            PolicyStepID: conductoronesdkgo.String("nam"),
         },
-        TaskID: "eos",
+        TaskID: "earum",
     })
     if err != nil {
         log.Fatal(err)

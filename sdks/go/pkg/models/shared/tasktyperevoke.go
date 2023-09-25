@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -18,7 +19,14 @@ type TaskTypeRevokeInput struct {
 	//   - expired
 	//   - nonUsage
 	//
-	Source *TaskRevokeSource `json:"source,omitempty"`
+	TaskRevokeSource *TaskRevokeSource `json:"source,omitempty"`
+}
+
+func (o *TaskTypeRevokeInput) GetTaskRevokeSource() *TaskRevokeSource {
+	if o == nil {
+		return nil
+	}
+	return o.TaskRevokeSource
 }
 
 // TaskTypeRevokeOutcome - The outcome of the revoke.
@@ -58,8 +66,17 @@ func (e *TaskTypeRevokeOutcome) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TaskTypeRevoke - The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
+// The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
 type TaskTypeRevoke struct {
+	// The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
+	//
+	// This message contains a oneof named origin. Only a single field of the following list may be set at a time:
+	//   - review
+	//   - request
+	//   - expired
+	//   - nonUsage
+	//
+	TaskRevokeSource *TaskRevokeSource `json:"source,omitempty"`
 	// The ID of the app entitlement.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
 	// The ID of the app.
@@ -71,13 +88,64 @@ type TaskTypeRevoke struct {
 	// The outcome of the revoke.
 	Outcome     *TaskTypeRevokeOutcome `json:"outcome,omitempty"`
 	OutcomeTime *time.Time             `json:"outcomeTime,omitempty"`
-	// The TaskRevokeSource message indicates the source of the revoke task is one of expired, nonUsage, request, or review.
-	//
-	// This message contains a oneof named origin. Only a single field of the following list may be set at a time:
-	//   - review
-	//   - request
-	//   - expired
-	//   - nonUsage
-	//
-	Source *TaskRevokeSource `json:"source,omitempty"`
+}
+
+func (t TaskTypeRevoke) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TaskTypeRevoke) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *TaskTypeRevoke) GetTaskRevokeSource() *TaskRevokeSource {
+	if o == nil {
+		return nil
+	}
+	return o.TaskRevokeSource
+}
+
+func (o *TaskTypeRevoke) GetAppEntitlementID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlementID
+}
+
+func (o *TaskTypeRevoke) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *TaskTypeRevoke) GetAppUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserID
+}
+
+func (o *TaskTypeRevoke) GetIdentityUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityUserID
+}
+
+func (o *TaskTypeRevoke) GetOutcome() *TaskTypeRevokeOutcome {
+	if o == nil {
+		return nil
+	}
+	return o.Outcome
+}
+
+func (o *TaskTypeRevoke) GetOutcomeTime() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.OutcomeTime
 }

@@ -2,7 +2,7 @@
 
 package shared
 
-// AppGroupApproval - The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
+// The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
 type AppGroupApproval struct {
 	// Configuration to allow self approval if the target user is a member of the group during this step.
 	AllowSelfApproval *bool `json:"allowSelfApproval,omitempty"`
@@ -14,4 +14,43 @@ type AppGroupApproval struct {
 	Fallback *bool `json:"fallback,omitempty"`
 	// Configuration to specific which users to fallback to if fallback is enabled and the group is empty.
 	FallbackUserIds []string `json:"fallbackUserIds,omitempty"`
+}
+
+func (o *AppGroupApproval) GetAllowSelfApproval() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AllowSelfApproval
+}
+
+func (o *AppGroupApproval) GetAppGroupID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppGroupID
+}
+
+func (o *AppGroupApproval) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *AppGroupApproval) GetFallback() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Fallback
+}
+
+func (o *AppGroupApproval) GetFallbackUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FallbackUserIds
+}
+
+// AppGroupApprovalInput - The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
+type AppGroupApprovalInput struct {
 }

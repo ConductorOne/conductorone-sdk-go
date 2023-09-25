@@ -3,10 +3,11 @@
 package shared
 
 import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
-// PersonalClient - The PersonalClient message contains information about a presonal client credential.
+// The PersonalClient message contains information about a presonal client credential.
 type PersonalClient struct {
 	// If set, only allows the CIDRs in the array to use the credential.
 	AllowSourceCidr []string `json:"allowSourceCidr,omitempty"`
@@ -28,4 +29,92 @@ type PersonalClient struct {
 	UpdatedAt   *time.Time `json:"updatedAt,omitempty"`
 	// The ID of the user that this credential is created for.
 	UserID *string `json:"userId,omitempty"`
+}
+
+func (p PersonalClient) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *PersonalClient) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *PersonalClient) GetAllowSourceCidr() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AllowSourceCidr
+}
+
+func (o *PersonalClient) GetClientID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ClientID
+}
+
+func (o *PersonalClient) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *PersonalClient) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *PersonalClient) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *PersonalClient) GetExpiresTime() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiresTime
+}
+
+func (o *PersonalClient) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *PersonalClient) GetLastUsedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.LastUsedAt
+}
+
+func (o *PersonalClient) GetScopedRoles() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ScopedRoles
+}
+
+func (o *PersonalClient) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
+}
+
+func (o *PersonalClient) GetUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserID
 }

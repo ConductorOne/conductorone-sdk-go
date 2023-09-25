@@ -2,6 +2,6 @@
 
 package shared
 
-// DeleteAttributeValueResponse - DeleteAttributeValueResponse is the empty response for deleting an attribute value.
+// DeleteAttributeValueResponse is the empty response for deleting an attribute value.
 type DeleteAttributeValueResponse struct {
 }

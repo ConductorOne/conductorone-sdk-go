@@ -7,3 +7,10 @@ type AppEntitlementExpandMask struct {
 	// Array of strings to describe which items to expand on the return value. Can be any combination of "*", "app_id", "app_resource_type_id", or "app_resource_id".
 	Paths []string `json:"paths,omitempty"`
 }
+
+func (o *AppEntitlementExpandMask) GetPaths() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Paths
+}

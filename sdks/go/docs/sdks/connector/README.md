@@ -25,14 +25,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -41,25 +41,24 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
         ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
-            CatalogID: conductoroneapi.String("laborum"),
-            Config: map[string]interface{}{
-                "incidunt": "aspernatur",
-                "dolores": "distinctio",
-                "facilis": "aliquid",
-            },
-            Description: conductoroneapi.String("quam"),
-            ExpandMask: &shared.ConnectorExpandMask{
+            ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "temporibus",
-                    "qui",
-                    "neque",
+                    "saepe",
                 },
             },
+            CatalogID: conductoronesdkgo.String("suscipit"),
+            Config: &shared.ConnectorServiceCreateRequestConfig{
+                AtType: conductoronesdkgo.String("deserunt"),
+                AdditionalProperties: map[string]interface{}{
+                    "provident": "minima",
+                },
+            },
+            Description: conductoronesdkgo.String("repellendus"),
             UserIds: []string{
-                "magni",
+                "totam",
             },
         },
-        AppID: "odio",
+        AppID: "similique",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,14 +95,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -112,22 +111,19 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
         ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
-            CatalogID: conductoroneapi.String("sunt"),
-            Description: conductoroneapi.String("ullam"),
-            DisplayName: conductoroneapi.String("nam"),
-            ExpandMask: &shared.ConnectorExpandMask{
+            ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "voluptatem",
-                    "cumque",
-                    "soluta",
-                    "nobis",
+                    "alias",
                 },
             },
+            CatalogID: conductoronesdkgo.String("at"),
+            Description: conductoronesdkgo.String("quaerat"),
+            DisplayName: conductoronesdkgo.String("tempora"),
             UserIds: []string{
-                "saepe",
+                "vel",
             },
         },
-        AppID: "ipsum",
+        AppID: "quod",
     })
     if err != nil {
         log.Fatal(err)
@@ -164,14 +160,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -180,8 +176,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "veritatis",
-        ID: "b8b90f34-43a1-4108-a0ad-cf4b921879fc",
+        AppID: "officiis",
+        ID: "2af7a73c-f3be-4453-b870-b326b5a73429",
     })
     if err != nil {
         log.Fatal(err)
@@ -218,13 +214,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -232,8 +229,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "vero",
-        ID: "953f73ef-7fbc-47ab-974d-d39c0f5d2cff",
+        AppID: "maxime",
+        ID: "db1a8422-bb67-49d2-b227-15bf0cbb1e31",
     })
     if err != nil {
         log.Fatal(err)
@@ -270,13 +267,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -284,9 +282,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "iusto",
-        ConnectorID: "eligendi",
-        ID: "70a45626-d436-4813-b16d-9f5fce6c5561",
+        AppID: "nobis",
+        ConnectorID: "quos",
+        ID: "b90f3443-a110-48e0-adcf-4b921879fce9",
     })
     if err != nil {
         log.Fatal(err)
@@ -323,13 +321,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -337,9 +336,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "magnam",
-        PageSize: conductoroneapi.Float64(4072.41),
-        PageToken: conductoroneapi.String("quo"),
+        AppID: "quis",
+        PageSize: conductoronesdkgo.Float64(2184.03),
+        PageToken: conductoronesdkgo.String("delectus"),
     })
     if err != nil {
         log.Fatal(err)
@@ -376,14 +375,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -392,9 +391,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "consectetur",
-        ConnectorID: "recusandae",
-        ID: "250fb008-c42e-4141-aac3-66c8dd6b1442",
+        AppID: "voluptate",
+        ConnectorID: "consectetur",
+        ID: "ef7fbc7a-bd74-4dd3-9c0f-5d2cff7c70a4",
     })
     if err != nil {
         log.Fatal(err)
@@ -431,14 +430,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -447,8 +446,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "provident",
-        ConnectorID: "ipsa",
+        AppID: "ipsam",
+        ConnectorID: "ea",
     })
     if err != nil {
         log.Fatal(err)
@@ -485,15 +484,15 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -503,39 +502,37 @@ func main() {
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
         ConnectorServiceUpdateRequestInput: &shared.ConnectorServiceUpdateRequestInput{
             Connector: &shared.ConnectorInput{
-                AppID: conductoroneapi.String("molestiae"),
-                Config: map[string]interface{}{
-                    "odio": "eius",
-                    "esse": "esse",
-                },
-                Description: conductoroneapi.String("rem"),
-                DisplayName: conductoroneapi.String("fuga"),
-                ID: conductoroneapi.String("7bd466d2-8c10-4ab3-8dca-4251904e523c"),
-                OauthAuthorizedAs: &shared.OAuth2AuthorizedAs1{},
-                Status: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-01-28T07:34:05.998Z"),
-                    LastError: conductoroneapi.String("aperiam"),
-                    StartedAt: types.MustTimeFromString("2021-05-27T03:34:33.852Z"),
+                ConnectorStatus: &shared.ConnectorStatus{
+                    CompletedAt: types.MustTimeFromString("2022-07-28T16:45:32.822Z"),
+                    LastError: conductoronesdkgo.String("possimus"),
+                    StartedAt: types.MustTimeFromString("2022-10-23T16:55:55.380Z"),
                     Status: shared.ConnectorStatusStatusSyncStatusRunning.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2022-07-13T15:11:40.912Z"),
+                    UpdatedAt: types.MustTimeFromString("2022-10-04T22:05:21.038Z"),
                 },
+                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
+                AppID: conductoronesdkgo.String("dolor"),
+                Config: &shared.ConnectorConfig{
+                    AtType: conductoronesdkgo.String("maiores"),
+                    AdditionalProperties: map[string]interface{}{
+                        "quasi": "ex",
+                    },
+                },
+                Description: conductoronesdkgo.String("nulla"),
+                DisplayName: conductoronesdkgo.String("excepturi"),
+                ID: conductoronesdkgo.String("f5fce6c5-5614-46c3-a250-fb008c42e141"),
                 UserIds: []string{
-                    "accusamus",
-                    "aliquam",
-                    "odio",
+                    "dolorum",
                 },
             },
-            ExpandMask: &shared.ConnectorExpandMask{
+            ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "commodi",
-                    "sapiente",
-                    "dolores",
+                    "laborum",
                 },
             },
-            UpdateMask: conductoroneapi.String("deserunt"),
+            UpdateMask: conductoronesdkgo.String("placeat"),
         },
-        AppID: "molestiae",
-        ID: "0c688282-aa48-4256-af22-2e9817ee17cb",
+        AppID: "velit",
+        ID: "66c8dd6b-1442-4907-8747-78a7bd466d28",
     })
     if err != nil {
         log.Fatal(err)
@@ -572,15 +569,15 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -590,36 +587,37 @@ func main() {
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
         ConnectorServiceUpdateDelegatedRequestInput: &shared.ConnectorServiceUpdateDelegatedRequestInput{
             Connector: &shared.ConnectorInput{
-                AppID: conductoroneapi.String("vero"),
-                Config: map[string]interface{}{
-                    "quasi": "saepe",
-                    "vel": "harum",
+                ConnectorStatus: &shared.ConnectorStatus{
+                    CompletedAt: types.MustTimeFromString("2022-09-28T10:00:45.702Z"),
+                    LastError: conductoronesdkgo.String("ipsa"),
+                    StartedAt: types.MustTimeFromString("2021-08-10T04:36:29.661Z"),
+                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
+                    UpdatedAt: types.MustTimeFromString("2020-06-17T05:36:16.683Z"),
                 },
-                Description: conductoroneapi.String("molestiae"),
-                DisplayName: conductoroneapi.String("rerum"),
-                ID: conductoroneapi.String("95bc0ab3-c20c-44f3-b89f-d871f99dd2ef"),
-                OauthAuthorizedAs: &shared.OAuth2AuthorizedAs1{},
-                Status: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-09-29T22:10:17.894Z"),
-                    LastError: conductoroneapi.String("consequuntur"),
-                    StartedAt: types.MustTimeFromString("2022-05-16T10:50:58.442Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusDone.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2022-01-19T12:09:14.633Z"),
+                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
+                AppID: conductoronesdkgo.String("quo"),
+                Config: &shared.ConnectorConfig{
+                    AtType: conductoronesdkgo.String("fuga"),
+                    AdditionalProperties: map[string]interface{}{
+                        "eius": "eos",
+                    },
                 },
+                Description: conductoronesdkgo.String("voluptas"),
+                DisplayName: conductoronesdkgo.String("ab"),
+                ID: conductoronesdkgo.String("904e523c-7e0b-4c71-b8e4-796f2a70c688"),
                 UserIds: []string{
-                    "earum",
+                    "consequuntur",
                 },
             },
-            ExpandMask: &shared.ConnectorExpandMask{
+            ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "in",
-                    "eius",
+                    "deleniti",
                 },
             },
-            UpdateMask: conductoroneapi.String("libero"),
+            UpdateMask: conductoronesdkgo.String("fugit"),
         },
-        ConnectorAppID: "illum",
-        ConnectorID: "soluta",
+        ConnectorAppID: "fuga",
+        ConnectorID: "mollitia",
     })
     if err != nil {
         log.Fatal(err)

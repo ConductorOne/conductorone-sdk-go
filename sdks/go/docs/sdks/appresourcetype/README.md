@@ -17,13 +17,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -31,8 +32,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "accusamus",
-        ID: "395efb9b-a88f-43a6-a997-074ba4469b6e",
+        AppID: "magni",
+        ID: "d502a94b-b4f6-43c9-a9e9-a3efa77dfb14",
     })
     if err != nil {
         log.Fatal(err)
@@ -69,13 +70,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -83,9 +85,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "aspernatur",
-        PageSize: conductoroneapi.Float64(1028.63),
-        PageToken: conductoroneapi.String("magnam"),
+        AppID: "cumque",
+        PageSize: conductoronesdkgo.Float64(8137.98),
+        PageToken: conductoronesdkgo.String("ea"),
     })
     if err != nil {
         log.Fatal(err)

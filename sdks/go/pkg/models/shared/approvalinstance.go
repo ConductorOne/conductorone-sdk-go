@@ -62,18 +62,68 @@ type ApprovalInstance struct {
 	//   - group
 	//   - self
 	//   - entitlementOwners
+	//   - expression
 	//
 	Approval *Approval `json:"approval,omitempty"`
 	// The approved action indicates that the approvalinstance had an outcome of approved.
-	Approved *ApprovedAction `json:"approved,omitempty"`
+	ApprovedAction *ApprovedAction `json:"approved,omitempty"`
 	// The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an outcome of denied.
-	Denied *DeniedAction `json:"denied,omitempty"`
+	DeniedAction *DeniedAction `json:"denied,omitempty"`
 	// The ReassignedAction object describes the outcome of a policy step that has been reassigned.
-	Reassigned *ReassignedAction `json:"reassigned,omitempty"`
+	ReassignedAction *ReassignedAction `json:"reassigned,omitempty"`
 	// The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning.
-	ReassignedByError *ReassignedByErrorAction `json:"reassignedByError,omitempty"`
+	ReassignedByErrorAction *ReassignedByErrorAction `json:"reassignedByError,omitempty"`
 	// The restart action describes the outcome of policy steps for when the task was restarted. This can be applied to multiple steps since restart skips all pending next steps.
-	Restarted *RestartAction `json:"restarted,omitempty"`
+	RestartAction *RestartAction `json:"restarted,omitempty"`
 	// The state of the approval instance
 	State *ApprovalInstanceState `json:"state,omitempty"`
+}
+
+func (o *ApprovalInstance) GetApproval() *Approval {
+	if o == nil {
+		return nil
+	}
+	return o.Approval
+}
+
+func (o *ApprovalInstance) GetApprovedAction() *ApprovedAction {
+	if o == nil {
+		return nil
+	}
+	return o.ApprovedAction
+}
+
+func (o *ApprovalInstance) GetDeniedAction() *DeniedAction {
+	if o == nil {
+		return nil
+	}
+	return o.DeniedAction
+}
+
+func (o *ApprovalInstance) GetReassignedAction() *ReassignedAction {
+	if o == nil {
+		return nil
+	}
+	return o.ReassignedAction
+}
+
+func (o *ApprovalInstance) GetReassignedByErrorAction() *ReassignedByErrorAction {
+	if o == nil {
+		return nil
+	}
+	return o.ReassignedByErrorAction
+}
+
+func (o *ApprovalInstance) GetRestartAction() *RestartAction {
+	if o == nil {
+		return nil
+	}
+	return o.RestartAction
+}
+
+func (o *ApprovalInstance) GetState() *ApprovalInstanceState {
+	if o == nil {
+		return nil
+	}
+	return o.State
 }

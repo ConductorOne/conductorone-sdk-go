@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -13,4 +14,36 @@ type RestartAction struct {
 	RestartedAt     *time.Time `json:"restartedAt,omitempty"`
 	// The user that submitted the restart action.
 	UserID *string `json:"userId,omitempty"`
+}
+
+func (r RestartAction) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RestartAction) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *RestartAction) GetOldPolicyStepID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OldPolicyStepID
+}
+
+func (o *RestartAction) GetRestartedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.RestartedAt
+}
+
+func (o *RestartAction) GetUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserID
 }

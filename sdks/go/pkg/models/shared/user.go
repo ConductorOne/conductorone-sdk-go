@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -76,7 +77,7 @@ func (e *UserStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// User - The User object provides all of the details for an user, as well as some configuration.
+// The User object provides all of the details for an user, as well as some configuration.
 type User struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	// The id of the user to whom tasks will be automatically reassigned to.
@@ -119,4 +120,169 @@ type User struct {
 	// The status of the user in the system.
 	Status    *UserStatus `json:"status,omitempty"`
 	UpdatedAt *time.Time  `json:"updatedAt,omitempty"`
+}
+
+func (u User) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(u, "", false)
+}
+
+func (u *User) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &u, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *User) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *User) GetDelegatedUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DelegatedUserID
+}
+
+func (o *User) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *User) GetDepartment() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Department
+}
+
+func (o *User) GetDepartmentSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.DepartmentSources
+}
+
+func (o *User) GetDirectoryIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.DirectoryIds
+}
+
+func (o *User) GetDirectoryStatus() *UserDirectoryStatus {
+	if o == nil {
+		return nil
+	}
+	return o.DirectoryStatus
+}
+
+func (o *User) GetDirectoryStatusSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.DirectoryStatusSources
+}
+
+func (o *User) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *User) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *User) GetEmploymentStatus() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EmploymentStatus
+}
+
+func (o *User) GetEmploymentStatusSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.EmploymentStatusSources
+}
+
+func (o *User) GetEmploymentType() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EmploymentType
+}
+
+func (o *User) GetEmploymentTypeSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.EmploymentTypeSources
+}
+
+func (o *User) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *User) GetJobTitle() *string {
+	if o == nil {
+		return nil
+	}
+	return o.JobTitle
+}
+
+func (o *User) GetJobTitleSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.JobTitleSources
+}
+
+func (o *User) GetManagerIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ManagerIds
+}
+
+func (o *User) GetManagerSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.ManagerSources
+}
+
+func (o *User) GetRoleIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.RoleIds
+}
+
+func (o *User) GetStatus() *UserStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
+}
+
+func (o *User) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
 }

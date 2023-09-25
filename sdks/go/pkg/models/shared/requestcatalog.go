@@ -3,10 +3,11 @@
 package shared
 
 import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
-// RequestCatalog - The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
+// The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
 type RequestCatalog struct {
 	// An array of app entitlements that, if the user has, can view the contents of this catalog.
 	AccessEntitlements []AppEntitlement `json:"accessEntitlements,omitempty"`
@@ -29,6 +30,94 @@ type RequestCatalog struct {
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
 }
 
+func (r RequestCatalog) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *RequestCatalog) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *RequestCatalog) GetAccessEntitlements() []AppEntitlement {
+	if o == nil {
+		return nil
+	}
+	return o.AccessEntitlements
+}
+
+func (o *RequestCatalog) GetAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppIds
+}
+
+func (o *RequestCatalog) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *RequestCatalog) GetCreatedByUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedByUserID
+}
+
+func (o *RequestCatalog) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *RequestCatalog) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *RequestCatalog) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *RequestCatalog) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *RequestCatalog) GetPublished() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Published
+}
+
+func (o *RequestCatalog) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
+}
+
+func (o *RequestCatalog) GetVisibleToEveryone() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.VisibleToEveryone
+}
+
 // RequestCatalogInput - The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
 type RequestCatalogInput struct {
 	// An array of app entitlements that, if the user has, can view the contents of this catalog.
@@ -47,4 +136,60 @@ type RequestCatalogInput struct {
 	Published *bool `json:"published,omitempty"`
 	// If this is true, the access entitlement requirement is ignored.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
+}
+
+func (o *RequestCatalogInput) GetAccessEntitlements() []AppEntitlementInput {
+	if o == nil {
+		return nil
+	}
+	return o.AccessEntitlements
+}
+
+func (o *RequestCatalogInput) GetAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppIds
+}
+
+func (o *RequestCatalogInput) GetCreatedByUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedByUserID
+}
+
+func (o *RequestCatalogInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *RequestCatalogInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *RequestCatalogInput) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *RequestCatalogInput) GetPublished() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Published
+}
+
+func (o *RequestCatalogInput) GetVisibleToEveryone() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.VisibleToEveryone
 }

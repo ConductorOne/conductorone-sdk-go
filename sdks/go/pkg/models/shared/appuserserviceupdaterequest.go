@@ -7,6 +7,27 @@ type AppUserServiceUpdateRequestInput struct {
 	// Application User that represents an account in the application.
 	AppUser *AppUserInput `json:"appUser,omitempty"`
 	// The AppUserExpandMask message contains a list of paths to expand in the response.
-	ExpandMask *AppUserExpandMask `json:"expandMask,omitempty"`
-	UpdateMask *string            `json:"updateMask,omitempty"`
+	AppUserExpandMask *AppUserExpandMask `json:"expandMask,omitempty"`
+	UpdateMask        *string            `json:"updateMask,omitempty"`
+}
+
+func (o *AppUserServiceUpdateRequestInput) GetAppUser() *AppUserInput {
+	if o == nil {
+		return nil
+	}
+	return o.AppUser
+}
+
+func (o *AppUserServiceUpdateRequestInput) GetAppUserExpandMask() *AppUserExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserExpandMask
+}
+
+func (o *AppUserServiceUpdateRequestInput) GetUpdateMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateMask
 }

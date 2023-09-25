@@ -7,3 +7,10 @@ type TaskRef struct {
 	// The ID of the referenced Task
 	ID *string `json:"id,omitempty"`
 }
+
+func (o *TaskRef) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}

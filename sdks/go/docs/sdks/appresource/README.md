@@ -17,13 +17,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -31,9 +32,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "excepturi",
-        AppResourceTypeID: "pariatur",
-        ID: "488e1e91-e450-4ad2-abd4-4269802d502a",
+        AppID: "ipsa",
+        AppResourceTypeID: "omnis",
+        ID: "7b0074f1-5471-4b5e-ae13-b99d488e1e91",
     })
     if err != nil {
         log.Fatal(err)
@@ -70,13 +71,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -84,10 +86,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "excepturi",
-        AppResourceTypeID: "tempora",
-        PageSize: conductoroneapi.Float64(7037.37),
-        PageToken: conductoroneapi.String("tempore"),
+        AppID: "itaque",
+        AppResourceTypeID: "incidunt",
+        PageSize: conductoronesdkgo.Float64(3185.69),
+        PageToken: conductoronesdkgo.String("consequatur"),
     })
     if err != nil {
         log.Fatal(err)

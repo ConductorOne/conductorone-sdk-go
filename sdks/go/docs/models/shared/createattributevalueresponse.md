@@ -7,4 +7,4 @@ CreateAttributeValueResponse is the response for creating an attribute value.
 
 | Field                                                          | Type                                                           | Required                                                       | Description                                                    |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `Value`                                                        | [*AttributeValue](../../models/shared/attributevalue.md)       | :heavy_minus_sign:                                             | AttributeValue is the value of an attribute of a defined type. |
+| `AttributeValue`                                               | [*AttributeValue](../../models/shared/attributevalue.md)       | :heavy_minus_sign:                                             | AttributeValue is the value of an attribute of a defined type. |

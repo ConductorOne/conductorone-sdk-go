@@ -2,10 +2,24 @@
 
 package shared
 
-// TaskGrantSource - The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket.
+// The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket.
 type TaskGrantSource struct {
 	// The external url source of the grant ticket.
 	ExternalURL *string `json:"externalUrl,omitempty"`
 	// The integration id for the source of tickets.
 	IntegrationID *string `json:"integrationId,omitempty"`
+}
+
+func (o *TaskGrantSource) GetExternalURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ExternalURL
+}
+
+func (o *TaskGrantSource) GetIntegrationID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IntegrationID
 }

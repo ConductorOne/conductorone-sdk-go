@@ -10,11 +10,32 @@ package shared
 //   - certify
 type TaskTypeInput struct {
 	// The TaskTypeCertify message indicates that a task is a certify task and all related details.
-	Certify *TaskTypeCertify `json:"certify,omitempty"`
+	TaskTypeCertify *TaskTypeCertifyInput `json:"certify,omitempty"`
 	// The TaskTypeGrant message indicates that a task is a grant task and all related details.
-	Grant *TaskTypeGrantInput `json:"grant,omitempty"`
+	TaskTypeGrant *TaskTypeGrantInput `json:"grant,omitempty"`
 	// The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
-	Revoke *TaskTypeRevokeInput `json:"revoke,omitempty"`
+	TaskTypeRevoke *TaskTypeRevokeInput `json:"revoke,omitempty"`
+}
+
+func (o *TaskTypeInput) GetTaskTypeCertify() *TaskTypeCertifyInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeCertify
+}
+
+func (o *TaskTypeInput) GetTaskTypeGrant() *TaskTypeGrantInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeGrant
+}
+
+func (o *TaskTypeInput) GetTaskTypeRevoke() *TaskTypeRevokeInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeRevoke
 }
 
 // TaskType - Task Type provides configuration for the type of task: certify, grant, or revoke
@@ -25,9 +46,30 @@ type TaskTypeInput struct {
 //   - certify
 type TaskType struct {
 	// The TaskTypeCertify message indicates that a task is a certify task and all related details.
-	Certify *TaskTypeCertify1 `json:"certify,omitempty"`
+	TaskTypeCertify *TaskTypeCertify `json:"certify,omitempty"`
 	// The TaskTypeGrant message indicates that a task is a grant task and all related details.
-	Grant *TaskTypeGrant `json:"grant,omitempty"`
+	TaskTypeGrant *TaskTypeGrant `json:"grant,omitempty"`
 	// The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
-	Revoke *TaskTypeRevoke `json:"revoke,omitempty"`
+	TaskTypeRevoke *TaskTypeRevoke `json:"revoke,omitempty"`
+}
+
+func (o *TaskType) GetTaskTypeCertify() *TaskTypeCertify {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeCertify
+}
+
+func (o *TaskType) GetTaskTypeGrant() *TaskTypeGrant {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeGrant
+}
+
+func (o *TaskType) GetTaskTypeRevoke() *TaskTypeRevoke {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeRevoke
 }

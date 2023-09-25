@@ -17,3 +17,45 @@ type SearchAppsRequest struct {
 	// Query the apps with a fuzzy search on display name and description.
 	Query *string `json:"query,omitempty"`
 }
+
+func (o *SearchAppsRequest) GetAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppIds
+}
+
+func (o *SearchAppsRequest) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *SearchAppsRequest) GetExcludeAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeAppIds
+}
+
+func (o *SearchAppsRequest) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *SearchAppsRequest) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
+func (o *SearchAppsRequest) GetQuery() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Query
+}

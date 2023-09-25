@@ -8,3 +8,17 @@ type UpdatePolicyRequestInput struct {
 	Policy     *PolicyInput `json:"policy,omitempty"`
 	UpdateMask *string      `json:"updateMask,omitempty"`
 }
+
+func (o *UpdatePolicyRequestInput) GetPolicy() *PolicyInput {
+	if o == nil {
+		return nil
+	}
+	return o.Policy
+}
+
+func (o *UpdatePolicyRequestInput) GetUpdateMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateMask
+}

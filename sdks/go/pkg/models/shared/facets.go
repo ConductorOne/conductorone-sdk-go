@@ -9,3 +9,17 @@ type Facets struct {
 	// The facet being referenced.
 	Facets []FacetCategory `json:"facets,omitempty"`
 }
+
+func (o *Facets) GetCount() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Count
+}
+
+func (o *Facets) GetFacets() []FacetCategory {
+	if o == nil {
+		return nil
+	}
+	return o.Facets
+}

@@ -4,6 +4,8 @@ package shared
 
 // TaskView - Contains a task and JSONPATH expressions that describe where in the expanded array related objects are located. This view can be used to display a fully-detailed dashboard of task information.
 type TaskView struct {
+	// A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more.
+	Task *Task `json:"task,omitempty"`
 	// JSONPATH expression indicating the location of the AccessReview object in the expanded array
 	AccessReviewPath *string `json:"accessReviewPath,omitempty"`
 	// JSONPATH expression indicating the location of the App object in the expanded array
@@ -18,8 +20,69 @@ type TaskView struct {
 	IdentityUserPath *string `json:"identityUserPath,omitempty"`
 	// JSONPATH expression indicating the location of the StepApproverUsers objects in the expanded array
 	StepApproversPath *string `json:"stepApproversPath,omitempty"`
-	// A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more.
-	Task *Task `json:"task,omitempty"`
 	// JSONPATH expression indicating the location of the User object in the expanded array. This is the user that is a direct target of the ticket without a specific relationship to a potentially non-existent app user.
 	UserPath *string `json:"userPath,omitempty"`
+}
+
+func (o *TaskView) GetTask() *Task {
+	if o == nil {
+		return nil
+	}
+	return o.Task
+}
+
+func (o *TaskView) GetAccessReviewPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AccessReviewPath
+}
+
+func (o *TaskView) GetAppPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppPath
+}
+
+func (o *TaskView) GetAppUserPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserPath
+}
+
+func (o *TaskView) GetCreatedByUserPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedByUserPath
+}
+
+func (o *TaskView) GetEntitlementsPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.EntitlementsPath
+}
+
+func (o *TaskView) GetIdentityUserPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityUserPath
+}
+
+func (o *TaskView) GetStepApproversPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.StepApproversPath
+}
+
+func (o *TaskView) GetUserPath() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserPath
 }

@@ -4,6 +4,8 @@ package shared
 
 // AppEntitlementSearchServiceSearchRequest - Search app entitlements by a variety of filters.
 type AppEntitlementSearchServiceSearchRequest struct {
+	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
+	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
 	// Search for app entitlements that are being reviewed as part of this access review campaign.
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
 	// Search for app entitlements that have this alias (exact match).
@@ -18,8 +20,8 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	ExcludeAppIds []string `json:"excludeAppIds,omitempty"`
 	// Exclude app entitlements from the results that these app users have granted.
 	ExcludeAppUserIds []string `json:"excludeAppUserIds,omitempty"`
-	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
-	ExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
+	// Include deleted app entitlements, this includes app entitlements that have a deleted parent object (app, app resource, app resource type)
+	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// Restrict results to only those who have expiring app entitlement user bindings.
 	OnlyGetExpiring *bool `json:"onlyGetExpiring,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
@@ -32,4 +34,109 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	ResourceTypeIds []string `json:"resourceTypeIds,omitempty"`
 	// Search for app entitlements with these risk levels.
 	RiskLevelIds []string `json:"riskLevelIds,omitempty"`
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetAppEntitlementExpandMask() *AppEntitlementExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlementExpandMask
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetAccessReviewID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AccessReviewID
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetAlias() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Alias
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetAppUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetComplianceFrameworkIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ComplianceFrameworkIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetExcludeAppIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeAppIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetExcludeAppUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeAppUserIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetIncludeDeleted() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IncludeDeleted
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetOnlyGetExpiring() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.OnlyGetExpiring
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetQuery() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Query
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetResourceTypeIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ResourceTypeIds
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetRiskLevelIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.RiskLevelIds
 }

@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -142,6 +143,8 @@ func (e *TaskSearchRequestTaskStates) UnmarshalJSON(data []byte) error {
 
 // TaskSearchRequestInput - Search for tasks based on a plethora filters.
 type TaskSearchRequestInput struct {
+	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
+	TaskExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
 	// Search tasks that belong to any of the access reviews included in this list.
 	AccessReviewIds []string `json:"accessReviewIds,omitempty"`
 	// Search tasks that have any of these account owners.
@@ -170,8 +173,6 @@ type TaskSearchRequestInput struct {
 	ExcludeAppEntitlementIds []string `json:"excludeAppEntitlementIds,omitempty"`
 	// Exclude Specific TaskIDs from this serach result.
 	ExcludeIds []string `json:"excludeIds,omitempty"`
-	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
-	ExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
 	// Whether or not to include deleted tasks.
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// Search tasks where the user would see this task in the My Work section
@@ -196,4 +197,211 @@ type TaskSearchRequestInput struct {
 	TaskStates []TaskSearchRequestTaskStates `json:"taskStates,omitempty"`
 	// Search tasks with this task type. This is a oneOf, and needs an object, which can be empty, to sort.
 	TaskTypes []TaskTypeInput `json:"taskTypes,omitempty"`
+}
+
+func (t TaskSearchRequestInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(t, "", false)
+}
+
+func (t *TaskSearchRequestInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *TaskSearchRequestInput) GetTaskExpandMask() *TaskExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.TaskExpandMask
+}
+
+func (o *TaskSearchRequestInput) GetAccessReviewIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AccessReviewIds
+}
+
+func (o *TaskSearchRequestInput) GetAccountOwnerIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AccountOwnerIds
+}
+
+func (o *TaskSearchRequestInput) GetActorID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ActorID
+}
+
+func (o *TaskSearchRequestInput) GetAppEntitlementIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlementIds
+}
+
+func (o *TaskSearchRequestInput) GetAppResourceIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppResourceIds
+}
+
+func (o *TaskSearchRequestInput) GetAppResourceTypeIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppResourceTypeIds
+}
+
+func (o *TaskSearchRequestInput) GetAppUserSubjectIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserSubjectIds
+}
+
+func (o *TaskSearchRequestInput) GetApplicationIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ApplicationIds
+}
+
+func (o *TaskSearchRequestInput) GetAssigneesInIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AssigneesInIds
+}
+
+func (o *TaskSearchRequestInput) GetCreatedAfter() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAfter
+}
+
+func (o *TaskSearchRequestInput) GetCreatedBefore() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedBefore
+}
+
+func (o *TaskSearchRequestInput) GetCurrentStep() *TaskSearchRequestCurrentStep {
+	if o == nil {
+		return nil
+	}
+	return o.CurrentStep
+}
+
+func (o *TaskSearchRequestInput) GetEmergencyStatus() *TaskSearchRequestEmergencyStatus {
+	if o == nil {
+		return nil
+	}
+	return o.EmergencyStatus
+}
+
+func (o *TaskSearchRequestInput) GetExcludeAppEntitlementIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeAppEntitlementIds
+}
+
+func (o *TaskSearchRequestInput) GetExcludeIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeIds
+}
+
+func (o *TaskSearchRequestInput) GetIncludeDeleted() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IncludeDeleted
+}
+
+func (o *TaskSearchRequestInput) GetMyWorkUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.MyWorkUserIds
+}
+
+func (o *TaskSearchRequestInput) GetOpenerIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.OpenerIds
+}
+
+func (o *TaskSearchRequestInput) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *TaskSearchRequestInput) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
+func (o *TaskSearchRequestInput) GetPreviouslyActedOnIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.PreviouslyActedOnIds
+}
+
+func (o *TaskSearchRequestInput) GetQuery() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Query
+}
+
+func (o *TaskSearchRequestInput) GetRefs() []TaskRef {
+	if o == nil {
+		return nil
+	}
+	return o.Refs
+}
+
+func (o *TaskSearchRequestInput) GetSortBy() *TaskSearchRequestSortBy {
+	if o == nil {
+		return nil
+	}
+	return o.SortBy
+}
+
+func (o *TaskSearchRequestInput) GetSubjectIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.SubjectIds
+}
+
+func (o *TaskSearchRequestInput) GetTaskStates() []TaskSearchRequestTaskStates {
+	if o == nil {
+		return nil
+	}
+	return o.TaskStates
+}
+
+func (o *TaskSearchRequestInput) GetTaskTypes() []TaskTypeInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypes
 }
