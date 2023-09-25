@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -32,36 +32,36 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "delectus",
+                "molestiae",
             },
         },
-        AccessReviewID: conductoroneapi.String("tempora"),
-        Alias: conductoroneapi.String("suscipit"),
+        AccessReviewID: conductoronesdkgo.String("minus"),
+        Alias: conductoronesdkgo.String("placeat"),
         AppIds: []string{
-            "molestiae",
-        },
-        AppUserIds: []string{
-            "minus",
-        },
-        ComplianceFrameworkIds: []string{
-            "placeat",
-        },
-        ExcludeAppIds: []string{
             "voluptatum",
         },
-        ExcludeAppUserIds: []string{
+        AppUserIds: []string{
             "iusto",
         },
-        IncludeDeleted: conductoroneapi.Bool(false),
-        OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(5680.45),
-        PageToken: conductoroneapi.String("nisi"),
-        Query: conductoroneapi.String("recusandae"),
+        ComplianceFrameworkIds: []string{
+            "excepturi",
+        },
+        ExcludeAppIds: []string{
+            "nisi",
+        },
+        ExcludeAppUserIds: []string{
+            "recusandae",
+        },
+        IncludeDeleted: conductoronesdkgo.Bool(false),
+        OnlyGetExpiring: conductoronesdkgo.Bool(false),
+        PageSize: conductoronesdkgo.Float64(8360.79),
+        PageToken: conductoronesdkgo.String("ab"),
+        Query: conductoronesdkgo.String("quis"),
         ResourceTypeIds: []string{
-            "temporibus",
+            "veritatis",
         },
         RiskLevelIds: []string{
-            "ab",
+            "deserunt",
         },
     })
     if err != nil {
