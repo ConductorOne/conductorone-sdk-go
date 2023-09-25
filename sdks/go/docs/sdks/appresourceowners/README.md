@@ -16,13 +16,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -30,11 +31,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "labore",
-        PageSize: conductoroneapi.Float64(9621.89),
-        PageToken: conductoroneapi.String("eum"),
-        ResourceID: "non",
-        ResourceTypeID: "eligendi",
+        AppID: "est",
+        PageSize: conductoronesdkgo.Float64(8423.42),
+        PageToken: conductoronesdkgo.String("explicabo"),
+        ResourceID: "deserunt",
+        ResourceTypeID: "distinctio",
     })
     if err != nil {
         log.Fatal(err)

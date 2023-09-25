@@ -10,8 +10,29 @@ type UpdateAppEntitlementRequestInput struct {
 	//   - durationUnset
 	//   - durationGrant
 	//
-	Entitlement *AppEntitlementInput `json:"entitlement,omitempty"`
+	AppEntitlement *AppEntitlementInput `json:"entitlement,omitempty"`
 	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
-	ExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
-	UpdateMask *string                   `json:"updateMask,omitempty"`
+	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
+	UpdateMask               *string                   `json:"updateMask,omitempty"`
+}
+
+func (o *UpdateAppEntitlementRequestInput) GetAppEntitlement() *AppEntitlementInput {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlement
+}
+
+func (o *UpdateAppEntitlementRequestInput) GetAppEntitlementExpandMask() *AppEntitlementExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlementExpandMask
+}
+
+func (o *UpdateAppEntitlementRequestInput) GetUpdateMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateMask
 }

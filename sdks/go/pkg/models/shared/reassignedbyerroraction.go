@@ -3,10 +3,11 @@
 package shared
 
 import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
-// ReassignedByErrorAction - The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning.
+// The ReassignedByErrorAction object describes the outcome of a policy step that has been reassigned because it had an error provisioning.
 type ReassignedByErrorAction struct {
 	// The description of the error with more details on why this was reassigned.
 	Description *string `json:"description,omitempty"`
@@ -18,4 +19,57 @@ type ReassignedByErrorAction struct {
 	// The ID of the policy step that was created by this reassignment.
 	NewPolicyStepID *string    `json:"newPolicyStepId,omitempty"`
 	ReassignedAt    *time.Time `json:"reassignedAt,omitempty"`
+}
+
+func (r ReassignedByErrorAction) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *ReassignedByErrorAction) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *ReassignedByErrorAction) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *ReassignedByErrorAction) GetErrorCode() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ErrorCode
+}
+
+func (o *ReassignedByErrorAction) GetErrorUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ErrorUserID
+}
+
+func (o *ReassignedByErrorAction) GetErroredAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ErroredAt
+}
+
+func (o *ReassignedByErrorAction) GetNewPolicyStepID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NewPolicyStepID
+}
+
+func (o *ReassignedByErrorAction) GetReassignedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ReassignedAt
 }

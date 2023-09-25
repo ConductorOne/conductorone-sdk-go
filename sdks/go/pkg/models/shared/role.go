@@ -3,6 +3,7 @@
 package shared
 
 import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -16,7 +17,28 @@ type RoleInput struct {
 	ServiceRoles []string `json:"serviceRoles,omitempty"`
 }
 
-// Role - Role is a role that can be assigned to a user in ConductorOne.
+func (o *RoleInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *RoleInput) GetPermissions() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Permissions
+}
+
+func (o *RoleInput) GetServiceRoles() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ServiceRoles
+}
+
+// Role is a role that can be assigned to a user in ConductorOne.
 type Role struct {
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`
@@ -33,4 +55,78 @@ type Role struct {
 	// The system builtin field. If this field is set, the role is not editable.
 	SystemBuiltin *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
+}
+
+func (r Role) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(r, "", false)
+}
+
+func (r *Role) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &r, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *Role) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *Role) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *Role) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Role) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Role) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
+
+func (o *Role) GetPermissions() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Permissions
+}
+
+func (o *Role) GetServiceRoles() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ServiceRoles
+}
+
+func (o *Role) GetSystemBuiltin() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.SystemBuiltin
+}
+
+func (o *Role) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
 }

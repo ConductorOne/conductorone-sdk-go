@@ -4,6 +4,8 @@ package shared
 
 // TaskServiceCreateRevokeRequest - Create a revoke task.
 type TaskServiceCreateRevokeRequest struct {
+	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
+	TaskExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
 	// The ID of the app entitlement to revoke access to.
 	AppEntitlementID string `json:"appEntitlementId"`
 	// The ID of the app associated with the entitlement.
@@ -12,8 +14,48 @@ type TaskServiceCreateRevokeRequest struct {
 	AppUserID *string `json:"appUserId,omitempty"`
 	// The description of the request.
 	Description *string `json:"description,omitempty"`
-	// The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
-	ExpandMask *TaskExpandMask `json:"expandMask,omitempty"`
 	// The ID of the user associated with the app user we are revoking access from. This field cannot be set if appUserID is also set.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetTaskExpandMask() *TaskExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.TaskExpandMask
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetAppEntitlementID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AppEntitlementID
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetAppID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AppID
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetAppUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserID
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *TaskServiceCreateRevokeRequest) GetIdentityUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityUserID
 }

@@ -13,3 +13,35 @@ type ManagerApproval struct {
 	// Configuration to specific which users to fallback to if fallback is enabled and no manager is found.
 	FallbackUserIds []string `json:"fallbackUserIds,omitempty"`
 }
+
+func (o *ManagerApproval) GetAllowSelfApproval() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AllowSelfApproval
+}
+
+func (o *ManagerApproval) GetAssignedUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AssignedUserIds
+}
+
+func (o *ManagerApproval) GetFallback() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Fallback
+}
+
+func (o *ManagerApproval) GetFallbackUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FallbackUserIds
+}
+
+// ManagerApprovalInput - The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task.
+type ManagerApprovalInput struct {
+}

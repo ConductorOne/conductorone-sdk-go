@@ -9,3 +9,21 @@ type UserApproval struct {
 	// Array of users configured for approval.
 	UserIds []string `json:"userIds,omitempty"`
 }
+
+func (o *UserApproval) GetAllowSelfApproval() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AllowSelfApproval
+}
+
+func (o *UserApproval) GetUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.UserIds
+}
+
+// UserApprovalInput - The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users.
+type UserApprovalInput struct {
+}

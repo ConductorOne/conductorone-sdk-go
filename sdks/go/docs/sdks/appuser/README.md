@@ -17,14 +17,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,19 +34,18 @@ func main() {
     res, err := s.AppUser.Update(ctx, operations.C1APIAppV1AppUserServiceUpdateRequest{
         AppUserServiceUpdateRequestInput: &shared.AppUserServiceUpdateRequestInput{
             AppUser: &shared.AppUserInput{
-                AppUserType: shared.AppUserAppUserTypeAppUserTypeUnspecified.ToPointer(),
-                Status: &shared.AppUserStatus1{},
+                AppUserStatus: &shared.AppUserStatusInput{},
+                AppUserType: shared.AppUserAppUserTypeAppUserTypeServiceAccount.ToPointer(),
             },
-            ExpandMask: &shared.AppUserExpandMask{
+            AppUserExpandMask: &shared.AppUserExpandMask{
                 Paths: []string{
-                    "doloribus",
-                    "debitis",
+                    "deleniti",
                 },
             },
-            UpdateMask: conductoroneapi.String("eius"),
+            UpdateMask: conductoronesdkgo.String("sapiente"),
         },
-        AppUserAppID: "maxime",
-        AppUserID: "deleniti",
+        AppUserAppID: "amet",
+        AppUserID: "deserunt",
     })
     if err != nil {
         log.Fatal(err)

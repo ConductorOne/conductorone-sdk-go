@@ -11,3 +11,17 @@ type ListAppEntitlementOwnersResponse struct {
 	//  To retrieve the next page, use the same request and append a pageToken field with the value of nextPageToken shown on the previous page.
 	NextPageToken *string `json:"nextPageToken,omitempty"`
 }
+
+func (o *ListAppEntitlementOwnersResponse) GetList() []User {
+	if o == nil {
+		return nil
+	}
+	return o.List
+}
+
+func (o *ListAppEntitlementOwnersResponse) GetNextPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.NextPageToken
+}

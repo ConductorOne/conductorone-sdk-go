@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -44,14 +45,30 @@ func (e *AppUserAppUserType) UnmarshalJSON(data []byte) error {
 
 // AppUserInput - Application User that represents an account in the application.
 type AppUserInput struct {
+	// The satus of the applicaiton user.
+	AppUserStatus *AppUserStatusInput `json:"status,omitempty"`
 	// The appplication user type. Type can be user, system or service.
 	AppUserType *AppUserAppUserType `json:"appUserType,omitempty"`
-	// The satus of the applicaiton user.
-	Status *AppUserStatus1 `json:"status,omitempty"`
+}
+
+func (o *AppUserInput) GetAppUserStatus() *AppUserStatusInput {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserStatus
+}
+
+func (o *AppUserInput) GetAppUserType() *AppUserAppUserType {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserType
 }
 
 // AppUser - Application User that represents an account in the application.
 type AppUser struct {
+	// The satus of the applicaiton user.
+	AppUserStatus *AppUserStatus `json:"status,omitempty"`
 	// The ID of the application.
 	AppID *string `json:"appId,omitempty"`
 	// The appplication user type. Type can be user, system or service.
@@ -67,7 +84,93 @@ type AppUser struct {
 	// The conductor one user ID of the account owner.
 	IdentityUserID *string                `json:"identityUserId,omitempty"`
 	Profile        map[string]interface{} `json:"profile,omitempty"`
-	// The satus of the applicaiton user.
-	Status    *AppUserStatus `json:"status,omitempty"`
-	UpdatedAt *time.Time     `json:"updatedAt,omitempty"`
+	UpdatedAt      *time.Time             `json:"updatedAt,omitempty"`
+}
+
+func (a AppUser) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *AppUser) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *AppUser) GetAppUserStatus() *AppUserStatus {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserStatus
+}
+
+func (o *AppUser) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *AppUser) GetAppUserType() *AppUserAppUserType {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserType
+}
+
+func (o *AppUser) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *AppUser) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *AppUser) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *AppUser) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *AppUser) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *AppUser) GetIdentityUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityUserID
+}
+
+func (o *AppUser) GetProfile() map[string]interface{} {
+	if o == nil {
+		return nil
+	}
+	return o.Profile
+}
+
+func (o *AppUser) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
 }

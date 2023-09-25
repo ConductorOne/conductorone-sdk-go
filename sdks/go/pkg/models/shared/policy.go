@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -66,9 +67,106 @@ type Policy struct {
 	PostActions []PolicyPostActions `json:"postActions,omitempty"`
 	// A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
+	// The rules field.
+	Rules []Rule `json:"rules,omitempty"`
 	// Whether this policy is a builtin system policy. Builtin system policies cannot be edited.
 	SystemBuiltin *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
+}
+
+func (p Policy) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(p, "", false)
+}
+
+func (p *Policy) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &p, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *Policy) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *Policy) GetDeletedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.DeletedAt
+}
+
+func (o *Policy) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *Policy) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *Policy) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *Policy) GetPolicySteps() map[string]PolicySteps {
+	if o == nil {
+		return nil
+	}
+	return o.PolicySteps
+}
+
+func (o *Policy) GetPolicyType() *PolicyPolicyType {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyType
+}
+
+func (o *Policy) GetPostActions() []PolicyPostActions {
+	if o == nil {
+		return nil
+	}
+	return o.PostActions
+}
+
+func (o *Policy) GetReassignTasksToDelegates() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.ReassignTasksToDelegates
+}
+
+func (o *Policy) GetRules() []Rule {
+	if o == nil {
+		return nil
+	}
+	return o.Rules
+}
+
+func (o *Policy) GetSystemBuiltin() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.SystemBuiltin
+}
+
+func (o *Policy) GetUpdatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatedAt
 }
 
 // PolicyInput - A policy describes the behavior of the ConductorOne system when processing a task. You can describe the type, approvers, fallback behavior, and escalation processes.
@@ -85,4 +183,55 @@ type PolicyInput struct {
 	PostActions []PolicyPostActions `json:"postActions,omitempty"`
 	// A policy configuration option that allows for reassinging tasks to delgated users. This level of delegation referrs to the individual delegates users set on their account.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
+	// The rules field.
+	Rules []Rule `json:"rules,omitempty"`
+}
+
+func (o *PolicyInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *PolicyInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *PolicyInput) GetPolicySteps() map[string]PolicyStepsInput {
+	if o == nil {
+		return nil
+	}
+	return o.PolicySteps
+}
+
+func (o *PolicyInput) GetPolicyType() *PolicyPolicyType {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyType
+}
+
+func (o *PolicyInput) GetPostActions() []PolicyPostActions {
+	if o == nil {
+		return nil
+	}
+	return o.PostActions
+}
+
+func (o *PolicyInput) GetReassignTasksToDelegates() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.ReassignTasksToDelegates
+}
+
+func (o *PolicyInput) GetRules() []Rule {
+	if o == nil {
+		return nil
+	}
+	return o.Rules
 }

@@ -9,3 +9,10 @@ type UserExpandMask struct {
 	// An array of paths to be expanded in the response.
 	Paths []string `json:"paths,omitempty"`
 }
+
+func (o *UserExpandMask) GetPaths() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Paths
+}

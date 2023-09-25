@@ -7,6 +7,10 @@ import (
 	"fmt"
 )
 
+// AppUserStatusInput - The satus of the applicaiton user.
+type AppUserStatusInput struct {
+}
+
 // AppUserStatusStatus - The application user status field.
 type AppUserStatusStatus string
 
@@ -47,4 +51,18 @@ type AppUserStatus struct {
 	Details *string `json:"details,omitempty"`
 	// The application user status field.
 	Status *AppUserStatusStatus `json:"status,omitempty"`
+}
+
+func (o *AppUserStatus) GetDetails() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Details
+}
+
+func (o *AppUserStatus) GetStatus() *AppUserStatusStatus {
+	if o == nil {
+		return nil
+	}
+	return o.Status
 }

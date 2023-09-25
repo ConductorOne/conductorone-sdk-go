@@ -7,6 +7,27 @@ type ConnectorServiceUpdateRequestInput struct {
 	// A Connector is used to sync objects into Apps
 	Connector *ConnectorInput `json:"connector,omitempty"`
 	// The ConnectorExpandMask is used to expand related objects on a connector.
-	ExpandMask *ConnectorExpandMask `json:"expandMask,omitempty"`
-	UpdateMask *string              `json:"updateMask,omitempty"`
+	ConnectorExpandMask *ConnectorExpandMask `json:"expandMask,omitempty"`
+	UpdateMask          *string              `json:"updateMask,omitempty"`
+}
+
+func (o *ConnectorServiceUpdateRequestInput) GetConnector() *ConnectorInput {
+	if o == nil {
+		return nil
+	}
+	return o.Connector
+}
+
+func (o *ConnectorServiceUpdateRequestInput) GetConnectorExpandMask() *ConnectorExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.ConnectorExpandMask
+}
+
+func (o *ConnectorServiceUpdateRequestInput) GetUpdateMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateMask
 }

@@ -13,10 +13,62 @@ type C1APIAppV1AppResourceTypeServiceListRequest struct {
 	PageToken *string  `queryParam:"style=form,explode=true,name=page_token"`
 }
 
+func (o *C1APIAppV1AppResourceTypeServiceListRequest) GetAppID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AppID
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListRequest) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListRequest) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
 type C1APIAppV1AppResourceTypeServiceListResponse struct {
 	// The AppResourceTypeServiceListResponse message contains a list of results and a nextPageToken if applicable.
 	AppResourceTypeServiceListResponse *shared.AppResourceTypeServiceListResponse
-	ContentType                        string
-	StatusCode                         int
-	RawResponse                        *http.Response
+	// HTTP response content type for this operation
+	ContentType string
+	// HTTP response status code for this operation
+	StatusCode int
+	// Raw HTTP response; suitable for custom response parsing
+	RawResponse *http.Response
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListResponse) GetAppResourceTypeServiceListResponse() *shared.AppResourceTypeServiceListResponse {
+	if o == nil {
+		return nil
+	}
+	return o.AppResourceTypeServiceListResponse
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *C1APIAppV1AppResourceTypeServiceListResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

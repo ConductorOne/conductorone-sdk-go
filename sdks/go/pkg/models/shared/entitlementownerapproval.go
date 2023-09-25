@@ -11,3 +11,28 @@ type EntitlementOwnerApproval struct {
 	// Configuration to specific which users to fallback to if fallback is enabled and the entitlement owner cannot be identified.
 	FallbackUserIds []string `json:"fallbackUserIds,omitempty"`
 }
+
+func (o *EntitlementOwnerApproval) GetAllowSelfApproval() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AllowSelfApproval
+}
+
+func (o *EntitlementOwnerApproval) GetFallback() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Fallback
+}
+
+func (o *EntitlementOwnerApproval) GetFallbackUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FallbackUserIds
+}
+
+// EntitlementOwnerApprovalInput - The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners.
+type EntitlementOwnerApprovalInput struct {
+}

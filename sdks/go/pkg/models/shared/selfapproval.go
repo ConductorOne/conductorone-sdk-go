@@ -11,3 +11,28 @@ type SelfApproval struct {
 	// Configuration to specific which users to fallback to if fallback is enabled and the identity user of the target app user cannot be determined.
 	FallbackUserIds []string `json:"fallbackUserIds,omitempty"`
 }
+
+func (o *SelfApproval) GetAssignedUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.AssignedUserIds
+}
+
+func (o *SelfApproval) GetFallback() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Fallback
+}
+
+func (o *SelfApproval) GetFallbackUserIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.FallbackUserIds
+}
+
+// SelfApprovalInput - The self approval object describes the configuration of a policy step that needs to be approved by the target of the request.
+type SelfApprovalInput struct {
+}

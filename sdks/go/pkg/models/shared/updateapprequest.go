@@ -8,3 +8,17 @@ type UpdateAppRequestInput struct {
 	App        *AppInput `json:"app,omitempty"`
 	UpdateMask *string   `json:"updateMask,omitempty"`
 }
+
+func (o *UpdateAppRequestInput) GetApp() *AppInput {
+	if o == nil {
+		return nil
+	}
+	return o.App
+}
+
+func (o *UpdateAppRequestInput) GetUpdateMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateMask
+}

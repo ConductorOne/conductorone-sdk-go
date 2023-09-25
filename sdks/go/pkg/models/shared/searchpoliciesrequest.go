@@ -61,3 +61,45 @@ type SearchPoliciesRequest struct {
 	// The refs field.
 	Refs []PolicyRef `json:"refs,omitempty"`
 }
+
+func (o *SearchPoliciesRequest) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *SearchPoliciesRequest) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *SearchPoliciesRequest) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
+func (o *SearchPoliciesRequest) GetPolicyTypes() []SearchPoliciesRequestPolicyTypes {
+	if o == nil {
+		return nil
+	}
+	return o.PolicyTypes
+}
+
+func (o *SearchPoliciesRequest) GetQuery() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Query
+}
+
+func (o *SearchPoliciesRequest) GetRefs() []PolicyRef {
+	if o == nil {
+		return nil
+	}
+	return o.Refs
+}

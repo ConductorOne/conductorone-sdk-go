@@ -2,7 +2,7 @@
 
 package shared
 
-// ProvisionTarget - ProvisionTarget indicates the specific app, app entitlement, and if known, the app user and grant duration of this provision step
+// ProvisionTarget indicates the specific app, app entitlement, and if known, the app user and grant duration of this provision step
 type ProvisionTarget struct {
 	// The app entitlement that should be provisioned.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
@@ -11,4 +11,32 @@ type ProvisionTarget struct {
 	// The app user that should be provisioned. May be unset if the app user is unknown
 	AppUserID     *string `json:"appUserId,omitempty"`
 	GrantDuration *string `json:"grantDuration,omitempty"`
+}
+
+func (o *ProvisionTarget) GetAppEntitlementID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlementID
+}
+
+func (o *ProvisionTarget) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *ProvisionTarget) GetAppUserID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserID
+}
+
+func (o *ProvisionTarget) GetGrantDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.GrantDuration
 }

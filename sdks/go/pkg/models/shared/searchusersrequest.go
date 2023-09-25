@@ -42,13 +42,13 @@ func (e *SearchUsersRequestUserStatuses) UnmarshalJSON(data []byte) error {
 
 // SearchUsersRequest - Search for users based on some filters.
 type SearchUsersRequest struct {
+	// The user expand mask is used to indicate which related objects should be expanded in the response.
+	//  The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
+	UserExpandMask *UserExpandMask `json:"expandMask,omitempty"`
 	// Search for users based on their email (exact match).
 	Email *string `json:"email,omitempty"`
 	// An array of users IDs to exclude from the results.
 	ExcludeIds []string `json:"excludeIds,omitempty"`
-	// The user expand mask is used to indicate which related objects should be expanded in the response.
-	//  The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
-	ExpandMask *UserExpandMask `json:"expandMask,omitempty"`
 	// Deprecated. Use refs array instead.
 	Ids []string `json:"ids,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
@@ -63,4 +63,74 @@ type SearchUsersRequest struct {
 	RoleIds []string `json:"roleIds,omitempty"`
 	// Search for users that have any of the statuses on this list. This can only be ENABLED, DISABLED, and DELETED
 	UserStatuses []SearchUsersRequestUserStatuses `json:"userStatuses,omitempty"`
+}
+
+func (o *SearchUsersRequest) GetUserExpandMask() *UserExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.UserExpandMask
+}
+
+func (o *SearchUsersRequest) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *SearchUsersRequest) GetExcludeIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ExcludeIds
+}
+
+func (o *SearchUsersRequest) GetIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Ids
+}
+
+func (o *SearchUsersRequest) GetPageSize() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PageSize
+}
+
+func (o *SearchUsersRequest) GetPageToken() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PageToken
+}
+
+func (o *SearchUsersRequest) GetQuery() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Query
+}
+
+func (o *SearchUsersRequest) GetRefs() []UserRef {
+	if o == nil {
+		return nil
+	}
+	return o.Refs
+}
+
+func (o *SearchUsersRequest) GetRoleIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.RoleIds
+}
+
+func (o *SearchUsersRequest) GetUserStatuses() []SearchUsersRequestUserStatuses {
+	if o == nil {
+		return nil
+	}
+	return o.UserStatuses
 }

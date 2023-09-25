@@ -2,8 +2,15 @@
 
 package shared
 
-// RequestCatalogManagementServiceAddAppEntitlementsRequest - The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog.
+// The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to add app requestable app entitlements to a request catalog.
 type RequestCatalogManagementServiceAddAppEntitlementsRequest struct {
 	// List of entitlements to add to the request catalog.
 	AppEntitlements []AppEntitlementRef `json:"appEntitlements,omitempty"`
+}
+
+func (o *RequestCatalogManagementServiceAddAppEntitlementsRequest) GetAppEntitlements() []AppEntitlementRef {
+	if o == nil {
+		return nil
+	}
+	return o.AppEntitlements
 }

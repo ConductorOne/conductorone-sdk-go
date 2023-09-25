@@ -7,3 +7,10 @@ type TaskExpandMask struct {
 	// A list of paths to expand in the response. May be any combination of "*", "access_review_id", "user_id", "created_by_user_id", "app_id", "app_user_id", "app_entitlement_ids", "step_approver_ids", and "identity_user_id".
 	Paths []string `json:"paths,omitempty"`
 }
+
+func (o *TaskExpandMask) GetPaths() []string {
+	if o == nil {
+		return nil
+	}
+	return o.Paths
+}

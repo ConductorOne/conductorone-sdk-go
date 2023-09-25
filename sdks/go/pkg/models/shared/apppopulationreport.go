@@ -5,6 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 
@@ -42,7 +43,7 @@ func (e *AppPopulationReportState) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// AppPopulationReport - The AppPopulationReport is a generated report for a specific app that gives details about the app's users. These details include what groups, roles, and other entitlements the users have access to.
+// The AppPopulationReport is a generated report for a specific app that gives details about the app's users. These details include what groups, roles, and other entitlements the users have access to.
 type AppPopulationReport struct {
 	// The appId is the Id of the app which the report is generated for.
 	AppID     *string    `json:"appId,omitempty"`
@@ -55,4 +56,57 @@ type AppPopulationReport struct {
 	ID *string `json:"id,omitempty"`
 	// The state field tracks the state of the AppPopulationReport. This state field can be one of REPORT_STATE_PENDING, REPORT_STATE_UNSPECIFIED, REPORT_STATE_OK, REPORT_STATE_ERROR.
 	State *AppPopulationReportState `json:"state,omitempty"`
+}
+
+func (a AppPopulationReport) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *AppPopulationReport) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (o *AppPopulationReport) GetAppID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AppID
+}
+
+func (o *AppPopulationReport) GetCreatedAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.CreatedAt
+}
+
+func (o *AppPopulationReport) GetDownloadURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DownloadURL
+}
+
+func (o *AppPopulationReport) GetHashes() map[string]string {
+	if o == nil {
+		return nil
+	}
+	return o.Hashes
+}
+
+func (o *AppPopulationReport) GetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.ID
+}
+
+func (o *AppPopulationReport) GetState() *AppPopulationReportState {
+	if o == nil {
+		return nil
+	}
+	return o.State
 }

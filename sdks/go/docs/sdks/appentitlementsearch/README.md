@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -30,49 +30,38 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
-        AccessReviewID: conductoroneapi.String("suscipit"),
-        Alias: conductoroneapi.String("molestiae"),
-        AppIds: []string{
-            "placeat",
-            "voluptatum",
-            "iusto",
-            "excepturi",
-        },
-        AppUserIds: []string{
-            "recusandae",
-            "temporibus",
-        },
-        ComplianceFrameworkIds: []string{
-            "quis",
-        },
-        ExcludeAppIds: []string{
-            "deserunt",
-        },
-        ExcludeAppUserIds: []string{
-            "ipsam",
-        },
-        ExpandMask: &shared.AppEntitlementExpandMask{
+        AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "sapiente",
-                "quo",
-                "odit",
-                "at",
+                "molestiae",
             },
         },
-        OnlyGetExpiring: conductoroneapi.Bool(false),
-        PageSize: conductoroneapi.Float64(8700.88),
-        PageToken: conductoroneapi.String("maiores"),
-        Query: conductoroneapi.String("molestiae"),
+        AccessReviewID: conductoronesdkgo.String("minus"),
+        Alias: conductoronesdkgo.String("placeat"),
+        AppIds: []string{
+            "voluptatum",
+        },
+        AppUserIds: []string{
+            "iusto",
+        },
+        ComplianceFrameworkIds: []string{
+            "excepturi",
+        },
+        ExcludeAppIds: []string{
+            "nisi",
+        },
+        ExcludeAppUserIds: []string{
+            "recusandae",
+        },
+        IncludeDeleted: conductoronesdkgo.Bool(false),
+        OnlyGetExpiring: conductoronesdkgo.Bool(false),
+        PageSize: conductoronesdkgo.Float64(8360.79),
+        PageToken: conductoronesdkgo.String("ab"),
+        Query: conductoronesdkgo.String("quis"),
         ResourceTypeIds: []string{
-            "quod",
-            "esse",
-            "totam",
-            "porro",
+            "veritatis",
         },
         RiskLevelIds: []string{
-            "dicta",
-            "nam",
-            "officia",
+            "deserunt",
         },
     })
     if err != nil {

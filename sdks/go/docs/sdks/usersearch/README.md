@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -30,38 +30,31 @@ func main() {
 
     ctx := context.Background()
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
-        Email: conductoroneapi.String("Ike48@gmail.com"),
-        ExcludeIds: []string{
-            "rem",
-            "eligendi",
-            "fugiat",
-        },
-        ExpandMask: &shared.UserExpandMask{
+        UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "officiis",
-                "ducimus",
-                "dolor",
+                "ab",
             },
+        },
+        Email: conductoronesdkgo.String("Remington_Volkman@yahoo.com"),
+        ExcludeIds: []string{
+            "libero",
         },
         Ids: []string{
-            "error",
+            "ad",
         },
-        PageSize: conductoroneapi.Float64(7847.31),
-        PageToken: conductoroneapi.String("vitae"),
-        Query: conductoroneapi.String("dignissimos"),
+        PageSize: conductoronesdkgo.Float64(5369.23),
+        PageToken: conductoronesdkgo.String("enim"),
+        Query: conductoronesdkgo.String("vitae"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("d525f77b-114e-4eb5-aff7-85fc37814d4c"),
-            },
-            shared.UserRef{
-                ID: conductoroneapi.String("98e0c2bb-89eb-475d-ad63-6c600503d8bb"),
+                ID: conductoronesdkgo.String("d6c645b0-8b61-4891-baa0-fe1ade008e6f"),
             },
         },
         RoleIds: []string{
-            "quasi",
+            "rem",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDisabled,
+            shared.SearchUsersRequestUserStatusesDeleted,
         },
     })
     if err != nil {
