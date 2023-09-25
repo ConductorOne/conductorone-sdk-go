@@ -20,13 +20,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -34,15 +34,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoroneapi.String("sapiente"),
-        Description: conductoroneapi.String("amet"),
-        DisplayName: conductoroneapi.String("deserunt"),
-        GrantPolicyID: conductoroneapi.String("nisi"),
-        MonthlyCostUsd: conductoroneapi.Float64(4238.55),
+        CertifyPolicyID: conductoronesdkgo.String("nisi"),
+        Description: conductoronesdkgo.String("vel"),
+        DisplayName: conductoronesdkgo.String("natus"),
+        GrantPolicyID: conductoronesdkgo.String("omnis"),
+        MonthlyCostUsd: conductoronesdkgo.Float64(4748.67),
         Owners: []string{
-            "natus",
+            "perferendis",
         },
-        RevokePolicyID: conductoroneapi.String("omnis"),
+        RevokePolicyID: conductoronesdkgo.String("nihil"),
     })
     if err != nil {
         log.Fatal(err)
@@ -79,14 +79,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -95,7 +95,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "7074ba44-69b6-4e21-8195-9890afa563e2",
+        ID: "4ba4469b-6e21-4419-9989-0afa563e2516",
     })
     if err != nil {
         log.Fatal(err)
@@ -132,14 +132,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -147,7 +147,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "516fe4c8-b711-4e5b-bfd2-ed028921cddc",
+        ID: "fe4c8b71-1e5b-47fd-aed0-28921cddc692",
     })
     if err != nil {
         log.Fatal(err)
@@ -184,14 +184,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -199,8 +199,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
-        PageSize: conductoroneapi.Float64(4113.97),
-        PageToken: conductoroneapi.String("excepturi"),
+        PageSize: conductoronesdkgo.Float64(4071.83),
+        PageToken: conductoronesdkgo.String("accusantium"),
     })
     if err != nil {
         log.Fatal(err)
@@ -237,14 +237,14 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -254,17 +254,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                CertifyPolicyID: conductoroneapi.String("odit"),
-                Description: conductoroneapi.String("ea"),
-                DisplayName: conductoroneapi.String("accusantium"),
-                GrantPolicyID: conductoroneapi.String("ab"),
-                IconURL: conductoroneapi.String("maiores"),
-                MonthlyCostUsd: conductoroneapi.Float64(6974.29),
-                RevokePolicyID: conductoroneapi.String("ipsam"),
+                CertifyPolicyID: conductoronesdkgo.String("ab"),
+                Description: conductoronesdkgo.String("maiores"),
+                DisplayName: conductoronesdkgo.String("quidem"),
+                GrantPolicyID: conductoronesdkgo.String("ipsam"),
+                IconURL: conductoronesdkgo.String("voluptate"),
+                MonthlyCostUsd: conductoronesdkgo.Float64(4200.75),
+                RevokePolicyID: conductoronesdkgo.String("nam"),
             },
-            UpdateMask: conductoroneapi.String("voluptate"),
+            UpdateMask: conductoronesdkgo.String("eaque"),
         },
-        ID: "6b0d5f0d-30c5-4fbb-a587-053202c73d5f",
+        ID: "d5f0d30c-5fbb-4258-b053-202c73d5fe9b",
     })
     if err != nil {
         log.Fatal(err)

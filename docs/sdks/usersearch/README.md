@@ -16,13 +16,13 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/conductorone/conductorone-sdk-go"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
-    s := conductoroneapi.New(
-        conductoroneapi.WithSecurity(shared.Security{
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "",
             Oauth: "",
         }),
@@ -32,29 +32,29 @@ func main() {
     res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "aliquid",
+                "ab",
             },
         },
-        Email: conductoroneapi.String("Hollie_Hirthe@gmail.com"),
+        Email: conductoronesdkgo.String("Remington_Volkman@yahoo.com"),
         ExcludeIds: []string{
-            "ab",
+            "libero",
         },
         Ids: []string{
-            "error",
+            "ad",
         },
-        PageSize: conductoroneapi.Float64(8224.07),
-        PageToken: conductoroneapi.String("voluptates"),
-        Query: conductoroneapi.String("mollitia"),
+        PageSize: conductoronesdkgo.Float64(5369.23),
+        PageToken: conductoronesdkgo.String("enim"),
+        Query: conductoronesdkgo.String("vitae"),
         Refs: []shared.UserRef{
             shared.UserRef{
-                ID: conductoroneapi.String("ab5851d6-c645-4b08-b618-91baa0fe1ade"),
+                ID: conductoronesdkgo.String("d6c645b0-8b61-4891-baa0-fe1ade008e6f"),
             },
         },
         RoleIds: []string{
-            "voluptatem",
+            "rem",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesDeleted,
         },
     })
     if err != nil {
