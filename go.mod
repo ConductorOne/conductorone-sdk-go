@@ -12,7 +12,7 @@ require (
 	golang.org/x/net v0.15.0
 	golang.org/x/oauth2 v0.12.0
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20230913181813-007df8e322eb // indirect
-	google.golang.org/grpc v1.58.1
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230920204549-e6e6cdab5c13 // indirect
+	google.golang.org/grpc v1.58.2
 	gopkg.in/square/go-jose.v2 v2.6.0
 )
