@@ -31,14 +31,6 @@ jobs:
     - name: Clone 'conductorone-sdk-go' repository
       run: git clone https://github.com/conductorone/conductorone-sdk-go.git
 
-    # Switch to the PR branch if this is a PR
-    - name: Switch to PR branch
-      if: github.event_name == 'pull_request'
-      run: |
-        cd conductorone-sdk-go
-        git fetch origin github.head_ref
-        git checkout FETCH_HEAD
-
     # Replace the vendored SDK in 'cone' with the checked-out version
     - name: Replace vendored SDK
       run: |
