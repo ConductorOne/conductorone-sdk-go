@@ -20,6 +20,5 @@ jobs:
         with:
           go-version-file: 'go.mod'
 
-      # Change directory to '.ci' and test the code
-      - name: Change directory to 'cone'
-        run: go build - o cli ./.ci
+      - name: Build the test cli
+        run: go build -o cli ./.ci
