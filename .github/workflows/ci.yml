@@ -22,4 +22,4 @@ jobs:
 
       # Change directory to '.ci' and test the code
       - name: Change directory to 'cone'
-        run: cd .ci; go build test.go
+        run: go build .ci/test.go
