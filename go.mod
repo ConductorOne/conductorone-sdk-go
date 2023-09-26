@@ -3,7 +3,6 @@ module github.com/conductorone/conductorone-sdk-go
 go 1.14
 
 require (
-	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/ericlagergren/decimal v0.0.0-20221120152707-495c53812d05
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
