@@ -36,7 +36,7 @@ jobs:
       if: github.event_name == 'pull_request'
       run: |
         cd conductorone-sdk-go
-        git fetch origin ${GITHUB_REF:11}
+        git fetch origin github.head_ref
         git checkout FETCH_HEAD
 
     # Replace the vendored SDK in 'cone' with the checked-out version
