@@ -56,9 +56,10 @@ func updateTest(ctx context.Context, client *c1.ConductoroneAPI, taskId string, 
 
 // Search
 func searchTest(ctx context.Context, client *c1.ConductoroneAPI) (*operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse, error) {
-	resp, err := client.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
+	res := shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
 		PageToken: nil,
-	})
+	}
+	resp, err := client.RequestCatalogSearch.SearchEntitlements(ctx, &res)
 	if err != nil {
 		return nil, err
 	}
