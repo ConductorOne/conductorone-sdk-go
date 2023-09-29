@@ -32,22 +32,22 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "quibusdam",
+            "Soap",
         },
         ExcludeResourceTypeIds: []string{
-            "labore",
+            "paradigms",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "modi",
+            "World",
         },
-        PageSize: conductoronesdkgo.Float64(1831.91),
-        PageToken: conductoronesdkgo.String("aliquid"),
-        Query: conductoronesdkgo.String("cupiditate"),
+        PageSize: conductoronesdkgo.Float64(553.23),
+        PageToken: conductoronesdkgo.String("SUV nostrum specifically"),
+        Query: conductoronesdkgo.String("Distributed across"),
         ResourceTypeIds: []string{
-            "quos",
+            "minima",
         },
         ResourceTypeTraitIds: []string{
-            "perferendis",
+            "Branding",
         },
     })
     if err != nil {

@@ -34,7 +34,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "totam",
+        RoleID: "Group Cambridgeshire",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,8 +86,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{
-        PageSize: conductoronesdkgo.Float64(610.78),
-        PageToken: conductoronesdkgo.String("molestiae"),
+        PageSize: conductoronesdkgo.Float64(6488.05),
+        PageToken: conductoronesdkgo.String("Southeast"),
     })
     if err != nil {
         log.Fatal(err)
@@ -141,17 +141,17 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoronesdkgo.String("eveniet"),
+                DisplayName: conductoronesdkgo.String("South complexity"),
                 Permissions: []string{
-                    "qui",
+                    "Supervisor",
                 },
                 ServiceRoles: []string{
-                    "cum",
+                    "less",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("iure"),
+            UpdateMask: conductoronesdkgo.String("Architect"),
         },
-        RoleID: "necessitatibus",
+        RoleID: "Oregon",
     })
     if err != nil {
         log.Fatal(err)

@@ -31,16 +31,16 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoronesdkgo.String("ea"),
-        PageSize: conductoronesdkgo.Float64(3100.67),
-        PageToken: conductoronesdkgo.String("consequuntur"),
+        DisplayName: conductoronesdkgo.String("specific"),
+        PageSize: conductoronesdkgo.Float64(4589.64),
+        PageToken: conductoronesdkgo.String("Coordinator"),
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeAccessRequest,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
         },
-        Query: conductoronesdkgo.String("officia"),
+        Query: conductoronesdkgo.String("siemens Russian"),
         Refs: []shared.PolicyRef{
             shared.PolicyRef{
-                ID: conductoronesdkgo.String("c7af515c-c413-4aa6-baae-8d67864dbb67"),
+                ID: conductoronesdkgo.String("<ID>"),
             },
         },
     })

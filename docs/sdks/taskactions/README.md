@@ -38,13 +38,13 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "animi",
+                    "Gasoline",
                 },
             },
-            Comment: conductoronesdkgo.String("nostrum"),
-            PolicyStepID: "mollitia",
+            Comment: conductoronesdkgo.String("Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"),
+            PolicyStepID: "synthesize Tennessee",
         },
-        TaskID: "provident",
+        TaskID: "Hatchback Northeast",
     })
     if err != nil {
         log.Fatal(err)
@@ -99,12 +99,12 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "possimus",
+                    "Synergized",
                 },
             },
-            Comment: conductoronesdkgo.String("animi"),
+            Comment: conductoronesdkgo.String("The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"),
         },
-        TaskID: "ex",
+        TaskID: "enim than where",
     })
     if err != nil {
         log.Fatal(err)
@@ -159,13 +159,13 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "aliquid",
+                    "relationships",
                 },
             },
-            Comment: conductoronesdkgo.String("accusantium"),
-            PolicyStepID: conductoronesdkgo.String("repellat"),
+            Comment: conductoronesdkgo.String("The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"),
+            PolicyStepID: conductoronesdkgo.String("male"),
         },
-        TaskID: "doloribus",
+        TaskID: "payment Pickup",
     })
     if err != nil {
         log.Fatal(err)
@@ -220,13 +220,13 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "ullam",
+                    "Practical",
                 },
             },
-            Comment: conductoronesdkgo.String("in"),
-            PolicyStepID: conductoronesdkgo.String("nam"),
+            Comment: conductoronesdkgo.String("The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"),
+            PolicyStepID: conductoronesdkgo.String("invoice International"),
         },
-        TaskID: "earum",
+        TaskID: "Southeast ethical",
     })
     if err != nil {
         log.Fatal(err)

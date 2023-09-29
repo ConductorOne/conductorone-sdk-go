@@ -36,10 +36,10 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
         AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{
-            UserID: conductoronesdkgo.String("corrupti"),
+            UserID: conductoronesdkgo.String("Small West"),
         },
-        AppID: "illum",
-        EntitlementID: "vel",
+        AppID: "Officer impactful",
+        EntitlementID: "Developer portals editorialise",
     })
     if err != nil {
         log.Fatal(err)
@@ -91,10 +91,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.List(ctx, operations.C1APIAppV1AppEntitlementOwnersListRequest{
-        AppID: "error",
-        EntitlementID: "deserunt",
-        PageSize: conductoronesdkgo.Float64(3843.82),
-        PageToken: conductoronesdkgo.String("iure"),
+        AppID: "Bronze Architect",
+        EntitlementID: "Southeast Soap katal",
+        PageSize: conductoronesdkgo.Float64(4900.99),
+        PageToken: conductoronesdkgo.String("aftermath"),
     })
     if err != nil {
         log.Fatal(err)
@@ -147,9 +147,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Remove(ctx, operations.C1APIAppV1AppEntitlementOwnersRemoveRequest{
         RemoveAppEntitlementOwnerRequest: &shared.RemoveAppEntitlementOwnerRequest{},
-        AppID: "magnam",
-        EntitlementID: "debitis",
-        UserID: "ipsa",
+        AppID: "SCSI",
+        EntitlementID: "JBOD tan",
+        UserID: "encompassing",
     })
     if err != nil {
         log.Fatal(err)
@@ -203,11 +203,11 @@ func main() {
     res, err := s.AppEntitlementOwners.Set(ctx, operations.C1APIAppV1AppEntitlementOwnersSetRequest{
         SetAppEntitlementOwnersRequest: &shared.SetAppEntitlementOwnersRequest{
             UserIds: []string{
-                "delectus",
+                "markets",
             },
         },
-        AppID: "tempora",
-        EntitlementID: "suscipit",
+        AppID: "yahoo bandwidth",
+        EntitlementID: "male microchip",
     })
     if err != nil {
         log.Fatal(err)

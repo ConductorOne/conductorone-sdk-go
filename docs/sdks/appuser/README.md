@@ -40,13 +40,13 @@ func main() {
             },
             AppUserExpandMask: &shared.AppUserExpandMask{
                 Paths: []string{
-                    "deleniti",
+                    "South",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("sapiente"),
+            UpdateMask: conductoronesdkgo.String("Clothing Tempe"),
         },
-        AppUserAppID: "amet",
-        AppUserID: "deserunt",
+        AppUserAppID: "Ohio ADP",
+        AppUserID: "Holmium",
     })
     if err != nil {
         log.Fatal(err)

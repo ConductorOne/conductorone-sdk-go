@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/conductorone/conductorone-sdk-go
+go get github.com/ConductorOne/conductorone-sdk-go
 ```
 <!-- End SDK Installation -->
 
@@ -32,10 +32,10 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
         AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{
-            UserID: conductoronesdkgo.String("quibusdam"),
+            UserID: conductoronesdkgo.String("Small West"),
         },
-        AppID: "unde",
-        EntitlementID: "nulla",
+        AppID: "Officer impactful",
+        EntitlementID: "Developer portals editorialise",
     })
     if err != nil {
         log.Fatal(err)

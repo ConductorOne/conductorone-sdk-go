@@ -37,8 +37,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "sapiente",
-        ID: "c2ddf7cc-78ca-41ba-928f-c816742cb739",
+        AppID: "Group Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,9 +90,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "aspernatur",
-        PageSize: conductoronesdkgo.Float64(187.89),
-        PageToken: conductoronesdkgo.String("ad"),
+        AppID: "Bronze Architect",
+        PageSize: conductoronesdkgo.Float64(9628.76),
+        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)
@@ -144,11 +144,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "natus",
-        AppResourceID: "sed",
-        AppResourceTypeID: "iste",
-        PageSize: conductoronesdkgo.Float64(2223.21),
-        PageToken: conductoronesdkgo.String("natus"),
+        AppID: "SDD convergence",
+        AppResourceID: "quis whether",
+        AppResourceTypeID: "Non",
+        PageSize: conductoronesdkgo.Float64(7654.99),
+        PageToken: conductoronesdkgo.String("Fitness Dollar Licensed"),
     })
     if err != nil {
         log.Fatal(err)
@@ -200,10 +200,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "laboriosam",
-        AppUserID: "hic",
-        PageSize: conductoronesdkgo.Float64(9025.99),
-        PageToken: conductoronesdkgo.String("fuga"),
+        AppID: "Gardena payment Mountain",
+        AppUserID: "Cruiser",
+        PageSize: conductoronesdkgo.Float64(7218.97),
+        PageToken: conductoronesdkgo.String("Franc Novato"),
     })
     if err != nil {
         log.Fatal(err)
@@ -255,10 +255,10 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "in",
-        AppID: "corporis",
-        PageSize: conductoronesdkgo.Float64(6130.64),
-        PageToken: conductoronesdkgo.String("iure"),
+        AppEntitlementID: "yellow payment",
+        AppID: "why Electric",
+        PageSize: conductoronesdkgo.Float64(782.05),
+        PageToken: conductoronesdkgo.String("Metal rack whether"),
     })
     if err != nil {
         log.Fatal(err)
@@ -315,43 +315,43 @@ func main() {
                 ProvisionPolicy: &shared.ProvisionPolicy{
                     ConnectorProvision: &shared.ConnectorProvision{},
                     DelegatedProvision: &shared.DelegatedProvision{
-                        AppID: conductoronesdkgo.String("saepe"),
-                        EntitlementID: conductoronesdkgo.String("quidem"),
+                        AppID: conductoronesdkgo.String("South complexity"),
+                        EntitlementID: conductoronesdkgo.String("Tempe Ruble ADP"),
                     },
                     ManualProvision: &shared.ManualProvision{
-                        Instructions: conductoronesdkgo.String("architecto"),
+                        Instructions: conductoronesdkgo.String("Holmium"),
                         UserIds: []string{
-                            "ipsa",
+                            "Country",
                         },
                     },
                 },
-                AppID: conductoronesdkgo.String("reiciendis"),
-                AppResourceID: conductoronesdkgo.String("est"),
-                AppResourceTypeID: conductoronesdkgo.String("mollitia"),
-                CertifyPolicyID: conductoronesdkgo.String("laborum"),
+                AppID: conductoronesdkgo.String("Albany Southeast Computer"),
+                AppResourceID: conductoronesdkgo.String("Towels"),
+                AppResourceTypeID: conductoronesdkgo.String("invoice Northeast orange"),
+                CertifyPolicyID: conductoronesdkgo.String("Response HTTP"),
                 ComplianceFrameworkValueIds: []string{
-                    "dolores",
+                    "Hybrid",
                 },
-                Description: conductoronesdkgo.String("dolorem"),
-                DisplayName: conductoronesdkgo.String("corporis"),
-                DurationGrant: conductoronesdkgo.String("explicabo"),
+                Description: conductoronesdkgo.String("Stand-alone encompassing middleware"),
+                DisplayName: conductoronesdkgo.String("index Iran after"),
+                DurationGrant: conductoronesdkgo.String("through"),
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
                 EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
-                EmergencyGrantPolicyID: conductoronesdkgo.String("nobis"),
-                GrantPolicyID: conductoronesdkgo.String("enim"),
-                RevokePolicyID: conductoronesdkgo.String("omnis"),
-                RiskLevelValueID: conductoronesdkgo.String("nemo"),
-                Slug: conductoronesdkgo.String("minima"),
+                EmergencyGrantPolicyID: conductoronesdkgo.String("Optimized"),
+                GrantPolicyID: conductoronesdkgo.String("fugit fuchsia"),
+                RevokePolicyID: conductoronesdkgo.String("sternly meter experiences"),
+                RiskLevelValueID: conductoronesdkgo.String("as Electric than"),
+                Slug: conductoronesdkgo.String("Benz Representative"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "excepturi",
+                    "wireless",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("accusantium"),
+            UpdateMask: conductoronesdkgo.String("index"),
         },
-        AppID: "iure",
-        ID: "aff1a3a2-fa94-4677-b925-1aa52c3f5ad0",
+        AppID: "Funk Small system",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

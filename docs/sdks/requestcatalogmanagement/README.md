@@ -45,12 +45,12 @@ func main() {
         RequestCatalogManagementServiceAddAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("corporis"),
-                    ID: conductoronesdkgo.String("fd5e60b3-75ed-44f6-bbee-41f33317fe35"),
+                    AppID: conductoronesdkgo.String("deposit"),
+                    ID: conductoronesdkgo.String("<ID>"),
                 },
             },
         },
-        CatalogID: "harum",
+        CatalogID: "Principal",
     })
     if err != nil {
         log.Fatal(err)
@@ -105,12 +105,12 @@ func main() {
         RequestCatalogManagementServiceAddAppEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("laboriosam"),
-                    ID: conductoronesdkgo.String("0eb1ea42-6555-4ba3-8287-44ed53b88f3a"),
+                    AppID: conductoronesdkgo.String("East cyan Wilma"),
+                    ID: conductoronesdkgo.String("<ID>"),
                 },
             },
         },
-        CatalogID: "corrupti",
+        CatalogID: "Southeast Steel slight",
     })
     if err != nil {
         log.Fatal(err)
@@ -163,11 +163,11 @@ func main() {
     res, err := s.RequestCatalogManagement.Create(ctx, shared.RequestCatalogManagementServiceCreateRequest{
         RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
             Paths: []string{
-                "pariatur",
+                "neural",
             },
         },
-        Description: conductoronesdkgo.String("totam"),
-        DisplayName: conductoronesdkgo.String("hic"),
+        Description: conductoronesdkgo.String("Expanded zero tolerance migration"),
+        DisplayName: conductoronesdkgo.String("Sausages ASCII"),
         Published: conductoronesdkgo.Bool(false),
         VisibleToEveryone: conductoronesdkgo.Bool(false),
     })
@@ -222,7 +222,7 @@ func main() {
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
         RequestCatalogManagementServiceDeleteRequest: &shared.RequestCatalogManagementServiceDeleteRequest{},
-        ID: "5c0b2f2f-b7b1-494a-a76b-26916fe1f08f",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -274,7 +274,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "4294e369-8f44-47f6-83e8-b445e80ca55e",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -374,9 +374,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "reiciendis",
-        PageSize: conductoronesdkgo.Float64(8623.19),
-        PageToken: conductoronesdkgo.String("magni"),
+        CatalogID: "mint digital Man",
+        PageSize: conductoronesdkgo.Float64(4915.05),
+        PageToken: conductoronesdkgo.String("sympathetically"),
     })
     if err != nil {
         log.Fatal(err)
@@ -428,9 +428,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "aperiam",
-        PageSize: conductoronesdkgo.Float64(9014.83),
-        PageToken: conductoronesdkgo.String("numquam"),
+        CatalogID: "Senior",
+        PageSize: conductoronesdkgo.Float64(7955.89),
+        PageToken: conductoronesdkgo.String("male"),
     })
     if err != nil {
         log.Fatal(err)
@@ -485,12 +485,12 @@ func main() {
         RequestCatalogManagementServiceRemoveAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("veniam"),
-                    ID: conductoronesdkgo.String("7e1858b6-a89f-4be3-a5aa-8e4824d0ab40"),
+                    AppID: conductoronesdkgo.String("Mill Audi indigo"),
+                    ID: conductoronesdkgo.String("<ID>"),
                 },
             },
         },
-        CatalogID: "esse",
+        CatalogID: "Director",
     })
     if err != nil {
         log.Fatal(err)
@@ -545,12 +545,12 @@ func main() {
         RequestCatalogManagementServiceRemoveAppEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
                 shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("ipsam"),
-                    ID: conductoronesdkgo.String("088e5186-2065-4e90-8f3b-1194b8abf603"),
+                    AppID: conductoronesdkgo.String("UTF8"),
+                    ID: conductoronesdkgo.String("<ID>"),
                 },
             },
         },
-        CatalogID: "deserunt",
+        CatalogID: "bus",
     })
     if err != nil {
         log.Fatal(err)
@@ -609,53 +609,53 @@ func main() {
                         ProvisionPolicy: &shared.ProvisionPolicy{
                             ConnectorProvision: &shared.ConnectorProvision{},
                             DelegatedProvision: &shared.DelegatedProvision{
-                                AppID: conductoronesdkgo.String("voluptate"),
-                                EntitlementID: conductoronesdkgo.String("unde"),
+                                AppID: conductoronesdkgo.String("South complexity"),
+                                EntitlementID: conductoronesdkgo.String("Tempe Ruble ADP"),
                             },
                             ManualProvision: &shared.ManualProvision{
-                                Instructions: conductoronesdkgo.String("reiciendis"),
+                                Instructions: conductoronesdkgo.String("Holmium"),
                                 UserIds: []string{
-                                    "provident",
+                                    "Country",
                                 },
                             },
                         },
-                        AppID: conductoronesdkgo.String("repellendus"),
-                        AppResourceID: conductoronesdkgo.String("delectus"),
-                        AppResourceTypeID: conductoronesdkgo.String("voluptates"),
-                        CertifyPolicyID: conductoronesdkgo.String("perferendis"),
+                        AppID: conductoronesdkgo.String("Albany Southeast Computer"),
+                        AppResourceID: conductoronesdkgo.String("Towels"),
+                        AppResourceTypeID: conductoronesdkgo.String("invoice Northeast orange"),
+                        CertifyPolicyID: conductoronesdkgo.String("Response HTTP"),
                         ComplianceFrameworkValueIds: []string{
-                            "est",
+                            "Hybrid",
                         },
-                        Description: conductoronesdkgo.String("quidem"),
-                        DisplayName: conductoronesdkgo.String("reprehenderit"),
-                        DurationGrant: conductoronesdkgo.String("facere"),
+                        Description: conductoronesdkgo.String("Stand-alone encompassing middleware"),
+                        DisplayName: conductoronesdkgo.String("index Iran after"),
+                        DurationGrant: conductoronesdkgo.String("through"),
                         DurationUnset: &shared.AppEntitlementDurationUnset{},
                         EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
-                        EmergencyGrantPolicyID: conductoronesdkgo.String("fuga"),
-                        GrantPolicyID: conductoronesdkgo.String("praesentium"),
-                        RevokePolicyID: conductoronesdkgo.String("mollitia"),
-                        RiskLevelValueID: conductoronesdkgo.String("veniam"),
-                        Slug: conductoronesdkgo.String("voluptatem"),
+                        EmergencyGrantPolicyID: conductoronesdkgo.String("Optimized"),
+                        GrantPolicyID: conductoronesdkgo.String("fugit fuchsia"),
+                        RevokePolicyID: conductoronesdkgo.String("sternly meter experiences"),
+                        RiskLevelValueID: conductoronesdkgo.String("as Electric than"),
+                        Slug: conductoronesdkgo.String("Benz Representative"),
                     },
                 },
                 AppIds: []string{
-                    "quisquam",
+                    "wireless",
                 },
-                CreatedByUserID: conductoronesdkgo.String("repudiandae"),
-                Description: conductoronesdkgo.String("quasi"),
-                DisplayName: conductoronesdkgo.String("atque"),
-                ID: conductoronesdkgo.String("7f86bc17-3d68-49ee-a952-6f8d986e881e"),
+                CreatedByUserID: conductoronesdkgo.String("index"),
+                Description: conductoronesdkgo.String("Public-key methodical info-mediaries"),
+                DisplayName: conductoronesdkgo.String("Virgin"),
+                ID: conductoronesdkgo.String("<ID>"),
                 Published: conductoronesdkgo.Bool(false),
                 VisibleToEveryone: conductoronesdkgo.Bool(false),
             },
             RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
                 Paths: []string{
-                    "dolorum",
+                    "relationships",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("repellendus"),
+            UpdateMask: conductoronesdkgo.String("Northeast Executive"),
         },
-        ID: "4f0e1012-563f-494e-a9e9-73e922a57a15",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

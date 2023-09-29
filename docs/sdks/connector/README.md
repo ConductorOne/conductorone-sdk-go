@@ -44,22 +44,22 @@ func main() {
         ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "saepe",
+                    "neural",
                 },
             },
-            CatalogID: conductoronesdkgo.String("suscipit"),
+            CatalogID: conductoronesdkgo.String("pirouette"),
             Config: &shared.ConnectorServiceCreateRequestConfig{
-                AtType: conductoronesdkgo.String("deserunt"),
+                AtType: conductoronesdkgo.String("Sausages ASCII"),
                 AdditionalProperties: map[string]interface{}{
-                    "provident": "minima",
+                    "eligendi": "alarm",
                 },
             },
-            Description: conductoronesdkgo.String("repellendus"),
+            Description: conductoronesdkgo.String("Horizontal 4th generation infrastructure"),
             UserIds: []string{
-                "totam",
+                "connecting",
             },
         },
-        AppID: "similique",
+        AppID: "Latin",
     })
     if err != nil {
         log.Fatal(err)
@@ -114,17 +114,17 @@ func main() {
         ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "alias",
+                    "Keyboard",
                 },
             },
-            CatalogID: conductoronesdkgo.String("at"),
-            Description: conductoronesdkgo.String("quaerat"),
-            DisplayName: conductoronesdkgo.String("tempora"),
+            CatalogID: conductoronesdkgo.String("obtrude"),
+            Description: conductoronesdkgo.String("Face to face tangible superstructure"),
+            DisplayName: conductoronesdkgo.String("female"),
             UserIds: []string{
-                "vel",
+                "Tools",
             },
         },
-        AppID: "quod",
+        AppID: "Land Rock",
     })
     if err != nil {
         log.Fatal(err)
@@ -177,8 +177,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "officiis",
-        ID: "2af7a73c-f3be-4453-b870-b326b5a73429",
+        AppID: "Architect Cotton port",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -230,8 +230,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "maxime",
-        ID: "db1a8422-bb67-49d2-b227-15bf0cbb1e31",
+        AppID: "Group Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -283,9 +283,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "nobis",
-        ConnectorID: "quos",
-        ID: "b90f3443-a110-48e0-adcf-4b921879fce9",
+        AppID: "reluctance",
+        ConnectorID: "Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -337,9 +337,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "quis",
-        PageSize: conductoronesdkgo.Float64(2184.03),
-        PageToken: conductoronesdkgo.String("delectus"),
+        AppID: "Bronze Architect",
+        PageSize: conductoronesdkgo.Float64(9628.76),
+        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)
@@ -392,9 +392,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "voluptate",
-        ConnectorID: "consectetur",
-        ID: "ef7fbc7a-bd74-4dd3-9c0f-5d2cff7c70a4",
+        AppID: "Supervisor Senior",
+        ConnectorID: "North as symbolise",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -447,8 +447,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "ipsam",
-        ConnectorID: "ea",
+        AppID: "yawningly Clothing",
+        ConnectorID: "watt functional ferociously",
     })
     if err != nil {
         log.Fatal(err)
@@ -504,36 +504,36 @@ func main() {
         ConnectorServiceUpdateRequestInput: &shared.ConnectorServiceUpdateRequestInput{
             Connector: &shared.ConnectorInput{
                 ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-07-28T16:45:32.822Z"),
-                    LastError: conductoronesdkgo.String("possimus"),
-                    StartedAt: types.MustTimeFromString("2022-10-23T16:55:55.380Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusRunning.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2022-10-04T22:05:21.038Z"),
+                    CompletedAt: types.MustTimeFromString("2022-08-25T07:18:46.400Z"),
+                    LastError: conductoronesdkgo.String("Gender"),
+                    StartedAt: types.MustTimeFromString("2023-01-24T19:54:18.196Z"),
+                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
+                    UpdatedAt: types.MustTimeFromString("2023-08-31T09:59:08.279Z"),
                 },
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("dolor"),
+                AppID: conductoronesdkgo.String("Ohio ADP"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("maiores"),
+                    AtType: conductoronesdkgo.String("Holmium"),
                     AdditionalProperties: map[string]interface{}{
-                        "quasi": "ex",
+                        "corporis": "Land",
                     },
                 },
-                Description: conductoronesdkgo.String("nulla"),
-                DisplayName: conductoronesdkgo.String("excepturi"),
-                ID: conductoronesdkgo.String("f5fce6c5-5614-46c3-a250-fb008c42e141"),
+                Description: conductoronesdkgo.String("Synergistic 3rd generation ability"),
+                DisplayName: conductoronesdkgo.String("Chevrolet"),
+                ID: conductoronesdkgo.String("<ID>"),
                 UserIds: []string{
-                    "dolorum",
+                    "Northeast",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "laborum",
+                    "Towels",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("placeat"),
+            UpdateMask: conductoronesdkgo.String("invoice Northeast orange"),
         },
-        AppID: "velit",
-        ID: "66c8dd6b-1442-4907-8747-78a7bd466d28",
+        AppID: "Response HTTP",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -589,36 +589,36 @@ func main() {
         ConnectorServiceUpdateDelegatedRequestInput: &shared.ConnectorServiceUpdateDelegatedRequestInput{
             Connector: &shared.ConnectorInput{
                 ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-09-28T10:00:45.702Z"),
-                    LastError: conductoronesdkgo.String("ipsa"),
-                    StartedAt: types.MustTimeFromString("2021-08-10T04:36:29.661Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2020-06-17T05:36:16.683Z"),
+                    CompletedAt: types.MustTimeFromString("2022-10-12T21:45:05.114Z"),
+                    LastError: conductoronesdkgo.String("Ouguiya methodologies North"),
+                    StartedAt: types.MustTimeFromString("2022-04-11T03:27:06.440Z"),
+                    Status: shared.ConnectorStatusStatusSyncStatusDone.ToPointer(),
+                    UpdatedAt: types.MustTimeFromString("2023-11-25T06:25:11.398Z"),
                 },
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("quo"),
+                AppID: conductoronesdkgo.String("support since Director"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("fuga"),
+                    AtType: conductoronesdkgo.String("instead"),
                     AdditionalProperties: map[string]interface{}{
-                        "eius": "eos",
+                        "aut": "reboot",
                     },
                 },
-                Description: conductoronesdkgo.String("voluptas"),
-                DisplayName: conductoronesdkgo.String("ab"),
-                ID: conductoronesdkgo.String("904e523c-7e0b-4c71-b8e4-796f2a70c688"),
+                Description: conductoronesdkgo.String("Enhanced local access"),
+                DisplayName: conductoronesdkgo.String("pfft plum er"),
+                ID: conductoronesdkgo.String("<ID>"),
                 UserIds: []string{
-                    "consequuntur",
+                    "Southeast",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "deleniti",
+                    "lest",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("fugit"),
+            UpdateMask: conductoronesdkgo.String("unless except"),
         },
-        ConnectorAppID: "fuga",
-        ConnectorID: "mollitia",
+        ConnectorAppID: "Southeast Tyler",
+        ConnectorID: "Finland underneath in",
     })
     if err != nil {
         log.Fatal(err)

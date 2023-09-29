@@ -32,9 +32,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "vero",
-        PageSize: conductoronesdkgo.Float64(4686.51),
-        PageToken: conductoronesdkgo.String("praesentium"),
+        AppID: "Bronze Architect",
+        PageSize: conductoronesdkgo.Float64(9628.76),
+        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)

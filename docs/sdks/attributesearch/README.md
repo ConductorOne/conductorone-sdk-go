@@ -32,18 +32,18 @@ func main() {
     ctx := context.Background()
     res, err := s.AttributeSearch.SearchAttributeValues(ctx, shared.SearchAttributeValuesRequest{
         AttributeTypeIds: []string{
-            "perspiciatis",
+            "Specialist",
         },
         ExcludeIds: []string{
-            "voluptatem",
+            "generation",
         },
         Ids: []string{
-            "porro",
+            "connecting",
         },
-        PageSize: conductoronesdkgo.Float64(1646.94),
-        PageToken: conductoronesdkgo.String("blanditiis"),
-        Query: conductoronesdkgo.String("error"),
-        Value: conductoronesdkgo.String("eaque"),
+        PageSize: conductoronesdkgo.Float64(2740.57),
+        PageToken: conductoronesdkgo.String("male uniform Lithium"),
+        Query: conductoronesdkgo.String("black West"),
+        Value: conductoronesdkgo.String("Mountain Oriental"),
     })
     if err != nil {
         log.Fatal(err)

@@ -35,20 +35,20 @@ func main() {
     res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "ratione",
+                "Northwest",
             },
         },
         TaskGrantSource: &shared.TaskGrantSource{
-            ExternalURL: conductoronesdkgo.String("laborum"),
-            IntegrationID: conductoronesdkgo.String("distinctio"),
+            ExternalURL: conductoronesdkgo.String("barring"),
+            IntegrationID: conductoronesdkgo.String("vote Tuna Florida"),
         },
-        AppEntitlementID: "voluptatum",
-        AppID: "rem",
-        AppUserID: conductoronesdkgo.String("aliquam"),
-        Description: conductoronesdkgo.String("ad"),
+        AppEntitlementID: "parsing",
+        AppID: "Aliso",
+        AppUserID: conductoronesdkgo.String("under"),
+        Description: conductoronesdkgo.String("Proactive system-worthy middleware"),
         EmergencyAccess: conductoronesdkgo.Bool(false),
-        GrantDuration: conductoronesdkgo.String("repellat"),
-        IdentityUserID: conductoronesdkgo.String("alias"),
+        GrantDuration: conductoronesdkgo.String("Van"),
+        IdentityUserID: conductoronesdkgo.String("alarm Algeria circa"),
     })
     if err != nil {
         log.Fatal(err)
@@ -101,14 +101,14 @@ func main() {
     res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "corporis",
+                "tame",
             },
         },
-        AppEntitlementID: "perspiciatis",
-        AppID: "nihil",
-        AppUserID: conductoronesdkgo.String("mollitia"),
-        Description: conductoronesdkgo.String("voluptas"),
-        IdentityUserID: conductoronesdkgo.String("alias"),
+        AppEntitlementID: "Arab cultivate Clothing",
+        AppID: "Southwest",
+        AppUserID: conductoronesdkgo.String("Actinium streamline"),
+        Description: conductoronesdkgo.String("Down-sized coherent success"),
+        IdentityUserID: conductoronesdkgo.String("North"),
     })
     if err != nil {
         log.Fatal(err)
@@ -160,7 +160,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "ff2a54a3-1e94-4764-a3e8-65e7956f9251",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

@@ -35,15 +35,15 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoronesdkgo.String("nisi"),
-        Description: conductoronesdkgo.String("vel"),
-        DisplayName: conductoronesdkgo.String("natus"),
-        GrantPolicyID: conductoronesdkgo.String("omnis"),
-        MonthlyCostUsd: conductoronesdkgo.Float64(4748.67),
+        CertifyPolicyID: conductoronesdkgo.String("Electric pirouette"),
+        Description: conductoronesdkgo.String("Integrated context-sensitive throughput"),
+        DisplayName: conductoronesdkgo.String("Southwest alarm"),
+        GrantPolicyID: conductoronesdkgo.String("Lauderhill connecting"),
+        MonthlyCostUsd: conductoronesdkgo.Float64(2282.74),
         Owners: []string{
-            "perferendis",
+            "Latin",
         },
-        RevokePolicyID: conductoronesdkgo.String("nihil"),
+        RevokePolicyID: conductoronesdkgo.String("Garden"),
     })
     if err != nil {
         log.Fatal(err)
@@ -96,7 +96,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
         DeleteAppRequest: &shared.DeleteAppRequest{},
-        ID: "4ba4469b-6e21-4419-9989-0afa563e2516",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -148,7 +148,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
-        ID: "fe4c8b71-1e5b-47fd-aed0-28921cddc692",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -200,8 +200,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
-        PageSize: conductoronesdkgo.Float64(4071.83),
-        PageToken: conductoronesdkgo.String("accusantium"),
+        PageSize: conductoronesdkgo.Float64(6488.05),
+        PageToken: conductoronesdkgo.String("Southeast"),
     })
     if err != nil {
         log.Fatal(err)
@@ -255,17 +255,17 @@ func main() {
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
             App: &shared.AppInput{
-                CertifyPolicyID: conductoronesdkgo.String("ab"),
-                Description: conductoronesdkgo.String("maiores"),
-                DisplayName: conductoronesdkgo.String("quidem"),
-                GrantPolicyID: conductoronesdkgo.String("ipsam"),
-                IconURL: conductoronesdkgo.String("voluptate"),
-                MonthlyCostUsd: conductoronesdkgo.Float64(4200.75),
-                RevokePolicyID: conductoronesdkgo.String("nam"),
+                CertifyPolicyID: conductoronesdkgo.String("South complexity"),
+                Description: conductoronesdkgo.String("Public-key 3rd generation success"),
+                DisplayName: conductoronesdkgo.String("Ohio ADP"),
+                GrantPolicyID: conductoronesdkgo.String("Holmium"),
+                IconURL: conductoronesdkgo.String("Land alarmed"),
+                MonthlyCostUsd: conductoronesdkgo.Float64(49.06),
+                RevokePolicyID: conductoronesdkgo.String("Chevrolet"),
             },
-            UpdateMask: conductoronesdkgo.String("eaque"),
+            UpdateMask: conductoronesdkgo.String("teal"),
         },
-        ID: "d5f0d30c-5fbb-4258-b053-202c73d5fe9b",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
