@@ -86,16 +86,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
-            AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoronesdkgo.String("South complexity"),
-                Notify: conductoronesdkgo.Bool(false),
-                NotifyAfterDays: conductoronesdkgo.Float64(6884.29),
-                Revoke: conductoronesdkgo.Bool(false),
-                RevokeAfterDays: conductoronesdkgo.Float64(296.2),
-            },
-            UpdateMask: conductoronesdkgo.String("Ruble ADP Oregon"),
+            AppUsageControls: &shared.AppUsageControls{},
         },
-        AppID: "Country alarmed",
+        AppID: "South complexity",
     })
     if err != nil {
         log.Fatal(err)

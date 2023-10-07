@@ -85,10 +85,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{
-        PageSize: conductoronesdkgo.Float64(6488.05),
-        PageToken: conductoronesdkgo.String("Southeast"),
-    })
+    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -141,17 +138,15 @@ func main() {
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
-                DisplayName: conductoronesdkgo.String("South complexity"),
                 Permissions: []string{
-                    "Supervisor",
+                    "up",
                 },
                 ServiceRoles: []string{
-                    "less",
+                    "complexity",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("Architect"),
         },
-        RoleID: "Oregon",
+        RoleID: "Tempe Ruble ADP",
     })
     if err != nil {
         log.Fatal(err)

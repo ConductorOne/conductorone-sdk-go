@@ -47,19 +47,16 @@ func main() {
                     "neural",
                 },
             },
-            CatalogID: conductoronesdkgo.String("pirouette"),
             Config: &shared.ConnectorServiceCreateRequestConfig{
-                AtType: conductoronesdkgo.String("Sausages ASCII"),
                 AdditionalProperties: map[string]interface{}{
-                    "eligendi": "alarm",
+                    "Tasty": "island",
                 },
             },
-            Description: conductoronesdkgo.String("Horizontal 4th generation infrastructure"),
             UserIds: []string{
-                "connecting",
+                "Southwest",
             },
         },
-        AppID: "Latin",
+        AppID: "National Lauderhill",
     })
     if err != nil {
         log.Fatal(err)
@@ -117,14 +114,11 @@ func main() {
                     "Keyboard",
                 },
             },
-            CatalogID: conductoronesdkgo.String("obtrude"),
-            Description: conductoronesdkgo.String("Face to face tangible superstructure"),
-            DisplayName: conductoronesdkgo.String("female"),
             UserIds: []string{
-                "Tools",
+                "Southwest",
             },
         },
-        AppID: "Land Rock",
+        AppID: "visionary curiously",
     })
     if err != nil {
         log.Fatal(err)
@@ -338,8 +332,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
         AppID: "Bronze Architect",
-        PageSize: conductoronesdkgo.Float64(9628.76),
-        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)
@@ -488,7 +480,6 @@ import(
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -503,36 +494,24 @@ func main() {
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
         ConnectorServiceUpdateRequestInput: &shared.ConnectorServiceUpdateRequestInput{
             Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-08-25T07:18:46.400Z"),
-                    LastError: conductoronesdkgo.String("Gender"),
-                    StartedAt: types.MustTimeFromString("2023-01-24T19:54:18.196Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2023-08-31T09:59:08.279Z"),
-                },
+                ConnectorStatus: &shared.ConnectorStatus{},
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("Ohio ADP"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("Holmium"),
                     AdditionalProperties: map[string]interface{}{
-                        "corporis": "Land",
+                        "up": "complexity",
                     },
                 },
-                Description: conductoronesdkgo.String("Synergistic 3rd generation ability"),
-                DisplayName: conductoronesdkgo.String("Chevrolet"),
-                ID: conductoronesdkgo.String("<ID>"),
                 UserIds: []string{
-                    "Northeast",
+                    "Supervisor",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "Towels",
+                    "less",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("invoice Northeast orange"),
         },
-        AppID: "Response HTTP",
+        AppID: "Architect",
         ID: "<ID>",
     })
     if err != nil {
@@ -573,7 +552,6 @@ import(
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -588,37 +566,25 @@ func main() {
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
         ConnectorServiceUpdateDelegatedRequestInput: &shared.ConnectorServiceUpdateDelegatedRequestInput{
             Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-10-12T21:45:05.114Z"),
-                    LastError: conductoronesdkgo.String("Ouguiya methodologies North"),
-                    StartedAt: types.MustTimeFromString("2022-04-11T03:27:06.440Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusDone.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2023-11-25T06:25:11.398Z"),
-                },
+                ConnectorStatus: &shared.ConnectorStatus{},
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("support since Director"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("instead"),
                     AdditionalProperties: map[string]interface{}{
-                        "aut": "reboot",
+                        "Rap": "Ouguiya",
                     },
                 },
-                Description: conductoronesdkgo.String("Enhanced local access"),
-                DisplayName: conductoronesdkgo.String("pfft plum er"),
-                ID: conductoronesdkgo.String("<ID>"),
                 UserIds: []string{
-                    "Southeast",
+                    "methodologies",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "lest",
+                    "North",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("unless except"),
         },
-        ConnectorAppID: "Southeast Tyler",
-        ConnectorID: "Finland underneath in",
+        ConnectorAppID: "Moscovium Pickup",
+        ConnectorID: "synthesize initiatives instead",
     })
     if err != nil {
         log.Fatal(err)

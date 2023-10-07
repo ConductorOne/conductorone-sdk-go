@@ -34,16 +34,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Apps.Create(ctx, shared.CreateAppRequest{
-        CertifyPolicyID: conductoronesdkgo.String("Electric pirouette"),
-        Description: conductoronesdkgo.String("Integrated context-sensitive throughput"),
-        DisplayName: conductoronesdkgo.String("Southwest alarm"),
-        GrantPolicyID: conductoronesdkgo.String("Lauderhill connecting"),
-        MonthlyCostUsd: conductoronesdkgo.Float64(2282.74),
+    res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
         Owners: []string{
-            "Latin",
+            "neural",
         },
-        RevokePolicyID: conductoronesdkgo.String("Garden"),
     })
     if err != nil {
         log.Fatal(err)
@@ -199,10 +193,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{
-        PageSize: conductoronesdkgo.Float64(6488.05),
-        PageToken: conductoronesdkgo.String("Southeast"),
-    })
+    res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -254,16 +245,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
         UpdateAppRequestInput: &shared.UpdateAppRequestInput{
-            App: &shared.AppInput{
-                CertifyPolicyID: conductoronesdkgo.String("South complexity"),
-                Description: conductoronesdkgo.String("Public-key 3rd generation success"),
-                DisplayName: conductoronesdkgo.String("Ohio ADP"),
-                GrantPolicyID: conductoronesdkgo.String("Holmium"),
-                IconURL: conductoronesdkgo.String("Land alarmed"),
-                MonthlyCostUsd: conductoronesdkgo.Float64(49.06),
-                RevokePolicyID: conductoronesdkgo.String("Chevrolet"),
-            },
-            UpdateMask: conductoronesdkgo.String("teal"),
+            App: &shared.AppInput{},
         },
         ID: "<ID>",
     })

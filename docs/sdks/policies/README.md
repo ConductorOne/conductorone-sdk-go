@@ -34,11 +34,9 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.Create(ctx, shared.CreatePolicyRequestInput{
-        Description: conductoronesdkgo.String("Multi-tiered scalable data-warehouse"),
-        DisplayName: conductoronesdkgo.String("Markets Sausages ASCII"),
+    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequestInput{
         PolicySteps: map[string]shared.PolicyStepsInput{
-            "eligendi": shared.PolicyStepsInput{
+            "neural": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Accept: &shared.Accept{},
@@ -54,37 +52,23 @@ func main() {
                         Provision: &shared.Provision{
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
-                                DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoronesdkgo.String("National Lauderhill"),
-                                    EntitlementID: conductoronesdkgo.String("overriding Latin"),
-                                },
+                                DelegatedProvision: &shared.DelegatedProvision{},
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoronesdkgo.String("Garden"),
                                     UserIds: []string{
-                                        "Health",
+                                        "Tasty",
                                     },
                                 },
                             },
-                            ProvisionTarget: &shared.ProvisionTarget{
-                                AppEntitlementID: conductoronesdkgo.String("exuding"),
-                                AppID: conductoronesdkgo.String("SSD"),
-                                AppUserID: conductoronesdkgo.String("Money mesh"),
-                                GrantDuration: conductoronesdkgo.String("silver compressing Berkshire"),
-                            },
-                            Assigned: conductoronesdkgo.Bool(false),
+                            ProvisionTarget: &shared.ProvisionTarget{},
                         },
                         Reject: &shared.Reject{},
                     },
                 },
             },
         },
-        PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeRevoke.ToPointer(),
         PostActions: []shared.PolicyPostActions{
-            shared.PolicyPostActions{
-                CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
-            },
+            shared.PolicyPostActions{},
         },
-        ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -240,10 +224,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{
-        PageSize: conductoronesdkgo.Float64(6488.05),
-        PageToken: conductoronesdkgo.String("Southeast"),
-    })
+    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -296,10 +277,8 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequestInput: &shared.UpdatePolicyRequestInput{
             Policy: &shared.PolicyInput{
-                Description: conductoronesdkgo.String("Optimized 24/7 middleware"),
-                DisplayName: conductoronesdkgo.String("Clothing Tempe"),
                 PolicySteps: map[string]shared.PolicyStepsInput{
-                    "eum": shared.PolicyStepsInput{
+                    "up": shared.PolicyStepsInput{
                         Steps: []shared.PolicyStepInput{
                             shared.PolicyStepInput{
                                 Accept: &shared.Accept{},
@@ -315,45 +294,27 @@ func main() {
                                 Provision: &shared.Provision{
                                     ProvisionPolicy: &shared.ProvisionPolicy{
                                         ConnectorProvision: &shared.ConnectorProvision{},
-                                        DelegatedProvision: &shared.DelegatedProvision{
-                                            AppID: conductoronesdkgo.String("Architect"),
-                                            EntitlementID: conductoronesdkgo.String("Oregon"),
-                                        },
+                                        DelegatedProvision: &shared.DelegatedProvision{},
                                         ManualProvision: &shared.ManualProvision{
-                                            Instructions: conductoronesdkgo.String("Country alarmed"),
                                             UserIds: []string{
-                                                "North",
+                                                "complexity",
                                             },
                                         },
                                     },
-                                    ProvisionTarget: &shared.ProvisionTarget{
-                                        AppEntitlementID: conductoronesdkgo.String("Computer teal laborum"),
-                                        AppID: conductoronesdkgo.String("capitalize mint"),
-                                        AppUserID: conductoronesdkgo.String("Response HTTP"),
-                                        GrantDuration: conductoronesdkgo.String("Sedan aw Azerbaijanian"),
-                                    },
-                                    Assigned: conductoronesdkgo.Bool(false),
+                                    ProvisionTarget: &shared.ProvisionTarget{},
                                 },
                                 Reject: &shared.Reject{},
                             },
                         },
                     },
                 },
-                PolicyType: shared.PolicyPolicyTypePolicyTypeProvision.ToPointer(),
                 PostActions: []shared.PolicyPostActions{
-                    shared.PolicyPostActions{
-                        CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
-                    },
+                    shared.PolicyPostActions{},
                 },
-                ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
                 Rules: []shared.Rule{
-                    shared.Rule{
-                        Condition: conductoronesdkgo.String("Wisconsin"),
-                        PolicyKey: conductoronesdkgo.String("Plastic generate fugit"),
-                    },
+                    shared.Rule{},
                 },
             },
-            UpdateMask: conductoronesdkgo.String("SUV"),
         },
         ID: "<ID>",
     })

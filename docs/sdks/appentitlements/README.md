@@ -91,8 +91,6 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
         AppID: "Bronze Architect",
-        PageSize: conductoronesdkgo.Float64(9628.76),
-        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)
@@ -147,8 +145,6 @@ func main() {
         AppID: "SDD convergence",
         AppResourceID: "quis whether",
         AppResourceTypeID: "Non",
-        PageSize: conductoronesdkgo.Float64(7654.99),
-        PageToken: conductoronesdkgo.String("Fitness Dollar Licensed"),
     })
     if err != nil {
         log.Fatal(err)
@@ -202,8 +198,6 @@ func main() {
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
         AppID: "Gardena payment Mountain",
         AppUserID: "Cruiser",
-        PageSize: conductoronesdkgo.Float64(7218.97),
-        PageToken: conductoronesdkgo.String("Franc Novato"),
     })
     if err != nil {
         log.Fatal(err)
@@ -257,8 +251,6 @@ func main() {
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
         AppEntitlementID: "yellow payment",
         AppID: "why Electric",
-        PageSize: conductoronesdkgo.Float64(782.05),
-        PageToken: conductoronesdkgo.String("Metal rack whether"),
     })
     if err != nil {
         log.Fatal(err)
@@ -314,43 +306,25 @@ func main() {
             AppEntitlement: &shared.AppEntitlementInput{
                 ProvisionPolicy: &shared.ProvisionPolicy{
                     ConnectorProvision: &shared.ConnectorProvision{},
-                    DelegatedProvision: &shared.DelegatedProvision{
-                        AppID: conductoronesdkgo.String("South complexity"),
-                        EntitlementID: conductoronesdkgo.String("Tempe Ruble ADP"),
-                    },
+                    DelegatedProvision: &shared.DelegatedProvision{},
                     ManualProvision: &shared.ManualProvision{
-                        Instructions: conductoronesdkgo.String("Holmium"),
                         UserIds: []string{
-                            "Country",
+                            "up",
                         },
                     },
                 },
-                AppID: conductoronesdkgo.String("Albany Southeast Computer"),
-                AppResourceID: conductoronesdkgo.String("Towels"),
-                AppResourceTypeID: conductoronesdkgo.String("invoice Northeast orange"),
-                CertifyPolicyID: conductoronesdkgo.String("Response HTTP"),
                 ComplianceFrameworkValueIds: []string{
-                    "Hybrid",
+                    "complexity",
                 },
-                Description: conductoronesdkgo.String("Stand-alone encompassing middleware"),
-                DisplayName: conductoronesdkgo.String("index Iran after"),
-                DurationGrant: conductoronesdkgo.String("through"),
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
-                EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
-                EmergencyGrantPolicyID: conductoronesdkgo.String("Optimized"),
-                GrantPolicyID: conductoronesdkgo.String("fugit fuchsia"),
-                RevokePolicyID: conductoronesdkgo.String("sternly meter experiences"),
-                RiskLevelValueID: conductoronesdkgo.String("as Electric than"),
-                Slug: conductoronesdkgo.String("Benz Representative"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "wireless",
+                    "Supervisor",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("index"),
         },
-        AppID: "Funk Small system",
+        AppID: "Ruble ADP Oregon",
         ID: "<ID>",
     })
     if err != nil {

@@ -36,17 +36,15 @@ func main() {
         AppUserServiceUpdateRequestInput: &shared.AppUserServiceUpdateRequestInput{
             AppUser: &shared.AppUserInput{
                 AppUserStatus: &shared.AppUserStatusInput{},
-                AppUserType: shared.AppUserAppUserTypeAppUserTypeServiceAccount.ToPointer(),
             },
             AppUserExpandMask: &shared.AppUserExpandMask{
                 Paths: []string{
-                    "South",
+                    "up",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("Clothing Tempe"),
         },
-        AppUserAppID: "Ohio ADP",
-        AppUserID: "Holmium",
+        AppUserAppID: "Clothing Tempe",
+        AppUserID: "Ohio ADP",
     })
     if err != nil {
         log.Fatal(err)

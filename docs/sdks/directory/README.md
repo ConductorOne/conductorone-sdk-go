@@ -33,13 +33,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
+    res, err := s.Directory.Create(ctx, &shared.DirectoryServiceCreateRequest{
         DirectoryExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
                 "neural",
             },
         },
-        AppID: conductoronesdkgo.String("pirouette"),
     })
     if err != nil {
         log.Fatal(err)
@@ -195,10 +194,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{
-        PageSize: conductoronesdkgo.Float64(6488.05),
-        PageToken: conductoronesdkgo.String("Southeast"),
-    })
+    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }

@@ -34,10 +34,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Attributes.CreateAttributeValue(ctx, shared.CreateAttributeValueRequest{
-        AttributeTypeID: conductoronesdkgo.String("and Hawaii"),
-        Value: conductoronesdkgo.String("Hyundai Wooden"),
-    })
+    res, err := s.Attributes.CreateAttributeValue(ctx, &shared.CreateAttributeValueRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -192,10 +189,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{
-        PageSize: conductoronesdkgo.Float64(620.98),
-        PageToken: conductoronesdkgo.String("Gasoline"),
-    })
+    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -247,8 +241,6 @@ func main() {
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
         AttributeTypeID: "trot markets",
-        PageSize: conductoronesdkgo.Float64(9405.85),
-        PageToken: conductoronesdkgo.String("City behind outgoing"),
     })
     if err != nil {
         log.Fatal(err)

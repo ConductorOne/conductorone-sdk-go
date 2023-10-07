@@ -32,23 +32,15 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
+    res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
                 "Northwest",
             },
         },
-        TaskGrantSource: &shared.TaskGrantSource{
-            ExternalURL: conductoronesdkgo.String("barring"),
-            IntegrationID: conductoronesdkgo.String("vote Tuna Florida"),
-        },
-        AppEntitlementID: "parsing",
-        AppID: "Aliso",
-        AppUserID: conductoronesdkgo.String("under"),
-        Description: conductoronesdkgo.String("Proactive system-worthy middleware"),
-        EmergencyAccess: conductoronesdkgo.Bool(false),
-        GrantDuration: conductoronesdkgo.String("Van"),
-        IdentityUserID: conductoronesdkgo.String("alarm Algeria circa"),
+        TaskGrantSource: &shared.TaskGrantSource{},
+        AppEntitlementID: "barring",
+        AppID: "vote Tuna Florida",
     })
     if err != nil {
         log.Fatal(err)
@@ -98,7 +90,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
+    res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
                 "tame",
@@ -106,9 +98,6 @@ func main() {
         },
         AppEntitlementID: "Arab cultivate Clothing",
         AppID: "Southwest",
-        AppUserID: conductoronesdkgo.String("Actinium streamline"),
-        Description: conductoronesdkgo.String("Down-sized coherent success"),
-        IdentityUserID: conductoronesdkgo.String("North"),
     })
     if err != nil {
         log.Fatal(err)

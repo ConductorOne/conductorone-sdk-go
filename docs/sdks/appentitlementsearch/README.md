@@ -30,39 +30,32 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
+    res, err := s.AppEntitlementSearch.Search(ctx, &shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
                 "transition",
             },
         },
-        AccessReviewID: conductoronesdkgo.String("withdrawal Coordinator Ngultrum"),
-        Alias: conductoronesdkgo.String("Russian Northeast yearningly"),
         AppIds: []string{
-            "Southeast",
+            "turquoise",
         },
         AppUserIds: []string{
-            "Books",
+            "Hyundai",
         },
         ComplianceFrameworkIds: []string{
-            "Other",
+            "Future",
         },
         ExcludeAppIds: []string{
-            "eligendi",
+            "Southwest",
         },
         ExcludeAppUserIds: []string{
-            "Tobago",
+            "broach",
         },
-        IncludeDeleted: conductoronesdkgo.Bool(false),
-        OnlyGetExpiring: conductoronesdkgo.Bool(false),
-        PageSize: conductoronesdkgo.Float64(7320.8),
-        PageToken: conductoronesdkgo.String("Arsenic Gasoline Oklahoma"),
-        Query: conductoronesdkgo.String("opposite"),
         ResourceTypeIds: []string{
-            "Synchronised",
+            "dependent",
         },
         RiskLevelIds: []string{
-            "huzzah",
+            "Mozambique",
         },
     })
     if err != nil {

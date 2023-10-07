@@ -30,7 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AttributeSearch.SearchAttributeValues(ctx, shared.SearchAttributeValuesRequest{
+    res, err := s.AttributeSearch.SearchAttributeValues(ctx, &shared.SearchAttributeValuesRequest{
         AttributeTypeIds: []string{
             "Specialist",
         },
@@ -40,10 +40,6 @@ func main() {
         Ids: []string{
             "connecting",
         },
-        PageSize: conductoronesdkgo.Float64(2740.57),
-        PageToken: conductoronesdkgo.String("male uniform Lithium"),
-        Query: conductoronesdkgo.String("black West"),
-        Value: conductoronesdkgo.String("Mountain Oriental"),
     })
     if err != nil {
         log.Fatal(err)

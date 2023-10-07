@@ -30,7 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, shared.SearchAppResourceTypesRequest{
+    res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, &shared.SearchAppResourceTypesRequest{
         AppIds: []string{
             "Soap",
         },
@@ -40,14 +40,11 @@ func main() {
         ExcludeResourceTypeTraitIds: []string{
             "World",
         },
-        PageSize: conductoronesdkgo.Float64(553.23),
-        PageToken: conductoronesdkgo.String("SUV nostrum specifically"),
-        Query: conductoronesdkgo.String("Distributed across"),
         ResourceTypeIds: []string{
-            "minima",
+            "Turkmenistan",
         },
         ResourceTypeTraitIds: []string{
-            "Branding",
+            "SUV",
         },
     })
     if err != nil {

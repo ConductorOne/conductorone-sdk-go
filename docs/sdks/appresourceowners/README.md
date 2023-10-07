@@ -33,10 +33,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
         AppID: "Bronze Architect",
-        PageSize: conductoronesdkgo.Float64(9628.76),
-        PageToken: conductoronesdkgo.String("female"),
-        ResourceID: "katal auxiliary",
-        ResourceTypeID: "East ohm experiences",
+        ResourceID: "Southeast Soap katal",
+        ResourceTypeID: "West East",
     })
     if err != nil {
         log.Fatal(err)

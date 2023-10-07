@@ -84,10 +84,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{
-        PageSize: conductoronesdkgo.Float64(6488.05),
-        PageToken: conductoronesdkgo.String("Southeast"),
-    })
+    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }

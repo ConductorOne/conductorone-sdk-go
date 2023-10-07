@@ -41,8 +41,7 @@ func main() {
                     "Gasoline",
                 },
             },
-            Comment: conductoronesdkgo.String("Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"),
-            PolicyStepID: "synthesize Tennessee",
+            PolicyStepID: "edge Tennessee",
         },
         TaskID: "Hatchback Northeast",
     })
@@ -102,9 +101,8 @@ func main() {
                     "Synergized",
                 },
             },
-            Comment: conductoronesdkgo.String("The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients"),
         },
-        TaskID: "enim than where",
+        TaskID: "physically redefine azure",
     })
     if err != nil {
         log.Fatal(err)
@@ -162,10 +160,8 @@ func main() {
                     "relationships",
                 },
             },
-            Comment: conductoronesdkgo.String("The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"),
-            PolicyStepID: conductoronesdkgo.String("male"),
         },
-        TaskID: "payment Pickup",
+        TaskID: "Poinciana",
     })
     if err != nil {
         log.Fatal(err)
@@ -223,10 +219,8 @@ func main() {
                     "Practical",
                 },
             },
-            Comment: conductoronesdkgo.String("The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality"),
-            PolicyStepID: conductoronesdkgo.String("invoice International"),
         },
-        TaskID: "Southeast ethical",
+        TaskID: "reprehenderit",
     })
     if err != nil {
         log.Fatal(err)

@@ -89,8 +89,6 @@ func main() {
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
         AppID: "Bronze Architect",
         AppResourceTypeID: "Southeast Soap katal",
-        PageSize: conductoronesdkgo.Float64(4900.99),
-        PageToken: conductoronesdkgo.String("aftermath"),
     })
     if err != nil {
         log.Fatal(err)

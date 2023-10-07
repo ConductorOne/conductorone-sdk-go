@@ -19,7 +19,6 @@ import(
 	"log"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -31,7 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TaskSearch.Search(ctx, shared.TaskSearchRequestInput{
+    res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequestInput{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
                 "transition",
@@ -43,56 +42,44 @@ func main() {
         AccountOwnerIds: []string{
             "Hyundai",
         },
-        ActorID: conductoronesdkgo.String("Practical yearningly Southeast"),
         AppEntitlementIds: []string{
-            "Books",
+            "Future",
         },
         AppResourceIds: []string{
-            "Other",
+            "Southwest",
         },
         AppResourceTypeIds: []string{
-            "eligendi",
+            "broach",
         },
         AppUserSubjectIds: []string{
-            "Tobago",
+            "dependent",
         },
         ApplicationIds: []string{
-            "Protactinium",
+            "Mozambique",
         },
         AssigneesInIds: []string{
-            "Arsenic",
+            "Global",
         },
-        CreatedAfter: types.MustTimeFromString("2023-06-10T20:22:45.491Z"),
-        CreatedBefore: types.MustTimeFromString("2022-09-06T19:12:57.415Z"),
-        CurrentStep: shared.TaskSearchRequestCurrentStepTaskSearchCurrentStepUnspecified.ToPointer(),
-        EmergencyStatus: shared.TaskSearchRequestEmergencyStatusNonEmergency.ToPointer(),
         ExcludeAppEntitlementIds: []string{
-            "National",
+            "watt",
         },
         ExcludeIds: []string{
-            "Wagon",
+            "Gasoline",
         },
-        IncludeDeleted: conductoronesdkgo.Bool(false),
         MyWorkUserIds: []string{
-            "Estate",
+            "Protactinium",
         },
         OpenerIds: []string{
-            "female",
+            "Arsenic",
         },
-        PageSize: conductoronesdkgo.Float64(2339.71),
-        PageToken: conductoronesdkgo.String("Soft Bacon"),
         PreviouslyActedOnIds: []string{
-            "mindshare",
+            "Gasoline",
         },
-        Query: conductoronesdkgo.String("frizzy"),
         Refs: []shared.TaskRef{
-            shared.TaskRef{
-                ID: conductoronesdkgo.String("<ID>"),
-            },
+            shared.TaskRef{},
         },
-        SortBy: shared.TaskSearchRequestSortByTaskSearchSortByAccountOwner.ToPointer(),
         SubjectIds: []string{
-            "boo",
+            "Oklahoma",
         },
         TaskStates: []shared.TaskSearchRequestTaskStates{
             shared.TaskSearchRequestTaskStatesTaskStateUnspecified,
@@ -101,27 +88,14 @@ func main() {
             shared.TaskTypeInput{
                 TaskTypeCertify: &shared.TaskTypeCertifyInput{},
                 TaskTypeGrant: &shared.TaskTypeGrantInput{
-                    TaskGrantSource: &shared.TaskGrantSource{
-                        ExternalURL: conductoronesdkgo.String("Frozen"),
-                        IntegrationID: conductoronesdkgo.String("discrete HDD chargrill"),
-                    },
+                    TaskGrantSource: &shared.TaskGrantSource{},
                 },
                 TaskTypeRevoke: &shared.TaskTypeRevokeInput{
                     TaskRevokeSource: &shared.TaskRevokeSource{
-                        TaskRevokeSourceExpired: &shared.TaskRevokeSourceExpired{
-                            ExpiredAt: types.MustTimeFromString("2023-03-10T15:48:59.869Z"),
-                        },
-                        TaskRevokeSourceNonUsage: &shared.TaskRevokeSourceNonUsage{
-                            ExpiresAt: types.MustTimeFromString("2023-01-14T01:21:25.379Z"),
-                            LastLogin: types.MustTimeFromString("2021-01-22T06:17:27.525Z"),
-                        },
-                        TaskRevokeSourceRequest: &shared.TaskRevokeSourceRequest{
-                            RequestUserID: conductoronesdkgo.String("overriding Focused"),
-                        },
-                        TaskRevokeSourceReview: &shared.TaskRevokeSourceReview{
-                            AccessReviewID: conductoronesdkgo.String("plum Astatine"),
-                            CertTicketID: conductoronesdkgo.String("soliloquize instead"),
-                        },
+                        TaskRevokeSourceExpired: &shared.TaskRevokeSourceExpired{},
+                        TaskRevokeSourceNonUsage: &shared.TaskRevokeSourceNonUsage{},
+                        TaskRevokeSourceRequest: &shared.TaskRevokeSourceRequest{},
+                        TaskRevokeSourceReview: &shared.TaskRevokeSourceReview{},
                     },
                 },
             },

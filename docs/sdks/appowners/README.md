@@ -89,8 +89,6 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
         AppID: "Bronze Architect",
-        PageSize: conductoronesdkgo.Float64(9628.76),
-        PageToken: conductoronesdkgo.String("female"),
     })
     if err != nil {
         log.Fatal(err)

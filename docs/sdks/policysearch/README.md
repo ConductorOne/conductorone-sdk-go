@@ -30,18 +30,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.PolicySearch.Search(ctx, shared.SearchPoliciesRequest{
-        DisplayName: conductoronesdkgo.String("specific"),
-        PageSize: conductoronesdkgo.Float64(4589.64),
-        PageToken: conductoronesdkgo.String("Coordinator"),
+    res, err := s.PolicySearch.Search(ctx, &shared.SearchPoliciesRequest{
         PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeRevoke,
+            shared.SearchPoliciesRequestPolicyTypesPolicyTypeGrant,
         },
-        Query: conductoronesdkgo.String("siemens Russian"),
         Refs: []shared.PolicyRef{
-            shared.PolicyRef{
-                ID: conductoronesdkgo.String("<ID>"),
-            },
+            shared.PolicyRef{},
         },
     })
     if err != nil {

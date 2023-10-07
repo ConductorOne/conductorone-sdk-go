@@ -44,13 +44,10 @@ func main() {
     res, err := s.RequestCatalogManagement.AddAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest{
         RequestCatalogManagementServiceAddAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("deposit"),
-                    ID: conductoronesdkgo.String("<ID>"),
-                },
+                shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Principal",
+        CatalogID: "deposit",
     })
     if err != nil {
         log.Fatal(err)
@@ -104,13 +101,10 @@ func main() {
     res, err := s.RequestCatalogManagement.AddAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest{
         RequestCatalogManagementServiceAddAppEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("East cyan Wilma"),
-                    ID: conductoronesdkgo.String("<ID>"),
-                },
+                shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Southeast Steel slight",
+        CatalogID: "East cyan Wilma",
     })
     if err != nil {
         log.Fatal(err)
@@ -160,16 +154,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.Create(ctx, shared.RequestCatalogManagementServiceCreateRequest{
+    res, err := s.RequestCatalogManagement.Create(ctx, &shared.RequestCatalogManagementServiceCreateRequest{
         RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
             Paths: []string{
                 "neural",
             },
         },
-        Description: conductoronesdkgo.String("Expanded zero tolerance migration"),
-        DisplayName: conductoronesdkgo.String("Sausages ASCII"),
-        Published: conductoronesdkgo.Bool(false),
-        VisibleToEveryone: conductoronesdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -375,8 +365,6 @@ func main() {
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
         CatalogID: "mint digital Man",
-        PageSize: conductoronesdkgo.Float64(4915.05),
-        PageToken: conductoronesdkgo.String("sympathetically"),
     })
     if err != nil {
         log.Fatal(err)
@@ -429,8 +417,6 @@ func main() {
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
         CatalogID: "Senior",
-        PageSize: conductoronesdkgo.Float64(7955.89),
-        PageToken: conductoronesdkgo.String("male"),
     })
     if err != nil {
         log.Fatal(err)
@@ -484,13 +470,10 @@ func main() {
     res, err := s.RequestCatalogManagement.RemoveAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
         RequestCatalogManagementServiceRemoveAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
             AccessEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("Mill Audi indigo"),
-                    ID: conductoronesdkgo.String("<ID>"),
-                },
+                shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Director",
+        CatalogID: "Mill Audi indigo",
     })
     if err != nil {
         log.Fatal(err)
@@ -544,13 +527,10 @@ func main() {
     res, err := s.RequestCatalogManagement.RemoveAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
         RequestCatalogManagementServiceRemoveAppEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
             AppEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{
-                    AppID: conductoronesdkgo.String("UTF8"),
-                    ID: conductoronesdkgo.String("<ID>"),
-                },
+                shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "bus",
+        CatalogID: "UTF8",
     })
     if err != nil {
         log.Fatal(err)
@@ -608,52 +588,28 @@ func main() {
                     shared.AppEntitlementInput{
                         ProvisionPolicy: &shared.ProvisionPolicy{
                             ConnectorProvision: &shared.ConnectorProvision{},
-                            DelegatedProvision: &shared.DelegatedProvision{
-                                AppID: conductoronesdkgo.String("South complexity"),
-                                EntitlementID: conductoronesdkgo.String("Tempe Ruble ADP"),
-                            },
+                            DelegatedProvision: &shared.DelegatedProvision{},
                             ManualProvision: &shared.ManualProvision{
-                                Instructions: conductoronesdkgo.String("Holmium"),
                                 UserIds: []string{
-                                    "Country",
+                                    "up",
                                 },
                             },
                         },
-                        AppID: conductoronesdkgo.String("Albany Southeast Computer"),
-                        AppResourceID: conductoronesdkgo.String("Towels"),
-                        AppResourceTypeID: conductoronesdkgo.String("invoice Northeast orange"),
-                        CertifyPolicyID: conductoronesdkgo.String("Response HTTP"),
                         ComplianceFrameworkValueIds: []string{
-                            "Hybrid",
+                            "complexity",
                         },
-                        Description: conductoronesdkgo.String("Stand-alone encompassing middleware"),
-                        DisplayName: conductoronesdkgo.String("index Iran after"),
-                        DurationGrant: conductoronesdkgo.String("through"),
                         DurationUnset: &shared.AppEntitlementDurationUnset{},
-                        EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
-                        EmergencyGrantPolicyID: conductoronesdkgo.String("Optimized"),
-                        GrantPolicyID: conductoronesdkgo.String("fugit fuchsia"),
-                        RevokePolicyID: conductoronesdkgo.String("sternly meter experiences"),
-                        RiskLevelValueID: conductoronesdkgo.String("as Electric than"),
-                        Slug: conductoronesdkgo.String("Benz Representative"),
                     },
                 },
                 AppIds: []string{
-                    "wireless",
+                    "Supervisor",
                 },
-                CreatedByUserID: conductoronesdkgo.String("index"),
-                Description: conductoronesdkgo.String("Public-key methodical info-mediaries"),
-                DisplayName: conductoronesdkgo.String("Virgin"),
-                ID: conductoronesdkgo.String("<ID>"),
-                Published: conductoronesdkgo.Bool(false),
-                VisibleToEveryone: conductoronesdkgo.Bool(false),
             },
             RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
                 Paths: []string{
-                    "relationships",
+                    "less",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("Northeast Executive"),
         },
         ID: "<ID>",
     })
