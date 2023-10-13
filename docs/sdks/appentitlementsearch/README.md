@@ -30,39 +30,32 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppEntitlementSearch.Search(ctx, shared.AppEntitlementSearchServiceSearchRequest{
+    res, err := s.AppEntitlementSearch.Search(ctx, &shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "molestiae",
+                "transition",
             },
         },
-        AccessReviewID: conductoronesdkgo.String("minus"),
-        Alias: conductoronesdkgo.String("placeat"),
         AppIds: []string{
-            "voluptatum",
+            "turquoise",
         },
         AppUserIds: []string{
-            "iusto",
+            "Hyundai",
         },
         ComplianceFrameworkIds: []string{
-            "excepturi",
+            "Future",
         },
         ExcludeAppIds: []string{
-            "nisi",
+            "Southwest",
         },
         ExcludeAppUserIds: []string{
-            "recusandae",
+            "broach",
         },
-        IncludeDeleted: conductoronesdkgo.Bool(false),
-        OnlyGetExpiring: conductoronesdkgo.Bool(false),
-        PageSize: conductoronesdkgo.Float64(8360.79),
-        PageToken: conductoronesdkgo.String("ab"),
-        Query: conductoronesdkgo.String("quis"),
         ResourceTypeIds: []string{
-            "veritatis",
+            "dependent",
         },
         RiskLevelIds: []string{
-            "deserunt",
+            "Mozambique",
         },
     })
     if err != nil {

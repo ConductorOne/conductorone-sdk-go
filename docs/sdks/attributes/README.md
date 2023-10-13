@@ -34,10 +34,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Attributes.CreateAttributeValue(ctx, shared.CreateAttributeValueRequest{
-        AttributeTypeID: conductoronesdkgo.String("occaecati"),
-        Value: conductoronesdkgo.String("rerum"),
-    })
+    res, err := s.Attributes.CreateAttributeValue(ctx, &shared.CreateAttributeValueRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -89,7 +86,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
         DeleteAttributeValueRequest: &shared.DeleteAttributeValueRequest{},
-        ID: "3fe49a8d-9cbf-4486-b332-3f9b77f3a410",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -141,7 +138,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
-        ID: "0674ebf6-9280-4d1b-a77a-89ebf737ae42",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -192,10 +189,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{
-        PageSize: conductoronesdkgo.Float64(206.51),
-        PageToken: conductoronesdkgo.String("amet"),
-    })
+    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -246,9 +240,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "optio",
-        PageSize: conductoronesdkgo.Float64(8815.86),
-        PageToken: conductoronesdkgo.String("ad"),
+        AttributeTypeID: "trot markets",
     })
     if err != nil {
         log.Fatal(err)

@@ -33,13 +33,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.Create(ctx, shared.DirectoryServiceCreateRequest{
+    res, err := s.Directory.Create(ctx, &shared.DirectoryServiceCreateRequest{
         DirectoryExpandMask: &shared.DirectoryExpandMask{
             Paths: []string{
-                "incidunt",
+                "neural",
             },
         },
-        AppID: conductoronesdkgo.String("atque"),
     })
     if err != nil {
         log.Fatal(err)
@@ -92,7 +91,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "explicabo",
+        AppID: "Architect Cotton port",
     })
     if err != nil {
         log.Fatal(err)
@@ -144,7 +143,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "minima",
+        AppID: "Group Cambridgeshire",
     })
     if err != nil {
         log.Fatal(err)
@@ -195,10 +194,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{
-        PageSize: conductoronesdkgo.Float64(3926.76),
-        PageToken: conductoronesdkgo.String("fugit"),
-    })
+    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }

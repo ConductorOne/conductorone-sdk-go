@@ -44,22 +44,19 @@ func main() {
         ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "saepe",
+                    "neural",
                 },
             },
-            CatalogID: conductoronesdkgo.String("suscipit"),
             Config: &shared.ConnectorServiceCreateRequestConfig{
-                AtType: conductoronesdkgo.String("deserunt"),
                 AdditionalProperties: map[string]interface{}{
-                    "provident": "minima",
+                    "Tasty": "island",
                 },
             },
-            Description: conductoronesdkgo.String("repellendus"),
             UserIds: []string{
-                "totam",
+                "Southwest",
             },
         },
-        AppID: "similique",
+        AppID: "National Lauderhill",
     })
     if err != nil {
         log.Fatal(err)
@@ -114,17 +111,14 @@ func main() {
         ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "alias",
+                    "Keyboard",
                 },
             },
-            CatalogID: conductoronesdkgo.String("at"),
-            Description: conductoronesdkgo.String("quaerat"),
-            DisplayName: conductoronesdkgo.String("tempora"),
             UserIds: []string{
-                "vel",
+                "Southwest",
             },
         },
-        AppID: "quod",
+        AppID: "visionary curiously",
     })
     if err != nil {
         log.Fatal(err)
@@ -177,8 +171,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "officiis",
-        ID: "2af7a73c-f3be-4453-b870-b326b5a73429",
+        AppID: "Architect Cotton port",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -230,8 +224,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "maxime",
-        ID: "db1a8422-bb67-49d2-b227-15bf0cbb1e31",
+        AppID: "Group Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -283,9 +277,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "nobis",
-        ConnectorID: "quos",
-        ID: "b90f3443-a110-48e0-adcf-4b921879fce9",
+        AppID: "reluctance",
+        ConnectorID: "Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -337,9 +331,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "quis",
-        PageSize: conductoronesdkgo.Float64(2184.03),
-        PageToken: conductoronesdkgo.String("delectus"),
+        AppID: "Bronze Architect",
     })
     if err != nil {
         log.Fatal(err)
@@ -392,9 +384,9 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "voluptate",
-        ConnectorID: "consectetur",
-        ID: "ef7fbc7a-bd74-4dd3-9c0f-5d2cff7c70a4",
+        AppID: "Supervisor Senior",
+        ConnectorID: "North as symbolise",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -447,8 +439,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "ipsam",
-        ConnectorID: "ea",
+        AppID: "yawningly Clothing",
+        ConnectorID: "watt functional ferociously",
     })
     if err != nil {
         log.Fatal(err)
@@ -488,7 +480,6 @@ import(
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -503,37 +494,25 @@ func main() {
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
         ConnectorServiceUpdateRequestInput: &shared.ConnectorServiceUpdateRequestInput{
             Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-07-28T16:45:32.822Z"),
-                    LastError: conductoronesdkgo.String("possimus"),
-                    StartedAt: types.MustTimeFromString("2022-10-23T16:55:55.380Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusRunning.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2022-10-04T22:05:21.038Z"),
-                },
+                ConnectorStatus: &shared.ConnectorStatus{},
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("dolor"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("maiores"),
                     AdditionalProperties: map[string]interface{}{
-                        "quasi": "ex",
+                        "up": "complexity",
                     },
                 },
-                Description: conductoronesdkgo.String("nulla"),
-                DisplayName: conductoronesdkgo.String("excepturi"),
-                ID: conductoronesdkgo.String("f5fce6c5-5614-46c3-a250-fb008c42e141"),
                 UserIds: []string{
-                    "dolorum",
+                    "Supervisor",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "laborum",
+                    "less",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("placeat"),
         },
-        AppID: "velit",
-        ID: "66c8dd6b-1442-4907-8747-78a7bd466d28",
+        AppID: "Architect",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -573,7 +552,6 @@ import(
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
 )
 
 func main() {
@@ -588,37 +566,25 @@ func main() {
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
         ConnectorServiceUpdateDelegatedRequestInput: &shared.ConnectorServiceUpdateDelegatedRequestInput{
             Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{
-                    CompletedAt: types.MustTimeFromString("2022-09-28T10:00:45.702Z"),
-                    LastError: conductoronesdkgo.String("ipsa"),
-                    StartedAt: types.MustTimeFromString("2021-08-10T04:36:29.661Z"),
-                    Status: shared.ConnectorStatusStatusSyncStatusUnspecified.ToPointer(),
-                    UpdatedAt: types.MustTimeFromString("2020-06-17T05:36:16.683Z"),
-                },
+                ConnectorStatus: &shared.ConnectorStatus{},
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                AppID: conductoronesdkgo.String("quo"),
                 Config: &shared.ConnectorConfig{
-                    AtType: conductoronesdkgo.String("fuga"),
                     AdditionalProperties: map[string]interface{}{
-                        "eius": "eos",
+                        "Rap": "Ouguiya",
                     },
                 },
-                Description: conductoronesdkgo.String("voluptas"),
-                DisplayName: conductoronesdkgo.String("ab"),
-                ID: conductoronesdkgo.String("904e523c-7e0b-4c71-b8e4-796f2a70c688"),
                 UserIds: []string{
-                    "consequuntur",
+                    "methodologies",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "deleniti",
+                    "North",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("fugit"),
         },
-        ConnectorAppID: "fuga",
-        ConnectorID: "mollitia",
+        ConnectorAppID: "Moscovium Pickup",
+        ConnectorID: "synthesize initiatives instead",
     })
     if err != nil {
         log.Fatal(err)

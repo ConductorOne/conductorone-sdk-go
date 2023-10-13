@@ -33,8 +33,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "magni",
-        ID: "d502a94b-b4f6-43c9-a9e9-a3efa77dfb14",
+        AppID: "Group Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,9 +86,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "cumque",
-        PageSize: conductoronesdkgo.Float64(8137.98),
-        PageToken: conductoronesdkgo.String("ea"),
+        AppID: "Bronze Architect",
     })
     if err != nil {
         log.Fatal(err)

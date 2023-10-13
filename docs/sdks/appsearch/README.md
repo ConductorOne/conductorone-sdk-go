@@ -30,17 +30,13 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppSearch.Search(ctx, shared.SearchAppsRequest{
+    res, err := s.AppSearch.Search(ctx, &shared.SearchAppsRequest{
         AppIds: []string{
-            "aliquid",
+            "transition",
         },
-        DisplayName: conductoronesdkgo.String("laborum"),
         ExcludeAppIds: []string{
-            "accusamus",
+            "turquoise",
         },
-        PageSize: conductoronesdkgo.Float64(2497.96),
-        PageToken: conductoronesdkgo.String("occaecati"),
-        Query: conductoronesdkgo.String("enim"),
     })
     if err != nil {
         log.Fatal(err)

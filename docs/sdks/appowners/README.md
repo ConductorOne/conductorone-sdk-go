@@ -35,8 +35,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "quasi",
-        UserID: "error",
+        AppID: "Small West",
+        UserID: "Officer impactful",
     })
     if err != nil {
         log.Fatal(err)
@@ -88,9 +88,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "temporibus",
-        PageSize: conductoronesdkgo.Float64(6736.6),
-        PageToken: conductoronesdkgo.String("quasi"),
+        AppID: "Bronze Architect",
     })
     if err != nil {
         log.Fatal(err)
@@ -143,8 +141,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "reiciendis",
-        UserID: "voluptatibus",
+        AppID: "SCSI",
+        UserID: "JBOD tan",
     })
     if err != nil {
         log.Fatal(err)

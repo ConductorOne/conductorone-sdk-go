@@ -32,23 +32,15 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Task.CreateGrantTask(ctx, shared.TaskServiceCreateGrantRequest{
+    res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "ratione",
+                "Northwest",
             },
         },
-        TaskGrantSource: &shared.TaskGrantSource{
-            ExternalURL: conductoronesdkgo.String("laborum"),
-            IntegrationID: conductoronesdkgo.String("distinctio"),
-        },
-        AppEntitlementID: "voluptatum",
-        AppID: "rem",
-        AppUserID: conductoronesdkgo.String("aliquam"),
-        Description: conductoronesdkgo.String("ad"),
-        EmergencyAccess: conductoronesdkgo.Bool(false),
-        GrantDuration: conductoronesdkgo.String("repellat"),
-        IdentityUserID: conductoronesdkgo.String("alias"),
+        TaskGrantSource: &shared.TaskGrantSource{},
+        AppEntitlementID: "barring",
+        AppID: "vote Tuna Florida",
     })
     if err != nil {
         log.Fatal(err)
@@ -98,17 +90,14 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Task.CreateRevokeTask(ctx, shared.TaskServiceCreateRevokeRequest{
+    res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "corporis",
+                "tame",
             },
         },
-        AppEntitlementID: "perspiciatis",
-        AppID: "nihil",
-        AppUserID: conductoronesdkgo.String("mollitia"),
-        Description: conductoronesdkgo.String("voluptas"),
-        IdentityUserID: conductoronesdkgo.String("alias"),
+        AppEntitlementID: "Arab cultivate Clothing",
+        AppID: "Southwest",
     })
     if err != nil {
         log.Fatal(err)
@@ -160,7 +149,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "ff2a54a3-1e94-4764-a3e8-65e7956f9251",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

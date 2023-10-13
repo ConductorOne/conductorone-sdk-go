@@ -30,19 +30,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
+    res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, &shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "quidem",
+                "Cotton",
             },
         },
-        AppDisplayName: conductoronesdkgo.String("eveniet"),
-        EntitlementAlias: conductoronesdkgo.String("non"),
-        GrantedStatus: shared.RequestCatalogSearchServiceSearchEntitlementsRequestGrantedStatusNotGranted.ToPointer(),
-        IncludeDeleted: conductoronesdkgo.Bool(false),
-        PageSize: conductoronesdkgo.Float64(396.15),
-        PageToken: conductoronesdkgo.String("iure"),
-        Query: conductoronesdkgo.String("ipsa"),
     })
     if err != nil {
         log.Fatal(err)

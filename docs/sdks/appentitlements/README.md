@@ -37,8 +37,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "sapiente",
-        ID: "c2ddf7cc-78ca-41ba-928f-c816742cb739",
+        AppID: "Group Cambridgeshire",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,9 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "aspernatur",
-        PageSize: conductoronesdkgo.Float64(187.89),
-        PageToken: conductoronesdkgo.String("ad"),
+        AppID: "Bronze Architect",
     })
     if err != nil {
         log.Fatal(err)
@@ -144,11 +142,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "natus",
-        AppResourceID: "sed",
-        AppResourceTypeID: "iste",
-        PageSize: conductoronesdkgo.Float64(2223.21),
-        PageToken: conductoronesdkgo.String("natus"),
+        AppID: "SDD convergence",
+        AppResourceID: "quis whether",
+        AppResourceTypeID: "Non",
     })
     if err != nil {
         log.Fatal(err)
@@ -200,10 +196,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "laboriosam",
-        AppUserID: "hic",
-        PageSize: conductoronesdkgo.Float64(9025.99),
-        PageToken: conductoronesdkgo.String("fuga"),
+        AppID: "Gardena payment Mountain",
+        AppUserID: "Cruiser",
     })
     if err != nil {
         log.Fatal(err)
@@ -255,10 +249,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "in",
-        AppID: "corporis",
-        PageSize: conductoronesdkgo.Float64(6130.64),
-        PageToken: conductoronesdkgo.String("iure"),
+        AppEntitlementID: "yellow payment",
+        AppID: "why Electric",
     })
     if err != nil {
         log.Fatal(err)
@@ -314,44 +306,26 @@ func main() {
             AppEntitlement: &shared.AppEntitlementInput{
                 ProvisionPolicy: &shared.ProvisionPolicy{
                     ConnectorProvision: &shared.ConnectorProvision{},
-                    DelegatedProvision: &shared.DelegatedProvision{
-                        AppID: conductoronesdkgo.String("saepe"),
-                        EntitlementID: conductoronesdkgo.String("quidem"),
-                    },
+                    DelegatedProvision: &shared.DelegatedProvision{},
                     ManualProvision: &shared.ManualProvision{
-                        Instructions: conductoronesdkgo.String("architecto"),
                         UserIds: []string{
-                            "ipsa",
+                            "up",
                         },
                     },
                 },
-                AppID: conductoronesdkgo.String("reiciendis"),
-                AppResourceID: conductoronesdkgo.String("est"),
-                AppResourceTypeID: conductoronesdkgo.String("mollitia"),
-                CertifyPolicyID: conductoronesdkgo.String("laborum"),
                 ComplianceFrameworkValueIds: []string{
-                    "dolores",
+                    "complexity",
                 },
-                Description: conductoronesdkgo.String("dolorem"),
-                DisplayName: conductoronesdkgo.String("corporis"),
-                DurationGrant: conductoronesdkgo.String("explicabo"),
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
-                EmergencyGrantEnabled: conductoronesdkgo.Bool(false),
-                EmergencyGrantPolicyID: conductoronesdkgo.String("nobis"),
-                GrantPolicyID: conductoronesdkgo.String("enim"),
-                RevokePolicyID: conductoronesdkgo.String("omnis"),
-                RiskLevelValueID: conductoronesdkgo.String("nemo"),
-                Slug: conductoronesdkgo.String("minima"),
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "excepturi",
+                    "Supervisor",
                 },
             },
-            UpdateMask: conductoronesdkgo.String("accusantium"),
         },
-        AppID: "iure",
-        ID: "aff1a3a2-fa94-4677-b925-1aa52c3f5ad0",
+        AppID: "Ruble ADP Oregon",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

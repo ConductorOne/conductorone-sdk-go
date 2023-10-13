@@ -34,11 +34,9 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.Create(ctx, shared.CreatePolicyRequestInput{
-        Description: conductoronesdkgo.String("saepe"),
-        DisplayName: conductoronesdkgo.String("occaecati"),
+    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequestInput{
         PolicySteps: map[string]shared.PolicyStepsInput{
-            "atque": shared.PolicyStepsInput{
+            "neural": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Accept: &shared.Accept{},
@@ -54,37 +52,23 @@ func main() {
                         Provision: &shared.Provision{
                             ProvisionPolicy: &shared.ProvisionPolicy{
                                 ConnectorProvision: &shared.ConnectorProvision{},
-                                DelegatedProvision: &shared.DelegatedProvision{
-                                    AppID: conductoronesdkgo.String("et"),
-                                    EntitlementID: conductoronesdkgo.String("esse"),
-                                },
+                                DelegatedProvision: &shared.DelegatedProvision{},
                                 ManualProvision: &shared.ManualProvision{
-                                    Instructions: conductoronesdkgo.String("eveniet"),
                                     UserIds: []string{
-                                        "accusamus",
+                                        "Tasty",
                                     },
                                 },
                             },
-                            ProvisionTarget: &shared.ProvisionTarget{
-                                AppEntitlementID: conductoronesdkgo.String("veritatis"),
-                                AppID: conductoronesdkgo.String("esse"),
-                                AppUserID: conductoronesdkgo.String("quod"),
-                                GrantDuration: conductoronesdkgo.String("nam"),
-                            },
-                            Assigned: conductoronesdkgo.Bool(false),
+                            ProvisionTarget: &shared.ProvisionTarget{},
                         },
                         Reject: &shared.Reject{},
                     },
                 },
             },
         },
-        PolicyType: shared.CreatePolicyRequestPolicyTypePolicyTypeProvision.ToPointer(),
         PostActions: []shared.PolicyPostActions{
-            shared.PolicyPostActions{
-                CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
-            },
+            shared.PolicyPostActions{},
         },
-        ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
     })
     if err != nil {
         log.Fatal(err)
@@ -137,7 +121,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
         DeletePolicyRequest: &shared.DeletePolicyRequest{},
-        ID: "61e6b7b9-5bc0-4ab3-820c-4f3789fd871f",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -189,7 +173,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
-        ID: "99dd2efd-121a-4a6f-9e67-4bdb04f15756",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -240,10 +224,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{
-        PageSize: conductoronesdkgo.Float64(163.28),
-        PageToken: conductoronesdkgo.String("voluptatum"),
-    })
+    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -296,10 +277,8 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequestInput: &shared.UpdatePolicyRequestInput{
             Policy: &shared.PolicyInput{
-                Description: conductoronesdkgo.String("qui"),
-                DisplayName: conductoronesdkgo.String("quibusdam"),
                 PolicySteps: map[string]shared.PolicyStepsInput{
-                    "ex": shared.PolicyStepsInput{
+                    "up": shared.PolicyStepsInput{
                         Steps: []shared.PolicyStepInput{
                             shared.PolicyStepInput{
                                 Accept: &shared.Accept{},
@@ -315,47 +294,29 @@ func main() {
                                 Provision: &shared.Provision{
                                     ProvisionPolicy: &shared.ProvisionPolicy{
                                         ConnectorProvision: &shared.ConnectorProvision{},
-                                        DelegatedProvision: &shared.DelegatedProvision{
-                                            AppID: conductoronesdkgo.String("deleniti"),
-                                            EntitlementID: conductoronesdkgo.String("itaque"),
-                                        },
+                                        DelegatedProvision: &shared.DelegatedProvision{},
                                         ManualProvision: &shared.ManualProvision{
-                                            Instructions: conductoronesdkgo.String("dolorum"),
                                             UserIds: []string{
-                                                "architecto",
+                                                "complexity",
                                             },
                                         },
                                     },
-                                    ProvisionTarget: &shared.ProvisionTarget{
-                                        AppEntitlementID: conductoronesdkgo.String("omnis"),
-                                        AppID: conductoronesdkgo.String("tenetur"),
-                                        AppUserID: conductoronesdkgo.String("quasi"),
-                                        GrantDuration: conductoronesdkgo.String("at"),
-                                    },
-                                    Assigned: conductoronesdkgo.Bool(false),
+                                    ProvisionTarget: &shared.ProvisionTarget{},
                                 },
                                 Reject: &shared.Reject{},
                             },
                         },
                     },
                 },
-                PolicyType: shared.PolicyPolicyTypePolicyTypeUnspecified.ToPointer(),
                 PostActions: []shared.PolicyPostActions{
-                    shared.PolicyPostActions{
-                        CertifyRemediateImmediately: conductoronesdkgo.Bool(false),
-                    },
+                    shared.PolicyPostActions{},
                 },
-                ReassignTasksToDelegates: conductoronesdkgo.Bool(false),
                 Rules: []shared.Rule{
-                    shared.Rule{
-                        Condition: conductoronesdkgo.String("voluptate"),
-                        PolicyKey: conductoronesdkgo.String("ipsa"),
-                    },
+                    shared.Rule{},
                 },
             },
-            UpdateMask: conductoronesdkgo.String("minima"),
         },
-        ID: "1339d080-86a1-4840-b94c-26071f93f5f0",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)

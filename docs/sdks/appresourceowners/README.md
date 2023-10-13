@@ -32,11 +32,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "est",
-        PageSize: conductoronesdkgo.Float64(8423.42),
-        PageToken: conductoronesdkgo.String("explicabo"),
-        ResourceID: "deserunt",
-        ResourceTypeID: "distinctio",
+        AppID: "Bronze Architect",
+        ResourceID: "Southeast Soap katal",
+        ResourceTypeID: "West East",
     })
     if err != nil {
         log.Fatal(err)

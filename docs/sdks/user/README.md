@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "71778ff6-1d01-4747-a360-a15db6a66065",
+        ID: "<ID>",
     })
     if err != nil {
         log.Fatal(err)
@@ -84,10 +84,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{
-        PageSize: conductoronesdkgo.Float64(6145.28),
-        PageToken: conductoronesdkgo.String("id"),
-    })
+    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }

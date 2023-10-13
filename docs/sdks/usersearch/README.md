@@ -30,32 +30,26 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.UserSearch.Search(ctx, shared.SearchUsersRequest{
+    res, err := s.UserSearch.Search(ctx, &shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "ab",
+                "transition",
             },
         },
-        Email: conductoronesdkgo.String("Remington_Volkman@yahoo.com"),
         ExcludeIds: []string{
-            "libero",
+            "turquoise",
         },
         Ids: []string{
-            "ad",
+            "Hyundai",
         },
-        PageSize: conductoronesdkgo.Float64(5369.23),
-        PageToken: conductoronesdkgo.String("enim"),
-        Query: conductoronesdkgo.String("vitae"),
         Refs: []shared.UserRef{
-            shared.UserRef{
-                ID: conductoronesdkgo.String("d6c645b0-8b61-4891-baa0-fe1ade008e6f"),
-            },
+            shared.UserRef{},
         },
         RoleIds: []string{
-            "rem",
+            "Future",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesDeleted,
+            shared.SearchUsersRequestUserStatusesUnknown,
         },
     })
     if err != nil {

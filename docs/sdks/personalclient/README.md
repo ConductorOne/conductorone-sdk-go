@@ -30,14 +30,12 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.PersonalClient.Create(ctx, shared.PersonalClientServiceCreateRequest{
+    res, err := s.PersonalClient.Create(ctx, &shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "sapiente",
+            "neural",
         },
-        DisplayName: conductoronesdkgo.String("consequuntur"),
-        Expires: conductoronesdkgo.String("ratione"),
         ScopedRoles: []string{
-            "explicabo",
+            "Tasty",
         },
     })
     if err != nil {

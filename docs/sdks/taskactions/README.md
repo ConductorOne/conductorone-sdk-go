@@ -38,13 +38,12 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "animi",
+                    "Gasoline",
                 },
             },
-            Comment: conductoronesdkgo.String("nostrum"),
-            PolicyStepID: "mollitia",
+            PolicyStepID: "edge Tennessee",
         },
-        TaskID: "provident",
+        TaskID: "Hatchback Northeast",
     })
     if err != nil {
         log.Fatal(err)
@@ -99,12 +98,11 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "possimus",
+                    "Synergized",
                 },
             },
-            Comment: conductoronesdkgo.String("animi"),
         },
-        TaskID: "ex",
+        TaskID: "physically redefine azure",
     })
     if err != nil {
         log.Fatal(err)
@@ -159,13 +157,11 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "aliquid",
+                    "relationships",
                 },
             },
-            Comment: conductoronesdkgo.String("accusantium"),
-            PolicyStepID: conductoronesdkgo.String("repellat"),
         },
-        TaskID: "doloribus",
+        TaskID: "Poinciana",
     })
     if err != nil {
         log.Fatal(err)
@@ -220,13 +216,11 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "ullam",
+                    "Practical",
                 },
             },
-            Comment: conductoronesdkgo.String("in"),
-            PolicyStepID: conductoronesdkgo.String("nam"),
         },
-        TaskID: "earum",
+        TaskID: "reprehenderit",
     })
     if err != nil {
         log.Fatal(err)

@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "accusamus",
+        AppID: "Group Cambridgeshire",
     })
     if err != nil {
         log.Fatal(err)
@@ -86,16 +86,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
-            AppUsageControls: &shared.AppUsageControls{
-                AppID: conductoronesdkgo.String("delectus"),
-                Notify: conductoronesdkgo.Bool(false),
-                NotifyAfterDays: conductoronesdkgo.Float64(6925.32),
-                Revoke: conductoronesdkgo.Bool(false),
-                RevokeAfterDays: conductoronesdkgo.Float64(5884.65),
-            },
-            UpdateMask: conductoronesdkgo.String("nam"),
+            AppUsageControls: &shared.AppUsageControls{},
         },
-        AppID: "id",
+        AppID: "South complexity",
     })
     if err != nil {
         log.Fatal(err)
