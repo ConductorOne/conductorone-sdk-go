@@ -36,8 +36,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
         AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{},
-        AppID: "Small West",
-        EntitlementID: "Officer impactful",
+        AppID: "program",
+        EntitlementID: "North",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,8 +89,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.List(ctx, operations.C1APIAppV1AppEntitlementOwnersListRequest{
-        AppID: "Bronze Architect",
-        EntitlementID: "Southeast Soap katal",
+        AppID: "Future",
+        EntitlementID: "Southeast",
     })
     if err != nil {
         log.Fatal(err)
@@ -143,9 +143,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Remove(ctx, operations.C1APIAppV1AppEntitlementOwnersRemoveRequest{
         RemoveAppEntitlementOwnerRequest: &shared.RemoveAppEntitlementOwnerRequest{},
-        AppID: "SCSI",
-        EntitlementID: "JBOD tan",
-        UserID: "encompassing",
+        AppID: "Optimization",
+        EntitlementID: "JBOD",
+        UserID: "tan",
     })
     if err != nil {
         log.Fatal(err)
@@ -202,8 +202,8 @@ func main() {
                 "markets",
             },
         },
-        AppID: "yahoo bandwidth",
-        EntitlementID: "male microchip",
+        AppID: "Non",
+        EntitlementID: "bandwidth",
     })
     if err != nil {
         log.Fatal(err)

@@ -34,7 +34,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "Group Cambridgeshire",
+        RoleID: "motivating",
     })
     if err != nil {
         log.Fatal(err)
@@ -146,7 +146,7 @@ func main() {
                 },
             },
         },
-        RoleID: "Tempe Ruble ADP",
+        RoleID: "Supervisor",
     })
     if err != nil {
         log.Fatal(err)

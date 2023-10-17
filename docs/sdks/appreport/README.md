@@ -32,7 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "Bronze Architect",
+        AppID: "Future",
     })
     if err != nil {
         log.Fatal(err)

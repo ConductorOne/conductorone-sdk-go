@@ -56,7 +56,7 @@ func main() {
                 "Southwest",
             },
         },
-        AppID: "National Lauderhill",
+        AppID: "alarm",
     })
     if err != nil {
         log.Fatal(err)
@@ -118,7 +118,7 @@ func main() {
                 "Southwest",
             },
         },
-        AppID: "visionary curiously",
+        AppID: "labore",
     })
     if err != nil {
         log.Fatal(err)
@@ -171,7 +171,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "Architect Cotton port",
+        AppID: "roughly",
         ID: "<ID>",
     })
     if err != nil {
@@ -224,7 +224,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "Group Cambridgeshire",
+        AppID: "motivating",
         ID: "<ID>",
     })
     if err != nil {
@@ -277,8 +277,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "reluctance",
-        ConnectorID: "Cambridgeshire",
+        AppID: "West",
+        ConnectorID: "Beryllium",
         ID: "<ID>",
     })
     if err != nil {
@@ -331,7 +331,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "Bronze Architect",
+        AppID: "Future",
     })
     if err != nil {
         log.Fatal(err)
@@ -384,8 +384,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "Supervisor Senior",
-        ConnectorID: "North as symbolise",
+        AppID: "Focused",
+        ConnectorID: "Passenger",
         ID: "<ID>",
     })
     if err != nil {
@@ -439,8 +439,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "yawningly Clothing",
-        ConnectorID: "watt functional ferociously",
+        AppID: "program",
+        ConnectorID: "cost",
     })
     if err != nil {
         log.Fatal(err)
@@ -511,7 +511,7 @@ func main() {
                 },
             },
         },
-        AppID: "Architect",
+        AppID: "Ohio",
         ID: "<ID>",
     })
     if err != nil {
@@ -583,8 +583,8 @@ func main() {
                 },
             },
         },
-        ConnectorAppID: "Moscovium Pickup",
-        ConnectorID: "synthesize initiatives instead",
+        ConnectorAppID: "Dollar",
+        ConnectorID: "Pickup",
     })
     if err != nil {
         log.Fatal(err)

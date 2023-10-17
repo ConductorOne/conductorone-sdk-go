@@ -39,8 +39,8 @@ func main() {
             },
         },
         TaskGrantSource: &shared.TaskGrantSource{},
-        AppEntitlementID: "barring",
-        AppID: "vote Tuna Florida",
+        AppEntitlementID: "Cheese",
+        AppID: "barring",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,8 +96,8 @@ func main() {
                 "tame",
             },
         },
-        AppEntitlementID: "Arab cultivate Clothing",
-        AppID: "Southwest",
+        AppEntitlementID: "Nitrogen",
+        AppID: "connecting",
     })
     if err != nil {
         log.Fatal(err)

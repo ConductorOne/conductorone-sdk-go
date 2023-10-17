@@ -37,7 +37,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "Group Cambridgeshire",
+        AppID: "motivating",
         ID: "<ID>",
     })
     if err != nil {
@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "Bronze Architect",
+        AppID: "Future",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,9 +142,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "SDD convergence",
-        AppResourceID: "quis whether",
-        AppResourceTypeID: "Non",
+        AppID: "person",
+        AppResourceID: "convergence",
+        AppResourceTypeID: "area",
     })
     if err != nil {
         log.Fatal(err)
@@ -196,8 +196,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "Gardena payment Mountain",
-        AppUserID: "Cruiser",
+        AppID: "meter",
+        AppUserID: "Monitored",
     })
     if err != nil {
         log.Fatal(err)
@@ -249,8 +249,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "yellow payment",
-        AppID: "why Electric",
+        AppEntitlementID: "invoice",
+        AppID: "Northwest",
     })
     if err != nil {
         log.Fatal(err)
@@ -324,7 +324,7 @@ func main() {
                 },
             },
         },
-        AppID: "Ruble ADP Oregon",
+        AppID: "less",
         ID: "<ID>",
     })
     if err != nil {
