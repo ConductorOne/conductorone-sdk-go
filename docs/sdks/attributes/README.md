@@ -240,7 +240,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "trot markets",
+        AttributeTypeID: "Account",
     })
     if err != nil {
         log.Fatal(err)

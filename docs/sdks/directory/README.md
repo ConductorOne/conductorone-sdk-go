@@ -91,7 +91,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
         DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "Architect Cotton port",
+        AppID: "roughly",
     })
     if err != nil {
         log.Fatal(err)
@@ -143,7 +143,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "Group Cambridgeshire",
+        AppID: "motivating",
     })
     if err != nil {
         log.Fatal(err)

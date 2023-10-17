@@ -47,7 +47,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "deposit",
+        CatalogID: "Killeen",
     })
     if err != nil {
         log.Fatal(err)
@@ -104,7 +104,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "East cyan Wilma",
+        CatalogID: "female",
     })
     if err != nil {
         log.Fatal(err)
@@ -364,7 +364,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "mint digital Man",
+        CatalogID: "deliberately",
     })
     if err != nil {
         log.Fatal(err)
@@ -416,7 +416,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "Senior",
+        CatalogID: "Incredible",
     })
     if err != nil {
         log.Fatal(err)
@@ -473,7 +473,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Mill Audi indigo",
+        CatalogID: "Convertible",
     })
     if err != nil {
         log.Fatal(err)
@@ -530,7 +530,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "UTF8",
+        CatalogID: "Elsinore",
     })
     if err != nil {
         log.Fatal(err)

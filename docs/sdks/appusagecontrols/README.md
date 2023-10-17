@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "Group Cambridgeshire",
+        AppID: "motivating",
     })
     if err != nil {
         log.Fatal(err)
@@ -88,7 +88,7 @@ func main() {
         UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
             AppUsageControls: &shared.AppUsageControls{},
         },
-        AppID: "South complexity",
+        AppID: "up",
     })
     if err != nil {
         log.Fatal(err)

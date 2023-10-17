@@ -43,8 +43,8 @@ func main() {
                 },
             },
         },
-        AppUserAppID: "Clothing Tempe",
-        AppUserID: "Ohio ADP",
+        AppUserAppID: "complexity",
+        AppUserID: "Supervisor",
     })
     if err != nil {
         log.Fatal(err)
