@@ -44,19 +44,19 @@ func main() {
         ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "neural",
+                    "string",
                 },
             },
             Config: &shared.ConnectorServiceCreateRequestConfig{
                 AdditionalProperties: map[string]interface{}{
-                    "Tasty": "island",
+                    "key": "string",
                 },
             },
             UserIds: []string{
-                "Southwest",
+                "string",
             },
         },
-        AppID: "alarm",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -111,14 +111,14 @@ func main() {
         ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "Keyboard",
+                    "string",
                 },
             },
             UserIds: []string{
-                "Southwest",
+                "string",
             },
         },
-        AppID: "labore",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -171,7 +171,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
         ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "roughly",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -224,7 +224,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "motivating",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -277,8 +277,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "West",
-        ConnectorID: "Beryllium",
+        AppID: "string",
+        ConnectorID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -331,7 +331,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "Future",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -384,8 +384,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "Focused",
-        ConnectorID: "Passenger",
+        AppID: "string",
+        ConnectorID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -439,8 +439,8 @@ func main() {
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "program",
-        ConnectorID: "cost",
+        AppID: "string",
+        ConnectorID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -498,20 +498,20 @@ func main() {
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
                 Config: &shared.ConnectorConfig{
                     AdditionalProperties: map[string]interface{}{
-                        "up": "complexity",
+                        "key": "string",
                     },
                 },
                 UserIds: []string{
-                    "Supervisor",
+                    "string",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "less",
+                    "string",
                 },
             },
         },
-        AppID: "Ohio",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -570,21 +570,21 @@ func main() {
                 OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
                 Config: &shared.ConnectorConfig{
                     AdditionalProperties: map[string]interface{}{
-                        "Rap": "Ouguiya",
+                        "key": "string",
                     },
                 },
                 UserIds: []string{
-                    "methodologies",
+                    "string",
                 },
             },
             ConnectorExpandMask: &shared.ConnectorExpandMask{
                 Paths: []string{
-                    "North",
+                    "string",
                 },
             },
         },
-        ConnectorAppID: "Dollar",
-        ConnectorID: "Pickup",
+        ConnectorAppID: "string",
+        ConnectorID: "string",
     })
     if err != nil {
         log.Fatal(err)

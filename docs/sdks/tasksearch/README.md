@@ -33,53 +33,53 @@ func main() {
     res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequestInput{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "transition",
+                "string",
             },
         },
         AccessReviewIds: []string{
-            "turquoise",
+            "string",
         },
         AccountOwnerIds: []string{
-            "Hyundai",
+            "string",
         },
         AppEntitlementIds: []string{
-            "Future",
+            "string",
         },
         AppResourceIds: []string{
-            "Southwest",
+            "string",
         },
         AppResourceTypeIds: []string{
-            "broach",
+            "string",
         },
         AppUserSubjectIds: []string{
-            "dependent",
+            "string",
         },
         ApplicationIds: []string{
-            "Mozambique",
+            "string",
         },
         AssigneesInIds: []string{
-            "Global",
+            "string",
         },
         ExcludeAppEntitlementIds: []string{
-            "watt",
+            "string",
         },
         ExcludeIds: []string{
-            "Gasoline",
+            "string",
         },
         MyWorkUserIds: []string{
-            "Protactinium",
+            "string",
         },
         OpenerIds: []string{
-            "Arsenic",
+            "string",
         },
         PreviouslyActedOnIds: []string{
-            "Gasoline",
+            "string",
         },
         Refs: []shared.TaskRef{
             shared.TaskRef{},
         },
         SubjectIds: []string{
-            "Oklahoma",
+            "string",
         },
         TaskStates: []shared.TaskSearchRequestTaskStates{
             shared.TaskSearchRequestTaskStatesTaskStateUnspecified,

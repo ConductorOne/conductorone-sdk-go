@@ -32,9 +32,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceOwners.List(ctx, operations.C1APIAppV1AppResourceOwnersListRequest{
-        AppID: "Future",
-        ResourceID: "Southeast",
-        ResourceTypeID: "XML",
+        AppID: "string",
+        ResourceID: "string",
+        ResourceTypeID: "string",
     })
     if err != nil {
         log.Fatal(err)

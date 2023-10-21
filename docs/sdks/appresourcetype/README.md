@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
-        AppID: "motivating",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -86,7 +86,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
-        AppID: "Future",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)

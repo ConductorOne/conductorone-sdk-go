@@ -36,7 +36,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequestInput{
         PolicySteps: map[string]shared.PolicyStepsInput{
-            "neural": shared.PolicyStepsInput{
+            "key": shared.PolicyStepsInput{
                 Steps: []shared.PolicyStepInput{
                     shared.PolicyStepInput{
                         Accept: &shared.Accept{},
@@ -55,7 +55,7 @@ func main() {
                                 DelegatedProvision: &shared.DelegatedProvision{},
                                 ManualProvision: &shared.ManualProvision{
                                     UserIds: []string{
-                                        "Tasty",
+                                        "string",
                                     },
                                 },
                             },
@@ -278,7 +278,7 @@ func main() {
         UpdatePolicyRequestInput: &shared.UpdatePolicyRequestInput{
             Policy: &shared.PolicyInput{
                 PolicySteps: map[string]shared.PolicyStepsInput{
-                    "up": shared.PolicyStepsInput{
+                    "key": shared.PolicyStepsInput{
                         Steps: []shared.PolicyStepInput{
                             shared.PolicyStepInput{
                                 Accept: &shared.Accept{},
@@ -297,7 +297,7 @@ func main() {
                                         DelegatedProvision: &shared.DelegatedProvision{},
                                         ManualProvision: &shared.ManualProvision{
                                             UserIds: []string{
-                                                "complexity",
+                                                "string",
                                             },
                                         },
                                     },

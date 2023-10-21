@@ -39,12 +39,12 @@ func main() {
             },
             AppUserExpandMask: &shared.AppUserExpandMask{
                 Paths: []string{
-                    "up",
+                    "string",
                 },
             },
         },
-        AppUserAppID: "complexity",
-        AppUserID: "Supervisor",
+        AppUserAppID: "string",
+        AppUserID: "string",
     })
     if err != nil {
         log.Fatal(err)

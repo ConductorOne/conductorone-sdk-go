@@ -592,8 +592,8 @@ docs/models/shared/appresourcetypeview.md
 docs/models/shared/appresourcetypeservicelistresponseexpanded.md
 docs/models/shared/appresourcetypeservicelistresponse.md
 docs/models/shared/searchappsresponse.md
-docs/models/shared/app.md
 docs/models/shared/appinput.md
+docs/models/shared/app.md
 docs/models/shared/searchappsrequest.md
 docs/models/shared/getappusagecontrolsresponse.md
 docs/models/shared/appusagecontrols.md
@@ -699,7 +699,6 @@ docs/models/shared/appgroupapproval.md
 docs/models/shared/appgroupapprovalinput.md
 docs/models/shared/accept.md
 docs/models/shared/createpolicyrequestpolicytype.md
-docs/models/shared/createpolicyrequest.md
 docs/models/shared/createpolicyrequestinput.md
 docs/models/shared/deletepolicyresponse.md
 docs/models/shared/deletepolicyrequest.md
@@ -718,8 +717,8 @@ docs/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
 docs/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
 docs/models/shared/requestcatalogmanagementservicegetresponse.md
 docs/models/shared/requestcatalogview.md
-docs/models/shared/requestcatalog.md
 docs/models/shared/requestcataloginput.md
+docs/models/shared/requestcatalog.md
 docs/models/shared/requestcatalogmanagementservicecreaterequest.md
 docs/models/shared/requestcatalogexpandmask.md
 docs/models/shared/requestcatalogmanagementservicedeleteresponse.md

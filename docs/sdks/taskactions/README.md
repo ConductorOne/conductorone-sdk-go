@@ -38,12 +38,12 @@ func main() {
         TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "Gasoline",
+                    "string",
                 },
             },
-            PolicyStepID: "National",
+            PolicyStepID: "string",
         },
-        TaskID: "synthesize",
+        TaskID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -98,11 +98,11 @@ func main() {
         TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "Synergized",
+                    "string",
                 },
             },
         },
-        TaskID: "Tesla",
+        TaskID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -157,11 +157,11 @@ func main() {
         TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "relationships",
+                    "string",
                 },
             },
         },
-        TaskID: "Alaska",
+        TaskID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -216,11 +216,11 @@ func main() {
         TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
             TaskExpandMask: &shared.TaskExpandMask{
                 Paths: []string{
-                    "Practical",
+                    "string",
                 },
             },
         },
-        TaskID: "Cotton",
+        TaskID: "string",
     })
     if err != nil {
         log.Fatal(err)

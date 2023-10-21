@@ -32,10 +32,10 @@ func main() {
     ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, &shared.PersonalClientServiceCreateRequest{
         AllowSourceCidr: []string{
-            "neural",
+            "string",
         },
         ScopedRoles: []string{
-            "Tasty",
+            "string",
         },
     })
     if err != nil {

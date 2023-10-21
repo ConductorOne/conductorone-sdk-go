@@ -37,7 +37,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "motivating",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {
@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "Future",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,9 +142,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "person",
-        AppResourceID: "convergence",
-        AppResourceTypeID: "area",
+        AppID: "string",
+        AppResourceID: "string",
+        AppResourceTypeID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -196,8 +196,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "meter",
-        AppUserID: "Monitored",
+        AppID: "string",
+        AppUserID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -249,8 +249,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "invoice",
-        AppID: "Northwest",
+        AppEntitlementID: "string",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -309,22 +309,22 @@ func main() {
                     DelegatedProvision: &shared.DelegatedProvision{},
                     ManualProvision: &shared.ManualProvision{
                         UserIds: []string{
-                            "up",
+                            "string",
                         },
                     },
                 },
                 ComplianceFrameworkValueIds: []string{
-                    "complexity",
+                    "string",
                 },
                 DurationUnset: &shared.AppEntitlementDurationUnset{},
             },
             AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
                 Paths: []string{
-                    "Supervisor",
+                    "string",
                 },
             },
         },
-        AppID: "less",
+        AppID: "string",
         ID: "<ID>",
     })
     if err != nil {

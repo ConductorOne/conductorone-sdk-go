@@ -47,64 +47,6 @@ func (e *CreatePolicyRequestPolicyType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// The CreatePolicyRequest message is used to create a new policy.
-type CreatePolicyRequest struct {
-	// The description of the new policy.
-	Description *string `json:"description,omitempty"`
-	// The display name of the new policy.
-	DisplayName *string `json:"displayName,omitempty"`
-	// The map of policy type to policy steps. The key is the stringified version of the enum. See other policies for examples.
-	PolicySteps map[string]PolicySteps `json:"policySteps,omitempty"`
-	// The enum of the policy type.
-	PolicyType *CreatePolicyRequestPolicyType `json:"policyType,omitempty"`
-	// Actions to occur after a policy finishes. As of now this is only valid on a certify policy to remediate a denied certification immediately.
-	PostActions []PolicyPostActions `json:"postActions,omitempty"`
-	// Allows reassigning tasks to delegates.
-	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
-}
-
-func (o *CreatePolicyRequest) GetDescription() *string {
-	if o == nil {
-		return nil
-	}
-	return o.Description
-}
-
-func (o *CreatePolicyRequest) GetDisplayName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayName
-}
-
-func (o *CreatePolicyRequest) GetPolicySteps() map[string]PolicySteps {
-	if o == nil {
-		return nil
-	}
-	return o.PolicySteps
-}
-
-func (o *CreatePolicyRequest) GetPolicyType() *CreatePolicyRequestPolicyType {
-	if o == nil {
-		return nil
-	}
-	return o.PolicyType
-}
-
-func (o *CreatePolicyRequest) GetPostActions() []PolicyPostActions {
-	if o == nil {
-		return nil
-	}
-	return o.PostActions
-}
-
-func (o *CreatePolicyRequest) GetReassignTasksToDelegates() *bool {
-	if o == nil {
-		return nil
-	}
-	return o.ReassignTasksToDelegates
-}
-
 // CreatePolicyRequestInput - The CreatePolicyRequest message is used to create a new policy.
 type CreatePolicyRequestInput struct {
 	// The description of the new policy.

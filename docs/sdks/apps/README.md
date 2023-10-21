@@ -36,7 +36,7 @@ func main() {
     ctx := context.Background()
     res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
         Owners: []string{
-            "neural",
+            "string",
         },
     })
     if err != nil {

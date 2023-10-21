@@ -47,7 +47,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Killeen",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -104,7 +104,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "female",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -157,7 +157,7 @@ func main() {
     res, err := s.RequestCatalogManagement.Create(ctx, &shared.RequestCatalogManagementServiceCreateRequest{
         RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
             Paths: []string{
-                "neural",
+                "string",
             },
         },
     })
@@ -364,7 +364,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "deliberately",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -416,7 +416,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "Incredible",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -473,7 +473,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Convertible",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -530,7 +530,7 @@ func main() {
                 shared.AppEntitlementRef{},
             },
         },
-        CatalogID: "Elsinore",
+        CatalogID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -591,23 +591,23 @@ func main() {
                             DelegatedProvision: &shared.DelegatedProvision{},
                             ManualProvision: &shared.ManualProvision{
                                 UserIds: []string{
-                                    "up",
+                                    "string",
                                 },
                             },
                         },
                         ComplianceFrameworkValueIds: []string{
-                            "complexity",
+                            "string",
                         },
                         DurationUnset: &shared.AppEntitlementDurationUnset{},
                     },
                 },
                 AppIds: []string{
-                    "Supervisor",
+                    "string",
                 },
             },
             RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
                 Paths: []string{
-                    "less",
+                    "string",
                 },
             },
         },

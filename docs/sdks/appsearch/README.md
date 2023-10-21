@@ -32,10 +32,10 @@ func main() {
     ctx := context.Background()
     res, err := s.AppSearch.Search(ctx, &shared.SearchAppsRequest{
         AppIds: []string{
-            "transition",
+            "string",
         },
         ExcludeAppIds: []string{
-            "turquoise",
+            "string",
         },
     })
     if err != nil {

@@ -34,7 +34,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "motivating",
+        RoleID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -139,14 +139,14 @@ func main() {
         UpdateRoleRequestInput: &shared.UpdateRoleRequestInput{
             Role: &shared.RoleInput{
                 Permissions: []string{
-                    "up",
+                    "string",
                 },
                 ServiceRoles: []string{
-                    "complexity",
+                    "string",
                 },
             },
         },
-        RoleID: "Supervisor",
+        RoleID: "string",
     })
     if err != nil {
         log.Fatal(err)
