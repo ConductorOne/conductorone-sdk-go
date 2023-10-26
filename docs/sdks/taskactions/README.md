@@ -7,6 +7,7 @@
 * [Comment](#comment) - Comment
 * [Deny](#deny) - Deny
 * [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Escalate To Emergency Access
+* [Restart](#restart) - Restart
 
 ## Approve
 
@@ -243,4 +244,63 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md), error**
+
+
+## Restart
+
+Invokes the c1.api.task.v1.TaskActionsService.Restart method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "",
+            Oauth: "",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.TaskActions.Restart(ctx, operations.C1APITaskV1TaskActionsServiceRestartRequest{
+        TaskActionsServiceRestartRequest: &shared.TaskActionsServiceRestartRequest{
+            TaskExpandMask: &shared.TaskExpandMask{
+                Paths: []string{
+                    "string",
+                },
+            },
+        },
+        TaskID: "string",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.TaskActionsServiceRestartResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [operations.C1APITaskV1TaskActionsServiceRestartRequest](../../models/operations/c1apitaskv1taskactionsservicerestartrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceRestartResponse](../../models/operations/c1apitaskv1taskactionsservicerestartresponse.md), error**
 

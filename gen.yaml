@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 62ce67261ac2cb50833d44d274d1cd96
+  docChecksum: d2559d7ba4e6f2d6b59fc325bdfdaeb0
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.108.1
+  generationVersion: 2.172.4
 generation:
   comments:
     disableComments: false
@@ -24,7 +24,7 @@ features:
     nameOverrides: 2.81.1
     unions: 2.84.0
 go:
-  version: 1.15.0
+  version: 1.15.1
   flattenGlobalSecurity: true
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
   maxMethodParams: 0
