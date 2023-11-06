@@ -32,13 +32,13 @@ func main() {
     ctx := context.Background()
     res, err := s.AttributeSearch.SearchAttributeValues(ctx, &shared.SearchAttributeValuesRequest{
         AttributeTypeIds: []string{
-            "Specialist",
+            "string",
         },
         ExcludeIds: []string{
-            "generation",
+            "string",
         },
         Ids: []string{
-            "connecting",
+            "string",
         },
     })
     if err != nil {

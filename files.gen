@@ -129,6 +129,7 @@ pkg/models/operations/c1apitaskv1taskactionsserviceapprove.go
 pkg/models/operations/c1apitaskv1taskactionsservicecomment.go
 pkg/models/operations/c1apitaskv1taskactionsservicedeny.go
 pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccess.go
+pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
 pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
 pkg/models/operations/c1apiuserv1userserviceget.go
 pkg/models/operations/c1apiuserv1userservicelist.go
@@ -348,6 +349,8 @@ pkg/models/shared/taskactionsservicedenyresponse.go
 pkg/models/shared/taskactionsservicedenyrequest.go
 pkg/models/shared/taskserviceactionresponse.go
 pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.go
+pkg/models/shared/taskactionsservicerestartresponse.go
+pkg/models/shared/taskactionsservicerestartrequest.go
 pkg/models/shared/tasksearchresponse.go
 pkg/models/shared/tasksearchrequest.go
 pkg/models/shared/taskref.go
@@ -508,6 +511,8 @@ docs/models/operations/c1apitaskv1taskactionsservicedenyrequest.md
 docs/models/operations/c1apitaskv1taskactionsservicedenyresponse.md
 docs/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessrequest.md
 docs/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md
+docs/models/operations/c1apitaskv1taskactionsservicerestartrequest.md
+docs/models/operations/c1apitaskv1taskactionsservicerestartresponse.md
 docs/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
 docs/models/operations/c1apiuserv1userservicegetrequest.md
 docs/models/operations/c1apiuserv1userservicegetresponse.md
@@ -592,8 +597,8 @@ docs/models/shared/appresourcetypeview.md
 docs/models/shared/appresourcetypeservicelistresponseexpanded.md
 docs/models/shared/appresourcetypeservicelistresponse.md
 docs/models/shared/searchappsresponse.md
-docs/models/shared/app.md
 docs/models/shared/appinput.md
+docs/models/shared/app.md
 docs/models/shared/searchappsrequest.md
 docs/models/shared/getappusagecontrolsresponse.md
 docs/models/shared/appusagecontrols.md
@@ -699,7 +704,6 @@ docs/models/shared/appgroupapproval.md
 docs/models/shared/appgroupapprovalinput.md
 docs/models/shared/accept.md
 docs/models/shared/createpolicyrequestpolicytype.md
-docs/models/shared/createpolicyrequest.md
 docs/models/shared/createpolicyrequestinput.md
 docs/models/shared/deletepolicyresponse.md
 docs/models/shared/deletepolicyrequest.md
@@ -718,8 +722,8 @@ docs/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
 docs/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
 docs/models/shared/requestcatalogmanagementservicegetresponse.md
 docs/models/shared/requestcatalogview.md
-docs/models/shared/requestcatalog.md
 docs/models/shared/requestcataloginput.md
+docs/models/shared/requestcatalog.md
 docs/models/shared/requestcatalogmanagementservicecreaterequest.md
 docs/models/shared/requestcatalogexpandmask.md
 docs/models/shared/requestcatalogmanagementservicedeleteresponse.md
@@ -810,6 +814,9 @@ docs/models/shared/taskactionsservicedenyrequest.md
 docs/models/shared/taskserviceactionresponseexpanded.md
 docs/models/shared/taskserviceactionresponse.md
 docs/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.md
+docs/models/shared/taskactionsservicerestartresponseexpanded.md
+docs/models/shared/taskactionsservicerestartresponse.md
+docs/models/shared/taskactionsservicerestartrequest.md
 docs/models/shared/tasksearchresponseexpanded.md
 docs/models/shared/tasksearchresponse.md
 docs/models/shared/tasksearchrequestcurrentstep.md

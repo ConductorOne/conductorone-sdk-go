@@ -33,29 +33,29 @@ func main() {
     res, err := s.AppEntitlementSearch.Search(ctx, &shared.AppEntitlementSearchServiceSearchRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "transition",
+                "string",
             },
         },
         AppIds: []string{
-            "turquoise",
+            "string",
         },
         AppUserIds: []string{
-            "Hyundai",
+            "string",
         },
         ComplianceFrameworkIds: []string{
-            "Future",
+            "string",
         },
         ExcludeAppIds: []string{
-            "Southwest",
+            "string",
         },
         ExcludeAppUserIds: []string{
-            "broach",
+            "string",
         },
         ResourceTypeIds: []string{
-            "dependent",
+            "string",
         },
         RiskLevelIds: []string{
-            "Mozambique",
+            "string",
         },
     })
     if err != nil {

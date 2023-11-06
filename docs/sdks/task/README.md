@@ -35,12 +35,12 @@ func main() {
     res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "Northwest",
+                "string",
             },
         },
         TaskGrantSource: &shared.TaskGrantSource{},
-        AppEntitlementID: "Cheese",
-        AppID: "barring",
+        AppEntitlementID: "string",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -93,11 +93,11 @@ func main() {
     res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "tame",
+                "string",
             },
         },
-        AppEntitlementID: "Nitrogen",
-        AppID: "connecting",
+        AppEntitlementID: "string",
+        AppID: "string",
     })
     if err != nil {
         log.Fatal(err)

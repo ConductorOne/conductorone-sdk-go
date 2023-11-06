@@ -36,8 +36,8 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
         AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{},
-        AppID: "program",
-        EntitlementID: "North",
+        AppID: "string",
+        EntitlementID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -89,8 +89,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.List(ctx, operations.C1APIAppV1AppEntitlementOwnersListRequest{
-        AppID: "Future",
-        EntitlementID: "Southeast",
+        AppID: "string",
+        EntitlementID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -143,9 +143,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppEntitlementOwners.Remove(ctx, operations.C1APIAppV1AppEntitlementOwnersRemoveRequest{
         RemoveAppEntitlementOwnerRequest: &shared.RemoveAppEntitlementOwnerRequest{},
-        AppID: "Optimization",
-        EntitlementID: "JBOD",
-        UserID: "tan",
+        AppID: "string",
+        EntitlementID: "string",
+        UserID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -199,11 +199,11 @@ func main() {
     res, err := s.AppEntitlementOwners.Set(ctx, operations.C1APIAppV1AppEntitlementOwnersSetRequest{
         SetAppEntitlementOwnersRequest: &shared.SetAppEntitlementOwnersRequest{
             UserIds: []string{
-                "markets",
+                "string",
             },
         },
-        AppID: "Non",
-        EntitlementID: "bandwidth",
+        AppID: "string",
+        EntitlementID: "string",
     })
     if err != nil {
         log.Fatal(err)

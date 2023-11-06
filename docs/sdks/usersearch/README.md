@@ -33,23 +33,23 @@ func main() {
     res, err := s.UserSearch.Search(ctx, &shared.SearchUsersRequest{
         UserExpandMask: &shared.UserExpandMask{
             Paths: []string{
-                "transition",
+                "string",
             },
         },
         ExcludeIds: []string{
-            "turquoise",
+            "string",
         },
         Ids: []string{
-            "Hyundai",
+            "string",
         },
         Refs: []shared.UserRef{
             shared.UserRef{},
         },
         RoleIds: []string{
-            "Future",
+            "string",
         },
         UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesUnknown,
+            shared.SearchUsersRequestUserStatusesEnabled,
         },
     })
     if err != nil {

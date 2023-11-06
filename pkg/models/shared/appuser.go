@@ -136,23 +136,23 @@ func CreateAppUserProfileBoolean(boolean bool) AppUserProfile {
 
 func (u *AppUserProfile) UnmarshalJSON(data []byte) error {
 
-	appUserProfile3 := new(AppUserProfile3)
+	appUserProfile3 := AppUserProfile3{}
 	if err := utils.UnmarshalJSON(data, &appUserProfile3, "", true, true); err == nil {
-		u.AppUserProfile3 = appUserProfile3
+		u.AppUserProfile3 = &appUserProfile3
 		u.Type = AppUserProfileTypeAppUserProfile3
 		return nil
 	}
 
-	str := new(string)
+	str := ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = str
+		u.Str = &str
 		u.Type = AppUserProfileTypeStr
 		return nil
 	}
 
-	number := new(float64)
+	number := float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
-		u.Number = number
+		u.Number = &number
 		u.Type = AppUserProfileTypeNumber
 		return nil
 	}
@@ -164,9 +164,9 @@ func (u *AppUserProfile) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	boolean := new(bool)
+	boolean := false
 	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
-		u.Boolean = boolean
+		u.Boolean = &boolean
 		u.Type = AppUserProfileTypeBoolean
 		return nil
 	}

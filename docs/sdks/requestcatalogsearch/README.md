@@ -33,7 +33,7 @@ func main() {
     res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, &shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
         AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
             Paths: []string{
-                "Cotton",
+                "string",
             },
         },
     })

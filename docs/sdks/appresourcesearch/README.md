@@ -32,19 +32,19 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, &shared.SearchAppResourceTypesRequest{
         AppIds: []string{
-            "Soap",
+            "string",
         },
         ExcludeResourceTypeIds: []string{
-            "paradigms",
+            "string",
         },
         ExcludeResourceTypeTraitIds: []string{
-            "World",
+            "string",
         },
         ResourceTypeIds: []string{
-            "Turkmenistan",
+            "string",
         },
         ResourceTypeTraitIds: []string{
-            "SUV",
+            "string",
         },
     })
     if err != nil {
