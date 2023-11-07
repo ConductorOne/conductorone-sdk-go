@@ -1,5 +1,5 @@
 # PolicySearch
-(*PolicySearch*)
+(*.PolicySearch*)
 
 ### Available Operations
 
@@ -17,8 +17,8 @@ package main
 import(
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 func main() {
@@ -31,8 +31,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.PolicySearch.Search(ctx, &shared.SearchPoliciesRequest{
-        PolicyTypes: []shared.SearchPoliciesRequestPolicyTypes{
-            shared.SearchPoliciesRequestPolicyTypesPolicyTypeGrant,
+        PolicyTypes: []shared.PolicyTypes{
+            shared.PolicyTypesPolicyTypeGrant,
         },
         Refs: []shared.PolicyRef{
             shared.PolicyRef{},

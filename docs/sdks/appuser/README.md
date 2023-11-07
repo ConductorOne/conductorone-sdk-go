@@ -1,5 +1,5 @@
 # AppUser
-(*AppUser*)
+(*.AppUser*)
 
 ### Available Operations
 
@@ -18,9 +18,9 @@ package main
 import(
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUser.Update(ctx, operations.C1APIAppV1AppUserServiceUpdateRequest{
-        AppUserServiceUpdateRequestInput: &shared.AppUserServiceUpdateRequestInput{
+        AppUserServiceUpdateRequest: &shared.AppUserServiceUpdateRequest{
             AppUser: &shared.AppUserInput{
                 AppUserStatus: &shared.AppUserStatusInput{},
             },

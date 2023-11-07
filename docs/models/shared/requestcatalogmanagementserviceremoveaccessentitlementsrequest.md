@@ -6,6 +6,6 @@ The RequestCatalogManagementServiceRemoveAccessEntitlementsRequest message is us
 
 ## Fields
 
-| Field                                                           | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `AccessEntitlements`                                            | [][AppEntitlementRef](../../models/shared/appentitlementref.md) | :heavy_minus_sign:                                              | The list of access entitlements to remove from the catalog.     |
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `AccessEntitlements`                                                   | [][shared.AppEntitlementRef](../../models/shared/appentitlementref.md) | :heavy_minus_sign:                                                     | The list of access entitlements to remove from the catalog.            |

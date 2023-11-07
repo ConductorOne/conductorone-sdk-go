@@ -15,10 +15,10 @@ userProfile := shared.CreateUserProfileStr(string{/* values here */})
 userProfile := shared.CreateUserProfileNumber(float64{/* values here */})
 ```
 
-### UserProfile3
+### User3
 
 ```go
-userProfile := shared.CreateUserProfileUserProfile3(shared.UserProfile3{/* values here */})
+userProfile := shared.CreateUserProfileUser3(shared.User3{/* values here */})
 ```
 
 ### 

@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 
 	"github.com/ericlagergren/decimal"
 )

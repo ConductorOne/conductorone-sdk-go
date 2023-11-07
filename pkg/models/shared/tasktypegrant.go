@@ -5,22 +5,9 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"time"
 )
-
-// TaskTypeGrantInput - The TaskTypeGrant message indicates that a task is a grant task and all related details.
-type TaskTypeGrantInput struct {
-	// The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket.
-	TaskGrantSource *TaskGrantSource `json:"source,omitempty"`
-}
-
-func (o *TaskTypeGrantInput) GetTaskGrantSource() *TaskGrantSource {
-	if o == nil {
-		return nil
-	}
-	return o.TaskGrantSource
-}
 
 // TaskTypeGrantOutcome - The outcome of the grant.
 type TaskTypeGrantOutcome string
@@ -142,4 +129,17 @@ func (o *TaskTypeGrant) GetOutcomeTime() *time.Time {
 		return nil
 	}
 	return o.OutcomeTime
+}
+
+// TaskTypeGrantInput - The TaskTypeGrant message indicates that a task is a grant task and all related details.
+type TaskTypeGrantInput struct {
+	// The TaskGrantSource message tracks which external URL was the source of the specificed grant ticket.
+	TaskGrantSource *TaskGrantSource `json:"source,omitempty"`
+}
+
+func (o *TaskTypeGrantInput) GetTaskGrantSource() *TaskGrantSource {
+	if o == nil {
+		return nil
+	}
+	return o.TaskGrantSource
 }

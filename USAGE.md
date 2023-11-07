@@ -6,9 +6,8 @@ package main
 
 import (
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"log"
 )
 
@@ -21,16 +20,16 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.AppEntitlementOwners.Add(ctx, operations.C1APIAppV1AppEntitlementOwnersAddRequest{
-		AddAppEntitlementOwnerRequest: &shared.AddAppEntitlementOwnerRequest{},
-		AppID:                         "string",
-		EntitlementID:                 "string",
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.AddAppEntitlementOwnerResponse != nil {
+	if res.CreateAppResponse != nil {
 		// handle response
 	}
 }

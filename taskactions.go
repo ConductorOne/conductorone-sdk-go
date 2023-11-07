@@ -6,27 +6,27 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/sdkerrors"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-type taskActions struct {
+type TaskActions struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTaskActions(sdkConfig sdkConfiguration) *taskActions {
-	return &taskActions{
+func newTaskActions(sdkConfig sdkConfiguration) *TaskActions {
+	return &TaskActions{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // Approve
 // Invokes the c1.api.task.v1.TaskActionsService.Approve method.
-func (s *taskActions) Approve(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceApproveRequest) (*operations.C1APITaskV1TaskActionsServiceApproveResponse, error) {
+func (s *TaskActions) Approve(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceApproveRequest) (*operations.C1APITaskV1TaskActionsServiceApproveResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{task_id}/action/approve", request, nil)
 	if err != nil {
@@ -84,6 +84,10 @@ func (s *taskActions) Approve(ctx context.Context, request operations.C1APITaskV
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -91,7 +95,7 @@ func (s *taskActions) Approve(ctx context.Context, request operations.C1APITaskV
 
 // Comment
 // Invokes the c1.api.task.v1.TaskActionsService.Comment method.
-func (s *taskActions) Comment(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceCommentRequest) (*operations.C1APITaskV1TaskActionsServiceCommentResponse, error) {
+func (s *TaskActions) Comment(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceCommentRequest) (*operations.C1APITaskV1TaskActionsServiceCommentResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{task_id}/action/comment", request, nil)
 	if err != nil {
@@ -149,6 +153,10 @@ func (s *taskActions) Comment(ctx context.Context, request operations.C1APITaskV
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -156,7 +164,7 @@ func (s *taskActions) Comment(ctx context.Context, request operations.C1APITaskV
 
 // Deny
 // Invokes the c1.api.task.v1.TaskActionsService.Deny method.
-func (s *taskActions) Deny(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceDenyRequest) (*operations.C1APITaskV1TaskActionsServiceDenyResponse, error) {
+func (s *TaskActions) Deny(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceDenyRequest) (*operations.C1APITaskV1TaskActionsServiceDenyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{task_id}/action/deny", request, nil)
 	if err != nil {
@@ -214,6 +222,10 @@ func (s *taskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -221,7 +233,7 @@ func (s *taskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 
 // EscalateToEmergencyAccess - Escalate To Emergency Access
 // Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
-func (s *taskActions) EscalateToEmergencyAccess(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) (*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse, error) {
+func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) (*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{task_id}/action/escalate", request, nil)
 	if err != nil {
@@ -279,6 +291,10 @@ func (s *taskActions) EscalateToEmergencyAccess(ctx context.Context, request ope
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
@@ -286,7 +302,7 @@ func (s *taskActions) EscalateToEmergencyAccess(ctx context.Context, request ope
 
 // Restart
 // Invokes the c1.api.task.v1.TaskActionsService.Restart method.
-func (s *taskActions) Restart(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceRestartRequest) (*operations.C1APITaskV1TaskActionsServiceRestartResponse, error) {
+func (s *TaskActions) Restart(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceRestartRequest) (*operations.C1APITaskV1TaskActionsServiceRestartResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/tasks/{task_id}/action/restart", request, nil)
 	if err != nil {
@@ -344,6 +360,10 @@ func (s *taskActions) Restart(ctx context.Context, request operations.C1APITaskV
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

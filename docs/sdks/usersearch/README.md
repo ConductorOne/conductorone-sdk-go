@@ -1,5 +1,5 @@
 # UserSearch
-(*UserSearch*)
+(*.UserSearch*)
 
 ### Available Operations
 
@@ -17,8 +17,8 @@ package main
 import(
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 func main() {
@@ -48,8 +48,8 @@ func main() {
         RoleIds: []string{
             "string",
         },
-        UserStatuses: []shared.SearchUsersRequestUserStatuses{
-            shared.SearchUsersRequestUserStatusesEnabled,
+        UserStatuses: []shared.UserStatuses{
+            shared.UserStatusesEnabled,
         },
     })
     if err != nil {

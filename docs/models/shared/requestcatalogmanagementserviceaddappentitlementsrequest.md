@@ -5,6 +5,6 @@ The RequestCatalogManagementServiceAddAppEntitlementsRequest object is used to a
 
 ## Fields
 
-| Field                                                           | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `AppEntitlements`                                               | [][AppEntitlementRef](../../models/shared/appentitlementref.md) | :heavy_minus_sign:                                              | List of entitlements to add to the request catalog.             |
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `AppEntitlements`                                                      | [][shared.AppEntitlementRef](../../models/shared/appentitlementref.md) | :heavy_minus_sign:                                                     | List of entitlements to add to the request catalog.                    |

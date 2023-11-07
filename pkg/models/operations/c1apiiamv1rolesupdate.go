@@ -3,20 +3,20 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIIamV1RolesUpdateRequest struct {
-	UpdateRoleRequestInput *shared.UpdateRoleRequestInput `request:"mediaType=application/json"`
-	RoleID                 string                         `pathParam:"style=simple,explode=false,name=role_id"`
+	UpdateRoleRequest *shared.UpdateRoleRequest `request:"mediaType=application/json"`
+	RoleID            string                    `pathParam:"style=simple,explode=false,name=role_id"`
 }
 
-func (o *C1APIIamV1RolesUpdateRequest) GetUpdateRoleRequestInput() *shared.UpdateRoleRequestInput {
+func (o *C1APIIamV1RolesUpdateRequest) GetUpdateRoleRequest() *shared.UpdateRoleRequest {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateRoleRequestInput
+	return o.UpdateRoleRequest
 }
 
 func (o *C1APIIamV1RolesUpdateRequest) GetRoleID() string {

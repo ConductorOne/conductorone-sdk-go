@@ -3,21 +3,21 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIAppV1ConnectorServiceUpdateDelegatedRequest struct {
-	ConnectorServiceUpdateDelegatedRequestInput *shared.ConnectorServiceUpdateDelegatedRequestInput `request:"mediaType=application/json"`
-	ConnectorAppID                              string                                              `pathParam:"style=simple,explode=false,name=connector_app_id"`
-	ConnectorID                                 string                                              `pathParam:"style=simple,explode=false,name=connector_id"`
+	ConnectorServiceUpdateDelegatedRequest *shared.ConnectorServiceUpdateDelegatedRequest `request:"mediaType=application/json"`
+	ConnectorAppID                         string                                         `pathParam:"style=simple,explode=false,name=connector_app_id"`
+	ConnectorID                            string                                         `pathParam:"style=simple,explode=false,name=connector_id"`
 }
 
-func (o *C1APIAppV1ConnectorServiceUpdateDelegatedRequest) GetConnectorServiceUpdateDelegatedRequestInput() *shared.ConnectorServiceUpdateDelegatedRequestInput {
+func (o *C1APIAppV1ConnectorServiceUpdateDelegatedRequest) GetConnectorServiceUpdateDelegatedRequest() *shared.ConnectorServiceUpdateDelegatedRequest {
 	if o == nil {
 		return nil
 	}
-	return o.ConnectorServiceUpdateDelegatedRequestInput
+	return o.ConnectorServiceUpdateDelegatedRequest
 }
 
 func (o *C1APIAppV1ConnectorServiceUpdateDelegatedRequest) GetConnectorAppID() string {

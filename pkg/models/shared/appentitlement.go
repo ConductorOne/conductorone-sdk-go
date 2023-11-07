@@ -3,11 +3,11 @@
 package shared
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"time"
 )
 
-type AppEntitlementDurationUnset struct {
+type DurationUnset struct {
 }
 
 // AppEntitlement - The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -41,9 +41,9 @@ type AppEntitlement struct {
 	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
 	// The display name of the app entitlement.
-	DisplayName   *string                      `json:"displayName,omitempty"`
-	DurationGrant *string                      `json:"durationGrant,omitempty"`
-	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
+	DisplayName   *string        `json:"displayName,omitempty"`
+	DurationGrant *string        `json:"durationGrant,omitempty"`
+	DurationUnset *DurationUnset `json:"durationUnset,omitempty"`
 	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
 	// The ID of the policy that will be used for emergency access grant tasks.
@@ -160,7 +160,7 @@ func (o *AppEntitlement) GetDurationGrant() *string {
 	return o.DurationGrant
 }
 
-func (o *AppEntitlement) GetDurationUnset() *AppEntitlementDurationUnset {
+func (o *AppEntitlement) GetDurationUnset() *DurationUnset {
 	if o == nil {
 		return nil
 	}
@@ -264,9 +264,9 @@ type AppEntitlementInput struct {
 	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
 	// The display name of the app entitlement.
-	DisplayName   *string                      `json:"displayName,omitempty"`
-	DurationGrant *string                      `json:"durationGrant,omitempty"`
-	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
+	DisplayName   *string        `json:"displayName,omitempty"`
+	DurationGrant *string        `json:"durationGrant,omitempty"`
+	DurationUnset *DurationUnset `json:"durationUnset,omitempty"`
 	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
 	// The ID of the policy that will be used for emergency access grant tasks.
@@ -344,7 +344,7 @@ func (o *AppEntitlementInput) GetDurationGrant() *string {
 	return o.DurationGrant
 }
 
-func (o *AppEntitlementInput) GetDurationUnset() *AppEntitlementDurationUnset {
+func (o *AppEntitlementInput) GetDurationUnset() *DurationUnset {
 	if o == nil {
 		return nil
 	}

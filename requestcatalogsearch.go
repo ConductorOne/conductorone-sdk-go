@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/sdkerrors"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type requestCatalogSearch struct {
+type RequestCatalogSearch struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newRequestCatalogSearch(sdkConfig sdkConfiguration) *requestCatalogSearch {
-	return &requestCatalogSearch{
+func newRequestCatalogSearch(sdkConfig sdkConfiguration) *RequestCatalogSearch {
+	return &RequestCatalogSearch{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // SearchEntitlements - Search Entitlements
 // Search request catalogs based on filters specified in the request body.
-func (s *requestCatalogSearch) SearchEntitlements(ctx context.Context, request *shared.RequestCatalogSearchServiceSearchEntitlementsRequest) (*operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse, error) {
+func (s *RequestCatalogSearch) SearchEntitlements(ctx context.Context, request *shared.RequestCatalogSearchServiceSearchEntitlementsRequest) (*operations.C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/search/request_catalog/entitlements"
 
@@ -82,6 +82,10 @@ func (s *requestCatalogSearch) SearchEntitlements(ctx context.Context, request *
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
