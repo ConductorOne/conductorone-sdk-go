@@ -7,10 +7,6 @@ import (
 	"fmt"
 )
 
-// AppUserStatusInput - The satus of the applicaiton user.
-type AppUserStatusInput struct {
-}
-
 // Status - The application user status field.
 type Status string
 

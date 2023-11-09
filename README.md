@@ -50,7 +50,7 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.Apps](docs/sdks/apps/README.md)
+### [Apps](docs/sdks/apps/README.md)
 
 * [Create](docs/sdks/apps/README.md#create) - Create
 * [Delete](docs/sdks/apps/README.md#delete) - Delete
@@ -58,7 +58,7 @@ func main() {
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
 
-### [.Connector](docs/sdks/connector/README.md)
+### [Connector](docs/sdks/connector/README.md)
 
 * [Create](docs/sdks/connector/README.md#create) - Create
 * [CreateDelegated](docs/sdks/connector/README.md#createdelegated) - Create Delegated
@@ -71,7 +71,7 @@ func main() {
 * [Update](docs/sdks/connector/README.md#update) - Update
 * [UpdateDelegated](docs/sdks/connector/README.md#updatedelegated) - Update Delegated
 
-### [.AppEntitlements](docs/sdks/appentitlements/README.md)
+### [AppEntitlements](docs/sdks/appentitlements/README.md)
 
 * [Get](docs/sdks/appentitlements/README.md#get) - Get
 * [List](docs/sdks/appentitlements/README.md#list) - List
@@ -80,55 +80,55 @@ func main() {
 * [ListUsers](docs/sdks/appentitlements/README.md#listusers) - List Users
 * [Update](docs/sdks/appentitlements/README.md#update) - Update
 
-### [.AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
+### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
 * [ListAppUsersForIdentityWithGrant](docs/sdks/appentitlementuserbinding/README.md#listappusersforidentitywithgrant) - List App Users For Identity With Grant
 
-### [.AppEntitlementOwners](docs/sdks/appentitlementowners/README.md)
+### [AppEntitlementOwners](docs/sdks/appentitlementowners/README.md)
 
 * [Add](docs/sdks/appentitlementowners/README.md#add) - Add
 * [List](docs/sdks/appentitlementowners/README.md#list) - List
 * [Remove](docs/sdks/appentitlementowners/README.md#remove) - Remove
 * [Set](docs/sdks/appentitlementowners/README.md#set) - Set
 
-### [.AppOwners](docs/sdks/appowners/README.md)
+### [AppOwners](docs/sdks/appowners/README.md)
 
 * [Add](docs/sdks/appowners/README.md#add) - Add
 * [List](docs/sdks/appowners/README.md#list) - List
 * [Remove](docs/sdks/appowners/README.md#remove) - Remove
 
-### [.AppReport](docs/sdks/appreport/README.md)
+### [AppReport](docs/sdks/appreport/README.md)
 
 * [List](docs/sdks/appreport/README.md#list) - List
 
-### [.AppReportAction](docs/sdks/appreportaction/README.md)
+### [AppReportAction](docs/sdks/appreportaction/README.md)
 
 * [GenerateReport](docs/sdks/appreportaction/README.md#generatereport) - Generate Report
 
-### [.AppResourceType](docs/sdks/appresourcetype/README.md)
+### [AppResourceType](docs/sdks/appresourcetype/README.md)
 
 * [Get](docs/sdks/appresourcetype/README.md#get) - Get
 * [List](docs/sdks/appresourcetype/README.md#list) - List
 
-### [.AppResource](docs/sdks/appresource/README.md)
+### [AppResource](docs/sdks/appresource/README.md)
 
 * [Get](docs/sdks/appresource/README.md#get) - Get
 * [List](docs/sdks/appresource/README.md#list) - List
 
-### [.AppResourceOwners](docs/sdks/appresourceowners/README.md)
+### [AppResourceOwners](docs/sdks/appresourceowners/README.md)
 
 * [List](docs/sdks/appresourceowners/README.md#list) - List
 
-### [.AppUsageControls](docs/sdks/appusagecontrols/README.md)
+### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
 
 * [Get](docs/sdks/appusagecontrols/README.md#get) - Get
 * [Update](docs/sdks/appusagecontrols/README.md#update) - Update
 
-### [.AppUser](docs/sdks/appuser/README.md)
+### [AppUser](docs/sdks/appuser/README.md)
 
 * [Update](docs/sdks/appuser/README.md#update) - Update
 
-### [.Attributes](docs/sdks/attributes/README.md)
+### [Attributes](docs/sdks/attributes/README.md)
 
 * [CreateAttributeValue](docs/sdks/attributes/README.md#createattributevalue) - Create Attribute Value
 * [DeleteAttributeValue](docs/sdks/attributes/README.md#deleteattributevalue) - Delete Attribute Value
@@ -136,11 +136,11 @@ func main() {
 * [ListAttributeTypes](docs/sdks/attributes/README.md#listattributetypes) - List Attribute Types
 * [ListAttributeValues](docs/sdks/attributes/README.md#listattributevalues) - List Attribute Values
 
-### [.Auth](docs/sdks/auth/README.md)
+### [Auth](docs/sdks/auth/README.md)
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
-### [.RequestCatalogManagement](docs/sdks/requestcatalogmanagement/README.md)
+### [RequestCatalogManagement](docs/sdks/requestcatalogmanagement/README.md)
 
 * [AddAccessEntitlements](docs/sdks/requestcatalogmanagement/README.md#addaccessentitlements) - Add Access Entitlements
 * [AddAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#addappentitlements) - Add App Entitlements
@@ -154,24 +154,24 @@ func main() {
 * [RemoveAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeappentitlements) - Remove App Entitlements
 * [Update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
-### [.Directory](docs/sdks/directory/README.md)
+### [Directory](docs/sdks/directory/README.md)
 
 * [Create](docs/sdks/directory/README.md#create) - Create
 * [Delete](docs/sdks/directory/README.md#delete) - Delete
 * [Get](docs/sdks/directory/README.md#get) - Get
 * [List](docs/sdks/directory/README.md#list) - List
 
-### [.PersonalClient](docs/sdks/personalclient/README.md)
+### [PersonalClient](docs/sdks/personalclient/README.md)
 
 * [Create](docs/sdks/personalclient/README.md#create) - Create
 
-### [.Roles](docs/sdks/roles/README.md)
+### [Roles](docs/sdks/roles/README.md)
 
 * [Get](docs/sdks/roles/README.md#get) - Get
 * [List](docs/sdks/roles/README.md#list) - List
 * [Update](docs/sdks/roles/README.md#update) - Update
 
-### [.Policies](docs/sdks/policies/README.md)
+### [Policies](docs/sdks/policies/README.md)
 
 * [Create](docs/sdks/policies/README.md#create) - Create
 * [Delete](docs/sdks/policies/README.md#delete) - Delete
@@ -179,45 +179,45 @@ func main() {
 * [List](docs/sdks/policies/README.md#list) - List
 * [Update](docs/sdks/policies/README.md#update) - Update
 
-### [.AppResourceSearch](docs/sdks/appresourcesearch/README.md)
+### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
 
 * [SearchAppResourceTypes](docs/sdks/appresourcesearch/README.md#searchappresourcetypes) - Search App Resource Types
 
-### [.AppSearch](docs/sdks/appsearch/README.md)
+### [AppSearch](docs/sdks/appsearch/README.md)
 
 * [Search](docs/sdks/appsearch/README.md#search) - Search
 
-### [.AttributeSearch](docs/sdks/attributesearch/README.md)
+### [AttributeSearch](docs/sdks/attributesearch/README.md)
 
 * [SearchAttributeValues](docs/sdks/attributesearch/README.md#searchattributevalues) - Search Attribute Values
 
-### [.AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
+### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
 
 * [Search](docs/sdks/appentitlementsearch/README.md#search) - Search
 
-### [.PolicySearch](docs/sdks/policysearch/README.md)
+### [PolicySearch](docs/sdks/policysearch/README.md)
 
 * [Search](docs/sdks/policysearch/README.md#search) - Search
 
-### [.RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
+### [RequestCatalogSearch](docs/sdks/requestcatalogsearch/README.md)
 
 * [SearchEntitlements](docs/sdks/requestcatalogsearch/README.md#searchentitlements) - Search Entitlements
 
-### [.TaskSearch](docs/sdks/tasksearch/README.md)
+### [TaskSearch](docs/sdks/tasksearch/README.md)
 
 * [Search](docs/sdks/tasksearch/README.md#search) - Search
 
-### [.UserSearch](docs/sdks/usersearch/README.md)
+### [UserSearch](docs/sdks/usersearch/README.md)
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
 
-### [.Task](docs/sdks/task/README.md)
+### [Task](docs/sdks/task/README.md)
 
 * [CreateGrantTask](docs/sdks/task/README.md#creategranttask) - Create Grant Task
 * [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Create Revoke Task
 * [Get](docs/sdks/task/README.md#get) - Get
 
-### [.TaskActions](docs/sdks/taskactions/README.md)
+### [TaskActions](docs/sdks/taskactions/README.md)
 
 * [Approve](docs/sdks/taskactions/README.md#approve) - Approve
 * [Comment](docs/sdks/taskactions/README.md#comment) - Comment
@@ -225,7 +225,7 @@ func main() {
 * [EscalateToEmergencyAccess](docs/sdks/taskactions/README.md#escalatetoemergencyaccess) - Escalate To Emergency Access
 * [Restart](docs/sdks/taskactions/README.md#restart) - Restart
 
-### [.User](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [Get](docs/sdks/user/README.md#get) - Get
 * [List](docs/sdks/user/README.md#list) - List
@@ -260,7 +260,50 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
+
+
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+	}
+}
+
+```
 <!-- End Error Handling -->
 
 
@@ -394,12 +437,11 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |

@@ -131,7 +131,3 @@ func (o *TaskTypeCertify) GetOutcomeTime() *time.Time {
 	}
 	return o.OutcomeTime
 }
-
-// TaskTypeCertifyInput - The TaskTypeCertify message indicates that a task is a certify task and all related details.
-type TaskTypeCertifyInput struct {
-}

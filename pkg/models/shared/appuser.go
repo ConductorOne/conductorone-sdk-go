@@ -44,28 +44,6 @@ func (e *AppUserType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// AppUserInput - Application User that represents an account in the application.
-type AppUserInput struct {
-	// The satus of the applicaiton user.
-	AppUserStatus *AppUserStatusInput `json:"status,omitempty"`
-	// The appplication user type. Type can be user, system or service.
-	AppUserType *AppUserType `json:"appUserType,omitempty"`
-}
-
-func (o *AppUserInput) GetAppUserStatus() *AppUserStatusInput {
-	if o == nil {
-		return nil
-	}
-	return o.AppUserStatus
-}
-
-func (o *AppUserInput) GetAppUserType() *AppUserType {
-	if o == nil {
-		return nil
-	}
-	return o.AppUserType
-}
-
 type Three struct {
 }
 
@@ -333,4 +311,26 @@ func (o *AppUser) GetUsernames() []string {
 		return nil
 	}
 	return o.Usernames
+}
+
+// AppUserInput - Application User that represents an account in the application.
+type AppUserInput struct {
+	// The satus of the applicaiton user.
+	AppUserStatus *AppUserStatusInput `json:"status,omitempty"`
+	// The appplication user type. Type can be user, system or service.
+	AppUserType *AppUserType `json:"appUserType,omitempty"`
+}
+
+func (o *AppUserInput) GetAppUserStatus() *AppUserStatusInput {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserStatus
+}
+
+func (o *AppUserInput) GetAppUserType() *AppUserType {
+	if o == nil {
+		return nil
+	}
+	return o.AppUserType
 }

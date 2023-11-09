@@ -1,5 +1,5 @@
 # Auth
-(*.Auth*)
+(*Auth*)
 
 ### Available Operations
 
@@ -50,5 +50,7 @@ func main() {
 
 ### Response
 
-**[*operations.C1APIAuthV1AuthIntrospectResponse](../../models/operations/c1apiauthv1authintrospectresponse.md), error**
-
+**[*operations.C1APIAuthV1AuthIntrospectResponse](../../pkg/models/operations/c1apiauthv1authintrospectresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
