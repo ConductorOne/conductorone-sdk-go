@@ -85,6 +85,7 @@ type ConductoroneAPI struct {
 	PersonalClient            *PersonalClient
 	Roles                     *Roles
 	Policies                  *Policies
+	PolicyValidate            *PolicyValidate
 	AppResourceSearch         *AppResourceSearch
 	AppSearch                 *AppSearch
 	AttributeSearch           *AttributeSearch
@@ -186,9 +187,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "2.1.1",
-			GenVersion:        "2.187.7",
-			UserAgent:         "speakeasy-sdk/go 2.1.1 2.187.7 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "2.1.2",
+			GenVersion:        "2.188.3",
+			UserAgent:         "speakeasy-sdk/go 2.1.2 2.188.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -251,6 +252,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.Roles = newRoles(sdk.sdkConfiguration)
 
 	sdk.Policies = newPolicies(sdk.sdkConfiguration)
+
+	sdk.PolicyValidate = newPolicyValidate(sdk.sdkConfiguration)
 
 	sdk.AppResourceSearch = newAppResourceSearch(sdk.sdkConfiguration)
 

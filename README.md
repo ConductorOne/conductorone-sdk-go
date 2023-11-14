@@ -181,6 +181,10 @@ func main() {
 * [List](docs/sdks/policies/README.md#list) - List
 * [Update](docs/sdks/policies/README.md#update) - Update
 
+### [PolicyValidate](docs/sdks/policyvalidate/README.md)
+
+* [ValidateCEL](docs/sdks/policyvalidate/README.md#validatecel) - Validate Cel
+
 ### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
 
 * [SearchAppResourceTypes](docs/sdks/appresourcesearch/README.md#searchappresourcetypes) - Search App Resource Types

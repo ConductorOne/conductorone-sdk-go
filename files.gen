@@ -18,6 +18,7 @@ directory.go
 personalclient.go
 roles.go
 policies.go
+policyvalidate.go
 appresourcesearch.go
 appsearch.go
 attributesearch.go
@@ -116,6 +117,7 @@ pkg/utils/utils.go
 /pkg/models/operations/c1apipolicyv1policiesget.go
 /pkg/models/operations/c1apipolicyv1policieslist.go
 /pkg/models/operations/c1apipolicyv1policiesupdate.go
+/pkg/models/operations/c1apipolicyv1policyvalidatevalidatecel.go
 /pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypes.go
 /pkg/models/operations/c1apiappv1appsearchsearch.go
 /pkg/models/operations/c1apiattributev1attributesearchsearchattributevalues.go
@@ -303,6 +305,9 @@ pkg/utils/utils.go
 /pkg/models/shared/listpolicyresponse.go
 /pkg/models/shared/updatepolicyresponse.go
 /pkg/models/shared/updatepolicyrequest.go
+/pkg/models/shared/validatepolicycelresponse.go
+/pkg/models/shared/marker.go
+/pkg/models/shared/validatepolicycelrequest.go
 /pkg/models/shared/searchappresourcetypesresponse.go
 /pkg/models/shared/searchappresourcetypesrequest.go
 /pkg/models/shared/searchappsresponse.go
@@ -512,6 +517,7 @@ docs/pkg/models/operations/c1apipolicyv1policieslistrequest.md
 docs/pkg/models/operations/c1apipolicyv1policieslistresponse.md
 docs/pkg/models/operations/c1apipolicyv1policiesupdaterequest.md
 docs/pkg/models/operations/c1apipolicyv1policiesupdateresponse.md
+docs/pkg/models/operations/c1apipolicyv1policyvalidatevalidatecelresponse.md
 docs/pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
 docs/pkg/models/operations/c1apiappv1appsearchsearchresponse.md
 docs/pkg/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
@@ -746,6 +752,10 @@ docs/pkg/models/shared/listpolicyresponse.md
 docs/pkg/models/shared/updatepolicyresponse.md
 docs/pkg/models/shared/updatepolicyrequest.md
 docs/pkg/models/shared/policyinput.md
+docs/pkg/models/shared/validatepolicycelresponse.md
+docs/pkg/models/shared/severity.md
+docs/pkg/models/shared/marker.md
+docs/pkg/models/shared/validatepolicycelrequest.md
 docs/pkg/models/shared/searchappresourcetypesresponse.md
 docs/pkg/models/shared/searchappresourcetypesrequest.md
 docs/pkg/models/shared/searchappsresponse.md
@@ -877,6 +887,7 @@ docs/sdks/directory/README.md
 docs/sdks/personalclient/README.md
 docs/sdks/roles/README.md
 docs/sdks/policies/README.md
+docs/sdks/policyvalidate/README.md
 docs/sdks/appresourcesearch/README.md
 docs/sdks/appsearch/README.md
 docs/sdks/attributesearch/README.md
