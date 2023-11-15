@@ -24,11 +24,11 @@ Create a configured connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -93,11 +93,11 @@ Create a connector that is pending a connector config.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -157,11 +157,11 @@ Delete a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -213,11 +213,11 @@ Get a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -268,11 +268,11 @@ Get credentials for a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -324,11 +324,11 @@ List connectors for an app.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -378,11 +378,11 @@ Revoke credentials for a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -435,11 +435,11 @@ Rotate credentials for a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -491,11 +491,11 @@ Update a connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -565,11 +565,11 @@ Update a delegated connector.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

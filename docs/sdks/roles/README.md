@@ -17,11 +17,11 @@ Get a role by id.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -71,11 +71,11 @@ List all roles for the current user.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -123,11 +123,11 @@ Update a role by passing a Role object.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

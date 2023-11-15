@@ -18,10 +18,10 @@ Create a directory.
 package main
 
 import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 func main() {
@@ -75,11 +75,11 @@ Delete a directory by app_id.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -130,11 +130,11 @@ Get a directory by app_id.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -184,11 +184,11 @@ List directories.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

@@ -77,6 +77,7 @@ pkg/utils/utils.go
 /pkg/models/operations/c1apiappv1appownersadd.go
 /pkg/models/operations/c1apiappv1appownerslist.go
 /pkg/models/operations/c1apiappv1appownersremove.go
+/pkg/models/operations/c1apiappv1appownersset.go
 /pkg/models/operations/c1apiappv1appreportservicelist.go
 /pkg/models/operations/c1apiappv1appreportactionservicegeneratereport.go
 /pkg/models/operations/c1apiappv1appresourcetypeserviceget.go
@@ -200,6 +201,8 @@ pkg/utils/utils.go
 /pkg/models/shared/listappownersresponse.go
 /pkg/models/shared/removeappownerresponse.go
 /pkg/models/shared/removeappownerrequest.go
+/pkg/models/shared/setappownersresponse.go
+/pkg/models/shared/setappownersrequest.go
 /pkg/models/shared/appreportservicelistresponse.go
 /pkg/models/shared/apppopulationreport.go
 /pkg/models/shared/appactionsservicegeneratereportresponse.go
@@ -444,6 +447,8 @@ docs/pkg/models/operations/c1apiappv1appownerslistrequest.md
 docs/pkg/models/operations/c1apiappv1appownerslistresponse.md
 docs/pkg/models/operations/c1apiappv1appownersremoverequest.md
 docs/pkg/models/operations/c1apiappv1appownersremoveresponse.md
+docs/pkg/models/operations/c1apiappv1appownerssetrequest.md
+docs/pkg/models/operations/c1apiappv1appownerssetresponse.md
 docs/pkg/models/operations/c1apiappv1appreportservicelistrequest.md
 docs/pkg/models/operations/c1apiappv1appreportservicelistresponse.md
 docs/pkg/models/operations/c1apiappv1appreportactionservicegeneratereportrequest.md
@@ -630,6 +635,8 @@ docs/pkg/models/shared/addappownerrequest.md
 docs/pkg/models/shared/listappownersresponse.md
 docs/pkg/models/shared/removeappownerresponse.md
 docs/pkg/models/shared/removeappownerrequest.md
+docs/pkg/models/shared/setappownersresponse.md
+docs/pkg/models/shared/setappownersrequest.md
 docs/pkg/models/shared/appreportservicelistresponse.md
 docs/pkg/models/shared/state.md
 docs/pkg/models/shared/apppopulationreport.md

@@ -20,11 +20,11 @@ Get an app entitlement by ID.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -75,11 +75,11 @@ List app entitlements associated with an app.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -129,11 +129,11 @@ List app entitlements associated with an app resource.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -185,11 +185,11 @@ List app entitlements associated with an app user.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -240,11 +240,11 @@ List the users, as AppEntitlementUsers objects, of an app entitlement.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -295,11 +295,11 @@ Update an app entitlement by ID.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

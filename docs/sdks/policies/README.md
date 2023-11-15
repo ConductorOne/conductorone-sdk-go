@@ -19,10 +19,10 @@ Create a policy.
 package main
 
 import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 func main() {
@@ -105,11 +105,11 @@ Delete a policy by ID.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -160,11 +160,11 @@ Get a policy by ID.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -214,11 +214,11 @@ List policies.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {
@@ -266,11 +266,11 @@ Update a policy by providing a policy object and an update mask.
 package main
 
 import(
-	"context"
-	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
 )
 
 func main() {

@@ -15,10 +15,10 @@ Search apps based on filters specified in the request body.
 package main
 
 import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 func main() {

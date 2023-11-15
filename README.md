@@ -98,6 +98,7 @@ func main() {
 * [Add](docs/sdks/appowners/README.md#add) - Add
 * [List](docs/sdks/appowners/README.md#list) - List
 * [Remove](docs/sdks/appowners/README.md#remove) - Remove
+* [Set](docs/sdks/appowners/README.md#set) - Set
 
 ### [AppReport](docs/sdks/appreport/README.md)
 
@@ -279,7 +280,9 @@ package main
 
 import (
 	"context"
+	"errors"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
 	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"log"
 )
