@@ -150,6 +150,37 @@ func (e *Processing) UnmarshalJSON(data []byte) error {
 	}
 }
 
+// Recommendation - The recommendation field.
+type Recommendation string
+
+const (
+	RecommendationInsightRecommendationUnspecified Recommendation = "INSIGHT_RECOMMENDATION_UNSPECIFIED"
+	RecommendationInsightRecommendationApprove     Recommendation = "INSIGHT_RECOMMENDATION_APPROVE"
+	RecommendationInsightRecommendationDeny        Recommendation = "INSIGHT_RECOMMENDATION_DENY"
+)
+
+func (e Recommendation) ToPointer() *Recommendation {
+	return &e
+}
+
+func (e *Recommendation) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "INSIGHT_RECOMMENDATION_UNSPECIFIED":
+		fallthrough
+	case "INSIGHT_RECOMMENDATION_APPROVE":
+		fallthrough
+	case "INSIGHT_RECOMMENDATION_DENY":
+		*e = Recommendation(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for Recommendation: %v", v)
+	}
+}
+
 // TaskState - The current state of the task as defined by the `state_enum`
 type TaskState string
 
@@ -215,12 +246,16 @@ type Task struct {
 	ExternalRefs []ExternalRef `json:"externalRefs,omitempty"`
 	// The ID of the task.
 	ID *string `json:"id,omitempty"`
+	// The insightIds field.
+	InsightIds []string `json:"insightIds,omitempty"`
 	// A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries).
 	NumericID *string `json:"numericId,omitempty"`
 	// The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task.
 	PolicyGenerationID *string `json:"policyGenerationId,omitempty"`
 	// The processing state of a task as defined by the `processing_enum`
 	Processing *Processing `json:"processing,omitempty"`
+	// The recommendation field.
+	Recommendation *Recommendation `json:"recommendation,omitempty"`
 	// The current state of the task as defined by the `state_enum`
 	State *TaskState `json:"state,omitempty"`
 	// An array of IDs belonging to Identity Users that are allowed to review this step in a task.
@@ -339,6 +374,13 @@ func (o *Task) GetID() *string {
 	return o.ID
 }
 
+func (o *Task) GetInsightIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.InsightIds
+}
+
 func (o *Task) GetNumericID() *string {
 	if o == nil {
 		return nil
@@ -358,6 +400,13 @@ func (o *Task) GetProcessing() *Processing {
 		return nil
 	}
 	return o.Processing
+}
+
+func (o *Task) GetRecommendation() *Recommendation {
+	if o == nil {
+		return nil
+	}
+	return o.Recommendation
 }
 
 func (o *Task) GetState() *TaskState {

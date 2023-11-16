@@ -792,6 +792,7 @@ docs/pkg/models/shared/taskview.md
 docs/pkg/models/shared/actions.md
 docs/pkg/models/shared/annotations.md
 docs/pkg/models/shared/processing.md
+docs/pkg/models/shared/recommendation.md
 docs/pkg/models/shared/taskstate.md
 docs/pkg/models/shared/task.md
 docs/pkg/models/shared/externalrefsource.md
