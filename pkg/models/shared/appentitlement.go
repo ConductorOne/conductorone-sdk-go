@@ -61,8 +61,9 @@ type AppEntitlement struct {
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
 	Slug *string `json:"slug,omitempty"`
 	// This field indicates if this is a system builtin entitlement.
-	SystemBuiltin *bool      `json:"systemBuiltin,omitempty"`
-	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
+	SystemBuiltin  *bool      `json:"systemBuiltin,omitempty"`
+	UpdatedAt      *time.Time `json:"updatedAt,omitempty"`
+	UserEditedMask *string    `json:"userEditedMask,omitempty"`
 }
 
 func (a AppEntitlement) MarshalJSON() ([]byte, error) {
@@ -237,6 +238,13 @@ func (o *AppEntitlement) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
+func (o *AppEntitlement) GetUserEditedMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserEditedMask
+}
+
 // AppEntitlementInput - The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
 //
 // This message contains a oneof named max_grant_duration. Only a single field of the following list may be set at a time:
@@ -278,7 +286,8 @@ type AppEntitlementInput struct {
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
-	Slug *string `json:"slug,omitempty"`
+	Slug           *string `json:"slug,omitempty"`
+	UserEditedMask *string `json:"userEditedMask,omitempty"`
 }
 
 func (o *AppEntitlementInput) GetProvisionPolicy() *ProvisionPolicy {
@@ -391,4 +400,11 @@ func (o *AppEntitlementInput) GetSlug() *string {
 		return nil
 	}
 	return o.Slug
+}
+
+func (o *AppEntitlementInput) GetUserEditedMask() *string {
+	if o == nil {
+		return nil
+	}
+	return o.UserEditedMask
 }

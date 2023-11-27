@@ -389,7 +389,6 @@ pkg/utils/utils.go
 /pkg/models/shared/userservicegetresponse.go
 /pkg/models/shared/userservicelistresponse.go
 /pkg/models/shared/security.go
-USAGE.md
 docs/pkg/models/operations/c1apiappv1appscreateresponse.md
 docs/pkg/models/operations/c1apiappv1appsdeleterequest.md
 docs/pkg/models/operations/c1apiappv1appsdeleteresponse.md
@@ -907,4 +906,5 @@ docs/sdks/usersearch/README.md
 docs/sdks/task/README.md
 docs/sdks/taskactions/README.md
 docs/sdks/user/README.md
+USAGE.md
 .gitattributes

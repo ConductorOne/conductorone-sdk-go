@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 6581fec9302910deb09d9143422540fb
+  docChecksum: 4b1ff1ed03ffaf013e9dddf89997823f
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.120.4
-  generationVersion: 2.192.3
+  speakeasyVersion: 1.123.0
+  generationVersion: 2.202.2
 generation:
   comments: {}
   sdkClassName: conductorone-api
@@ -15,13 +15,13 @@ features:
     additionalProperties: 0.1.1
     core: 3.1.5
     globalSecurity: 2.82.2
-    globalServerURLs: 2.82.0
+    globalServerURLs: 2.82.1
     groups: 2.81.2
     inputOutputModels: 2.82.0
     nameOverrides: 2.81.1
     unions: 2.85.0
 go:
-  version: 2.1.4
+  version: 2.1.5
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
