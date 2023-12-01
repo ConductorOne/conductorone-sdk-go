@@ -28,6 +28,8 @@ type App struct {
 	IconURL *string `json:"iconUrl,omitempty"`
 	// The ID of the app.
 	ID *string `json:"id,omitempty"`
+	// Specifies if the app is a directory.
+	IsDirectory *bool `json:"isDirectory,omitempty"`
 	// The URL of a logo to display for the app.
 	LogoURI *string `json:"logoUri,omitempty"`
 	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
@@ -127,6 +129,13 @@ func (o *App) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+func (o *App) GetIsDirectory() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsDirectory
 }
 
 func (o *App) GetLogoURI() *string {
