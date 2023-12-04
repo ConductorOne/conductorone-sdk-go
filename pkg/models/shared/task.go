@@ -157,6 +157,7 @@ const (
 	RecommendationInsightRecommendationUnspecified Recommendation = "INSIGHT_RECOMMENDATION_UNSPECIFIED"
 	RecommendationInsightRecommendationApprove     Recommendation = "INSIGHT_RECOMMENDATION_APPROVE"
 	RecommendationInsightRecommendationDeny        Recommendation = "INSIGHT_RECOMMENDATION_DENY"
+	RecommendationInsightRecommendationReview      Recommendation = "INSIGHT_RECOMMENDATION_REVIEW"
 )
 
 func (e Recommendation) ToPointer() *Recommendation {
@@ -174,6 +175,8 @@ func (e *Recommendation) UnmarshalJSON(data []byte) error {
 	case "INSIGHT_RECOMMENDATION_APPROVE":
 		fallthrough
 	case "INSIGHT_RECOMMENDATION_DENY":
+		fallthrough
+	case "INSIGHT_RECOMMENDATION_REVIEW":
 		*e = Recommendation(v)
 		return nil
 	default:
