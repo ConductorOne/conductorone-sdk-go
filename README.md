@@ -29,7 +29,7 @@ func main() {
 	s := NewWithCredentials(ctx, &ClientCredentials{
 		ClientID:     "",
 		ClientSecret: "",
-	} opts...)
+	} )
 
 	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
 		Owners: []string{
