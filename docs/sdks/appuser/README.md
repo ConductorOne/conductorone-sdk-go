@@ -16,11 +16,11 @@ Update an app user by ID. Only the fields specified in the update mask are updat
 package main
 
 import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 )
 
 func main() {
@@ -33,18 +33,18 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUser.Update(ctx, operations.C1APIAppV1AppUserServiceUpdateRequest{
-        AppUserServiceUpdateRequestInput: &shared.AppUserServiceUpdateRequestInput{
+        AppUserServiceUpdateRequest: &shared.AppUserServiceUpdateRequest{
             AppUser: &shared.AppUserInput{
                 AppUserStatus: &shared.AppUserStatusInput{},
             },
             AppUserExpandMask: &shared.AppUserExpandMask{
                 Paths: []string{
-                    "up",
+                    "string",
                 },
             },
         },
-        AppUserAppID: "complexity",
-        AppUserID: "Supervisor",
+        AppUserAppID: "string",
+        AppUserID: "string",
     })
     if err != nil {
         log.Fatal(err)
@@ -58,13 +58,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
-| `request`                                                                                                            | [operations.C1APIAppV1AppUserServiceUpdateRequest](../../models/operations/c1apiappv1appuserserviceupdaterequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
+| `request`                                                                                                                | [operations.C1APIAppV1AppUserServiceUpdateRequest](../../pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
 
 
 ### Response
 
-**[*operations.C1APIAppV1AppUserServiceUpdateResponse](../../models/operations/c1apiappv1appuserserviceupdateresponse.md), error**
-
+**[*operations.C1APIAppV1AppUserServiceUpdateResponse](../../pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

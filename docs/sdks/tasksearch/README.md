@@ -15,10 +15,10 @@ Search tasks based on filters specified in the request body.
 package main
 
 import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
 func main() {
@@ -30,59 +30,59 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequestInput{
+    res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequest{
         TaskExpandMask: &shared.TaskExpandMask{
             Paths: []string{
-                "transition",
+                "string",
             },
         },
         AccessReviewIds: []string{
-            "turquoise",
+            "string",
         },
         AccountOwnerIds: []string{
-            "Hyundai",
+            "string",
         },
         AppEntitlementIds: []string{
-            "Future",
+            "string",
         },
         AppResourceIds: []string{
-            "Southwest",
+            "string",
         },
         AppResourceTypeIds: []string{
-            "broach",
+            "string",
         },
         AppUserSubjectIds: []string{
-            "dependent",
+            "string",
         },
         ApplicationIds: []string{
-            "Mozambique",
+            "string",
         },
         AssigneesInIds: []string{
-            "Global",
+            "string",
         },
         ExcludeAppEntitlementIds: []string{
-            "watt",
+            "string",
         },
         ExcludeIds: []string{
-            "Gasoline",
+            "string",
         },
         MyWorkUserIds: []string{
-            "Protactinium",
+            "string",
         },
         OpenerIds: []string{
-            "Arsenic",
+            "string",
         },
         PreviouslyActedOnIds: []string{
-            "Gasoline",
+            "string",
         },
         Refs: []shared.TaskRef{
             shared.TaskRef{},
         },
         SubjectIds: []string{
-            "Oklahoma",
+            "string",
         },
-        TaskStates: []shared.TaskSearchRequestTaskStates{
-            shared.TaskSearchRequestTaskStatesTaskStateUnspecified,
+        TaskStates: []shared.TaskStates{
+            shared.TaskStatesTaskStateUnspecified,
         },
         TaskTypes: []shared.TaskTypeInput{
             shared.TaskTypeInput{
@@ -113,13 +113,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
-| `request`                                                                      | [shared.TaskSearchRequestInput](../../models/shared/tasksearchrequestinput.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |
+| `request`                                                                | [shared.TaskSearchRequest](../../pkg/models/shared/tasksearchrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
 
-**[*operations.C1APITaskV1TaskSearchServiceSearchResponse](../../models/operations/c1apitaskv1tasksearchservicesearchresponse.md), error**
-
+**[*operations.C1APITaskV1TaskSearchServiceSearchResponse](../../pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |

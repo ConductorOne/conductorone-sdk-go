@@ -1,0 +1,10 @@
+# C1APIAppV1AppUserServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `AppUserServiceUpdateRequest`                                                                    | [*shared.AppUserServiceUpdateRequest](../../../pkg/models/shared/appuserserviceupdaterequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `AppUserAppID`                                                                                   | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `AppUserID`                                                                                      | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |

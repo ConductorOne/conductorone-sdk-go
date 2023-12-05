@@ -6,28 +6,28 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/sdkerrors"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type attributeSearch struct {
+type AttributeSearch struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAttributeSearch(sdkConfig sdkConfiguration) *attributeSearch {
-	return &attributeSearch{
+func newAttributeSearch(sdkConfig sdkConfiguration) *AttributeSearch {
+	return &AttributeSearch{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // SearchAttributeValues - Search Attribute Values
 // Search attributes based on filters specified in the request body.
-func (s *attributeSearch) SearchAttributeValues(ctx context.Context, request *shared.SearchAttributeValuesRequest) (*operations.C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse, error) {
+func (s *AttributeSearch) SearchAttributeValues(ctx context.Context, request *shared.SearchAttributeValuesRequest) (*operations.C1APIAttributeV1AttributeSearchSearchAttributeValuesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/search/attributes"
 
@@ -82,6 +82,10 @@ func (s *attributeSearch) SearchAttributeValues(ctx context.Context, request *sh
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

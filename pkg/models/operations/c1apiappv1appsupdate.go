@@ -3,20 +3,20 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIAppV1AppsUpdateRequest struct {
-	UpdateAppRequestInput *shared.UpdateAppRequestInput `request:"mediaType=application/json"`
-	ID                    string                        `pathParam:"style=simple,explode=false,name=id"`
+	UpdateAppRequest *shared.UpdateAppRequest `request:"mediaType=application/json"`
+	ID               string                   `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *C1APIAppV1AppsUpdateRequest) GetUpdateAppRequestInput() *shared.UpdateAppRequestInput {
+func (o *C1APIAppV1AppsUpdateRequest) GetUpdateAppRequest() *shared.UpdateAppRequest {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateAppRequestInput
+	return o.UpdateAppRequest
 }
 
 func (o *C1APIAppV1AppsUpdateRequest) GetID() string {

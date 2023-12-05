@@ -3,40 +3,9 @@
 package shared
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"time"
 )
-
-// RoleInput - Role is a role that can be assigned to a user in ConductorOne.
-type RoleInput struct {
-	// The display name of the role.
-	DisplayName *string `json:"displayName,omitempty"`
-	// The list of permissions this role has.
-	Permissions []string `json:"permissions,omitempty"`
-	// The list of serviceRoles that this role has.
-	ServiceRoles []string `json:"serviceRoles,omitempty"`
-}
-
-func (o *RoleInput) GetDisplayName() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DisplayName
-}
-
-func (o *RoleInput) GetPermissions() []string {
-	if o == nil {
-		return nil
-	}
-	return o.Permissions
-}
-
-func (o *RoleInput) GetServiceRoles() []string {
-	if o == nil {
-		return nil
-	}
-	return o.ServiceRoles
-}
 
 // Role is a role that can be assigned to a user in ConductorOne.
 type Role struct {

@@ -1,0 +1,11 @@
+# C1APIAttributeV1AttributesGetAttributeValueResponse
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `ContentType`                                                                                | *string*                                                                                     | :heavy_check_mark:                                                                           | HTTP response content type for this operation                                                |
+| `GetAttributeValueResponse`                                                                  | [*shared.GetAttributeValueResponse](../../../pkg/models/shared/getattributevalueresponse.md) | :heavy_minus_sign:                                                                           | GetAttributeValueResponse is the response for getting an attribute value by id.              |
+| `StatusCode`                                                                                 | *int*                                                                                        | :heavy_check_mark:                                                                           | HTTP response status code for this operation                                                 |
+| `RawResponse`                                                                                | [*http.Response](https://pkg.go.dev/net/http#Response)                                       | :heavy_check_mark:                                                                           | Raw HTTP response; suitable for custom response parsing                                      |

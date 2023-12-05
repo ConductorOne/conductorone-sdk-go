@@ -6,20 +6,20 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/sdkerrors"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-type appUser struct {
+type AppUser struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAppUser(sdkConfig sdkConfiguration) *appUser {
-	return &appUser{
+func newAppUser(sdkConfig sdkConfiguration) *AppUser {
+	return &AppUser{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -28,14 +28,14 @@ func newAppUser(sdkConfig sdkConfiguration) *appUser {
 // Update an app user by ID. Only the fields specified in the update mask are updated.
 //
 //	Currently, only the appUserType, and identityUserId fields can be updated.
-func (s *appUser) Update(ctx context.Context, request operations.C1APIAppV1AppUserServiceUpdateRequest) (*operations.C1APIAppV1AppUserServiceUpdateResponse, error) {
+func (s *AppUser) Update(ctx context.Context, request operations.C1APIAppV1AppUserServiceUpdateRequest) (*operations.C1APIAppV1AppUserServiceUpdateResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_user_app_id}/app_users/{app_user_id}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "AppUserServiceUpdateRequestInput", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "AppUserServiceUpdateRequest", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -86,6 +86,10 @@ func (s *appUser) Update(ctx context.Context, request operations.C1APIAppV1AppUs
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
