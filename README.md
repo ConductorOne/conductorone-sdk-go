@@ -9,7 +9,7 @@ go get github.com/ConductorOne/conductorone-sdk-go
 <!-- End SDK Installation [installation] -->
 
 <!-- Start SDK Example Usage [usage] -->
-## SDK Example Usage with Custom Server/Tenant
+## SDK Example Usage
 
 ### Example
 

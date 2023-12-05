@@ -1,5 +1,5 @@
 <!-- Start SDK Example Usage [usage] -->
-## SDK Example Usage with Custom Server/Tenant
+## SDK Example Usage
 
 ### Example
 
