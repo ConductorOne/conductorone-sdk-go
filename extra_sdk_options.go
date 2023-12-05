@@ -4,8 +4,6 @@ import (
 	"context"
 	"crypto/tls"
 	"net/http"
-	"net/url"
-	"strings"
 
 	"go.uber.org/zap"
 
@@ -14,49 +12,8 @@ import (
 
 const ClientIdGolangSDK = "2RCzHlak5q7CY14SdBc8HoZEJRf"
 
-type normalizeTenantResp struct {
-	useWithServer bool
-	useWithTenant bool
-
-	ServerURL string
-	Tenant    string
-}
-
-func normalizeTenant(input string) (*normalizeTenantResp, error) {
-	input = strings.ToLower(input)
-
-	var err error
-	u := &url.URL{}
-	if !strings.Contains(input, "//") {
-		if !strings.Contains(input, ".") {
-			input += ".conductor.one"
-		}
-		u.Host = input
-	} else {
-		u, err = url.Parse(input)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	normalize := &normalizeTenantResp{}
-
-	parts := strings.Split(u.Host, ".")
-	if len(parts) == 3 && parts[1] == "conductor" && parts[2] == "one" {
-		normalize.useWithTenant = true
-		normalize.Tenant = parts[0]
-
-		return normalize, nil
-	}
-
-	u.Scheme = "https"
-	normalize.useWithServer = true
-	normalize.ServerURL = u.String()
-	return normalize, nil
-}
-
 func WithTenant(input string) (SDKOption, error) {
-	resp, err := normalizeTenant(input)
+	resp, err := NormalizeTenant(input)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +32,7 @@ func WithTenant(input string) (SDKOption, error) {
 type CustomSDKOption func(*CustomOptions)
 
 func WithTenantCustom(input string) (CustomSDKOption, error) {
-	resp, err := normalizeTenant(input)
+	resp, err := NormalizeTenant(input)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +82,18 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 		opt(options)
 	}
 
-	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, options.ServerURL)
+	var serverURL string
+	if options.ServerURL != "" {
+		serverURL = options.ServerURL
+	} else {
+		resp, err := NormalizeTenant(cred.ClientID)
+		if err != nil {
+			return nil, err
+		}
+		serverURL = resp.ServerURL
+	}
+
+	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, serverURL)
 	if err != nil {
 		return nil, err
 	}
