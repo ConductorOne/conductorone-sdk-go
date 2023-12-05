@@ -1,4 +1,49 @@
 <!-- Start SDK Example Usage [usage] -->
+## SDK Example Usage with Custom Server/Tenant
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	ctx := context.Background()
+
+	s := NewWithCredentials(ctx, &ClientCredentials{
+		ClientID:     "",
+		ClientSecret: "",
+	} opts...)
+
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End SDK Example Usage [usage] -->
+
+
+<!-- Start SDK Example Usage With Custom Server/Tenant [usage] -->
+## SDK Example Usage with Custom Server/Tenant
+
+### Example
+
 ```go
 package main
 
@@ -40,4 +85,4 @@ func main() {
 }
 
 ```
-<!-- End SDK Example Usage [usage] -->
+<!-- End SDK Example Usage With Custom Server/Tenant [usage] -->
