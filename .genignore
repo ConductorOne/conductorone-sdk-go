@@ -1,7 +1,6 @@
 .github
 .gitignore
 login.go
-helpers.go
 login_test.go
 extra_sdk_options.go
 extra_sdk_options_test.go
