@@ -24,13 +24,14 @@ import (
 )
 
 func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
 	ctx := context.Background()
-
-	s := NewWithCredentials(ctx, &ClientCredentials{
-		ClientID:     "",
-		ClientSecret: "",
-	} )
-
 	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
 		Owners: []string{
 			"string",
@@ -47,55 +48,6 @@ func main() {
 
 ```
 <!-- End SDK Example Usage [usage] -->
-
-
-<!-- Start SDK Example Usage With Custom Server/Tenant [usage] -->
-## SDK Example Usage with Custom Server/Tenant
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	"log"
-)
-
-func main() {
-	ctx := context.Background()
-
-	/* Optional Override 
-	* Server URL will be extracted from client, optionally, you can
-	* provide a server URL or a tenant domain (will create URL https://{tenant_domain}.conductor.one) 
-	*/
-	opts := []sdk.CustomSDKOption{}
-	opt, _ := sdk.WithTenantCustom("Server URL or Tenant Domain")
-	opts = append(opts, opt)
-
-	s := NewWithCredentials(ctx, &ClientCredentials{
-		ClientID:     "",
-		ClientSecret: "",
-	} opts...)
-
-	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
-		Owners: []string{
-			"string",
-		},
-	})
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if res.CreateAppResponse != nil {
-		// handle response
-	}
-}
-
-```
-<!-- End SDK Example Usage With Custom Server/Tenant [usage] -->
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
@@ -285,6 +237,251 @@ func main() {
 * [Get](docs/sdks/user/README.md#get) - Get
 * [List](docs/sdks/user/README.md#list) - List
 <!-- End Available Resources and Operations [operations] -->
+
+
+
+
+
+
+
+<!-- Start Special Types [types] -->
+## Special Types
+
+
+<!-- End Special Types [types] -->
+
+
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"errors"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+	}
+}
+
+```
+<!-- End Error Handling [errors] -->
+
+
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Select Server by Index
+
+You can override the default server globally using the `WithServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://{tenantDomain}.conductor.one` | `tenantDomain` (default is `example`) |
+
+#### Example
+
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithServerIndex(0),
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+
+#### Variables
+
+Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
+ * `WithTenantDomain string`
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithServerURL("https://{tenantDomain}.conductor.one"),
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Server Selection [server] -->
+
+
+
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
+
+The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
+
+```go
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+```
+
+The built-in `net/http` client satisfies this interface and a default client based on the built-in is provided by default. To replace this default with a client of your own, you can implement this interface yourself or provide your own client configured as desired. Here's a simple example, which adds a client with a 30 second timeout.
+
+```go
+import (
+	"net/http"
+	"time"
+	"github.com/myorg/your-go-sdk"
+)
+
+var (
+	httpClient = &http.Client{Timeout: 30 * time.Second}
+	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+)
+```
+
+This can be a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration.
+<!-- End Custom HTTP Client [http-client] -->
+
+
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security schemes globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `BearerAuth` | http         | HTTP Bearer  |
+| `Oauth`      | oauth2       | OAuth2 token |
+
+You can set the security parameters through the `WithSecurity` option when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: "",
+			Oauth:      "",
+		}),
+	)
+
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
+		Owners: []string{
+			"string",
+		},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Authentication [security] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
 
 
 ### Maturity
