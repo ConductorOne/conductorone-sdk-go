@@ -35,19 +35,55 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{
-        PolicySteps: map[string]shared.PolicyStepsInput{
-            "key": shared.PolicyStepsInput{
-                Steps: []shared.PolicyStepInput{
-                    shared.PolicyStepInput{
+        PolicySteps: map[string]shared.PolicySteps{
+            "key": shared.PolicySteps{
+                Steps: []shared.PolicyStep{
+                    shared.PolicyStep{
                         Accept: &shared.Accept{},
-                        Approval: &shared.ApprovalInput{
-                            AppGroupApproval: &shared.AppGroupApprovalInput{},
-                            AppOwnerApproval: &shared.AppOwnerApprovalInput{},
-                            EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
-                            ExpressionApproval: &shared.ExpressionApprovalInput{},
-                            ManagerApproval: &shared.ManagerApprovalInput{},
-                            SelfApproval: &shared.SelfApprovalInput{},
-                            UserApproval: &shared.UserApprovalInput{},
+                        Approval: &shared.Approval{
+                            AppGroupApproval: &shared.AppGroupApproval{
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            AppOwnerApproval: &shared.AppOwnerApproval{},
+                            EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            ExpressionApproval: &shared.ExpressionApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                Expressions: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            ManagerApproval: &shared.ManagerApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            SelfApproval: &shared.SelfApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            UserApproval: &shared.UserApproval{
+                                UserIds: []string{
+                                    "string",
+                                },
+                            },
                         },
                         Provision: &shared.Provision{
                             ProvisionPolicy: &shared.ProvisionPolicy{
@@ -285,19 +321,55 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequest: &shared.UpdatePolicyRequest{
             Policy: &shared.PolicyInput{
-                PolicySteps: map[string]shared.PolicyStepsInput{
-                    "key": shared.PolicyStepsInput{
-                        Steps: []shared.PolicyStepInput{
-                            shared.PolicyStepInput{
+                PolicySteps: map[string]shared.PolicySteps{
+                    "key": shared.PolicySteps{
+                        Steps: []shared.PolicyStep{
+                            shared.PolicyStep{
                                 Accept: &shared.Accept{},
-                                Approval: &shared.ApprovalInput{
-                                    AppGroupApproval: &shared.AppGroupApprovalInput{},
-                                    AppOwnerApproval: &shared.AppOwnerApprovalInput{},
-                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
-                                    ExpressionApproval: &shared.ExpressionApprovalInput{},
-                                    ManagerApproval: &shared.ManagerApprovalInput{},
-                                    SelfApproval: &shared.SelfApprovalInput{},
-                                    UserApproval: &shared.UserApprovalInput{},
+                                Approval: &shared.Approval{
+                                    AppGroupApproval: &shared.AppGroupApproval{
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    AppOwnerApproval: &shared.AppOwnerApproval{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    ExpressionApproval: &shared.ExpressionApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        Expressions: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    ManagerApproval: &shared.ManagerApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    SelfApproval: &shared.SelfApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    UserApproval: &shared.UserApproval{
+                                        UserIds: []string{
+                                            "string",
+                                        },
+                                    },
                                 },
                                 Provision: &shared.Provision{
                                     ProvisionPolicy: &shared.ProvisionPolicy{
