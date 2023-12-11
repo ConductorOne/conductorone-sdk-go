@@ -3,6 +3,7 @@ package conductoronesdkgo
 import (
 	"context"
 	"crypto/tls"
+	"errors"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,6 +65,7 @@ func WithTLSConfig(tlsConfig *tls.Config) CustomSDKOption {
 }
 
 type ClientConfig struct {
+	// These are mutually exclusive
 	serverURL string
 	tenant    string
 }
@@ -74,6 +76,22 @@ func (c ClientConfig) UseWithServer() bool {
 
 func (c ClientConfig) UseWithTenant() bool {
 	return c.tenant != ""
+}
+
+func (c ClientConfig) SetTenant(tenant string) error {
+	if c.UseWithServer() {
+		return errors.New("cannot set tenant, tenant and serverURL are mutually exclusive")
+	}
+	c.tenant = tenant
+	return nil
+}
+
+func (c ClientConfig) SetServerURL(serverURL string) error {
+	if c.UseWithTenant() {
+		return errors.New("cannot set serverURL, tenant and serverURL are mutually exclusive")
+	}
+	c.serverURL = serverURL
+	return nil
 }
 
 func (c ClientConfig) Tenant() string {
@@ -177,13 +195,18 @@ func NormalizeTenant(input string) (*ClientConfig, error) {
 
 	parts := strings.Split(u.Host, ".")
 	if len(parts) == 3 && parts[1] == "conductor" && parts[2] == "one" {
-		normalize.tenant = parts[0]
-
+		err := normalize.SetTenant(parts[0])
+		if err != nil {
+			return nil, err
+		}
 		return normalize, nil
 	}
 
 	u.Scheme = "https"
-	normalize.serverURL = u.String()
+	err = normalize.SetServerURL(u.String())
+	if err != nil {
+		return nil, err
+	}
 	return normalize, nil
 }
 
