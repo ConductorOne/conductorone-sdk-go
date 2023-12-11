@@ -54,26 +54,26 @@ func TestCustomTenantOptions(t *testing.T) {
 }
 
 func testClientConfig(t *testing.T, tt ClientConfigTest, got *ClientConfig) {
-	if got.useWithServer == got.useWithTenant {
+	if got.UseWithServer() == got.UseWithTenant() {
 		t.Error("useWithServer and useWithTenant should not be the same")
 	}
-	if got.useWithTenant != tt.tenantOnly {
-		t.Errorf("useWithTenant Got = '%v', want '%v'", got.useWithTenant, tt.tenantOnly)
+	if got.UseWithTenant() != tt.tenantOnly {
+		t.Errorf("useWithTenant Got = '%v', want '%v'", got.UseWithTenant(), tt.tenantOnly)
 	}
-	if got.useWithServer {
-		if got.ServerURL != tt.wantedURL {
-			t.Errorf("ServerURL Got = '%v', want '%v'", got.ServerURL, tt.wantedURL)
+	if got.UseWithServer() {
+		if got.ServerURL() != tt.wantedURL {
+			t.Errorf("ServerURL Got = '%v', want '%v'", got.ServerURL(), tt.wantedURL)
 		}
-		if got.Tenant != tt.wantedTenantDomain {
-			t.Errorf("Tenant Got = '%v', want '%v'", got.Tenant, "")
+		if got.Tenant() != tt.wantedTenantDomain {
+			t.Errorf("Tenant Got = '%v', want '%v'", got.Tenant(), "")
 		}
 	}
-	if got.useWithTenant {
-		if got.Tenant != tt.wantedTenantDomain {
-			t.Errorf("Tenant Got = '%v', want '%v'", got.Tenant, tt.wantedTenantDomain)
+	if got.UseWithTenant() {
+		if got.Tenant() != tt.wantedTenantDomain {
+			t.Errorf("Tenant Got = '%v', want '%v'", got.Tenant(), tt.wantedTenantDomain)
 		}
-		if got.ServerURL != "" {
-			t.Errorf("ServerURL Got = '%v', want '%v'", got.ServerURL, "")
+		if got.ServerURL() != "" {
+			t.Errorf("ServerURL Got = '%v', want '%v'", got.ServerURL(), "")
 		}
 		if got.GetServerURL() != tt.wantedURL {
 			t.Errorf("GetServerURL Got = '%v', want '%v'", got.GetServerURL(), tt.wantedURL)

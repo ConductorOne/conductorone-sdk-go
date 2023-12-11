@@ -3,7 +3,6 @@ package conductoronesdkgo
 import (
 	"context"
 	"crypto/tls"
-	"fmt"
 	"net/http"
 	"net/url"
 	"strings"
@@ -13,6 +12,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/uhttp"
 )
 
+const c1TenantDomain = ".conductor.one"
 const ClientIdGolangSDK = "2RCzHlak5q7CY14SdBc8HoZEJRf"
 
 func WithTenant(input string) (SDKOption, error) {
@@ -21,12 +21,12 @@ func WithTenant(input string) (SDKOption, error) {
 		return nil, err
 	}
 
-	if resp.useWithTenant {
-		return WithTenantDomain(resp.Tenant), nil
+	if resp.UseWithTenant() {
+		return WithTenantDomain(resp.Tenant()), nil
 	}
 
-	if resp.useWithServer {
-		return WithServerURL(resp.ServerURL), nil
+	if resp.UseWithServer() {
+		return WithServerURL(resp.ServerURL()), nil
 	}
 
 	return func(api *ConductoroneAPI) {}, nil
@@ -41,10 +41,8 @@ func WithTenantCustom(input string) (CustomSDKOption, error) {
 	}
 
 	return func(sdk *CustomOptions) {
-		sdk.useWithServer = resp.useWithServer
-		sdk.useWithTenant = resp.useWithTenant
-		sdk.ServerURL = resp.ServerURL
-		sdk.Tenant = resp.Tenant
+		sdk.serverURL = resp.ServerURL()
+		sdk.tenant = resp.Tenant()
 	}, nil
 }
 
@@ -66,19 +64,38 @@ func WithTLSConfig(tlsConfig *tls.Config) CustomSDKOption {
 }
 
 type ClientConfig struct {
-	useWithServer bool
-	useWithTenant bool
-
-	ServerURL string
-	Tenant    string
+	serverURL string
+	tenant    string
 }
 
+func (c ClientConfig) UseWithServer() bool {
+	return c.serverURL != ""
+}
+
+func (c ClientConfig) UseWithTenant() bool {
+	return c.tenant != ""
+}
+
+func (c ClientConfig) Tenant() string {
+	return c.tenant
+}
+
+// ServerURL returns the server URL if it is set, will NOT construct the server URL from the tenant
+func (c ClientConfig) ServerURL() string {
+	return c.serverURL
+}
+
+// GetServerURL returns the server URL if it is set, otherwise it constructs the server URL from the tenant, if neither are not set it will return an empty string
 func (c ClientConfig) GetServerURL() string {
-	if c.useWithServer {
-		return c.ServerURL
+	if c.UseWithServer() {
+		return c.serverURL
 	}
-	if c.useWithTenant {
-		return fmt.Sprintf("https://%s.conductor.one", c.Tenant)
+	if c.UseWithTenant() {
+		u := &url.URL{}
+		tenant := strings.ToLower(c.Tenant())
+		u.Host = tenant + c1TenantDomain
+		u.Scheme = "https"
+		return u.String()
 	}
 	return ""
 }
@@ -98,21 +115,15 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 	for _, opt := range opts {
 		opt(options)
 	}
-
-	var serverURL string
-	if options.GetServerURL() != "" {
-		serverURL = options.GetServerURL()
-	} else {
+	if options.GetServerURL() == "" {
 		resp, err := ParseClientID(cred.ClientID)
 		if err != nil {
 			return nil, err
 		}
-		serverURL = resp.GetServerURL()
-		if serverURL == "" {
-			return nil, ErrInvalidClientID
-		}
+		options.ClientConfig = *resp
 	}
 
+	serverURL := options.GetServerURL()
 	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, serverURL)
 	if err != nil {
 		return nil, err
@@ -134,11 +145,11 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 	}
 
 	sdkOpts := []SDKOption{}
-	if options.useWithServer {
-		sdkOpts = append(sdkOpts, WithServerURL(options.ServerURL))
+	if options.UseWithServer() {
+		sdkOpts = append(sdkOpts, WithServerURL(options.ServerURL()))
 	}
-	if options.useWithTenant {
-		sdkOpts = append(sdkOpts, WithTenantDomain(options.Tenant))
+	if options.UseWithTenant() {
+		sdkOpts = append(sdkOpts, WithTenantDomain(options.Tenant()))
 	}
 	sdkOpts = append(sdkOpts, WithClient(uclient))
 
@@ -152,7 +163,7 @@ func NormalizeTenant(input string) (*ClientConfig, error) {
 	u := &url.URL{}
 	if !strings.Contains(input, "//") {
 		if !strings.Contains(input, ".") {
-			input += ".conductor.one"
+			input += c1TenantDomain
 		}
 		u.Host = input
 	} else {
@@ -166,15 +177,13 @@ func NormalizeTenant(input string) (*ClientConfig, error) {
 
 	parts := strings.Split(u.Host, ".")
 	if len(parts) == 3 && parts[1] == "conductor" && parts[2] == "one" {
-		normalize.useWithTenant = true
-		normalize.Tenant = parts[0]
+		normalize.tenant = parts[0]
 
 		return normalize, nil
 	}
 
 	u.Scheme = "https"
-	normalize.useWithServer = true
-	normalize.ServerURL = u.String()
+	normalize.serverURL = u.String()
 	return normalize, nil
 }
 
@@ -194,6 +203,10 @@ func ParseClientID(input string) (*ClientConfig, error) {
 	resp, err := NormalizeTenant(items[0])
 	if err != nil {
 		return nil, err
+	}
+
+	if resp.GetServerURL() == "" {
+		return nil, ErrInvalidClientID
 	}
 
 	return resp, nil
