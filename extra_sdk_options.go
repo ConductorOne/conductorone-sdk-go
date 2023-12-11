@@ -98,12 +98,12 @@ func (c ClientConfig) Tenant() string {
 	return c.tenant
 }
 
-// ServerURL returns the server URL if it is set, will NOT construct the server URL from the tenant
+// ServerURL returns the server URL.
 func (c ClientConfig) ServerURL() string {
 	return c.serverURL
 }
 
-// GetServerURL returns the server URL if it is set, otherwise it constructs the server URL from the tenant, if neither are not set it will return an empty string
+// GetServerURL returns the server URL. If serverURL is empty (""), it constructs the server URL using the tenant. However, if the tenant is also empty, then it will return an empty string.
 func (c ClientConfig) GetServerURL() string {
 	if c.UseWithServer() {
 		return c.serverURL
@@ -141,8 +141,7 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 		options.ClientConfig = *resp
 	}
 
-	serverURL := options.GetServerURL()
-	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, serverURL)
+	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, options.GetServerURL())
 	if err != nil {
 		return nil, err
 	}
