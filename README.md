@@ -26,8 +26,8 @@ import (
 func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: "",
-			Oauth:      "",
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 		}),
 	)
 
@@ -278,8 +278,8 @@ import (
 func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: "",
-			Oauth:      "",
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 		}),
 	)
 
@@ -331,8 +331,8 @@ func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithServerIndex(0),
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: "",
-			Oauth:      "",
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 		}),
 	)
 
@@ -375,8 +375,8 @@ func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithServerURL("https://{tenantDomain}.conductor.one"),
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: "",
-			Oauth:      "",
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 		}),
 	)
 
@@ -457,8 +457,8 @@ import (
 func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: "",
-			Oauth:      "",
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "Bearer <YOUR_ACCESS_TOKEN_HERE>",
 		}),
 	)
 

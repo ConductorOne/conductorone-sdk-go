@@ -159,7 +159,6 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 }
 
 // WithSecurity configures the SDK to use the provided security details
-
 func WithSecurity(security shared.Security) SDKOption {
 	return func(sdk *ConductoroneAPI) {
 		sdk.sdkConfiguration.Security = withSecurity(security)
@@ -187,9 +186,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "2.2.1",
-			GenVersion:        "2.210.6",
-			UserAgent:         "speakeasy-sdk/go 2.2.1 2.210.6 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "2.3.0",
+			GenVersion:        "2.213.3",
+			UserAgent:         "speakeasy-sdk/go 2.3.0 2.213.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
