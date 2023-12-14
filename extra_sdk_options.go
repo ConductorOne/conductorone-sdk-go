@@ -178,7 +178,7 @@ func NormalizeTenant(input string) (*ClientConfig, error) {
 
 	var err error
 	u := &url.URL{}
-	if !strings.Contains(input, "//") {
+	if !strings.Contains(input, "://") {
 		if !strings.Contains(input, ".") {
 			input += c1TenantDomain
 		}
