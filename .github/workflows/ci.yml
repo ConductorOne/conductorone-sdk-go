@@ -22,3 +22,6 @@ jobs:
 
       - name: Build the test cli
         run: go build -o cli ./.ci
+
+      - name: Run acceptance tests
+        run: make testacc
