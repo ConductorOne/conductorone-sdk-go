@@ -49,22 +49,6 @@ type c1TokenSource struct {
 	httpClient   *http.Client
 }
 
-func parseClientID(input string) (string, error) {
-	// split the input into 2 parts by @
-	items := strings.SplitN(input, "@", 2)
-	if len(items) != 2 {
-		return "", ErrInvalidClientID
-	}
-
-	// split the right part into 2 parts by /
-	items = strings.SplitN(items[1], "/", 2)
-	if len(items) != 2 {
-		return "", ErrInvalidClientID
-	}
-
-	return items[0], nil
-}
-
 func parseSecret(input []byte) (*jose.JSONWebKey, error) {
 	items := bytes.SplitN(input, []byte(":"), 4)
 	if len(items) != 4 {
@@ -186,19 +170,10 @@ func (c *c1TokenSource) Token() (*oauth2.Token, error) {
 	}, nil
 }
 
-func NewTokenSource(ctx context.Context, clientID string, clientSecret string, hostOverride string) (oauth2.TokenSource, error) {
-	tokenHost, err := parseClientID(clientID)
-	if err != nil {
-		return nil, err
-	}
-
+func NewTokenSource(ctx context.Context, clientID string, clientSecret string, tokenHost string) (oauth2.TokenSource, error) {
 	secret, err := parseSecret([]byte(clientSecret))
 	if err != nil {
 		return nil, err
-	}
-
-	if hostOverride != "" {
-		tokenHost = hostOverride
 	}
 
 	httpClient, err := uhttp.NewClient(ctx, uhttp.WithLogger(true, ctxzap.Extract(ctx)), uhttp.WithUserAgent("cone-c1-credential-provider"))

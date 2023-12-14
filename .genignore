@@ -9,3 +9,4 @@ uhttp/
 .ci
 go.mod
 go.sum
+USAGE.md
