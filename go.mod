@@ -29,3 +29,5 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230920204549-e6e6cdab5c13 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 )
+
+retract [v2.1.8, v2.1.11] // Accidentally bumped the major number. v1.X.X is the correct major version, please use that instead (go get github.com/conductorone/conductorone-sdk-go)
