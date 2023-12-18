@@ -5,8 +5,8 @@ package conductoronesdkgo
 import (
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -159,7 +159,6 @@ func withSecurity(security interface{}) func(context.Context) (interface{}, erro
 }
 
 // WithSecurity configures the SDK to use the provided security details
-
 func WithSecurity(security shared.Security) SDKOption {
 	return func(sdk *ConductoroneAPI) {
 		sdk.sdkConfiguration.Security = withSecurity(security)
@@ -187,9 +186,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "2.1.8",
-			GenVersion:        "2.210.6",
-			UserAgent:         "speakeasy-sdk/go 2.1.8 2.210.6 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "1.15.0",
+			GenVersion:        "2.220.0",
+			UserAgent:         "speakeasy-sdk/go 1.15.0 2.220.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",

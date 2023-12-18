@@ -3,7 +3,7 @@
 package shared
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
 // UpdateAppEntitlementResponseExpanded - Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
