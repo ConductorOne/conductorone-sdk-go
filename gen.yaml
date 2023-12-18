@@ -21,7 +21,7 @@ features:
     nameOverrides: 2.81.1
     unions: 2.85.0
 go:
-  version: 2.1.8
+  version: 2.1.11
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
