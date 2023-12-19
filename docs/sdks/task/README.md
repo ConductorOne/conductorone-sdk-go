@@ -65,7 +65,7 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## CreateRevokeTask
 
@@ -124,7 +124,7 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Get
 
@@ -178,4 +178,4 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceGetResponse](../../pkg/models/operations/c1apitaskv1taskservicegetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

@@ -59,7 +59,7 @@ func main() {
 **[*operations.C1APIIamV1RolesGetResponse](../../pkg/models/operations/c1apiiamv1rolesgetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -111,7 +111,7 @@ func main() {
 **[*operations.C1APIIamV1RolesListResponse](../../pkg/models/operations/c1apiiamv1roleslistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Update
 
@@ -175,4 +175,4 @@ func main() {
 **[*operations.C1APIIamV1RolesUpdateResponse](../../pkg/models/operations/c1apiiamv1rolesupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

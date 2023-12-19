@@ -63,7 +63,7 @@ func main() {
 **[*operations.C1APIDirectoryV1DirectoryServiceCreateResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicecreateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Delete
 
@@ -118,7 +118,7 @@ func main() {
 **[*operations.C1APIDirectoryV1DirectoryServiceDeleteResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicedeleteresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Get
 
@@ -172,7 +172,7 @@ func main() {
 **[*operations.C1APIDirectoryV1DirectoryServiceGetResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicegetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -224,4 +224,4 @@ func main() {
 **[*operations.C1APIDirectoryV1DirectoryServiceListResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicelistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

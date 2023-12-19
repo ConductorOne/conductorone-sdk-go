@@ -61,4 +61,4 @@ func main() {
 **[*operations.C1APIIamV1PersonalClientServiceCreateResponse](../../pkg/models/operations/c1apiiamv1personalclientservicecreateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

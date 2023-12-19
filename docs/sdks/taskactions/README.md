@@ -69,7 +69,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceApproveResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceapproveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Comment
 
@@ -130,7 +130,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceCommentResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicecommentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Deny
 
@@ -191,7 +191,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceDenyResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicedenyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EscalateToEmergencyAccess
 
@@ -252,7 +252,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Restart
 
@@ -313,4 +313,4 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceRestartResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

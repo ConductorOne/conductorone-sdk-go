@@ -62,7 +62,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementOwnersAddResponse](../../pkg/models/operations/c1apiappv1appentitlementownersaddresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementOwnersListResponse](../../pkg/models/operations/c1apiappv1appentitlementownerslistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Remove
 
@@ -174,7 +174,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementOwnersRemoveResponse](../../pkg/models/operations/c1apiappv1appentitlementownersremoveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Set
 
@@ -234,4 +234,4 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementOwnersSetResponse](../../pkg/models/operations/c1apiappv1appentitlementownerssetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

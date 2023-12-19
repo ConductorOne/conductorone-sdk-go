@@ -59,7 +59,7 @@ func main() {
 **[*operations.C1APIAppV1AppResourceTypeServiceGetResponse](../../pkg/models/operations/c1apiappv1appresourcetypeservicegetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -113,4 +113,4 @@ func main() {
 **[*operations.C1APIAppV1AppResourceTypeServiceListResponse](../../pkg/models/operations/c1apiappv1appresourcetypeservicelistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

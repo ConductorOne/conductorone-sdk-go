@@ -63,7 +63,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsGetResponse](../../pkg/models/operations/c1apiappv1appentitlementsgetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -117,7 +117,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsListResponse](../../pkg/models/operations/c1apiappv1appentitlementslistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## ListForAppResource
 
@@ -173,7 +173,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsListForAppResourceResponse](../../pkg/models/operations/c1apiappv1appentitlementslistforappresourceresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## ListForAppUser
 
@@ -228,7 +228,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../pkg/models/operations/c1apiappv1appentitlementslistforappuserresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## ListUsers
 
@@ -283,7 +283,7 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsListUsersResponse](../../pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Update
 
@@ -360,4 +360,4 @@ func main() {
 **[*operations.C1APIAppV1AppEntitlementsUpdateResponse](../../pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

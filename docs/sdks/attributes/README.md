@@ -58,7 +58,7 @@ func main() {
 **[*operations.C1APIAttributeV1AttributesCreateAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributescreateattributevalueresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## DeleteAttributeValue
 
@@ -113,7 +113,7 @@ func main() {
 **[*operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## GetAttributeValue
 
@@ -167,7 +167,7 @@ func main() {
 **[*operations.C1APIAttributeV1AttributesGetAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributesgetattributevalueresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## ListAttributeTypes
 
@@ -219,7 +219,7 @@ func main() {
 **[*operations.C1APIAttributeV1AttributesListAttributeTypesResponse](../../pkg/models/operations/c1apiattributev1attributeslistattributetypesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## ListAttributeValues
 
@@ -273,4 +273,4 @@ func main() {
 **[*operations.C1APIAttributeV1AttributesListAttributeValuesResponse](../../pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
