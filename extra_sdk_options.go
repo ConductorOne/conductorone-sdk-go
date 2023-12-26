@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/grpc-ecosystem/go-grpc-middleware/logging/zap/ctxzap"
 	"go.uber.org/zap"
 
 	"github.com/conductorone/conductorone-sdk-go/uhttp"
@@ -140,7 +141,10 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 		options.ClientConfig = resp
 	}
 
-	tokenSource, err := NewTokenSource(ctx, cred.ClientID, cred.ClientSecret, options.GetServerURL())
+	// Create a long-lived context with the logger for the token source.
+	l := ctxzap.Extract(ctx)
+	tokenCtx := ctxzap.ToContext(context.Background(), l)
+	tokenSource, err := NewTokenSource(tokenCtx, cred.ClientID, cred.ClientSecret, options.GetServerURL())
 	if err != nil {
 		return nil, err
 	}
