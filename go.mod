@@ -30,4 +30,4 @@ require (
 	google.golang.org/protobuf v1.31.0 // indirect
 )
 
-retract [v2.1.8, v2.1.11] // Accidentally bumped the major number. v1.X.X is the correct major version, please use that instead (go get github.com/conductorone/conductorone-sdk-go)
+retract [v2.0.0-0, v2.1.12] // Accidentally bumped the major number. v1.X.X is the correct major version, please use that instead (go get github.com/conductorone/conductorone-sdk-go)
