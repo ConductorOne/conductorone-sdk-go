@@ -6,7 +6,6 @@ toolchain go1.21.3
 
 require (
 	github.com/cenkalti/backoff/v4 v4.2.1
-	github.com/conductorone/conductorone-sdk-go v1.14.0
 	github.com/ericlagergren/decimal v0.0.0-20221120152707-495c53812d05
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	github.com/pquerna/xjwt v0.2.0
@@ -29,5 +28,3 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230920204549-e6e6cdab5c13 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 )
-
-retract [v2.0.0-0, v2.1.12] // Accidentally bumped the major number. v1.X.X is the correct major version, please use that instead (go get github.com/conductorone/conductorone-sdk-go)
