@@ -15,8 +15,8 @@ Search tasks based on filters specified in the request body.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
 )
@@ -24,8 +24,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -124,4 +124,4 @@ func main() {
 **[*operations.C1APITaskV1TaskSearchServiceSearchResponse](../../pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

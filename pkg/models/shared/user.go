@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
 

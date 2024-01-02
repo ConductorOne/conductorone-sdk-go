@@ -17,8 +17,8 @@ Create a grant task
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
 )
@@ -26,8 +26,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -65,7 +65,7 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## CreateRevokeTask
 
@@ -77,8 +77,8 @@ Create a revoke task
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
 )
@@ -86,8 +86,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -124,7 +124,7 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Get
 
@@ -136,18 +136,18 @@ Get a task by ID
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -178,4 +178,4 @@ func main() {
 **[*operations.C1APITaskV1TaskServiceGetResponse](../../pkg/models/operations/c1apitaskv1taskservicegetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

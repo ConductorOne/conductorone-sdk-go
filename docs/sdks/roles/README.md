@@ -17,18 +17,18 @@ Get a role by id.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -59,7 +59,7 @@ func main() {
 **[*operations.C1APIIamV1RolesGetResponse](../../pkg/models/operations/c1apiiamv1rolesgetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -71,18 +71,18 @@ List all roles for the current user.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -111,7 +111,7 @@ func main() {
 **[*operations.C1APIIamV1RolesListResponse](../../pkg/models/operations/c1apiiamv1roleslistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Update
 
@@ -123,18 +123,18 @@ Update a role by passing a Role object.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -175,4 +175,4 @@ func main() {
 **[*operations.C1APIIamV1RolesUpdateResponse](../../pkg/models/operations/c1apiiamv1rolesupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

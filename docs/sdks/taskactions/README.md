@@ -19,18 +19,18 @@ Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -69,7 +69,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceApproveResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceapproveresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Comment
 
@@ -81,18 +81,18 @@ Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -130,7 +130,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceCommentResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicecommentresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Deny
 
@@ -142,18 +142,18 @@ Invokes the c1.api.task.v1.TaskActionsService.Deny method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -191,7 +191,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceDenyResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicedenyresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EscalateToEmergencyAccess
 
@@ -203,18 +203,18 @@ Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -252,7 +252,7 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Restart
 
@@ -264,18 +264,18 @@ Invokes the c1.api.task.v1.TaskActionsService.Restart method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -313,4 +313,4 @@ func main() {
 **[*operations.C1APITaskV1TaskActionsServiceRestartResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

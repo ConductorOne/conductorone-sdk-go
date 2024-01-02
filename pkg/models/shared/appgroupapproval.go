@@ -8,7 +8,7 @@ type AppGroupApproval struct {
 	AllowSelfApproval *bool `json:"allowSelfApproval,omitempty"`
 	// The ID of the group specified for approval.
 	AppGroupID *string `json:"appGroupId,omitempty"`
-	// The ID of the app that conatins the group specified for approval.
+	// The ID of the app that contains the group specified for approval.
 	AppID *string `json:"appId,omitempty"`
 	// Configuration to allow a fallback if the group is empty.
 	Fallback *bool `json:"fallback,omitempty"`

@@ -10,18 +10,20 @@ generation:
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.1.5
-    globalSecurity: 2.82.2
+    core: 3.2.2
+    globalSecurity: 2.82.3
     globalServerURLs: 2.82.1
     groups: 2.81.2
-    inputOutputModels: 2.82.0
+    inputOutputModels: 2.83.0
     nameOverrides: 2.81.1
-    unions: 2.85.0
+    unions: 2.85.2
 go:
-  version: 2.1.12
+  version: 1.15.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:

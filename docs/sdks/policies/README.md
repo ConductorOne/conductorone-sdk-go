@@ -19,8 +19,8 @@ Create a policy.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
 )
@@ -28,26 +28,62 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
     ctx := context.Background()
     res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{
-        PolicySteps: map[string]shared.PolicyStepsInput{
-            "key": shared.PolicyStepsInput{
-                Steps: []shared.PolicyStepInput{
-                    shared.PolicyStepInput{
+        PolicySteps: map[string]shared.PolicySteps{
+            "key": shared.PolicySteps{
+                Steps: []shared.PolicyStep{
+                    shared.PolicyStep{
                         Accept: &shared.Accept{},
-                        Approval: &shared.ApprovalInput{
-                            AppGroupApproval: &shared.AppGroupApprovalInput{},
-                            AppOwnerApproval: &shared.AppOwnerApprovalInput{},
-                            EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
-                            ExpressionApproval: &shared.ExpressionApprovalInput{},
-                            ManagerApproval: &shared.ManagerApprovalInput{},
-                            SelfApproval: &shared.SelfApprovalInput{},
-                            UserApproval: &shared.UserApprovalInput{},
+                        Approval: &shared.Approval{
+                            AppGroupApproval: &shared.AppGroupApproval{
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            AppOwnerApproval: &shared.AppOwnerApproval{},
+                            EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            ExpressionApproval: &shared.ExpressionApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                Expressions: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            ManagerApproval: &shared.ManagerApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            SelfApproval: &shared.SelfApproval{
+                                AssignedUserIds: []string{
+                                    "string",
+                                },
+                                FallbackUserIds: []string{
+                                    "string",
+                                },
+                            },
+                            UserApproval: &shared.UserApproval{
+                                UserIds: []string{
+                                    "string",
+                                },
+                            },
                         },
                         Provision: &shared.Provision{
                             ProvisionPolicy: &shared.ProvisionPolicy{
@@ -93,7 +129,7 @@ func main() {
 **[*operations.C1APIPolicyV1PoliciesCreateResponse](../../pkg/models/operations/c1apipolicyv1policiescreateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Delete
 
@@ -105,18 +141,18 @@ Delete a policy by ID.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -148,7 +184,7 @@ func main() {
 **[*operations.C1APIPolicyV1PoliciesDeleteResponse](../../pkg/models/operations/c1apipolicyv1policiesdeleteresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Get
 
@@ -160,18 +196,18 @@ Get a policy by ID.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -202,7 +238,7 @@ func main() {
 **[*operations.C1APIPolicyV1PoliciesGetResponse](../../pkg/models/operations/c1apipolicyv1policiesgetresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## List
 
@@ -214,18 +250,18 @@ List policies.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -254,7 +290,7 @@ func main() {
 **[*operations.C1APIPolicyV1PoliciesListResponse](../../pkg/models/operations/c1apipolicyv1policieslistresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## Update
 
@@ -266,18 +302,18 @@ Update a policy by providing a policy object and an update mask.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "",
-            Oauth: "",
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         }),
     )
 
@@ -285,19 +321,55 @@ func main() {
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
         UpdatePolicyRequest: &shared.UpdatePolicyRequest{
             Policy: &shared.PolicyInput{
-                PolicySteps: map[string]shared.PolicyStepsInput{
-                    "key": shared.PolicyStepsInput{
-                        Steps: []shared.PolicyStepInput{
-                            shared.PolicyStepInput{
+                PolicySteps: map[string]shared.PolicySteps{
+                    "key": shared.PolicySteps{
+                        Steps: []shared.PolicyStep{
+                            shared.PolicyStep{
                                 Accept: &shared.Accept{},
-                                Approval: &shared.ApprovalInput{
-                                    AppGroupApproval: &shared.AppGroupApprovalInput{},
-                                    AppOwnerApproval: &shared.AppOwnerApprovalInput{},
-                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApprovalInput{},
-                                    ExpressionApproval: &shared.ExpressionApprovalInput{},
-                                    ManagerApproval: &shared.ManagerApprovalInput{},
-                                    SelfApproval: &shared.SelfApprovalInput{},
-                                    UserApproval: &shared.UserApprovalInput{},
+                                Approval: &shared.Approval{
+                                    AppGroupApproval: &shared.AppGroupApproval{
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    AppOwnerApproval: &shared.AppOwnerApproval{},
+                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    ExpressionApproval: &shared.ExpressionApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        Expressions: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    ManagerApproval: &shared.ManagerApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    SelfApproval: &shared.SelfApproval{
+                                        AssignedUserIds: []string{
+                                            "string",
+                                        },
+                                        FallbackUserIds: []string{
+                                            "string",
+                                        },
+                                    },
+                                    UserApproval: &shared.UserApproval{
+                                        UserIds: []string{
+                                            "string",
+                                        },
+                                    },
                                 },
                                 Provision: &shared.Provision{
                                     ProvisionPolicy: &shared.ProvisionPolicy{
@@ -349,4 +421,4 @@ func main() {
 **[*operations.C1APIPolicyV1PoliciesUpdateResponse](../../pkg/models/operations/c1apipolicyv1policiesupdateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
