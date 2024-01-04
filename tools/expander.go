@@ -9,6 +9,43 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
+// Populate the expanded map with references to the related objects.
+func PopulateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
+	rv := make(map[string]*any)
+	for k, v := range expandMap {
+		rv[k] = &expanded[v]
+	}
+	return rv
+}
+
+type getStructWithPaths[T, V any] func(T) *V
+type makeExpandedObject[T, V any] func(T, map[string]*any) V
+
+func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]I, error) {
+	expanded := make([]any, 0, len(expandedList))
+	for _, x := range expandedList {
+		x := x
+		converted, err := GetMarshalledObject(x)
+		if err != nil {
+			return nil, err
+		}
+		expanded = append(expanded, converted)
+	}
+
+	result := make([]I, 0, len(responseList))
+	for _, response := range responseList {
+		expandedMap, err := GetMappedJSONPaths(response, structWithPaths)
+		if err != nil {
+			return nil, err
+		}
+
+		expandedObjects := PopulateExpandedMap(expandedMap, expanded)
+		result = append(result, makeResult(response, expandedObjects))
+	}
+
+	return result, nil
+}
+
 type Path struct {
 	Key   string
 	Value *string
@@ -44,9 +81,9 @@ func GetPaths[T any](v *T) []Path {
  * In the case of `v AppEntitlementWithUserBindings` you would pass in a getter that returns
  * v.AppEntitlementView which is a `*AppEntitlementView`, expects a pointer
  */
-func GetMappedJSONPaths[T, V any](item T, getStructWithPaths func(T) *V) (map[string]int, error) {
+func GetMappedJSONPaths[T, V any](item T, structWithPaths getStructWithPaths[T, V]) (map[string]int, error) {
 	fn := func(t T) []Path {
-		v := getStructWithPaths(t)
+		v := structWithPaths(t)
 		return GetPaths(v)
 	}
 	return mapJSONPaths[T](item, fn)
@@ -77,25 +114,33 @@ type marshallable interface {
 	MarshalJSON() ([]byte, error)
 }
 
-func GetMarshalledObject[T marshallable](input T) (any, error) {
-	getAtType := func(input *T) *string {
-		inputVal := reflect.ValueOf(input)
-		if inputVal.Kind() != reflect.Ptr {
-			return nil
-		}
-
-		asTypeMethod := inputVal.MethodByName("GetAtType")
-		if !asTypeMethod.IsValid() {
-			return nil
-		}
-
-		result := asTypeMethod.Call(nil)
-		if len(result) != 1 {
-			return nil
-		}
-
-		return result[0].Interface().(*string)
+func GetAtTypeWithReflection[T any](input *T) *string {
+	inputVal := reflect.ValueOf(input)
+	if inputVal.Kind() != reflect.Ptr {
+		return nil
 	}
+
+	asTypeMethod := inputVal.MethodByName("GetAtType")
+	if !asTypeMethod.IsValid() {
+		return nil
+	}
+
+	result := asTypeMethod.Call(nil)
+	if len(result) != 1 {
+		return nil
+	}
+
+	// Check if the result can be converted to *string
+	asTypeValue, ok := result[0].Interface().(*string)
+	if !ok {
+		return nil
+	}
+
+	return asTypeValue
+}
+
+func GetMarshalledObject[T marshallable](input T) (any, error) {
+	getAtType := GetAtTypeWithReflection[T]
 	marshall := func(input T) ([]byte, error) {
 		return input.MarshalJSON()
 	}
