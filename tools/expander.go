@@ -10,7 +10,7 @@ import (
 )
 
 // Populate the expanded map with references to the related objects.
-func PopulateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
+func populateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
 	rv := make(map[string]*any)
 	for k, v := range expandMap {
 		rv[k] = &expanded[v]
@@ -39,7 +39,7 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 			return nil, err
 		}
 
-		expandedObjects := PopulateExpandedMap(expandedMap, expanded)
+		expandedObjects := populateExpandedMap(expandedMap, expanded)
 		result = append(result, makeResult(response, expandedObjects))
 	}
 
@@ -149,7 +149,7 @@ func GetMarshalledObject[T marshallable](input T) (any, error) {
 
 type marshalJSON[T any] func(T) ([]byte, error)
 
-func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
+func as[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 	d, err := marshal(input)
 	if err != nil {
 		return nil, err
@@ -172,11 +172,11 @@ func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJ
 
 	switch *inputType {
 	case atTypeApp:
-		return As[T, shared.App](input, marshal)
+		return as[T, shared.App](input, marshal)
 	case atTypeAppResource:
-		return As[T, shared.AppResource](input, marshal)
+		return as[T, shared.AppResource](input, marshal)
 	case atTypeAppResourceType:
-		return As[T, shared.AppResourceType](input, marshal)
+		return as[T, shared.AppResourceType](input, marshal)
 	default:
 		return nil, errors.New("unknown type")
 	}
