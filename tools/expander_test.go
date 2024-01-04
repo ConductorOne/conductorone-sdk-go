@@ -22,15 +22,15 @@ func TestGetPaths(t *testing.T) {
 				AppResourceTypePath: strToPtr("asdads"),
 			},
 			want: []Path{
-				Path{
+				{
 					Key:   "AppPath",
 					Value: strToPtr("as"),
 				},
-				Path{
+				{
 					Key:   "AppResourcePath",
 					Value: strToPtr("asd"),
 				},
-				Path{
+				{
 					Key:   "AppResourceTypePath",
 					Value: strToPtr("asdads"),
 				},
