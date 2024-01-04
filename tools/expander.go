@@ -9,15 +9,21 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-// Populate the expanded map with references to the related objects.
-func populateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
-	rv := make(map[string]*any)
-	for k, v := range expandMap {
-		rv[k] = &expanded[v]
-	}
-	return rv
+const (
+	atTypeApp             = "type.googleapis.com/c1.api.app.v1.App"
+	atTypeAppResource     = "type.googleapis.com/c1.api.app.v1.AppResource"
+	atTypeAppResourceType = "type.googleapis.com/c1.api.app.v1.AppResourceType"
+)
+
+type Path struct {
+	Key   string
+	Value *string
+}
+type marshallable interface {
+	MarshalJSON() ([]byte, error)
 }
 
+type marshalJSON[T any] func(T) ([]byte, error)
 type getStructWithPaths[T, V any] func(T) *V
 type makeExpandedObject[T, V any] func(T, map[string]*any) V
 
@@ -39,18 +45,21 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 			return nil, err
 		}
 
-		expandedObjects := populateExpandedMap(expandedMap, expanded)
+		expandedObjects := PopulateExpandedMap(expandedMap, expanded)
 		result = append(result, makeResult(response, expandedObjects))
 	}
 
 	return result, nil
 }
 
-type Path struct {
-	Key   string
-	Value *string
+// Populate the expanded map with references to the related objects.
+func PopulateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
+	rv := make(map[string]*any)
+	for k, v := range expandMap {
+		rv[k] = &expanded[v]
+	}
+	return rv
 }
-
 func GetPaths[T any](v *T) []Path {
 	if v == nil {
 		return nil
@@ -104,16 +113,6 @@ func mapJSONPaths[T any](item T, getPaths func(T) []Path) (map[string]int, error
 	return res, nil
 }
 
-const (
-	atTypeApp             = "type.googleapis.com/c1.api.app.v1.App"
-	atTypeAppResource     = "type.googleapis.com/c1.api.app.v1.AppResource"
-	atTypeAppResourceType = "type.googleapis.com/c1.api.app.v1.AppResourceType"
-)
-
-type marshallable interface {
-	MarshalJSON() ([]byte, error)
-}
-
 func GetAtTypeWithReflection[T any](input *T) *string {
 	inputVal := reflect.ValueOf(input)
 	if inputVal.Kind() != reflect.Ptr {
@@ -147,9 +146,7 @@ func GetMarshalledObject[T marshallable](input T) (any, error) {
 	return AtTypeToObject(input, getAtType, marshall)
 }
 
-type marshalJSON[T any] func(T) ([]byte, error)
-
-func as[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
+func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 	d, err := marshal(input)
 	if err != nil {
 		return nil, err
@@ -172,11 +169,11 @@ func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJ
 
 	switch *inputType {
 	case atTypeApp:
-		return as[T, shared.App](input, marshal)
+		return As[T, shared.App](input, marshal)
 	case atTypeAppResource:
-		return as[T, shared.AppResource](input, marshal)
+		return As[T, shared.AppResource](input, marshal)
 	case atTypeAppResourceType:
-		return as[T, shared.AppResourceType](input, marshal)
+		return As[T, shared.AppResourceType](input, marshal)
 	default:
 		return nil, errors.New("unknown type")
 	}
