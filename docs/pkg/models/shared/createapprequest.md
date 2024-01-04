@@ -11,6 +11,6 @@ The CreateAppRequest message is used to create a new app.
 | `Description`                                    | **string*                                        | :heavy_minus_sign:                               | Creates the app with this description.           |
 | `DisplayName`                                    | **string*                                        | :heavy_minus_sign:                               | Creates the app with this display name.          |
 | `GrantPolicyID`                                  | **string*                                        | :heavy_minus_sign:                               | Creates the app with this grant policy.          |
-| `MonthlyCostUsd`                                 | **float64*                                       | :heavy_minus_sign:                               | Creates the app with this monthly cost per seat. |
+| `MonthlyCostUsd`                                 | **int*                                           | :heavy_minus_sign:                               | Creates the app with this monthly cost per seat. |
 | `Owners`                                         | []*string*                                       | :heavy_minus_sign:                               | Creates the app with this array of owners.       |
 | `RevokePolicyID`                                 | **string*                                        | :heavy_minus_sign:                               | Creates the app with this revoke policy.         |

@@ -47,27 +47,27 @@ func (e *Severity) UnmarshalJSON(data []byte) error {
 // The Marker message.
 type Marker struct {
 	// The endColumn field.
-	EndColumn *float64 `json:"endColumn,omitempty"`
+	EndColumn *int `json:"endColumn,omitempty"`
 	// The endLineNumber field.
-	EndLineNumber *float64 `json:"endLineNumber,omitempty"`
+	EndLineNumber *int `json:"endLineNumber,omitempty"`
 	// The message field.
 	Message *string `json:"message,omitempty"`
 	// The severity field.
 	Severity *Severity `json:"severity,omitempty"`
 	// The startColumn field.
-	StartColumn *float64 `json:"startColumn,omitempty"`
+	StartColumn *int `json:"startColumn,omitempty"`
 	// The startLineNumber field.
-	StartLineNumber *float64 `json:"startLineNumber,omitempty"`
+	StartLineNumber *int `json:"startLineNumber,omitempty"`
 }
 
-func (o *Marker) GetEndColumn() *float64 {
+func (o *Marker) GetEndColumn() *int {
 	if o == nil {
 		return nil
 	}
 	return o.EndColumn
 }
 
-func (o *Marker) GetEndLineNumber() *float64 {
+func (o *Marker) GetEndLineNumber() *int {
 	if o == nil {
 		return nil
 	}
@@ -88,14 +88,14 @@ func (o *Marker) GetSeverity() *Severity {
 	return o.Severity
 }
 
-func (o *Marker) GetStartColumn() *float64 {
+func (o *Marker) GetStartColumn() *int {
 	if o == nil {
 		return nil
 	}
 	return o.StartColumn
 }
 
-func (o *Marker) GetStartLineNumber() *float64 {
+func (o *Marker) GetStartLineNumber() *int {
 	if o == nil {
 		return nil
 	}

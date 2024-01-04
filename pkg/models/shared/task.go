@@ -234,7 +234,7 @@ type Task struct {
 	// An array of `google.protobuf.Any` annotations with various base64-encoded data.
 	Annotations []Annotations `json:"annotations,omitempty"`
 	// The count of comments.
-	CommentCount *float64   `json:"commentCount,omitempty"`
+	CommentCount *int       `json:"commentCount,omitempty"`
 	CreatedAt    *time.Time `json:"createdAt,omitempty"`
 	// The ID of the user that is the creator of this task. This may not always match the userId field.
 	CreatedByUserID *string    `json:"createdByUserId,omitempty"`
@@ -314,7 +314,7 @@ func (o *Task) GetAnnotations() []Annotations {
 	return o.Annotations
 }
 
-func (o *Task) GetCommentCount() *float64 {
+func (o *Task) GetCommentCount() *int {
 	if o == nil {
 		return nil
 	}
