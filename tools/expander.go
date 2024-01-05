@@ -54,6 +54,20 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 	return result, nil
 }
 
+// Convert the expanded response to the desired type.
+func ConvertExpanded[T any](e T, key string, getExpanded func(T) map[string]*any) *T {
+	var rv *T
+	if x, ok := getExpanded(e)[key]; ok {
+		if x == nil {
+			return nil
+		}
+		if x, ok := (*x).(*T); ok {
+			rv = x
+		}
+	}
+	return rv
+}
+
 // Populate the expanded map with references to the related objects.
 func PopulateExpandedMap(expandMap map[string]int, expanded []any) map[string]*any {
 	rv := make(map[string]*any)
@@ -173,7 +187,7 @@ func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 	return &rv, nil
 }
 
-// Convert Speakeasy's `GetAtType` to the respective object.
+// Use Speakeasy's `GetAtType` to convert input to its respective underlying type.
 func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJSON[T]) (any, error) {
 	inputType := getAtType(&input)
 	if inputType == nil {
