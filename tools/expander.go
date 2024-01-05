@@ -30,7 +30,7 @@ type makeExpandedObject[T, V any] func(T, map[string]*any) *V
 /* Pass in the list you want to expand along with the expanded list and a function to get the inner object that contains the expanded Paths and a function to create the result object.
  * See expander_test.go `TestExpandResponse` for an example of how to use this function.
  */
-func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]*I, error) {
+func GetExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]*I, error) {
 	expanded := make([]any, 0, len(expandedList))
 	for _, x := range expandedList {
 		x := x
@@ -55,7 +55,7 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 }
 
 // Convert the expanded response to the desired type.
-func ConvertExpanded[T any](e T, key string, getExpanded func(T) map[string]*any) *T {
+func GetConvertedExpanded[T any](e T, key string, getExpanded func(T) map[string]*any) *T {
 	var rv *T
 	if x, ok := getExpanded(e)[key]; ok {
 		if x == nil {
