@@ -25,9 +25,9 @@ type marshallable interface {
 
 type marshalJSON[T any] func(T) ([]byte, error)
 type getStructWithPaths[T, V any] func(T) *V
-type makeExpandedObject[T, V any] func(T, map[string]*any) V
+type makeExpandedObject[T, V any] func(T, map[string]*any) *V
 
-func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]I, error) {
+func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]*I, error) {
 	expanded := make([]any, 0, len(expandedList))
 	for _, x := range expandedList {
 		x := x
@@ -37,16 +37,16 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 		}
 		expanded = append(expanded, converted)
 	}
-
-	result := make([]I, 0, len(responseList))
+	result := make([]*I, 0, len(responseList))
 	for _, response := range responseList {
+		response := response
 		expandedMap, err := GetMappedJSONPaths(response, structWithPaths)
 		if err != nil {
 			return nil, err
 		}
-
 		expandedObjects := PopulateExpandedMap(expandedMap, expanded)
-		result = append(result, makeResult(response, expandedObjects))
+		res := makeResult(response, expandedObjects)
+		result = append(result, res)
 	}
 
 	return result, nil
@@ -93,7 +93,8 @@ func GetPaths[T any](v *T) []Path {
 func GetMappedJSONPaths[T, V any](item T, structWithPaths getStructWithPaths[T, V]) (map[string]int, error) {
 	fn := func(t T) []Path {
 		v := structWithPaths(t)
-		return GetPaths(v)
+		paths := GetPaths(v)
+		return paths
 	}
 	return mapJSONPaths[T](item, fn)
 }

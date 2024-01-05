@@ -2,6 +2,8 @@ package tools
 
 import (
 	"encoding/json"
+	"io"
+	"os"
 	"testing"
 	"time"
 
@@ -10,6 +12,64 @@ import (
 
 func strToPtr(str string) *string {
 	return &str
+}
+
+func readJSONFile(filePath string) ([]byte, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	return io.ReadAll(file)
+}
+
+type mockEntitlement struct {
+	*shared.AppEntitlement
+	Expanded map[string]*any
+}
+
+func newMockEntitlement(x shared.AppEntitlementView, expanded map[string]*any) *mockEntitlement {
+	entitlement := x.GetAppEntitlement()
+
+	return &mockEntitlement{
+		AppEntitlement: entitlement,
+		Expanded:       expanded,
+	}
+}
+
+func TestExpandResponse(t *testing.T) {
+	bytes, err := readJSONFile("test_data/expander_response.json")
+	if err != nil {
+		t.Error("Error reading JSON file:", err)
+		return
+	}
+
+	var response shared.AppEntitlementSearchServiceSearchResponse
+	err = json.Unmarshal(bytes, &response)
+	if err != nil {
+		t.Error("Error unmarshaling JSON:", err)
+		return
+	}
+	getStructWithPaths := func(response shared.AppEntitlementView) *shared.AppEntitlementView {
+		return &response
+	}
+
+	x, err := ExpandResponse(response.List, response.Expanded, getStructWithPaths, newMockEntitlement)
+	if err != nil {
+		t.Error("Error expanding response:", err)
+		return
+	}
+	for _, x := range x {
+		if x.AppEntitlement == nil {
+			t.Error("AppEntitlement is nil")
+			return
+		}
+		if x.Expanded == nil || len(x.Expanded) == 0 {
+			t.Error("Expanded is nil or empty")
+			return
+		}
+	}
 }
 
 func TestGetPaths(t *testing.T) {
@@ -59,6 +119,7 @@ func TestGetMarshalledObject(t *testing.T) {
 	mockAppID := "123"
 	now := time.Now()
 	mockAppResourceType := shared.AppResourceType{
+		//
 		AppID:       &mockAppID,
 		CreatedAt:   &now,
 		DisplayName: strToPtr("Example App Resource Type"),
