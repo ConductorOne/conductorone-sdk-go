@@ -10,3 +10,4 @@ uhttp/
 go.mod
 go.sum
 USAGE.md
+tools/

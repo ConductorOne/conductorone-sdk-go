@@ -17,8 +17,8 @@ package main
 
 import (
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
@@ -256,9 +256,9 @@ package main
 import (
 	"context"
 	"errors"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/sdkerrors"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/sdkerrors"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
@@ -286,7 +286,63 @@ func main() {
 
 ```
 <!-- No Error Handling [errors] -->
+## SDK Expander
 
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+func main() {
+	// Create SDK ...
+	req := shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
+		AppEntitlementExpandMask: shared.AppEntitlementExpandMask{
+			Paths: []string{"*"},
+		},
+	}
+	resp, err := s.sdk.RequestCatalogSearch.SearchEntitlements(ctx, &req)
+	if err != nil {
+		return nil, err
+	}
+
+	response := resp.RequestCatalogSearchServiceSearchEntitlementsResponse
+	if response == nil {
+		return nil, nil
+	}
+
+	getStructWithPaths := func(response shared.AppEntitlementView) *shared.AppEntitlementView {
+		return &response
+	}
+
+	expandedResponse, err := GetExpandResponse(response.List, response.Expanded, getStructWithPaths, newMockEntitlement)
+	if err != nil {
+		return nil, err 
+	}
+	return expandedResponse, nil
+
+}
+
+type mockEntitlement struct {
+	*shared.AppEntitlement
+	Expanded map[string]*any
+}
+
+func newMockEntitlement(x shared.AppEntitlementView, expanded map[string]*any) *mockEntitlement {
+	entitlement := x.GetAppEntitlement()
+
+	return &mockEntitlement{
+		AppEntitlement: entitlement,
+		Expanded:       expanded,
+	}
+}
+
+```
 
 ## SDK Example Usage with Custom Server/Tenant
 
@@ -297,8 +353,8 @@ package main
 
 import (
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
-	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
