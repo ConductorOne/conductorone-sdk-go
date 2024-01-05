@@ -45,8 +45,7 @@ func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList 
 			return nil, err
 		}
 		expandedObjects := PopulateExpandedMap(expandedMap, expanded)
-		res := makeResult(response, expandedObjects)
-		result = append(result, res)
+		result = append(result, makeResult(response, expandedObjects))
 	}
 
 	return result, nil
