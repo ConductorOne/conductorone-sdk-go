@@ -30,6 +30,8 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	PageToken *string `json:"pageToken,omitempty"`
 	// Query the app entitlements with a fuzzy search on display name and description.
 	Query *string `json:"query,omitempty"`
+	// Search for app entitlements that belongs to these resources.
+	ResourceIds []string `json:"resourceIds,omitempty"`
 	// Search for app entitlements that are for items on these resource types.
 	ResourceTypeIds []string `json:"resourceTypeIds,omitempty"`
 	// Search for app entitlements with these risk levels.
@@ -125,6 +127,13 @@ func (o *AppEntitlementSearchServiceSearchRequest) GetQuery() *string {
 		return nil
 	}
 	return o.Query
+}
+
+func (o *AppEntitlementSearchServiceSearchRequest) GetResourceIds() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ResourceIds
 }
 
 func (o *AppEntitlementSearchServiceSearchRequest) GetResourceTypeIds() []string {
