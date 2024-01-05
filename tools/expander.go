@@ -27,6 +27,9 @@ type marshalJSON[T any] func(T) ([]byte, error)
 type getStructWithPaths[T, V any] func(T) *V
 type makeExpandedObject[T, V any] func(T, map[string]*any) *V
 
+/* Pass in the list you want to expand along with the expanded list and a function to get the inner object that contains the expanded Paths and a function to create the result object.
+ * See expander_test.go `TestExpandResponse` for an example of how to use this function.
+ */
 func ExpandResponse[T, K, I any, V marshallable](responseList []T, expandedList []V, structWithPaths getStructWithPaths[T, K], makeResult makeExpandedObject[T, I]) ([]*I, error) {
 	expanded := make([]any, 0, len(expandedList))
 	for _, x := range expandedList {
@@ -84,7 +87,7 @@ func GetPaths[T any](v *T) []Path {
 	return paths
 }
 
-/* Pass in the list you want to expand with a function to get the inner object that contains the exapnded Paths
+/* Pass in the list you want to expand with a function to get the inner object that contains the expanded Paths
  * For example:
  * In the case of `v AppEntitlementWithUserBindings` you would pass in a getter that returns
  * v.AppEntitlementView which is a `*AppEntitlementView`, expects a pointer
@@ -98,6 +101,7 @@ func GetMappedJSONPaths[T, V any](item T, structWithPaths getStructWithPaths[T, 
 	return mapJSONPaths[T](item, fn)
 }
 
+// Generic function to map the JSON paths to the respective index in the expanded list.
 func mapJSONPaths[T any](item T, getPaths func(T) []Path) (map[string]int, error) {
 	res := make(map[string]int)
 	for _, path := range getPaths(item) {
@@ -113,6 +117,7 @@ func mapJSONPaths[T any](item T, getPaths func(T) []Path) (map[string]int, error
 	return res, nil
 }
 
+// Use reflection to call the `GetAtType` method on an pointer receiver, func GetAtType() *string.
 func GetAtTypeWithReflection[T any](input *T) *string {
 	inputVal := reflect.ValueOf(input)
 	if inputVal.Kind() != reflect.Ptr {
@@ -138,6 +143,12 @@ func GetAtTypeWithReflection[T any](input *T) *string {
 	return asTypeValue
 }
 
+/* Generic function using reflection to convert a struct that implements the following interface, note the pointer receiver on GetAtType:
+ * type Foo struct {
+ *   MarshalJSON() ([]byte, error)
+ *   GetAtType() *string (pointer receiver)
+ * }
+ */
 func GetMarshalledObject[T marshallable](input T) (any, error) {
 	getAtType := GetAtTypeWithReflection[T]
 	marshall := func(input T) ([]byte, error) {
@@ -146,6 +157,7 @@ func GetMarshalledObject[T marshallable](input T) (any, error) {
 	return AtTypeToObject(input, getAtType, marshall)
 }
 
+// Generic function to marshal an object to JSON then unmarshal it to the desired type.
 func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 	d, err := marshal(input)
 	if err != nil {
@@ -161,6 +173,7 @@ func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 	return &rv, nil
 }
 
+// Convert Speakeasy's `GetAtType` to the respective object.
 func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJSON[T]) (any, error) {
 	inputType := getAtType(&input)
 	if inputType == nil {
