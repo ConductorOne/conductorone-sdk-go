@@ -55,7 +55,7 @@ func TestExpandResponse(t *testing.T) {
 		return &response
 	}
 
-	x, err := ExpandResponse(response.List, response.Expanded, getStructWithPaths, newMockEntitlement)
+	x, err := GetExpandResponse(response.List, response.Expanded, getStructWithPaths, newMockEntitlement)
 	if err != nil {
 		t.Error("Error expanding response:", err)
 		return
