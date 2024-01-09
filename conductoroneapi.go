@@ -94,6 +94,7 @@ type ConductoroneAPI struct {
 	RequestCatalogSearch      *RequestCatalogSearch
 	TaskSearch                *TaskSearch
 	UserSearch                *UserSearch
+	SessionSettings           *SessionSettings
 	Task                      *Task
 	TaskActions               *TaskActions
 	User                      *User
@@ -186,9 +187,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "2.4.1",
-			GenVersion:        "2.228.1",
-			UserAgent:         "speakeasy-sdk/go 2.4.1 2.228.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "2.4.2",
+			GenVersion:        "2.230.3",
+			UserAgent:         "speakeasy-sdk/go 2.4.2 2.230.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -269,6 +270,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TaskSearch = newTaskSearch(sdk.sdkConfiguration)
 
 	sdk.UserSearch = newUserSearch(sdk.sdkConfiguration)
+
+	sdk.SessionSettings = newSessionSettings(sdk.sdkConfiguration)
 
 	sdk.Task = newTask(sdk.sdkConfiguration)
 

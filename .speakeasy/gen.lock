@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: d9e07290-972a-40a1-9c7c-19727abecfc9
 management:
-  docChecksum: 9c0893bde6be27f571b26c74233be99d
+  docChecksum: 7004709fb63a065761c587feaf4ad036
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.228.1
-  releaseVersion: 2.4.1
-  configChecksum: c81a018b3d774953dbed994eb26fe523
+  generationVersion: 2.230.3
+  releaseVersion: 2.4.2
+  configChecksum: e0bd69ef46d495ccde09a74f102c22cd
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -51,6 +51,7 @@ generatedFiles:
   - requestcatalogsearch.go
   - tasksearch.go
   - usersearch.go
+  - sessionsettings.go
   - task.go
   - taskactions.go
   - user.go
@@ -151,6 +152,8 @@ generatedFiles:
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
   - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
   - /pkg/models/operations/c1apiuserv1usersearchsearch.go
+  - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceget.go
+  - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdate.go
   - /pkg/models/operations/c1apitaskv1taskservicecreategranttask.go
   - /pkg/models/operations/c1apitaskv1taskservicecreaterevoketask.go
   - /pkg/models/operations/c1apitaskv1taskserviceget.go
@@ -385,6 +388,10 @@ generatedFiles:
   - /pkg/models/shared/searchusersrequest.go
   - /pkg/models/shared/userref.go
   - /pkg/models/shared/userexpandmask.go
+  - /pkg/models/shared/getsessionsettingsresponse.go
+  - /pkg/models/shared/sessionsettings.go
+  - /pkg/models/shared/updatesessionsettingsresponse.go
+  - /pkg/models/shared/updatesessionsettingsrequest.go
   - /pkg/models/shared/taskservicecreategrantresponse.go
   - /pkg/models/shared/taskservicecreategrantrequest.go
   - /pkg/models/shared/taskservicecreaterevokeresponse.go
@@ -544,6 +551,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
   - docs/pkg/models/operations/c1apiuserv1usersearchsearchresponse.md
+  - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
+  - docs/pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskservicegetrequest.md
@@ -849,6 +858,10 @@ generatedFiles:
   - docs/pkg/models/shared/searchusersrequest.md
   - docs/pkg/models/shared/userref.md
   - docs/pkg/models/shared/userexpandmask.md
+  - docs/pkg/models/shared/getsessionsettingsresponse.md
+  - docs/pkg/models/shared/sessionsettings.md
+  - docs/pkg/models/shared/updatesessionsettingsresponse.md
+  - docs/pkg/models/shared/updatesessionsettingsrequest.md
   - docs/pkg/models/shared/taskservicecreategrantresponseexpanded.md
   - docs/pkg/models/shared/taskservicecreategrantresponse.md
   - docs/pkg/models/shared/taskservicecreategrantrequest.md
@@ -907,6 +920,7 @@ generatedFiles:
   - docs/sdks/requestcatalogsearch/README.md
   - docs/sdks/tasksearch/README.md
   - docs/sdks/usersearch/README.md
+  - docs/sdks/sessionsettings/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taskactions/README.md
   - docs/sdks/user/README.md
