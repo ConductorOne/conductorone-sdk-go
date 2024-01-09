@@ -333,6 +333,51 @@ func main() {
 }
 
 ```
+## SDK Example Usage with Pagination
+
+### Example
+
+```go
+func main() {
+	ctx := context.Background()
+
+	s, err := sdk.NewWithCredentials(...)
+	if err != nil {
+		panic(err)
+	}
+
+	pageSize := 1.0
+	abort := make(chan int)
+	ch := Paginate[
+		operations.C1APIAppV1AppsListRequest,
+		*operations.C1APIAppV1AppsListResponse,
+		shared.App,
+	](ctx,
+		operations.C1APIAppV1AppsListRequest{
+			PageSize: &pageSize},
+		func(ctx context.Context, req operations.C1APIAppV1AppsListRequest) (*operations.C1APIAppV1AppsListResponse, error) {
+			return s.Apps.List(ctx, req)
+		},
+		func(resp *operations.C1APIAppV1AppsListResponse) (*string, []shared.App, error) {
+			return resp.GetListAppsResponse().GetNextPageToken(), resp.GetListAppsResponse().GetList(), nil
+		},
+		abort,
+	)
+
+	rv := make([]shared.App, 0, 20)
+	for v := range ch {
+		if v.Error != nil {
+			panic(v.Error)
+		}
+		rv = append(rv, v.Message...)
+		if len(rv) == 20 {
+			close(abort)
+			// Be sure to break so no other values are read from the channel since the channel is buffered.
+			break
+		}
+	}
+}
+```
 <!-- No Server Selection [server] -->
 
 <!-- No Custom HTTP Client [http-client] -->
