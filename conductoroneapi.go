@@ -94,6 +94,7 @@ type ConductoroneAPI struct {
 	RequestCatalogSearch      *RequestCatalogSearch
 	TaskSearch                *TaskSearch
 	UserSearch                *UserSearch
+	AWSExternalIDSettings     *AWSExternalIDSettings
 	SessionSettings           *SessionSettings
 	Task                      *Task
 	TaskActions               *TaskActions
@@ -187,9 +188,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "2.4.2",
-			GenVersion:        "2.230.3",
-			UserAgent:         "speakeasy-sdk/go 2.4.2 2.230.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "2.4.3",
+			GenVersion:        "2.231.0",
+			UserAgent:         "speakeasy-sdk/go 2.4.3 2.231.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -270,6 +271,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TaskSearch = newTaskSearch(sdk.sdkConfiguration)
 
 	sdk.UserSearch = newUserSearch(sdk.sdkConfiguration)
+
+	sdk.AWSExternalIDSettings = newAWSExternalIDSettings(sdk.sdkConfiguration)
 
 	sdk.SessionSettings = newSessionSettings(sdk.sdkConfiguration)
 

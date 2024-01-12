@@ -383,3 +383,13 @@ Based on:
 - [go v2.4.2] .
 ### Releases
 - [Go v2.4.2] https://github.com/ConductorOne/conductorone-sdk-go/releases/tag/v2.4.2 - .
+
+## 2024-01-12 22:19:13
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0-alpha 
+- Speakeasy CLI 1.140.0 (2.231.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v2.4.3] .
+### Releases
+- [Go v2.4.3] https://github.com/ConductorOne/conductorone-sdk-go/releases/tag/v2.4.3 - .

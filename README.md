@@ -218,6 +218,10 @@ func main() {
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
 
+### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
+
+* [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
 ### [SessionSettings](docs/sdks/sessionsettings/README.md)
 
 * [Get](docs/sdks/sessionsettings/README.md#get) - Get

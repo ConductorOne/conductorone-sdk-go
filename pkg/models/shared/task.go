@@ -30,6 +30,7 @@ const (
 	ActionsTaskActionTypeEscalateToEmergencyAccess                Actions = "TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS"
 	ActionsTaskActionTypeChangePolicy                             Actions = "TASK_ACTION_TYPE_CHANGE_POLICY"
 	ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions Actions = "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS"
+	ActionsTaskActionTypeSetInsightsAndRecommendation             Actions = "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION"
 )
 
 func (e Actions) ToPointer() *Actions {
@@ -77,6 +78,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_CHANGE_POLICY":
 		fallthrough
 	case "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS":
+		fallthrough
+	case "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION":
 		*e = Actions(v)
 		return nil
 	default:
