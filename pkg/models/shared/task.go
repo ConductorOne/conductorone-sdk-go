@@ -30,6 +30,7 @@ const (
 	ActionsTaskActionTypeEscalateToEmergencyAccess                Actions = "TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS"
 	ActionsTaskActionTypeChangePolicy                             Actions = "TASK_ACTION_TYPE_CHANGE_POLICY"
 	ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions Actions = "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS"
+	ActionsTaskActionTypeSetInsightsAndRecommendation             Actions = "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION"
 )
 
 func (e Actions) ToPointer() *Actions {
@@ -77,6 +78,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_CHANGE_POLICY":
 		fallthrough
 	case "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS":
+		fallthrough
+	case "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION":
 		*e = Actions(v)
 		return nil
 	default:
@@ -234,7 +237,7 @@ type Task struct {
 	// An array of `google.protobuf.Any` annotations with various base64-encoded data.
 	Annotations []Annotations `json:"annotations,omitempty"`
 	// The count of comments.
-	CommentCount *float64   `json:"commentCount,omitempty"`
+	CommentCount *int       `json:"commentCount,omitempty"`
 	CreatedAt    *time.Time `json:"createdAt,omitempty"`
 	// The ID of the user that is the creator of this task. This may not always match the userId field.
 	CreatedByUserID *string    `json:"createdByUserId,omitempty"`
@@ -314,7 +317,7 @@ func (o *Task) GetAnnotations() []Annotations {
 	return o.Annotations
 }
 
-func (o *Task) GetCommentCount() *float64 {
+func (o *Task) GetCommentCount() *int {
 	if o == nil {
 		return nil
 	}

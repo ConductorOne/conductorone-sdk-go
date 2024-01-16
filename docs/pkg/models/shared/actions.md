@@ -23,3 +23,4 @@
 | `ActionsTaskActionTypeEscalateToEmergencyAccess`                | TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS                   |
 | `ActionsTaskActionTypeChangePolicy`                             | TASK_ACTION_TYPE_CHANGE_POLICY                                  |
 | `ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions` | TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS  |
+| `ActionsTaskActionTypeSetInsightsAndRecommendation`             | TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION                |

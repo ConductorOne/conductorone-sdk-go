@@ -51,7 +51,7 @@ type SearchPoliciesRequest struct {
 	// Search for policies with a case insensitive match on the display name.
 	DisplayName *string `json:"displayName,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	PageSize *float64 `json:"pageSize,omitempty"`
+	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// The policy type to search on. This can be POLICY_TYPE_GRANT, POLICY_TYPE_REVOKE, POLICY_TYPE_CERTIFY, POLICY_TYPE_ACCESS_REQUEST, or POLICY_TYPE_PROVISION.
@@ -69,7 +69,7 @@ func (o *SearchPoliciesRequest) GetDisplayName() *string {
 	return o.DisplayName
 }
 
-func (o *SearchPoliciesRequest) GetPageSize() *float64 {
+func (o *SearchPoliciesRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}

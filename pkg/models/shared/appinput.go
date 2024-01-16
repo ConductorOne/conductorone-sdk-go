@@ -15,7 +15,7 @@ type AppInput struct {
 	// The URL of an icon to display for the app.
 	IconURL *string `json:"iconUrl,omitempty"`
 	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
-	MonthlyCostUsd *float64 `json:"monthlyCostUsd,omitempty"`
+	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
 	// The ID of the Revoke Policy associated with this App.
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 }
@@ -55,7 +55,7 @@ func (o *AppInput) GetIconURL() *string {
 	return o.IconURL
 }
 
-func (o *AppInput) GetMonthlyCostUsd() *float64 {
+func (o *AppInput) GetMonthlyCostUsd() *int {
 	if o == nil {
 		return nil
 	}

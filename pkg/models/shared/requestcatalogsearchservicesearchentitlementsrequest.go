@@ -54,7 +54,7 @@ type RequestCatalogSearchServiceSearchEntitlementsRequest struct {
 	// Include deleted entitlements
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	PageSize *float64 `json:"pageSize,omitempty"`
+	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// Fuzzy search the display name of resource types.
@@ -96,7 +96,7 @@ func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetIncludeDeleted
 	return o.IncludeDeleted
 }
 
-func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetPageSize() *float64 {
+func (o *RequestCatalogSearchServiceSearchEntitlementsRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}
