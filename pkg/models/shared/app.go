@@ -3,7 +3,7 @@
 package shared
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"time"
 )
 
@@ -33,7 +33,7 @@ type App struct {
 	// The URL of a logo to display for the app.
 	LogoURI *string `json:"logoUri,omitempty"`
 	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
-	MonthlyCostUsd *float64 `json:"monthlyCostUsd,omitempty"`
+	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
 	// The ID of the app that created this app, if any.
 	ParentAppID *string `json:"parentAppId,omitempty"`
 	// The ID of the Revoke Policy associated with this App.
@@ -145,7 +145,7 @@ func (o *App) GetLogoURI() *string {
 	return o.LogoURI
 }
 
-func (o *App) GetMonthlyCostUsd() *float64 {
+func (o *App) GetMonthlyCostUsd() *int {
 	if o == nil {
 		return nil
 	}

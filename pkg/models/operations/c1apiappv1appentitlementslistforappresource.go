@@ -3,16 +3,16 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIAppV1AppEntitlementsListForAppResourceRequest struct {
-	AppID             string   `pathParam:"style=simple,explode=false,name=app_id"`
-	AppResourceID     string   `pathParam:"style=simple,explode=false,name=app_resource_id"`
-	AppResourceTypeID string   `pathParam:"style=simple,explode=false,name=app_resource_type_id"`
-	PageSize          *float64 `queryParam:"style=form,explode=true,name=page_size"`
-	PageToken         *string  `queryParam:"style=form,explode=true,name=page_token"`
+	AppID             string  `pathParam:"style=simple,explode=false,name=app_id"`
+	AppResourceID     string  `pathParam:"style=simple,explode=false,name=app_resource_id"`
+	AppResourceTypeID string  `pathParam:"style=simple,explode=false,name=app_resource_type_id"`
+	PageSize          *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken         *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (o *C1APIAppV1AppEntitlementsListForAppResourceRequest) GetAppID() string {
@@ -36,7 +36,7 @@ func (o *C1APIAppV1AppEntitlementsListForAppResourceRequest) GetAppResourceTypeI
 	return o.AppResourceTypeID
 }
 
-func (o *C1APIAppV1AppEntitlementsListForAppResourceRequest) GetPageSize() *float64 {
+func (o *C1APIAppV1AppEntitlementsListForAppResourceRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}

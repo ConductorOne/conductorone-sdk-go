@@ -1,29 +1,12 @@
-configVersion: 1.0.0
-management:
-  docChecksum: fbd8efd7131c39b2a3a132f40ac1045a
-  docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.125.1
-  generationVersion: 2.210.3
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: conductorone-api
-  repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  go:
-    additionalProperties: 0.1.2
-    core: 3.2.2
-    globalSecurity: 2.82.3
-    globalServerURLs: 2.82.1
-    groups: 2.81.2
-    inputOutputModels: 2.83.0
-    nameOverrides: 2.81.1
-    unions: 2.85.2
 go:
-  version: 1.15.0
+  version: 2.0.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
@@ -35,9 +18,6 @@ go:
       shared: pkg/models/shared
       webhooks: pkg/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/ConductorOne/conductorone-sdk-go
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: github.com/conductorone/conductorone-sdk-go
-  published: true
-  repoSubDirectory: .

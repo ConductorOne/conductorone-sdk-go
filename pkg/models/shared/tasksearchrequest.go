@@ -5,7 +5,7 @@ package shared
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"time"
 )
 
@@ -180,7 +180,7 @@ type TaskSearchRequest struct {
 	// Search tasks that were created by any of the users in this array.
 	OpenerIds []string `json:"openerIds,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	PageSize *float64 `json:"pageSize,omitempty"`
+	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// Search tasks that were acted on by any of these users.
@@ -343,7 +343,7 @@ func (o *TaskSearchRequest) GetOpenerIds() []string {
 	return o.OpenerIds
 }
 
-func (o *TaskSearchRequest) GetPageSize() *float64 {
+func (o *TaskSearchRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}

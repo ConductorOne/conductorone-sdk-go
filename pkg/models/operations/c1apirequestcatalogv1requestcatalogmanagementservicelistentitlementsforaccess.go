@@ -3,14 +3,14 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest struct {
-	CatalogID string   `pathParam:"style=simple,explode=false,name=catalog_id"`
-	PageSize  *float64 `queryParam:"style=form,explode=true,name=page_size"`
-	PageToken *string  `queryParam:"style=form,explode=true,name=page_token"`
+	CatalogID string  `pathParam:"style=simple,explode=false,name=catalog_id"`
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest) GetCatalogID() string {
@@ -20,7 +20,7 @@ func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsFor
 	return o.CatalogID
 }
 
-func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest) GetPageSize() *float64 {
+func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}

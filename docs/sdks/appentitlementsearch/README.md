@@ -15,8 +15,8 @@ Search app entitlements based on filters specified in the request body.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
 )
@@ -49,6 +49,9 @@ func main() {
             "string",
         },
         ExcludeAppUserIds: []string{
+            "string",
+        },
+        ResourceIds: []string{
             "string",
         },
         ResourceTypeIds: []string{

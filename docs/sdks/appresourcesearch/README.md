@@ -15,8 +15,8 @@ Search app resources based on filters specified in the request body.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
 	"context"
 	"log"
 )
@@ -32,6 +32,9 @@ func main() {
     ctx := context.Background()
     res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, &shared.SearchAppResourceTypesRequest{
         AppIds: []string{
+            "string",
+        },
+        AppUserIds: []string{
             "string",
         },
         ExcludeResourceTypeIds: []string{

@@ -3,14 +3,14 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIAttributeV1AttributesListAttributeValuesRequest struct {
-	AttributeTypeID string   `pathParam:"style=simple,explode=false,name=attribute_type_id"`
-	PageSize        *float64 `queryParam:"style=form,explode=true,name=page_size"`
-	PageToken       *string  `queryParam:"style=form,explode=true,name=page_token"`
+	AttributeTypeID string  `pathParam:"style=simple,explode=false,name=attribute_type_id"`
+	PageSize        *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken       *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (o *C1APIAttributeV1AttributesListAttributeValuesRequest) GetAttributeTypeID() string {
@@ -20,7 +20,7 @@ func (o *C1APIAttributeV1AttributesListAttributeValuesRequest) GetAttributeTypeI
 	return o.AttributeTypeID
 }
 
-func (o *C1APIAttributeV1AttributesListAttributeValuesRequest) GetPageSize() *float64 {
+func (o *C1APIAttributeV1AttributesListAttributeValuesRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}

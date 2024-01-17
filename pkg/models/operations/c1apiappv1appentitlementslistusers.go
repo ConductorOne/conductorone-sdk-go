@@ -3,15 +3,15 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 
 type C1APIAppV1AppEntitlementsListUsersRequest struct {
-	AppEntitlementID string   `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
-	AppID            string   `pathParam:"style=simple,explode=false,name=app_id"`
-	PageSize         *float64 `queryParam:"style=form,explode=true,name=page_size"`
-	PageToken        *string  `queryParam:"style=form,explode=true,name=page_token"`
+	AppEntitlementID string  `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
+	AppID            string  `pathParam:"style=simple,explode=false,name=app_id"`
+	PageSize         *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken        *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (o *C1APIAppV1AppEntitlementsListUsersRequest) GetAppEntitlementID() string {
@@ -28,7 +28,7 @@ func (o *C1APIAppV1AppEntitlementsListUsersRequest) GetAppID() string {
 	return o.AppID
 }
 
-func (o *C1APIAppV1AppEntitlementsListUsersRequest) GetPageSize() *float64 {
+func (o *C1APIAppV1AppEntitlementsListUsersRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}
