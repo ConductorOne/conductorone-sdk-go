@@ -216,6 +216,15 @@ func main() {
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
 
+### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
+
+* [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
+### [SessionSettings](docs/sdks/sessionsettings/README.md)
+
+* [Get](docs/sdks/sessionsettings/README.md#get) - Get
+* [Update](docs/sdks/sessionsettings/README.md#update) - Update
+
 ### [Task](docs/sdks/task/README.md)
 
 * [CreateGrantTask](docs/sdks/task/README.md#creategranttask) - Create Grant Task

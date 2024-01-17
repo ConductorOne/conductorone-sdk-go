@@ -51,6 +51,9 @@ func main() {
         ExcludeAppUserIds: []string{
             "string",
         },
+        ResourceIds: []string{
+            "string",
+        },
         ResourceTypeIds: []string{
             "string",
         },

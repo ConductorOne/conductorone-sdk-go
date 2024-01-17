@@ -52,7 +52,7 @@ type SearchUsersRequest struct {
 	// Deprecated. Use refs array instead.
 	Ids []string `json:"ids,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
-	PageSize *float64 `json:"pageSize,omitempty"`
+	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// Query the apps with a fuzzy search on display name and emails.
@@ -93,7 +93,7 @@ func (o *SearchUsersRequest) GetIds() []string {
 	return o.Ids
 }
 
-func (o *SearchUsersRequest) GetPageSize() *float64 {
+func (o *SearchUsersRequest) GetPageSize() *int {
 	if o == nil {
 		return nil
 	}
