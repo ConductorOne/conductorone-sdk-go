@@ -188,9 +188,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.16.0",
-			GenVersion:        "2.234.3",
-			UserAgent:         "speakeasy-sdk/go 1.16.0 2.234.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "1.16.1",
+			GenVersion:        "2.237.2",
+			UserAgent:         "speakeasy-sdk/go 1.16.1 2.237.2 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
