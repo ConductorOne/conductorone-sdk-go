@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 5d50829a5cc8442c3d8e1043c0e3ad1d
+  docChecksum: ae7dfd3777581d6e7ded27bca7dc187d
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.237.3
-  releaseVersion: 1.16.3
-  configChecksum: 7de8fa35b79defba526ec6918888094b
+  generationVersion: 2.239.0
+  releaseVersion: 1.16.4
+  configChecksum: dfeb9408c71e6a1331628ee0c2533f0d
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -167,6 +167,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiuserv1userservicelist.go
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/app.go
+  - /pkg/models/shared/user.go
+  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/createapprequest.go
   - /pkg/models/shared/deleteappresponse.go
   - /pkg/models/shared/deleteapprequest.go
@@ -218,8 +220,6 @@ generatedFiles:
   - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappentitlementownerrequest.go
   - /pkg/models/shared/listappentitlementownersresponse.go
-  - /pkg/models/shared/user.go
-  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/removeappentitlementownerresponse.go
   - /pkg/models/shared/removeappentitlementownerrequest.go
   - /pkg/models/shared/setappentitlementownersresponse.go
@@ -577,6 +577,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/app.md
+  - docs/pkg/models/shared/directorystatus.md
+  - docs/pkg/models/shared/user3.md
+  - docs/pkg/models/shared/userprofile.md
+  - docs/pkg/models/shared/userstatus.md
+  - docs/pkg/models/shared/user.md
+  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/createapprequest.md
   - docs/pkg/models/shared/deleteappresponse.md
   - docs/pkg/models/shared/deleteapprequest.md
@@ -646,12 +652,6 @@ generatedFiles:
   - docs/pkg/models/shared/addappentitlementownerresponse.md
   - docs/pkg/models/shared/addappentitlementownerrequest.md
   - docs/pkg/models/shared/listappentitlementownersresponse.md
-  - docs/pkg/models/shared/directorystatus.md
-  - docs/pkg/models/shared/user3.md
-  - docs/pkg/models/shared/userprofile.md
-  - docs/pkg/models/shared/userstatus.md
-  - docs/pkg/models/shared/user.md
-  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/removeappentitlementownerresponse.md
   - docs/pkg/models/shared/removeappentitlementownerrequest.md
   - docs/pkg/models/shared/setappentitlementownersresponse.md
