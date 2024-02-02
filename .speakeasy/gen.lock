@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: ad5ec8c296d561a180c3d614ef2b2ff0
+  docChecksum: ad6c79bb87675625e9f23418a5f18433
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 1.16.0
-  configChecksum: 174cc20597ed3139c16e02e6aef6d0b6
+  generationVersion: 2.248.1
+  releaseVersion: 1.16.1
+  configChecksum: 3633543e6d02e5b2eb86d898eb0b297f
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,7 +15,7 @@ features:
   go:
     additionalProperties: 0.1.2
     core: 3.3.1
-    globalSecurity: 2.82.3
+    globalSecurity: 2.82.6
     globalServerURLs: 2.82.1
     groups: 2.81.2
     inputOutputModels: 2.83.0
@@ -23,6 +23,7 @@ features:
     unions: 2.85.2
 generatedFiles:
   - apps.go
+  - appuser.go
   - connector.go
   - appentitlements.go
   - appentitlementuserbinding.go
@@ -34,7 +35,6 @@ generatedFiles:
   - appresource.go
   - appresourceowners.go
   - appusagecontrols.go
-  - appuser.go
   - attributes.go
   - auth.go
   - requestcatalogmanagement.go
@@ -57,7 +57,6 @@ generatedFiles:
   - taskactions.go
   - user.go
   - conductoroneapi.go
-  - tests/helpers.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
@@ -79,6 +78,9 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appsget.go
   - /pkg/models/operations/c1apiappv1appslist.go
   - /pkg/models/operations/c1apiappv1appsupdate.go
+  - /pkg/models/operations/c1apiappv1appuserservicelist.go
+  - /pkg/models/operations/c1apiappv1appuserservicelistappusercredentials.go
+  - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
   - /pkg/models/operations/c1apiappv1connectorservicedelete.go
@@ -113,7 +115,6 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appresourceownerslist.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceget.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
-  - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiattributev1attributescreateattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributesdeleteattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributesgetattributevalue.go
@@ -168,6 +169,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiuserv1userservicelist.go
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/app.go
+  - /pkg/models/shared/user.go
+  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/createapprequest.go
   - /pkg/models/shared/deleteappresponse.go
   - /pkg/models/shared/deleteapprequest.go
@@ -176,6 +179,17 @@ generatedFiles:
   - /pkg/models/shared/updateappresponse.go
   - /pkg/models/shared/updateapprequest.go
   - /pkg/models/shared/appinput.go
+  - /pkg/models/shared/appuserservicelistresponse.go
+  - /pkg/models/shared/appuserview.go
+  - /pkg/models/shared/appuser.go
+  - /pkg/models/shared/appuserstatus.go
+  - /pkg/models/shared/appuserservicelistcredentialsresponse.go
+  - /pkg/models/shared/appusercredential.go
+  - /pkg/models/shared/encrypteddata.go
+  - /pkg/models/shared/appuserserviceupdateresponse.go
+  - /pkg/models/shared/appuserserviceupdaterequest.go
+  - /pkg/models/shared/appuserexpandmask.go
+  - /pkg/models/shared/appuserstatusinput.go
   - /pkg/models/shared/connectorservicecreateresponse.go
   - /pkg/models/shared/connectorview.go
   - /pkg/models/shared/connector.go
@@ -208,9 +222,6 @@ generatedFiles:
   - /pkg/models/shared/listappentitlementsresponse.go
   - /pkg/models/shared/listappentitlementusersresponse.go
   - /pkg/models/shared/appentitlementuserview.go
-  - /pkg/models/shared/appuserview.go
-  - /pkg/models/shared/appuser.go
-  - /pkg/models/shared/appuserstatus.go
   - /pkg/models/shared/updateappentitlementresponse.go
   - /pkg/models/shared/updateappentitlementrequest.go
   - /pkg/models/shared/appentitlementexpandmask.go
@@ -219,8 +230,6 @@ generatedFiles:
   - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappentitlementownerrequest.go
   - /pkg/models/shared/listappentitlementownersresponse.go
-  - /pkg/models/shared/user.go
-  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/removeappentitlementownerresponse.go
   - /pkg/models/shared/removeappentitlementownerrequest.go
   - /pkg/models/shared/setappentitlementownersresponse.go
@@ -249,10 +258,6 @@ generatedFiles:
   - /pkg/models/shared/appusagecontrols.go
   - /pkg/models/shared/updateappusagecontrolsresponse.go
   - /pkg/models/shared/updateappusagecontrolsrequest.go
-  - /pkg/models/shared/appuserserviceupdateresponse.go
-  - /pkg/models/shared/appuserserviceupdaterequest.go
-  - /pkg/models/shared/appuserexpandmask.go
-  - /pkg/models/shared/appuserstatusinput.go
   - /pkg/models/shared/createattributevalueresponse.go
   - /pkg/models/shared/attributevalue.go
   - /pkg/models/shared/createattributevaluerequest.go
@@ -423,6 +428,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appslistresponse.md
   - docs/pkg/models/operations/c1apiappv1appsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appsupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreaterequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -491,8 +502,6 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md
-  - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
-  - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributescreateattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md
@@ -578,6 +587,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/app.md
+  - docs/pkg/models/shared/directorystatus.md
+  - docs/pkg/models/shared/user3.md
+  - docs/pkg/models/shared/userprofile.md
+  - docs/pkg/models/shared/userstatus.md
+  - docs/pkg/models/shared/user.md
+  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/createapprequest.md
   - docs/pkg/models/shared/deleteappresponse.md
   - docs/pkg/models/shared/deleteapprequest.md
@@ -586,6 +601,24 @@ generatedFiles:
   - docs/pkg/models/shared/updateappresponse.md
   - docs/pkg/models/shared/updateapprequest.md
   - docs/pkg/models/shared/appinput.md
+  - docs/pkg/models/shared/appuserservicelistresponseexpanded.md
+  - docs/pkg/models/shared/appuserservicelistresponse.md
+  - docs/pkg/models/shared/appuserview.md
+  - docs/pkg/models/shared/appusertype.md
+  - docs/pkg/models/shared/three.md
+  - docs/pkg/models/shared/profile.md
+  - docs/pkg/models/shared/appuser.md
+  - docs/pkg/models/shared/status.md
+  - docs/pkg/models/shared/appuserstatus.md
+  - docs/pkg/models/shared/appuserservicelistcredentialsresponse.md
+  - docs/pkg/models/shared/appusercredential.md
+  - docs/pkg/models/shared/encrypteddata.md
+  - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
+  - docs/pkg/models/shared/appuserserviceupdateresponse.md
+  - docs/pkg/models/shared/appuserserviceupdaterequest.md
+  - docs/pkg/models/shared/appuserexpandmask.md
+  - docs/pkg/models/shared/appuserinput.md
+  - docs/pkg/models/shared/appuserstatusinput.md
   - docs/pkg/models/shared/connectorservicecreateresponseexpanded.md
   - docs/pkg/models/shared/connectorservicecreateresponse.md
   - docs/pkg/models/shared/connectorview.md
@@ -630,13 +663,6 @@ generatedFiles:
   - docs/pkg/models/shared/listappentitlementusersresponseexpanded.md
   - docs/pkg/models/shared/listappentitlementusersresponse.md
   - docs/pkg/models/shared/appentitlementuserview.md
-  - docs/pkg/models/shared/appuserview.md
-  - docs/pkg/models/shared/appusertype.md
-  - docs/pkg/models/shared/three.md
-  - docs/pkg/models/shared/profile.md
-  - docs/pkg/models/shared/appuser.md
-  - docs/pkg/models/shared/status.md
-  - docs/pkg/models/shared/appuserstatus.md
   - docs/pkg/models/shared/updateappentitlementresponseexpanded.md
   - docs/pkg/models/shared/updateappentitlementresponse.md
   - docs/pkg/models/shared/updateappentitlementrequest.md
@@ -647,12 +673,6 @@ generatedFiles:
   - docs/pkg/models/shared/addappentitlementownerresponse.md
   - docs/pkg/models/shared/addappentitlementownerrequest.md
   - docs/pkg/models/shared/listappentitlementownersresponse.md
-  - docs/pkg/models/shared/directorystatus.md
-  - docs/pkg/models/shared/user3.md
-  - docs/pkg/models/shared/userprofile.md
-  - docs/pkg/models/shared/userstatus.md
-  - docs/pkg/models/shared/user.md
-  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/removeappentitlementownerresponse.md
   - docs/pkg/models/shared/removeappentitlementownerrequest.md
   - docs/pkg/models/shared/setappentitlementownersresponse.md
@@ -686,12 +706,6 @@ generatedFiles:
   - docs/pkg/models/shared/appusagecontrols.md
   - docs/pkg/models/shared/updateappusagecontrolsresponse.md
   - docs/pkg/models/shared/updateappusagecontrolsrequest.md
-  - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
-  - docs/pkg/models/shared/appuserserviceupdateresponse.md
-  - docs/pkg/models/shared/appuserserviceupdaterequest.md
-  - docs/pkg/models/shared/appuserexpandmask.md
-  - docs/pkg/models/shared/appuserinput.md
-  - docs/pkg/models/shared/appuserstatusinput.md
   - docs/pkg/models/shared/createattributevalueresponse.md
   - docs/pkg/models/shared/attributevalue.md
   - docs/pkg/models/shared/createattributevaluerequest.md
@@ -899,6 +913,7 @@ generatedFiles:
   - docs/pkg/models/shared/security.md
   - docs/sdks/conductoroneapi/README.md
   - docs/sdks/apps/README.md
+  - docs/sdks/appuser/README.md
   - docs/sdks/connector/README.md
   - docs/sdks/appentitlements/README.md
   - docs/sdks/appentitlementuserbinding/README.md
@@ -910,7 +925,6 @@ generatedFiles:
   - docs/sdks/appresource/README.md
   - docs/sdks/appresourceowners/README.md
   - docs/sdks/appusagecontrols/README.md
-  - docs/sdks/appuser/README.md
   - docs/sdks/attributes/README.md
   - docs/sdks/auth/README.md
   - docs/sdks/requestcatalogmanagement/README.md

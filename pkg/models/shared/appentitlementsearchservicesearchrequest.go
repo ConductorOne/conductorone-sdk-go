@@ -32,7 +32,7 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	Query *string `json:"query,omitempty"`
 	// Search for app entitlements that belongs to these resources.
 	ResourceIds []string `json:"resourceIds,omitempty"`
-	// Search for app entitlements that are for items on these resource types.
+	// Search for app entitlements that are for items with resources types that have matching names. Example names are "group", "role", and "app".
 	ResourceTypeIds []string `json:"resourceTypeIds,omitempty"`
 	// Search for app entitlements with these risk levels.
 	RiskLevelIds []string `json:"riskLevelIds,omitempty"`

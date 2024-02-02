@@ -66,6 +66,7 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // ConductoroneAPI - ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
 type ConductoroneAPI struct {
 	Apps                      *Apps
+	AppUser                   *AppUser
 	Connector                 *Connector
 	AppEntitlements           *AppEntitlements
 	AppEntitlementUserBinding *AppEntitlementUserBinding
@@ -77,7 +78,6 @@ type ConductoroneAPI struct {
 	AppResource               *AppResource
 	AppResourceOwners         *AppResourceOwners
 	AppUsageControls          *AppUsageControls
-	AppUser                   *AppUser
 	Attributes                *Attributes
 	Auth                      *Auth
 	RequestCatalogManagement  *RequestCatalogManagement
@@ -188,9 +188,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.16.0",
-			GenVersion:        "2.234.3",
-			UserAgent:         "speakeasy-sdk/go 1.16.0 2.234.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "1.16.1",
+			GenVersion:        "2.248.1",
+			UserAgent:         "speakeasy-sdk/go 1.16.1 2.248.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -216,6 +216,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.Apps = newApps(sdk.sdkConfiguration)
 
+	sdk.AppUser = newAppUser(sdk.sdkConfiguration)
+
 	sdk.Connector = newConnector(sdk.sdkConfiguration)
 
 	sdk.AppEntitlements = newAppEntitlements(sdk.sdkConfiguration)
@@ -237,8 +239,6 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.AppResourceOwners = newAppResourceOwners(sdk.sdkConfiguration)
 
 	sdk.AppUsageControls = newAppUsageControls(sdk.sdkConfiguration)
-
-	sdk.AppUser = newAppUser(sdk.sdkConfiguration)
 
 	sdk.Attributes = newAttributes(sdk.sdkConfiguration)
 

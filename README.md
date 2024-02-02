@@ -58,6 +58,12 @@ func main() {
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
 
+### [AppUser](docs/sdks/appuser/README.md)
+
+* [List](docs/sdks/appuser/README.md#list) - List
+* [ListAppUserCredentials](docs/sdks/appuser/README.md#listappusercredentials) - List App User Credentials
+* [Update](docs/sdks/appuser/README.md#update) - Update
+
 ### [Connector](docs/sdks/connector/README.md)
 
 * [Create](docs/sdks/connector/README.md#create) - Create
@@ -124,10 +130,6 @@ func main() {
 
 * [Get](docs/sdks/appusagecontrols/README.md#get) - Get
 * [Update](docs/sdks/appusagecontrols/README.md#update) - Update
-
-### [AppUser](docs/sdks/appuser/README.md)
-
-* [Update](docs/sdks/appuser/README.md#update) - Update
 
 ### [Attributes](docs/sdks/attributes/README.md)
 
