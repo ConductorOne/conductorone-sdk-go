@@ -5,8 +5,8 @@ package conductoronesdkgo
 import (
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -188,9 +188,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.16.4",
-			GenVersion:        "2.239.0",
-			UserAgent:         "speakeasy-sdk/go 1.16.4 2.239.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "2.0.0",
+			GenVersion:        "2.248.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.0 2.248.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
