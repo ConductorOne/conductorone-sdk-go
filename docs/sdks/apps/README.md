@@ -34,11 +34,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{
-        Owners: []string{
-            "string",
-        },
-    })
+    res, err := s.Apps.Create(ctx, &shared.CreateAppRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -91,7 +87,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
-        DeleteAppRequest: &shared.DeleteAppRequest{},
         ID: "<ID>",
     })
     if err != nil {
@@ -252,9 +247,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
-        UpdateAppRequest: &shared.UpdateAppRequest{
-            App: &shared.AppInput{},
-        },
         ID: "<ID>",
     })
     if err != nil {

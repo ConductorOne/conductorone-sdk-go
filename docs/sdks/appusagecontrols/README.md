@@ -87,9 +87,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
-        UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
-            AppUsageControls: &shared.AppUsageControls{},
-        },
         AppID: "string",
     })
     if err != nil {

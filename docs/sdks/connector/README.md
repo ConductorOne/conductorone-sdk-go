@@ -41,21 +41,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
-        ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-            Config: &shared.ConnectorServiceCreateRequestConfig{
-                AdditionalProperties: map[string]interface{}{
-                    "key": "string",
-                },
-            },
-            UserIds: []string{
-                "string",
-            },
-        },
         AppID: "string",
     })
     if err != nil {
@@ -110,16 +95,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
-        ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-            UserIds: []string{
-                "string",
-            },
-        },
         AppID: "string",
     })
     if err != nil {
@@ -174,7 +149,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
-        ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
         AppID: "string",
         ID: "<ID>",
     })
@@ -395,7 +369,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
-        ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
         AppID: "string",
         ConnectorID: "string",
         ID: "<ID>",
@@ -452,7 +425,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
-        ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
         AppID: "string",
         ConnectorID: "string",
     })
@@ -508,25 +480,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
-        ConnectorServiceUpdateRequest: &shared.ConnectorServiceUpdateRequest{
-            Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{},
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                Config: &shared.Config{
-                    AdditionalProperties: map[string]interface{}{
-                        "key": "string",
-                    },
-                },
-                UserIds: []string{
-                    "string",
-                },
-            },
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
         AppID: "string",
         ID: "<ID>",
     })
@@ -582,25 +535,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
-        ConnectorServiceUpdateDelegatedRequest: &shared.ConnectorServiceUpdateDelegatedRequest{
-            Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{},
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                Config: &shared.Config{
-                    AdditionalProperties: map[string]interface{}{
-                        "key": "string",
-                    },
-                },
-                UserIds: []string{
-                    "string",
-                },
-            },
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
         ConnectorAppID: "string",
         ConnectorID: "string",
     })

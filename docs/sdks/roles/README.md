@@ -140,16 +140,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
-        UpdateRoleRequest: &shared.UpdateRoleRequest{
-            Role: &shared.RoleInput{
-                Permissions: []string{
-                    "string",
-                },
-                ServiceRoles: []string{
-                    "string",
-                },
-            },
-        },
         RoleID: "string",
     })
     if err != nil {

@@ -312,28 +312,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Update(ctx, operations.C1APIAppV1AppEntitlementsUpdateRequest{
-        UpdateAppEntitlementRequest: &shared.UpdateAppEntitlementRequest{
-            AppEntitlement: &shared.AppEntitlementInput{
-                ProvisionPolicy: &shared.ProvisionPolicy{
-                    ConnectorProvision: &shared.ConnectorProvision{},
-                    DelegatedProvision: &shared.DelegatedProvision{},
-                    ManualProvision: &shared.ManualProvision{
-                        UserIds: []string{
-                            "string",
-                        },
-                    },
-                },
-                ComplianceFrameworkValueIds: []string{
-                    "string",
-                },
-                DurationUnset: &shared.DurationUnset{},
-            },
-            AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
         AppID: "string",
         ID: "<ID>",
     })

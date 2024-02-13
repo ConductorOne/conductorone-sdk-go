@@ -33,12 +33,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
-        TaskExpandMask: &shared.TaskExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        TaskGrantSource: &shared.TaskGrantSource{},
         AppEntitlementID: "string",
         AppID: "string",
     })
@@ -93,11 +87,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
-        TaskExpandMask: &shared.TaskExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
         AppEntitlementID: "string",
         AppID: "string",
     })

@@ -30,13 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, &shared.RequestCatalogSearchServiceSearchEntitlementsRequest{
-        AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-    })
+    res, err := s.RequestCatalogSearch.SearchEntitlements(ctx, &shared.RequestCatalogSearchServiceSearchEntitlementsRequest{})
     if err != nil {
         log.Fatal(err)
     }

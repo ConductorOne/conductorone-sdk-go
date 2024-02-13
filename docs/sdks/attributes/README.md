@@ -87,7 +87,6 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
-        DeleteAttributeValueRequest: &shared.DeleteAttributeValueRequest{},
         ID: "<ID>",
     })
     if err != nil {

@@ -6,8 +6,9 @@ generation:
   fixes:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 go:
-  version: 2.0.1
+  version: 2.0.2
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   imports:
