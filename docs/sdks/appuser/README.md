@@ -33,8 +33,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUser.Update(ctx, operations.C1APIAppV1AppUserServiceUpdateRequest{
-        AppUserAppID: "string",
-        AppUserID: "string",
+        AppUserAppID: "<value>",
+        AppUserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

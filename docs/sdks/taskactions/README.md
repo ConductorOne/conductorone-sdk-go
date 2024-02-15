@@ -36,7 +36,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -90,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -144,7 +144,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -198,7 +198,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.EscalateToEmergencyAccess(ctx, operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest{
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -252,7 +252,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Restart(ctx, operations.C1APITaskV1TaskActionsServiceRestartRequest{
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

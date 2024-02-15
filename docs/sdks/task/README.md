@@ -33,8 +33,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
-        AppEntitlementID: "string",
-        AppID: "string",
+        AppEntitlementID: "<value>",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -87,8 +87,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
-        AppEntitlementID: "string",
-        AppID: "string",
+        AppEntitlementID: "<value>",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -142,7 +142,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)

@@ -42,7 +42,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.AddAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -96,7 +96,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.AddAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -201,7 +201,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -255,7 +255,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -359,7 +359,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -413,7 +413,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -467,7 +467,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.RemoveAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -521,7 +521,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.RemoveAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -575,7 +575,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Update(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)

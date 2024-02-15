@@ -41,7 +41,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -95,7 +95,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -149,8 +149,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -204,8 +204,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -259,9 +259,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "string",
-        ConnectorID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ConnectorID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -315,7 +315,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -369,9 +369,9 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
-        AppID: "string",
-        ConnectorID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ConnectorID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -425,8 +425,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
-        AppID: "string",
-        ConnectorID: "string",
+        AppID: "<value>",
+        ConnectorID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -480,8 +480,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -535,8 +535,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
-        ConnectorAppID: "string",
-        ConnectorID: "string",
+        ConnectorAppID: "<value>",
+        ConnectorID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
