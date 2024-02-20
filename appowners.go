@@ -49,12 +49,12 @@ func (s *AppOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -77,7 +77,6 @@ func (s *AppOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwn
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppOwnersAddResponse{
@@ -137,12 +136,12 @@ func (s *AppOwners) List(ctx context.Context, request operations.C1APIAppV1AppOw
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -165,7 +164,6 @@ func (s *AppOwners) List(ctx context.Context, request operations.C1APIAppV1AppOw
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppOwnersListResponse{
@@ -227,12 +225,12 @@ func (s *AppOwners) Remove(ctx context.Context, request operations.C1APIAppV1App
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -255,7 +253,6 @@ func (s *AppOwners) Remove(ctx context.Context, request operations.C1APIAppV1App
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppOwnersRemoveResponse{
@@ -317,12 +314,12 @@ func (s *AppOwners) Set(ctx context.Context, request operations.C1APIAppV1AppOwn
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -345,7 +342,6 @@ func (s *AppOwners) Set(ctx context.Context, request operations.C1APIAppV1AppOwn
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppOwnersSetResponse{

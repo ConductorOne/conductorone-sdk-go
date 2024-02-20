@@ -4,9 +4,9 @@ management:
   docChecksum: 82b657688d39d158fa78c4ef0861f886
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.262.2
-  releaseVersion: 2.1.1
-  configChecksum: 5aa026e3b71423ce6578ecad501664b4
+  generationVersion: 2.263.3
+  releaseVersion: 2.1.2
+  configChecksum: b14fbffcfa235fc057882cd4b56166d1
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -14,7 +14,7 @@ management:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.4.0
+    core: 3.4.1
     globalSecurity: 2.82.6
     globalServerURLs: 2.82.1
     groups: 2.81.2

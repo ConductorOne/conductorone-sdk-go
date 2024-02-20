@@ -50,12 +50,12 @@ func (s *Apps) Create(ctx context.Context, request *shared.CreateAppRequest) (*o
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -78,7 +78,6 @@ func (s *Apps) Create(ctx context.Context, request *shared.CreateAppRequest) (*o
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppsCreateResponse{
@@ -140,12 +139,12 @@ func (s *Apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDele
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -168,7 +167,6 @@ func (s *Apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDele
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppsDeleteResponse{
@@ -224,12 +222,12 @@ func (s *Apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequ
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -252,7 +250,6 @@ func (s *Apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequ
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppsGetResponse{
@@ -312,12 +309,12 @@ func (s *Apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRe
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -340,7 +337,6 @@ func (s *Apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRe
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppsListResponse{
@@ -402,12 +398,12 @@ func (s *Apps) Update(ctx context.Context, request operations.C1APIAppV1AppsUpda
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -430,7 +426,6 @@ func (s *Apps) Update(ctx context.Context, request operations.C1APIAppV1AppsUpda
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppsUpdateResponse{

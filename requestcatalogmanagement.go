@@ -50,12 +50,12 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -78,7 +78,6 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse{
@@ -140,12 +139,12 @@ func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -168,7 +167,6 @@ func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse{
@@ -230,12 +228,12 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -258,7 +256,6 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse{
@@ -320,12 +317,12 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -348,7 +345,6 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse{
@@ -404,12 +400,12 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -432,7 +428,6 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse{
@@ -488,12 +483,12 @@ func (s *RequestCatalogManagement) List(ctx context.Context) (*operations.C1APIR
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -516,7 +511,6 @@ func (s *RequestCatalogManagement) List(ctx context.Context) (*operations.C1APIR
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse{
@@ -576,12 +570,12 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -604,7 +598,6 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse{
@@ -664,12 +657,12 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -692,7 +685,6 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse{
@@ -754,12 +746,12 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -782,7 +774,6 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse{
@@ -844,12 +835,12 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -872,7 +863,6 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse{
@@ -934,12 +924,12 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -962,7 +952,6 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse{

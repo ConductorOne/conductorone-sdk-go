@@ -43,12 +43,12 @@ func (s *AppResourceType) Get(ctx context.Context, request operations.C1APIAppV1
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -71,7 +71,6 @@ func (s *AppResourceType) Get(ctx context.Context, request operations.C1APIAppV1
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppResourceTypeServiceGetResponse{
@@ -131,12 +130,12 @@ func (s *AppResourceType) List(ctx context.Context, request operations.C1APIAppV
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -159,7 +158,6 @@ func (s *AppResourceType) List(ctx context.Context, request operations.C1APIAppV
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APIAppV1AppResourceTypeServiceListResponse{

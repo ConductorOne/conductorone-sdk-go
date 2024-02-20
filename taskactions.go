@@ -49,12 +49,12 @@ func (s *TaskActions) Approve(ctx context.Context, request operations.C1APITaskV
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -77,7 +77,6 @@ func (s *TaskActions) Approve(ctx context.Context, request operations.C1APITaskV
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APITaskV1TaskActionsServiceApproveResponse{
@@ -139,12 +138,12 @@ func (s *TaskActions) Comment(ctx context.Context, request operations.C1APITaskV
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -167,7 +166,6 @@ func (s *TaskActions) Comment(ctx context.Context, request operations.C1APITaskV
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APITaskV1TaskActionsServiceCommentResponse{
@@ -229,12 +227,12 @@ func (s *TaskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -257,7 +255,6 @@ func (s *TaskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APITaskV1TaskActionsServiceDenyResponse{
@@ -319,12 +316,12 @@ func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request ope
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -347,7 +344,6 @@ func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request ope
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse{
@@ -409,12 +405,12 @@ func (s *TaskActions) Restart(ctx context.Context, request operations.C1APITaskV
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
-	client := s.sdkConfiguration.SecurityClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -437,7 +433,6 @@ func (s *TaskActions) Restart(ctx context.Context, request operations.C1APITaskV
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.C1APITaskV1TaskActionsServiceRestartResponse{
