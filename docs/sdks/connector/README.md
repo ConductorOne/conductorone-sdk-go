@@ -6,6 +6,7 @@
 * [Create](#create) - Create
 * [CreateDelegated](#createdelegated) - Create Delegated
 * [Delete](#delete) - Delete
+* [ForceSync](#forcesync) - Force Sync
 * [Get](#get) - Get
 * [GetCredentials](#getcredentials) - Get Credentials
 * [List](#list) - List
@@ -173,6 +174,61 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceDeleteResponse](../../pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
+
+## ForceSync
+
+Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go/v2"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.Connector.ForceSync(ctx, operations.C1APIAppV1ConnectorServiceForceSyncRequest{
+        AppID: "<value>",
+        ConnectorID: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.ForceSyncResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
+| `request`                                                                                                                          | [operations.C1APIAppV1ConnectorServiceForceSyncRequest](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
+
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceForceSyncResponse](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
