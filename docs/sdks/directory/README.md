@@ -33,13 +33,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Directory.Create(ctx, &shared.DirectoryServiceCreateRequest{
-        DirectoryExpandMask: &shared.DirectoryExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-    })
+    res, err := s.Directory.Create(ctx, &shared.DirectoryServiceCreateRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -92,8 +86,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
-        DirectoryServiceDeleteRequest: &shared.DirectoryServiceDeleteRequest{},
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -147,7 +140,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

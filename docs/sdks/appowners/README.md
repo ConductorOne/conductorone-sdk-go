@@ -35,9 +35,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
-        AddAppOwnerRequest: &shared.AddAppOwnerRequest{},
-        AppID: "string",
-        UserID: "string",
+        AppID: "<value>",
+        UserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -91,7 +90,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -145,9 +144,8 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
-        RemoveAppOwnerRequest: &shared.RemoveAppOwnerRequest{},
-        AppID: "string",
-        UserID: "string",
+        AppID: "<value>",
+        UserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -201,12 +199,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppOwners.Set(ctx, operations.C1APIAppV1AppOwnersSetRequest{
-        SetAppOwnersRequest: &shared.SetAppOwnersRequest{
-            UserIds: []string{
-                "string",
-            },
-        },
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

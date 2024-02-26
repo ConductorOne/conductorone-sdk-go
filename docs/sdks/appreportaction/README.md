@@ -32,8 +32,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppReportAction.GenerateReport(ctx, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
-        AppActionsServiceGenerateReportRequest: &shared.AppActionsServiceGenerateReportRequest{},
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

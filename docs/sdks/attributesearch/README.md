@@ -30,17 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AttributeSearch.SearchAttributeValues(ctx, &shared.SearchAttributeValuesRequest{
-        AttributeTypeIds: []string{
-            "string",
-        },
-        ExcludeIds: []string{
-            "string",
-        },
-        Ids: []string{
-            "string",
-        },
-    })
+    res, err := s.AttributeSearch.SearchAttributeValues(ctx, &shared.SearchAttributeValuesRequest{})
     if err != nil {
         log.Fatal(err)
     }

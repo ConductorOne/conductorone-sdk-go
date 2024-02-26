@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)

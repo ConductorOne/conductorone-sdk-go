@@ -33,7 +33,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Get(ctx, operations.C1APIAppV1AppUsageControlsServiceGetRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -87,10 +87,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUsageControls.Update(ctx, operations.C1APIAppV1AppUsageControlsServiceUpdateRequest{
-        UpdateAppUsageControlsRequest: &shared.UpdateAppUsageControlsRequest{
-            AppUsageControls: &shared.AppUsageControls{},
-        },
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)

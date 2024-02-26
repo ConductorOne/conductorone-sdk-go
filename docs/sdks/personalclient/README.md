@@ -30,14 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.PersonalClient.Create(ctx, &shared.PersonalClientServiceCreateRequest{
-        AllowSourceCidr: []string{
-            "string",
-        },
-        ScopedRoles: []string{
-            "string",
-        },
-    })
+    res, err := s.PersonalClient.Create(ctx, &shared.PersonalClientServiceCreateRequest{})
     if err != nil {
         log.Fatal(err)
     }

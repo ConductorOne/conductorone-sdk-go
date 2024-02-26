@@ -13,6 +13,8 @@ type App struct {
 	AppAccountID *string `json:"appAccountId,omitempty"`
 	// The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain.
 	AppAccountName *string `json:"appAccountName,omitempty"`
+	// The owners of the app.
+	AppOwners []User `json:"appOwners,omitempty"`
 	// The ID of the Certify Policy associated with this App.
 	CertifyPolicyID *string    `json:"certifyPolicyId,omitempty"`
 	CreatedAt       *time.Time `json:"createdAt,omitempty"`
@@ -66,6 +68,13 @@ func (o *App) GetAppAccountName() *string {
 		return nil
 	}
 	return o.AppAccountName
+}
+
+func (o *App) GetAppOwners() []User {
+	if o == nil {
+		return nil
+	}
+	return o.AppOwners
 }
 
 func (o *App) GetCertifyPolicyID() *string {

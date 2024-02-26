@@ -42,12 +42,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.AddAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest{
-        RequestCatalogManagementServiceAddAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAccessEntitlementsRequest{
-            AccessEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{},
-            },
-        },
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -101,12 +96,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.AddAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest{
-        RequestCatalogManagementServiceAddAppEntitlementsRequest: &shared.RequestCatalogManagementServiceAddAppEntitlementsRequest{
-            AppEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{},
-            },
-        },
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -158,13 +148,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.Create(ctx, &shared.RequestCatalogManagementServiceCreateRequest{
-        RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-    })
+    res, err := s.RequestCatalogManagement.Create(ctx, &shared.RequestCatalogManagementServiceCreateRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -217,8 +201,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
-        RequestCatalogManagementServiceDeleteRequest: &shared.RequestCatalogManagementServiceDeleteRequest{},
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -272,7 +255,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
@@ -376,7 +359,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -430,7 +413,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -484,12 +467,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.RemoveAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
-        RequestCatalogManagementServiceRemoveAccessEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
-            AccessEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{},
-            },
-        },
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -543,12 +521,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.RemoveAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
-        RequestCatalogManagementServiceRemoveAppEntitlementsRequest: &shared.RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
-            AppEntitlements: []shared.AppEntitlementRef{
-                shared.AppEntitlementRef{},
-            },
-        },
-        CatalogID: "string",
+        CatalogID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
@@ -602,36 +575,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.RequestCatalogManagement.Update(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest{
-        RequestCatalogManagementServiceUpdateRequest: &shared.RequestCatalogManagementServiceUpdateRequest{
-            RequestCatalog: &shared.RequestCatalogInput{
-                AccessEntitlements: []shared.AppEntitlementInput{
-                    shared.AppEntitlementInput{
-                        ProvisionPolicy: &shared.ProvisionPolicy{
-                            ConnectorProvision: &shared.ConnectorProvision{},
-                            DelegatedProvision: &shared.DelegatedProvision{},
-                            ManualProvision: &shared.ManualProvision{
-                                UserIds: []string{
-                                    "string",
-                                },
-                            },
-                        },
-                        ComplianceFrameworkValueIds: []string{
-                            "string",
-                        },
-                        DurationUnset: &shared.DurationUnset{},
-                    },
-                },
-                AppIds: []string{
-                    "string",
-                },
-            },
-            RequestCatalogExpandMask: &shared.RequestCatalogExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)

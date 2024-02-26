@@ -5,6 +5,7 @@ package conductoronesdkgo
 import (
 	"context"
 	"fmt"
+	"github.com/conductorone/conductorone-sdk-go/internal/hooks"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"net/http"
@@ -53,6 +54,7 @@ type sdkConfiguration struct {
 	GenVersion        string
 	UserAgent         string
 	RetryConfig       *utils.RetryConfig
+	Hooks             *hooks.Hooks
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -156,7 +158,7 @@ func WithClient(client HTTPClient) SDKOption {
 
 func withSecurity(security interface{}) func(context.Context) (interface{}, error) {
 	return func(context.Context) (interface{}, error) {
-		return &security, nil
+		return security, nil
 	}
 }
 
@@ -188,14 +190,15 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.16.0",
-			GenVersion:        "2.234.3",
-			UserAgent:         "speakeasy-sdk/go 1.16.0 2.234.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "1.17.0",
+			GenVersion:        "2.272.4",
+			UserAgent:         "speakeasy-sdk/go 1.17.0 2.272.4 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
 				},
 			},
+			Hooks: hooks.New(),
 		},
 	}
 	for _, opt := range opts {
@@ -206,6 +209,14 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	if sdk.sdkConfiguration.DefaultClient == nil {
 		sdk.sdkConfiguration.DefaultClient = &http.Client{Timeout: 60 * time.Second}
 	}
+
+	currentServerURL, _ := sdk.sdkConfiguration.GetServerDetails()
+	serverURL := currentServerURL
+	serverURL, sdk.sdkConfiguration.DefaultClient = sdk.sdkConfiguration.Hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.DefaultClient)
+	if serverURL != currentServerURL {
+		sdk.sdkConfiguration.ServerURL = serverURL
+	}
+
 	if sdk.sdkConfiguration.SecurityClient == nil {
 		if sdk.sdkConfiguration.Security != nil {
 			sdk.sdkConfiguration.SecurityClient = utils.ConfigureSecurityClient(sdk.sdkConfiguration.DefaultClient, sdk.sdkConfiguration.Security)

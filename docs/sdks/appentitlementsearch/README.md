@@ -30,37 +30,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppEntitlementSearch.Search(ctx, &shared.AppEntitlementSearchServiceSearchRequest{
-        AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        AppIds: []string{
-            "string",
-        },
-        AppUserIds: []string{
-            "string",
-        },
-        ComplianceFrameworkIds: []string{
-            "string",
-        },
-        ExcludeAppIds: []string{
-            "string",
-        },
-        ExcludeAppUserIds: []string{
-            "string",
-        },
-        ResourceIds: []string{
-            "string",
-        },
-        ResourceTypeIds: []string{
-            "string",
-        },
-        RiskLevelIds: []string{
-            "string",
-        },
-    })
+    res, err := s.AppEntitlementSearch.Search(ctx, &shared.AppEntitlementSearchServiceSearchRequest{})
     if err != nil {
         log.Fatal(err)
     }

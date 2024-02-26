@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: ad5ec8c296d561a180c3d614ef2b2ff0
+  docChecksum: 6fe9b822104116a07ce1dd7e4ec72a94
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 1.16.0
-  configChecksum: 174cc20597ed3139c16e02e6aef6d0b6
+  generationVersion: 2.272.4
+  releaseVersion: 1.17.0
+  configChecksum: 44541c9ce375ac155acd486322c0eed7
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -14,13 +14,13 @@ management:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.3.1
-    globalSecurity: 2.82.3
+    core: 3.4.3
+    globalSecurity: 2.82.7
     globalServerURLs: 2.82.1
     groups: 2.81.2
     inputOutputModels: 2.83.0
     nameOverrides: 2.81.1
-    unions: 2.85.2
+    unions: 2.85.3
 generatedFiles:
   - apps.go
   - connector.go
@@ -57,7 +57,6 @@ generatedFiles:
   - taskactions.go
   - user.go
   - conductoroneapi.go
-  - tests/helpers.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
@@ -82,6 +81,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
   - /pkg/models/operations/c1apiappv1connectorservicedelete.go
+  - /pkg/models/operations/c1apiappv1connectorserviceforcesync.go
   - /pkg/models/operations/c1apiappv1connectorserviceget.go
   - /pkg/models/operations/c1apiappv1connectorservicegetcredentials.go
   - /pkg/models/operations/c1apiappv1connectorservicelist.go
@@ -168,6 +168,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiuserv1userservicelist.go
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/app.go
+  - /pkg/models/shared/user.go
+  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/createapprequest.go
   - /pkg/models/shared/deleteappresponse.go
   - /pkg/models/shared/deleteapprequest.go
@@ -186,6 +188,8 @@ generatedFiles:
   - /pkg/models/shared/connectorservicecreatedelegatedrequest.go
   - /pkg/models/shared/connectorservicedeleteresponse.go
   - /pkg/models/shared/connectorservicedeleterequest.go
+  - /pkg/models/shared/forcesyncresponse.go
+  - /pkg/models/shared/forcesyncrequest.go
   - /pkg/models/shared/connectorservicegetresponse.go
   - /pkg/models/shared/connectorservicegetcredentialsresponse.go
   - /pkg/models/shared/connectorcredential.go
@@ -219,8 +223,6 @@ generatedFiles:
   - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappentitlementownerrequest.go
   - /pkg/models/shared/listappentitlementownersresponse.go
-  - /pkg/models/shared/user.go
-  - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/removeappentitlementownerresponse.go
   - /pkg/models/shared/removeappentitlementownerrequest.go
   - /pkg/models/shared/setappentitlementownersresponse.go
@@ -429,6 +431,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicedeleterequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicegetrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md
@@ -578,6 +582,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/app.md
+  - docs/pkg/models/shared/directorystatus.md
+  - docs/pkg/models/shared/user3.md
+  - docs/pkg/models/shared/userprofile.md
+  - docs/pkg/models/shared/userstatus.md
+  - docs/pkg/models/shared/user.md
+  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/createapprequest.md
   - docs/pkg/models/shared/deleteappresponse.md
   - docs/pkg/models/shared/deleteapprequest.md
@@ -600,6 +610,8 @@ generatedFiles:
   - docs/pkg/models/shared/connectorservicecreatedelegatedrequest.md
   - docs/pkg/models/shared/connectorservicedeleteresponse.md
   - docs/pkg/models/shared/connectorservicedeleterequest.md
+  - docs/pkg/models/shared/forcesyncresponse.md
+  - docs/pkg/models/shared/forcesyncrequest.md
   - docs/pkg/models/shared/connectorservicegetresponseexpanded.md
   - docs/pkg/models/shared/connectorservicegetresponse.md
   - docs/pkg/models/shared/connectorservicegetcredentialsresponse.md
@@ -647,12 +659,6 @@ generatedFiles:
   - docs/pkg/models/shared/addappentitlementownerresponse.md
   - docs/pkg/models/shared/addappentitlementownerrequest.md
   - docs/pkg/models/shared/listappentitlementownersresponse.md
-  - docs/pkg/models/shared/directorystatus.md
-  - docs/pkg/models/shared/user3.md
-  - docs/pkg/models/shared/userprofile.md
-  - docs/pkg/models/shared/userstatus.md
-  - docs/pkg/models/shared/user.md
-  - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/removeappentitlementownerresponse.md
   - docs/pkg/models/shared/removeappentitlementownerrequest.md
   - docs/pkg/models/shared/setappentitlementownersresponse.md
@@ -933,3 +939,4 @@ generatedFiles:
   - docs/sdks/taskactions/README.md
   - docs/sdks/user/README.md
   - .gitattributes
+  - internal/hooks/hooks.go
