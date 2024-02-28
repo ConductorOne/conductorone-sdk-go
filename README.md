@@ -244,6 +244,10 @@ func main() {
 
 * [Get](docs/sdks/user/README.md#get) - Get
 * [List](docs/sdks/user/README.md#list) - List
+
+### [Webhooks](docs/sdks/webhooks/README.md)
+
+* [Test](docs/sdks/webhooks/README.md#test) - Test
 <!-- End Available Resources and Operations [operations] -->
 
 

@@ -54,6 +54,8 @@ type AppEntitlement struct {
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The unique ID for the App Entitlement.
 	ID *string `json:"id,omitempty"`
+	// Flag to indicate if the app entitlement is manually managed.
+	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
@@ -203,6 +205,13 @@ func (o *AppEntitlement) GetID() *string {
 	return o.ID
 }
 
+func (o *AppEntitlement) GetIsManuallyManaged() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsManuallyManaged
+}
+
 func (o *AppEntitlement) GetRevokePolicyID() *string {
 	if o == nil {
 		return nil
@@ -281,6 +290,8 @@ type AppEntitlementInput struct {
 	EmergencyGrantPolicyID *string `json:"emergencyGrantPolicyId,omitempty"`
 	// The ID of the policy that will be used for grant tickets related to the app entitlement.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
+	// Flag to indicate if the app entitlement is manually managed.
+	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
@@ -379,6 +390,13 @@ func (o *AppEntitlementInput) GetGrantPolicyID() *string {
 		return nil
 	}
 	return o.GrantPolicyID
+}
+
+func (o *AppEntitlementInput) GetIsManuallyManaged() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsManuallyManaged
 }
 
 func (o *AppEntitlementInput) GetRevokePolicyID() *string {

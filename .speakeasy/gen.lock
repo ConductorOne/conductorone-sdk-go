@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 6fe9b822104116a07ce1dd7e4ec72a94
+  docChecksum: 7936c3075a84fea09a3206656eee3f52
   docVersion: 0.1.0-alpha
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 1.17.0
-  configChecksum: 44541c9ce375ac155acd486322c0eed7
+  generationVersion: 2.272.7
+  releaseVersion: 1.17.1
+  configChecksum: 63da59112fb66b066b1af7a0bb2da6a2
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,7 +15,7 @@ features:
   go:
     additionalProperties: 0.1.2
     core: 3.4.3
-    globalSecurity: 2.82.7
+    globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
     groups: 2.81.2
     inputOutputModels: 2.83.0
@@ -56,6 +56,7 @@ generatedFiles:
   - task.go
   - taskactions.go
   - user.go
+  - webhooks.go
   - conductoroneapi.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
@@ -166,6 +167,7 @@ generatedFiles:
   - /pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
   - /pkg/models/operations/c1apiuserv1userserviceget.go
   - /pkg/models/operations/c1apiuserv1userservicelist.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksservicetest.go
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/app.go
   - /pkg/models/shared/user.go
@@ -415,6 +417,15 @@ generatedFiles:
   - /pkg/models/shared/taskactionsservicerestartrequest.go
   - /pkg/models/shared/userservicegetresponse.go
   - /pkg/models/shared/userservicelistresponse.go
+  - /pkg/models/shared/webhooksservicetestresponse.go
+  - /pkg/models/shared/webhookinstance.go
+  - /pkg/models/shared/webhookspec.go
+  - /pkg/models/shared/webhooksource.go
+  - /pkg/models/shared/webhooksourcetest.go
+  - /pkg/models/shared/webhooksourceprovisionstep.go
+  - /pkg/models/shared/webhooksourcepolicypostaction.go
+  - /pkg/models/shared/webhooksourceapprovalstep.go
+  - /pkg/models/shared/webhooksservicetestrequest.go
   - /pkg/models/shared/security.go
   - docs/pkg/models/operations/c1apiappv1appscreateresponse.md
   - docs/pkg/models/operations/c1apiappv1appsdeleterequest.md
@@ -580,6 +591,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1userservicegetresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestrequest.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/app.md
   - docs/pkg/models/shared/directorystatus.md
@@ -902,6 +915,17 @@ generatedFiles:
   - docs/pkg/models/shared/userservicegetresponse.md
   - docs/pkg/models/shared/userservicelistresponseexpanded.md
   - docs/pkg/models/shared/userservicelistresponse.md
+  - docs/pkg/models/shared/webhooksservicetestresponse.md
+  - docs/pkg/models/shared/webhookinstancestate.md
+  - docs/pkg/models/shared/webhookinstance.md
+  - docs/pkg/models/shared/payload.md
+  - docs/pkg/models/shared/webhookspec.md
+  - docs/pkg/models/shared/webhooksource.md
+  - docs/pkg/models/shared/webhooksourcetest.md
+  - docs/pkg/models/shared/webhooksourceprovisionstep.md
+  - docs/pkg/models/shared/webhooksourcepolicypostaction.md
+  - docs/pkg/models/shared/webhooksourceapprovalstep.md
+  - docs/pkg/models/shared/webhooksservicetestrequest.md
   - docs/pkg/models/shared/security.md
   - docs/sdks/conductoroneapi/README.md
   - docs/sdks/apps/README.md
@@ -938,5 +962,6 @@ generatedFiles:
   - docs/sdks/task/README.md
   - docs/sdks/taskactions/README.md
   - docs/sdks/user/README.md
+  - docs/sdks/webhooks/README.md
   - .gitattributes
   - internal/hooks/hooks.go
