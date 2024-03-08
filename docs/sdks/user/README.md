@@ -38,7 +38,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UserServiceGetResponse != nil {
         // handle response
     }
@@ -90,7 +89,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UserServiceListResponse != nil {
         // handle response
     }

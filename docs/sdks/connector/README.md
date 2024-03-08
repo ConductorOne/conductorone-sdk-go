@@ -47,7 +47,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceCreateResponse != nil {
         // handle response
     }
@@ -101,7 +100,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceCreateResponse != nil {
         // handle response
     }
@@ -156,7 +154,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceDeleteResponse != nil {
         // handle response
     }
@@ -211,7 +208,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ForceSyncResponse != nil {
         // handle response
     }
@@ -266,7 +262,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceGetResponse != nil {
         // handle response
     }
@@ -322,7 +317,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceGetCredentialsResponse != nil {
         // handle response
     }
@@ -376,7 +370,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceListResponse != nil {
         // handle response
     }
@@ -432,7 +425,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceRevokeCredentialResponse != nil {
         // handle response
     }
@@ -487,7 +479,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceRotateCredentialResponse != nil {
         // handle response
     }
@@ -542,7 +533,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceUpdateResponse != nil {
         // handle response
     }
@@ -597,7 +587,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceUpdateResponse != nil {
         // handle response
     }

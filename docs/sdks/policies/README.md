@@ -38,7 +38,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CreatePolicyResponse != nil {
         // handle response
     }
@@ -92,7 +91,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DeletePolicyResponse != nil {
         // handle response
     }
@@ -146,7 +144,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetPolicyResponse != nil {
         // handle response
     }
@@ -198,7 +195,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListPolicyResponse != nil {
         // handle response
     }
@@ -252,7 +248,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdatePolicyResponse != nil {
         // handle response
     }

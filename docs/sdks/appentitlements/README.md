@@ -43,7 +43,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetAppEntitlementResponse != nil {
         // handle response
     }
@@ -97,7 +96,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -153,7 +151,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -208,7 +205,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -263,7 +259,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementUsersResponse != nil {
         // handle response
     }
@@ -318,7 +313,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateAppEntitlementResponse != nil {
         // handle response
     }

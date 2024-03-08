@@ -41,7 +41,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceApproveResponse != nil {
         // handle response
     }
@@ -95,7 +94,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceCommentResponse != nil {
         // handle response
     }
@@ -149,7 +147,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceDenyResponse != nil {
         // handle response
     }
@@ -203,7 +200,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceActionResponse != nil {
         // handle response
     }
@@ -257,7 +253,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceRestartResponse != nil {
         // handle response
     }

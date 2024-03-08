@@ -35,7 +35,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetSessionSettingsResponse != nil {
         // handle response
     }
@@ -85,7 +84,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateSessionSettingsResponse != nil {
         // handle response
     }

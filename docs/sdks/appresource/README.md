@@ -40,7 +40,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AppResourceServiceGetResponse != nil {
         // handle response
     }
@@ -95,7 +94,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AppResourceServiceListResponse != nil {
         // handle response
     }

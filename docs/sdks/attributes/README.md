@@ -38,7 +38,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CreateAttributeValueResponse != nil {
         // handle response
     }
@@ -92,7 +91,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DeleteAttributeValueResponse != nil {
         // handle response
     }
@@ -146,7 +144,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetAttributeValueResponse != nil {
         // handle response
     }
@@ -198,7 +195,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAttributeTypesResponse != nil {
         // handle response
     }
@@ -252,7 +248,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAttributeValuesResponse != nil {
         // handle response
     }

@@ -39,7 +39,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetRolesResponse != nil {
         // handle response
     }
@@ -91,7 +90,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListRolesResponse != nil {
         // handle response
     }
@@ -145,7 +143,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateRolesResponse != nil {
         // handle response
     }

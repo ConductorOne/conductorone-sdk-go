@@ -41,7 +41,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AddAppOwnerResponse != nil {
         // handle response
     }
@@ -95,7 +94,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppOwnersResponse != nil {
         // handle response
     }
@@ -150,7 +148,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RemoveAppOwnerResponse != nil {
         // handle response
     }
@@ -204,7 +201,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SetAppOwnersResponse != nil {
         // handle response
     }

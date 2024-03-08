@@ -37,7 +37,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DirectoryServiceCreateResponse != nil {
         // handle response
     }
@@ -91,7 +90,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DirectoryServiceDeleteResponse != nil {
         // handle response
     }
@@ -145,7 +143,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DirectoryServiceGetResponse != nil {
         // handle response
     }
@@ -197,7 +194,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DirectoryServiceListResponse != nil {
         // handle response
     }

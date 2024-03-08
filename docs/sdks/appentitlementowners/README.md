@@ -41,7 +41,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AddAppEntitlementOwnerResponse != nil {
         // handle response
     }
@@ -96,7 +95,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementOwnersResponse != nil {
         // handle response
     }
@@ -152,7 +150,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RemoveAppEntitlementOwnerResponse != nil {
         // handle response
     }
@@ -207,7 +204,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SetAppEntitlementOwnersResponse != nil {
         // handle response
     }

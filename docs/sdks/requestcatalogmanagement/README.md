@@ -47,7 +47,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceAddAccessEntitlementsResponse != nil {
         // handle response
     }
@@ -101,7 +100,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceAddAppEntitlementsResponse != nil {
         // handle response
     }
@@ -152,7 +150,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceGetResponse != nil {
         // handle response
     }
@@ -206,7 +203,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceDeleteResponse != nil {
         // handle response
     }
@@ -260,7 +256,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceGetResponse != nil {
         // handle response
     }
@@ -311,7 +306,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceListResponse != nil {
         // handle response
     }
@@ -364,7 +358,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceListEntitlementsForAccessResponse != nil {
         // handle response
     }
@@ -418,7 +411,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceListEntitlementsPerCatalogResponse != nil {
         // handle response
     }
@@ -472,7 +464,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceRemoveAccessEntitlementsResponse != nil {
         // handle response
     }
@@ -526,7 +517,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceRemoveAppEntitlementsResponse != nil {
         // handle response
     }
@@ -580,7 +570,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.RequestCatalogManagementServiceGetResponse != nil {
         // handle response
     }

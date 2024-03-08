@@ -39,7 +39,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceCreateGrantResponse != nil {
         // handle response
     }
@@ -93,7 +92,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceCreateRevokeResponse != nil {
         // handle response
     }
@@ -147,7 +145,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceGetResponse != nil {
         // handle response
     }
