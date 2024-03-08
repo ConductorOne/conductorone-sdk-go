@@ -62,6 +62,8 @@ type AppEntitlement struct {
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
 	Slug *string `json:"slug,omitempty"`
+	// Map to tell us which connector the entitlement came from.
+	SourceConnectorIds map[string]string `json:"sourceConnectorIds,omitempty"`
 	// This field indicates if this is a system builtin entitlement.
 	SystemBuiltin  *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt      *time.Time `json:"updatedAt,omitempty"`
@@ -233,6 +235,13 @@ func (o *AppEntitlement) GetSlug() *string {
 	return o.Slug
 }
 
+func (o *AppEntitlement) GetSourceConnectorIds() map[string]string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceConnectorIds
+}
+
 func (o *AppEntitlement) GetSystemBuiltin() *bool {
 	if o == nil {
 		return nil
@@ -297,8 +306,10 @@ type AppEntitlementInput struct {
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
-	Slug           *string `json:"slug,omitempty"`
-	UserEditedMask *string `json:"userEditedMask,omitempty"`
+	Slug *string `json:"slug,omitempty"`
+	// Map to tell us which connector the entitlement came from.
+	SourceConnectorIds map[string]string `json:"sourceConnectorIds,omitempty"`
+	UserEditedMask     *string           `json:"userEditedMask,omitempty"`
 }
 
 func (o *AppEntitlementInput) GetProvisionPolicy() *ProvisionPolicy {
@@ -418,6 +429,13 @@ func (o *AppEntitlementInput) GetSlug() *string {
 		return nil
 	}
 	return o.Slug
+}
+
+func (o *AppEntitlementInput) GetSourceConnectorIds() map[string]string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceConnectorIds
 }
 
 func (o *AppEntitlementInput) GetUserEditedMask() *string {
