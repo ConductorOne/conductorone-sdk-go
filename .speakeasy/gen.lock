@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 2fdb77c742d44f1c49e1397765cc5ce1
+  docChecksum: 4fa0ae07800b0badd27f9ec24f95dd56
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 1.18.1
-  configChecksum: 17e2d037cdbaa93b89cdd2c8b8c36aca
+  speakeasyVersion: 1.209.2
+  generationVersion: 2.281.2
+  releaseVersion: 1.18.2
+  configChecksum: 6a91f5be10b752f8078c11a59cdce70f
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -16,7 +16,7 @@ features:
     additionalProperties: 0.1.2
     core: 3.4.4
     globalSecurity: 2.82.8
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     groups: 2.81.2
     inputOutputModels: 2.83.0
     nameOverrides: 2.81.1
@@ -180,7 +180,6 @@ generatedFiles:
   - /pkg/models/shared/listappsresponse.go
   - /pkg/models/shared/updateappresponse.go
   - /pkg/models/shared/updateapprequest.go
-  - /pkg/models/shared/appinput.go
   - /pkg/models/shared/connectorservicecreateresponse.go
   - /pkg/models/shared/connectorview.go
   - /pkg/models/shared/connector.go
@@ -595,6 +594,7 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestrequest.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
   - docs/pkg/models/shared/createappresponse.md
+  - docs/pkg/models/shared/identitymatching.md
   - docs/pkg/models/shared/app.md
   - docs/pkg/models/shared/directorystatus.md
   - docs/pkg/models/shared/user3.md
