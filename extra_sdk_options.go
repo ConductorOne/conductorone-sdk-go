@@ -70,14 +70,17 @@ type ClientConfig struct {
 }
 
 func (c *ClientConfig) UseWithServer() bool {
-	return c.serverURL != ""
+	return c.ServerURL() != ""
 }
 
 func (c *ClientConfig) UseWithTenant() bool {
-	return c.tenant != ""
+	return c.Tenant() != ""
 }
 
 func (c *ClientConfig) SetTenant(tenant string) error {
+	if c == nil {
+		return errors.New("client config is nil, cannot set tenant")
+	}
 	if c.UseWithServer() {
 		return errors.New("cannot set tenant, tenant and serverURL are mutually exclusive")
 	}
@@ -86,6 +89,9 @@ func (c *ClientConfig) SetTenant(tenant string) error {
 }
 
 func (c *ClientConfig) SetServerURL(serverURL string) error {
+	if c == nil {
+		return errors.New("client config is nil, cannot set serverURL")
+	}
 	if c.UseWithTenant() {
 		return errors.New("cannot set serverURL, tenant and serverURL are mutually exclusive")
 	}
@@ -94,11 +100,17 @@ func (c *ClientConfig) SetServerURL(serverURL string) error {
 }
 
 func (c *ClientConfig) Tenant() string {
+	if c == nil {
+		return ""
+	}
 	return c.tenant
 }
 
 // ServerURL returns the server URL.
 func (c *ClientConfig) ServerURL() string {
+	if c == nil {
+		return ""
+	}
 	return c.serverURL
 }
 
