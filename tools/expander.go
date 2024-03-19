@@ -165,9 +165,6 @@ func GetAtTypeWithReflection[T any](input *T) *string {
  */
 func GetMarshalledObject[T marshallable](input T) (any, error) {
 	getAtType := GetAtTypeWithReflection[T]
-	if getAtType == nil {
-		return nil, errors.New("input does not implement GetAtType")
-	}
 	marshall := func(input T) ([]byte, error) {
 		return input.MarshalJSON()
 	}
@@ -194,7 +191,7 @@ func As[T any, V any](input T, marshal marshalJSON[T]) (*V, error) {
 func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJSON[T]) (any, error) {
 	inputType := getAtType(&input)
 	if inputType == nil {
-		return nil, errors.New("input type is nil")
+		return nil, errors.New("unable to call getAtType")
 	}
 
 	switch *inputType {
