@@ -35,7 +35,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetSessionSettingsResponse != nil {
         // handle response
     }
@@ -81,13 +80,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.SessionSettings.Update(ctx, &shared.UpdateSessionSettingsRequest{
-        SessionSettings: &shared.SessionSettings{},
-    })
+    res, err := s.SessionSettings.Update(ctx, &shared.UpdateSessionSettingsRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateSessionSettingsResponse != nil {
         // handle response
     }

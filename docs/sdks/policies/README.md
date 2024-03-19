@@ -34,82 +34,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{
-        PolicySteps: map[string]shared.PolicySteps{
-            "key": shared.PolicySteps{
-                Steps: []shared.PolicyStep{
-                    shared.PolicyStep{
-                        Accept: &shared.Accept{},
-                        Approval: &shared.Approval{
-                            AppGroupApproval: &shared.AppGroupApproval{
-                                FallbackUserIds: []string{
-                                    "string",
-                                },
-                            },
-                            AppOwnerApproval: &shared.AppOwnerApproval{},
-                            EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
-                                FallbackUserIds: []string{
-                                    "string",
-                                },
-                            },
-                            ExpressionApproval: &shared.ExpressionApproval{
-                                AssignedUserIds: []string{
-                                    "string",
-                                },
-                                Expressions: []string{
-                                    "string",
-                                },
-                                FallbackUserIds: []string{
-                                    "string",
-                                },
-                            },
-                            ManagerApproval: &shared.ManagerApproval{
-                                AssignedUserIds: []string{
-                                    "string",
-                                },
-                                FallbackUserIds: []string{
-                                    "string",
-                                },
-                            },
-                            SelfApproval: &shared.SelfApproval{
-                                AssignedUserIds: []string{
-                                    "string",
-                                },
-                                FallbackUserIds: []string{
-                                    "string",
-                                },
-                            },
-                            UserApproval: &shared.UserApproval{
-                                UserIds: []string{
-                                    "string",
-                                },
-                            },
-                        },
-                        Provision: &shared.Provision{
-                            ProvisionPolicy: &shared.ProvisionPolicy{
-                                ConnectorProvision: &shared.ConnectorProvision{},
-                                DelegatedProvision: &shared.DelegatedProvision{},
-                                ManualProvision: &shared.ManualProvision{
-                                    UserIds: []string{
-                                        "string",
-                                    },
-                                },
-                            },
-                            ProvisionTarget: &shared.ProvisionTarget{},
-                        },
-                        Reject: &shared.Reject{},
-                    },
-                },
-            },
-        },
-        PostActions: []shared.PolicyPostActions{
-            shared.PolicyPostActions{},
-        },
-    })
+    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CreatePolicyResponse != nil {
         // handle response
     }
@@ -158,13 +86,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
-        DeletePolicyRequest: &shared.DeletePolicyRequest{},
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DeletePolicyResponse != nil {
         // handle response
     }
@@ -213,12 +139,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetPolicyResponse != nil {
         // handle response
     }
@@ -270,7 +195,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListPolicyResponse != nil {
         // handle response
     }
@@ -319,89 +243,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
-        UpdatePolicyRequest: &shared.UpdatePolicyRequest{
-            Policy: &shared.PolicyInput{
-                PolicySteps: map[string]shared.PolicySteps{
-                    "key": shared.PolicySteps{
-                        Steps: []shared.PolicyStep{
-                            shared.PolicyStep{
-                                Accept: &shared.Accept{},
-                                Approval: &shared.Approval{
-                                    AppGroupApproval: &shared.AppGroupApproval{
-                                        FallbackUserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                    AppOwnerApproval: &shared.AppOwnerApproval{},
-                                    EntitlementOwnerApproval: &shared.EntitlementOwnerApproval{
-                                        FallbackUserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                    ExpressionApproval: &shared.ExpressionApproval{
-                                        AssignedUserIds: []string{
-                                            "string",
-                                        },
-                                        Expressions: []string{
-                                            "string",
-                                        },
-                                        FallbackUserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                    ManagerApproval: &shared.ManagerApproval{
-                                        AssignedUserIds: []string{
-                                            "string",
-                                        },
-                                        FallbackUserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                    SelfApproval: &shared.SelfApproval{
-                                        AssignedUserIds: []string{
-                                            "string",
-                                        },
-                                        FallbackUserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                    UserApproval: &shared.UserApproval{
-                                        UserIds: []string{
-                                            "string",
-                                        },
-                                    },
-                                },
-                                Provision: &shared.Provision{
-                                    ProvisionPolicy: &shared.ProvisionPolicy{
-                                        ConnectorProvision: &shared.ConnectorProvision{},
-                                        DelegatedProvision: &shared.DelegatedProvision{},
-                                        ManualProvision: &shared.ManualProvision{
-                                            UserIds: []string{
-                                                "string",
-                                            },
-                                        },
-                                    },
-                                    ProvisionTarget: &shared.ProvisionTarget{},
-                                },
-                                Reject: &shared.Reject{},
-                            },
-                        },
-                    },
-                },
-                PostActions: []shared.PolicyPostActions{
-                    shared.PolicyPostActions{},
-                },
-                Rules: []shared.Rule{
-                    shared.Rule{},
-                },
-            },
-        },
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdatePolicyResponse != nil {
         // handle response
     }

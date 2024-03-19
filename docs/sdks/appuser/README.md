@@ -33,23 +33,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppUser.Update(ctx, operations.C1APIAppV1AppUserServiceUpdateRequest{
-        AppUserServiceUpdateRequest: &shared.AppUserServiceUpdateRequest{
-            AppUser: &shared.AppUserInput{
-                AppUserStatus: &shared.AppUserStatusInput{},
-            },
-            AppUserExpandMask: &shared.AppUserExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        AppUserAppID: "string",
-        AppUserID: "string",
+        AppUserAppID: "<value>",
+        AppUserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AppUserServiceUpdateResponse != nil {
         // handle response
     }

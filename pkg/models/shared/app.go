@@ -3,9 +3,42 @@
 package shared
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
+
+// IdentityMatching - The identityMatching field.
+type IdentityMatching string
+
+const (
+	IdentityMatchingAppUserIdentityMatchingUnspecified IdentityMatching = "APP_USER_IDENTITY_MATCHING_UNSPECIFIED"
+	IdentityMatchingAppUserIdentityMatchingStrict      IdentityMatching = "APP_USER_IDENTITY_MATCHING_STRICT"
+	IdentityMatchingAppUserIdentityMatchingDisplayName IdentityMatching = "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME"
+)
+
+func (e IdentityMatching) ToPointer() *IdentityMatching {
+	return &e
+}
+
+func (e *IdentityMatching) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "APP_USER_IDENTITY_MATCHING_UNSPECIFIED":
+		fallthrough
+	case "APP_USER_IDENTITY_MATCHING_STRICT":
+		fallthrough
+	case "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME":
+		*e = IdentityMatching(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for IdentityMatching: %v", v)
+	}
+}
 
 // The App object provides all of the details for an app, as well as some configuration.
 type App struct {
@@ -13,6 +46,8 @@ type App struct {
 	AppAccountID *string `json:"appAccountId,omitempty"`
 	// The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain.
 	AppAccountName *string `json:"appAccountName,omitempty"`
+	// The owners of the app.
+	AppOwners []User `json:"appOwners,omitempty"`
 	// The ID of the Certify Policy associated with this App.
 	CertifyPolicyID *string    `json:"certifyPolicyId,omitempty"`
 	CreatedAt       *time.Time `json:"createdAt,omitempty"`
@@ -28,6 +63,8 @@ type App struct {
 	IconURL *string `json:"iconUrl,omitempty"`
 	// The ID of the app.
 	ID *string `json:"id,omitempty"`
+	// The identityMatching field.
+	IdentityMatching *IdentityMatching `json:"identityMatching,omitempty"`
 	// Specifies if the app is a directory.
 	IsDirectory *bool `json:"isDirectory,omitempty"`
 	// The URL of a logo to display for the app.
@@ -66,6 +103,13 @@ func (o *App) GetAppAccountName() *string {
 		return nil
 	}
 	return o.AppAccountName
+}
+
+func (o *App) GetAppOwners() []User {
+	if o == nil {
+		return nil
+	}
+	return o.AppOwners
 }
 
 func (o *App) GetCertifyPolicyID() *string {
@@ -131,6 +175,13 @@ func (o *App) GetID() *string {
 	return o.ID
 }
 
+func (o *App) GetIdentityMatching() *IdentityMatching {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityMatching
+}
+
 func (o *App) GetIsDirectory() *bool {
 	if o == nil {
 		return nil
@@ -178,4 +229,80 @@ func (o *App) GetUserCount() *string {
 		return nil
 	}
 	return o.UserCount
+}
+
+// AppInput - The App object provides all of the details for an app, as well as some configuration.
+type AppInput struct {
+	// The ID of the Certify Policy associated with this App.
+	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
+	// The app's description.
+	Description *string `json:"description,omitempty"`
+	// The app's display name.
+	DisplayName *string `json:"displayName,omitempty"`
+	// The ID of the Grant Policy associated with this App.
+	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
+	// The URL of an icon to display for the app.
+	IconURL *string `json:"iconUrl,omitempty"`
+	// The identityMatching field.
+	IdentityMatching *IdentityMatching `json:"identityMatching,omitempty"`
+	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
+	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
+	// The ID of the Revoke Policy associated with this App.
+	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
+}
+
+func (o *AppInput) GetCertifyPolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.CertifyPolicyID
+}
+
+func (o *AppInput) GetDescription() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Description
+}
+
+func (o *AppInput) GetDisplayName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DisplayName
+}
+
+func (o *AppInput) GetGrantPolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.GrantPolicyID
+}
+
+func (o *AppInput) GetIconURL() *string {
+	if o == nil {
+		return nil
+	}
+	return o.IconURL
+}
+
+func (o *AppInput) GetIdentityMatching() *IdentityMatching {
+	if o == nil {
+		return nil
+	}
+	return o.IdentityMatching
+}
+
+func (o *AppInput) GetMonthlyCostUsd() *int {
+	if o == nil {
+		return nil
+	}
+	return o.MonthlyCostUsd
+}
+
+func (o *AppInput) GetRevokePolicyID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.RevokePolicyID
 }

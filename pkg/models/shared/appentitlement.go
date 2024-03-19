@@ -54,12 +54,16 @@ type AppEntitlement struct {
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The unique ID for the App Entitlement.
 	ID *string `json:"id,omitempty"`
+	// Flag to indicate if the app entitlement is manually managed.
+	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
 	Slug *string `json:"slug,omitempty"`
+	// Map to tell us which connector the entitlement came from.
+	SourceConnectorIds map[string]string `json:"sourceConnectorIds,omitempty"`
 	// This field indicates if this is a system builtin entitlement.
 	SystemBuiltin  *bool      `json:"systemBuiltin,omitempty"`
 	UpdatedAt      *time.Time `json:"updatedAt,omitempty"`
@@ -203,6 +207,13 @@ func (o *AppEntitlement) GetID() *string {
 	return o.ID
 }
 
+func (o *AppEntitlement) GetIsManuallyManaged() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsManuallyManaged
+}
+
 func (o *AppEntitlement) GetRevokePolicyID() *string {
 	if o == nil {
 		return nil
@@ -222,6 +233,13 @@ func (o *AppEntitlement) GetSlug() *string {
 		return nil
 	}
 	return o.Slug
+}
+
+func (o *AppEntitlement) GetSourceConnectorIds() map[string]string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceConnectorIds
 }
 
 func (o *AppEntitlement) GetSystemBuiltin() *bool {
@@ -281,13 +299,17 @@ type AppEntitlementInput struct {
 	EmergencyGrantPolicyID *string `json:"emergencyGrantPolicyId,omitempty"`
 	// The ID of the policy that will be used for grant tickets related to the app entitlement.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
+	// Flag to indicate if the app entitlement is manually managed.
+	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
 	RiskLevelValueID *string `json:"riskLevelValueId,omitempty"`
 	// The slug is displayed as an oval next to the name in the frontend of C1, it tells you what permission the entitlement grants. See https://www.conductorone.com/docs/product/manage-access/entitlements/
-	Slug           *string `json:"slug,omitempty"`
-	UserEditedMask *string `json:"userEditedMask,omitempty"`
+	Slug *string `json:"slug,omitempty"`
+	// Map to tell us which connector the entitlement came from.
+	SourceConnectorIds map[string]string `json:"sourceConnectorIds,omitempty"`
+	UserEditedMask     *string           `json:"userEditedMask,omitempty"`
 }
 
 func (o *AppEntitlementInput) GetProvisionPolicy() *ProvisionPolicy {
@@ -381,6 +403,13 @@ func (o *AppEntitlementInput) GetGrantPolicyID() *string {
 	return o.GrantPolicyID
 }
 
+func (o *AppEntitlementInput) GetIsManuallyManaged() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.IsManuallyManaged
+}
+
 func (o *AppEntitlementInput) GetRevokePolicyID() *string {
 	if o == nil {
 		return nil
@@ -400,6 +429,13 @@ func (o *AppEntitlementInput) GetSlug() *string {
 		return nil
 	}
 	return o.Slug
+}
+
+func (o *AppEntitlementInput) GetSourceConnectorIds() map[string]string {
+	if o == nil {
+		return nil
+	}
+	return o.SourceConnectorIds
 }
 
 func (o *AppEntitlementInput) GetUserEditedMask() *string {

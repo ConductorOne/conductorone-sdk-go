@@ -30,81 +30,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequest{
-        TaskExpandMask: &shared.TaskExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        AccessReviewIds: []string{
-            "string",
-        },
-        AccountOwnerIds: []string{
-            "string",
-        },
-        AppEntitlementIds: []string{
-            "string",
-        },
-        AppResourceIds: []string{
-            "string",
-        },
-        AppResourceTypeIds: []string{
-            "string",
-        },
-        AppUserSubjectIds: []string{
-            "string",
-        },
-        ApplicationIds: []string{
-            "string",
-        },
-        AssigneesInIds: []string{
-            "string",
-        },
-        ExcludeAppEntitlementIds: []string{
-            "string",
-        },
-        ExcludeIds: []string{
-            "string",
-        },
-        MyWorkUserIds: []string{
-            "string",
-        },
-        OpenerIds: []string{
-            "string",
-        },
-        PreviouslyActedOnIds: []string{
-            "string",
-        },
-        Refs: []shared.TaskRef{
-            shared.TaskRef{},
-        },
-        SubjectIds: []string{
-            "string",
-        },
-        TaskStates: []shared.TaskStates{
-            shared.TaskStatesTaskStateUnspecified,
-        },
-        TaskTypes: []shared.TaskTypeInput{
-            shared.TaskTypeInput{
-                TaskTypeCertify: &shared.TaskTypeCertifyInput{},
-                TaskTypeGrant: &shared.TaskTypeGrantInput{
-                    TaskGrantSource: &shared.TaskGrantSource{},
-                },
-                TaskTypeRevoke: &shared.TaskTypeRevokeInput{
-                    TaskRevokeSource: &shared.TaskRevokeSource{
-                        TaskRevokeSourceExpired: &shared.TaskRevokeSourceExpired{},
-                        TaskRevokeSourceNonUsage: &shared.TaskRevokeSourceNonUsage{},
-                        TaskRevokeSourceRequest: &shared.TaskRevokeSourceRequest{},
-                        TaskRevokeSourceReview: &shared.TaskRevokeSourceReview{},
-                    },
-                },
-            },
-        },
-    })
+    res, err := s.TaskSearch.Search(ctx, &shared.TaskSearchRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskSearchResponse != nil {
         // handle response
     }

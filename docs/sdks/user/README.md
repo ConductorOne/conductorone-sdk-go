@@ -33,12 +33,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UserServiceGetResponse != nil {
         // handle response
     }
@@ -90,7 +89,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UserServiceListResponse != nil {
         // handle response
     }

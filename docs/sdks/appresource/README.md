@@ -33,14 +33,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.Get(ctx, operations.C1APIAppV1AppResourceServiceGetRequest{
-        AppID: "string",
-        AppResourceTypeID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        AppResourceTypeID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AppResourceServiceGetResponse != nil {
         // handle response
     }
@@ -89,13 +88,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppResource.List(ctx, operations.C1APIAppV1AppResourceServiceListRequest{
-        AppID: "string",
-        AppResourceTypeID: "string",
+        AppID: "<value>",
+        AppResourceTypeID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.AppResourceServiceListResponse != nil {
         // handle response
     }

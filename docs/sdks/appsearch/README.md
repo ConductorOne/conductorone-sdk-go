@@ -30,18 +30,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppSearch.Search(ctx, &shared.SearchAppsRequest{
-        AppIds: []string{
-            "string",
-        },
-        ExcludeAppIds: []string{
-            "string",
-        },
-    })
+    res, err := s.AppSearch.Search(ctx, &shared.SearchAppsRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SearchAppsResponse != nil {
         // handle response
     }

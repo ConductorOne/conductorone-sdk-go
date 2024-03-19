@@ -30,32 +30,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.UserSearch.Search(ctx, &shared.SearchUsersRequest{
-        UserExpandMask: &shared.UserExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        ExcludeIds: []string{
-            "string",
-        },
-        Ids: []string{
-            "string",
-        },
-        Refs: []shared.UserRef{
-            shared.UserRef{},
-        },
-        RoleIds: []string{
-            "string",
-        },
-        UserStatuses: []shared.UserStatuses{
-            shared.UserStatusesEnabled,
-        },
-    })
+    res, err := s.UserSearch.Search(ctx, &shared.SearchUsersRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SearchUsersResponse != nil {
         // handle response
     }

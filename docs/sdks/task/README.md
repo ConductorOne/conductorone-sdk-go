@@ -33,19 +33,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateGrantTask(ctx, &shared.TaskServiceCreateGrantRequest{
-        TaskExpandMask: &shared.TaskExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        TaskGrantSource: &shared.TaskGrantSource{},
-        AppEntitlementID: "string",
-        AppID: "string",
+        AppEntitlementID: "<value>",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceCreateGrantResponse != nil {
         // handle response
     }
@@ -93,18 +86,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.CreateRevokeTask(ctx, &shared.TaskServiceCreateRevokeRequest{
-        TaskExpandMask: &shared.TaskExpandMask{
-            Paths: []string{
-                "string",
-            },
-        },
-        AppEntitlementID: "string",
-        AppID: "string",
+        AppEntitlementID: "<value>",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceCreateRevokeResponse != nil {
         // handle response
     }
@@ -153,12 +140,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceGetResponse != nil {
         // handle response
     }

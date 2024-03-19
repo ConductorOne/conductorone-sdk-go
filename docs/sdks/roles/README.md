@@ -34,12 +34,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
-        RoleID: "string",
+        RoleID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetRolesResponse != nil {
         // handle response
     }
@@ -91,7 +90,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListRolesResponse != nil {
         // handle response
     }
@@ -140,22 +138,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
-        UpdateRoleRequest: &shared.UpdateRoleRequest{
-            Role: &shared.RoleInput{
-                Permissions: []string{
-                    "string",
-                },
-                ServiceRoles: []string{
-                    "string",
-                },
-            },
-        },
-        RoleID: "string",
+        RoleID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateRolesResponse != nil {
         // handle response
     }

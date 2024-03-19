@@ -30,18 +30,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.PolicySearch.Search(ctx, &shared.SearchPoliciesRequest{
-        PolicyTypes: []shared.PolicyTypes{
-            shared.PolicyTypesPolicyTypeGrant,
-        },
-        Refs: []shared.PolicyRef{
-            shared.PolicyRef{},
-        },
-    })
+    res, err := s.PolicySearch.Search(ctx, &shared.SearchPoliciesRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListPolicyResponse != nil {
         // handle response
     }

@@ -31,6 +31,7 @@ const (
 	ActionsTaskActionTypeChangePolicy                             Actions = "TASK_ACTION_TYPE_CHANGE_POLICY"
 	ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions Actions = "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS"
 	ActionsTaskActionTypeSetInsightsAndRecommendation             Actions = "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION"
+	ActionsTaskActionTypeSetAnalysisID                            Actions = "TASK_ACTION_TYPE_SET_ANALYSIS_ID"
 )
 
 func (e Actions) ToPointer() *Actions {
@@ -80,6 +81,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS":
 		fallthrough
 	case "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION":
+		fallthrough
+	case "TASK_ACTION_TYPE_SET_ANALYSIS_ID":
 		*e = Actions(v)
 		return nil
 	default:

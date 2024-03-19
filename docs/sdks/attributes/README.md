@@ -38,7 +38,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.CreateAttributeValueResponse != nil {
         // handle response
     }
@@ -87,13 +86,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
-        DeleteAttributeValueRequest: &shared.DeleteAttributeValueRequest{},
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.DeleteAttributeValueResponse != nil {
         // handle response
     }
@@ -142,12 +139,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
-        ID: "<ID>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetAttributeValueResponse != nil {
         // handle response
     }
@@ -199,7 +195,6 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAttributeTypesResponse != nil {
         // handle response
     }
@@ -248,12 +243,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "string",
+        AttributeTypeID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAttributeValuesResponse != nil {
         // handle response
     }

@@ -36,20 +36,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
-        TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
-            TaskExpandMask: &shared.TaskExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-            PolicyStepID: "string",
-        },
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceApproveResponse != nil {
         // handle response
     }
@@ -98,19 +89,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Comment(ctx, operations.C1APITaskV1TaskActionsServiceCommentRequest{
-        TaskActionsServiceCommentRequest: &shared.TaskActionsServiceCommentRequest{
-            TaskExpandMask: &shared.TaskExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceCommentResponse != nil {
         // handle response
     }
@@ -159,19 +142,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Deny(ctx, operations.C1APITaskV1TaskActionsServiceDenyRequest{
-        TaskActionsServiceDenyRequest: &shared.TaskActionsServiceDenyRequest{
-            TaskExpandMask: &shared.TaskExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceDenyResponse != nil {
         // handle response
     }
@@ -220,19 +195,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.EscalateToEmergencyAccess(ctx, operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest{
-        TaskActionsServiceEscalateToEmergencyAccessRequest: &shared.TaskActionsServiceEscalateToEmergencyAccessRequest{
-            TaskExpandMask: &shared.TaskExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskServiceActionResponse != nil {
         // handle response
     }
@@ -281,19 +248,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.TaskActions.Restart(ctx, operations.C1APITaskV1TaskActionsServiceRestartRequest{
-        TaskActionsServiceRestartRequest: &shared.TaskActionsServiceRestartRequest{
-            TaskExpandMask: &shared.TaskExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        TaskID: "string",
+        TaskID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.TaskActionsServiceRestartResponse != nil {
         // handle response
     }

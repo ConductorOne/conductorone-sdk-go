@@ -6,6 +6,7 @@
 * [Create](#create) - Create
 * [CreateDelegated](#createdelegated) - Create Delegated
 * [Delete](#delete) - Delete
+* [ForceSync](#forcesync) - Force Sync
 * [Get](#get) - Get
 * [GetCredentials](#getcredentials) - Get Credentials
 * [List](#list) - List
@@ -41,27 +42,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
-        ConnectorServiceCreateRequest: &shared.ConnectorServiceCreateRequest{
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-            Config: &shared.ConnectorServiceCreateRequestConfig{
-                AdditionalProperties: map[string]interface{}{
-                    "key": "string",
-                },
-            },
-            UserIds: []string{
-                "string",
-            },
-        },
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceCreateResponse != nil {
         // handle response
     }
@@ -110,22 +95,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
-        ConnectorServiceCreateDelegatedRequest: &shared.ConnectorServiceCreateDelegatedRequest{
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-            UserIds: []string{
-                "string",
-            },
-        },
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceCreateResponse != nil {
         // handle response
     }
@@ -174,14 +148,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
-        ConnectorServiceDeleteRequest: &shared.ConnectorServiceDeleteRequest{},
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceDeleteResponse != nil {
         // handle response
     }
@@ -199,6 +171,60 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceDeleteResponse](../../pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
+
+## ForceSync
+
+Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.Connector.ForceSync(ctx, operations.C1APIAppV1ConnectorServiceForceSyncRequest{
+        AppID: "<value>",
+        ConnectorID: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ForceSyncResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                              | :heavy_check_mark:                                                                                                                 | The context to use for the request.                                                                                                |
+| `request`                                                                                                                          | [operations.C1APIAppV1ConnectorServiceForceSyncRequest](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
+
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceForceSyncResponse](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
@@ -230,13 +256,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceGetResponse != nil {
         // handle response
     }
@@ -285,14 +310,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "string",
-        ConnectorID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ConnectorID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceGetCredentialsResponse != nil {
         // handle response
     }
@@ -341,12 +365,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceListResponse != nil {
         // handle response
     }
@@ -395,15 +418,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
-        ConnectorServiceRevokeCredentialRequest: &shared.ConnectorServiceRevokeCredentialRequest{},
-        AppID: "string",
-        ConnectorID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ConnectorID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceRevokeCredentialResponse != nil {
         // handle response
     }
@@ -452,14 +473,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
-        ConnectorServiceRotateCredentialRequest: &shared.ConnectorServiceRotateCredentialRequest{},
-        AppID: "string",
-        ConnectorID: "string",
+        AppID: "<value>",
+        ConnectorID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceRotateCredentialResponse != nil {
         // handle response
     }
@@ -508,32 +527,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
-        ConnectorServiceUpdateRequest: &shared.ConnectorServiceUpdateRequest{
-            Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{},
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                Config: &shared.Config{
-                    AdditionalProperties: map[string]interface{}{
-                        "key": "string",
-                    },
-                },
-                UserIds: []string{
-                    "string",
-                },
-            },
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceUpdateResponse != nil {
         // handle response
     }
@@ -582,32 +581,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
-        ConnectorServiceUpdateDelegatedRequest: &shared.ConnectorServiceUpdateDelegatedRequest{
-            Connector: &shared.ConnectorInput{
-                ConnectorStatus: &shared.ConnectorStatus{},
-                OAuth2AuthorizedAs: &shared.OAuth2AuthorizedAsInput{},
-                Config: &shared.Config{
-                    AdditionalProperties: map[string]interface{}{
-                        "key": "string",
-                    },
-                },
-                UserIds: []string{
-                    "string",
-                },
-            },
-            ConnectorExpandMask: &shared.ConnectorExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        ConnectorAppID: "string",
-        ConnectorID: "string",
+        ConnectorAppID: "<value>",
+        ConnectorID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ConnectorServiceUpdateResponse != nil {
         // handle response
     }

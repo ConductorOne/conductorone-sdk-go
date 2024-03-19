@@ -63,6 +63,7 @@ func main() {
 * [Create](docs/sdks/connector/README.md#create) - Create
 * [CreateDelegated](docs/sdks/connector/README.md#createdelegated) - Create Delegated
 * [Delete](docs/sdks/connector/README.md#delete) - Delete
+* [ForceSync](docs/sdks/connector/README.md#forcesync) - Force Sync
 * [Get](docs/sdks/connector/README.md#get) - Get
 * [GetCredentials](docs/sdks/connector/README.md#getcredentials) - Get Credentials
 * [List](docs/sdks/connector/README.md#list) - List
@@ -243,6 +244,10 @@ func main() {
 
 * [Get](docs/sdks/user/README.md#get) - Get
 * [List](docs/sdks/user/README.md#list) - List
+
+### [Webhooks](docs/sdks/webhooks/README.md)
+
+* [Test](docs/sdks/webhooks/README.md#test) - Test
 <!-- End Available Resources and Operations [operations] -->
 
 

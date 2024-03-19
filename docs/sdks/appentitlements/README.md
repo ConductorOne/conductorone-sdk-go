@@ -37,13 +37,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.GetAppEntitlementResponse != nil {
         // handle response
     }
@@ -92,12 +91,11 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "string",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -146,14 +144,13 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
-        AppID: "string",
-        AppResourceID: "string",
-        AppResourceTypeID: "string",
+        AppID: "<value>",
+        AppResourceID: "<value>",
+        AppResourceTypeID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -202,13 +199,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
-        AppID: "string",
-        AppUserID: "string",
+        AppID: "<value>",
+        AppUserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementsResponse != nil {
         // handle response
     }
@@ -257,13 +253,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
-        AppEntitlementID: "string",
-        AppID: "string",
+        AppEntitlementID: "<value>",
+        AppID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.ListAppEntitlementUsersResponse != nil {
         // handle response
     }
@@ -312,35 +307,12 @@ func main() {
 
     ctx := context.Background()
     res, err := s.AppEntitlements.Update(ctx, operations.C1APIAppV1AppEntitlementsUpdateRequest{
-        UpdateAppEntitlementRequest: &shared.UpdateAppEntitlementRequest{
-            AppEntitlement: &shared.AppEntitlementInput{
-                ProvisionPolicy: &shared.ProvisionPolicy{
-                    ConnectorProvision: &shared.ConnectorProvision{},
-                    DelegatedProvision: &shared.DelegatedProvision{},
-                    ManualProvision: &shared.ManualProvision{
-                        UserIds: []string{
-                            "string",
-                        },
-                    },
-                },
-                ComplianceFrameworkValueIds: []string{
-                    "string",
-                },
-                DurationUnset: &shared.DurationUnset{},
-            },
-            AppEntitlementExpandMask: &shared.AppEntitlementExpandMask{
-                Paths: []string{
-                    "string",
-                },
-            },
-        },
-        AppID: "string",
-        ID: "<ID>",
+        AppID: "<value>",
+        ID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-
     if res.UpdateAppEntitlementResponse != nil {
         // handle response
     }

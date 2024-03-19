@@ -176,7 +176,8 @@ type TaskSearchRequest struct {
 	// Whether or not to include deleted tasks.
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// Search tasks where the user would see this task in the My Work section
-	MyWorkUserIds []string `json:"myWorkUserIds,omitempty"`
+	MyWorkUserIds     []string `json:"myWorkUserIds,omitempty"`
+	OlderThanDuration *string  `json:"olderThanDuration,omitempty"`
 	// Search tasks that were created by any of the users in this array.
 	OpenerIds []string `json:"openerIds,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
@@ -334,6 +335,13 @@ func (o *TaskSearchRequest) GetMyWorkUserIds() []string {
 		return nil
 	}
 	return o.MyWorkUserIds
+}
+
+func (o *TaskSearchRequest) GetOlderThanDuration() *string {
+	if o == nil {
+		return nil
+	}
+	return o.OlderThanDuration
 }
 
 func (o *TaskSearchRequest) GetOpenerIds() []string {

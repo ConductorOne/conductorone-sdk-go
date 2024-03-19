@@ -30,30 +30,10 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, &shared.SearchAppResourceTypesRequest{
-        AppIds: []string{
-            "string",
-        },
-        AppUserIds: []string{
-            "string",
-        },
-        ExcludeResourceTypeIds: []string{
-            "string",
-        },
-        ExcludeResourceTypeTraitIds: []string{
-            "string",
-        },
-        ResourceTypeIds: []string{
-            "string",
-        },
-        ResourceTypeTraitIds: []string{
-            "string",
-        },
-    })
+    res, err := s.AppResourceSearch.SearchAppResourceTypes(ctx, &shared.SearchAppResourceTypesRequest{})
     if err != nil {
         log.Fatal(err)
     }
-
     if res.SearchAppResourceTypesResponse != nil {
         // handle response
     }
