@@ -143,7 +143,7 @@ func TestGetMarshalledObject(t *testing.T) {
 	}
 
 	mockResponse := shared.RequestCatalogSearchServiceSearchEntitlementsResponseExpanded{
-		AtType:               strToPtr(atTypeAppResourceType),
+		AtType:               strToPtr(AtTypeAppResourceType),
 		AdditionalProperties: result,
 	}
 

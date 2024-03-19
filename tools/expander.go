@@ -10,9 +10,9 @@ import (
 )
 
 const (
-	atTypeApp             = "type.googleapis.com/c1.api.app.v1.App"
-	atTypeAppResource     = "type.googleapis.com/c1.api.app.v1.AppResource"
-	atTypeAppResourceType = "type.googleapis.com/c1.api.app.v1.AppResourceType"
+	AtTypeApp             = "type.googleapis.com/c1.api.app.v1.App"
+	AtTypeAppResource     = "type.googleapis.com/c1.api.app.v1.AppResource"
+	AtTypeAppResourceType = "type.googleapis.com/c1.api.app.v1.AppResourceType"
 )
 
 type Path struct {
@@ -165,6 +165,9 @@ func GetAtTypeWithReflection[T any](input *T) *string {
  */
 func GetMarshalledObject[T marshallable](input T) (any, error) {
 	getAtType := GetAtTypeWithReflection[T]
+	if getAtType == nil {
+		return nil, errors.New("input does not implement GetAtType")
+	}
 	marshall := func(input T) ([]byte, error) {
 		return input.MarshalJSON()
 	}
@@ -195,11 +198,11 @@ func AtTypeToObject[T any](input T, getAtType func(*T) *string, marshal marshalJ
 	}
 
 	switch *inputType {
-	case atTypeApp:
+	case AtTypeApp:
 		return As[T, shared.App](input, marshal)
-	case atTypeAppResource:
+	case AtTypeAppResource:
 		return As[T, shared.AppResource](input, marshal)
-	case atTypeAppResourceType:
+	case AtTypeAppResourceType:
 		return As[T, shared.AppResourceType](input, marshal)
 	default:
 		return nil, errors.New("unknown type")
