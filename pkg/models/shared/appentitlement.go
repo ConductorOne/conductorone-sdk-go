@@ -22,6 +22,7 @@ type AppEntitlement struct {
 	//   - connector
 	//   - manual
 	//   - delegated
+	//   - webhook
 	//
 	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The alias of the app entitlement used by Cone. Also exact-match queryable.
@@ -275,6 +276,7 @@ type AppEntitlementInput struct {
 	//   - connector
 	//   - manual
 	//   - delegated
+	//   - webhook
 	//
 	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The ID of the app that is associated with the app entitlement.
