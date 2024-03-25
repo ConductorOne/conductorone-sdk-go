@@ -6,5 +6,6 @@ This policy step indicates that a ticket should have a denied outcome. This is a
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `RejectMessage`                                                                       | **string*                                                                             | :heavy_minus_sign:                                                                    | An optional message to include in the comments when a task is automatically rejected. |

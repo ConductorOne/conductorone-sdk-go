@@ -5,5 +5,6 @@ This policy step indicates that a ticket should have an approved outcome. This i
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `AcceptMessage`                                                                       | **string*                                                                             | :heavy_minus_sign:                                                                    | An optional message to include in the comments when a task is automatically accepted. |
