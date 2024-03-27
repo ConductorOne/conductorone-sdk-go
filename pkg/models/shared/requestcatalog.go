@@ -24,8 +24,10 @@ type RequestCatalog struct {
 	// The id of the request catalog.
 	ID *string `json:"id,omitempty"`
 	// Whether or not this catalog is published.
-	Published *bool      `json:"published,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+	Published *bool `json:"published,omitempty"`
+	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
+	RequestBundle *bool      `json:"requestBundle,omitempty"`
+	UpdatedAt     *time.Time `json:"updatedAt,omitempty"`
 	// If this is true, the access entitlement requirement is ignored.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
 }
@@ -102,6 +104,13 @@ func (o *RequestCatalog) GetPublished() *bool {
 		return nil
 	}
 	return o.Published
+}
+
+func (o *RequestCatalog) GetRequestBundle() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBundle
 }
 
 func (o *RequestCatalog) GetUpdatedAt() *time.Time {

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 4fa0ae07800b0badd27f9ec24f95dd56
+  docChecksum: b6ff6fb45ac8e5c76f6df29ba7bcd6f6
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.209.2
-  generationVersion: 2.281.2
-  releaseVersion: 1.17.0
-  configChecksum: 6a91f5be10b752f8078c11a59cdce70f
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 1.18.5
+  configChecksum: c784e293a74da51a4c01564dd26b163e
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -14,8 +14,8 @@ management:
 features:
   go:
     additionalProperties: 0.1.2
-    core: 3.4.4
-    globalSecurity: 2.82.8
+    core: 3.4.5
+    globalSecurity: 2.82.9
     globalServerURLs: 2.82.2
     groups: 2.81.2
     inputOutputModels: 2.83.0
@@ -208,6 +208,7 @@ generatedFiles:
   - /pkg/models/shared/appentitlementview.go
   - /pkg/models/shared/appentitlement.go
   - /pkg/models/shared/provisionpolicy.go
+  - /pkg/models/shared/webhookprovision.go
   - /pkg/models/shared/manualprovision.go
   - /pkg/models/shared/delegatedprovision.go
   - /pkg/models/shared/connectorprovision.go
@@ -648,6 +649,7 @@ generatedFiles:
   - docs/pkg/models/shared/durationunset.md
   - docs/pkg/models/shared/appentitlement.md
   - docs/pkg/models/shared/provisionpolicy.md
+  - docs/pkg/models/shared/webhookprovision.md
   - docs/pkg/models/shared/manualprovision.md
   - docs/pkg/models/shared/delegatedprovision.md
   - docs/pkg/models/shared/connectorprovision.md
