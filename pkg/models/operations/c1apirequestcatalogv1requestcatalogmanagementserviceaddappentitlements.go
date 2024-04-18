@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest struct {
-	RequestCatalogManagementServiceAddAppEntitlementsRequest *shared.RequestCatalogManagementServiceAddAppEntitlementsRequest `request:"mediaType=application/json"`
 	CatalogID                                                string                                                           `pathParam:"style=simple,explode=false,name=catalog_id"`
-}
-
-func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest) GetRequestCatalogManagementServiceAddAppEntitlementsRequest() *shared.RequestCatalogManagementServiceAddAppEntitlementsRequest {
-	if o == nil {
-		return nil
-	}
-	return o.RequestCatalogManagementServiceAddAppEntitlementsRequest
+	RequestCatalogManagementServiceAddAppEntitlementsRequest *shared.RequestCatalogManagementServiceAddAppEntitlementsRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest) GetCatalogID() string {
@@ -26,15 +19,22 @@ func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsR
 	return o.CatalogID
 }
 
+func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest) GetRequestCatalogManagementServiceAddAppEntitlementsRequest() *shared.RequestCatalogManagementServiceAddAppEntitlementsRequest {
+	if o == nil {
+		return nil
+	}
+	return o.RequestCatalogManagementServiceAddAppEntitlementsRequest
+}
+
 type C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Empty response with a status code indicating success.
-	RequestCatalogManagementServiceAddAppEntitlementsResponse *shared.RequestCatalogManagementServiceAddAppEntitlementsResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Empty response with a status code indicating success.
+	RequestCatalogManagementServiceAddAppEntitlementsResponse *shared.RequestCatalogManagementServiceAddAppEntitlementsResponse
 }
 
 func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse) GetContentType() string {
@@ -42,13 +42,6 @@ func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsR
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse) GetRequestCatalogManagementServiceAddAppEntitlementsResponse() *shared.RequestCatalogManagementServiceAddAppEntitlementsResponse {
-	if o == nil {
-		return nil
-	}
-	return o.RequestCatalogManagementServiceAddAppEntitlementsResponse
 }
 
 func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse) GetStatusCode() int {
@@ -63,4 +56,11 @@ func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsR
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse) GetRequestCatalogManagementServiceAddAppEntitlementsResponse() *shared.RequestCatalogManagementServiceAddAppEntitlementsResponse {
+	if o == nil {
+		return nil
+	}
+	return o.RequestCatalogManagementServiceAddAppEntitlementsResponse
 }

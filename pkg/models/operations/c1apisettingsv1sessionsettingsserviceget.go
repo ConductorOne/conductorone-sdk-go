@@ -10,12 +10,12 @@ import (
 type C1APISettingsV1SessionSettingsServiceGetResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	GetSessionSettingsResponse *shared.GetSessionSettingsResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Successful response
+	GetSessionSettingsResponse *shared.GetSessionSettingsResponse
 }
 
 func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetContentType() stri
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetGetSessionSettingsResponse() *shared.GetSessionSettingsResponse {
-	if o == nil {
-		return nil
-	}
-	return o.GetSessionSettingsResponse
 }
 
 func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetRawResponse() *htt
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APISettingsV1SessionSettingsServiceGetResponse) GetGetSessionSettingsResponse() *shared.GetSessionSettingsResponse {
+	if o == nil {
+		return nil
+	}
+	return o.GetSessionSettingsResponse
 }

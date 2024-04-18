@@ -3,64 +3,10 @@
 
 ### Available Operations
 
-* [Add](#add) - Add
 * [List](#list) - List
-* [Remove](#remove) - Remove
 * [Set](#set) - Set
-
-## Add
-
-Adds an owner to an app.
-
-### Example Usage
-
-```go
-package main
-
-import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"log"
-)
-
-func main() {
-    s := conductoronesdkgo.New(
-        conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
-        }),
-    )
-
-    ctx := context.Background()
-    res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
-        AppID: "<value>",
-        UserID: "<value>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.AddAppOwnerResponse != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
-| `request`                                                                                                | [operations.C1APIAppV1AppOwnersAddRequest](../../pkg/models/operations/c1apiappv1appownersaddrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-
-
-### Response
-
-**[*operations.C1APIAppV1AppOwnersAddResponse](../../pkg/models/operations/c1apiappv1appownersaddresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+* [Remove](#remove) - Remove
+* [Add](#add) - Add
 
 ## List
 
@@ -83,7 +29,7 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
 
@@ -115,6 +61,59 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
 
+## Set
+
+Sets the owners for a given app to the specified list of users.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.AppOwners.Set(ctx, operations.C1APIAppV1AppOwnersSetRequest{
+        AppID: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SetAppOwnersResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
+| `request`                                                                                                | [operations.C1APIAppV1AppOwnersSetRequest](../../pkg/models/operations/c1apiappv1appownerssetrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+
+
+### Response
+
+**[*operations.C1APIAppV1AppOwnersSetResponse](../../pkg/models/operations/c1apiappv1appownerssetresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 ## Remove
 
 Removes an owner from an app.
@@ -136,7 +135,7 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
 
@@ -169,9 +168,9 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
 
-## Set
+## Add
 
-Sets the owners for a given app to the specified list of users.
+Adds an owner to an app.
 
 ### Example Usage
 
@@ -190,18 +189,19 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
 
     ctx := context.Background()
-    res, err := s.AppOwners.Set(ctx, operations.C1APIAppV1AppOwnersSetRequest{
+    res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AppID: "<value>",
+        UserID: "<value>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.SetAppOwnersResponse != nil {
+    if res.AddAppOwnerResponse != nil {
         // handle response
     }
 }
@@ -212,12 +212,12 @@ func main() {
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                    | :heavy_check_mark:                                                                                       | The context to use for the request.                                                                      |
-| `request`                                                                                                | [operations.C1APIAppV1AppOwnersSetRequest](../../pkg/models/operations/c1apiappv1appownerssetrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `request`                                                                                                | [operations.C1APIAppV1AppOwnersAddRequest](../../pkg/models/operations/c1apiappv1appownersaddrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[*operations.C1APIAppV1AppOwnersSetResponse](../../pkg/models/operations/c1apiappv1appownerssetresponse.md), error**
+**[*operations.C1APIAppV1AppOwnersAddResponse](../../pkg/models/operations/c1apiappv1appownersaddresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

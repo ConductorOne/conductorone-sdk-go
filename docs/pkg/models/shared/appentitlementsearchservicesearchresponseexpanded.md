@@ -1,4 +1,4 @@
-# Payload
+# AppEntitlementSearchServiceSearchResponseExpanded
 
 Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
 

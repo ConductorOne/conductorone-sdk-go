@@ -10,12 +10,12 @@ import (
 type C1APISettingsV1AWSExternalIDSettingsGetResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	GetAWSExternalIDResponse *shared.GetAWSExternalIDResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Successful response
+	GetAWSExternalIDResponse *shared.GetAWSExternalIDResponse
 }
 
 func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetContentType() strin
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetGetAWSExternalIDResponse() *shared.GetAWSExternalIDResponse {
-	if o == nil {
-		return nil
-	}
-	return o.GetAWSExternalIDResponse
 }
 
 func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetRawResponse() *http
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APISettingsV1AWSExternalIDSettingsGetResponse) GetGetAWSExternalIDResponse() *shared.GetAWSExternalIDResponse {
+	if o == nil {
+		return nil
+	}
+	return o.GetAWSExternalIDResponse
 }

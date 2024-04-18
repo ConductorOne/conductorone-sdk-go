@@ -10,12 +10,12 @@ import (
 type C1APIAppV1AppsCreateResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Returns the new app's values.
-	CreateAppResponse *shared.CreateAppResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Returns the new app's values.
+	CreateAppResponse *shared.CreateAppResponse
 }
 
 func (o *C1APIAppV1AppsCreateResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APIAppV1AppsCreateResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIAppV1AppsCreateResponse) GetCreateAppResponse() *shared.CreateAppResponse {
-	if o == nil {
-		return nil
-	}
-	return o.CreateAppResponse
 }
 
 func (o *C1APIAppV1AppsCreateResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APIAppV1AppsCreateResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAppV1AppsCreateResponse) GetCreateAppResponse() *shared.CreateAppResponse {
+	if o == nil {
+		return nil
+	}
+	return o.CreateAppResponse
 }

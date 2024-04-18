@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIAttributeV1AttributesDeleteAttributeValueRequest struct {
-	DeleteAttributeValueRequest *shared.DeleteAttributeValueRequest `request:"mediaType=application/json"`
 	ID                          string                              `pathParam:"style=simple,explode=false,name=id"`
-}
-
-func (o *C1APIAttributeV1AttributesDeleteAttributeValueRequest) GetDeleteAttributeValueRequest() *shared.DeleteAttributeValueRequest {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAttributeValueRequest
+	DeleteAttributeValueRequest *shared.DeleteAttributeValueRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIAttributeV1AttributesDeleteAttributeValueRequest) GetID() string {
@@ -26,15 +19,22 @@ func (o *C1APIAttributeV1AttributesDeleteAttributeValueRequest) GetID() string {
 	return o.ID
 }
 
+func (o *C1APIAttributeV1AttributesDeleteAttributeValueRequest) GetDeleteAttributeValueRequest() *shared.DeleteAttributeValueRequest {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAttributeValueRequest
+}
+
 type C1APIAttributeV1AttributesDeleteAttributeValueResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// DeleteAttributeValueResponse is the empty response for deleting an attribute value.
-	DeleteAttributeValueResponse *shared.DeleteAttributeValueResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// DeleteAttributeValueResponse is the empty response for deleting an attribute value.
+	DeleteAttributeValueResponse *shared.DeleteAttributeValueResponse
 }
 
 func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetContentType() string {
@@ -42,13 +42,6 @@ func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetContentType(
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetDeleteAttributeValueResponse() *shared.DeleteAttributeValueResponse {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAttributeValueResponse
 }
 
 func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetStatusCode() int {
@@ -63,4 +56,11 @@ func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetRawResponse(
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAttributeV1AttributesDeleteAttributeValueResponse) GetDeleteAttributeValueResponse() *shared.DeleteAttributeValueResponse {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAttributeValueResponse
 }

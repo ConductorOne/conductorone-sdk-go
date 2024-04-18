@@ -57,6 +57,14 @@ func (e *WebhookInstanceState) UnmarshalJSON(data []byte) error {
 
 // The WebhookInstance message.
 type WebhookInstance struct {
+	// The attempts field.
+	Attempts    *int       `json:"attempts,omitempty"`
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+	CreatedAt   *time.Time `json:"createdAt,omitempty"`
+	ExpiresAt   *time.Time `json:"expiresAt,omitempty"`
+	// The id field.
+	ID              *string    `json:"id,omitempty"`
+	LastAttemptedAt *time.Time `json:"lastAttemptedAt,omitempty"`
 	// The WebhookSource message.
 	//
 	// This message contains a oneof named source. Only a single field of the following list may be set at a time:
@@ -68,14 +76,6 @@ type WebhookInstance struct {
 	WebhookSource *WebhookSource `json:"source,omitempty"`
 	// The WebhookSpec message.
 	WebhookSpec *WebhookSpec `json:"spec,omitempty"`
-	// The attempts field.
-	Attempts    *int       `json:"attempts,omitempty"`
-	CompletedAt *time.Time `json:"completedAt,omitempty"`
-	CreatedAt   *time.Time `json:"createdAt,omitempty"`
-	ExpiresAt   *time.Time `json:"expiresAt,omitempty"`
-	// The id field.
-	ID              *string    `json:"id,omitempty"`
-	LastAttemptedAt *time.Time `json:"lastAttemptedAt,omitempty"`
 	// The state field.
 	State     *WebhookInstanceState `json:"state,omitempty"`
 	UpdatedAt *time.Time            `json:"updatedAt,omitempty"`
@@ -92,20 +92,6 @@ func (w *WebhookInstance) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
-}
-
-func (o *WebhookInstance) GetWebhookSource() *WebhookSource {
-	if o == nil {
-		return nil
-	}
-	return o.WebhookSource
-}
-
-func (o *WebhookInstance) GetWebhookSpec() *WebhookSpec {
-	if o == nil {
-		return nil
-	}
-	return o.WebhookSpec
 }
 
 func (o *WebhookInstance) GetAttempts() *int {
@@ -148,6 +134,20 @@ func (o *WebhookInstance) GetLastAttemptedAt() *time.Time {
 		return nil
 	}
 	return o.LastAttemptedAt
+}
+
+func (o *WebhookInstance) GetWebhookSource() *WebhookSource {
+	if o == nil {
+		return nil
+	}
+	return o.WebhookSource
+}
+
+func (o *WebhookInstance) GetWebhookSpec() *WebhookSpec {
+	if o == nil {
+		return nil
+	}
+	return o.WebhookSpec
 }
 
 func (o *WebhookInstance) GetState() *WebhookInstanceState {

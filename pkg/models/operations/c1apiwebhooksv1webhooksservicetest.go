@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIWebhooksV1WebhooksServiceTestRequest struct {
-	WebhooksServiceTestRequest *shared.WebhooksServiceTestRequest `request:"mediaType=application/json"`
 	ID                         string                             `pathParam:"style=simple,explode=false,name=id"`
-}
-
-func (o *C1APIWebhooksV1WebhooksServiceTestRequest) GetWebhooksServiceTestRequest() *shared.WebhooksServiceTestRequest {
-	if o == nil {
-		return nil
-	}
-	return o.WebhooksServiceTestRequest
+	WebhooksServiceTestRequest *shared.WebhooksServiceTestRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIWebhooksV1WebhooksServiceTestRequest) GetID() string {
@@ -24,6 +17,13 @@ func (o *C1APIWebhooksV1WebhooksServiceTestRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *C1APIWebhooksV1WebhooksServiceTestRequest) GetWebhooksServiceTestRequest() *shared.WebhooksServiceTestRequest {
+	if o == nil {
+		return nil
+	}
+	return o.WebhooksServiceTestRequest
 }
 
 type C1APIWebhooksV1WebhooksServiceTestResponse struct {

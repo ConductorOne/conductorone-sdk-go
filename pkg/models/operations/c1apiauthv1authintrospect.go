@@ -10,12 +10,12 @@ import (
 type C1APIAuthV1AuthIntrospectResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// IntrospectResponse contains information about the current user who is authenticated.
-	IntrospectResponse *shared.IntrospectResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// IntrospectResponse contains information about the current user who is authenticated.
+	IntrospectResponse *shared.IntrospectResponse
 }
 
 func (o *C1APIAuthV1AuthIntrospectResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APIAuthV1AuthIntrospectResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIAuthV1AuthIntrospectResponse) GetIntrospectResponse() *shared.IntrospectResponse {
-	if o == nil {
-		return nil
-	}
-	return o.IntrospectResponse
 }
 
 func (o *C1APIAuthV1AuthIntrospectResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APIAuthV1AuthIntrospectResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAuthV1AuthIntrospectResponse) GetIntrospectResponse() *shared.IntrospectResponse {
+	if o == nil {
+		return nil
+	}
+	return o.IntrospectResponse
 }

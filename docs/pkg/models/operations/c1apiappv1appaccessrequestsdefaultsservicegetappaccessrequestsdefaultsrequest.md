@@ -1,0 +1,9 @@
+# C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ID`                                                                                                     | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `GetAccessRequestDefaultsRequest`                                                                        | [*shared.GetAccessRequestDefaultsRequest](../../../pkg/models/shared/getaccessrequestdefaultsrequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |

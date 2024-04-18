@@ -1,6 +1,6 @@
 # PolicyType
 
-The enum of the policy type.
+Indicates the type of this policy. Can also be used to get the value from policySteps.
 
 
 ## Values

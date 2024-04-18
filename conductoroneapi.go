@@ -67,8 +67,10 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // ConductoroneAPI - ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
 type ConductoroneAPI struct {
 	Apps                      *Apps
+	AppAccessRequestsDefaults *AppAccessRequestsDefaults
 	Connector                 *Connector
 	AppEntitlements           *AppEntitlements
+	AppEntitlementSearch      *AppEntitlementSearch
 	AppEntitlementUserBinding *AppEntitlementUserBinding
 	AppEntitlementOwners      *AppEntitlementOwners
 	AppOwners                 *AppOwners
@@ -90,11 +92,11 @@ type ConductoroneAPI struct {
 	AppResourceSearch         *AppResourceSearch
 	AppSearch                 *AppSearch
 	AttributeSearch           *AttributeSearch
-	AppEntitlementSearch      *AppEntitlementSearch
 	PolicySearch              *PolicySearch
 	RequestCatalogSearch      *RequestCatalogSearch
 	TaskSearch                *TaskSearch
 	UserSearch                *UserSearch
+	WebhooksSearch            *WebhooksSearch
 	AWSExternalIDSettings     *AWSExternalIDSettings
 	SessionSettings           *SessionSettings
 	Task                      *Task
@@ -191,8 +193,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
 			SDKVersion:        "1.18.2",
-			GenVersion:        "2.281.2",
-			UserAgent:         "speakeasy-sdk/go 1.18.2 2.281.2 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			GenVersion:        "2.310.0",
+			UserAgent:         "speakeasy-sdk/go 1.18.2 2.310.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -219,9 +221,13 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.Apps = newApps(sdk.sdkConfiguration)
 
+	sdk.AppAccessRequestsDefaults = newAppAccessRequestsDefaults(sdk.sdkConfiguration)
+
 	sdk.Connector = newConnector(sdk.sdkConfiguration)
 
 	sdk.AppEntitlements = newAppEntitlements(sdk.sdkConfiguration)
+
+	sdk.AppEntitlementSearch = newAppEntitlementSearch(sdk.sdkConfiguration)
 
 	sdk.AppEntitlementUserBinding = newAppEntitlementUserBinding(sdk.sdkConfiguration)
 
@@ -265,8 +271,6 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.AttributeSearch = newAttributeSearch(sdk.sdkConfiguration)
 
-	sdk.AppEntitlementSearch = newAppEntitlementSearch(sdk.sdkConfiguration)
-
 	sdk.PolicySearch = newPolicySearch(sdk.sdkConfiguration)
 
 	sdk.RequestCatalogSearch = newRequestCatalogSearch(sdk.sdkConfiguration)
@@ -274,6 +278,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TaskSearch = newTaskSearch(sdk.sdkConfiguration)
 
 	sdk.UserSearch = newUserSearch(sdk.sdkConfiguration)
+
+	sdk.WebhooksSearch = newWebhooksSearch(sdk.sdkConfiguration)
 
 	sdk.AWSExternalIDSettings = newAWSExternalIDSettings(sdk.sdkConfiguration)
 

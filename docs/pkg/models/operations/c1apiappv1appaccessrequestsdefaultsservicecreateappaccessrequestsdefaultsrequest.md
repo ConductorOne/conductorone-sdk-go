@@ -1,0 +1,9 @@
+# C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `AppID`                                                                                                        | *string*                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `CreateAccessRequestDefaultsRequest`                                                                           | [*shared.CreateAccessRequestDefaultsRequest](../../../pkg/models/shared/createaccessrequestdefaultsrequest.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |

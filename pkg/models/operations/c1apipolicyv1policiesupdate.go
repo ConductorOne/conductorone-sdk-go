@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIPolicyV1PoliciesUpdateRequest struct {
-	UpdatePolicyRequest *shared.UpdatePolicyRequest `request:"mediaType=application/json"`
 	ID                  string                      `pathParam:"style=simple,explode=false,name=id"`
-}
-
-func (o *C1APIPolicyV1PoliciesUpdateRequest) GetUpdatePolicyRequest() *shared.UpdatePolicyRequest {
-	if o == nil {
-		return nil
-	}
-	return o.UpdatePolicyRequest
+	UpdatePolicyRequest *shared.UpdatePolicyRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIPolicyV1PoliciesUpdateRequest) GetID() string {
@@ -24,6 +17,13 @@ func (o *C1APIPolicyV1PoliciesUpdateRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *C1APIPolicyV1PoliciesUpdateRequest) GetUpdatePolicyRequest() *shared.UpdatePolicyRequest {
+	if o == nil {
+		return nil
+	}
+	return o.UpdatePolicyRequest
 }
 
 type C1APIPolicyV1PoliciesUpdateResponse struct {

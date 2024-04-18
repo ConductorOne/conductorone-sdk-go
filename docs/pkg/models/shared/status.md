@@ -1,13 +1,13 @@
 # Status
 
-The application user status field.
+The status of the user in the system.
 
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `StatusStatusUnspecified` | STATUS_UNSPECIFIED        |
-| `StatusStatusEnabled`     | STATUS_ENABLED            |
-| `StatusStatusDisabled`    | STATUS_DISABLED           |
-| `StatusStatusDeleted`     | STATUS_DELETED            |
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `StatusUnknown`  | UNKNOWN          |
+| `StatusEnabled`  | ENABLED          |
+| `StatusDisabled` | DISABLED         |
+| `StatusDeleted`  | DELETED          |

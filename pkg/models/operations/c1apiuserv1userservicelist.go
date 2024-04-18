@@ -35,6 +35,8 @@ type C1APIUserV1UserServiceListResponse struct {
 	RawResponse *http.Response
 	// The UserServiceListResponse message contains a list of results and a nextPageToken if applicable.
 	UserServiceListResponse *shared.UserServiceListResponse
+
+	Next func() (*C1APIUserV1UserServiceListResponse, error)
 }
 
 func (o *C1APIUserV1UserServiceListResponse) GetContentType() string {

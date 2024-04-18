@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIAppV1AppsUpdateRequest struct {
-	UpdateAppRequest *shared.UpdateAppRequest `request:"mediaType=application/json"`
 	ID               string                   `pathParam:"style=simple,explode=false,name=id"`
-}
-
-func (o *C1APIAppV1AppsUpdateRequest) GetUpdateAppRequest() *shared.UpdateAppRequest {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateAppRequest
+	UpdateAppRequest *shared.UpdateAppRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIAppV1AppsUpdateRequest) GetID() string {
@@ -24,6 +17,13 @@ func (o *C1APIAppV1AppsUpdateRequest) GetID() string {
 		return ""
 	}
 	return o.ID
+}
+
+func (o *C1APIAppV1AppsUpdateRequest) GetUpdateAppRequest() *shared.UpdateAppRequest {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateAppRequest
 }
 
 type C1APIAppV1AppsUpdateResponse struct {

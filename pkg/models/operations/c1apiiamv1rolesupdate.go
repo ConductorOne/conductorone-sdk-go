@@ -8,15 +8,8 @@ import (
 )
 
 type C1APIIamV1RolesUpdateRequest struct {
-	UpdateRoleRequest *shared.UpdateRoleRequest `request:"mediaType=application/json"`
 	RoleID            string                    `pathParam:"style=simple,explode=false,name=role_id"`
-}
-
-func (o *C1APIIamV1RolesUpdateRequest) GetUpdateRoleRequest() *shared.UpdateRoleRequest {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateRoleRequest
+	UpdateRoleRequest *shared.UpdateRoleRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIIamV1RolesUpdateRequest) GetRoleID() string {
@@ -24,6 +17,13 @@ func (o *C1APIIamV1RolesUpdateRequest) GetRoleID() string {
 		return ""
 	}
 	return o.RoleID
+}
+
+func (o *C1APIIamV1RolesUpdateRequest) GetUpdateRoleRequest() *shared.UpdateRoleRequest {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateRoleRequest
 }
 
 type C1APIIamV1RolesUpdateResponse struct {

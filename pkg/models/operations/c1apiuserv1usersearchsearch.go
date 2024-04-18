@@ -10,12 +10,12 @@ import (
 type C1APIUserV1UserSearchSearchResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	SearchUsersResponse *shared.SearchUsersResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Successful response
+	SearchUsersResponse *shared.SearchUsersResponse
 }
 
 func (o *C1APIUserV1UserSearchSearchResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APIUserV1UserSearchSearchResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIUserV1UserSearchSearchResponse) GetSearchUsersResponse() *shared.SearchUsersResponse {
-	if o == nil {
-		return nil
-	}
-	return o.SearchUsersResponse
 }
 
 func (o *C1APIUserV1UserSearchSearchResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APIUserV1UserSearchSearchResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIUserV1UserSearchSearchResponse) GetSearchUsersResponse() *shared.SearchUsersResponse {
+	if o == nil {
+		return nil
+	}
+	return o.SearchUsersResponse
 }

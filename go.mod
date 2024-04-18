@@ -19,6 +19,7 @@ require (
 require (
 	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/spyzhov/ajson v0.9.1 // indirect
 	github.com/stretchr/testify v1.8.3 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.16.0 // indirect

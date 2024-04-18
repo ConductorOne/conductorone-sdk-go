@@ -10,12 +10,12 @@ import (
 type C1APIPolicyV1PoliciesCreateResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// The CreatePolicyResponse message contains the created policy object.
-	CreatePolicyResponse *shared.CreatePolicyResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// The CreatePolicyResponse message contains the created policy object.
+	CreatePolicyResponse *shared.CreatePolicyResponse
 }
 
 func (o *C1APIPolicyV1PoliciesCreateResponse) GetContentType() string {
@@ -23,13 +23,6 @@ func (o *C1APIPolicyV1PoliciesCreateResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIPolicyV1PoliciesCreateResponse) GetCreatePolicyResponse() *shared.CreatePolicyResponse {
-	if o == nil {
-		return nil
-	}
-	return o.CreatePolicyResponse
 }
 
 func (o *C1APIPolicyV1PoliciesCreateResponse) GetStatusCode() int {
@@ -44,4 +37,11 @@ func (o *C1APIPolicyV1PoliciesCreateResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIPolicyV1PoliciesCreateResponse) GetCreatePolicyResponse() *shared.CreatePolicyResponse {
+	if o == nil {
+		return nil
+	}
+	return o.CreatePolicyResponse
 }

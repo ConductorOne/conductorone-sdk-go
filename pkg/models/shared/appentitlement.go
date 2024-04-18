@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type DurationUnset struct {
+type AppEntitlementDurationUnset struct {
 }
 
 // AppEntitlement - The app entitlement represents one permission in a downstream App (SAAS) that can be granted. For example, GitHub Read vs GitHub Write.
@@ -16,14 +16,6 @@ type DurationUnset struct {
 //   - durationUnset
 //   - durationGrant
 type AppEntitlement struct {
-	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-	//
-	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-	//   - connector
-	//   - manual
-	//   - delegated
-	//
-	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The alias of the app entitlement used by Cone. Also exact-match queryable.
 	Alias *string `json:"alias,omitempty"`
 	// The ID of the app that is associated with the app entitlement.
@@ -37,13 +29,15 @@ type AppEntitlement struct {
 	// The IDs of different compliance frameworks associated with this app entitlement ex (SOX, HIPAA, PCI, etc.)
 	ComplianceFrameworkValueIds []string   `json:"complianceFrameworkValueIds,omitempty"`
 	CreatedAt                   *time.Time `json:"createdAt,omitempty"`
-	DeletedAt                   *time.Time `json:"deletedAt,omitempty"`
+	// Flag to indicate if app-level access request defaults have been applied to the entitlement
+	DefaultValuesApplied *bool      `json:"defaultValuesApplied,omitempty"`
+	DeletedAt            *time.Time `json:"deletedAt,omitempty"`
 	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
 	// The display name of the app entitlement.
-	DisplayName   *string        `json:"displayName,omitempty"`
-	DurationGrant *string        `json:"durationGrant,omitempty"`
-	DurationUnset *DurationUnset `json:"durationUnset,omitempty"`
+	DisplayName   *string                      `json:"displayName,omitempty"`
+	DurationGrant *string                      `json:"durationGrant,omitempty"`
+	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
 	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
 	// The ID of the policy that will be used for emergency access grant tasks.
@@ -56,6 +50,17 @@ type AppEntitlement struct {
 	ID *string `json:"id,omitempty"`
 	// Flag to indicate if the app entitlement is manually managed.
 	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
+	// Flag to indicate if the app-level access request settings have been overridden for the entitlement
+	OverrideAccessRequestsDefaults *bool `json:"overrideAccessRequestsDefaults,omitempty"`
+	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+	//
+	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+	//   - connector
+	//   - manual
+	//   - delegated
+	//   - webhook
+	//
+	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
@@ -79,13 +84,6 @@ func (a *AppEntitlement) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
-}
-
-func (o *AppEntitlement) GetProvisionPolicy() *ProvisionPolicy {
-	if o == nil {
-		return nil
-	}
-	return o.ProvisionPolicy
 }
 
 func (o *AppEntitlement) GetAlias() *string {
@@ -137,6 +135,13 @@ func (o *AppEntitlement) GetCreatedAt() *time.Time {
 	return o.CreatedAt
 }
 
+func (o *AppEntitlement) GetDefaultValuesApplied() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.DefaultValuesApplied
+}
+
 func (o *AppEntitlement) GetDeletedAt() *time.Time {
 	if o == nil {
 		return nil
@@ -165,7 +170,7 @@ func (o *AppEntitlement) GetDurationGrant() *string {
 	return o.DurationGrant
 }
 
-func (o *AppEntitlement) GetDurationUnset() *DurationUnset {
+func (o *AppEntitlement) GetDurationUnset() *AppEntitlementDurationUnset {
 	if o == nil {
 		return nil
 	}
@@ -212,6 +217,20 @@ func (o *AppEntitlement) GetIsManuallyManaged() *bool {
 		return nil
 	}
 	return o.IsManuallyManaged
+}
+
+func (o *AppEntitlement) GetOverrideAccessRequestsDefaults() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.OverrideAccessRequestsDefaults
+}
+
+func (o *AppEntitlement) GetProvisionPolicy() *ProvisionPolicy {
+	if o == nil {
+		return nil
+	}
+	return o.ProvisionPolicy
 }
 
 func (o *AppEntitlement) GetRevokePolicyID() *string {
@@ -269,14 +288,6 @@ func (o *AppEntitlement) GetUserEditedMask() *string {
 //   - durationUnset
 //   - durationGrant
 type AppEntitlementInput struct {
-	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
-	//
-	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
-	//   - connector
-	//   - manual
-	//   - delegated
-	//
-	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The ID of the app that is associated with the app entitlement.
 	AppID *string `json:"appId,omitempty"`
 	// The ID of the app resource that is associated with the app entitlement
@@ -290,9 +301,9 @@ type AppEntitlementInput struct {
 	// The description of the app entitlement.
 	Description *string `json:"description,omitempty"`
 	// The display name of the app entitlement.
-	DisplayName   *string        `json:"displayName,omitempty"`
-	DurationGrant *string        `json:"durationGrant,omitempty"`
-	DurationUnset *DurationUnset `json:"durationUnset,omitempty"`
+	DisplayName   *string                      `json:"displayName,omitempty"`
+	DurationGrant *string                      `json:"durationGrant,omitempty"`
+	DurationUnset *AppEntitlementDurationUnset `json:"durationUnset,omitempty"`
 	// This enables tasks to be created in an emergency and use a selected emergency access policy.
 	EmergencyGrantEnabled *bool `json:"emergencyGrantEnabled,omitempty"`
 	// The ID of the policy that will be used for emergency access grant tasks.
@@ -301,6 +312,15 @@ type AppEntitlementInput struct {
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// Flag to indicate if the app entitlement is manually managed.
 	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
+	// ProvisionPolicy is a oneOf that indicates how a provision step should be processed.
+	//
+	// This message contains a oneof named typ. Only a single field of the following list may be set at a time:
+	//   - connector
+	//   - manual
+	//   - delegated
+	//   - webhook
+	//
+	ProvisionPolicy *ProvisionPolicy `json:"provisionerPolicy,omitempty"`
 	// The ID of the policy that will be used for revoke tickets related to the app entitlement
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The riskLevelValueId field.
@@ -310,13 +330,6 @@ type AppEntitlementInput struct {
 	// Map to tell us which connector the entitlement came from.
 	SourceConnectorIds map[string]string `json:"sourceConnectorIds,omitempty"`
 	UserEditedMask     *string           `json:"userEditedMask,omitempty"`
-}
-
-func (o *AppEntitlementInput) GetProvisionPolicy() *ProvisionPolicy {
-	if o == nil {
-		return nil
-	}
-	return o.ProvisionPolicy
 }
 
 func (o *AppEntitlementInput) GetAppID() *string {
@@ -375,7 +388,7 @@ func (o *AppEntitlementInput) GetDurationGrant() *string {
 	return o.DurationGrant
 }
 
-func (o *AppEntitlementInput) GetDurationUnset() *DurationUnset {
+func (o *AppEntitlementInput) GetDurationUnset() *AppEntitlementDurationUnset {
 	if o == nil {
 		return nil
 	}
@@ -408,6 +421,13 @@ func (o *AppEntitlementInput) GetIsManuallyManaged() *bool {
 		return nil
 	}
 	return o.IsManuallyManaged
+}
+
+func (o *AppEntitlementInput) GetProvisionPolicy() *ProvisionPolicy {
+	if o == nil {
+		return nil
+	}
+	return o.ProvisionPolicy
 }
 
 func (o *AppEntitlementInput) GetRevokePolicyID() *string {

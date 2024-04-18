@@ -8,15 +8,8 @@ import (
 )
 
 type C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest struct {
-	TaskActionsServiceEscalateToEmergencyAccessRequest *shared.TaskActionsServiceEscalateToEmergencyAccessRequest `request:"mediaType=application/json"`
 	TaskID                                             string                                                     `pathParam:"style=simple,explode=false,name=task_id"`
-}
-
-func (o *C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) GetTaskActionsServiceEscalateToEmergencyAccessRequest() *shared.TaskActionsServiceEscalateToEmergencyAccessRequest {
-	if o == nil {
-		return nil
-	}
-	return o.TaskActionsServiceEscalateToEmergencyAccessRequest
+	TaskActionsServiceEscalateToEmergencyAccessRequest *shared.TaskActionsServiceEscalateToEmergencyAccessRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) GetTaskID() string {
@@ -24,6 +17,13 @@ func (o *C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) GetTaskI
 		return ""
 	}
 	return o.TaskID
+}
+
+func (o *C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest) GetTaskActionsServiceEscalateToEmergencyAccessRequest() *shared.TaskActionsServiceEscalateToEmergencyAccessRequest {
+	if o == nil {
+		return nil
+	}
+	return o.TaskActionsServiceEscalateToEmergencyAccessRequest
 }
 
 type C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse struct {

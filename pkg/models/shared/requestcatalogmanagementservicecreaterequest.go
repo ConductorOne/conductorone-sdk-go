@@ -4,23 +4,18 @@ package shared
 
 // RequestCatalogManagementServiceCreateRequest - Create a request catalog.
 type RequestCatalogManagementServiceCreateRequest struct {
-	// The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call.
-	RequestCatalogExpandMask *RequestCatalogExpandMask `json:"expandMask,omitempty"`
 	// The description of the new request catalog.
 	Description *string `json:"description,omitempty"`
 	// The display name of the new request catalog.
 	DisplayName *string `json:"displayName,omitempty"`
+	// The RequestCatalogExpandMask includes the paths in the catalog view to expand in the return value of this call.
+	RequestCatalogExpandMask *RequestCatalogExpandMask `json:"expandMask,omitempty"`
 	// Whether or not the new catalog should be created as published.
 	Published *bool `json:"published,omitempty"`
+	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
+	RequestBundle *bool `json:"requestBundle,omitempty"`
 	// Whether or not the new catalog is visible to everyone by default.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
-}
-
-func (o *RequestCatalogManagementServiceCreateRequest) GetRequestCatalogExpandMask() *RequestCatalogExpandMask {
-	if o == nil {
-		return nil
-	}
-	return o.RequestCatalogExpandMask
 }
 
 func (o *RequestCatalogManagementServiceCreateRequest) GetDescription() *string {
@@ -37,11 +32,25 @@ func (o *RequestCatalogManagementServiceCreateRequest) GetDisplayName() *string 
 	return o.DisplayName
 }
 
+func (o *RequestCatalogManagementServiceCreateRequest) GetRequestCatalogExpandMask() *RequestCatalogExpandMask {
+	if o == nil {
+		return nil
+	}
+	return o.RequestCatalogExpandMask
+}
+
 func (o *RequestCatalogManagementServiceCreateRequest) GetPublished() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Published
+}
+
+func (o *RequestCatalogManagementServiceCreateRequest) GetRequestBundle() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBundle
 }
 
 func (o *RequestCatalogManagementServiceCreateRequest) GetVisibleToEveryone() *bool {

@@ -8,16 +8,9 @@ import (
 )
 
 type C1APIAppV1ConnectorServiceForceSyncRequest struct {
-	ForceSyncRequest *shared.ForceSyncRequest `request:"mediaType=application/json"`
 	AppID            string                   `pathParam:"style=simple,explode=false,name=app_id"`
 	ConnectorID      string                   `pathParam:"style=simple,explode=false,name=connector_id"`
-}
-
-func (o *C1APIAppV1ConnectorServiceForceSyncRequest) GetForceSyncRequest() *shared.ForceSyncRequest {
-	if o == nil {
-		return nil
-	}
-	return o.ForceSyncRequest
+	ForceSyncRequest *shared.ForceSyncRequest `request:"mediaType=application/json"`
 }
 
 func (o *C1APIAppV1ConnectorServiceForceSyncRequest) GetAppID() string {
@@ -34,15 +27,22 @@ func (o *C1APIAppV1ConnectorServiceForceSyncRequest) GetConnectorID() string {
 	return o.ConnectorID
 }
 
+func (o *C1APIAppV1ConnectorServiceForceSyncRequest) GetForceSyncRequest() *shared.ForceSyncRequest {
+	if o == nil {
+		return nil
+	}
+	return o.ForceSyncRequest
+}
+
 type C1APIAppV1ConnectorServiceForceSyncResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	ForceSyncResponse *shared.ForceSyncResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// Successful response
+	ForceSyncResponse *shared.ForceSyncResponse
 }
 
 func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetContentType() string {
@@ -50,13 +50,6 @@ func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetForceSyncResponse() *shared.ForceSyncResponse {
-	if o == nil {
-		return nil
-	}
-	return o.ForceSyncResponse
 }
 
 func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetStatusCode() int {
@@ -71,4 +64,11 @@ func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetRawResponse() *http.Res
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAppV1ConnectorServiceForceSyncResponse) GetForceSyncResponse() *shared.ForceSyncResponse {
+	if o == nil {
+		return nil
+	}
+	return o.ForceSyncResponse
 }

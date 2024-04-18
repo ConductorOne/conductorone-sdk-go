@@ -27,21 +27,14 @@ func (o *C1APIAppV1ConnectorServiceGetRequest) GetID() string {
 }
 
 type C1APIAppV1ConnectorServiceGetResponse struct {
-	// The ConnectorServiceGetResponse message contains the connectorView, and an expand mask.
-	ConnectorServiceGetResponse *shared.ConnectorServiceGetResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *C1APIAppV1ConnectorServiceGetResponse) GetConnectorServiceGetResponse() *shared.ConnectorServiceGetResponse {
-	if o == nil {
-		return nil
-	}
-	return o.ConnectorServiceGetResponse
+	// The ConnectorServiceGetResponse message contains the connectorView, and an expand mask.
+	ConnectorServiceGetResponse *shared.ConnectorServiceGetResponse
 }
 
 func (o *C1APIAppV1ConnectorServiceGetResponse) GetContentType() string {
@@ -63,4 +56,11 @@ func (o *C1APIAppV1ConnectorServiceGetResponse) GetRawResponse() *http.Response 
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAppV1ConnectorServiceGetResponse) GetConnectorServiceGetResponse() *shared.ConnectorServiceGetResponse {
+	if o == nil {
+		return nil
+	}
+	return o.ConnectorServiceGetResponse
 }

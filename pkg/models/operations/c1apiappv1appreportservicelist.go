@@ -35,21 +35,14 @@ func (o *C1APIAppV1AppReportServiceListRequest) GetPageToken() *string {
 }
 
 type C1APIAppV1AppReportServiceListResponse struct {
-	// The AppReportServiceListResponse message contains a list of results and a nextPageToken if applicable.
-	AppReportServiceListResponse *shared.AppReportServiceListResponse
 	// HTTP response content type for this operation
 	ContentType string
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *C1APIAppV1AppReportServiceListResponse) GetAppReportServiceListResponse() *shared.AppReportServiceListResponse {
-	if o == nil {
-		return nil
-	}
-	return o.AppReportServiceListResponse
+	// The AppReportServiceListResponse message contains a list of results and a nextPageToken if applicable.
+	AppReportServiceListResponse *shared.AppReportServiceListResponse
 }
 
 func (o *C1APIAppV1AppReportServiceListResponse) GetContentType() string {
@@ -71,4 +64,11 @@ func (o *C1APIAppV1AppReportServiceListResponse) GetRawResponse() *http.Response
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *C1APIAppV1AppReportServiceListResponse) GetAppReportServiceListResponse() *shared.AppReportServiceListResponse {
+	if o == nil {
+		return nil
+	}
+	return o.AppReportServiceListResponse
 }
