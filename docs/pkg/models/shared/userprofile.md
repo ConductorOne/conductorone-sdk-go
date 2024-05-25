@@ -24,7 +24,7 @@ userProfile := shared.CreateUserProfileUser3(shared.User3{/* values here */})
 ### 
 
 ```go
-userProfile := shared.CreateUserProfileArrayOfany([]interface{}{/* values here */})
+userProfile := shared.CreateUserProfileArrayOfAny([]any{/* values here */})
 ```
 
 ### 

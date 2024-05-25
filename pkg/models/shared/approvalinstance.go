@@ -21,7 +21,6 @@ const (
 func (e ApprovalInstanceState) ToPointer() *ApprovalInstanceState {
 	return &e
 }
-
 func (e *ApprovalInstanceState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

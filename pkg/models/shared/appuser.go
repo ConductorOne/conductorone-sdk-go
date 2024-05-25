@@ -23,7 +23,6 @@ const (
 func (e AppUserType) ToPointer() *AppUserType {
 	return &e
 }
-
 func (e *AppUserType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -53,7 +52,7 @@ const (
 	ProfileTypeStr        ProfileType = "str"
 	ProfileTypeNumber     ProfileType = "number"
 	ProfileTypeThree      ProfileType = "3"
-	ProfileTypeArrayOfany ProfileType = "arrayOfany"
+	ProfileTypeArrayOfAny ProfileType = "arrayOfAny"
 	ProfileTypeBoolean    ProfileType = "boolean"
 )
 
@@ -61,7 +60,7 @@ type Profile struct {
 	Str        *string
 	Number     *float64
 	Three      *Three
-	ArrayOfany []interface{}
+	ArrayOfAny []any
 	Boolean    *bool
 
 	Type ProfileType
@@ -94,11 +93,11 @@ func CreateProfileThree(three Three) Profile {
 	}
 }
 
-func CreateProfileArrayOfany(arrayOfany []interface{}) Profile {
-	typ := ProfileTypeArrayOfany
+func CreateProfileArrayOfAny(arrayOfAny []any) Profile {
+	typ := ProfileTypeArrayOfAny
 
 	return Profile{
-		ArrayOfany: arrayOfany,
+		ArrayOfAny: arrayOfAny,
 		Type:       typ,
 	}
 }
@@ -114,42 +113,42 @@ func CreateProfileBoolean(boolean bool) Profile {
 
 func (u *Profile) UnmarshalJSON(data []byte) error {
 
-	three := Three{}
+	var three Three = Three{}
 	if err := utils.UnmarshalJSON(data, &three, "", true, true); err == nil {
 		u.Three = &three
 		u.Type = ProfileTypeThree
 		return nil
 	}
 
-	str := ""
+	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
 		u.Str = &str
 		u.Type = ProfileTypeStr
 		return nil
 	}
 
-	number := float64(0)
+	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
 		u.Number = &number
 		u.Type = ProfileTypeNumber
 		return nil
 	}
 
-	arrayOfany := []interface{}{}
-	if err := utils.UnmarshalJSON(data, &arrayOfany, "", true, true); err == nil {
-		u.ArrayOfany = arrayOfany
-		u.Type = ProfileTypeArrayOfany
+	var arrayOfAny []any = []any{}
+	if err := utils.UnmarshalJSON(data, &arrayOfAny, "", true, true); err == nil {
+		u.ArrayOfAny = arrayOfAny
+		u.Type = ProfileTypeArrayOfAny
 		return nil
 	}
 
-	boolean := false
+	var boolean bool = false
 	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
 		u.Boolean = &boolean
 		u.Type = ProfileTypeBoolean
 		return nil
 	}
 
-	return errors.New("could not unmarshal into supported union types")
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for Profile", string(data))
 }
 
 func (u Profile) MarshalJSON() ([]byte, error) {
@@ -165,15 +164,15 @@ func (u Profile) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Three, "", true)
 	}
 
-	if u.ArrayOfany != nil {
-		return utils.MarshalJSON(u.ArrayOfany, "", true)
+	if u.ArrayOfAny != nil {
+		return utils.MarshalJSON(u.ArrayOfAny, "", true)
 	}
 
 	if u.Boolean != nil {
 		return utils.MarshalJSON(u.Boolean, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type: all fields are null")
+	return nil, errors.New("could not marshal union type Profile: all fields are null")
 }
 
 // AppUser - Application User that represents an account in the application.

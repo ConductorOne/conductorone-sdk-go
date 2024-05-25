@@ -31,6 +31,7 @@ func (s *AppEntitlementOwners) Add(ctx context.Context, request operations.C1API
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementOwners.Add",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -73,9 +74,11 @@ func (s *AppEntitlementOwners) Add(ctx context.Context, request operations.C1API
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -119,6 +122,7 @@ func (s *AppEntitlementOwners) Add(ctx context.Context, request operations.C1API
 	}
 
 	return res, nil
+
 }
 
 // List
@@ -127,6 +131,7 @@ func (s *AppEntitlementOwners) List(ctx context.Context, request operations.C1AP
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementOwners.List",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -167,9 +172,11 @@ func (s *AppEntitlementOwners) List(ctx context.Context, request operations.C1AP
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -213,6 +220,7 @@ func (s *AppEntitlementOwners) List(ctx context.Context, request operations.C1AP
 	}
 
 	return res, nil
+
 }
 
 // Remove
@@ -221,6 +229,7 @@ func (s *AppEntitlementOwners) Remove(ctx context.Context, request operations.C1
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementOwners.Remove",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -263,9 +272,11 @@ func (s *AppEntitlementOwners) Remove(ctx context.Context, request operations.C1
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -309,6 +320,7 @@ func (s *AppEntitlementOwners) Remove(ctx context.Context, request operations.C1
 	}
 
 	return res, nil
+
 }
 
 // Set
@@ -317,6 +329,7 @@ func (s *AppEntitlementOwners) Set(ctx context.Context, request operations.C1API
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementOwners.Set",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -359,9 +372,11 @@ func (s *AppEntitlementOwners) Set(ctx context.Context, request operations.C1API
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -405,4 +420,5 @@ func (s *AppEntitlementOwners) Set(ctx context.Context, request operations.C1API
 	}
 
 	return res, nil
+
 }

@@ -16,13 +16,14 @@ const (
 	ProvisionInstanceStateProvisionInstanceStateCreateConnectorActionsForTarget ProvisionInstanceState = "PROVISION_INSTANCE_STATE_CREATE_CONNECTOR_ACTIONS_FOR_TARGET"
 	ProvisionInstanceStateProvisionInstanceStateSendingNotifications            ProvisionInstanceState = "PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS"
 	ProvisionInstanceStateProvisionInstanceStateWaiting                         ProvisionInstanceState = "PROVISION_INSTANCE_STATE_WAITING"
+	ProvisionInstanceStateProvisionInstanceStateWebhook                         ProvisionInstanceState = "PROVISION_INSTANCE_STATE_WEBHOOK"
+	ProvisionInstanceStateProvisionInstanceStateWebhookWaiting                  ProvisionInstanceState = "PROVISION_INSTANCE_STATE_WEBHOOK_WAITING"
 	ProvisionInstanceStateProvisionInstanceStateDone                            ProvisionInstanceState = "PROVISION_INSTANCE_STATE_DONE"
 )
 
 func (e ProvisionInstanceState) ToPointer() *ProvisionInstanceState {
 	return &e
 }
-
 func (e *ProvisionInstanceState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -38,6 +39,10 @@ func (e *ProvisionInstanceState) UnmarshalJSON(data []byte) error {
 	case "PROVISION_INSTANCE_STATE_SENDING_NOTIFICATIONS":
 		fallthrough
 	case "PROVISION_INSTANCE_STATE_WAITING":
+		fallthrough
+	case "PROVISION_INSTANCE_STATE_WEBHOOK":
+		fallthrough
+	case "PROVISION_INSTANCE_STATE_WEBHOOK_WAITING":
 		fallthrough
 	case "PROVISION_INSTANCE_STATE_DONE":
 		*e = ProvisionInstanceState(v)

@@ -58,6 +58,12 @@ func main() {
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
 
+### [AppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md)
+
+* [CancelAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#cancelappaccessrequestsdefaults) - Cancel App Access Requests Defaults
+* [CreateAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#createappaccessrequestsdefaults) - Create App Access Requests Defaults
+* [GetAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#getappaccessrequestsdefaults) - Get App Access Requests Defaults
+
 ### [Connector](docs/sdks/connector/README.md)
 
 * [Create](docs/sdks/connector/README.md#create) - Create
@@ -78,8 +84,13 @@ func main() {
 * [List](docs/sdks/appentitlements/README.md#list) - List
 * [ListForAppResource](docs/sdks/appentitlements/README.md#listforappresource) - List For App Resource
 * [ListForAppUser](docs/sdks/appentitlements/README.md#listforappuser) - List For App User
-* [ListUsers](docs/sdks/appentitlements/README.md#listusers) - List Users
+* [~~ListUsers~~](docs/sdks/appentitlements/README.md#listusers) - List Users :warning: **Deprecated**
 * [Update](docs/sdks/appentitlements/README.md#update) - Update
+
+### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
+
+* [Search](docs/sdks/appentitlementsearch/README.md#search) - Search
+* [SearchAppEntitlementsWithExpired](docs/sdks/appentitlementsearch/README.md#searchappentitlementswithexpired) - Search App Entitlements With Expired
 
 ### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
@@ -149,11 +160,13 @@ func main() {
 * [Create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [Delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
 * [Get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
+* [GetBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#getbundleautomation) - Get Bundle Automation
 * [List](docs/sdks/requestcatalogmanagement/README.md#list) - List
 * [ListEntitlementsForAccess](docs/sdks/requestcatalogmanagement/README.md#listentitlementsforaccess) - List Entitlements For Access
 * [ListEntitlementsPerCatalog](docs/sdks/requestcatalogmanagement/README.md#listentitlementspercatalog) - List Entitlements Per Catalog
 * [RemoveAccessEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeappentitlements) - Remove App Entitlements
+* [SetBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#setbundleautomation) - Set Bundle Automation
 * [Update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
 ### [Directory](docs/sdks/directory/README.md)
@@ -197,10 +210,6 @@ func main() {
 
 * [SearchAttributeValues](docs/sdks/attributesearch/README.md#searchattributevalues) - Search Attribute Values
 
-### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
-
-* [Search](docs/sdks/appentitlementsearch/README.md#search) - Search
-
 ### [PolicySearch](docs/sdks/policysearch/README.md)
 
 * [Search](docs/sdks/policysearch/README.md#search) - Search
@@ -216,6 +225,10 @@ func main() {
 ### [UserSearch](docs/sdks/usersearch/README.md)
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
+
+### [WebhooksSearch](docs/sdks/webhookssearch/README.md)
+
+* [Search](docs/sdks/webhookssearch/README.md#search) - Search
 
 ### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
 
@@ -247,7 +260,12 @@ func main() {
 
 ### [Webhooks](docs/sdks/webhooks/README.md)
 
+* [Create](docs/sdks/webhooks/README.md#create) - Create
+* [Delete](docs/sdks/webhooks/README.md#delete) - Delete
+* [Get](docs/sdks/webhooks/README.md#get) - Get
+* [List](docs/sdks/webhooks/README.md#list) - List
 * [Test](docs/sdks/webhooks/README.md#test) - Test
+* [Update](docs/sdks/webhooks/README.md#update) - Update
 <!-- End Available Resources and Operations [operations] -->
 
 

@@ -19,7 +19,6 @@ const (
 func (e PolicyStepInstanceState) ToPointer() *PolicyStepInstanceState {
 	return &e
 }
-
 func (e *PolicyStepInstanceState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

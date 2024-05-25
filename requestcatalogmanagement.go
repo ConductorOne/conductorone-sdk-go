@@ -32,6 +32,7 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAccessEntitlements",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -74,9 +75,11 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -120,6 +123,7 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 	}
 
 	return res, nil
+
 }
 
 // AddAppEntitlements - Add App Entitlements
@@ -128,6 +132,7 @@ func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAppEntitlements",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -170,9 +175,11 @@ func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -216,6 +223,7 @@ func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, reque
 	}
 
 	return res, nil
+
 }
 
 // Create
@@ -224,6 +232,7 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.Create",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -266,9 +275,11 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -312,6 +323,7 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 	}
 
 	return res, nil
+
 }
 
 // Delete
@@ -320,6 +332,7 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -362,9 +375,11 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -408,6 +423,7 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 	}
 
 	return res, nil
+
 }
 
 // Get
@@ -416,6 +432,7 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.Get",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -452,9 +469,11 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -498,19 +517,21 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 	}
 
 	return res, nil
+
 }
 
-// List
-// Get a list of request catalogs.
-func (s *RequestCatalogManagement) List(ctx context.Context) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse, error) {
+// GetBundleAutomation - Get Bundle Automation
+// Get bundle automation
+func (s *RequestCatalogManagement) GetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
-		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.List",
+		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
-	opURL, err := url.JoinPath(baseURL, "/api/v1/catalogs")
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/api/v1/catalogs/{request_catalog_id}/bundle_automation", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -542,9 +563,109 @@ func (s *RequestCatalogManagement) List(ctx context.Context) (*operations.C1APIR
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse{
+		StatusCode:  httpRes.StatusCode,
+		ContentType: httpRes.Header.Get("Content-Type"),
+		RawResponse: httpRes,
+	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
+	switch {
+	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			var out shared.BundleAutomation
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			res.BundleAutomation = &out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+	default:
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+	}
+
+	return res, nil
+
+}
+
+// List
+// Get a list of request catalogs.
+func (s *RequestCatalogManagement) List(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.List",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
+	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	opURL, err := url.JoinPath(baseURL, "/api/v1/catalogs")
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
+	if err != nil {
+		return nil, fmt.Errorf("error creating request: %w", err)
+	}
+	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
+
+	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
+		return nil, err
+	}
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
+	httpRes, err := s.sdkConfiguration.Client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -588,6 +709,7 @@ func (s *RequestCatalogManagement) List(ctx context.Context) (*operations.C1APIR
 	}
 
 	return res, nil
+
 }
 
 // ListEntitlementsForAccess - List Entitlements For Access
@@ -596,6 +718,7 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsForAccess",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -636,9 +759,11 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -682,6 +807,7 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 	}
 
 	return res, nil
+
 }
 
 // ListEntitlementsPerCatalog - List Entitlements Per Catalog
@@ -690,6 +816,7 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsPerCatalog",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -730,9 +857,11 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -776,6 +905,7 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 	}
 
 	return res, nil
+
 }
 
 // RemoveAccessEntitlements - Remove Access Entitlements
@@ -784,6 +914,7 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAccessEntitlements",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -826,9 +957,11 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -872,6 +1005,7 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 	}
 
 	return res, nil
+
 }
 
 // RemoveAppEntitlements - Remove App Entitlements
@@ -880,6 +1014,7 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAppEntitlements",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -922,9 +1057,11 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -968,6 +1105,107 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 	}
 
 	return res, nil
+
+}
+
+// SetBundleAutomation - Set Bundle Automation
+// Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation method.
+func (s *RequestCatalogManagement) SetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse, error) {
+	hookCtx := hooks.HookContext{
+		Context:        ctx,
+		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation",
+		OAuth2Scopes:   []string{},
+		SecuritySource: s.sdkConfiguration.Security,
+	}
+
+	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/api/v1/catalogs/{request_catalog_id}/bundle_automation", request, nil)
+	if err != nil {
+		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "SetBundleAutomationRequest", "json", `request:"mediaType=application/json"`)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
+	if err != nil {
+		return nil, fmt.Errorf("error creating request: %w", err)
+	}
+	req.Header.Set("Accept", "application/json")
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("Content-Type", reqContentType)
+
+	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
+		return nil, err
+	}
+
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
+	if err != nil {
+		return nil, err
+	}
+
+	httpRes, err := s.sdkConfiguration.Client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	res := &operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse{
+		StatusCode:  httpRes.StatusCode,
+		ContentType: httpRes.Header.Get("Content-Type"),
+		RawResponse: httpRes,
+	}
+
+	rawBody, err := io.ReadAll(httpRes.Body)
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
+	httpRes.Body.Close()
+	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
+	switch {
+	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			var out shared.BundleAutomation
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			res.BundleAutomation = &out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
+	default:
+		return nil, sdkerrors.NewSDKError("unknown status code returned", httpRes.StatusCode, string(rawBody), httpRes)
+	}
+
+	return res, nil
+
 }
 
 // Update
@@ -976,6 +1214,7 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.requestcatalog.v1.RequestCatalogManagementService.Update",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -1018,9 +1257,11 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -1064,4 +1305,5 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 	}
 
 	return res, nil
+
 }

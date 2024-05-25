@@ -25,12 +25,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    var request *shared.SearchUsersRequest = &shared.SearchUsersRequest{}
     ctx := context.Background()
-    res, err := s.UserSearch.Search(ctx, &shared.SearchUsersRequest{})
+    res, err := s.UserSearch.Search(ctx, request)
     if err != nil {
         log.Fatal(err)
     }

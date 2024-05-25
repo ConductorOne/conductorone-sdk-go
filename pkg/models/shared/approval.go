@@ -33,6 +33,8 @@ type Approval struct {
 	Assigned *bool `json:"assigned,omitempty"`
 	// Configuration to require a reason when approving this step.
 	RequireApprovalReason *bool `json:"requireApprovalReason,omitempty"`
+	// Configuration to require a reason when denying this step.
+	RequireDenialReason *bool `json:"requireDenialReason,omitempty"`
 	// Configuration to require a reason when reassigning this step.
 	RequireReassignmentReason *bool `json:"requireReassignmentReason,omitempty"`
 }
@@ -105,6 +107,13 @@ func (o *Approval) GetRequireApprovalReason() *bool {
 		return nil
 	}
 	return o.RequireApprovalReason
+}
+
+func (o *Approval) GetRequireDenialReason() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RequireDenialReason
 }
 
 func (o *Approval) GetRequireReassignmentReason() *bool {

@@ -27,8 +27,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -36,14 +36,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
+    request := operations.C1APIAppV1ConnectorServiceCreateRequest{
         AppID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.Create(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -80,8 +80,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -89,14 +89,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
+    request := operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
         AppID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.CreateDelegated(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -133,8 +133,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -142,15 +142,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
+    request := operations.C1APIAppV1ConnectorServiceDeleteRequest{
         AppID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.Delete(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -187,8 +187,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -196,15 +196,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.ForceSync(ctx, operations.C1APIAppV1ConnectorServiceForceSyncRequest{
+    request := operations.C1APIAppV1ConnectorServiceForceSyncRequest{
         AppID: "<value>",
         ConnectorID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.ForceSync(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -241,8 +241,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -250,15 +250,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
+    request := operations.C1APIAppV1ConnectorServiceGetRequest{
         AppID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -295,8 +295,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -304,16 +304,16 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
+    request := operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
         AppID: "<value>",
         ConnectorID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.GetCredentials(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -350,8 +350,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -359,14 +359,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
+    request := operations.C1APIAppV1ConnectorServiceListRequest{
         AppID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -403,8 +403,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -412,16 +412,16 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
+    request := operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
         AppID: "<value>",
         ConnectorID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.RevokeCredential(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -458,8 +458,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -467,15 +467,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
+    request := operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
         AppID: "<value>",
         ConnectorID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.RotateCredential(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -512,8 +512,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -521,15 +521,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
+    request := operations.C1APIAppV1ConnectorServiceUpdateRequest{
         AppID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -566,8 +566,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -575,15 +575,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
+    request := operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
         ConnectorAppID: "<value>",
         ConnectorID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Connector.UpdateDelegated(ctx, request)
     if err != nil {
         log.Fatal(err)
     }

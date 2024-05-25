@@ -19,8 +19,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -28,14 +28,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
+    request := operations.C1APIIamV1RolesGetRequest{
         RoleID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Roles.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -72,8 +72,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -81,12 +81,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    request := operations.C1APIIamV1RolesListRequest{}
     ctx := context.Background()
-    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{})
+    res, err := s.Roles.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -123,8 +123,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -132,14 +132,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
+    request := operations.C1APIIamV1RolesUpdateRequest{
         RoleID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Roles.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
