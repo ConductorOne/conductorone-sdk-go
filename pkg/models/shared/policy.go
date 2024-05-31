@@ -24,7 +24,6 @@ const (
 func (e PolicyPolicyType) ToPointer() *PolicyPolicyType {
 	return &e
 }
-
 func (e *PolicyPolicyType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

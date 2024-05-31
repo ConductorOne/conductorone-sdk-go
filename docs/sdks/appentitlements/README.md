@@ -7,7 +7,7 @@
 * [List](#list) - List
 * [ListForAppResource](#listforappresource) - List For App Resource
 * [ListForAppUser](#listforappuser) - List For App User
-* [ListUsers](#listusers) - List Users
+* [~~ListUsers~~](#listusers) - List Users :warning: **Deprecated**
 * [Update](#update) - Update
 
 ## Get
@@ -22,8 +22,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -31,15 +31,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
+    request := operations.C1APIAppV1AppEntitlementsGetRequest{
         AppID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -76,8 +76,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -85,14 +85,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
+    request := operations.C1APIAppV1AppEntitlementsListRequest{
         AppID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -129,8 +129,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -138,16 +138,16 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
+    request := operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
         AppID: "<value>",
         AppResourceID: "<value>",
         AppResourceTypeID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListForAppResource(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -184,8 +184,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -193,15 +193,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
+    request := operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
         AppID: "<value>",
         AppUserID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListForAppUser(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -226,9 +226,11 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
 
-## ListUsers
+## ~~ListUsers~~
 
 List the users, as AppEntitlementUsers objects, of an app entitlement.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -238,8 +240,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -247,15 +249,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
+    request := operations.C1APIAppV1AppEntitlementsListUsersRequest{
         AppEntitlementID: "<value>",
         AppID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListUsers(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -292,8 +294,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -301,15 +303,15 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.AppEntitlements.Update(ctx, operations.C1APIAppV1AppEntitlementsUpdateRequest{
+    request := operations.C1APIAppV1AppEntitlementsUpdateRequest{
         AppID: "<value>",
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.AppEntitlements.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }

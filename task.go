@@ -32,6 +32,7 @@ func (s *Task) CreateGrantTask(ctx context.Context, request *shared.TaskServiceC
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.task.v1.TaskService.CreateGrantTask",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -74,9 +75,11 @@ func (s *Task) CreateGrantTask(ctx context.Context, request *shared.TaskServiceC
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -120,6 +123,7 @@ func (s *Task) CreateGrantTask(ctx context.Context, request *shared.TaskServiceC
 	}
 
 	return res, nil
+
 }
 
 // CreateRevokeTask - Create Revoke Task
@@ -128,6 +132,7 @@ func (s *Task) CreateRevokeTask(ctx context.Context, request *shared.TaskService
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.task.v1.TaskService.CreateRevokeTask",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -170,9 +175,11 @@ func (s *Task) CreateRevokeTask(ctx context.Context, request *shared.TaskService
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -216,6 +223,7 @@ func (s *Task) CreateRevokeTask(ctx context.Context, request *shared.TaskService
 	}
 
 	return res, nil
+
 }
 
 // Get
@@ -224,6 +232,7 @@ func (s *Task) Get(ctx context.Context, request operations.C1APITaskV1TaskServic
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.task.v1.TaskService.Get",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -260,9 +269,11 @@ func (s *Task) Get(ctx context.Context, request operations.C1APITaskV1TaskServic
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -306,4 +317,5 @@ func (s *Task) Get(ctx context.Context, request operations.C1APITaskV1TaskServic
 	}
 
 	return res, nil
+
 }

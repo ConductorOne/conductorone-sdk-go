@@ -29,12 +29,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    var request *shared.CreateAttributeValueRequest = &shared.CreateAttributeValueRequest{}
     ctx := context.Background()
-    res, err := s.Attributes.CreateAttributeValue(ctx, &shared.CreateAttributeValueRequest{})
+    res, err := s.Attributes.CreateAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -71,8 +71,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -80,14 +80,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
+    request := operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.DeleteAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -124,8 +124,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -133,14 +133,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
+    request := operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.GetAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -177,8 +177,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -186,12 +186,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    request := operations.C1APIAttributeV1AttributesListAttributeTypesRequest{}
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{})
+    res, err := s.Attributes.ListAttributeTypes(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -228,8 +228,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -237,14 +237,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
+    request := operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
         AttributeTypeID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.ListAttributeValues(ctx, request)
     if err != nil {
         log.Fatal(err)
     }

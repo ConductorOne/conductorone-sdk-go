@@ -22,7 +22,6 @@ const (
 func (e PolicyType) ToPointer() *PolicyType {
 	return &e
 }
-
 func (e *PolicyType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -61,6 +60,8 @@ type CreatePolicyRequest struct {
 	PostActions []PolicyPostActions `json:"postActions,omitempty"`
 	// Allows reassigning tasks to delegates.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
+	// The rules field.
+	Rules []Rule `json:"rules,omitempty"`
 }
 
 func (o *CreatePolicyRequest) GetDescription() *string {
@@ -103,4 +104,11 @@ func (o *CreatePolicyRequest) GetReassignTasksToDelegates() *bool {
 		return nil
 	}
 	return o.ReassignTasksToDelegates
+}
+
+func (o *CreatePolicyRequest) GetRules() []Rule {
+	if o == nil {
+		return nil
+	}
+	return o.Rules
 }

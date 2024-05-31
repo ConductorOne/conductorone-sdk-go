@@ -18,7 +18,6 @@ const (
 func (e ExternalRefSource) ToPointer() *ExternalRefSource {
 	return &e
 }
-
 func (e *ExternalRefSource) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

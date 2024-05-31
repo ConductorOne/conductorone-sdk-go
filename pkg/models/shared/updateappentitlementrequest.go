@@ -13,7 +13,9 @@ type UpdateAppEntitlementRequest struct {
 	AppEntitlement *AppEntitlementInput `json:"entitlement,omitempty"`
 	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
 	AppEntitlementExpandMask *AppEntitlementExpandMask `json:"expandMask,omitempty"`
-	UpdateMask               *string                   `json:"updateMask,omitempty"`
+	// Flag to indicate that access request defaults, if any are applied to these entitlements, should be overridden.
+	OverrideAccessRequestsDefaults *bool   `json:"overrideAccessRequestsDefaults,omitempty"`
+	UpdateMask                     *string `json:"updateMask,omitempty"`
 }
 
 func (o *UpdateAppEntitlementRequest) GetAppEntitlement() *AppEntitlementInput {
@@ -28,6 +30,13 @@ func (o *UpdateAppEntitlementRequest) GetAppEntitlementExpandMask() *AppEntitlem
 		return nil
 	}
 	return o.AppEntitlementExpandMask
+}
+
+func (o *UpdateAppEntitlementRequest) GetOverrideAccessRequestsDefaults() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.OverrideAccessRequestsDefaults
 }
 
 func (o *UpdateAppEntitlementRequest) GetUpdateMask() *string {

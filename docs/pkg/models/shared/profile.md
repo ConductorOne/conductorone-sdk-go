@@ -24,7 +24,7 @@ profile := shared.CreateProfileThree(shared.Three{/* values here */})
 ### 
 
 ```go
-profile := shared.CreateProfileArrayOfany([]interface{}{/* values here */})
+profile := shared.CreateProfileArrayOfAny([]any{/* values here */})
 ```
 
 ### 

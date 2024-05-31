@@ -29,12 +29,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    var request *shared.CreatePolicyRequest = &shared.CreatePolicyRequest{}
     ctx := context.Background()
-    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{})
+    res, err := s.Policies.Create(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -71,8 +71,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -80,14 +80,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
+    request := operations.C1APIPolicyV1PoliciesDeleteRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Delete(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -124,8 +124,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -133,14 +133,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
+    request := operations.C1APIPolicyV1PoliciesGetRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -177,8 +177,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -186,12 +186,12 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
+    request := operations.C1APIPolicyV1PoliciesListRequest{}
     ctx := context.Background()
-    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{})
+    res, err := s.Policies.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -228,8 +228,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
@@ -237,14 +237,14 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
+    request := operations.C1APIPolicyV1PoliciesUpdateRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }

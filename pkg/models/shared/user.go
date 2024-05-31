@@ -23,7 +23,6 @@ const (
 func (e DirectoryStatus) ToPointer() *DirectoryStatus {
 	return &e
 }
-
 func (e *DirectoryStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -53,7 +52,7 @@ const (
 	UserProfileTypeStr        UserProfileType = "str"
 	UserProfileTypeNumber     UserProfileType = "number"
 	UserProfileTypeUser3      UserProfileType = "User_3"
-	UserProfileTypeArrayOfany UserProfileType = "arrayOfany"
+	UserProfileTypeArrayOfAny UserProfileType = "arrayOfAny"
 	UserProfileTypeBoolean    UserProfileType = "boolean"
 )
 
@@ -61,7 +60,7 @@ type UserProfile struct {
 	Str        *string
 	Number     *float64
 	User3      *User3
-	ArrayOfany []interface{}
+	ArrayOfAny []any
 	Boolean    *bool
 
 	Type UserProfileType
@@ -94,11 +93,11 @@ func CreateUserProfileUser3(user3 User3) UserProfile {
 	}
 }
 
-func CreateUserProfileArrayOfany(arrayOfany []interface{}) UserProfile {
-	typ := UserProfileTypeArrayOfany
+func CreateUserProfileArrayOfAny(arrayOfAny []any) UserProfile {
+	typ := UserProfileTypeArrayOfAny
 
 	return UserProfile{
-		ArrayOfany: arrayOfany,
+		ArrayOfAny: arrayOfAny,
 		Type:       typ,
 	}
 }
@@ -114,42 +113,42 @@ func CreateUserProfileBoolean(boolean bool) UserProfile {
 
 func (u *UserProfile) UnmarshalJSON(data []byte) error {
 
-	user3 := User3{}
+	var user3 User3 = User3{}
 	if err := utils.UnmarshalJSON(data, &user3, "", true, true); err == nil {
 		u.User3 = &user3
 		u.Type = UserProfileTypeUser3
 		return nil
 	}
 
-	str := ""
+	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
 		u.Str = &str
 		u.Type = UserProfileTypeStr
 		return nil
 	}
 
-	number := float64(0)
+	var number float64 = float64(0)
 	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
 		u.Number = &number
 		u.Type = UserProfileTypeNumber
 		return nil
 	}
 
-	arrayOfany := []interface{}{}
-	if err := utils.UnmarshalJSON(data, &arrayOfany, "", true, true); err == nil {
-		u.ArrayOfany = arrayOfany
-		u.Type = UserProfileTypeArrayOfany
+	var arrayOfAny []any = []any{}
+	if err := utils.UnmarshalJSON(data, &arrayOfAny, "", true, true); err == nil {
+		u.ArrayOfAny = arrayOfAny
+		u.Type = UserProfileTypeArrayOfAny
 		return nil
 	}
 
-	boolean := false
+	var boolean bool = false
 	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
 		u.Boolean = &boolean
 		u.Type = UserProfileTypeBoolean
 		return nil
 	}
 
-	return errors.New("could not unmarshal into supported union types")
+	return fmt.Errorf("could not unmarshal `%s` into any supported union types for UserProfile", string(data))
 }
 
 func (u UserProfile) MarshalJSON() ([]byte, error) {
@@ -165,15 +164,15 @@ func (u UserProfile) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.User3, "", true)
 	}
 
-	if u.ArrayOfany != nil {
-		return utils.MarshalJSON(u.ArrayOfany, "", true)
+	if u.ArrayOfAny != nil {
+		return utils.MarshalJSON(u.ArrayOfAny, "", true)
 	}
 
 	if u.Boolean != nil {
 		return utils.MarshalJSON(u.Boolean, "", true)
 	}
 
-	return nil, errors.New("could not marshal union type: all fields are null")
+	return nil, errors.New("could not marshal union type UserProfile: all fields are null")
 }
 
 // UserStatus - The status of the user in the system.
@@ -189,7 +188,6 @@ const (
 func (e UserStatus) ToPointer() *UserStatus {
 	return &e
 }
-
 func (e *UserStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -258,6 +256,8 @@ type User struct {
 	UpdatedAt *time.Time  `json:"updatedAt,omitempty"`
 	// This is the user's primary username. Typically sourced from the primary directory.
 	Username *string `json:"username,omitempty"`
+	// A list of source data for the usernames attribute.
+	UsernameSources []UserAttributeMappingSource `json:"usernameSources,omitempty"`
 	// This is a list of all of the user's usernames from app users.
 	Usernames []string `json:"usernames,omitempty"`
 }
@@ -446,6 +446,13 @@ func (o *User) GetUsername() *string {
 		return nil
 	}
 	return o.Username
+}
+
+func (o *User) GetUsernameSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.UsernameSources
 }
 
 func (o *User) GetUsernames() []string {

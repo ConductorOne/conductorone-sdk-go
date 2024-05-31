@@ -8,6 +8,8 @@ package shared
 //   - connector
 //   - manual
 //   - delegated
+//   - webhook
+//   - multiStep
 type ProvisionPolicy struct {
 	// Indicates that a connector should perform the provisioning. This object has no fields.
 	ConnectorProvision *ConnectorProvision `json:"connector,omitempty"`
@@ -15,6 +17,10 @@ type ProvisionPolicy struct {
 	DelegatedProvision *DelegatedProvision `json:"delegated,omitempty"`
 	// Manual provisioning indicates that a human must intervene for the provisioning of this step.
 	ManualProvision *ManualProvision `json:"manual,omitempty"`
+	// MultiStep indicates that this provision step has multiple steps to process.
+	MultiStep *MultiStep `json:"multiStep,omitempty"`
+	// This provision step indicates that a webhook should be called to provision this entitlement.
+	WebhookProvision *WebhookProvision `json:"webhook,omitempty"`
 }
 
 func (o *ProvisionPolicy) GetConnectorProvision() *ConnectorProvision {
@@ -36,4 +42,18 @@ func (o *ProvisionPolicy) GetManualProvision() *ManualProvision {
 		return nil
 	}
 	return o.ManualProvision
+}
+
+func (o *ProvisionPolicy) GetMultiStep() *MultiStep {
+	if o == nil {
+		return nil
+	}
+	return o.MultiStep
+}
+
+func (o *ProvisionPolicy) GetWebhookProvision() *WebhookProvision {
+	if o == nil {
+		return nil
+	}
+	return o.WebhookProvision
 }

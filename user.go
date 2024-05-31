@@ -32,6 +32,7 @@ func (s *User) Get(ctx context.Context, request operations.C1APIUserV1UserServic
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.user.v1.UserService.Get",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -68,9 +69,11 @@ func (s *User) Get(ctx context.Context, request operations.C1APIUserV1UserServic
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -114,6 +117,7 @@ func (s *User) Get(ctx context.Context, request operations.C1APIUserV1UserServic
 	}
 
 	return res, nil
+
 }
 
 // List
@@ -122,6 +126,7 @@ func (s *User) List(ctx context.Context, request operations.C1APIUserV1UserServi
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.user.v1.UserService.List",
+		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
 
@@ -162,9 +167,11 @@ func (s *User) List(ctx context.Context, request operations.C1APIUserV1UserServi
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -208,4 +215,5 @@ func (s *User) List(ctx context.Context, request operations.C1APIUserV1UserServi
 	}
 
 	return res, nil
+
 }

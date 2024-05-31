@@ -23,7 +23,6 @@ const (
 func (e TaskTypeRevokeOutcome) ToPointer() *TaskTypeRevokeOutcome {
 	return &e
 }
-
 func (e *TaskTypeRevokeOutcome) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

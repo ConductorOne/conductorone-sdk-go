@@ -1,31 +1,39 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 4fa0ae07800b0badd27f9ec24f95dd56
+  docChecksum: d0c50fa32e1b75d3d157595adaab042f
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.209.2
-  generationVersion: 2.281.2
-  releaseVersion: 1.17.0
-  configChecksum: 6a91f5be10b752f8078c11a59cdce70f
+  speakeasyVersion: 1.299.3
+  generationVersion: 2.338.7
+  releaseVersion: 1.18.2
+  configChecksum: 97fe2941378e3cb8f3ca23398b699b82
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
   published: true
 features:
   go:
+    additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.4.4
-    globalSecurity: 2.82.8
+    core: 3.4.10
+    deprecations: 2.81.1
+    globalSecurity: 2.82.9
+    globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
     groups: 2.81.2
     inputOutputModels: 2.83.0
-    nameOverrides: 2.81.1
-    responseFormat: 0.1.0
-    unions: 2.85.4
+    intellisenseMarkdownSupport: 0.1.0
+    nameOverrides: 2.81.2
+    nullables: 0.1.0
+    responseFormat: 0.1.2
+    sdkHooks: 0.1.0
+    unions: 2.85.8
 generatedFiles:
   - apps.go
+  - appaccessrequestsdefaults.go
   - connector.go
   - appentitlements.go
+  - appentitlementsearch.go
   - appentitlementuserbinding.go
   - appentitlementowners.go
   - appowners.go
@@ -47,11 +55,11 @@ generatedFiles:
   - appresourcesearch.go
   - appsearch.go
   - attributesearch.go
-  - appentitlementsearch.go
   - policysearch.go
   - requestcatalogsearch.go
   - tasksearch.go
   - usersearch.go
+  - webhookssearch.go
   - awsexternalidsettings.go
   - sessionsettings.go
   - task.go
@@ -80,6 +88,9 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appsget.go
   - /pkg/models/operations/c1apiappv1appslist.go
   - /pkg/models/operations/c1apiappv1appsupdate.go
+  - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaults.go
+  - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaults.go
+  - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaults.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
   - /pkg/models/operations/c1apiappv1connectorservicedelete.go
@@ -97,6 +108,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appentitlementslistforappuser.go
   - /pkg/models/operations/c1apiappv1appentitlementslistusers.go
   - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpired.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
   - /pkg/models/operations/c1apiappv1appentitlementownersadd.go
   - /pkg/models/operations/c1apiappv1appentitlementownerslist.go
@@ -127,11 +140,13 @@ generatedFiles:
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreate.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelete.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceget.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomation.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelist.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccess.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalog.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlements.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlements.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomation.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdate.go
   - /pkg/models/operations/c1apidirectoryv1directoryservicecreate.go
   - /pkg/models/operations/c1apidirectoryv1directoryservicedelete.go
@@ -150,11 +165,11 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypes.go
   - /pkg/models/operations/c1apiappv1appsearchsearch.go
   - /pkg/models/operations/c1apiattributev1attributesearchsearchattributevalues.go
-  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
   - /pkg/models/operations/c1apipolicyv1policysearchsearch.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
   - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
   - /pkg/models/operations/c1apiuserv1usersearchsearch.go
+  - /pkg/models/operations/c1apiwebhooksv1webhookssearchsearch.go
   - /pkg/models/operations/c1apisettingsv1awsexternalidsettingsget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdate.go
@@ -168,7 +183,12 @@ generatedFiles:
   - /pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
   - /pkg/models/operations/c1apiuserv1userserviceget.go
   - /pkg/models/operations/c1apiuserv1userservicelist.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksservicecreate.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksservicedelete.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksserviceget.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksservicelist.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicetest.go
+  - /pkg/models/operations/c1apiwebhooksv1webhooksserviceupdate.go
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/app.go
   - /pkg/models/shared/user.go
@@ -180,6 +200,8 @@ generatedFiles:
   - /pkg/models/shared/listappsresponse.go
   - /pkg/models/shared/updateappresponse.go
   - /pkg/models/shared/updateapprequest.go
+  - /pkg/models/shared/appaccessrequestdefaults.go
+  - /pkg/models/shared/cancelaccessrequestdefaultsrequest.go
   - /pkg/models/shared/connectorservicecreateresponse.go
   - /pkg/models/shared/connectorview.go
   - /pkg/models/shared/connector.go
@@ -208,6 +230,8 @@ generatedFiles:
   - /pkg/models/shared/appentitlementview.go
   - /pkg/models/shared/appentitlement.go
   - /pkg/models/shared/provisionpolicy.go
+  - /pkg/models/shared/webhookprovision.go
+  - /pkg/models/shared/multistep.go
   - /pkg/models/shared/manualprovision.go
   - /pkg/models/shared/delegatedprovision.go
   - /pkg/models/shared/connectorprovision.go
@@ -220,6 +244,17 @@ generatedFiles:
   - /pkg/models/shared/updateappentitlementresponse.go
   - /pkg/models/shared/updateappentitlementrequest.go
   - /pkg/models/shared/appentitlementexpandmask.go
+  - /pkg/models/shared/appentitlementsearchservicesearchresponse.go
+  - /pkg/models/shared/facets.go
+  - /pkg/models/shared/facetcategory.go
+  - /pkg/models/shared/facetvalueitem.go
+  - /pkg/models/shared/facetvalue.go
+  - /pkg/models/shared/facetrangeitem.go
+  - /pkg/models/shared/facetrange.go
+  - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
+  - /pkg/models/shared/appentitlementref.go
+  - /pkg/models/shared/searchappentitlementswithexpiredresponse.go
+  - /pkg/models/shared/appentitlementwithexpired.go
   - /pkg/models/shared/listappusersforidentitywithgrantresponse.go
   - /pkg/models/shared/appentitlementuserbinding.go
   - /pkg/models/shared/addappentitlementownerresponse.go
@@ -269,7 +304,6 @@ generatedFiles:
   - /pkg/models/shared/introspectresponse.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
-  - /pkg/models/shared/appentitlementref.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.go
   - /pkg/models/shared/requestcatalogmanagementservicegetresponse.go
@@ -279,6 +313,9 @@ generatedFiles:
   - /pkg/models/shared/requestcatalogexpandmask.go
   - /pkg/models/shared/requestcatalogmanagementservicedeleteresponse.go
   - /pkg/models/shared/requestcatalogmanagementservicedeleterequest.go
+  - /pkg/models/shared/bundleautomation.go
+  - /pkg/models/shared/bundleautomationruleentitlement.go
+  - /pkg/models/shared/bundleautomationlastrunstate.go
   - /pkg/models/shared/requestcatalogmanagementservicelistresponse.go
   - /pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.go
   - /pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.go
@@ -286,6 +323,7 @@ generatedFiles:
   - /pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.go
   - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.go
   - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.go
+  - /pkg/models/shared/setbundleautomationrequest.go
   - /pkg/models/shared/requestcatalogmanagementserviceupdaterequest.go
   - /pkg/models/shared/requestcataloginput.go
   - /pkg/models/shared/directoryservicecreateresponse.go
@@ -340,14 +378,6 @@ generatedFiles:
   - /pkg/models/shared/searchappsrequest.go
   - /pkg/models/shared/searchattributevaluesresponse.go
   - /pkg/models/shared/searchattributevaluesrequest.go
-  - /pkg/models/shared/appentitlementsearchservicesearchresponse.go
-  - /pkg/models/shared/facets.go
-  - /pkg/models/shared/facetcategory.go
-  - /pkg/models/shared/facetvalueitem.go
-  - /pkg/models/shared/facetvalue.go
-  - /pkg/models/shared/facetrangeitem.go
-  - /pkg/models/shared/facetrange.go
-  - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
   - /pkg/models/shared/searchpoliciesrequest.go
   - /pkg/models/shared/policyref.go
   - /pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.go
@@ -394,6 +424,10 @@ generatedFiles:
   - /pkg/models/shared/searchusersrequest.go
   - /pkg/models/shared/userref.go
   - /pkg/models/shared/userexpandmask.go
+  - /pkg/models/shared/webhookssearchresponse.go
+  - /pkg/models/shared/webhook.go
+  - /pkg/models/shared/webhookssearchrequest.go
+  - /pkg/models/shared/webhookref.go
   - /pkg/models/shared/getawsexternalidresponse.go
   - /pkg/models/shared/awsexternalid.go
   - /pkg/models/shared/getsessionsettingsresponse.go
@@ -417,6 +451,12 @@ generatedFiles:
   - /pkg/models/shared/taskactionsservicerestartrequest.go
   - /pkg/models/shared/userservicegetresponse.go
   - /pkg/models/shared/userservicelistresponse.go
+  - /pkg/models/shared/webhooksservicecreateresponse.go
+  - /pkg/models/shared/webhooksservicecreaterequest.go
+  - /pkg/models/shared/webhooksservicedeleteresponse.go
+  - /pkg/models/shared/webhooksservicedeleterequest.go
+  - /pkg/models/shared/webhooksservicegetresponse.go
+  - /pkg/models/shared/webhooksservicelistresponse.go
   - /pkg/models/shared/webhooksservicetestresponse.go
   - /pkg/models/shared/webhookinstance.go
   - /pkg/models/shared/webhookspec.go
@@ -426,6 +466,9 @@ generatedFiles:
   - /pkg/models/shared/webhooksourcepolicypostaction.go
   - /pkg/models/shared/webhooksourceapprovalstep.go
   - /pkg/models/shared/webhooksservicetestrequest.go
+  - /pkg/models/shared/webhooksserviceupdateresponse.go
+  - /pkg/models/shared/webhooksserviceupdaterequest.go
+  - /pkg/models/shared/webhookinput.go
   - /pkg/models/shared/security.go
   - docs/pkg/models/operations/c1apiappv1appscreateresponse.md
   - docs/pkg/models/operations/c1apiappv1appsdeleterequest.md
@@ -436,6 +479,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appslistresponse.md
   - docs/pkg/models/operations/c1apiappv1appsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appsupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreaterequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -470,6 +519,9 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownersaddrequest.md
@@ -527,6 +579,9 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistrequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
@@ -536,6 +591,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsrequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdaterequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicecreateresponse.md
@@ -565,11 +622,11 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
   - docs/pkg/models/operations/c1apiappv1appsearchsearchresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
   - docs/pkg/models/operations/c1apipolicyv1policysearchsearchresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
   - docs/pkg/models/operations/c1apiuserv1usersearchsearchresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
   - docs/pkg/models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
@@ -591,8 +648,17 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1userservicegetresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicecreateresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicedeleterequest.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicedeleteresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicegetrequest.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicegetresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicelistrequest.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicelistresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestrequest.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdateresponse.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/identitymatching.md
   - docs/pkg/models/shared/app.md
@@ -610,6 +676,11 @@ generatedFiles:
   - docs/pkg/models/shared/updateappresponse.md
   - docs/pkg/models/shared/updateapprequest.md
   - docs/pkg/models/shared/appinput.md
+  - docs/pkg/models/shared/durationunset.md
+  - docs/pkg/models/shared/state.md
+  - docs/pkg/models/shared/appaccessrequestdefaults.md
+  - docs/pkg/models/shared/cancelaccessrequestdefaultsrequest.md
+  - docs/pkg/models/shared/appaccessrequestdefaults1.md
   - docs/pkg/models/shared/connectorservicecreateresponseexpanded.md
   - docs/pkg/models/shared/connectorservicecreateresponse.md
   - docs/pkg/models/shared/connectorview.md
@@ -645,9 +716,11 @@ generatedFiles:
   - docs/pkg/models/shared/getappentitlementresponseexpanded.md
   - docs/pkg/models/shared/getappentitlementresponse.md
   - docs/pkg/models/shared/appentitlementview.md
-  - docs/pkg/models/shared/durationunset.md
+  - docs/pkg/models/shared/appentitlementdurationunset.md
   - docs/pkg/models/shared/appentitlement.md
   - docs/pkg/models/shared/provisionpolicy.md
+  - docs/pkg/models/shared/webhookprovision.md
+  - docs/pkg/models/shared/multistep.md
   - docs/pkg/models/shared/manualprovision.md
   - docs/pkg/models/shared/delegatedprovision.md
   - docs/pkg/models/shared/connectorprovision.md
@@ -668,6 +741,18 @@ generatedFiles:
   - docs/pkg/models/shared/updateappentitlementrequest.md
   - docs/pkg/models/shared/appentitlementexpandmask.md
   - docs/pkg/models/shared/appentitlementinput.md
+  - docs/pkg/models/shared/expanded.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/shared/facets.md
+  - docs/pkg/models/shared/facetcategory.md
+  - docs/pkg/models/shared/facetvalueitem.md
+  - docs/pkg/models/shared/facetvalue.md
+  - docs/pkg/models/shared/facetrangeitem.md
+  - docs/pkg/models/shared/facetrange.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
+  - docs/pkg/models/shared/appentitlementref.md
+  - docs/pkg/models/shared/searchappentitlementswithexpiredresponse.md
+  - docs/pkg/models/shared/appentitlementwithexpired.md
   - docs/pkg/models/shared/listappusersforidentitywithgrantresponse.md
   - docs/pkg/models/shared/appentitlementuserbinding.md
   - docs/pkg/models/shared/addappentitlementownerresponse.md
@@ -685,7 +770,7 @@ generatedFiles:
   - docs/pkg/models/shared/setappownersresponse.md
   - docs/pkg/models/shared/setappownersrequest.md
   - docs/pkg/models/shared/appreportservicelistresponse.md
-  - docs/pkg/models/shared/state.md
+  - docs/pkg/models/shared/apppopulationreportstate.md
   - docs/pkg/models/shared/apppopulationreport.md
   - docs/pkg/models/shared/appactionsservicegeneratereportresponse.md
   - docs/pkg/models/shared/appactionsservicegeneratereportrequest.md
@@ -724,7 +809,6 @@ generatedFiles:
   - docs/pkg/models/shared/introspectresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.md
-  - docs/pkg/models/shared/appentitlementref.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
   - docs/pkg/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
@@ -735,6 +819,10 @@ generatedFiles:
   - docs/pkg/models/shared/requestcatalogexpandmask.md
   - docs/pkg/models/shared/requestcatalogmanagementservicedeleteresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementservicedeleterequest.md
+  - docs/pkg/models/shared/bundleautomation.md
+  - docs/pkg/models/shared/bundleautomationruleentitlement.md
+  - docs/pkg/models/shared/bundleautomationlastrunstatestatus.md
+  - docs/pkg/models/shared/bundleautomationlastrunstate.md
   - docs/pkg/models/shared/requestcatalogmanagementservicelistresponseexpanded.md
   - docs/pkg/models/shared/requestcatalogmanagementservicelistresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponseexpanded.md
@@ -745,6 +833,7 @@ generatedFiles:
   - docs/pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.md
+  - docs/pkg/models/shared/setbundleautomationrequest.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceupdaterequest.md
   - docs/pkg/models/shared/requestcataloginput.md
   - docs/pkg/models/shared/directoryservicecreateresponseexpanded.md
@@ -806,15 +895,6 @@ generatedFiles:
   - docs/pkg/models/shared/searchappsrequest.md
   - docs/pkg/models/shared/searchattributevaluesresponse.md
   - docs/pkg/models/shared/searchattributevaluesrequest.md
-  - docs/pkg/models/shared/expanded.md
-  - docs/pkg/models/shared/appentitlementsearchservicesearchresponse.md
-  - docs/pkg/models/shared/facets.md
-  - docs/pkg/models/shared/facetcategory.md
-  - docs/pkg/models/shared/facetvalueitem.md
-  - docs/pkg/models/shared/facetvalue.md
-  - docs/pkg/models/shared/facetrangeitem.md
-  - docs/pkg/models/shared/facetrange.md
-  - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
   - docs/pkg/models/shared/policytypes.md
   - docs/pkg/models/shared/searchpoliciesrequest.md
   - docs/pkg/models/shared/policyref.md
@@ -865,6 +945,7 @@ generatedFiles:
   - docs/pkg/models/shared/deniedaction.md
   - docs/pkg/models/shared/approvedaction.md
   - docs/pkg/models/shared/acceptinstance.md
+  - docs/pkg/models/shared/accounttypes.md
   - docs/pkg/models/shared/currentstep.md
   - docs/pkg/models/shared/emergencystatus.md
   - docs/pkg/models/shared/sortby.md
@@ -883,6 +964,10 @@ generatedFiles:
   - docs/pkg/models/shared/searchusersrequest.md
   - docs/pkg/models/shared/userref.md
   - docs/pkg/models/shared/userexpandmask.md
+  - docs/pkg/models/shared/webhookssearchresponse.md
+  - docs/pkg/models/shared/webhook.md
+  - docs/pkg/models/shared/webhookssearchrequest.md
+  - docs/pkg/models/shared/webhookref.md
   - docs/pkg/models/shared/getawsexternalidresponse.md
   - docs/pkg/models/shared/awsexternalid.md
   - docs/pkg/models/shared/getsessionsettingsresponse.md
@@ -916,10 +1001,15 @@ generatedFiles:
   - docs/pkg/models/shared/userservicegetresponse.md
   - docs/pkg/models/shared/userservicelistresponseexpanded.md
   - docs/pkg/models/shared/userservicelistresponse.md
+  - docs/pkg/models/shared/webhooksservicecreateresponse.md
+  - docs/pkg/models/shared/webhooksservicecreaterequest.md
+  - docs/pkg/models/shared/webhooksservicedeleteresponse.md
+  - docs/pkg/models/shared/webhooksservicedeleterequest.md
+  - docs/pkg/models/shared/webhooksservicegetresponse.md
+  - docs/pkg/models/shared/webhooksservicelistresponse.md
   - docs/pkg/models/shared/webhooksservicetestresponse.md
   - docs/pkg/models/shared/webhookinstancestate.md
   - docs/pkg/models/shared/webhookinstance.md
-  - docs/pkg/models/shared/payload.md
   - docs/pkg/models/shared/webhookspec.md
   - docs/pkg/models/shared/webhooksource.md
   - docs/pkg/models/shared/webhooksourcetest.md
@@ -927,11 +1017,16 @@ generatedFiles:
   - docs/pkg/models/shared/webhooksourcepolicypostaction.md
   - docs/pkg/models/shared/webhooksourceapprovalstep.md
   - docs/pkg/models/shared/webhooksservicetestrequest.md
+  - docs/pkg/models/shared/webhooksserviceupdateresponse.md
+  - docs/pkg/models/shared/webhooksserviceupdaterequest.md
+  - docs/pkg/models/shared/webhookinput.md
   - docs/pkg/models/shared/security.md
   - docs/sdks/conductoroneapi/README.md
   - docs/sdks/apps/README.md
+  - docs/sdks/appaccessrequestsdefaults/README.md
   - docs/sdks/connector/README.md
   - docs/sdks/appentitlements/README.md
+  - docs/sdks/appentitlementsearch/README.md
   - docs/sdks/appentitlementuserbinding/README.md
   - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appowners/README.md
@@ -953,11 +1048,11 @@ generatedFiles:
   - docs/sdks/appresourcesearch/README.md
   - docs/sdks/appsearch/README.md
   - docs/sdks/attributesearch/README.md
-  - docs/sdks/appentitlementsearch/README.md
   - docs/sdks/policysearch/README.md
   - docs/sdks/requestcatalogsearch/README.md
   - docs/sdks/tasksearch/README.md
   - docs/sdks/usersearch/README.md
+  - docs/sdks/webhookssearch/README.md
   - docs/sdks/awsexternalidsettings/README.md
   - docs/sdks/sessionsettings/README.md
   - docs/sdks/task/README.md
