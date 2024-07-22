@@ -32,12 +32,12 @@ const (
 	ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions Actions = "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS"
 	ActionsTaskActionTypeSetInsightsAndRecommendation             Actions = "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION"
 	ActionsTaskActionTypeSetAnalysisID                            Actions = "TASK_ACTION_TYPE_SET_ANALYSIS_ID"
+	ActionsTaskActionTypeRecalculateApproversList                 Actions = "TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST"
 )
 
 func (e Actions) ToPointer() *Actions {
 	return &e
 }
-
 func (e *Actions) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -83,6 +83,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION":
 		fallthrough
 	case "TASK_ACTION_TYPE_SET_ANALYSIS_ID":
+		fallthrough
+	case "TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST":
 		*e = Actions(v)
 		return nil
 	default:
@@ -93,8 +95,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 // Annotations - Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
 type Annotations struct {
 	// The type of the serialized message.
-	AtType               *string                `json:"@type,omitempty"`
-	AdditionalProperties map[string]interface{} `additionalProperties:"true" json:"-"`
+	AtType               *string        `json:"@type,omitempty"`
+	AdditionalProperties map[string]any `additionalProperties:"true" json:"-"`
 }
 
 func (a Annotations) MarshalJSON() ([]byte, error) {
@@ -115,7 +117,7 @@ func (o *Annotations) GetAtType() *string {
 	return o.AtType
 }
 
-func (o *Annotations) GetAdditionalProperties() map[string]interface{} {
+func (o *Annotations) GetAdditionalProperties() map[string]any {
 	if o == nil {
 		return nil
 	}
@@ -135,7 +137,6 @@ const (
 func (e Processing) ToPointer() *Processing {
 	return &e
 }
-
 func (e *Processing) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -169,7 +170,6 @@ const (
 func (e Recommendation) ToPointer() *Recommendation {
 	return &e
 }
-
 func (e *Recommendation) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -202,7 +202,6 @@ const (
 func (e TaskState) ToPointer() *TaskState {
 	return &e
 }
-
 func (e *TaskState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -231,6 +230,7 @@ type Task struct {
 	//   - grant
 	//   - revoke
 	//   - certify
+	//   - offboarding
 	//
 	TaskType *TaskType `json:"type,omitempty"`
 	// The actions that can be performed on the task by the current user.
@@ -258,7 +258,7 @@ type Task struct {
 	// The insightIds field.
 	InsightIds []string `json:"insightIds,omitempty"`
 	// A human-usable numeric ID of a task which can be included in place of the fully qualified task id in path parmeters (but not search queries).
-	NumericID *string `json:"numericId,omitempty"`
+	NumericID *int64 `integer:"string" json:"numericId,omitempty"`
 	// The policy generation id refers to the current policy's generation ID. This is changed when the policy is changed on a task.
 	PolicyGenerationID *string `json:"policyGenerationId,omitempty"`
 	// The processing state of a task as defined by the `processing_enum`
@@ -390,7 +390,7 @@ func (o *Task) GetInsightIds() []string {
 	return o.InsightIds
 }
 
-func (o *Task) GetNumericID() *string {
+func (o *Task) GetNumericID() *int64 {
 	if o == nil {
 		return nil
 	}

@@ -20,6 +20,7 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -28,13 +29,13 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
+    var request *shared.CreatePolicyRequest = &shared.CreatePolicyRequest{}
     ctx := context.Background()
-    res, err := s.Policies.Create(ctx, &shared.CreatePolicyRequest{})
+    res, err := s.Policies.Create(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -50,6 +51,7 @@ func main() {
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | `ctx`                                                                        | [context.Context](https://pkg.go.dev/context#Context)                        | :heavy_check_mark:                                                           | The context to use for the request.                                          |
 | `request`                                                                    | [shared.CreatePolicyRequest](../../pkg/models/shared/createpolicyrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `opts`                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                 | :heavy_minus_sign:                                                           | The options for this request.                                                |
 
 
 ### Response
@@ -70,24 +72,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
+    request := operations.C1APIPolicyV1PoliciesDeleteRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Delete(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -103,6 +106,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
 | `request`                                                                                                          | [operations.C1APIPolicyV1PoliciesDeleteRequest](../../pkg/models/operations/c1apipolicyv1policiesdeleterequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `opts`                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
 
 
 ### Response
@@ -123,24 +127,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
+    request := operations.C1APIPolicyV1PoliciesGetRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -156,6 +161,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
 | `request`                                                                                                    | [operations.C1APIPolicyV1PoliciesGetRequest](../../pkg/models/operations/c1apipolicyv1policiesgetrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `opts`                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
 
 
 ### Response
@@ -176,22 +182,23 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
+    request := operations.C1APIPolicyV1PoliciesListRequest{}
     ctx := context.Background()
-    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{})
+    res, err := s.Policies.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -207,6 +214,7 @@ func main() {
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                          | :heavy_check_mark:                                                                                             | The context to use for the request.                                                                            |
 | `request`                                                                                                      | [operations.C1APIPolicyV1PoliciesListRequest](../../pkg/models/operations/c1apipolicyv1policieslistrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `opts`                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
 
 
 ### Response
@@ -227,24 +235,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
+    request := operations.C1APIPolicyV1PoliciesUpdateRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Policies.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -260,6 +269,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                              | :heavy_check_mark:                                                                                                 | The context to use for the request.                                                                                |
 | `request`                                                                                                          | [operations.C1APIPolicyV1PoliciesUpdateRequest](../../pkg/models/operations/c1apipolicyv1policiesupdaterequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `opts`                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
 
 
 ### Response

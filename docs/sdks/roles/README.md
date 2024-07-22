@@ -18,24 +18,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
+    request := operations.C1APIIamV1RolesGetRequest{
         RoleID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Roles.Get(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -51,6 +52,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
 | `request`                                                                                        | [operations.C1APIIamV1RolesGetRequest](../../pkg/models/operations/c1apiiamv1rolesgetrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
 
 ### Response
@@ -71,22 +73,23 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
+    request := operations.C1APIIamV1RolesListRequest{}
     ctx := context.Background()
-    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{})
+    res, err := s.Roles.List(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -102,6 +105,7 @@ func main() {
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
 | `request`                                                                                          | [operations.C1APIIamV1RolesListRequest](../../pkg/models/operations/c1apiiamv1roleslistrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 
 ### Response
@@ -122,24 +126,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
+    request := operations.C1APIIamV1RolesUpdateRequest{
         RoleID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Roles.Update(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -155,6 +160,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                  | :heavy_check_mark:                                                                                     | The context to use for the request.                                                                    |
 | `request`                                                                                              | [operations.C1APIIamV1RolesUpdateRequest](../../pkg/models/operations/c1apiiamv1rolesupdaterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `opts`                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                           | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
 
 
 ### Response

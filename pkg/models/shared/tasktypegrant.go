@@ -13,17 +13,17 @@ import (
 type TaskTypeGrantOutcome string
 
 const (
-	TaskTypeGrantOutcomeGrantOutcomeUnspecified TaskTypeGrantOutcome = "GRANT_OUTCOME_UNSPECIFIED"
-	TaskTypeGrantOutcomeGrantOutcomeGranted     TaskTypeGrantOutcome = "GRANT_OUTCOME_GRANTED"
-	TaskTypeGrantOutcomeGrantOutcomeDenied      TaskTypeGrantOutcome = "GRANT_OUTCOME_DENIED"
-	TaskTypeGrantOutcomeGrantOutcomeError       TaskTypeGrantOutcome = "GRANT_OUTCOME_ERROR"
-	TaskTypeGrantOutcomeGrantOutcomeCancelled   TaskTypeGrantOutcome = "GRANT_OUTCOME_CANCELLED"
+	TaskTypeGrantOutcomeGrantOutcomeUnspecified  TaskTypeGrantOutcome = "GRANT_OUTCOME_UNSPECIFIED"
+	TaskTypeGrantOutcomeGrantOutcomeGranted      TaskTypeGrantOutcome = "GRANT_OUTCOME_GRANTED"
+	TaskTypeGrantOutcomeGrantOutcomeDenied       TaskTypeGrantOutcome = "GRANT_OUTCOME_DENIED"
+	TaskTypeGrantOutcomeGrantOutcomeError        TaskTypeGrantOutcome = "GRANT_OUTCOME_ERROR"
+	TaskTypeGrantOutcomeGrantOutcomeCancelled    TaskTypeGrantOutcome = "GRANT_OUTCOME_CANCELLED"
+	TaskTypeGrantOutcomeGrantOutcomeWaitTimedOut TaskTypeGrantOutcome = "GRANT_OUTCOME_WAIT_TIMED_OUT"
 )
 
 func (e TaskTypeGrantOutcome) ToPointer() *TaskTypeGrantOutcome {
 	return &e
 }
-
 func (e *TaskTypeGrantOutcome) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -39,6 +39,8 @@ func (e *TaskTypeGrantOutcome) UnmarshalJSON(data []byte) error {
 	case "GRANT_OUTCOME_ERROR":
 		fallthrough
 	case "GRANT_OUTCOME_CANCELLED":
+		fallthrough
+	case "GRANT_OUTCOME_WAIT_TIMED_OUT":
 		*e = TaskTypeGrantOutcome(v)
 		return nil
 	default:

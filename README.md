@@ -58,6 +58,12 @@ func main() {
 * [List](docs/sdks/apps/README.md#list) - List
 * [Update](docs/sdks/apps/README.md#update) - Update
 
+### [AppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md)
+
+* [CancelAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#cancelappaccessrequestsdefaults) - Cancel App Access Requests Defaults
+* [CreateAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#createappaccessrequestsdefaults) - Create App Access Requests Defaults
+* [GetAppAccessRequestsDefaults](docs/sdks/appaccessrequestsdefaults/README.md#getappaccessrequestsdefaults) - Get App Access Requests Defaults
+
 ### [Connector](docs/sdks/connector/README.md)
 
 * [Create](docs/sdks/connector/README.md#create) - Create
@@ -78,8 +84,13 @@ func main() {
 * [List](docs/sdks/appentitlements/README.md#list) - List
 * [ListForAppResource](docs/sdks/appentitlements/README.md#listforappresource) - List For App Resource
 * [ListForAppUser](docs/sdks/appentitlements/README.md#listforappuser) - List For App User
-* [ListUsers](docs/sdks/appentitlements/README.md#listusers) - List Users
+* [~~ListUsers~~](docs/sdks/appentitlements/README.md#listusers) - List Users :warning: **Deprecated**
 * [Update](docs/sdks/appentitlements/README.md#update) - Update
+
+### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
+
+* [Search](docs/sdks/appentitlementsearch/README.md#search) - Search
+* [SearchAppEntitlementsWithExpired](docs/sdks/appentitlementsearch/README.md#searchappentitlementswithexpired) - Search App Entitlements With Expired
 
 ### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
@@ -149,11 +160,13 @@ func main() {
 * [Create](docs/sdks/requestcatalogmanagement/README.md#create) - Create
 * [Delete](docs/sdks/requestcatalogmanagement/README.md#delete) - Delete
 * [Get](docs/sdks/requestcatalogmanagement/README.md#get) - Get
+* [GetBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#getbundleautomation) - Get Bundle Automation
 * [List](docs/sdks/requestcatalogmanagement/README.md#list) - List
 * [ListEntitlementsForAccess](docs/sdks/requestcatalogmanagement/README.md#listentitlementsforaccess) - List Entitlements For Access
 * [ListEntitlementsPerCatalog](docs/sdks/requestcatalogmanagement/README.md#listentitlementspercatalog) - List Entitlements Per Catalog
 * [RemoveAccessEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeappentitlements) - Remove App Entitlements
+* [SetBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#setbundleautomation) - Set Bundle Automation
 * [Update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 
 ### [Directory](docs/sdks/directory/README.md)
@@ -197,10 +210,6 @@ func main() {
 
 * [SearchAttributeValues](docs/sdks/attributesearch/README.md#searchattributevalues) - Search Attribute Values
 
-### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
-
-* [Search](docs/sdks/appentitlementsearch/README.md#search) - Search
-
 ### [PolicySearch](docs/sdks/policysearch/README.md)
 
 * [Search](docs/sdks/policysearch/README.md#search) - Search
@@ -217,6 +226,10 @@ func main() {
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
 
+### [WebhooksSearch](docs/sdks/webhookssearch/README.md)
+
+* [Search](docs/sdks/webhookssearch/README.md#search) - Search
+
 ### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
 
 * [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
@@ -226,9 +239,14 @@ func main() {
 * [Get](docs/sdks/sessionsettings/README.md#get) - Get
 * [Update](docs/sdks/sessionsettings/README.md#update) - Update
 
+### [SystemLog](docs/sdks/systemlog/README.md)
+
+* [ListEvents](docs/sdks/systemlog/README.md#listevents) - List Events
+
 ### [Task](docs/sdks/task/README.md)
 
 * [CreateGrantTask](docs/sdks/task/README.md#creategranttask) - Create Grant Task
+* [CreateOffboardingTask](docs/sdks/task/README.md#createoffboardingtask) - Create Offboarding Task
 * [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Create Revoke Task
 * [Get](docs/sdks/task/README.md#get) - Get
 
@@ -238,6 +256,7 @@ func main() {
 * [Comment](docs/sdks/taskactions/README.md#comment) - Comment
 * [Deny](docs/sdks/taskactions/README.md#deny) - Deny
 * [EscalateToEmergencyAccess](docs/sdks/taskactions/README.md#escalatetoemergencyaccess) - Escalate To Emergency Access
+* [Reassign](docs/sdks/taskactions/README.md#reassign) - Reassign
 * [Restart](docs/sdks/taskactions/README.md#restart) - Restart
 
 ### [User](docs/sdks/user/README.md)
@@ -247,7 +266,12 @@ func main() {
 
 ### [Webhooks](docs/sdks/webhooks/README.md)
 
+* [Create](docs/sdks/webhooks/README.md#create) - Create
+* [Delete](docs/sdks/webhooks/README.md#delete) - Delete
+* [Get](docs/sdks/webhooks/README.md#get) - Get
+* [List](docs/sdks/webhooks/README.md#list) - List
 * [Test](docs/sdks/webhooks/README.md#test) - Test
+* [Update](docs/sdks/webhooks/README.md#update) - Update
 <!-- End Available Resources and Operations [operations] -->
 
 
@@ -352,6 +376,100 @@ func main() {
 <!-- No Custom HTTP Client [http-client] -->
 
 <!-- No Authentication [security] -->
+
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries. If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API. However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide a `retry.Config` object to the call by using the `WithRetries` option:
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
+	"log"
+	"os"
+	"pkg/models/operations"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: os.Getenv("BEARER_AUTH"),
+			Oauth:      os.Getenv("OAUTH"),
+		}),
+	)
+	var request *shared.CreateAppRequest = &shared.CreateAppRequest{}
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, request, operations.WithRetries(
+		retry.Config{
+			Strategy: "backoff",
+			Backoff: &retry.BackoffStrategy{
+				InitialInterval: 1,
+				MaxInterval:     50,
+				Exponent:        1.1,
+				MaxElapsedTime:  100,
+			},
+			RetryConnectionErrors: false,
+		}))
+	if err != nil {
+		log.Fatal(err)
+	}
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can use the `WithRetryConfig` option at SDK initialization:
+```go
+package main
+
+import (
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
+	"log"
+	"os"
+)
+
+func main() {
+	s := conductoronesdkgo.New(
+		conductoronesdkgo.WithRetryConfig(
+			retry.Config{
+				Strategy: "backoff",
+				Backoff: &retry.BackoffStrategy{
+					InitialInterval: 1,
+					MaxInterval:     50,
+					Exponent:        1.1,
+					MaxElapsedTime:  100,
+				},
+				RetryConnectionErrors: false,
+			}),
+		conductoronesdkgo.WithSecurity(shared.Security{
+			BearerAuth: os.Getenv("BEARER_AUTH"),
+			Oauth:      os.Getenv("OAUTH"),
+		}),
+	)
+	var request *shared.CreateAppRequest = &shared.CreateAppRequest{}
+	ctx := context.Background()
+	res, err := s.Apps.Create(ctx, request)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if res.CreateAppResponse != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Retries [retries] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

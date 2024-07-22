@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/conductorone/conductorone-sdk-go/internal/hooks"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"net/http"
 	"time"
@@ -52,8 +53,9 @@ type sdkConfiguration struct {
 	SDKVersion        string
 	GenVersion        string
 	UserAgent         string
-	RetryConfig       *utils.RetryConfig
+	RetryConfig       *retry.Config
 	Hooks             *hooks.Hooks
+	Timeout           *time.Duration
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -67,8 +69,10 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // ConductoroneAPI - ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne resources.
 type ConductoroneAPI struct {
 	Apps                      *Apps
+	AppAccessRequestsDefaults *AppAccessRequestsDefaults
 	Connector                 *Connector
 	AppEntitlements           *AppEntitlements
+	AppEntitlementSearch      *AppEntitlementSearch
 	AppEntitlementUserBinding *AppEntitlementUserBinding
 	AppEntitlementOwners      *AppEntitlementOwners
 	AppOwners                 *AppOwners
@@ -90,13 +94,14 @@ type ConductoroneAPI struct {
 	AppResourceSearch         *AppResourceSearch
 	AppSearch                 *AppSearch
 	AttributeSearch           *AttributeSearch
-	AppEntitlementSearch      *AppEntitlementSearch
 	PolicySearch              *PolicySearch
 	RequestCatalogSearch      *RequestCatalogSearch
 	TaskSearch                *TaskSearch
 	UserSearch                *UserSearch
+	WebhooksSearch            *WebhooksSearch
 	AWSExternalIDSettings     *AWSExternalIDSettings
 	SessionSettings           *SessionSettings
+	SystemLog                 *SystemLog
 	Task                      *Task
 	TaskActions               *TaskActions
 	User                      *User
@@ -156,16 +161,10 @@ func WithClient(client HTTPClient) SDKOption {
 	}
 }
 
-func withSecurity(security interface{}) func(context.Context) (interface{}, error) {
-	return func(context.Context) (interface{}, error) {
-		return security, nil
-	}
-}
-
 // WithSecurity configures the SDK to use the provided security details
 func WithSecurity(security shared.Security) SDKOption {
 	return func(sdk *ConductoroneAPI) {
-		sdk.sdkConfiguration.Security = withSecurity(security)
+		sdk.sdkConfiguration.Security = utils.AsSecuritySource(security)
 	}
 }
 
@@ -178,9 +177,16 @@ func WithSecuritySource(security func(context.Context) (shared.Security, error))
 	}
 }
 
-func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
+func WithRetryConfig(retryConfig retry.Config) SDKOption {
 	return func(sdk *ConductoroneAPI) {
 		sdk.sdkConfiguration.RetryConfig = &retryConfig
+	}
+}
+
+// WithTimeout Optional request timeout applied to each operation
+func WithTimeout(timeout time.Duration) SDKOption {
+	return func(sdk *ConductoroneAPI) {
+		sdk.sdkConfiguration.Timeout = &timeout
 	}
 }
 
@@ -191,8 +197,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
 			SDKVersion:        "1.18.2",
-			GenVersion:        "2.281.2",
-			UserAgent:         "speakeasy-sdk/go 1.18.2 2.281.2 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			GenVersion:        "2.378.0",
+			UserAgent:         "speakeasy-sdk/go 1.18.2 2.378.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -219,9 +225,13 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.Apps = newApps(sdk.sdkConfiguration)
 
+	sdk.AppAccessRequestsDefaults = newAppAccessRequestsDefaults(sdk.sdkConfiguration)
+
 	sdk.Connector = newConnector(sdk.sdkConfiguration)
 
 	sdk.AppEntitlements = newAppEntitlements(sdk.sdkConfiguration)
+
+	sdk.AppEntitlementSearch = newAppEntitlementSearch(sdk.sdkConfiguration)
 
 	sdk.AppEntitlementUserBinding = newAppEntitlementUserBinding(sdk.sdkConfiguration)
 
@@ -265,8 +275,6 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.AttributeSearch = newAttributeSearch(sdk.sdkConfiguration)
 
-	sdk.AppEntitlementSearch = newAppEntitlementSearch(sdk.sdkConfiguration)
-
 	sdk.PolicySearch = newPolicySearch(sdk.sdkConfiguration)
 
 	sdk.RequestCatalogSearch = newRequestCatalogSearch(sdk.sdkConfiguration)
@@ -275,9 +283,13 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 
 	sdk.UserSearch = newUserSearch(sdk.sdkConfiguration)
 
+	sdk.WebhooksSearch = newWebhooksSearch(sdk.sdkConfiguration)
+
 	sdk.AWSExternalIDSettings = newAWSExternalIDSettings(sdk.sdkConfiguration)
 
 	sdk.SessionSettings = newSessionSettings(sdk.sdkConfiguration)
+
+	sdk.SystemLog = newSystemLog(sdk.sdkConfiguration)
 
 	sdk.Task = newTask(sdk.sdkConfiguration)
 

@@ -20,7 +20,6 @@ const (
 func (e GrantedStatus) ToPointer() *GrantedStatus {
 	return &e
 }
-
 func (e *GrantedStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

@@ -8,11 +8,14 @@ package shared
 //   - grant
 //   - revoke
 //   - certify
+//   - offboarding
 type TaskTypeInput struct {
 	// The TaskTypeCertify message indicates that a task is a certify task and all related details.
 	TaskTypeCertify *TaskTypeCertifyInput `json:"certify,omitempty"`
 	// The TaskTypeGrant message indicates that a task is a grant task and all related details.
 	TaskTypeGrant *TaskTypeGrantInput `json:"grant,omitempty"`
+	// The TaskTypeOffboarding message.
+	TaskTypeOffboarding *TaskTypeOffboardingInput `json:"offboarding,omitempty"`
 	// The TaskTypeRevoke message indicates that a task is a revoke task and all related details.
 	TaskTypeRevoke *TaskTypeRevokeInput `json:"revoke,omitempty"`
 }
@@ -29,6 +32,13 @@ func (o *TaskTypeInput) GetTaskTypeGrant() *TaskTypeGrantInput {
 		return nil
 	}
 	return o.TaskTypeGrant
+}
+
+func (o *TaskTypeInput) GetTaskTypeOffboarding() *TaskTypeOffboardingInput {
+	if o == nil {
+		return nil
+	}
+	return o.TaskTypeOffboarding
 }
 
 func (o *TaskTypeInput) GetTaskTypeRevoke() *TaskTypeRevokeInput {

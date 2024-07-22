@@ -4,7 +4,6 @@ package shared
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
@@ -23,7 +22,6 @@ const (
 func (e DirectoryStatus) ToPointer() *DirectoryStatus {
 	return &e
 }
-
 func (e *DirectoryStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -44,138 +42,6 @@ func (e *DirectoryStatus) UnmarshalJSON(data []byte) error {
 	}
 }
 
-type User3 struct {
-}
-
-type UserProfileType string
-
-const (
-	UserProfileTypeStr        UserProfileType = "str"
-	UserProfileTypeNumber     UserProfileType = "number"
-	UserProfileTypeUser3      UserProfileType = "User_3"
-	UserProfileTypeArrayOfany UserProfileType = "arrayOfany"
-	UserProfileTypeBoolean    UserProfileType = "boolean"
-)
-
-type UserProfile struct {
-	Str        *string
-	Number     *float64
-	User3      *User3
-	ArrayOfany []interface{}
-	Boolean    *bool
-
-	Type UserProfileType
-}
-
-func CreateUserProfileStr(str string) UserProfile {
-	typ := UserProfileTypeStr
-
-	return UserProfile{
-		Str:  &str,
-		Type: typ,
-	}
-}
-
-func CreateUserProfileNumber(number float64) UserProfile {
-	typ := UserProfileTypeNumber
-
-	return UserProfile{
-		Number: &number,
-		Type:   typ,
-	}
-}
-
-func CreateUserProfileUser3(user3 User3) UserProfile {
-	typ := UserProfileTypeUser3
-
-	return UserProfile{
-		User3: &user3,
-		Type:  typ,
-	}
-}
-
-func CreateUserProfileArrayOfany(arrayOfany []interface{}) UserProfile {
-	typ := UserProfileTypeArrayOfany
-
-	return UserProfile{
-		ArrayOfany: arrayOfany,
-		Type:       typ,
-	}
-}
-
-func CreateUserProfileBoolean(boolean bool) UserProfile {
-	typ := UserProfileTypeBoolean
-
-	return UserProfile{
-		Boolean: &boolean,
-		Type:    typ,
-	}
-}
-
-func (u *UserProfile) UnmarshalJSON(data []byte) error {
-
-	user3 := User3{}
-	if err := utils.UnmarshalJSON(data, &user3, "", true, true); err == nil {
-		u.User3 = &user3
-		u.Type = UserProfileTypeUser3
-		return nil
-	}
-
-	str := ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = UserProfileTypeStr
-		return nil
-	}
-
-	number := float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
-		u.Number = &number
-		u.Type = UserProfileTypeNumber
-		return nil
-	}
-
-	arrayOfany := []interface{}{}
-	if err := utils.UnmarshalJSON(data, &arrayOfany, "", true, true); err == nil {
-		u.ArrayOfany = arrayOfany
-		u.Type = UserProfileTypeArrayOfany
-		return nil
-	}
-
-	boolean := false
-	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
-		u.Boolean = &boolean
-		u.Type = UserProfileTypeBoolean
-		return nil
-	}
-
-	return errors.New("could not unmarshal into supported union types")
-}
-
-func (u UserProfile) MarshalJSON() ([]byte, error) {
-	if u.Str != nil {
-		return utils.MarshalJSON(u.Str, "", true)
-	}
-
-	if u.Number != nil {
-		return utils.MarshalJSON(u.Number, "", true)
-	}
-
-	if u.User3 != nil {
-		return utils.MarshalJSON(u.User3, "", true)
-	}
-
-	if u.ArrayOfany != nil {
-		return utils.MarshalJSON(u.ArrayOfany, "", true)
-	}
-
-	if u.Boolean != nil {
-		return utils.MarshalJSON(u.Boolean, "", true)
-	}
-
-	return nil, errors.New("could not marshal union type: all fields are null")
-}
-
 // UserStatus - The status of the user in the system.
 type UserStatus string
 
@@ -189,7 +55,6 @@ const (
 func (e UserStatus) ToPointer() *UserStatus {
 	return &e
 }
-
 func (e *UserStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -250,7 +115,7 @@ type User struct {
 	ManagerIds []string `json:"managerIds,omitempty"`
 	// A list of objects mapped based on managerId attribute mappings configured in the system.
 	ManagerSources []UserAttributeMappingSource `json:"managerSources,omitempty"`
-	Profile        map[string]UserProfile       `json:"profile,omitempty"`
+	Profile        map[string]any               `json:"profile,omitempty"`
 	// A list of unique identifiers that maps to ConductorOne’s user roles let you assign users permissions tailored to the work they do in the software.
 	RoleIds []string `json:"roleIds,omitempty"`
 	// The status of the user in the system.
@@ -258,6 +123,8 @@ type User struct {
 	UpdatedAt *time.Time  `json:"updatedAt,omitempty"`
 	// This is the user's primary username. Typically sourced from the primary directory.
 	Username *string `json:"username,omitempty"`
+	// A list of source data for the usernames attribute.
+	UsernameSources []UserAttributeMappingSource `json:"usernameSources,omitempty"`
 	// This is a list of all of the user's usernames from app users.
 	Usernames []string `json:"usernames,omitempty"`
 }
@@ -413,7 +280,7 @@ func (o *User) GetManagerSources() []UserAttributeMappingSource {
 	return o.ManagerSources
 }
 
-func (o *User) GetProfile() map[string]UserProfile {
+func (o *User) GetProfile() map[string]any {
 	if o == nil {
 		return nil
 	}
@@ -446,6 +313,13 @@ func (o *User) GetUsername() *string {
 		return nil
 	}
 	return o.Username
+}
+
+func (o *User) GetUsernameSources() []UserAttributeMappingSource {
+	if o == nil {
+		return nil
+	}
+	return o.UsernameSources
 }
 
 func (o *User) GetUsernames() []string {
