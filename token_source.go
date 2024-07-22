@@ -182,7 +182,7 @@ func NewTokenSource(ctx context.Context, clientID string, clientSecret string, t
 	return oauth2.ReuseTokenSource(nil, &c1TokenSource{
 		clientID:     clientID,
 		clientSecret: secret,
-		tokenHost:    strings.TrimLeft(tokenHost, "https://"),
+		tokenHost:    strings.TrimPrefix(tokenHost, "https://"),
 		httpClient:   httpClient,
 	}), nil
 }
