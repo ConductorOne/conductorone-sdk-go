@@ -161,25 +161,29 @@ func NewWithCredentials(ctx context.Context, cred *ClientCredentials, opts ...Cu
 		options.userAgent = "conductorone-sdk-go"
 	}
 
-	uclient, err := uhttp.NewClient(
-		ctx,
-		uhttp.WithTokenSource(tokenSource),
-		uhttp.WithLogger(options.logger != nil, options.logger),
-		uhttp.WithUserAgent(options.userAgent),
-		uhttp.WithTLSClientConfig(options.tlsConfig),
-	)
-	if err != nil {
-		return nil, err
+	sdkOpts := []SDKOption{}
+	if options.withClient == nil {
+		uclient, err := uhttp.NewClient(
+			ctx,
+			uhttp.WithTokenSource(tokenSource),
+			uhttp.WithLogger(options.logger != nil, options.logger),
+			uhttp.WithUserAgent(options.userAgent),
+			uhttp.WithTLSClientConfig(options.tlsConfig),
+		)
+		if err != nil {
+			return nil, err
+		}
+		sdkOpts = append(sdkOpts, WithClient(uclient))
+	} else {
+		sdkOpts = append(sdkOpts, WithClient(options.withClient))
 	}
 
-	sdkOpts := []SDKOption{}
 	if options.UseWithServer() {
 		sdkOpts = append(sdkOpts, WithServerURL(options.ServerURL()))
 	}
 	if options.UseWithTenant() {
 		sdkOpts = append(sdkOpts, WithTenantDomain(options.Tenant()))
 	}
-	sdkOpts = append(sdkOpts, WithClient(uclient))
 
 	return New(sdkOpts...), nil
 }

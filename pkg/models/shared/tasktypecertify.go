@@ -13,17 +13,17 @@ import (
 type Outcome string
 
 const (
-	OutcomeCertifyOutcomeUnspecified Outcome = "CERTIFY_OUTCOME_UNSPECIFIED"
-	OutcomeCertifyOutcomeCertified   Outcome = "CERTIFY_OUTCOME_CERTIFIED"
-	OutcomeCertifyOutcomeDecertified Outcome = "CERTIFY_OUTCOME_DECERTIFIED"
-	OutcomeCertifyOutcomeError       Outcome = "CERTIFY_OUTCOME_ERROR"
-	OutcomeCertifyOutcomeCancelled   Outcome = "CERTIFY_OUTCOME_CANCELLED"
+	OutcomeCertifyOutcomeUnspecified  Outcome = "CERTIFY_OUTCOME_UNSPECIFIED"
+	OutcomeCertifyOutcomeCertified    Outcome = "CERTIFY_OUTCOME_CERTIFIED"
+	OutcomeCertifyOutcomeDecertified  Outcome = "CERTIFY_OUTCOME_DECERTIFIED"
+	OutcomeCertifyOutcomeError        Outcome = "CERTIFY_OUTCOME_ERROR"
+	OutcomeCertifyOutcomeCancelled    Outcome = "CERTIFY_OUTCOME_CANCELLED"
+	OutcomeCertifyOutcomeWaitTimedOut Outcome = "CERTIFY_OUTCOME_WAIT_TIMED_OUT"
 )
 
 func (e Outcome) ToPointer() *Outcome {
 	return &e
 }
-
 func (e *Outcome) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -39,6 +39,8 @@ func (e *Outcome) UnmarshalJSON(data []byte) error {
 	case "CERTIFY_OUTCOME_ERROR":
 		fallthrough
 	case "CERTIFY_OUTCOME_CANCELLED":
+		fallthrough
+	case "CERTIFY_OUTCOME_WAIT_TIMED_OUT":
 		*e = Outcome(v)
 		return nil
 	default:

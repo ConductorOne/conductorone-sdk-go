@@ -9,6 +9,38 @@ import (
 	"time"
 )
 
+type AccountTypes string
+
+const (
+	AccountTypesAppUserTypeUnspecified    AccountTypes = "APP_USER_TYPE_UNSPECIFIED"
+	AccountTypesAppUserTypeUser           AccountTypes = "APP_USER_TYPE_USER"
+	AccountTypesAppUserTypeServiceAccount AccountTypes = "APP_USER_TYPE_SERVICE_ACCOUNT"
+	AccountTypesAppUserTypeSystemAccount  AccountTypes = "APP_USER_TYPE_SYSTEM_ACCOUNT"
+)
+
+func (e AccountTypes) ToPointer() *AccountTypes {
+	return &e
+}
+func (e *AccountTypes) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "APP_USER_TYPE_UNSPECIFIED":
+		fallthrough
+	case "APP_USER_TYPE_USER":
+		fallthrough
+	case "APP_USER_TYPE_SERVICE_ACCOUNT":
+		fallthrough
+	case "APP_USER_TYPE_SYSTEM_ACCOUNT":
+		*e = AccountTypes(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for AccountTypes: %v", v)
+	}
+}
+
 // CurrentStep - Search tasks that have this type of step as the current step.
 type CurrentStep string
 
@@ -21,7 +53,6 @@ const (
 func (e CurrentStep) ToPointer() *CurrentStep {
 	return &e
 }
-
 func (e *CurrentStep) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -53,7 +84,6 @@ const (
 func (e EmergencyStatus) ToPointer() *EmergencyStatus {
 	return &e
 }
-
 func (e *EmergencyStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -88,7 +118,6 @@ const (
 func (e SortBy) ToPointer() *SortBy {
 	return &e
 }
-
 func (e *SortBy) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -122,7 +151,6 @@ const (
 func (e TaskStates) ToPointer() *TaskStates {
 	return &e
 }
-
 func (e *TaskStates) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -149,6 +177,8 @@ type TaskSearchRequest struct {
 	AccessReviewIds []string `json:"accessReviewIds,omitempty"`
 	// Search tasks that have any of these account owners.
 	AccountOwnerIds []string `json:"accountOwnerIds,omitempty"`
+	// The accountTypes field.
+	AccountTypes []AccountTypes `json:"accountTypes,omitempty"`
 	// Search tasks that have this actor ID.
 	ActorID *string `json:"actorId,omitempty"`
 	// Search tasks that have any of these app entitlement IDs.
@@ -230,6 +260,13 @@ func (o *TaskSearchRequest) GetAccountOwnerIds() []string {
 		return nil
 	}
 	return o.AccountOwnerIds
+}
+
+func (o *TaskSearchRequest) GetAccountTypes() []AccountTypes {
+	if o == nil {
+		return nil
+	}
+	return o.AccountTypes
 }
 
 func (o *TaskSearchRequest) GetActorID() *string {

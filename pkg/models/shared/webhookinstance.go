@@ -26,7 +26,6 @@ const (
 func (e WebhookInstanceState) ToPointer() *WebhookInstanceState {
 	return &e
 }
-
 func (e *WebhookInstanceState) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

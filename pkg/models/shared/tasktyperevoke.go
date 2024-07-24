@@ -13,17 +13,17 @@ import (
 type TaskTypeRevokeOutcome string
 
 const (
-	TaskTypeRevokeOutcomeRevokeOutcomeUnspecified TaskTypeRevokeOutcome = "REVOKE_OUTCOME_UNSPECIFIED"
-	TaskTypeRevokeOutcomeRevokeOutcomeRevoked     TaskTypeRevokeOutcome = "REVOKE_OUTCOME_REVOKED"
-	TaskTypeRevokeOutcomeRevokeOutcomeDenied      TaskTypeRevokeOutcome = "REVOKE_OUTCOME_DENIED"
-	TaskTypeRevokeOutcomeRevokeOutcomeError       TaskTypeRevokeOutcome = "REVOKE_OUTCOME_ERROR"
-	TaskTypeRevokeOutcomeRevokeOutcomeCancelled   TaskTypeRevokeOutcome = "REVOKE_OUTCOME_CANCELLED"
+	TaskTypeRevokeOutcomeRevokeOutcomeUnspecified  TaskTypeRevokeOutcome = "REVOKE_OUTCOME_UNSPECIFIED"
+	TaskTypeRevokeOutcomeRevokeOutcomeRevoked      TaskTypeRevokeOutcome = "REVOKE_OUTCOME_REVOKED"
+	TaskTypeRevokeOutcomeRevokeOutcomeDenied       TaskTypeRevokeOutcome = "REVOKE_OUTCOME_DENIED"
+	TaskTypeRevokeOutcomeRevokeOutcomeError        TaskTypeRevokeOutcome = "REVOKE_OUTCOME_ERROR"
+	TaskTypeRevokeOutcomeRevokeOutcomeCancelled    TaskTypeRevokeOutcome = "REVOKE_OUTCOME_CANCELLED"
+	TaskTypeRevokeOutcomeRevokeOutcomeWaitTimedOut TaskTypeRevokeOutcome = "REVOKE_OUTCOME_WAIT_TIMED_OUT"
 )
 
 func (e TaskTypeRevokeOutcome) ToPointer() *TaskTypeRevokeOutcome {
 	return &e
 }
-
 func (e *TaskTypeRevokeOutcome) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -39,6 +39,8 @@ func (e *TaskTypeRevokeOutcome) UnmarshalJSON(data []byte) error {
 	case "REVOKE_OUTCOME_ERROR":
 		fallthrough
 	case "REVOKE_OUTCOME_CANCELLED":
+		fallthrough
+	case "REVOKE_OUTCOME_WAIT_TIMED_OUT":
 		*e = TaskTypeRevokeOutcome(v)
 		return nil
 	default:

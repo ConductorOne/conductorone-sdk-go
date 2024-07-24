@@ -21,7 +21,6 @@ const (
 func (e IdentityMatching) ToPointer() *IdentityMatching {
 	return &e
 }
-
 func (e *IdentityMatching) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -77,7 +76,7 @@ type App struct {
 	RevokePolicyID *string    `json:"revokePolicyId,omitempty"`
 	UpdatedAt      *time.Time `json:"updatedAt,omitempty"`
 	// The number of users with grants to this app.
-	UserCount *string `json:"userCount,omitempty"`
+	UserCount *int64 `integer:"string" json:"userCount,omitempty"`
 }
 
 func (a App) MarshalJSON() ([]byte, error) {
@@ -224,7 +223,7 @@ func (o *App) GetUpdatedAt() *time.Time {
 	return o.UpdatedAt
 }
 
-func (o *App) GetUserCount() *string {
+func (o *App) GetUserCount() *int64 {
 	if o == nil {
 		return nil
 	}

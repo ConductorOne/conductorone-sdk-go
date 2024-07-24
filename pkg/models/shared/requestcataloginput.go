@@ -18,6 +18,8 @@ type RequestCatalogInput struct {
 	ID *string `json:"id,omitempty"`
 	// Whether or not this catalog is published.
 	Published *bool `json:"published,omitempty"`
+	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
+	RequestBundle *bool `json:"requestBundle,omitempty"`
 	// If this is true, the access entitlement requirement is ignored.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
 }
@@ -69,6 +71,13 @@ func (o *RequestCatalogInput) GetPublished() *bool {
 		return nil
 	}
 	return o.Published
+}
+
+func (o *RequestCatalogInput) GetRequestBundle() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBundle
 }
 
 func (o *RequestCatalogInput) GetVisibleToEveryone() *bool {

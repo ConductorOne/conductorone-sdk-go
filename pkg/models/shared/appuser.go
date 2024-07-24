@@ -4,7 +4,6 @@ package shared
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
@@ -23,7 +22,6 @@ const (
 func (e AppUserType) ToPointer() *AppUserType {
 	return &e
 }
-
 func (e *AppUserType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -42,138 +40,6 @@ func (e *AppUserType) UnmarshalJSON(data []byte) error {
 	default:
 		return fmt.Errorf("invalid value for AppUserType: %v", v)
 	}
-}
-
-type Three struct {
-}
-
-type ProfileType string
-
-const (
-	ProfileTypeStr        ProfileType = "str"
-	ProfileTypeNumber     ProfileType = "number"
-	ProfileTypeThree      ProfileType = "3"
-	ProfileTypeArrayOfany ProfileType = "arrayOfany"
-	ProfileTypeBoolean    ProfileType = "boolean"
-)
-
-type Profile struct {
-	Str        *string
-	Number     *float64
-	Three      *Three
-	ArrayOfany []interface{}
-	Boolean    *bool
-
-	Type ProfileType
-}
-
-func CreateProfileStr(str string) Profile {
-	typ := ProfileTypeStr
-
-	return Profile{
-		Str:  &str,
-		Type: typ,
-	}
-}
-
-func CreateProfileNumber(number float64) Profile {
-	typ := ProfileTypeNumber
-
-	return Profile{
-		Number: &number,
-		Type:   typ,
-	}
-}
-
-func CreateProfileThree(three Three) Profile {
-	typ := ProfileTypeThree
-
-	return Profile{
-		Three: &three,
-		Type:  typ,
-	}
-}
-
-func CreateProfileArrayOfany(arrayOfany []interface{}) Profile {
-	typ := ProfileTypeArrayOfany
-
-	return Profile{
-		ArrayOfany: arrayOfany,
-		Type:       typ,
-	}
-}
-
-func CreateProfileBoolean(boolean bool) Profile {
-	typ := ProfileTypeBoolean
-
-	return Profile{
-		Boolean: &boolean,
-		Type:    typ,
-	}
-}
-
-func (u *Profile) UnmarshalJSON(data []byte) error {
-
-	three := Three{}
-	if err := utils.UnmarshalJSON(data, &three, "", true, true); err == nil {
-		u.Three = &three
-		u.Type = ProfileTypeThree
-		return nil
-	}
-
-	str := ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = ProfileTypeStr
-		return nil
-	}
-
-	number := float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
-		u.Number = &number
-		u.Type = ProfileTypeNumber
-		return nil
-	}
-
-	arrayOfany := []interface{}{}
-	if err := utils.UnmarshalJSON(data, &arrayOfany, "", true, true); err == nil {
-		u.ArrayOfany = arrayOfany
-		u.Type = ProfileTypeArrayOfany
-		return nil
-	}
-
-	boolean := false
-	if err := utils.UnmarshalJSON(data, &boolean, "", true, true); err == nil {
-		u.Boolean = &boolean
-		u.Type = ProfileTypeBoolean
-		return nil
-	}
-
-	return errors.New("could not unmarshal into supported union types")
-}
-
-func (u Profile) MarshalJSON() ([]byte, error) {
-	if u.Str != nil {
-		return utils.MarshalJSON(u.Str, "", true)
-	}
-
-	if u.Number != nil {
-		return utils.MarshalJSON(u.Number, "", true)
-	}
-
-	if u.Three != nil {
-		return utils.MarshalJSON(u.Three, "", true)
-	}
-
-	if u.ArrayOfany != nil {
-		return utils.MarshalJSON(u.ArrayOfany, "", true)
-	}
-
-	if u.Boolean != nil {
-		return utils.MarshalJSON(u.Boolean, "", true)
-	}
-
-	return nil, errors.New("could not marshal union type: all fields are null")
 }
 
 // AppUser - Application User that represents an account in the application.
@@ -195,9 +61,9 @@ type AppUser struct {
 	// A unique idenditfier of the application user.
 	ID *string `json:"id,omitempty"`
 	// The conductor one user ID of the account owner.
-	IdentityUserID *string            `json:"identityUserId,omitempty"`
-	Profile        map[string]Profile `json:"profile,omitempty"`
-	UpdatedAt      *time.Time         `json:"updatedAt,omitempty"`
+	IdentityUserID *string        `json:"identityUserId,omitempty"`
+	Profile        map[string]any `json:"profile,omitempty"`
+	UpdatedAt      *time.Time     `json:"updatedAt,omitempty"`
 	// The username field of the application user.
 	Username *string `json:"username,omitempty"`
 	// The usernames field of the application user.
@@ -285,7 +151,7 @@ func (o *AppUser) GetIdentityUserID() *string {
 	return o.IdentityUserID
 }
 
-func (o *AppUser) GetProfile() map[string]Profile {
+func (o *AppUser) GetProfile() map[string]any {
 	if o == nil {
 		return nil
 	}

@@ -20,6 +20,7 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -28,13 +29,13 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
+    var request *shared.CreateAttributeValueRequest = &shared.CreateAttributeValueRequest{}
     ctx := context.Background()
-    res, err := s.Attributes.CreateAttributeValue(ctx, &shared.CreateAttributeValueRequest{})
+    res, err := s.Attributes.CreateAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -50,6 +51,7 @@ func main() {
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                        | :heavy_check_mark:                                                                           | The context to use for the request.                                                          |
 | `request`                                                                                    | [shared.CreateAttributeValueRequest](../../pkg/models/shared/createattributevaluerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `opts`                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                 | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
 
 ### Response
@@ -70,24 +72,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
+    request := operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.DeleteAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -103,6 +106,7 @@ func main() {
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                    | :heavy_check_mark:                                                                                                                                       | The context to use for the request.                                                                                                                      |
 | `request`                                                                                                                                                | [operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest](../../pkg/models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
+| `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
 
 
 ### Response
@@ -123,24 +127,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
+    request := operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
         ID: "<id>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.GetAttributeValue(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -156,6 +161,7 @@ func main() {
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                              | :heavy_check_mark:                                                                                                                                 | The context to use for the request.                                                                                                                |
 | `request`                                                                                                                                          | [operations.C1APIAttributeV1AttributesGetAttributeValueRequest](../../pkg/models/operations/c1apiattributev1attributesgetattributevaluerequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
+| `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
 
 
 ### Response
@@ -176,22 +182,23 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
+    request := operations.C1APIAttributeV1AttributesListAttributeTypesRequest{}
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{})
+    res, err := s.Attributes.ListAttributeTypes(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -207,6 +214,7 @@ func main() {
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ctx`                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                | :heavy_check_mark:                                                                                                                                   | The context to use for the request.                                                                                                                  |
 | `request`                                                                                                                                            | [operations.C1APIAttributeV1AttributesListAttributeTypesRequest](../../pkg/models/operations/c1apiattributev1attributeslistattributetypesrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
+| `opts`                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                         | :heavy_minus_sign:                                                                                                                                   | The options for this request.                                                                                                                        |
 
 
 ### Response
@@ -227,24 +235,25 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+            BearerAuth: os.Getenv("BEARER_AUTH"),
+            Oauth: os.Getenv("OAUTH"),
         }),
     )
-
-    ctx := context.Background()
-    res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
+    request := operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
         AttributeTypeID: "<value>",
-    })
+    }
+    ctx := context.Background()
+    res, err := s.Attributes.ListAttributeValues(ctx, request)
     if err != nil {
         log.Fatal(err)
     }
@@ -260,6 +269,7 @@ func main() {
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ctx`                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                  | :heavy_check_mark:                                                                                                                                     | The context to use for the request.                                                                                                                    |
 | `request`                                                                                                                                              | [operations.C1APIAttributeV1AttributesListAttributeValuesRequest](../../pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md) | :heavy_check_mark:                                                                                                                                     | The request object to use for the request.                                                                                                             |
+| `opts`                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                           | :heavy_minus_sign:                                                                                                                                     | The options for this request.                                                                                                                          |
 
 
 ### Response

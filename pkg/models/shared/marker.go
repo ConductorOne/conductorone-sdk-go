@@ -21,7 +21,6 @@ const (
 func (e Severity) ToPointer() *Severity {
 	return &e
 }
-
 func (e *Severity) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

@@ -25,3 +25,4 @@
 | `ActionsTaskActionTypeRecalculateDenialFromBasePolicyDecisions` | TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS  |
 | `ActionsTaskActionTypeSetInsightsAndRecommendation`             | TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION                |
 | `ActionsTaskActionTypeSetAnalysisID`                            | TASK_ACTION_TYPE_SET_ANALYSIS_ID                                |
+| `ActionsTaskActionTypeRecalculateApproversList`                 | TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST                     |

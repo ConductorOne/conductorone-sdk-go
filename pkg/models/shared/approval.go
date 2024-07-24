@@ -12,6 +12,7 @@ package shared
 //   - self
 //   - entitlementOwners
 //   - expression
+//   - webhook
 type Approval struct {
 	// The AppGroupApproval object provides the configuration for setting a group as the approvers of an approval policy step.
 	AppGroupApproval *AppGroupApproval `json:"group,omitempty"`
@@ -27,12 +28,16 @@ type Approval struct {
 	SelfApproval *SelfApproval `json:"self,omitempty"`
 	// The user approval object describes the approval configuration of a policy step that needs to be approved by a specific list of users.
 	UserApproval *UserApproval `json:"users,omitempty"`
+	// The WebhookApproval message.
+	WebhookApproval *WebhookApproval `json:"webhook,omitempty"`
 	// Configuration to allow reassignment by reviewers during this step.
 	AllowReassignment *bool `json:"allowReassignment,omitempty"`
 	// A field indicating whether this step is assigned.
 	Assigned *bool `json:"assigned,omitempty"`
 	// Configuration to require a reason when approving this step.
 	RequireApprovalReason *bool `json:"requireApprovalReason,omitempty"`
+	// Configuration to require a reason when denying this step.
+	RequireDenialReason *bool `json:"requireDenialReason,omitempty"`
 	// Configuration to require a reason when reassigning this step.
 	RequireReassignmentReason *bool `json:"requireReassignmentReason,omitempty"`
 }
@@ -86,6 +91,13 @@ func (o *Approval) GetUserApproval() *UserApproval {
 	return o.UserApproval
 }
 
+func (o *Approval) GetWebhookApproval() *WebhookApproval {
+	if o == nil {
+		return nil
+	}
+	return o.WebhookApproval
+}
+
 func (o *Approval) GetAllowReassignment() *bool {
 	if o == nil {
 		return nil
@@ -105,6 +117,13 @@ func (o *Approval) GetRequireApprovalReason() *bool {
 		return nil
 	}
 	return o.RequireApprovalReason
+}
+
+func (o *Approval) GetRequireDenialReason() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.RequireDenialReason
 }
 
 func (o *Approval) GetRequireReassignmentReason() *bool {

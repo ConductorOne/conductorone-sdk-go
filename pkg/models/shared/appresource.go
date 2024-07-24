@@ -22,7 +22,7 @@ type AppResource struct {
 	// The display name for this resource.
 	DisplayName *string `json:"displayName,omitempty"`
 	// The number of grants to this resource.
-	GrantCount *string `json:"grantCount,omitempty"`
+	GrantCount *int64 `integer:"string" json:"grantCount,omitempty"`
 	// The id of the resource.
 	ID *string `json:"id,omitempty"`
 	// The parent resource id, if this resource is a child of another resource.
@@ -92,7 +92,7 @@ func (o *AppResource) GetDisplayName() *string {
 	return o.DisplayName
 }
 
-func (o *AppResource) GetGrantCount() *string {
+func (o *AppResource) GetGrantCount() *int64 {
 	if o == nil {
 		return nil
 	}
