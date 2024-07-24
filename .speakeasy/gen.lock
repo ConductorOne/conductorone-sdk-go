@@ -3,10 +3,10 @@ id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
   docChecksum: 7a8adcc58a96994be5622e1a5b79e284
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.345.0
-  generationVersion: 2.378.0
-  releaseVersion: 1.18.2
-  configChecksum: 97fe2941378e3cb8f3ca23398b699b82
+  speakeasyVersion: 1.345.4
+  generationVersion: 2.378.3
+  releaseVersion: 1.18.3
+  configChecksum: d137d876513f9eb8f32155be67257631
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,7 +15,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.5.0
+    core: 3.5.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.1
     envVarSecurityUsage: 0.2.0
