@@ -29,7 +29,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIAppV1AppEntitlementOwnersAddRequest{
@@ -84,7 +88,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIAppV1AppEntitlementOwnersListRequest{
@@ -139,7 +147,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIAppV1AppEntitlementOwnersRemoveRequest{
@@ -195,7 +207,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIAppV1AppEntitlementOwnersSetRequest{

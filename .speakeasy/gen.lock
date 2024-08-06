@@ -3,10 +3,10 @@ id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
   docChecksum: 7b03e8b076ff3a51cdc645fdb4178221
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.354.1
-  generationVersion: 2.386.2
-  releaseVersion: 1.19.0
-  configChecksum: 3489e41cd716f3ee45ed14392cfeb826
+  speakeasyVersion: 1.355.0
+  generationVersion: 2.387.0
+  releaseVersion: 1.20.0
+  configChecksum: 5f225bdae253cb20622002af13834c47
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -28,6 +28,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     nameOverrides: 2.81.2
     nullables: 0.1.0
+    oauth2ClientCredentials: 0.1.1
     responseFormat: 0.1.2
     retries: 2.83.0
     sdkHooks: 0.1.0
@@ -520,6 +521,7 @@ generatedFiles:
   - /pkg/models/shared/webhooksserviceupdaterequest.go
   - /pkg/models/shared/webhookinput.go
   - /pkg/models/shared/security.go
+  - /pkg/models/shared/schemeoauth.go
   - /pkg/models/shared/body.go
   - /pkg/models/shared/payloadpolicyapprovalstep.go
   - /pkg/models/shared/payloadpolicypostaction.go
@@ -1138,6 +1140,7 @@ generatedFiles:
   - docs/pkg/models/shared/webhooksserviceupdaterequest.md
   - docs/pkg/models/shared/webhookinput.md
   - docs/pkg/models/shared/security.md
+  - docs/pkg/models/shared/schemeoauth.md
   - docs/pkg/models/shared/payload.md
   - docs/pkg/models/shared/body.md
   - docs/pkg/models/shared/payloadpolicyapprovalstepexpanded.md
@@ -1202,4 +1205,5 @@ generatedFiles:
   - pkg/models/operations/options.go
   - .gitattributes
   - internal/hooks/hooks.go
+  - internal/hooks/clientcredentials.go
   - CONTRIBUTING.md

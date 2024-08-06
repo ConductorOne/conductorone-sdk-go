@@ -30,7 +30,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
 
@@ -82,7 +86,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIWebhooksV1WebhooksServiceDeleteRequest{
@@ -136,7 +144,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIWebhooksV1WebhooksServiceGetRequest{
@@ -190,7 +202,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIWebhooksV1WebhooksServiceListRequest{}
@@ -242,7 +258,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIWebhooksV1WebhooksServiceTestRequest{
@@ -296,7 +316,11 @@ func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
+            Oauth: shared.SchemeOauth{
+                ClientID: "<YOUR_CLIENT_ID_HERE>",
+                ClientSecret: "<YOUR_CLIENT_SECRET_HERE>",
+                TokenURL: "<YOUR_TOKEN_URL_HERE>",
+            },
         }),
     )
     request := operations.C1APIWebhooksV1WebhooksServiceUpdateRequest{

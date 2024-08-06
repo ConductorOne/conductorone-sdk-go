@@ -1,19 +1,18 @@
-speakeasyVersion: 1.354.1
+speakeasyVersion: 1.355.0
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:d42699b9ac1cba061db53397cd59d3f336333522875ca1da349da520006fa5a6
-        sourceBlobDigest: sha256:8cf319bde7077cca5c9e4e9341459e7081618b9dda7b5892c51d1b3e361dff9d
+        sourceRevisionDigest: sha256:925e97096012b445c852f71eac24bd8c27cd284d08195d829cf6be2245eb3ae3
+        sourceBlobDigest: sha256:e1fdcae09a503215b45427723524e4c14e80410646a2eee33cd3794c72206e6c
         tags:
             - latest
-            - main
 targets:
     conductorone-go:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:d42699b9ac1cba061db53397cd59d3f336333522875ca1da349da520006fa5a6
-        sourceBlobDigest: sha256:8cf319bde7077cca5c9e4e9341459e7081618b9dda7b5892c51d1b3e361dff9d
-        outLocation: /github/workspace/repo
+        sourceRevisionDigest: sha256:925e97096012b445c852f71eac24bd8c27cd284d08195d829cf6be2245eb3ae3
+        sourceBlobDigest: sha256:e1fdcae09a503215b45427723524e4c14e80410646a2eee33cd3794c72206e6c
+        outLocation: /Users/logan/Dev/work/conductorone-sdk-go
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
