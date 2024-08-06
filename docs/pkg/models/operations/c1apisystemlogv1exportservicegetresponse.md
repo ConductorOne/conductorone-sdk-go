@@ -1,0 +1,11 @@
+# C1APISystemlogV1ExportServiceGetResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ContentType`                                                                              | *string*                                                                                   | :heavy_check_mark:                                                                         | HTTP response content type for this operation                                              |
+| `ExportServiceGetResponse`                                                                 | [*shared.ExportServiceGetResponse](../../../pkg/models/shared/exportservicegetresponse.md) | :heavy_minus_sign:                                                                         | The ExportServiceGetResponse message contains the system log exporter object.              |
+| `StatusCode`                                                                               | *int*                                                                                      | :heavy_check_mark:                                                                         | HTTP response status code for this operation                                               |
+| `RawResponse`                                                                              | [*http.Response](https://pkg.go.dev/net/http#Response)                                     | :heavy_check_mark:                                                                         | Raw HTTP response; suitable for custom response parsing                                    |

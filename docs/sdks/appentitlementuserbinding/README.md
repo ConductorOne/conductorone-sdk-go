@@ -4,6 +4,7 @@
 ### Available Operations
 
 * [ListAppUsersForIdentityWithGrant](#listappusersforidentitywithgrant) - List App Users For Identity With Grant
+* [SearchPastGrants](#searchpastgrants) - Search Past Grants
 
 ## ListAppUsersForIdentityWithGrant
 
@@ -16,7 +17,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -26,8 +26,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
@@ -58,6 +58,56 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse](../../pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
+
+## SearchPastGrants
+
+Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.AppEntitlementUserBinding.SearchPastGrants(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SearchPastGrantsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
+
+
+### Response
+
+**[*operations.C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponse](../../pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrantsresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

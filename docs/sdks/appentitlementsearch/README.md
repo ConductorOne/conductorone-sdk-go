@@ -17,7 +17,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -26,13 +25,13 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    var request *shared.AppEntitlementSearchServiceSearchRequest = &shared.AppEntitlementSearchServiceSearchRequest{}
+
     ctx := context.Background()
-    res, err := s.AppEntitlementSearch.Search(ctx, request)
+    res, err := s.AppEntitlementSearch.Search(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -69,7 +68,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -79,8 +77,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsWithExpiredRequest{

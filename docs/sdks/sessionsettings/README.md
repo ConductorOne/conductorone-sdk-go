@@ -17,7 +17,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -26,8 +25,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
 
@@ -68,7 +67,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -77,13 +75,13 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    var request *shared.UpdateSessionSettingsRequest = &shared.UpdateSessionSettingsRequest{}
+
     ctx := context.Background()
-    res, err := s.SessionSettings.Update(ctx, request)
+    res, err := s.SessionSettings.Update(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
