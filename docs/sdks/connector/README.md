@@ -26,7 +26,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -36,8 +35,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceCreateRequest{
@@ -81,7 +80,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -91,8 +89,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
@@ -136,7 +134,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -146,8 +143,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceDeleteRequest{
@@ -192,7 +189,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -202,8 +198,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceForceSyncRequest{
@@ -248,7 +244,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -258,8 +253,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceGetRequest{
@@ -304,7 +299,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -314,8 +308,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
@@ -361,7 +355,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -371,8 +364,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceListRequest{
@@ -416,7 +409,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -426,8 +418,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
@@ -473,7 +465,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -483,8 +474,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
@@ -529,7 +520,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -539,8 +529,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceUpdateRequest{
@@ -585,7 +575,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -595,8 +584,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{

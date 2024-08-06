@@ -20,7 +20,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
 	"log"
@@ -29,13 +28,13 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    var request *shared.CreateAppRequest = &shared.CreateAppRequest{}
+
     ctx := context.Background()
-    res, err := s.Apps.Create(ctx, request)
+    res, err := s.Apps.Create(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -72,7 +71,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -82,8 +80,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppsDeleteRequest{
@@ -127,7 +125,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -137,8 +134,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppsGetRequest{
@@ -182,7 +179,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -192,8 +188,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppsListRequest{}
@@ -235,7 +231,6 @@ package main
 
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"os"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
@@ -245,8 +240,8 @@ import(
 func main() {
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: os.Getenv("BEARER_AUTH"),
-            Oauth: os.Getenv("OAUTH"),
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
     request := operations.C1APIAppV1AppsUpdateRequest{

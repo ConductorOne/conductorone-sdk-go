@@ -1,0 +1,10 @@
+# ExportServiceGetResponse
+
+The ExportServiceGetResponse message contains the system log exporter object.
+
+
+## Fields
+
+| Field                                                                                                                                                 | Type                                                                                                                                                  | Required                                                                                                                                              | Description                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Exporter`                                                                                                                                            | [*shared.Exporter](../../../pkg/models/shared/exporter.md)                                                                                            | :heavy_minus_sign:                                                                                                                                    | The Exporter message.<br/><br/>This message contains a oneof named export_to. Only a single field of the following list may be set at a time:<br/>  - datasource<br/> |
