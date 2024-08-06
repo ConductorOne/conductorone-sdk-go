@@ -95,6 +95,7 @@ func main() {
 ### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
 * [ListAppUsersForIdentityWithGrant](docs/sdks/appentitlementuserbinding/README.md#listappusersforidentitywithgrant) - List App Users For Identity With Grant
+* [SearchPastGrants](docs/sdks/appentitlementuserbinding/README.md#searchpastgrants) - Search Past Grants
 
 ### [AppEntitlementOwners](docs/sdks/appentitlementowners/README.md)
 
@@ -218,6 +219,10 @@ func main() {
 
 * [SearchEntitlements](docs/sdks/requestcatalogsearch/README.md#searchentitlements) - Search Entitlements
 
+### [ExportsSearch](docs/sdks/exportssearch/README.md)
+
+* [Search](docs/sdks/exportssearch/README.md#search) - Search
+
 ### [TaskSearch](docs/sdks/tasksearch/README.md)
 
 * [Search](docs/sdks/tasksearch/README.md#search) - Search
@@ -242,6 +247,14 @@ func main() {
 ### [SystemLog](docs/sdks/systemlog/README.md)
 
 * [ListEvents](docs/sdks/systemlog/README.md#listevents) - List Events
+
+### [Export](docs/sdks/export/README.md)
+
+* [Create](docs/sdks/export/README.md#create) - Create
+* [Delete](docs/sdks/export/README.md#delete) - Delete
+* [Get](docs/sdks/export/README.md#get) - Get
+* [List](docs/sdks/export/README.md#list) - List
+* [Update](docs/sdks/export/README.md#update) - Update
 
 ### [Task](docs/sdks/task/README.md)
 
@@ -392,20 +405,19 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
 	"log"
-	"os"
 	"pkg/models/operations"
 )
 
 func main() {
 	s := conductoronesdkgo.New(
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: os.Getenv("BEARER_AUTH"),
-			Oauth:      os.Getenv("OAUTH"),
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "<YOUR_OAUTH_HERE>",
 		}),
 	)
-	var request *shared.CreateAppRequest = &shared.CreateAppRequest{}
+
 	ctx := context.Background()
-	res, err := s.Apps.Create(ctx, request, operations.WithRetries(
+	res, err := s.Apps.Create(ctx, nil, operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
 			Backoff: &retry.BackoffStrategy{
@@ -436,7 +448,6 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
 	"log"
-	"os"
 )
 
 func main() {
@@ -453,13 +464,13 @@ func main() {
 				RetryConnectionErrors: false,
 			}),
 		conductoronesdkgo.WithSecurity(shared.Security{
-			BearerAuth: os.Getenv("BEARER_AUTH"),
-			Oauth:      os.Getenv("OAUTH"),
+			BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+			Oauth:      "<YOUR_OAUTH_HERE>",
 		}),
 	)
-	var request *shared.CreateAppRequest = &shared.CreateAppRequest{}
+
 	ctx := context.Background()
-	res, err := s.Apps.Create(ctx, request)
+	res, err := s.Apps.Create(ctx, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
