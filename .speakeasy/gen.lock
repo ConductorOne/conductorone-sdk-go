@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 7b03e8b076ff3a51cdc645fdb4178221
+  docChecksum: e910047e6eefffba4c8a45d69b4e4df4
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.354.1
-  generationVersion: 2.386.2
-  releaseVersion: 1.19.0
-  configChecksum: 3489e41cd716f3ee45ed14392cfeb826
+  speakeasyVersion: 1.358.0
+  generationVersion: 2.390.6
+  releaseVersion: 1.20.0
+  configChecksum: 2c258c8ff1a2645ea01e8d61bb91da30
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -18,7 +18,7 @@ features:
     core: 3.5.3
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.1
-    envVarSecurityUsage: 0.2.2
+    envVarSecurityUsage: 0.3.0
     globalSecurity: 2.82.10
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
@@ -826,6 +826,7 @@ generatedFiles:
   - docs/pkg/models/shared/facetvalue.md
   - docs/pkg/models/shared/facetrangeitem.md
   - docs/pkg/models/shared/facetrange.md
+  - docs/pkg/models/shared/membershiptype.md
   - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
   - docs/pkg/models/shared/appentitlementref.md
   - docs/pkg/models/shared/searchappentitlementswithexpiredresponse.md
