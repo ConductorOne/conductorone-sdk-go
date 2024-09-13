@@ -1,6 +1,8 @@
 # Policies
 (*Policies*)
 
+## Overview
+
 ### Available Operations
 
 * [Create](#create) - Create
@@ -52,13 +54,16 @@ func main() {
 | `request`                                                                    | [shared.CreatePolicyRequest](../../pkg/models/shared/createpolicyrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 | `opts`                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                 | :heavy_minus_sign:                                                           | The options for this request.                                                |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesCreateResponse](../../pkg/models/operations/c1apipolicyv1policiescreateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Delete
 
@@ -72,8 +77,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -84,11 +89,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIPolicyV1PoliciesDeleteRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Policies.Delete(ctx, request)
+    res, err := s.Policies.Delete(ctx, operations.C1APIPolicyV1PoliciesDeleteRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -106,13 +111,16 @@ func main() {
 | `request`                                                                                                          | [operations.C1APIPolicyV1PoliciesDeleteRequest](../../pkg/models/operations/c1apipolicyv1policiesdeleterequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 | `opts`                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesDeleteResponse](../../pkg/models/operations/c1apipolicyv1policiesdeleteresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Get
 
@@ -126,8 +134,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -138,11 +146,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIPolicyV1PoliciesGetRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Policies.Get(ctx, request)
+    res, err := s.Policies.Get(ctx, operations.C1APIPolicyV1PoliciesGetRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -160,13 +168,16 @@ func main() {
 | `request`                                                                                                    | [operations.C1APIPolicyV1PoliciesGetRequest](../../pkg/models/operations/c1apipolicyv1policiesgetrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 | `opts`                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesGetResponse](../../pkg/models/operations/c1apipolicyv1policiesgetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -180,8 +191,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -192,9 +203,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIPolicyV1PoliciesListRequest{}
+
     ctx := context.Background()
-    res, err := s.Policies.List(ctx, request)
+    res, err := s.Policies.List(ctx, operations.C1APIPolicyV1PoliciesListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -212,13 +223,16 @@ func main() {
 | `request`                                                                                                      | [operations.C1APIPolicyV1PoliciesListRequest](../../pkg/models/operations/c1apipolicyv1policieslistrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 | `opts`                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesListResponse](../../pkg/models/operations/c1apipolicyv1policieslistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Update
 
@@ -232,8 +246,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -244,11 +258,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIPolicyV1PoliciesUpdateRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Policies.Update(ctx, request)
+    res, err := s.Policies.Update(ctx, operations.C1APIPolicyV1PoliciesUpdateRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -266,10 +280,12 @@ func main() {
 | `request`                                                                                                          | [operations.C1APIPolicyV1PoliciesUpdateRequest](../../pkg/models/operations/c1apipolicyv1policiesupdaterequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
 | `opts`                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                       | :heavy_minus_sign:                                                                                                 | The options for this request.                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PoliciesUpdateResponse](../../pkg/models/operations/c1apipolicyv1policiesupdateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

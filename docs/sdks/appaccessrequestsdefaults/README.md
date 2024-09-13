@@ -1,6 +1,8 @@
 # AppAccessRequestsDefaults
 (*AppAccessRequestsDefaults*)
 
+## Overview
+
 ### Available Operations
 
 * [CancelAppAccessRequestsDefaults](#cancelappaccessrequestsdefaults) - Cancel App Access Requests Defaults
@@ -19,8 +21,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -31,11 +33,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppAccessRequestsDefaults.CancelAppAccessRequestsDefaults(ctx, request)
+    res, err := s.AppAccessRequestsDefaults.CancelAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -53,13 +55,16 @@ func main() {
 | `request`                                                                                                                                                                                                      | [operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsrequest.md) | :heavy_check_mark:                                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                                     |
 | `opts`                                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                             | The options for this request.                                                                                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsResponse](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## CreateAppAccessRequestsDefaults
 
@@ -73,8 +78,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -85,11 +90,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppAccessRequestsDefaults.CreateAppAccessRequestsDefaults(ctx, request)
+    res, err := s.AppAccessRequestsDefaults.CreateAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -107,13 +112,16 @@ func main() {
 | `request`                                                                                                                                                                                                      | [operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsrequest.md) | :heavy_check_mark:                                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                                     |
 | `opts`                                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                             | The options for this request.                                                                                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsResponse](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## GetAppAccessRequestsDefaults
 
@@ -127,8 +135,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -139,11 +147,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppAccessRequestsDefaults.GetAppAccessRequestsDefaults(ctx, request)
+    res, err := s.AppAccessRequestsDefaults.GetAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -161,10 +169,12 @@ func main() {
 | `request`                                                                                                                                                                                                | [operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsrequest.md) | :heavy_check_mark:                                                                                                                                                                                       | The request object to use for the request.                                                                                                                                                               |
 | `opts`                                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                       | The options for this request.                                                                                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponse](../../pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

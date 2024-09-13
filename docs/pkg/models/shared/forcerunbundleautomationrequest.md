@@ -1,6 +1,6 @@
-# AppUserStatusInput
+# ForceRunBundleAutomationRequest
 
-The satus of the applicaiton user.
+The ForceRunBundleAutomationRequest message.
 
 
 ## Fields

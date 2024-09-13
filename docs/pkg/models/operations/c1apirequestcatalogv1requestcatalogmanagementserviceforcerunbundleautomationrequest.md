@@ -1,0 +1,9 @@
+# C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ForceRunBundleAutomationRequest`                                                                        | [*shared.ForceRunBundleAutomationRequest](../../../pkg/models/shared/forcerunbundleautomationrequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `RequestCatalogID`                                                                                       | *string*                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

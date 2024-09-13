@@ -1,6 +1,8 @@
 # Task
 (*Task*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateGrantTask](#creategranttask) - Create Grant Task
@@ -51,13 +53,16 @@ func main() {
 | `request`                                                                                        | [shared.TaskServiceCreateGrantRequest](../../pkg/models/shared/taskservicecreategrantrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
-
 ### Response
 
 **[*operations.C1APITaskV1TaskServiceCreateGrantTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## CreateOffboardingTask
 
@@ -102,13 +107,16 @@ func main() {
 | `request`                                                                                                    | [shared.TaskServiceCreateOffboardingRequest](../../pkg/models/shared/taskservicecreateoffboardingrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 | `opts`                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
 
-
 ### Response
 
 **[*operations.C1APITaskV1TaskServiceCreateOffboardingTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtaskresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## CreateRevokeTask
 
@@ -153,13 +161,16 @@ func main() {
 | `request`                                                                                          | [shared.TaskServiceCreateRevokeRequest](../../pkg/models/shared/taskservicecreaterevokerequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 | `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
-
 ### Response
 
 **[*operations.C1APITaskV1TaskServiceCreateRevokeTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Get
 
@@ -173,8 +184,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -185,11 +196,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APITaskV1TaskServiceGetRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Task.Get(ctx, request)
+    res, err := s.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -207,10 +218,12 @@ func main() {
 | `request`                                                                                                      | [operations.C1APITaskV1TaskServiceGetRequest](../../pkg/models/operations/c1apitaskv1taskservicegetrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 | `opts`                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APITaskV1TaskServiceGetResponse](../../pkg/models/operations/c1apitaskv1taskservicegetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

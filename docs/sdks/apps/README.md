@@ -1,6 +1,8 @@
 # Apps
 (*Apps*)
 
+## Overview
+
 ### Available Operations
 
 * [Create](#create) - Create
@@ -52,13 +54,16 @@ func main() {
 | `request`                                                              | [shared.CreateAppRequest](../../pkg/models/shared/createapprequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 | `opts`                                                                 | [][operations.Option](../../pkg/models/operations/option.md)           | :heavy_minus_sign:                                                     | The options for this request.                                          |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppsCreateResponse](../../pkg/models/operations/c1apiappv1appscreateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Delete
 
@@ -72,8 +77,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -84,11 +89,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppsDeleteRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Apps.Delete(ctx, request)
+    res, err := s.Apps.Delete(ctx, operations.C1APIAppV1AppsDeleteRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -106,13 +111,16 @@ func main() {
 | `request`                                                                                            | [operations.C1APIAppV1AppsDeleteRequest](../../pkg/models/operations/c1apiappv1appsdeleterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `opts`                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                         | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppsDeleteResponse](../../pkg/models/operations/c1apiappv1appsdeleteresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Get
 
@@ -126,8 +134,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -138,11 +146,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppsGetRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Apps.Get(ctx, request)
+    res, err := s.Apps.Get(ctx, operations.C1APIAppV1AppsGetRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -160,13 +168,16 @@ func main() {
 | `request`                                                                                      | [operations.C1APIAppV1AppsGetRequest](../../pkg/models/operations/c1apiappv1appsgetrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `opts`                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                   | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppsGetResponse](../../pkg/models/operations/c1apiappv1appsgetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -180,8 +191,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -192,9 +203,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppsListRequest{}
+
     ctx := context.Background()
-    res, err := s.Apps.List(ctx, request)
+    res, err := s.Apps.List(ctx, operations.C1APIAppV1AppsListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -212,13 +223,16 @@ func main() {
 | `request`                                                                                        | [operations.C1APIAppV1AppsListRequest](../../pkg/models/operations/c1apiappv1appslistrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppsListResponse](../../pkg/models/operations/c1apiappv1appslistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Update
 
@@ -232,8 +246,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -244,11 +258,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppsUpdateRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Apps.Update(ctx, request)
+    res, err := s.Apps.Update(ctx, operations.C1APIAppV1AppsUpdateRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -266,10 +280,12 @@ func main() {
 | `request`                                                                                            | [operations.C1APIAppV1AppsUpdateRequest](../../pkg/models/operations/c1apiappv1appsupdaterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `opts`                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                         | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppsUpdateResponse](../../pkg/models/operations/c1apiappv1appsupdateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

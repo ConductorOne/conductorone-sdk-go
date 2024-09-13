@@ -1,6 +1,8 @@
 # AppReportAction
 (*AppReportAction*)
 
+## Overview
+
 ### Available Operations
 
 * [GenerateReport](#generatereport) - Generate Report
@@ -17,8 +19,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -29,11 +31,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppReportAction.GenerateReport(ctx, request)
+    res, err := s.AppReportAction.GenerateReport(ctx, operations.C1APIAppV1AppReportActionServiceGenerateReportRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -51,10 +53,12 @@ func main() {
 | `request`                                                                                                                                                | [operations.C1APIAppV1AppReportActionServiceGenerateReportRequest](../../pkg/models/operations/c1apiappv1appreportactionservicegeneratereportrequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
 | `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppReportActionServiceGenerateReportResponse](../../pkg/models/operations/c1apiappv1appreportactionservicegeneratereportresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

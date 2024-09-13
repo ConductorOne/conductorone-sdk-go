@@ -1,6 +1,8 @@
 # ExportsSearch
 (*ExportsSearch*)
 
+## Overview
+
 ### Available Operations
 
 * [Search](#search) - Search
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                                                | [shared.ExportsSearchServiceSearchRequest](../../pkg/models/shared/exportssearchservicesearchrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
-
 ### Response
 
 **[*operations.C1APISystemlogV1ExportsSearchServiceSearchResponse](../../pkg/models/operations/c1apisystemlogv1exportssearchservicesearchresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

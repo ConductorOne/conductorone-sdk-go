@@ -1,6 +1,8 @@
 # Auth
 (*Auth*)
 
+## Overview
+
 ### Available Operations
 
 * [Introspect](#introspect) - Introspect
@@ -47,10 +49,12 @@ func main() {
 | `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
 | `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
 
-
 ### Response
 
 **[*operations.C1APIAuthV1AuthIntrospectResponse](../../pkg/models/operations/c1apiauthv1authintrospectresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

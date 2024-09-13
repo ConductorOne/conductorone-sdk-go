@@ -1,6 +1,8 @@
 # AppEntitlements
 (*AppEntitlements*)
 
+## Overview
+
 ### Available Operations
 
 * [Get](#get) - Get
@@ -22,8 +24,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -34,12 +36,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsGetRequest{
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.Get(ctx, operations.C1APIAppV1AppEntitlementsGetRequest{
         AppID: "<value>",
         ID: "<id>",
-    }
-    ctx := context.Background()
-    res, err := s.AppEntitlements.Get(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -57,13 +59,16 @@ func main() {
 | `request`                                                                                                            | [operations.C1APIAppV1AppEntitlementsGetRequest](../../pkg/models/operations/c1apiappv1appentitlementsgetrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
 | `opts`                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsGetResponse](../../pkg/models/operations/c1apiappv1appentitlementsgetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -77,8 +82,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -89,11 +94,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsListRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppEntitlements.List(ctx, request)
+    res, err := s.AppEntitlements.List(ctx, operations.C1APIAppV1AppEntitlementsListRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -111,13 +116,16 @@ func main() {
 | `request`                                                                                                              | [operations.C1APIAppV1AppEntitlementsListRequest](../../pkg/models/operations/c1apiappv1appentitlementslistrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 | `opts`                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                           | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsListResponse](../../pkg/models/operations/c1apiappv1appentitlementslistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## ListForAppResource
 
@@ -131,8 +139,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -143,13 +151,13 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListForAppResource(ctx, operations.C1APIAppV1AppEntitlementsListForAppResourceRequest{
         AppID: "<value>",
         AppResourceID: "<value>",
         AppResourceTypeID: "<value>",
-    }
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListForAppResource(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -167,13 +175,16 @@ func main() {
 | `request`                                                                                                                                          | [operations.C1APIAppV1AppEntitlementsListForAppResourceRequest](../../pkg/models/operations/c1apiappv1appentitlementslistforappresourcerequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
 | `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsListForAppResourceResponse](../../pkg/models/operations/c1apiappv1appentitlementslistforappresourceresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## ListForAppUser
 
@@ -187,8 +198,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -199,12 +210,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListForAppUser(ctx, operations.C1APIAppV1AppEntitlementsListForAppUserRequest{
         AppID: "<value>",
         AppUserID: "<value>",
-    }
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListForAppUser(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -222,13 +233,16 @@ func main() {
 | `request`                                                                                                                                  | [operations.C1APIAppV1AppEntitlementsListForAppUserRequest](../../pkg/models/operations/c1apiappv1appentitlementslistforappuserrequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
 | `opts`                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                               | :heavy_minus_sign:                                                                                                                         | The options for this request.                                                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsListForAppUserResponse](../../pkg/models/operations/c1apiappv1appentitlementslistforappuserresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## ~~ListUsers~~
 
@@ -244,8 +258,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -256,12 +270,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsListUsersRequest{
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.ListUsers(ctx, operations.C1APIAppV1AppEntitlementsListUsersRequest{
         AppEntitlementID: "<value>",
         AppID: "<value>",
-    }
-    ctx := context.Background()
-    res, err := s.AppEntitlements.ListUsers(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -279,13 +293,16 @@ func main() {
 | `request`                                                                                                                        | [operations.C1APIAppV1AppEntitlementsListUsersRequest](../../pkg/models/operations/c1apiappv1appentitlementslistusersrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
 | `opts`                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                     | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsListUsersResponse](../../pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Update
 
@@ -299,8 +316,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -311,12 +328,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppEntitlementsUpdateRequest{
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.Update(ctx, operations.C1APIAppV1AppEntitlementsUpdateRequest{
         AppID: "<value>",
         ID: "<id>",
-    }
-    ctx := context.Background()
-    res, err := s.AppEntitlements.Update(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -334,10 +351,12 @@ func main() {
 | `request`                                                                                                                  | [operations.C1APIAppV1AppEntitlementsUpdateRequest](../../pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
 | `opts`                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                         | The options for this request.                                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsUpdateResponse](../../pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

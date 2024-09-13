@@ -1,6 +1,8 @@
 # PersonalClient
 (*PersonalClient*)
 
+## Overview
+
 ### Available Operations
 
 * [Create](#create) - Create
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                                                  | [shared.PersonalClientServiceCreateRequest](../../pkg/models/shared/personalclientservicecreaterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 | `opts`                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                               | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIIamV1PersonalClientServiceCreateResponse](../../pkg/models/operations/c1apiiamv1personalclientservicecreateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

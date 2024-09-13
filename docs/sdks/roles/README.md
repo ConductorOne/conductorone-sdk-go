@@ -1,6 +1,8 @@
 # Roles
 (*Roles*)
 
+## Overview
+
 ### Available Operations
 
 * [Get](#get) - Get
@@ -19,8 +21,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -31,11 +33,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIIamV1RolesGetRequest{
-        RoleID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Roles.Get(ctx, request)
+    res, err := s.Roles.Get(ctx, operations.C1APIIamV1RolesGetRequest{
+        RoleID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -53,13 +55,16 @@ func main() {
 | `request`                                                                                        | [operations.C1APIIamV1RolesGetRequest](../../pkg/models/operations/c1apiiamv1rolesgetrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIIamV1RolesGetResponse](../../pkg/models/operations/c1apiiamv1rolesgetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -73,8 +78,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -85,9 +90,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIIamV1RolesListRequest{}
+
     ctx := context.Background()
-    res, err := s.Roles.List(ctx, request)
+    res, err := s.Roles.List(ctx, operations.C1APIIamV1RolesListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -105,13 +110,16 @@ func main() {
 | `request`                                                                                          | [operations.C1APIIamV1RolesListRequest](../../pkg/models/operations/c1apiiamv1roleslistrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 | `opts`                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                       | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIIamV1RolesListResponse](../../pkg/models/operations/c1apiiamv1roleslistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Update
 
@@ -125,8 +133,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -137,11 +145,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIIamV1RolesUpdateRequest{
-        RoleID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Roles.Update(ctx, request)
+    res, err := s.Roles.Update(ctx, operations.C1APIIamV1RolesUpdateRequest{
+        RoleID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -159,10 +167,12 @@ func main() {
 | `request`                                                                                              | [operations.C1APIIamV1RolesUpdateRequest](../../pkg/models/operations/c1apiiamv1rolesupdaterequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 | `opts`                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                           | :heavy_minus_sign:                                                                                     | The options for this request.                                                                          |
 
-
 ### Response
 
 **[*operations.C1APIIamV1RolesUpdateResponse](../../pkg/models/operations/c1apiiamv1rolesupdateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

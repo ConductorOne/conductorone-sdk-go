@@ -1,6 +1,8 @@
 # PolicyValidate
 (*PolicyValidate*)
 
+## Overview
+
 ### Available Operations
 
 * [ValidateCEL](#validatecel) - Validate Cel
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                              | [shared.ValidatePolicyCELRequest](../../pkg/models/shared/validatepolicycelrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 | `opts`                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                           | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
 
-
 ### Response
 
 **[*operations.C1APIPolicyV1PolicyValidateValidateCELResponse](../../pkg/models/operations/c1apipolicyv1policyvalidatevalidatecelresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

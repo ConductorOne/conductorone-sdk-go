@@ -1,6 +1,8 @@
 # AppResourceSearch
 (*AppResourceSearch*)
 
+## Overview
+
 ### Available Operations
 
 * [SearchAppResourceTypes](#searchappresourcetypes) - Search App Resource Types
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                                        | [shared.SearchAppResourceTypesRequest](../../pkg/models/shared/searchappresourcetypesrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppResourceSearchSearchAppResourceTypesResponse](../../pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

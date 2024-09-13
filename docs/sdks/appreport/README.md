@@ -1,6 +1,8 @@
 # AppReport
 (*AppReport*)
 
+## Overview
+
 ### Available Operations
 
 * [List](#list) - List
@@ -17,8 +19,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -29,11 +31,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppReportServiceListRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppReport.List(ctx, request)
+    res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -51,10 +53,12 @@ func main() {
 | `request`                                                                                                                | [operations.C1APIAppV1AppReportServiceListRequest](../../pkg/models/operations/c1apiappv1appreportservicelistrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
 | `opts`                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppReportServiceListResponse](../../pkg/models/operations/c1apiappv1appreportservicelistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

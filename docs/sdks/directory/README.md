@@ -1,6 +1,8 @@
 # Directory
 (*Directory*)
 
+## Overview
+
 ### Available Operations
 
 * [Create](#create) - Create
@@ -51,13 +53,16 @@ func main() {
 | `request`                                                                                        | [shared.DirectoryServiceCreateRequest](../../pkg/models/shared/directoryservicecreaterequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `opts`                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                     | :heavy_minus_sign:                                                                               | The options for this request.                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIDirectoryV1DirectoryServiceCreateResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicecreateresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Delete
 
@@ -71,8 +76,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -83,11 +88,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Directory.Delete(ctx, request)
+    res, err := s.Directory.Delete(ctx, operations.C1APIDirectoryV1DirectoryServiceDeleteRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -105,13 +110,16 @@ func main() {
 | `request`                                                                                                                                | [operations.C1APIDirectoryV1DirectoryServiceDeleteRequest](../../pkg/models/operations/c1apidirectoryv1directoryservicedeleterequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
 | `opts`                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                             | :heavy_minus_sign:                                                                                                                       | The options for this request.                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIDirectoryV1DirectoryServiceDeleteResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicedeleteresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Get
 
@@ -125,8 +133,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -137,11 +145,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIDirectoryV1DirectoryServiceGetRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Directory.Get(ctx, request)
+    res, err := s.Directory.Get(ctx, operations.C1APIDirectoryV1DirectoryServiceGetRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -159,13 +167,16 @@ func main() {
 | `request`                                                                                                                          | [operations.C1APIDirectoryV1DirectoryServiceGetRequest](../../pkg/models/operations/c1apidirectoryv1directoryservicegetrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
 | `opts`                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                       | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIDirectoryV1DirectoryServiceGetResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicegetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -179,8 +190,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -191,9 +202,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIDirectoryV1DirectoryServiceListRequest{}
+
     ctx := context.Background()
-    res, err := s.Directory.List(ctx, request)
+    res, err := s.Directory.List(ctx, operations.C1APIDirectoryV1DirectoryServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -211,10 +222,12 @@ func main() {
 | `request`                                                                                                                            | [operations.C1APIDirectoryV1DirectoryServiceListRequest](../../pkg/models/operations/c1apidirectoryv1directoryservicelistrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
 | `opts`                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                                   | The options for this request.                                                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIDirectoryV1DirectoryServiceListResponse](../../pkg/models/operations/c1apidirectoryv1directoryservicelistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

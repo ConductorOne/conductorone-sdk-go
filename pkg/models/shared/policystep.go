@@ -24,6 +24,7 @@ type PolicyStep struct {
 	//   - entitlementOwners
 	//   - expression
 	//   - webhook
+	//   - resourceOwners
 	//
 	Approval *Approval `json:"approval,omitempty"`
 	// The provision step references a provision policy for this step.

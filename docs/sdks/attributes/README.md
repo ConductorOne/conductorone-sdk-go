@@ -1,6 +1,8 @@
 # Attributes
 (*Attributes*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAttributeValue](#createattributevalue) - Create Attribute Value
@@ -52,13 +54,16 @@ func main() {
 | `request`                                                                                    | [shared.CreateAttributeValueRequest](../../pkg/models/shared/createattributevaluerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 | `opts`                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                 | :heavy_minus_sign:                                                                           | The options for this request.                                                                |
 
-
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesCreateAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributescreateattributevalueresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## DeleteAttributeValue
 
@@ -72,8 +77,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -84,11 +89,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Attributes.DeleteAttributeValue(ctx, request)
+    res, err := s.Attributes.DeleteAttributeValue(ctx, operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -106,13 +111,16 @@ func main() {
 | `request`                                                                                                                                                | [operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest](../../pkg/models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
 | `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## GetAttributeValue
 
@@ -126,8 +134,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -138,11 +146,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Attributes.GetAttributeValue(ctx, request)
+    res, err := s.Attributes.GetAttributeValue(ctx, operations.C1APIAttributeV1AttributesGetAttributeValueRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -160,13 +168,16 @@ func main() {
 | `request`                                                                                                                                          | [operations.C1APIAttributeV1AttributesGetAttributeValueRequest](../../pkg/models/operations/c1apiattributev1attributesgetattributevaluerequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
 | `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesGetAttributeValueResponse](../../pkg/models/operations/c1apiattributev1attributesgetattributevalueresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## ListAttributeTypes
 
@@ -180,8 +191,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -192,9 +203,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAttributeV1AttributesListAttributeTypesRequest{}
+
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeTypes(ctx, request)
+    res, err := s.Attributes.ListAttributeTypes(ctx, operations.C1APIAttributeV1AttributesListAttributeTypesRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -212,13 +223,16 @@ func main() {
 | `request`                                                                                                                                            | [operations.C1APIAttributeV1AttributesListAttributeTypesRequest](../../pkg/models/operations/c1apiattributev1attributeslistattributetypesrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
 | `opts`                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                         | :heavy_minus_sign:                                                                                                                                   | The options for this request.                                                                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesListAttributeTypesResponse](../../pkg/models/operations/c1apiattributev1attributeslistattributetypesresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## ListAttributeValues
 
@@ -232,8 +246,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -244,11 +258,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
-        AttributeTypeID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Attributes.ListAttributeValues(ctx, request)
+    res, err := s.Attributes.ListAttributeValues(ctx, operations.C1APIAttributeV1AttributesListAttributeValuesRequest{
+        AttributeTypeID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -266,10 +280,12 @@ func main() {
 | `request`                                                                                                                                              | [operations.C1APIAttributeV1AttributesListAttributeValuesRequest](../../pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md) | :heavy_check_mark:                                                                                                                                     | The request object to use for the request.                                                                                                             |
 | `opts`                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                           | :heavy_minus_sign:                                                                                                                                     | The options for this request.                                                                                                                          |
 
-
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesListAttributeValuesResponse](../../pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

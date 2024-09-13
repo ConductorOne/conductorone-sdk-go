@@ -1,6 +1,8 @@
 # AppOwners
 (*AppOwners*)
 
+## Overview
+
 ### Available Operations
 
 * [Add](#add) - Add
@@ -20,8 +22,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -32,12 +34,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppOwnersAddRequest{
+
+    ctx := context.Background()
+    res, err := s.AppOwners.Add(ctx, operations.C1APIAppV1AppOwnersAddRequest{
         AppID: "<value>",
         UserID: "<value>",
-    }
-    ctx := context.Background()
-    res, err := s.AppOwners.Add(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -55,13 +57,16 @@ func main() {
 | `request`                                                                                                | [operations.C1APIAppV1AppOwnersAddRequest](../../pkg/models/operations/c1apiappv1appownersaddrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppOwnersAddResponse](../../pkg/models/operations/c1apiappv1appownersaddresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## List
 
@@ -75,8 +80,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -87,11 +92,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppOwnersListRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppOwners.List(ctx, request)
+    res, err := s.AppOwners.List(ctx, operations.C1APIAppV1AppOwnersListRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -109,13 +114,16 @@ func main() {
 | `request`                                                                                                  | [operations.C1APIAppV1AppOwnersListRequest](../../pkg/models/operations/c1apiappv1appownerslistrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 | `opts`                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                               | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppOwnersListResponse](../../pkg/models/operations/c1apiappv1appownerslistresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Remove
 
@@ -129,8 +137,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -141,12 +149,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppOwnersRemoveRequest{
+
+    ctx := context.Background()
+    res, err := s.AppOwners.Remove(ctx, operations.C1APIAppV1AppOwnersRemoveRequest{
         AppID: "<value>",
         UserID: "<value>",
-    }
-    ctx := context.Background()
-    res, err := s.AppOwners.Remove(ctx, request)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -164,13 +172,16 @@ func main() {
 | `request`                                                                                                      | [operations.C1APIAppV1AppOwnersRemoveRequest](../../pkg/models/operations/c1apiappv1appownersremoverequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 | `opts`                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppOwnersRemoveResponse](../../pkg/models/operations/c1apiappv1appownersremoveresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |
+
 
 ## Set
 
@@ -184,8 +195,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -196,11 +207,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1AppOwnersSetRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.AppOwners.Set(ctx, request)
+    res, err := s.AppOwners.Set(ctx, operations.C1APIAppV1AppOwnersSetRequest{
+        AppID: "<value>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -218,10 +229,12 @@ func main() {
 | `request`                                                                                                | [operations.C1APIAppV1AppOwnersSetRequest](../../pkg/models/operations/c1apiappv1appownerssetrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1AppOwnersSetResponse](../../pkg/models/operations/c1apiappv1appownerssetresponse.md), error**
+
+### Errors
+
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4xx-5xx            | */*                |

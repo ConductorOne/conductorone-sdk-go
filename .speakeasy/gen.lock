@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 7b03e8b076ff3a51cdc645fdb4178221
+  docChecksum: ee7f4d9b84bc520af8504adccc6fb9d4
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.354.1
-  generationVersion: 2.386.2
-  releaseVersion: 1.19.0
-  configChecksum: 3489e41cd716f3ee45ed14392cfeb826
+  speakeasyVersion: 1.396.6
+  generationVersion: 2.415.6
+  releaseVersion: 1.20.0
+  configChecksum: 2c258c8ff1a2645ea01e8d61bb91da30
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,10 +15,10 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.5.3
+    core: 3.5.8
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.1
-    envVarSecurityUsage: 0.2.2
+    envVarSecurityUsage: 0.3.1
     globalSecurity: 2.82.10
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
@@ -32,72 +32,47 @@ features:
     retries: 2.83.0
     sdkHooks: 0.1.0
 generatedFiles:
-  - apps.go
-  - appaccessrequestsdefaults.go
-  - connector.go
-  - appentitlements.go
-  - appentitlementsearch.go
-  - appentitlementuserbinding.go
-  - appentitlementowners.go
-  - appowners.go
-  - appreport.go
-  - appreportaction.go
-  - appresourcetype.go
-  - appresource.go
-  - appresourceowners.go
-  - appusagecontrols.go
-  - appuser.go
-  - attributes.go
-  - auth.go
-  - requestcatalogmanagement.go
-  - directory.go
-  - personalclient.go
-  - roles.go
-  - policies.go
-  - policyvalidate.go
-  - appresourcesearch.go
-  - appsearch.go
-  - attributesearch.go
-  - policysearch.go
-  - requestcatalogsearch.go
-  - exportssearch.go
-  - tasksearch.go
-  - usersearch.go
-  - webhookssearch.go
-  - awsexternalidsettings.go
-  - sessionsettings.go
-  - systemlog.go
-  - export.go
-  - task.go
-  - taskactions.go
-  - user.go
-  - webhooks.go
-  - conductoroneapi.go
-  - pkg/models/sdkerrors/sdkerror.go
-  - pkg/retry/config.go
-  - pkg/types/bigint.go
-  - pkg/types/date.go
-  - pkg/types/datetime.go
-  - pkg/types/decimal.go
-  - pkg/types/pointers.go
-  - pkg/utils/contenttype.go
-  - pkg/utils/form.go
-  - pkg/utils/headers.go
-  - pkg/utils/json.go
-  - pkg/utils/pathparams.go
-  - pkg/utils/queryparams.go
-  - pkg/utils/requestbody.go
-  - pkg/utils/retries.go
-  - pkg/utils/security.go
-  - pkg/utils/utils.go
-  - /pkg/models/operations/c1apiappv1appscreate.go
-  - /pkg/models/operations/c1apiappv1appsdelete.go
-  - /pkg/models/operations/c1apiappv1appsget.go
-  - /pkg/models/operations/c1apiappv1appslist.go
-  - /pkg/models/operations/c1apiappv1appsupdate.go
+  - .gitattributes
   - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaults.go
   - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaults.go
   - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaults.go
+  - /pkg/models/operations/c1apiappv1appentitlementownersadd.go
+  - /pkg/models/operations/c1apiappv1appentitlementownerslist.go
+  - /pkg/models/operations/c1apiappv1appentitlementownersremove.go
+  - /pkg/models/operations/c1apiappv1appentitlementownersset.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuser.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpired.go
+  - /pkg/models/operations/c1apiappv1appentitlementsget.go
+  - /pkg/models/operations/c1apiappv1appentitlementslist.go
+  - /pkg/models/operations/c1apiappv1appentitlementslistforappresource.go
+  - /pkg/models/operations/c1apiappv1appentitlementslistforappuser.go
+  - /pkg/models/operations/c1apiappv1appentitlementslistusers.go
+  - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
+  - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
+  - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeed.go
+  - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrants.go
+  - /pkg/models/operations/c1apiappv1appownersadd.go
+  - /pkg/models/operations/c1apiappv1appownerslist.go
+  - /pkg/models/operations/c1apiappv1appownersremove.go
+  - /pkg/models/operations/c1apiappv1appownersset.go
+  - /pkg/models/operations/c1apiappv1appreportactionservicegeneratereport.go
+  - /pkg/models/operations/c1apiappv1appreportservicelist.go
+  - /pkg/models/operations/c1apiappv1appresourceownerslist.go
+  - /pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypes.go
+  - /pkg/models/operations/c1apiappv1appresourceserviceget.go
+  - /pkg/models/operations/c1apiappv1appresourceservicelist.go
+  - /pkg/models/operations/c1apiappv1appresourcetypeserviceget.go
+  - /pkg/models/operations/c1apiappv1appresourcetypeservicelist.go
+  - /pkg/models/operations/c1apiappv1appscreate.go
+  - /pkg/models/operations/c1apiappv1appsdelete.go
+  - /pkg/models/operations/c1apiappv1appsearchsearch.go
+  - /pkg/models/operations/c1apiappv1appsget.go
+  - /pkg/models/operations/c1apiappv1appslist.go
+  - /pkg/models/operations/c1apiappv1appsupdate.go
+  - /pkg/models/operations/c1apiappv1appusagecontrolsserviceget.go
+  - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
+  - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
   - /pkg/models/operations/c1apiappv1connectorservicedelete.go
@@ -109,53 +84,13 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1connectorservicerotatecredential.go
   - /pkg/models/operations/c1apiappv1connectorserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorserviceupdatedelegated.go
-  - /pkg/models/operations/c1apiappv1appentitlementsget.go
-  - /pkg/models/operations/c1apiappv1appentitlementslist.go
-  - /pkg/models/operations/c1apiappv1appentitlementslistforappresource.go
-  - /pkg/models/operations/c1apiappv1appentitlementslistforappuser.go
-  - /pkg/models/operations/c1apiappv1appentitlementslistusers.go
-  - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
-  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
-  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpired.go
-  - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
-  - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrants.go
-  - /pkg/models/operations/c1apiappv1appentitlementownersadd.go
-  - /pkg/models/operations/c1apiappv1appentitlementownerslist.go
-  - /pkg/models/operations/c1apiappv1appentitlementownersremove.go
-  - /pkg/models/operations/c1apiappv1appentitlementownersset.go
-  - /pkg/models/operations/c1apiappv1appownersadd.go
-  - /pkg/models/operations/c1apiappv1appownerslist.go
-  - /pkg/models/operations/c1apiappv1appownersremove.go
-  - /pkg/models/operations/c1apiappv1appownersset.go
-  - /pkg/models/operations/c1apiappv1appreportservicelist.go
-  - /pkg/models/operations/c1apiappv1appreportactionservicegeneratereport.go
-  - /pkg/models/operations/c1apiappv1appresourcetypeserviceget.go
-  - /pkg/models/operations/c1apiappv1appresourcetypeservicelist.go
-  - /pkg/models/operations/c1apiappv1appresourceserviceget.go
-  - /pkg/models/operations/c1apiappv1appresourceservicelist.go
-  - /pkg/models/operations/c1apiappv1appresourceownerslist.go
-  - /pkg/models/operations/c1apiappv1appusagecontrolsserviceget.go
-  - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
-  - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiattributev1attributescreateattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributesdeleteattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributesearchsearchattributevalues.go
   - /pkg/models/operations/c1apiattributev1attributesgetattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributetypes.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributevalues.go
   - /pkg/models/operations/c1apiauthv1authintrospect.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlements.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlements.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreate.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelete.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceget.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomation.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelist.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccess.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalog.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlements.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlements.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomation.go
-  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdate.go
   - /pkg/models/operations/c1apidirectoryv1directoryservicecreate.go
   - /pkg/models/operations/c1apidirectoryv1directoryservicedelete.go
   - /pkg/models/operations/c1apidirectoryv1directoryserviceget.go
@@ -169,427 +104,426 @@ generatedFiles:
   - /pkg/models/operations/c1apipolicyv1policiesget.go
   - /pkg/models/operations/c1apipolicyv1policieslist.go
   - /pkg/models/operations/c1apipolicyv1policiesupdate.go
-  - /pkg/models/operations/c1apipolicyv1policyvalidatevalidatecel.go
-  - /pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypes.go
-  - /pkg/models/operations/c1apiappv1appsearchsearch.go
-  - /pkg/models/operations/c1apiattributev1attributesearchsearchattributevalues.go
   - /pkg/models/operations/c1apipolicyv1policysearchsearch.go
+  - /pkg/models/operations/c1apipolicyv1policyvalidatevalidatecel.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlements.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlements.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreate.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelete.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomation.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceget.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomation.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelist.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccess.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalog.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlements.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlements.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomation.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdate.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
-  - /pkg/models/operations/c1apisystemlogv1exportssearchservicesearch.go
-  - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
-  - /pkg/models/operations/c1apiuserv1usersearchsearch.go
-  - /pkg/models/operations/c1apiwebhooksv1webhookssearchsearch.go
   - /pkg/models/operations/c1apisettingsv1awsexternalidsettingsget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdate.go
-  - /pkg/models/operations/c1apisystemlogv1systemlogservicelistevents.go
   - /pkg/models/operations/c1apisystemlogv1exportservicecreate.go
   - /pkg/models/operations/c1apisystemlogv1exportservicedelete.go
   - /pkg/models/operations/c1apisystemlogv1exportserviceget.go
   - /pkg/models/operations/c1apisystemlogv1exportservicelist.go
+  - /pkg/models/operations/c1apisystemlogv1exportservicelistevents.go
   - /pkg/models/operations/c1apisystemlogv1exportserviceupdate.go
-  - /pkg/models/operations/c1apitaskv1taskservicecreategranttask.go
-  - /pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtask.go
-  - /pkg/models/operations/c1apitaskv1taskservicecreaterevoketask.go
-  - /pkg/models/operations/c1apitaskv1taskserviceget.go
+  - /pkg/models/operations/c1apisystemlogv1exportssearchservicesearch.go
+  - /pkg/models/operations/c1apisystemlogv1systemlogservicelistevents.go
   - /pkg/models/operations/c1apitaskv1taskactionsserviceapprove.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicecomment.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicedeny.go
   - /pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccess.go
+  - /pkg/models/operations/c1apitaskv1taskactionsservicehardreset.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicereassign.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
+  - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
+  - /pkg/models/operations/c1apitaskv1taskservicecreategranttask.go
+  - /pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtask.go
+  - /pkg/models/operations/c1apitaskv1taskservicecreaterevoketask.go
+  - /pkg/models/operations/c1apitaskv1taskserviceget.go
+  - /pkg/models/operations/c1apiuserv1usersearchsearch.go
   - /pkg/models/operations/c1apiuserv1userserviceget.go
   - /pkg/models/operations/c1apiuserv1userservicelist.go
+  - /pkg/models/operations/c1apiwebhooksv1webhookssearchsearch.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicecreate.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicedelete.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksserviceget.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicelist.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicetest.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksserviceupdate.go
-  - /pkg/models/shared/createappresponse.go
-  - /pkg/models/shared/app.go
-  - /pkg/models/shared/user.go
-  - /pkg/models/shared/userattributemappingsource.go
-  - /pkg/models/shared/createapprequest.go
-  - /pkg/models/shared/deleteappresponse.go
-  - /pkg/models/shared/deleteapprequest.go
-  - /pkg/models/shared/getappresponse.go
-  - /pkg/models/shared/listappsresponse.go
-  - /pkg/models/shared/updateappresponse.go
-  - /pkg/models/shared/updateapprequest.go
-  - /pkg/models/shared/appaccessrequestdefaults.go
-  - /pkg/models/shared/cancelaccessrequestdefaultsrequest.go
-  - /pkg/models/shared/connectorservicecreateresponse.go
-  - /pkg/models/shared/connectorview.go
-  - /pkg/models/shared/connector.go
-  - /pkg/models/shared/oauth2authorizedas.go
-  - /pkg/models/shared/connectorstatus.go
-  - /pkg/models/shared/connectorservicecreaterequest.go
-  - /pkg/models/shared/connectorexpandmask.go
-  - /pkg/models/shared/connectorservicecreatedelegatedrequest.go
-  - /pkg/models/shared/connectorservicedeleteresponse.go
-  - /pkg/models/shared/connectorservicedeleterequest.go
-  - /pkg/models/shared/forcesyncresponse.go
-  - /pkg/models/shared/forcesyncrequest.go
-  - /pkg/models/shared/connectorservicegetresponse.go
-  - /pkg/models/shared/connectorservicegetcredentialsresponse.go
-  - /pkg/models/shared/connectorcredential.go
-  - /pkg/models/shared/connectorservicelistresponse.go
-  - /pkg/models/shared/connectorservicerevokecredentialresponse.go
-  - /pkg/models/shared/connectorservicerevokecredentialrequest.go
-  - /pkg/models/shared/connectorservicerotatecredentialresponse.go
-  - /pkg/models/shared/connectorservicerotatecredentialrequest.go
-  - /pkg/models/shared/connectorserviceupdateresponse.go
-  - /pkg/models/shared/connectorserviceupdaterequest.go
-  - /pkg/models/shared/oauth2authorizedasinput.go
-  - /pkg/models/shared/connectorserviceupdatedelegatedrequest.go
-  - /pkg/models/shared/getappentitlementresponse.go
-  - /pkg/models/shared/appentitlementview.go
-  - /pkg/models/shared/appentitlement.go
-  - /pkg/models/shared/provisionpolicy.go
-  - /pkg/models/shared/webhookprovision.go
-  - /pkg/models/shared/multistep.go
-  - /pkg/models/shared/manualprovision.go
-  - /pkg/models/shared/externalticketprovision.go
-  - /pkg/models/shared/delegatedprovision.go
-  - /pkg/models/shared/connectorprovision.go
-  - /pkg/models/shared/listappentitlementsresponse.go
-  - /pkg/models/shared/listappentitlementusersresponse.go
-  - /pkg/models/shared/appentitlementuserview.go
-  - /pkg/models/shared/appuserview.go
-  - /pkg/models/shared/appuser.go
-  - /pkg/models/shared/appuserstatus.go
-  - /pkg/models/shared/updateappentitlementresponse.go
-  - /pkg/models/shared/updateappentitlementrequest.go
-  - /pkg/models/shared/appentitlementexpandmask.go
-  - /pkg/models/shared/appentitlementsearchservicesearchresponse.go
-  - /pkg/models/shared/facets.go
-  - /pkg/models/shared/facetcategory.go
-  - /pkg/models/shared/facetvalueitem.go
-  - /pkg/models/shared/facetvalue.go
-  - /pkg/models/shared/facetrangeitem.go
-  - /pkg/models/shared/facetrange.go
-  - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
-  - /pkg/models/shared/appentitlementref.go
-  - /pkg/models/shared/searchappentitlementswithexpiredresponse.go
-  - /pkg/models/shared/appentitlementwithexpired.go
-  - /pkg/models/shared/listappusersforidentitywithgrantresponse.go
-  - /pkg/models/shared/appentitlementuserbinding.go
-  - /pkg/models/shared/searchpastgrantsresponse.go
-  - /pkg/models/shared/appentitlementuserbindinghistoryview.go
-  - /pkg/models/shared/appentitlementuserbindinghistory.go
-  - /pkg/models/shared/addappentitlementownerresponse.go
+  - /pkg/models/shared/accept.go
+  - /pkg/models/shared/acceptinstance.go
   - /pkg/models/shared/addappentitlementownerrequest.go
-  - /pkg/models/shared/listappentitlementownersresponse.go
-  - /pkg/models/shared/removeappentitlementownerresponse.go
-  - /pkg/models/shared/removeappentitlementownerrequest.go
-  - /pkg/models/shared/setappentitlementownersresponse.go
-  - /pkg/models/shared/setappentitlementownersrequest.go
-  - /pkg/models/shared/addappownerresponse.go
+  - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappownerrequest.go
-  - /pkg/models/shared/listappownersresponse.go
-  - /pkg/models/shared/removeappownerresponse.go
-  - /pkg/models/shared/removeappownerrequest.go
-  - /pkg/models/shared/setappownersresponse.go
-  - /pkg/models/shared/setappownersrequest.go
-  - /pkg/models/shared/appreportservicelistresponse.go
-  - /pkg/models/shared/apppopulationreport.go
-  - /pkg/models/shared/appactionsservicegeneratereportresponse.go
+  - /pkg/models/shared/addappownerresponse.go
+  - /pkg/models/shared/app.go
+  - /pkg/models/shared/appaccessrequestdefaults.go
   - /pkg/models/shared/appactionsservicegeneratereportrequest.go
-  - /pkg/models/shared/appresourcetypeservicegetresponse.go
-  - /pkg/models/shared/appresourcetypeview.go
-  - /pkg/models/shared/appresourcetype.go
-  - /pkg/models/shared/appresourcetypeservicelistresponse.go
-  - /pkg/models/shared/appresourceservicegetresponse.go
-  - /pkg/models/shared/appresourceview.go
+  - /pkg/models/shared/appactionsservicegeneratereportresponse.go
+  - /pkg/models/shared/appentitlement.go
+  - /pkg/models/shared/appentitlementexpandmask.go
+  - /pkg/models/shared/appentitlementref.go
+  - /pkg/models/shared/appentitlementreference.go
+  - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
+  - /pkg/models/shared/appentitlementsearchservicesearchresponse.go
+  - /pkg/models/shared/appentitlementuserbinding.go
+  - /pkg/models/shared/appentitlementuserbindingfeed.go
+  - /pkg/models/shared/appentitlementuserbindingfeedview.go
+  - /pkg/models/shared/appentitlementuserbindinghistory.go
+  - /pkg/models/shared/appentitlementuserbindinghistoryview.go
+  - /pkg/models/shared/appentitlementuserview.go
+  - /pkg/models/shared/appentitlementview.go
+  - /pkg/models/shared/appentitlementwithexpired.go
+  - /pkg/models/shared/appentitlementwithuserbindings.go
+  - /pkg/models/shared/appgroupapproval.go
+  - /pkg/models/shared/appmanagedstatebindingref.go
+  - /pkg/models/shared/appownerapproval.go
+  - /pkg/models/shared/apppopulationreport.go
+  - /pkg/models/shared/appreportservicelistresponse.go
   - /pkg/models/shared/appresource.go
+  - /pkg/models/shared/appresourceservicegetresponse.go
   - /pkg/models/shared/appresourceservicelistresponse.go
-  - /pkg/models/shared/listappresourceownersresponse.go
-  - /pkg/models/shared/getappusagecontrolsresponse.go
+  - /pkg/models/shared/appresourcetype.go
+  - /pkg/models/shared/appresourcetypeservicegetresponse.go
+  - /pkg/models/shared/appresourcetypeservicelistresponse.go
+  - /pkg/models/shared/appresourcetypeview.go
+  - /pkg/models/shared/appresourceview.go
+  - /pkg/models/shared/approval.go
+  - /pkg/models/shared/approvalinstance.go
+  - /pkg/models/shared/approvedaction.go
   - /pkg/models/shared/appusagecontrols.go
-  - /pkg/models/shared/updateappusagecontrolsresponse.go
-  - /pkg/models/shared/updateappusagecontrolsrequest.go
-  - /pkg/models/shared/appuserserviceupdateresponse.go
-  - /pkg/models/shared/appuserserviceupdaterequest.go
+  - /pkg/models/shared/appuser.go
   - /pkg/models/shared/appuserexpandmask.go
+  - /pkg/models/shared/appuserserviceupdaterequest.go
+  - /pkg/models/shared/appuserserviceupdateresponse.go
+  - /pkg/models/shared/appuserstatus.go
   - /pkg/models/shared/appuserstatusinput.go
-  - /pkg/models/shared/createattributevalueresponse.go
-  - /pkg/models/shared/attributevalue.go
-  - /pkg/models/shared/createattributevaluerequest.go
-  - /pkg/models/shared/deleteattributevalueresponse.go
-  - /pkg/models/shared/deleteattributevaluerequest.go
-  - /pkg/models/shared/getattributevalueresponse.go
-  - /pkg/models/shared/listattributetypesresponse.go
+  - /pkg/models/shared/appuserview.go
   - /pkg/models/shared/attributetype.go
-  - /pkg/models/shared/listattributevaluesresponse.go
-  - /pkg/models/shared/introspectresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
-  - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.go
-  - /pkg/models/shared/requestcatalogmanagementservicegetresponse.go
-  - /pkg/models/shared/requestcatalogview.go
-  - /pkg/models/shared/requestcatalog.go
-  - /pkg/models/shared/requestcatalogmanagementservicecreaterequest.go
-  - /pkg/models/shared/requestcatalogexpandmask.go
-  - /pkg/models/shared/requestcatalogmanagementservicedeleteresponse.go
-  - /pkg/models/shared/requestcatalogmanagementservicedeleterequest.go
+  - /pkg/models/shared/attributevalue.go
+  - /pkg/models/shared/awsexternalid.go
+  - /pkg/models/shared/body.go
   - /pkg/models/shared/bundleautomation.go
-  - /pkg/models/shared/bundleautomationruleentitlement.go
   - /pkg/models/shared/bundleautomationlastrunstate.go
-  - /pkg/models/shared/requestcatalogmanagementservicelistresponse.go
-  - /pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.go
-  - /pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.go
-  - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.go
-  - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.go
-  - /pkg/models/shared/setbundleautomationrequest.go
-  - /pkg/models/shared/requestcatalogmanagementserviceupdaterequest.go
-  - /pkg/models/shared/requestcataloginput.go
-  - /pkg/models/shared/directoryservicecreateresponse.go
-  - /pkg/models/shared/directoryview.go
+  - /pkg/models/shared/bundleautomationruleentitlement.go
+  - /pkg/models/shared/cancelaccessrequestdefaultsrequest.go
+  - /pkg/models/shared/cancelledaction.go
+  - /pkg/models/shared/completedaction.go
+  - /pkg/models/shared/conditionsucceeded.go
+  - /pkg/models/shared/conditiontimedout.go
+  - /pkg/models/shared/connector.go
+  - /pkg/models/shared/connectorcredential.go
+  - /pkg/models/shared/connectorexpandmask.go
+  - /pkg/models/shared/connectorprovision.go
+  - /pkg/models/shared/connectorservicecreatedelegatedrequest.go
+  - /pkg/models/shared/connectorservicecreaterequest.go
+  - /pkg/models/shared/connectorservicecreateresponse.go
+  - /pkg/models/shared/connectorservicedeleterequest.go
+  - /pkg/models/shared/connectorservicedeleteresponse.go
+  - /pkg/models/shared/connectorservicegetcredentialsresponse.go
+  - /pkg/models/shared/connectorservicegetresponse.go
+  - /pkg/models/shared/connectorservicelistresponse.go
+  - /pkg/models/shared/connectorservicerevokecredentialrequest.go
+  - /pkg/models/shared/connectorservicerevokecredentialresponse.go
+  - /pkg/models/shared/connectorservicerotatecredentialrequest.go
+  - /pkg/models/shared/connectorservicerotatecredentialresponse.go
+  - /pkg/models/shared/connectorserviceupdatedelegatedrequest.go
+  - /pkg/models/shared/connectorserviceupdaterequest.go
+  - /pkg/models/shared/connectorserviceupdateresponse.go
+  - /pkg/models/shared/connectorstatus.go
+  - /pkg/models/shared/connectorview.go
+  - /pkg/models/shared/createapprequest.go
+  - /pkg/models/shared/createappresponse.go
+  - /pkg/models/shared/createattributevaluerequest.go
+  - /pkg/models/shared/createattributevalueresponse.go
+  - /pkg/models/shared/createpolicyrequest.go
+  - /pkg/models/shared/createpolicyresponse.go
+  - /pkg/models/shared/delegatedprovision.go
+  - /pkg/models/shared/deleteapprequest.go
+  - /pkg/models/shared/deleteappresponse.go
+  - /pkg/models/shared/deleteattributevaluerequest.go
+  - /pkg/models/shared/deleteattributevalueresponse.go
+  - /pkg/models/shared/deletepolicyrequest.go
+  - /pkg/models/shared/deletepolicyresponse.go
+  - /pkg/models/shared/deniedaction.go
   - /pkg/models/shared/directory.go
-  - /pkg/models/shared/directoryservicecreaterequest.go
   - /pkg/models/shared/directoryexpandmask.go
-  - /pkg/models/shared/directoryservicedeleteresponse.go
+  - /pkg/models/shared/directoryservicecreaterequest.go
+  - /pkg/models/shared/directoryservicecreateresponse.go
   - /pkg/models/shared/directoryservicedeleterequest.go
+  - /pkg/models/shared/directoryservicedeleteresponse.go
   - /pkg/models/shared/directoryservicegetresponse.go
   - /pkg/models/shared/directoryservicelistresponse.go
-  - /pkg/models/shared/personalclientservicecreateresponse.go
-  - /pkg/models/shared/personalclient.go
-  - /pkg/models/shared/personalclientservicecreaterequest.go
-  - /pkg/models/shared/getrolesresponse.go
-  - /pkg/models/shared/role.go
-  - /pkg/models/shared/listrolesresponse.go
-  - /pkg/models/shared/updaterolesresponse.go
-  - /pkg/models/shared/updaterolerequest.go
-  - /pkg/models/shared/roleinput.go
-  - /pkg/models/shared/createpolicyresponse.go
-  - /pkg/models/shared/policy.go
-  - /pkg/models/shared/rule.go
-  - /pkg/models/shared/policypostactions.go
-  - /pkg/models/shared/policysteps.go
-  - /pkg/models/shared/policystep.go
-  - /pkg/models/shared/wait.go
-  - /pkg/models/shared/waitcondition.go
-  - /pkg/models/shared/reject.go
-  - /pkg/models/shared/provision.go
-  - /pkg/models/shared/provisiontarget.go
-  - /pkg/models/shared/approval.go
-  - /pkg/models/shared/webhookapproval.go
-  - /pkg/models/shared/userapproval.go
-  - /pkg/models/shared/selfapproval.go
-  - /pkg/models/shared/managerapproval.go
-  - /pkg/models/shared/expressionapproval.go
+  - /pkg/models/shared/directoryview.go
   - /pkg/models/shared/entitlementownerapproval.go
-  - /pkg/models/shared/appownerapproval.go
-  - /pkg/models/shared/appgroupapproval.go
-  - /pkg/models/shared/accept.go
-  - /pkg/models/shared/createpolicyrequest.go
-  - /pkg/models/shared/deletepolicyresponse.go
-  - /pkg/models/shared/deletepolicyrequest.go
-  - /pkg/models/shared/getpolicyresponse.go
-  - /pkg/models/shared/listpolicyresponse.go
-  - /pkg/models/shared/updatepolicyresponse.go
-  - /pkg/models/shared/updatepolicyrequest.go
-  - /pkg/models/shared/validatepolicycelresponse.go
-  - /pkg/models/shared/marker.go
-  - /pkg/models/shared/validatepolicycelrequest.go
-  - /pkg/models/shared/searchappresourcetypesresponse.go
-  - /pkg/models/shared/searchappresourcetypesrequest.go
-  - /pkg/models/shared/searchappsresponse.go
-  - /pkg/models/shared/searchappsrequest.go
-  - /pkg/models/shared/searchattributevaluesresponse.go
-  - /pkg/models/shared/searchattributevaluesrequest.go
-  - /pkg/models/shared/searchpoliciesrequest.go
-  - /pkg/models/shared/policyref.go
-  - /pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.go
-  - /pkg/models/shared/appentitlementwithuserbindings.go
-  - /pkg/models/shared/requestcatalogsearchservicesearchentitlementsrequest.go
-  - /pkg/models/shared/exportssearchservicesearchresponse.go
-  - /pkg/models/shared/exporter.go
-  - /pkg/models/shared/exporttodatasource.go
-  - /pkg/models/shared/exportssearchservicesearchrequest.go
-  - /pkg/models/shared/exporterref.go
-  - /pkg/models/shared/tasksearchresponse.go
-  - /pkg/models/shared/taskview.go
-  - /pkg/models/shared/task.go
-  - /pkg/models/shared/externalref.go
-  - /pkg/models/shared/tasktype.go
-  - /pkg/models/shared/tasktyperevoke.go
-  - /pkg/models/shared/taskrevokesource.go
-  - /pkg/models/shared/taskrevokesourcereview.go
-  - /pkg/models/shared/taskrevokesourcerequest.go
-  - /pkg/models/shared/taskrevokesourcenonusage.go
-  - /pkg/models/shared/taskrevokesourceexpired.go
-  - /pkg/models/shared/tasktypeoffboarding.go
-  - /pkg/models/shared/tasktypegrant.go
-  - /pkg/models/shared/taskgrantsource.go
-  - /pkg/models/shared/tasktypecertify.go
-  - /pkg/models/shared/policyinstance.go
-  - /pkg/models/shared/policystepinstance.go
-  - /pkg/models/shared/waitinstance.go
-  - /pkg/models/shared/waitconditioninstance.go
-  - /pkg/models/shared/conditiontimedout.go
-  - /pkg/models/shared/conditionsucceeded.go
-  - /pkg/models/shared/rejectinstance.go
-  - /pkg/models/shared/provisioninstance.go
-  - /pkg/models/shared/reassignedbyerroraction.go
   - /pkg/models/shared/erroredaction.go
-  - /pkg/models/shared/completedaction.go
-  - /pkg/models/shared/appentitlementreference.go
-  - /pkg/models/shared/cancelledaction.go
-  - /pkg/models/shared/approvalinstance.go
-  - /pkg/models/shared/restartaction.go
-  - /pkg/models/shared/reassignedaction.go
-  - /pkg/models/shared/deniedaction.go
-  - /pkg/models/shared/approvedaction.go
-  - /pkg/models/shared/acceptinstance.go
-  - /pkg/models/shared/tasksearchrequest.go
-  - /pkg/models/shared/tasktypeinput.go
-  - /pkg/models/shared/tasktyperevokeinput.go
-  - /pkg/models/shared/tasktypeoffboardinginput.go
-  - /pkg/models/shared/tasktypegrantinput.go
-  - /pkg/models/shared/tasktypecertifyinput.go
-  - /pkg/models/shared/taskref.go
-  - /pkg/models/shared/taskexpandmask.go
-  - /pkg/models/shared/searchusersresponse.go
-  - /pkg/models/shared/userview.go
-  - /pkg/models/shared/searchusersrequest.go
-  - /pkg/models/shared/userref.go
-  - /pkg/models/shared/userexpandmask.go
-  - /pkg/models/shared/webhookssearchresponse.go
-  - /pkg/models/shared/webhook.go
-  - /pkg/models/shared/webhookssearchrequest.go
-  - /pkg/models/shared/webhookref.go
-  - /pkg/models/shared/getawsexternalidresponse.go
-  - /pkg/models/shared/awsexternalid.go
-  - /pkg/models/shared/getsessionsettingsresponse.go
-  - /pkg/models/shared/sessionsettings.go
-  - /pkg/models/shared/updatesessionsettingsresponse.go
-  - /pkg/models/shared/updatesessionsettingsrequest.go
-  - /pkg/models/shared/systemlogservicelisteventsresponse.go
-  - /pkg/models/shared/systemlogservicelisteventsrequest.go
-  - /pkg/models/shared/exportservicecreateresponse.go
-  - /pkg/models/shared/exportservicecreaterequest.go
-  - /pkg/models/shared/exportservicedeleteresponse.go
-  - /pkg/models/shared/exportservicedeleterequest.go
-  - /pkg/models/shared/exportservicegetresponse.go
-  - /pkg/models/shared/exportservicelistresponse.go
-  - /pkg/models/shared/exportserviceupdateresponse.go
-  - /pkg/models/shared/exportserviceupdaterequest.go
+  - /pkg/models/shared/exporter.go
   - /pkg/models/shared/exporterinput.go
-  - /pkg/models/shared/taskservicecreategrantresponse.go
-  - /pkg/models/shared/taskservicecreategrantrequest.go
-  - /pkg/models/shared/taskservicecreateoffboardingresponse.go
-  - /pkg/models/shared/taskservicecreateoffboardingrequest.go
-  - /pkg/models/shared/taskservicecreaterevokeresponse.go
-  - /pkg/models/shared/taskservicecreaterevokerequest.go
-  - /pkg/models/shared/taskservicegetresponse.go
-  - /pkg/models/shared/taskactionsserviceapproveresponse.go
-  - /pkg/models/shared/taskactionsserviceapproverequest.go
-  - /pkg/models/shared/taskactionsservicecommentresponse.go
-  - /pkg/models/shared/taskactionsservicecommentrequest.go
-  - /pkg/models/shared/taskactionsservicedenyresponse.go
-  - /pkg/models/shared/taskactionsservicedenyrequest.go
-  - /pkg/models/shared/taskserviceactionresponse.go
-  - /pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.go
-  - /pkg/models/shared/taskactionsservicereassignresponse.go
-  - /pkg/models/shared/taskactionsservicereassignrequest.go
-  - /pkg/models/shared/taskactionsservicerestartresponse.go
-  - /pkg/models/shared/taskactionsservicerestartrequest.go
-  - /pkg/models/shared/userservicegetresponse.go
-  - /pkg/models/shared/userservicelistresponse.go
-  - /pkg/models/shared/webhooksservicecreateresponse.go
-  - /pkg/models/shared/webhooksservicecreaterequest.go
-  - /pkg/models/shared/webhooksservicedeleteresponse.go
-  - /pkg/models/shared/webhooksservicedeleterequest.go
-  - /pkg/models/shared/webhooksservicegetresponse.go
-  - /pkg/models/shared/webhooksservicelistresponse.go
-  - /pkg/models/shared/webhooksservicetestresponse.go
-  - /pkg/models/shared/webhookinstance.go
-  - /pkg/models/shared/webhookspec.go
-  - /pkg/models/shared/webhooksource.go
-  - /pkg/models/shared/webhooksourcetest.go
-  - /pkg/models/shared/webhooksourceprovisionstep.go
-  - /pkg/models/shared/webhooksourcepolicypostaction.go
-  - /pkg/models/shared/webhooksourceapprovalstep.go
-  - /pkg/models/shared/webhooksservicetestrequest.go
-  - /pkg/models/shared/webhooksserviceupdateresponse.go
-  - /pkg/models/shared/webhooksserviceupdaterequest.go
-  - /pkg/models/shared/webhookinput.go
-  - /pkg/models/shared/security.go
-  - /pkg/models/shared/body.go
+  - /pkg/models/shared/exporterref.go
+  - /pkg/models/shared/exportservicecreaterequest.go
+  - /pkg/models/shared/exportservicecreateresponse.go
+  - /pkg/models/shared/exportservicedeleterequest.go
+  - /pkg/models/shared/exportservicedeleteresponse.go
+  - /pkg/models/shared/exportservicegetresponse.go
+  - /pkg/models/shared/exportservicelisteventsrequest.go
+  - /pkg/models/shared/exportservicelisteventsresponse.go
+  - /pkg/models/shared/exportservicelistresponse.go
+  - /pkg/models/shared/exportserviceupdaterequest.go
+  - /pkg/models/shared/exportserviceupdateresponse.go
+  - /pkg/models/shared/exportssearchservicesearchrequest.go
+  - /pkg/models/shared/exportssearchservicesearchresponse.go
+  - /pkg/models/shared/exporttodatasource.go
+  - /pkg/models/shared/expressionapproval.go
+  - /pkg/models/shared/externalref.go
+  - /pkg/models/shared/externalticketprovision.go
+  - /pkg/models/shared/facetcategory.go
+  - /pkg/models/shared/facetrange.go
+  - /pkg/models/shared/facetrangeitem.go
+  - /pkg/models/shared/facets.go
+  - /pkg/models/shared/facetvalue.go
+  - /pkg/models/shared/facetvalueitem.go
+  - /pkg/models/shared/forcerunbundleautomationrequest.go
+  - /pkg/models/shared/forcerunbundleautomationresponse.go
+  - /pkg/models/shared/forcesyncrequest.go
+  - /pkg/models/shared/forcesyncresponse.go
+  - /pkg/models/shared/getappentitlementresponse.go
+  - /pkg/models/shared/getappresponse.go
+  - /pkg/models/shared/getappusagecontrolsresponse.go
+  - /pkg/models/shared/getattributevalueresponse.go
+  - /pkg/models/shared/getawsexternalidresponse.go
+  - /pkg/models/shared/getpolicyresponse.go
+  - /pkg/models/shared/getrolesresponse.go
+  - /pkg/models/shared/getsessionsettingsresponse.go
+  - /pkg/models/shared/introspectresponse.go
+  - /pkg/models/shared/listappentitlementownersresponse.go
+  - /pkg/models/shared/listappentitlementsresponse.go
+  - /pkg/models/shared/listappentitlementusersresponse.go
+  - /pkg/models/shared/listappownersresponse.go
+  - /pkg/models/shared/listappresourceownersresponse.go
+  - /pkg/models/shared/listappsresponse.go
+  - /pkg/models/shared/listappusersforidentitywithgrantresponse.go
+  - /pkg/models/shared/listattributetypesresponse.go
+  - /pkg/models/shared/listattributevaluesresponse.go
+  - /pkg/models/shared/listpolicyresponse.go
+  - /pkg/models/shared/listrolesresponse.go
+  - /pkg/models/shared/managerapproval.go
+  - /pkg/models/shared/manualprovision.go
+  - /pkg/models/shared/marker.go
+  - /pkg/models/shared/multistep.go
+  - /pkg/models/shared/oauth2authorizedas.go
+  - /pkg/models/shared/oauth2authorizedasinput.go
   - /pkg/models/shared/payloadpolicyapprovalstep.go
   - /pkg/models/shared/payloadpolicypostaction.go
   - /pkg/models/shared/payloadprovisionstep.go
   - /pkg/models/shared/payloadtest.go
-  - /pkg/models/shared/responsepolicyapprovalstep.go
-  - /pkg/models/shared/responsepolicyapprovalstepreassign.go
-  - /pkg/models/shared/responsepolicyapprovalstepdeny.go
-  - /pkg/models/shared/responsepolicyapprovalstepapprove.go
+  - /pkg/models/shared/personalclient.go
+  - /pkg/models/shared/personalclientservicecreaterequest.go
+  - /pkg/models/shared/personalclientservicecreateresponse.go
+  - /pkg/models/shared/policy.go
+  - /pkg/models/shared/policyinstance.go
+  - /pkg/models/shared/policypostactions.go
+  - /pkg/models/shared/policyref.go
+  - /pkg/models/shared/policystep.go
+  - /pkg/models/shared/policystepinstance.go
+  - /pkg/models/shared/policysteps.go
+  - /pkg/models/shared/provision.go
+  - /pkg/models/shared/provisioninstance.go
+  - /pkg/models/shared/provisionpolicy.go
+  - /pkg/models/shared/provisiontarget.go
+  - /pkg/models/shared/reassignedaction.go
+  - /pkg/models/shared/reassignedbyerroraction.go
+  - /pkg/models/shared/reject.go
+  - /pkg/models/shared/rejectinstance.go
+  - /pkg/models/shared/removeappentitlementownerrequest.go
+  - /pkg/models/shared/removeappentitlementownerresponse.go
+  - /pkg/models/shared/removeappownerrequest.go
+  - /pkg/models/shared/removeappownerresponse.go
+  - /pkg/models/shared/requestcatalog.go
+  - /pkg/models/shared/requestcatalogexpandmask.go
+  - /pkg/models/shared/requestcataloginput.go
+  - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
+  - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.go
+  - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.go
+  - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.go
+  - /pkg/models/shared/requestcatalogmanagementservicecreaterequest.go
+  - /pkg/models/shared/requestcatalogmanagementservicedeleterequest.go
+  - /pkg/models/shared/requestcatalogmanagementservicedeleteresponse.go
+  - /pkg/models/shared/requestcatalogmanagementservicegetresponse.go
+  - /pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.go
+  - /pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.go
+  - /pkg/models/shared/requestcatalogmanagementservicelistresponse.go
+  - /pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.go
+  - /pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.go
+  - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.go
+  - /pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.go
+  - /pkg/models/shared/requestcatalogmanagementserviceupdaterequest.go
+  - /pkg/models/shared/requestcatalogsearchservicesearchentitlementsrequest.go
+  - /pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.go
+  - /pkg/models/shared/requestcatalogview.go
+  - /pkg/models/shared/resourceownerapproval.go
   - /pkg/models/shared/responsepolicyapprovalreplacepolicy.go
+  - /pkg/models/shared/responsepolicyapprovalstep.go
+  - /pkg/models/shared/responsepolicyapprovalstepapprove.go
+  - /pkg/models/shared/responsepolicyapprovalstepdeny.go
+  - /pkg/models/shared/responsepolicyapprovalstepreassign.go
   - /pkg/models/shared/responsepolicypostaction.go
   - /pkg/models/shared/responseprovisionstep.go
-  - /pkg/models/shared/responseprovisionsteperrored.go
   - /pkg/models/shared/responseprovisionstepcomplete.go
+  - /pkg/models/shared/responseprovisionsteperrored.go
   - /pkg/models/shared/responsetest.go
-  - docs/pkg/models/operations/c1apiappv1appscreateresponse.md
-  - docs/pkg/models/operations/c1apiappv1appsdeleterequest.md
-  - docs/pkg/models/operations/c1apiappv1appsdeleteresponse.md
-  - docs/pkg/models/operations/c1apiappv1appsgetrequest.md
-  - docs/pkg/models/operations/c1apiappv1appsgetresponse.md
-  - docs/pkg/models/operations/c1apiappv1appslistrequest.md
-  - docs/pkg/models/operations/c1apiappv1appslistresponse.md
-  - docs/pkg/models/operations/c1apiappv1appsupdaterequest.md
-  - docs/pkg/models/operations/c1apiappv1appsupdateresponse.md
+  - /pkg/models/shared/restartaction.go
+  - /pkg/models/shared/role.go
+  - /pkg/models/shared/roleinput.go
+  - /pkg/models/shared/rule.go
+  - /pkg/models/shared/searchappentitlementswithexpiredresponse.go
+  - /pkg/models/shared/searchappresourcetypesrequest.go
+  - /pkg/models/shared/searchappresourcetypesresponse.go
+  - /pkg/models/shared/searchappsrequest.go
+  - /pkg/models/shared/searchappsresponse.go
+  - /pkg/models/shared/searchattributevaluesrequest.go
+  - /pkg/models/shared/searchattributevaluesresponse.go
+  - /pkg/models/shared/searchgrantfeedresponse.go
+  - /pkg/models/shared/searchpastgrantsresponse.go
+  - /pkg/models/shared/searchpoliciesrequest.go
+  - /pkg/models/shared/searchusersrequest.go
+  - /pkg/models/shared/searchusersresponse.go
+  - /pkg/models/shared/security.go
+  - /pkg/models/shared/selfapproval.go
+  - /pkg/models/shared/sessionsettings.go
+  - /pkg/models/shared/setappentitlementownersrequest.go
+  - /pkg/models/shared/setappentitlementownersresponse.go
+  - /pkg/models/shared/setappownersrequest.go
+  - /pkg/models/shared/setappownersresponse.go
+  - /pkg/models/shared/setbundleautomationrequest.go
+  - /pkg/models/shared/systemlogservicelisteventsrequest.go
+  - /pkg/models/shared/systemlogservicelisteventsresponse.go
+  - /pkg/models/shared/task.go
+  - /pkg/models/shared/taskactionsserviceapproverequest.go
+  - /pkg/models/shared/taskactionsserviceapproveresponse.go
+  - /pkg/models/shared/taskactionsservicecommentrequest.go
+  - /pkg/models/shared/taskactionsservicecommentresponse.go
+  - /pkg/models/shared/taskactionsservicedenyrequest.go
+  - /pkg/models/shared/taskactionsservicedenyresponse.go
+  - /pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.go
+  - /pkg/models/shared/taskactionsservicehardresetrequest.go
+  - /pkg/models/shared/taskactionsservicehardresetresponse.go
+  - /pkg/models/shared/taskactionsservicereassignrequest.go
+  - /pkg/models/shared/taskactionsservicereassignresponse.go
+  - /pkg/models/shared/taskactionsservicerestartrequest.go
+  - /pkg/models/shared/taskactionsservicerestartresponse.go
+  - /pkg/models/shared/taskexpandmask.go
+  - /pkg/models/shared/taskgrantsource.go
+  - /pkg/models/shared/taskref.go
+  - /pkg/models/shared/taskrevokesource.go
+  - /pkg/models/shared/taskrevokesourceexpired.go
+  - /pkg/models/shared/taskrevokesourcenonusage.go
+  - /pkg/models/shared/taskrevokesourcerequest.go
+  - /pkg/models/shared/taskrevokesourcereview.go
+  - /pkg/models/shared/tasksearchrequest.go
+  - /pkg/models/shared/tasksearchresponse.go
+  - /pkg/models/shared/taskserviceactionresponse.go
+  - /pkg/models/shared/taskservicecreategrantrequest.go
+  - /pkg/models/shared/taskservicecreategrantresponse.go
+  - /pkg/models/shared/taskservicecreateoffboardingrequest.go
+  - /pkg/models/shared/taskservicecreateoffboardingresponse.go
+  - /pkg/models/shared/taskservicecreaterevokerequest.go
+  - /pkg/models/shared/taskservicecreaterevokeresponse.go
+  - /pkg/models/shared/taskservicegetresponse.go
+  - /pkg/models/shared/tasktype.go
+  - /pkg/models/shared/tasktypecertify.go
+  - /pkg/models/shared/tasktypecertifyinput.go
+  - /pkg/models/shared/tasktypegrant.go
+  - /pkg/models/shared/tasktypegrantinput.go
+  - /pkg/models/shared/tasktypeinput.go
+  - /pkg/models/shared/tasktypeoffboarding.go
+  - /pkg/models/shared/tasktypeoffboardinginput.go
+  - /pkg/models/shared/tasktyperevoke.go
+  - /pkg/models/shared/tasktyperevokeinput.go
+  - /pkg/models/shared/taskview.go
+  - /pkg/models/shared/updateappentitlementrequest.go
+  - /pkg/models/shared/updateappentitlementresponse.go
+  - /pkg/models/shared/updateapprequest.go
+  - /pkg/models/shared/updateappresponse.go
+  - /pkg/models/shared/updateappusagecontrolsrequest.go
+  - /pkg/models/shared/updateappusagecontrolsresponse.go
+  - /pkg/models/shared/updatepolicyrequest.go
+  - /pkg/models/shared/updatepolicyresponse.go
+  - /pkg/models/shared/updaterolerequest.go
+  - /pkg/models/shared/updaterolesresponse.go
+  - /pkg/models/shared/updatesessionsettingsrequest.go
+  - /pkg/models/shared/updatesessionsettingsresponse.go
+  - /pkg/models/shared/user.go
+  - /pkg/models/shared/userapproval.go
+  - /pkg/models/shared/userattributemappingsource.go
+  - /pkg/models/shared/userexpandmask.go
+  - /pkg/models/shared/userref.go
+  - /pkg/models/shared/userservicegetresponse.go
+  - /pkg/models/shared/userservicelistresponse.go
+  - /pkg/models/shared/userview.go
+  - /pkg/models/shared/validatepolicycelrequest.go
+  - /pkg/models/shared/validatepolicycelresponse.go
+  - /pkg/models/shared/wait.go
+  - /pkg/models/shared/waitcondition.go
+  - /pkg/models/shared/waitconditioninstance.go
+  - /pkg/models/shared/waitinstance.go
+  - /pkg/models/shared/webhook.go
+  - /pkg/models/shared/webhookapproval.go
+  - /pkg/models/shared/webhookinput.go
+  - /pkg/models/shared/webhookinstance.go
+  - /pkg/models/shared/webhookprovision.go
+  - /pkg/models/shared/webhookref.go
+  - /pkg/models/shared/webhooksource.go
+  - /pkg/models/shared/webhooksourceapprovalstep.go
+  - /pkg/models/shared/webhooksourcepolicypostaction.go
+  - /pkg/models/shared/webhooksourceprovisionstep.go
+  - /pkg/models/shared/webhooksourcetest.go
+  - /pkg/models/shared/webhookspec.go
+  - /pkg/models/shared/webhookssearchrequest.go
+  - /pkg/models/shared/webhookssearchresponse.go
+  - /pkg/models/shared/webhooksservicecreaterequest.go
+  - /pkg/models/shared/webhooksservicecreateresponse.go
+  - /pkg/models/shared/webhooksservicedeleterequest.go
+  - /pkg/models/shared/webhooksservicedeleteresponse.go
+  - /pkg/models/shared/webhooksservicegetresponse.go
+  - /pkg/models/shared/webhooksservicelistresponse.go
+  - /pkg/models/shared/webhooksservicetestrequest.go
+  - /pkg/models/shared/webhooksservicetestresponse.go
+  - /pkg/models/shared/webhooksserviceupdaterequest.go
+  - /pkg/models/shared/webhooksserviceupdateresponse.go
+  - CONTRIBUTING.md
+  - appaccessrequestsdefaults.go
+  - appentitlementowners.go
+  - appentitlements.go
+  - appentitlementsearch.go
+  - appentitlementuserbinding.go
+  - appowners.go
+  - appreport.go
+  - appreportaction.go
+  - appresource.go
+  - appresourceowners.go
+  - appresourcesearch.go
+  - appresourcetype.go
+  - apps.go
+  - appsearch.go
+  - appusagecontrols.go
+  - appuser.go
+  - attributes.go
+  - attributesearch.go
+  - auth.go
+  - awsexternalidsettings.go
+  - conductoroneapi.go
+  - connector.go
+  - directory.go
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsrequest.md
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaultsresponse.md
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsrequest.md
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecreateappaccessrequestsdefaultsresponse.md
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsrequest.md
   - docs/pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicegetappaccessrequestsdefaultsresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicecreaterequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicecreateresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicedeleterequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicegetrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicegetresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicegetcredentialsresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicelistrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicelistresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceupdaterequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceupdateresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedrequest.md
-  - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsgetrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsgetresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourcerequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourceresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappuserrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappuserresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistusersrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md
-  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrantsresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownersaddrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownersaddresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerslistrequest.md
@@ -598,6 +532,27 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementownersremoveresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuserrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuserresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsgetrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsgetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourcerequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourceresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappuserrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistforappuserresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistusersrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeedresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrantsresponse.md
   - docs/pkg/models/operations/c1apiappv1appownersaddrequest.md
   - docs/pkg/models/operations/c1apiappv1appownersaddresponse.md
   - docs/pkg/models/operations/c1apiappv1appownerslistrequest.md
@@ -606,29 +561,63 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appownersremoveresponse.md
   - docs/pkg/models/operations/c1apiappv1appownerssetrequest.md
   - docs/pkg/models/operations/c1apiappv1appownerssetresponse.md
-  - docs/pkg/models/operations/c1apiappv1appreportservicelistrequest.md
-  - docs/pkg/models/operations/c1apiappv1appreportservicelistresponse.md
   - docs/pkg/models/operations/c1apiappv1appreportactionservicegeneratereportrequest.md
   - docs/pkg/models/operations/c1apiappv1appreportactionservicegeneratereportresponse.md
-  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicegetrequest.md
-  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicegetresponse.md
-  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicelistrequest.md
-  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appreportservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appreportservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appresourceownerslistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appresourceownerslistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
   - docs/pkg/models/operations/c1apiappv1appresourceservicegetrequest.md
   - docs/pkg/models/operations/c1apiappv1appresourceservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1appresourceservicelistrequest.md
   - docs/pkg/models/operations/c1apiappv1appresourceservicelistresponse.md
-  - docs/pkg/models/operations/c1apiappv1appresourceownerslistrequest.md
-  - docs/pkg/models/operations/c1apiappv1appresourceownerslistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicegetrequest.md
+  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicegetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appresourcetypeservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appscreateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appsdeleterequest.md
+  - docs/pkg/models/operations/c1apiappv1appsdeleteresponse.md
+  - docs/pkg/models/operations/c1apiappv1appsearchsearchresponse.md
+  - docs/pkg/models/operations/c1apiappv1appsgetrequest.md
+  - docs/pkg/models/operations/c1apiappv1appsgetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appslistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appslistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appsupdaterequest.md
+  - docs/pkg/models/operations/c1apiappv1appsupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsservicegetrequest.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicecreaterequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicecreateresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicedeleterequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicegetcredentialsresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicegetrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicegetresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributescreateattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesgetattributevaluerequest.md
   - docs/pkg/models/operations/c1apiattributev1attributesgetattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributetypesrequest.md
@@ -636,31 +625,6 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md
   - docs/pkg/models/operations/c1apiauthv1authintrospectresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationrequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationresponse.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdaterequest.md
-  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicecreateresponse.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicedeleterequest.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicedeleteresponse.md
@@ -684,34 +648,52 @@ generatedFiles:
   - docs/pkg/models/operations/c1apipolicyv1policieslistresponse.md
   - docs/pkg/models/operations/c1apipolicyv1policiesupdaterequest.md
   - docs/pkg/models/operations/c1apipolicyv1policiesupdateresponse.md
-  - docs/pkg/models/operations/c1apipolicyv1policyvalidatevalidatecelresponse.md
-  - docs/pkg/models/operations/c1apiappv1appresourcesearchsearchappresourcetypesresponse.md
-  - docs/pkg/models/operations/c1apiappv1appsearchsearchresponse.md
-  - docs/pkg/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
   - docs/pkg/models/operations/c1apipolicyv1policysearchsearchresponse.md
+  - docs/pkg/models/operations/c1apipolicyv1policyvalidatevalidatecelresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
-  - docs/pkg/models/operations/c1apisystemlogv1exportssearchservicesearchresponse.md
-  - docs/pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
-  - docs/pkg/models/operations/c1apiuserv1usersearchsearchresponse.md
-  - docs/pkg/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
   - docs/pkg/models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
-  - docs/pkg/models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicecreateresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicedeleterequest.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicedeleteresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicegetrequest.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicegetresponse.md
+  - docs/pkg/models/operations/c1apisystemlogv1exportservicelisteventsrequest.md
+  - docs/pkg/models/operations/c1apisystemlogv1exportservicelisteventsresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicelistrequest.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicelistresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportserviceupdaterequest.md
   - docs/pkg/models/operations/c1apisystemlogv1exportserviceupdateresponse.md
-  - docs/pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md
-  - docs/pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtaskresponse.md
-  - docs/pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md
-  - docs/pkg/models/operations/c1apitaskv1taskservicegetrequest.md
-  - docs/pkg/models/operations/c1apitaskv1taskservicegetresponse.md
+  - docs/pkg/models/operations/c1apisystemlogv1exportssearchservicesearchresponse.md
+  - docs/pkg/models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapproverequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapproveresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicecommentrequest.md
@@ -720,14 +702,24 @@ generatedFiles:
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicedenyresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsservicehardresetrequest.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsservicehardresetresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicereassignrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicereassignresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicerestartrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md
+  - docs/pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtaskresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskservicecreaterevoketaskresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskservicegetrequest.md
+  - docs/pkg/models/operations/c1apitaskv1taskservicegetresponse.md
+  - docs/pkg/models/operations/c1apiuserv1usersearchsearchresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicegetrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicegetresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
+  - docs/pkg/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicecreateresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicedeleterequest.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicedeleteresponse.md
@@ -739,467 +731,1040 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdateresponse.md
-  - docs/pkg/models/shared/createappresponse.md
-  - docs/pkg/models/shared/identitymatching.md
-  - docs/pkg/models/shared/app.md
-  - docs/pkg/models/shared/directorystatus.md
-  - docs/pkg/models/shared/userstatus.md
-  - docs/pkg/models/shared/user.md
-  - docs/pkg/models/shared/userattributemappingsource.md
-  - docs/pkg/models/shared/createapprequest.md
-  - docs/pkg/models/shared/deleteappresponse.md
-  - docs/pkg/models/shared/deleteapprequest.md
-  - docs/pkg/models/shared/getappresponse.md
-  - docs/pkg/models/shared/listappsresponse.md
-  - docs/pkg/models/shared/updateappresponse.md
-  - docs/pkg/models/shared/updateapprequest.md
-  - docs/pkg/models/shared/appinput.md
-  - docs/pkg/models/shared/durationunset.md
-  - docs/pkg/models/shared/state.md
-  - docs/pkg/models/shared/appaccessrequestdefaults.md
-  - docs/pkg/models/shared/cancelaccessrequestdefaultsrequest.md
-  - docs/pkg/models/shared/appaccessrequestdefaults1.md
-  - docs/pkg/models/shared/connectorservicecreateresponseexpanded.md
-  - docs/pkg/models/shared/connectorservicecreateresponse.md
-  - docs/pkg/models/shared/connectorview.md
-  - docs/pkg/models/shared/config.md
-  - docs/pkg/models/shared/connector.md
-  - docs/pkg/models/shared/oauth2authorizedas.md
-  - docs/pkg/models/shared/connectorstatusstatus.md
-  - docs/pkg/models/shared/connectorstatus.md
-  - docs/pkg/models/shared/connectorservicecreaterequestconfig.md
-  - docs/pkg/models/shared/connectorservicecreaterequest.md
-  - docs/pkg/models/shared/connectorexpandmask.md
-  - docs/pkg/models/shared/connectorservicecreatedelegatedrequest.md
-  - docs/pkg/models/shared/connectorservicedeleteresponse.md
-  - docs/pkg/models/shared/connectorservicedeleterequest.md
-  - docs/pkg/models/shared/forcesyncresponse.md
-  - docs/pkg/models/shared/forcesyncrequest.md
-  - docs/pkg/models/shared/connectorservicegetresponseexpanded.md
-  - docs/pkg/models/shared/connectorservicegetresponse.md
-  - docs/pkg/models/shared/connectorservicegetcredentialsresponse.md
-  - docs/pkg/models/shared/connectorcredential.md
-  - docs/pkg/models/shared/connectorservicelistresponseexpanded.md
-  - docs/pkg/models/shared/connectorservicelistresponse.md
-  - docs/pkg/models/shared/connectorservicerevokecredentialresponse.md
-  - docs/pkg/models/shared/connectorservicerevokecredentialrequest.md
-  - docs/pkg/models/shared/connectorservicerotatecredentialresponse.md
-  - docs/pkg/models/shared/connectorservicerotatecredentialrequest.md
-  - docs/pkg/models/shared/connectorserviceupdateresponseexpanded.md
-  - docs/pkg/models/shared/connectorserviceupdateresponse.md
-  - docs/pkg/models/shared/connectorserviceupdaterequest.md
-  - docs/pkg/models/shared/connectorinput.md
-  - docs/pkg/models/shared/oauth2authorizedasinput.md
-  - docs/pkg/models/shared/connectorserviceupdatedelegatedrequest.md
-  - docs/pkg/models/shared/getappentitlementresponseexpanded.md
-  - docs/pkg/models/shared/getappentitlementresponse.md
-  - docs/pkg/models/shared/appentitlementview.md
-  - docs/pkg/models/shared/appentitlementdurationunset.md
-  - docs/pkg/models/shared/appentitlement.md
-  - docs/pkg/models/shared/provisionpolicy.md
-  - docs/pkg/models/shared/webhookprovision.md
-  - docs/pkg/models/shared/multistep.md
-  - docs/pkg/models/shared/manualprovision.md
-  - docs/pkg/models/shared/externalticketprovision.md
-  - docs/pkg/models/shared/delegatedprovision.md
-  - docs/pkg/models/shared/connectorprovision.md
-  - docs/pkg/models/shared/listappentitlementsresponseexpanded.md
-  - docs/pkg/models/shared/listappentitlementsresponse.md
-  - docs/pkg/models/shared/listappentitlementusersresponseexpanded.md
-  - docs/pkg/models/shared/listappentitlementusersresponse.md
-  - docs/pkg/models/shared/appentitlementuserview.md
-  - docs/pkg/models/shared/appuserview.md
-  - docs/pkg/models/shared/appusertype.md
-  - docs/pkg/models/shared/appuser.md
-  - docs/pkg/models/shared/status.md
-  - docs/pkg/models/shared/appuserstatus.md
-  - docs/pkg/models/shared/updateappentitlementresponseexpanded.md
-  - docs/pkg/models/shared/updateappentitlementresponse.md
-  - docs/pkg/models/shared/updateappentitlementrequest.md
-  - docs/pkg/models/shared/appentitlementexpandmask.md
-  - docs/pkg/models/shared/appentitlementinput.md
-  - docs/pkg/models/shared/expanded.md
-  - docs/pkg/models/shared/appentitlementsearchservicesearchresponse.md
-  - docs/pkg/models/shared/facets.md
-  - docs/pkg/models/shared/facetcategory.md
-  - docs/pkg/models/shared/facetvalueitem.md
-  - docs/pkg/models/shared/facetvalue.md
-  - docs/pkg/models/shared/facetrangeitem.md
-  - docs/pkg/models/shared/facetrange.md
-  - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
-  - docs/pkg/models/shared/appentitlementref.md
-  - docs/pkg/models/shared/searchappentitlementswithexpiredresponse.md
-  - docs/pkg/models/shared/appentitlementwithexpired.md
-  - docs/pkg/models/shared/listappusersforidentitywithgrantresponse.md
-  - docs/pkg/models/shared/appentitlementuserbinding.md
-  - docs/pkg/models/shared/searchpastgrantsresponseexpanded.md
-  - docs/pkg/models/shared/searchpastgrantsresponse.md
-  - docs/pkg/models/shared/appentitlementuserbindinghistoryview.md
-  - docs/pkg/models/shared/appentitlementuserbindinghistory.md
-  - docs/pkg/models/shared/addappentitlementownerresponse.md
-  - docs/pkg/models/shared/addappentitlementownerrequest.md
-  - docs/pkg/models/shared/listappentitlementownersresponse.md
-  - docs/pkg/models/shared/removeappentitlementownerresponse.md
-  - docs/pkg/models/shared/removeappentitlementownerrequest.md
-  - docs/pkg/models/shared/setappentitlementownersresponse.md
-  - docs/pkg/models/shared/setappentitlementownersrequest.md
-  - docs/pkg/models/shared/addappownerresponse.md
-  - docs/pkg/models/shared/addappownerrequest.md
-  - docs/pkg/models/shared/listappownersresponse.md
-  - docs/pkg/models/shared/removeappownerresponse.md
-  - docs/pkg/models/shared/removeappownerrequest.md
-  - docs/pkg/models/shared/setappownersresponse.md
-  - docs/pkg/models/shared/setappownersrequest.md
-  - docs/pkg/models/shared/appreportservicelistresponse.md
-  - docs/pkg/models/shared/apppopulationreportstate.md
-  - docs/pkg/models/shared/apppopulationreport.md
-  - docs/pkg/models/shared/appactionsservicegeneratereportresponse.md
-  - docs/pkg/models/shared/appactionsservicegeneratereportrequest.md
-  - docs/pkg/models/shared/appresourcetypeservicegetresponseexpanded.md
-  - docs/pkg/models/shared/appresourcetypeservicegetresponse.md
-  - docs/pkg/models/shared/appresourcetypeview.md
-  - docs/pkg/models/shared/appresourcetype.md
-  - docs/pkg/models/shared/appresourcetypeservicelistresponseexpanded.md
-  - docs/pkg/models/shared/appresourcetypeservicelistresponse.md
-  - docs/pkg/models/shared/appresourceservicegetresponseexpanded.md
-  - docs/pkg/models/shared/appresourceservicegetresponse.md
-  - docs/pkg/models/shared/appresourceview.md
-  - docs/pkg/models/shared/appresource.md
-  - docs/pkg/models/shared/appresourceservicelistresponseexpanded.md
-  - docs/pkg/models/shared/appresourceservicelistresponse.md
-  - docs/pkg/models/shared/listappresourceownersresponse.md
-  - docs/pkg/models/shared/getappusagecontrolsresponse.md
-  - docs/pkg/models/shared/appusagecontrols.md
-  - docs/pkg/models/shared/updateappusagecontrolsresponse.md
-  - docs/pkg/models/shared/updateappusagecontrolsrequest.md
-  - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
-  - docs/pkg/models/shared/appuserserviceupdateresponse.md
-  - docs/pkg/models/shared/appuserserviceupdaterequest.md
-  - docs/pkg/models/shared/appuserexpandmask.md
-  - docs/pkg/models/shared/appuserinput.md
-  - docs/pkg/models/shared/appuserstatusinput.md
-  - docs/pkg/models/shared/createattributevalueresponse.md
-  - docs/pkg/models/shared/attributevalue.md
-  - docs/pkg/models/shared/createattributevaluerequest.md
-  - docs/pkg/models/shared/deleteattributevalueresponse.md
-  - docs/pkg/models/shared/deleteattributevaluerequest.md
-  - docs/pkg/models/shared/getattributevalueresponse.md
-  - docs/pkg/models/shared/listattributetypesresponse.md
-  - docs/pkg/models/shared/attributetype.md
-  - docs/pkg/models/shared/listattributevaluesresponse.md
-  - docs/pkg/models/shared/introspectresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicegetresponse.md
-  - docs/pkg/models/shared/requestcatalogview.md
-  - docs/pkg/models/shared/requestcatalog.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequest.md
-  - docs/pkg/models/shared/requestcatalogexpandmask.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicedeleteresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicedeleterequest.md
-  - docs/pkg/models/shared/bundleautomation.md
-  - docs/pkg/models/shared/bundleautomationruleentitlement.md
-  - docs/pkg/models/shared/bundleautomationlastrunstatestatus.md
-  - docs/pkg/models/shared/bundleautomationlastrunstate.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistresponseexpanded.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponseexpanded.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponseexpanded.md
-  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.md
-  - docs/pkg/models/shared/setbundleautomationrequest.md
-  - docs/pkg/models/shared/requestcatalogmanagementserviceupdaterequest.md
-  - docs/pkg/models/shared/requestcataloginput.md
-  - docs/pkg/models/shared/directoryservicecreateresponseexpanded.md
-  - docs/pkg/models/shared/directoryservicecreateresponse.md
-  - docs/pkg/models/shared/directoryview.md
-  - docs/pkg/models/shared/directory.md
-  - docs/pkg/models/shared/directoryservicecreaterequest.md
-  - docs/pkg/models/shared/directoryexpandmask.md
-  - docs/pkg/models/shared/directoryservicedeleteresponse.md
-  - docs/pkg/models/shared/directoryservicedeleterequest.md
-  - docs/pkg/models/shared/directoryservicegetresponseexpanded.md
-  - docs/pkg/models/shared/directoryservicegetresponse.md
-  - docs/pkg/models/shared/directoryservicelistresponseexpanded.md
-  - docs/pkg/models/shared/directoryservicelistresponse.md
-  - docs/pkg/models/shared/personalclientservicecreateresponse.md
-  - docs/pkg/models/shared/personalclient.md
-  - docs/pkg/models/shared/personalclientservicecreaterequest.md
-  - docs/pkg/models/shared/getrolesresponse.md
-  - docs/pkg/models/shared/role.md
-  - docs/pkg/models/shared/listrolesresponse.md
-  - docs/pkg/models/shared/updaterolesresponse.md
-  - docs/pkg/models/shared/updaterolerequest.md
-  - docs/pkg/models/shared/roleinput.md
-  - docs/pkg/models/shared/createpolicyresponse.md
-  - docs/pkg/models/shared/policypolicytype.md
-  - docs/pkg/models/shared/policy.md
-  - docs/pkg/models/shared/rule.md
-  - docs/pkg/models/shared/policypostactions.md
-  - docs/pkg/models/shared/policysteps.md
-  - docs/pkg/models/shared/policystep.md
-  - docs/pkg/models/shared/wait.md
-  - docs/pkg/models/shared/waitcondition.md
-  - docs/pkg/models/shared/reject.md
-  - docs/pkg/models/shared/provision.md
-  - docs/pkg/models/shared/provisiontarget.md
-  - docs/pkg/models/shared/approval.md
-  - docs/pkg/models/shared/webhookapproval.md
-  - docs/pkg/models/shared/userapproval.md
-  - docs/pkg/models/shared/selfapproval.md
-  - docs/pkg/models/shared/managerapproval.md
-  - docs/pkg/models/shared/expressionapproval.md
-  - docs/pkg/models/shared/entitlementownerapproval.md
-  - docs/pkg/models/shared/appownerapproval.md
-  - docs/pkg/models/shared/appgroupapproval.md
+  - docs/pkg/models/operations/option.md
   - docs/pkg/models/shared/accept.md
-  - docs/pkg/models/shared/policytype.md
-  - docs/pkg/models/shared/createpolicyrequest.md
-  - docs/pkg/models/shared/deletepolicyresponse.md
-  - docs/pkg/models/shared/deletepolicyrequest.md
-  - docs/pkg/models/shared/getpolicyresponse.md
-  - docs/pkg/models/shared/listpolicyresponse.md
-  - docs/pkg/models/shared/updatepolicyresponse.md
-  - docs/pkg/models/shared/updatepolicyrequest.md
-  - docs/pkg/models/shared/policyinput.md
-  - docs/pkg/models/shared/validatepolicycelresponse.md
-  - docs/pkg/models/shared/severity.md
-  - docs/pkg/models/shared/marker.md
-  - docs/pkg/models/shared/validatepolicycelrequest.md
-  - docs/pkg/models/shared/searchappresourcetypesresponse.md
-  - docs/pkg/models/shared/searchappresourcetypesrequest.md
-  - docs/pkg/models/shared/searchappsresponse.md
-  - docs/pkg/models/shared/searchappsrequest.md
-  - docs/pkg/models/shared/searchattributevaluesresponse.md
-  - docs/pkg/models/shared/searchattributevaluesrequest.md
-  - docs/pkg/models/shared/policytypes.md
-  - docs/pkg/models/shared/searchpoliciesrequest.md
-  - docs/pkg/models/shared/policyref.md
-  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponseexpanded.md
-  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.md
-  - docs/pkg/models/shared/appentitlementwithuserbindings.md
-  - docs/pkg/models/shared/grantedstatus.md
-  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsrequest.md
-  - docs/pkg/models/shared/exportssearchservicesearchresponse.md
-  - docs/pkg/models/shared/exporterstate.md
-  - docs/pkg/models/shared/exporter.md
-  - docs/pkg/models/shared/format.md
-  - docs/pkg/models/shared/exporttodatasource.md
-  - docs/pkg/models/shared/exportssearchservicesearchrequest.md
-  - docs/pkg/models/shared/exporterref.md
-  - docs/pkg/models/shared/tasksearchresponseexpanded.md
-  - docs/pkg/models/shared/tasksearchresponse.md
-  - docs/pkg/models/shared/taskview.md
-  - docs/pkg/models/shared/actions.md
-  - docs/pkg/models/shared/annotations.md
-  - docs/pkg/models/shared/processing.md
-  - docs/pkg/models/shared/recommendation.md
-  - docs/pkg/models/shared/taskstate.md
-  - docs/pkg/models/shared/task.md
-  - docs/pkg/models/shared/externalrefsource.md
-  - docs/pkg/models/shared/externalref.md
-  - docs/pkg/models/shared/tasktype.md
-  - docs/pkg/models/shared/tasktyperevokeoutcome.md
-  - docs/pkg/models/shared/tasktyperevoke.md
-  - docs/pkg/models/shared/taskrevokesource.md
-  - docs/pkg/models/shared/taskrevokesourcereview.md
-  - docs/pkg/models/shared/taskrevokesourcerequest.md
-  - docs/pkg/models/shared/taskrevokesourcenonusage.md
-  - docs/pkg/models/shared/taskrevokesourceexpired.md
-  - docs/pkg/models/shared/tasktypeoffboardingoutcome.md
-  - docs/pkg/models/shared/tasktypeoffboarding.md
-  - docs/pkg/models/shared/tasktypegrantoutcome.md
-  - docs/pkg/models/shared/tasktypegrant.md
-  - docs/pkg/models/shared/taskgrantsource.md
-  - docs/pkg/models/shared/outcome.md
-  - docs/pkg/models/shared/tasktypecertify.md
-  - docs/pkg/models/shared/policyinstance.md
-  - docs/pkg/models/shared/policystepinstancestate.md
-  - docs/pkg/models/shared/policystepinstance.md
-  - docs/pkg/models/shared/waitinstancestate.md
-  - docs/pkg/models/shared/waitinstance.md
-  - docs/pkg/models/shared/waitconditioninstance.md
-  - docs/pkg/models/shared/conditiontimedout.md
-  - docs/pkg/models/shared/conditionsucceeded.md
-  - docs/pkg/models/shared/rejectinstance.md
-  - docs/pkg/models/shared/provisioninstancestate.md
-  - docs/pkg/models/shared/provisioninstance.md
-  - docs/pkg/models/shared/reassignedbyerroraction.md
-  - docs/pkg/models/shared/erroredaction.md
-  - docs/pkg/models/shared/completedaction.md
-  - docs/pkg/models/shared/appentitlementreference.md
-  - docs/pkg/models/shared/cancelledaction.md
-  - docs/pkg/models/shared/approvalinstancestate.md
-  - docs/pkg/models/shared/approvalinstance.md
-  - docs/pkg/models/shared/restartaction.md
-  - docs/pkg/models/shared/reassignedaction.md
-  - docs/pkg/models/shared/deniedaction.md
-  - docs/pkg/models/shared/approvedaction.md
   - docs/pkg/models/shared/acceptinstance.md
   - docs/pkg/models/shared/accounttypes.md
-  - docs/pkg/models/shared/currentstep.md
-  - docs/pkg/models/shared/emergencystatus.md
-  - docs/pkg/models/shared/sortby.md
-  - docs/pkg/models/shared/taskstates.md
-  - docs/pkg/models/shared/tasksearchrequest.md
-  - docs/pkg/models/shared/tasktypeinput.md
-  - docs/pkg/models/shared/tasktyperevokeinput.md
-  - docs/pkg/models/shared/tasktypeoffboardinginput.md
-  - docs/pkg/models/shared/tasktypegrantinput.md
-  - docs/pkg/models/shared/tasktypecertifyinput.md
-  - docs/pkg/models/shared/taskref.md
-  - docs/pkg/models/shared/taskexpandmask.md
-  - docs/pkg/models/shared/searchusersresponseexpanded.md
-  - docs/pkg/models/shared/searchusersresponse.md
-  - docs/pkg/models/shared/userview.md
-  - docs/pkg/models/shared/userstatuses.md
-  - docs/pkg/models/shared/searchusersrequest.md
-  - docs/pkg/models/shared/userref.md
-  - docs/pkg/models/shared/userexpandmask.md
-  - docs/pkg/models/shared/webhookssearchresponse.md
-  - docs/pkg/models/shared/webhook.md
-  - docs/pkg/models/shared/webhookssearchrequest.md
-  - docs/pkg/models/shared/webhookref.md
-  - docs/pkg/models/shared/getawsexternalidresponse.md
+  - docs/pkg/models/shared/actions.md
+  - docs/pkg/models/shared/addappentitlementownerrequest.md
+  - docs/pkg/models/shared/addappentitlementownerresponse.md
+  - docs/pkg/models/shared/addappownerrequest.md
+  - docs/pkg/models/shared/addappownerresponse.md
+  - docs/pkg/models/shared/annotations.md
+  - docs/pkg/models/shared/app.md
+  - docs/pkg/models/shared/appaccessrequestdefaults.md
+  - docs/pkg/models/shared/appactionsservicegeneratereportrequest.md
+  - docs/pkg/models/shared/appactionsservicegeneratereportresponse.md
+  - docs/pkg/models/shared/appentitlement.md
+  - docs/pkg/models/shared/appentitlementdurationunset.md
+  - docs/pkg/models/shared/appentitlementexpandmask.md
+  - docs/pkg/models/shared/appentitlementref.md
+  - docs/pkg/models/shared/appentitlementreference.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/shared/appentitlementuserbinding.md
+  - docs/pkg/models/shared/appentitlementuserbindingfeed.md
+  - docs/pkg/models/shared/appentitlementuserbindingfeedview.md
+  - docs/pkg/models/shared/appentitlementuserbindinghistory.md
+  - docs/pkg/models/shared/appentitlementuserbindinghistoryview.md
+  - docs/pkg/models/shared/appentitlementuserview.md
+  - docs/pkg/models/shared/appentitlementview.md
+  - docs/pkg/models/shared/appentitlementwithexpired.md
+  - docs/pkg/models/shared/appentitlementwithuserbindings.md
+  - docs/pkg/models/shared/appgroupapproval.md
+  - docs/pkg/models/shared/appmanagedstatebindingref.md
+  - docs/pkg/models/shared/appownerapproval.md
+  - docs/pkg/models/shared/apppopulationreport.md
+  - docs/pkg/models/shared/apppopulationreportstate.md
+  - docs/pkg/models/shared/appreportservicelistresponse.md
+  - docs/pkg/models/shared/appresource.md
+  - docs/pkg/models/shared/appresourceservicegetresponse.md
+  - docs/pkg/models/shared/appresourceservicegetresponseexpanded.md
+  - docs/pkg/models/shared/appresourceservicelistresponse.md
+  - docs/pkg/models/shared/appresourceservicelistresponseexpanded.md
+  - docs/pkg/models/shared/appresourcetype.md
+  - docs/pkg/models/shared/appresourcetypeservicegetresponse.md
+  - docs/pkg/models/shared/appresourcetypeservicegetresponseexpanded.md
+  - docs/pkg/models/shared/appresourcetypeservicelistresponse.md
+  - docs/pkg/models/shared/appresourcetypeservicelistresponseexpanded.md
+  - docs/pkg/models/shared/appresourcetypeview.md
+  - docs/pkg/models/shared/appresourceview.md
+  - docs/pkg/models/shared/approval.md
+  - docs/pkg/models/shared/approvalinstance.md
+  - docs/pkg/models/shared/approvalinstancestate.md
+  - docs/pkg/models/shared/approvedaction.md
+  - docs/pkg/models/shared/appusagecontrols.md
+  - docs/pkg/models/shared/appuser.md
+  - docs/pkg/models/shared/appuserexpandmask.md
+  - docs/pkg/models/shared/appuserserviceupdaterequest.md
+  - docs/pkg/models/shared/appuserserviceupdateresponse.md
+  - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
+  - docs/pkg/models/shared/appuserstatus.md
+  - docs/pkg/models/shared/appusertype.md
+  - docs/pkg/models/shared/appuserview.md
+  - docs/pkg/models/shared/attributetype.md
+  - docs/pkg/models/shared/attributevalue.md
   - docs/pkg/models/shared/awsexternalid.md
-  - docs/pkg/models/shared/getsessionsettingsresponse.md
-  - docs/pkg/models/shared/sessionsettings.md
-  - docs/pkg/models/shared/updatesessionsettingsresponse.md
-  - docs/pkg/models/shared/updatesessionsettingsrequest.md
-  - docs/pkg/models/shared/systemlogservicelisteventsresponse.md
-  - docs/pkg/models/shared/sortdirection.md
-  - docs/pkg/models/shared/systemlogservicelisteventsrequest.md
-  - docs/pkg/models/shared/exportservicecreateresponse.md
-  - docs/pkg/models/shared/exportservicecreaterequest.md
-  - docs/pkg/models/shared/exportservicedeleteresponse.md
-  - docs/pkg/models/shared/exportservicedeleterequest.md
-  - docs/pkg/models/shared/exportservicegetresponse.md
-  - docs/pkg/models/shared/exportservicelistresponse.md
-  - docs/pkg/models/shared/exportserviceupdateresponse.md
-  - docs/pkg/models/shared/exportserviceupdaterequest.md
-  - docs/pkg/models/shared/exporterinput.md
-  - docs/pkg/models/shared/taskservicecreategrantresponseexpanded.md
-  - docs/pkg/models/shared/taskservicecreategrantresponse.md
-  - docs/pkg/models/shared/taskservicecreategrantrequest.md
-  - docs/pkg/models/shared/taskservicecreateoffboardingresponseexpanded.md
-  - docs/pkg/models/shared/taskservicecreateoffboardingresponse.md
-  - docs/pkg/models/shared/taskservicecreateoffboardingrequest.md
-  - docs/pkg/models/shared/taskservicecreaterevokeresponseexpanded.md
-  - docs/pkg/models/shared/taskservicecreaterevokeresponse.md
-  - docs/pkg/models/shared/taskservicecreaterevokerequest.md
-  - docs/pkg/models/shared/taskservicegetresponseexpanded.md
-  - docs/pkg/models/shared/taskservicegetresponse.md
-  - docs/pkg/models/shared/taskactionsserviceapproveresponseexpanded.md
-  - docs/pkg/models/shared/taskactionsserviceapproveresponse.md
-  - docs/pkg/models/shared/taskactionsserviceapproverequest.md
-  - docs/pkg/models/shared/taskactionsservicecommentresponseexpanded.md
-  - docs/pkg/models/shared/taskactionsservicecommentresponse.md
-  - docs/pkg/models/shared/taskactionsservicecommentrequest.md
-  - docs/pkg/models/shared/taskactionsservicedenyresponseexpanded.md
-  - docs/pkg/models/shared/taskactionsservicedenyresponse.md
-  - docs/pkg/models/shared/taskactionsservicedenyrequest.md
-  - docs/pkg/models/shared/taskserviceactionresponseexpanded.md
-  - docs/pkg/models/shared/taskserviceactionresponse.md
-  - docs/pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.md
-  - docs/pkg/models/shared/taskactionsservicereassignresponseexpanded.md
-  - docs/pkg/models/shared/taskactionsservicereassignresponse.md
-  - docs/pkg/models/shared/taskactionsservicereassignrequest.md
-  - docs/pkg/models/shared/taskactionsservicerestartresponseexpanded.md
-  - docs/pkg/models/shared/taskactionsservicerestartresponse.md
-  - docs/pkg/models/shared/taskactionsservicerestartrequest.md
-  - docs/pkg/models/shared/userservicegetresponseexpanded.md
-  - docs/pkg/models/shared/userservicegetresponse.md
-  - docs/pkg/models/shared/userservicelistresponseexpanded.md
-  - docs/pkg/models/shared/userservicelistresponse.md
-  - docs/pkg/models/shared/webhooksservicecreateresponse.md
-  - docs/pkg/models/shared/webhooksservicecreaterequest.md
-  - docs/pkg/models/shared/webhooksservicedeleteresponse.md
-  - docs/pkg/models/shared/webhooksservicedeleterequest.md
-  - docs/pkg/models/shared/webhooksservicegetresponse.md
-  - docs/pkg/models/shared/webhooksservicelistresponse.md
-  - docs/pkg/models/shared/webhooksservicetestresponse.md
-  - docs/pkg/models/shared/webhookinstancestate.md
-  - docs/pkg/models/shared/webhookinstance.md
-  - docs/pkg/models/shared/webhookspec.md
-  - docs/pkg/models/shared/webhooksource.md
-  - docs/pkg/models/shared/webhooksourcetest.md
-  - docs/pkg/models/shared/webhooksourceprovisionstep.md
-  - docs/pkg/models/shared/webhooksourcepolicypostaction.md
-  - docs/pkg/models/shared/webhooksourceapprovalstep.md
-  - docs/pkg/models/shared/webhooksservicetestrequest.md
-  - docs/pkg/models/shared/webhooksserviceupdateresponse.md
-  - docs/pkg/models/shared/webhooksserviceupdaterequest.md
-  - docs/pkg/models/shared/webhookinput.md
-  - docs/pkg/models/shared/security.md
-  - docs/pkg/models/shared/payload.md
   - docs/pkg/models/shared/body.md
-  - docs/pkg/models/shared/payloadpolicyapprovalstepexpanded.md
+  - docs/pkg/models/shared/bundleautomation.md
+  - docs/pkg/models/shared/bundleautomationlastrunstate.md
+  - docs/pkg/models/shared/bundleautomationlastrunstatestatus.md
+  - docs/pkg/models/shared/bundleautomationruleentitlement.md
+  - docs/pkg/models/shared/cancelaccessrequestdefaultsrequest.md
+  - docs/pkg/models/shared/cancelledaction.md
+  - docs/pkg/models/shared/completedaction.md
+  - docs/pkg/models/shared/conditionsucceeded.md
+  - docs/pkg/models/shared/conditiontimedout.md
+  - docs/pkg/models/shared/config.md
+  - docs/pkg/models/shared/connector.md
+  - docs/pkg/models/shared/connectorcredential.md
+  - docs/pkg/models/shared/connectorexpandmask.md
+  - docs/pkg/models/shared/connectorprovision.md
+  - docs/pkg/models/shared/connectorservicecreatedelegatedrequest.md
+  - docs/pkg/models/shared/connectorservicecreaterequest.md
+  - docs/pkg/models/shared/connectorservicecreaterequestconfig.md
+  - docs/pkg/models/shared/connectorservicecreateresponse.md
+  - docs/pkg/models/shared/connectorservicecreateresponseexpanded.md
+  - docs/pkg/models/shared/connectorservicedeleterequest.md
+  - docs/pkg/models/shared/connectorservicedeleteresponse.md
+  - docs/pkg/models/shared/connectorservicegetcredentialsresponse.md
+  - docs/pkg/models/shared/connectorservicegetresponse.md
+  - docs/pkg/models/shared/connectorservicegetresponseexpanded.md
+  - docs/pkg/models/shared/connectorservicelistresponse.md
+  - docs/pkg/models/shared/connectorservicelistresponseexpanded.md
+  - docs/pkg/models/shared/connectorservicerevokecredentialrequest.md
+  - docs/pkg/models/shared/connectorservicerevokecredentialresponse.md
+  - docs/pkg/models/shared/connectorservicerotatecredentialrequest.md
+  - docs/pkg/models/shared/connectorservicerotatecredentialresponse.md
+  - docs/pkg/models/shared/connectorserviceupdatedelegatedrequest.md
+  - docs/pkg/models/shared/connectorserviceupdaterequest.md
+  - docs/pkg/models/shared/connectorserviceupdateresponse.md
+  - docs/pkg/models/shared/connectorserviceupdateresponseexpanded.md
+  - docs/pkg/models/shared/connectorstatus.md
+  - docs/pkg/models/shared/connectorstatusstatus.md
+  - docs/pkg/models/shared/connectorview.md
+  - docs/pkg/models/shared/createapprequest.md
+  - docs/pkg/models/shared/createappresponse.md
+  - docs/pkg/models/shared/createattributevaluerequest.md
+  - docs/pkg/models/shared/createattributevalueresponse.md
+  - docs/pkg/models/shared/createpolicyrequest.md
+  - docs/pkg/models/shared/createpolicyresponse.md
+  - docs/pkg/models/shared/currentstep.md
+  - docs/pkg/models/shared/delegatedprovision.md
+  - docs/pkg/models/shared/deleteapprequest.md
+  - docs/pkg/models/shared/deleteappresponse.md
+  - docs/pkg/models/shared/deleteattributevaluerequest.md
+  - docs/pkg/models/shared/deleteattributevalueresponse.md
+  - docs/pkg/models/shared/deletepolicyrequest.md
+  - docs/pkg/models/shared/deletepolicyresponse.md
+  - docs/pkg/models/shared/deniedaction.md
+  - docs/pkg/models/shared/directory.md
+  - docs/pkg/models/shared/directoryexpandmask.md
+  - docs/pkg/models/shared/directoryservicecreaterequest.md
+  - docs/pkg/models/shared/directoryservicecreateresponse.md
+  - docs/pkg/models/shared/directoryservicecreateresponseexpanded.md
+  - docs/pkg/models/shared/directoryservicedeleterequest.md
+  - docs/pkg/models/shared/directoryservicedeleteresponse.md
+  - docs/pkg/models/shared/directoryservicegetresponse.md
+  - docs/pkg/models/shared/directoryservicegetresponseexpanded.md
+  - docs/pkg/models/shared/directoryservicelistresponse.md
+  - docs/pkg/models/shared/directoryservicelistresponseexpanded.md
+  - docs/pkg/models/shared/directorystatus.md
+  - docs/pkg/models/shared/directoryview.md
+  - docs/pkg/models/shared/durationunset.md
+  - docs/pkg/models/shared/emergencystatus.md
+  - docs/pkg/models/shared/entitlementownerapproval.md
+  - docs/pkg/models/shared/erroredaction.md
+  - docs/pkg/models/shared/eventtype.md
+  - docs/pkg/models/shared/expanded.md
+  - docs/pkg/models/shared/exporter.md
+  - docs/pkg/models/shared/exporterref.md
+  - docs/pkg/models/shared/exporterstate.md
+  - docs/pkg/models/shared/exportservicecreaterequest.md
+  - docs/pkg/models/shared/exportservicecreateresponse.md
+  - docs/pkg/models/shared/exportservicedeleterequest.md
+  - docs/pkg/models/shared/exportservicedeleteresponse.md
+  - docs/pkg/models/shared/exportservicegetresponse.md
+  - docs/pkg/models/shared/exportservicelisteventsrequest.md
+  - docs/pkg/models/shared/exportservicelisteventsresponse.md
+  - docs/pkg/models/shared/exportservicelistresponse.md
+  - docs/pkg/models/shared/exportserviceupdaterequest.md
+  - docs/pkg/models/shared/exportserviceupdateresponse.md
+  - docs/pkg/models/shared/exportssearchservicesearchrequest.md
+  - docs/pkg/models/shared/exportssearchservicesearchresponse.md
+  - docs/pkg/models/shared/exporttodatasource.md
+  - docs/pkg/models/shared/expressionapproval.md
+  - docs/pkg/models/shared/externalref.md
+  - docs/pkg/models/shared/externalrefsource.md
+  - docs/pkg/models/shared/externalticketprovision.md
+  - docs/pkg/models/shared/facetcategory.md
+  - docs/pkg/models/shared/facetrange.md
+  - docs/pkg/models/shared/facetrangeitem.md
+  - docs/pkg/models/shared/facets.md
+  - docs/pkg/models/shared/facetvalue.md
+  - docs/pkg/models/shared/facetvalueitem.md
+  - docs/pkg/models/shared/forcerunbundleautomationrequest.md
+  - docs/pkg/models/shared/forcerunbundleautomationresponse.md
+  - docs/pkg/models/shared/forcesyncrequest.md
+  - docs/pkg/models/shared/forcesyncresponse.md
+  - docs/pkg/models/shared/format.md
+  - docs/pkg/models/shared/getappentitlementresponse.md
+  - docs/pkg/models/shared/getappentitlementresponseexpanded.md
+  - docs/pkg/models/shared/getappresponse.md
+  - docs/pkg/models/shared/getappusagecontrolsresponse.md
+  - docs/pkg/models/shared/getattributevalueresponse.md
+  - docs/pkg/models/shared/getawsexternalidresponse.md
+  - docs/pkg/models/shared/getpolicyresponse.md
+  - docs/pkg/models/shared/getrolesresponse.md
+  - docs/pkg/models/shared/getsessionsettingsresponse.md
+  - docs/pkg/models/shared/grantedstatus.md
+  - docs/pkg/models/shared/identitymatching.md
+  - docs/pkg/models/shared/introspectresponse.md
+  - docs/pkg/models/shared/listappentitlementownersresponse.md
+  - docs/pkg/models/shared/listappentitlementsresponse.md
+  - docs/pkg/models/shared/listappentitlementsresponseexpanded.md
+  - docs/pkg/models/shared/listappentitlementusersresponse.md
+  - docs/pkg/models/shared/listappentitlementusersresponseexpanded.md
+  - docs/pkg/models/shared/listappownersresponse.md
+  - docs/pkg/models/shared/listappresourceownersresponse.md
+  - docs/pkg/models/shared/listappsresponse.md
+  - docs/pkg/models/shared/listappusersforidentitywithgrantresponse.md
+  - docs/pkg/models/shared/listattributetypesresponse.md
+  - docs/pkg/models/shared/listattributevaluesresponse.md
+  - docs/pkg/models/shared/listpolicyresponse.md
+  - docs/pkg/models/shared/listrolesresponse.md
+  - docs/pkg/models/shared/managerapproval.md
+  - docs/pkg/models/shared/manualprovision.md
+  - docs/pkg/models/shared/marker.md
+  - docs/pkg/models/shared/membershiptype.md
+  - docs/pkg/models/shared/multistep.md
+  - docs/pkg/models/shared/oauth2authorizedas.md
+  - docs/pkg/models/shared/outcome.md
+  - docs/pkg/models/shared/payload.md
   - docs/pkg/models/shared/payloadpolicyapprovalstep.md
-  - docs/pkg/models/shared/payloadpolicypostactionexpanded.md
+  - docs/pkg/models/shared/payloadpolicyapprovalstepexpanded.md
   - docs/pkg/models/shared/payloadpolicypostaction.md
-  - docs/pkg/models/shared/payloadprovisionstepexpanded.md
+  - docs/pkg/models/shared/payloadpolicypostactionexpanded.md
   - docs/pkg/models/shared/payloadprovisionstep.md
+  - docs/pkg/models/shared/payloadprovisionstepexpanded.md
   - docs/pkg/models/shared/payloadtest.md
-  - docs/pkg/models/shared/responsepolicyapprovalstep.md
-  - docs/pkg/models/shared/responsepolicyapprovalstepreassign.md
-  - docs/pkg/models/shared/responsepolicyapprovalstepdeny.md
-  - docs/pkg/models/shared/responsepolicyapprovalstepapprove.md
+  - docs/pkg/models/shared/personalclient.md
+  - docs/pkg/models/shared/personalclientservicecreaterequest.md
+  - docs/pkg/models/shared/personalclientservicecreateresponse.md
+  - docs/pkg/models/shared/policy.md
+  - docs/pkg/models/shared/policyinstance.md
+  - docs/pkg/models/shared/policypolicytype.md
+  - docs/pkg/models/shared/policypostactions.md
+  - docs/pkg/models/shared/policyref.md
+  - docs/pkg/models/shared/policystep.md
+  - docs/pkg/models/shared/policystepinstance.md
+  - docs/pkg/models/shared/policystepinstancestate.md
+  - docs/pkg/models/shared/policysteps.md
+  - docs/pkg/models/shared/policytype.md
+  - docs/pkg/models/shared/policytypes.md
+  - docs/pkg/models/shared/processing.md
+  - docs/pkg/models/shared/provision.md
+  - docs/pkg/models/shared/provisioninstance.md
+  - docs/pkg/models/shared/provisioninstancestate.md
+  - docs/pkg/models/shared/provisionpolicy.md
+  - docs/pkg/models/shared/provisiontarget.md
+  - docs/pkg/models/shared/reassignedaction.md
+  - docs/pkg/models/shared/reassignedbyerroraction.md
+  - docs/pkg/models/shared/recommendation.md
+  - docs/pkg/models/shared/reject.md
+  - docs/pkg/models/shared/rejectinstance.md
+  - docs/pkg/models/shared/removeappentitlementownerrequest.md
+  - docs/pkg/models/shared/removeappentitlementownerresponse.md
+  - docs/pkg/models/shared/removeappownerrequest.md
+  - docs/pkg/models/shared/removeappownerresponse.md
+  - docs/pkg/models/shared/requestcatalog.md
+  - docs/pkg/models/shared/requestcatalogexpandmask.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicedeleterequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicedeleteresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicegetresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicegetresponseexpanded.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementsforaccessresponseexpanded.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistentitlementspercatalogresponseexpanded.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicelistresponseexpanded.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsrequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveaccessentitlementsresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsrequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceremoveappentitlementsresponse.md
+  - docs/pkg/models/shared/requestcatalogmanagementserviceupdaterequest.md
+  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsrequest.md
+  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponse.md
+  - docs/pkg/models/shared/requestcatalogsearchservicesearchentitlementsresponseexpanded.md
+  - docs/pkg/models/shared/requestcatalogview.md
+  - docs/pkg/models/shared/resourceownerapproval.md
   - docs/pkg/models/shared/responsepolicyapprovalreplacepolicy.md
+  - docs/pkg/models/shared/responsepolicyapprovalstep.md
+  - docs/pkg/models/shared/responsepolicyapprovalstepapprove.md
+  - docs/pkg/models/shared/responsepolicyapprovalstepdeny.md
+  - docs/pkg/models/shared/responsepolicyapprovalstepreassign.md
   - docs/pkg/models/shared/responsepolicypostaction.md
   - docs/pkg/models/shared/responseprovisionstep.md
-  - docs/pkg/models/shared/responseprovisionsteperrored.md
   - docs/pkg/models/shared/responseprovisionstepcomplete.md
+  - docs/pkg/models/shared/responseprovisionsteperrored.md
   - docs/pkg/models/shared/responsetest.md
-  - docs/sdks/conductoroneapi/README.md
-  - docs/pkg/models/operations/option.md
-  - docs/sdks/apps/README.md
+  - docs/pkg/models/shared/restartaction.md
+  - docs/pkg/models/shared/role.md
+  - docs/pkg/models/shared/rule.md
+  - docs/pkg/models/shared/searchappentitlementswithexpiredresponse.md
+  - docs/pkg/models/shared/searchappresourcetypesrequest.md
+  - docs/pkg/models/shared/searchappresourcetypesresponse.md
+  - docs/pkg/models/shared/searchappsrequest.md
+  - docs/pkg/models/shared/searchappsresponse.md
+  - docs/pkg/models/shared/searchattributevaluesrequest.md
+  - docs/pkg/models/shared/searchattributevaluesresponse.md
+  - docs/pkg/models/shared/searchgrantfeedresponse.md
+  - docs/pkg/models/shared/searchgrantfeedresponseexpanded.md
+  - docs/pkg/models/shared/searchpastgrantsresponse.md
+  - docs/pkg/models/shared/searchpastgrantsresponseexpanded.md
+  - docs/pkg/models/shared/searchpoliciesrequest.md
+  - docs/pkg/models/shared/searchusersrequest.md
+  - docs/pkg/models/shared/searchusersresponse.md
+  - docs/pkg/models/shared/searchusersresponseexpanded.md
+  - docs/pkg/models/shared/security.md
+  - docs/pkg/models/shared/selfapproval.md
+  - docs/pkg/models/shared/sessionsettings.md
+  - docs/pkg/models/shared/setappentitlementownersrequest.md
+  - docs/pkg/models/shared/setappentitlementownersresponse.md
+  - docs/pkg/models/shared/setappownersrequest.md
+  - docs/pkg/models/shared/setappownersresponse.md
+  - docs/pkg/models/shared/setbundleautomationrequest.md
+  - docs/pkg/models/shared/severity.md
+  - docs/pkg/models/shared/sortby.md
+  - docs/pkg/models/shared/sortdirection.md
+  - docs/pkg/models/shared/state.md
+  - docs/pkg/models/shared/status.md
+  - docs/pkg/models/shared/systemlogservicelisteventsrequest.md
+  - docs/pkg/models/shared/systemlogservicelisteventsresponse.md
+  - docs/pkg/models/shared/task.md
+  - docs/pkg/models/shared/taskactionsserviceapproverequest.md
+  - docs/pkg/models/shared/taskactionsserviceapproveresponse.md
+  - docs/pkg/models/shared/taskactionsserviceapproveresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsservicecommentrequest.md
+  - docs/pkg/models/shared/taskactionsservicecommentresponse.md
+  - docs/pkg/models/shared/taskactionsservicecommentresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsservicedenyrequest.md
+  - docs/pkg/models/shared/taskactionsservicedenyresponse.md
+  - docs/pkg/models/shared/taskactionsservicedenyresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.md
+  - docs/pkg/models/shared/taskactionsservicehardresetrequest.md
+  - docs/pkg/models/shared/taskactionsservicehardresetresponse.md
+  - docs/pkg/models/shared/taskactionsservicehardresetresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsservicereassignrequest.md
+  - docs/pkg/models/shared/taskactionsservicereassignresponse.md
+  - docs/pkg/models/shared/taskactionsservicereassignresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsservicerestartrequest.md
+  - docs/pkg/models/shared/taskactionsservicerestartresponse.md
+  - docs/pkg/models/shared/taskactionsservicerestartresponseexpanded.md
+  - docs/pkg/models/shared/taskexpandmask.md
+  - docs/pkg/models/shared/taskgrantsource.md
+  - docs/pkg/models/shared/taskref.md
+  - docs/pkg/models/shared/taskrevokesource.md
+  - docs/pkg/models/shared/taskrevokesourceexpired.md
+  - docs/pkg/models/shared/taskrevokesourcenonusage.md
+  - docs/pkg/models/shared/taskrevokesourcerequest.md
+  - docs/pkg/models/shared/taskrevokesourcereview.md
+  - docs/pkg/models/shared/tasksearchrequest.md
+  - docs/pkg/models/shared/tasksearchresponse.md
+  - docs/pkg/models/shared/tasksearchresponseexpanded.md
+  - docs/pkg/models/shared/taskserviceactionresponse.md
+  - docs/pkg/models/shared/taskserviceactionresponseexpanded.md
+  - docs/pkg/models/shared/taskservicecreategrantrequest.md
+  - docs/pkg/models/shared/taskservicecreategrantresponse.md
+  - docs/pkg/models/shared/taskservicecreategrantresponseexpanded.md
+  - docs/pkg/models/shared/taskservicecreateoffboardingrequest.md
+  - docs/pkg/models/shared/taskservicecreateoffboardingresponse.md
+  - docs/pkg/models/shared/taskservicecreateoffboardingresponseexpanded.md
+  - docs/pkg/models/shared/taskservicecreaterevokerequest.md
+  - docs/pkg/models/shared/taskservicecreaterevokeresponse.md
+  - docs/pkg/models/shared/taskservicecreaterevokeresponseexpanded.md
+  - docs/pkg/models/shared/taskservicegetresponse.md
+  - docs/pkg/models/shared/taskservicegetresponseexpanded.md
+  - docs/pkg/models/shared/taskstate.md
+  - docs/pkg/models/shared/taskstates.md
+  - docs/pkg/models/shared/tasktype.md
+  - docs/pkg/models/shared/tasktypecertify.md
+  - docs/pkg/models/shared/tasktypegrant.md
+  - docs/pkg/models/shared/tasktypegrantoutcome.md
+  - docs/pkg/models/shared/tasktypeoffboarding.md
+  - docs/pkg/models/shared/tasktypeoffboardingoutcome.md
+  - docs/pkg/models/shared/tasktyperevoke.md
+  - docs/pkg/models/shared/tasktyperevokeoutcome.md
+  - docs/pkg/models/shared/taskview.md
+  - docs/pkg/models/shared/updateappentitlementrequest.md
+  - docs/pkg/models/shared/updateappentitlementresponse.md
+  - docs/pkg/models/shared/updateappentitlementresponseexpanded.md
+  - docs/pkg/models/shared/updateapprequest.md
+  - docs/pkg/models/shared/updateappresponse.md
+  - docs/pkg/models/shared/updateappusagecontrolsrequest.md
+  - docs/pkg/models/shared/updateappusagecontrolsresponse.md
+  - docs/pkg/models/shared/updatepolicyrequest.md
+  - docs/pkg/models/shared/updatepolicyresponse.md
+  - docs/pkg/models/shared/updaterolerequest.md
+  - docs/pkg/models/shared/updaterolesresponse.md
+  - docs/pkg/models/shared/updatesessionsettingsrequest.md
+  - docs/pkg/models/shared/updatesessionsettingsresponse.md
+  - docs/pkg/models/shared/user.md
+  - docs/pkg/models/shared/userapproval.md
+  - docs/pkg/models/shared/userattributemappingsource.md
+  - docs/pkg/models/shared/userexpandmask.md
+  - docs/pkg/models/shared/userref.md
+  - docs/pkg/models/shared/userservicegetresponse.md
+  - docs/pkg/models/shared/userservicegetresponseexpanded.md
+  - docs/pkg/models/shared/userservicelistresponse.md
+  - docs/pkg/models/shared/userservicelistresponseexpanded.md
+  - docs/pkg/models/shared/userstatus.md
+  - docs/pkg/models/shared/userstatuses.md
+  - docs/pkg/models/shared/userview.md
+  - docs/pkg/models/shared/validatepolicycelrequest.md
+  - docs/pkg/models/shared/validatepolicycelresponse.md
+  - docs/pkg/models/shared/wait.md
+  - docs/pkg/models/shared/waitcondition.md
+  - docs/pkg/models/shared/waitconditioninstance.md
+  - docs/pkg/models/shared/waitinstance.md
+  - docs/pkg/models/shared/waitinstancestate.md
+  - docs/pkg/models/shared/webhook.md
+  - docs/pkg/models/shared/webhookapproval.md
+  - docs/pkg/models/shared/webhookinstance.md
+  - docs/pkg/models/shared/webhookinstancestate.md
+  - docs/pkg/models/shared/webhookprovision.md
+  - docs/pkg/models/shared/webhookref.md
+  - docs/pkg/models/shared/webhooksource.md
+  - docs/pkg/models/shared/webhooksourceapprovalstep.md
+  - docs/pkg/models/shared/webhooksourcepolicypostaction.md
+  - docs/pkg/models/shared/webhooksourceprovisionstep.md
+  - docs/pkg/models/shared/webhooksourcetest.md
+  - docs/pkg/models/shared/webhookspec.md
+  - docs/pkg/models/shared/webhookssearchrequest.md
+  - docs/pkg/models/shared/webhookssearchresponse.md
+  - docs/pkg/models/shared/webhooksservicecreaterequest.md
+  - docs/pkg/models/shared/webhooksservicecreateresponse.md
+  - docs/pkg/models/shared/webhooksservicedeleterequest.md
+  - docs/pkg/models/shared/webhooksservicedeleteresponse.md
+  - docs/pkg/models/shared/webhooksservicegetresponse.md
+  - docs/pkg/models/shared/webhooksservicelistresponse.md
+  - docs/pkg/models/shared/webhooksservicetestrequest.md
+  - docs/pkg/models/shared/webhooksservicetestresponse.md
+  - docs/pkg/models/shared/webhooksserviceupdaterequest.md
+  - docs/pkg/models/shared/webhooksserviceupdateresponse.md
   - docs/sdks/appaccessrequestsdefaults/README.md
-  - docs/sdks/connector/README.md
+  - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appentitlements/README.md
   - docs/sdks/appentitlementsearch/README.md
   - docs/sdks/appentitlementuserbinding/README.md
-  - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appowners/README.md
   - docs/sdks/appreport/README.md
   - docs/sdks/appreportaction/README.md
-  - docs/sdks/appresourcetype/README.md
   - docs/sdks/appresource/README.md
   - docs/sdks/appresourceowners/README.md
+  - docs/sdks/appresourcesearch/README.md
+  - docs/sdks/appresourcetype/README.md
+  - docs/sdks/apps/README.md
+  - docs/sdks/appsearch/README.md
   - docs/sdks/appusagecontrols/README.md
   - docs/sdks/appuser/README.md
   - docs/sdks/attributes/README.md
-  - docs/sdks/auth/README.md
-  - docs/sdks/requestcatalogmanagement/README.md
-  - docs/sdks/directory/README.md
-  - docs/sdks/personalclient/README.md
-  - docs/sdks/roles/README.md
-  - docs/sdks/policies/README.md
-  - docs/sdks/policyvalidate/README.md
-  - docs/sdks/appresourcesearch/README.md
-  - docs/sdks/appsearch/README.md
   - docs/sdks/attributesearch/README.md
-  - docs/sdks/policysearch/README.md
-  - docs/sdks/requestcatalogsearch/README.md
-  - docs/sdks/exportssearch/README.md
-  - docs/sdks/tasksearch/README.md
-  - docs/sdks/usersearch/README.md
-  - docs/sdks/webhookssearch/README.md
+  - docs/sdks/auth/README.md
   - docs/sdks/awsexternalidsettings/README.md
+  - docs/sdks/conductoroneapi/README.md
+  - docs/sdks/connector/README.md
+  - docs/sdks/directory/README.md
+  - docs/sdks/export/README.md
+  - docs/sdks/exportssearch/README.md
+  - docs/sdks/personalclient/README.md
+  - docs/sdks/policies/README.md
+  - docs/sdks/policysearch/README.md
+  - docs/sdks/policyvalidate/README.md
+  - docs/sdks/requestcatalogmanagement/README.md
+  - docs/sdks/requestcatalogsearch/README.md
+  - docs/sdks/roles/README.md
   - docs/sdks/sessionsettings/README.md
   - docs/sdks/systemlog/README.md
-  - docs/sdks/export/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taskactions/README.md
+  - docs/sdks/tasksearch/README.md
   - docs/sdks/user/README.md
+  - docs/sdks/usersearch/README.md
   - docs/sdks/webhooks/README.md
-  - pkg/models/operations/options.go
-  - .gitattributes
+  - docs/sdks/webhookssearch/README.md
+  - export.go
+  - exportssearch.go
   - internal/hooks/hooks.go
-  - CONTRIBUTING.md
+  - personalclient.go
+  - pkg/models/operations/options.go
+  - pkg/models/sdkerrors/sdkerror.go
+  - pkg/retry/config.go
+  - pkg/types/bigint.go
+  - pkg/types/date.go
+  - pkg/types/datetime.go
+  - pkg/types/decimal.go
+  - pkg/types/pointers.go
+  - pkg/utils/contenttype.go
+  - pkg/utils/form.go
+  - pkg/utils/headers.go
+  - pkg/utils/json.go
+  - pkg/utils/pathparams.go
+  - pkg/utils/queryparams.go
+  - pkg/utils/requestbody.go
+  - pkg/utils/retries.go
+  - pkg/utils/security.go
+  - pkg/utils/utils.go
+  - policies.go
+  - policysearch.go
+  - policyvalidate.go
+  - requestcatalogmanagement.go
+  - requestcatalogsearch.go
+  - roles.go
+  - sessionsettings.go
+  - systemlog.go
+  - task.go
+  - taskactions.go
+  - tasksearch.go
+  - user.go
+  - usersearch.go
+  - webhooks.go
+  - webhookssearch.go
+examples:
+  c1.api.app.v1.Apps.Create:
+    speakeasy-default-c1-api-app-v1-apps-create: {}
+  c1.api.app.v1.Apps.Delete:
+    speakeasy-default-c1-api-app-v1-apps-delete:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.app.v1.Apps.Get:
+    speakeasy-default-c1-api-app-v1-apps-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.app.v1.Apps.List:
+    speakeasy-default-c1-api-app-v1-apps-list: {}
+  c1.api.app.v1.Apps.Update:
+    speakeasy-default-c1-api-app-v1-apps-update:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessRequestsDefaults:
+    speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-cancel-app-access-requests-defaults:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessRequestsDefaults:
+    speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-create-app-access-requests-defaults:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsDefaults:
+    speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-get-app-access-requests-defaults:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.ConnectorService.Create:
+    speakeasy-default-c1-api-app-v1-connector-service-create:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.ConnectorService.CreateDelegated:
+    speakeasy-default-c1-api-app-v1-connector-service-create-delegated:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.ConnectorService.Delete:
+    speakeasy-default-c1-api-app-v1-connector-service-delete:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.ConnectorService.ForceSync:
+    speakeasy-default-c1-api-app-v1-connector-service-force-sync:
+      parameters:
+        path:
+          app_id: "<value>"
+          connector_id: "<value>"
+  c1.api.app.v1.ConnectorService.Get:
+    speakeasy-default-c1-api-app-v1-connector-service-get:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.ConnectorService.GetCredentials:
+    speakeasy-default-c1-api-app-v1-connector-service-get-credentials:
+      parameters:
+        path:
+          app_id: "<value>"
+          connector_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.ConnectorService.List:
+    speakeasy-default-c1-api-app-v1-connector-service-list:
+      parameters:
+        path:
+          app_id: "<value>"
+        query: {}
+  c1.api.app.v1.ConnectorService.RevokeCredential:
+    speakeasy-default-c1-api-app-v1-connector-service-revoke-credential:
+      parameters:
+        path:
+          app_id: "<value>"
+          connector_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.ConnectorService.RotateCredential:
+    speakeasy-default-c1-api-app-v1-connector-service-rotate-credential:
+      parameters:
+        path:
+          app_id: "<value>"
+          connector_id: "<value>"
+  c1.api.app.v1.ConnectorService.Update:
+    speakeasy-default-c1-api-app-v1-connector-service-update:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.ConnectorService.UpdateDelegated:
+    speakeasy-default-c1-api-app-v1-connector-service-update-delegated:
+      parameters:
+        path:
+          connector_app_id: "<value>"
+          connector_id: "<value>"
+  c1.api.app.v1.AppEntitlements.Get:
+    speakeasy-default-c1-api-app-v1-app-entitlements-get:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.AppEntitlements.List:
+    speakeasy-default-c1-api-app-v1-app-entitlements-list:
+      parameters:
+        path:
+          app_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlements.ListForAppResource:
+    speakeasy-default-c1-api-app-v1-app-entitlements-list-for-app-resource:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_resource_type_id: "<value>"
+          app_resource_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlements.ListForAppUser:
+    speakeasy-default-c1-api-app-v1-app-entitlements-list-for-app-user:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_user_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlements.ListUsers:
+    speakeasy-default-c1-api-app-v1-app-entitlements-list-users:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_entitlement_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlements.Update:
+    speakeasy-default-c1-api-app-v1-app-entitlements-update:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.AppEntitlementSearchService.Search:
+    speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search: {}
+  c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser:
+    speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-app-entitlements-for-app-user:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_user_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsWithExpired:
+    speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-app-entitlements-with-expired:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_entitlement_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-list-app-users-for-identity-with-grant:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_entitlement_id: "<value>"
+          identity_user_id: "<value>"
+  c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-grant-feed: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-past-grants: {}
+  c1.api.app.v1.AppEntitlementOwners.Add:
+    speakeasy-default-c1-api-app-v1-app-entitlement-owners-add:
+      parameters:
+        path:
+          app_id: "<value>"
+          entitlement_id: "<value>"
+  c1.api.app.v1.AppEntitlementOwners.List:
+    speakeasy-default-c1-api-app-v1-app-entitlement-owners-list:
+      parameters:
+        path:
+          app_id: "<value>"
+          entitlement_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppEntitlementOwners.Remove:
+    speakeasy-default-c1-api-app-v1-app-entitlement-owners-remove:
+      parameters:
+        path:
+          app_id: "<value>"
+          entitlement_id: "<value>"
+          user_id: "<value>"
+  c1.api.app.v1.AppEntitlementOwners.Set:
+    speakeasy-default-c1-api-app-v1-app-entitlement-owners-set:
+      parameters:
+        path:
+          app_id: "<value>"
+          entitlement_id: "<value>"
+  c1.api.app.v1.AppOwners.Add:
+    speakeasy-default-c1-api-app-v1-app-owners-add:
+      parameters:
+        path:
+          app_id: "<value>"
+          user_id: "<value>"
+  c1.api.app.v1.AppOwners.List:
+    speakeasy-default-c1-api-app-v1-app-owners-list:
+      parameters:
+        path:
+          app_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppOwners.Remove:
+    speakeasy-default-c1-api-app-v1-app-owners-remove:
+      parameters:
+        path:
+          app_id: "<value>"
+          user_id: "<value>"
+  c1.api.app.v1.AppOwners.Set:
+    speakeasy-default-c1-api-app-v1-app-owners-set:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppReportService.List:
+    speakeasy-default-c1-api-app-v1-app-report-service-list:
+      parameters:
+        path:
+          app_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppReportActionService.GenerateReport:
+    speakeasy-default-c1-api-app-v1-app-report-action-service-generate-report:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppResourceTypeService.Get:
+    speakeasy-default-c1-api-app-v1-app-resource-type-service-get:
+      parameters:
+        path:
+          app_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.AppResourceTypeService.List:
+    speakeasy-default-c1-api-app-v1-app-resource-type-service-list:
+      parameters:
+        path:
+          app_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppResourceService.Get:
+    speakeasy-default-c1-api-app-v1-app-resource-service-get:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_resource_type_id: "<value>"
+          id: "<id>"
+  c1.api.app.v1.AppResourceService.List:
+    speakeasy-default-c1-api-app-v1-app-resource-service-list:
+      parameters:
+        path:
+          app_id: "<value>"
+          app_resource_type_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppResourceOwners.List:
+    speakeasy-default-c1-api-app-v1-app-resource-owners-list:
+      parameters:
+        path:
+          app_id: "<value>"
+          resource_type_id: "<value>"
+          resource_id: "<value>"
+        query: {}
+  c1.api.app.v1.AppUsageControlsService.Get:
+    speakeasy-default-c1-api-app-v1-app-usage-controls-service-get:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppUsageControlsService.Update:
+    speakeasy-default-c1-api-app-v1-app-usage-controls-service-update:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.app.v1.AppUserService.Update:
+    speakeasy-default-c1-api-app-v1-app-user-service-update:
+      parameters:
+        path:
+          app_user_app_id: "<value>"
+          app_user_id: "<value>"
+  c1.api.attribute.v1.Attributes.CreateAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-create-attribute-value: {}
+  c1.api.attribute.v1.Attributes.DeleteAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-delete-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.attribute.v1.Attributes.GetAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-get-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.attribute.v1.Attributes.ListAttributeTypes:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-attribute-types: {}
+  c1.api.attribute.v1.Attributes.ListAttributeValues:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-attribute-values:
+      parameters:
+        path:
+          attribute_type_id: "<value>"
+        query: {}
+  c1.api.auth.v1.Auth.Introspect:
+    speakeasy-default-c1-api-auth-v1-auth-introspect: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAccessEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-add-access-entitlements:
+      parameters:
+        path:
+          catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAppEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-add-app-entitlements:
+      parameters:
+        path:
+          catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.Create:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-create: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-delete:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-force-run-bundle-automation:
+      parameters:
+        path:
+          request_catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.Get:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-get-bundle-automation:
+      parameters:
+        path:
+          request_catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.List:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsForAccess:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list-entitlements-for-access:
+      parameters:
+        path:
+          catalog_id: "<value>"
+        query: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsPerCatalog:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list-entitlements-per-catalog:
+      parameters:
+        path:
+          catalog_id: "<value>"
+        query: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAccessEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-remove-access-entitlements:
+      parameters:
+        path:
+          catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAppEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-remove-app-entitlements:
+      parameters:
+        path:
+          catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-set-bundle-automation:
+      parameters:
+        path:
+          request_catalog_id: "<value>"
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.Update:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-update:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.directory.v1.DirectoryService.Create:
+    speakeasy-default-c1-api-directory-v1-directory-service-create: {}
+  c1.api.directory.v1.DirectoryService.Delete:
+    speakeasy-default-c1-api-directory-v1-directory-service-delete:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.directory.v1.DirectoryService.Get:
+    speakeasy-default-c1-api-directory-v1-directory-service-get:
+      parameters:
+        path:
+          app_id: "<value>"
+  c1.api.directory.v1.DirectoryService.List:
+    speakeasy-default-c1-api-directory-v1-directory-service-list: {}
+  c1.api.iam.v1.PersonalClientService.Create:
+    speakeasy-default-c1-api-iam-v1-personal-client-service-create: {}
+  c1.api.iam.v1.Roles.Get:
+    speakeasy-default-c1-api-iam-v1-roles-get:
+      parameters:
+        path:
+          role_id: "<value>"
+  c1.api.iam.v1.Roles.List:
+    speakeasy-default-c1-api-iam-v1-roles-list: {}
+  c1.api.iam.v1.Roles.Update:
+    speakeasy-default-c1-api-iam-v1-roles-update:
+      parameters:
+        path:
+          role_id: "<value>"
+  c1.api.policy.v1.Policies.Create:
+    speakeasy-default-c1-api-policy-v1-policies-create: {}
+  c1.api.policy.v1.Policies.Delete:
+    speakeasy-default-c1-api-policy-v1-policies-delete:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.policy.v1.Policies.Get:
+    speakeasy-default-c1-api-policy-v1-policies-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.policy.v1.Policies.List:
+    speakeasy-default-c1-api-policy-v1-policies-list: {}
+  c1.api.policy.v1.Policies.Update:
+    speakeasy-default-c1-api-policy-v1-policies-update:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.policy.v1.PolicyValidate.ValidateCEL:
+    speakeasy-default-c1-api-policy-v1-policy-validate-validate-CEL: {}
+  c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes:
+    speakeasy-default-c1-api-app-v1-app-resource-search-search-app-resource-types: {}
+  c1.api.app.v1.AppSearch.Search:
+    speakeasy-default-c1-api-app-v1-app-search-search: {}
+  c1.api.attribute.v1.AttributeSearch.SearchAttributeValues:
+    speakeasy-default-c1-api-attribute-v1-attribute-search-search-attribute-values: {}
+  c1.api.policy.v1.PolicySearch.Search:
+    speakeasy-default-c1-api-policy-v1-policy-search-search: {}
+  c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-search-service-search-entitlements: {}
+  c1.api.systemlog.v1.ExportsSearchService.Search:
+    speakeasy-default-c1-api-systemlog-v1-exports-search-service-search: {}
+  c1.api.task.v1.TaskSearchService.Search:
+    speakeasy-default-c1-api-task-v1-task-search-service-search: {}
+  c1.api.user.v1.UserSearch.Search:
+    speakeasy-default-c1-api-user-v1-user-search-search: {}
+  c1.api.webhooks.v1.WebhooksSearch.Search:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-search-search: {}
+  c1.api.settings.v1.AWSExternalIDSettings.Get:
+    speakeasy-default-c1-api-settings-v1-AWS-external-ID-settings-get: {}
+  c1.api.settings.v1.SessionSettingsService.Get:
+    speakeasy-default-c1-api-settings-v1-session-settings-service-get: {}
+  c1.api.settings.v1.SessionSettingsService.Update:
+    speakeasy-default-c1-api-settings-v1-session-settings-service-update: {}
+  c1.api.systemlog.v1.SystemLogService.ListEvents:
+    speakeasy-default-c1-api-systemlog-v1-system-log-service-list-events: {}
+  c1.api.systemlog.v1.ExportService.Create:
+    speakeasy-default-c1-api-systemlog-v1-export-service-create: {}
+  c1.api.systemlog.v1.ExportService.Delete:
+    speakeasy-default-c1-api-systemlog-v1-export-service-delete:
+      parameters:
+        path:
+          export_id: "<value>"
+  c1.api.systemlog.v1.ExportService.Get:
+    speakeasy-default-c1-api-systemlog-v1-export-service-get:
+      parameters:
+        path:
+          export_id: "<value>"
+  c1.api.systemlog.v1.ExportService.List:
+    speakeasy-default-c1-api-systemlog-v1-export-service-list: {}
+  c1.api.systemlog.v1.ExportService.ListEvents:
+    speakeasy-default-c1-api-systemlog-v1-export-service-list-events:
+      parameters:
+        path:
+          export_id: "<value>"
+  c1.api.systemlog.v1.ExportService.Update:
+    speakeasy-default-c1-api-systemlog-v1-export-service-update:
+      parameters:
+        path:
+          export_id: "<value>"
+  c1.api.task.v1.TaskService.CreateGrantTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-grant-task: {}
+  c1.api.task.v1.TaskService.CreateOffboardingTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-offboarding-task: {}
+  c1.api.task.v1.TaskService.CreateRevokeTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-revoke-task: {}
+  c1.api.task.v1.TaskService.Get:
+    speakeasy-default-c1-api-task-v1-task-service-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.task.v1.TaskActionsService.Approve:
+    speakeasy-default-c1-api-task-v1-task-actions-service-approve:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.Comment:
+    speakeasy-default-c1-api-task-v1-task-actions-service-comment:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.Deny:
+    speakeasy-default-c1-api-task-v1-task-actions-service-deny:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess:
+    speakeasy-default-c1-api-task-v1-task-actions-service-escalate-to-emergency-access:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.HardReset:
+    speakeasy-default-c1-api-task-v1-task-actions-service-hard-reset:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.Reassign:
+    speakeasy-default-c1-api-task-v1-task-actions-service-reassign:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.task.v1.TaskActionsService.Restart:
+    speakeasy-default-c1-api-task-v1-task-actions-service-restart:
+      parameters:
+        path:
+          task_id: "<value>"
+  c1.api.user.v1.UserService.Get:
+    speakeasy-default-c1-api-user-v1-user-service-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.user.v1.UserService.List:
+    speakeasy-default-c1-api-user-v1-user-service-list: {}
+  c1.api.webhooks.v1.WebhooksService.Create:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-create: {}
+  c1.api.webhooks.v1.WebhooksService.Delete:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-delete:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.webhooks.v1.WebhooksService.Get:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-get:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.webhooks.v1.WebhooksService.List:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-list: {}
+  c1.api.webhooks.v1.WebhooksService.Test:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-test:
+      parameters:
+        path:
+          id: "<id>"
+  c1.api.webhooks.v1.WebhooksService.Update:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-update:
+      parameters:
+        path:
+          id: "<id>"
