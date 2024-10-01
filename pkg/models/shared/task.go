@@ -33,6 +33,7 @@ const (
 	ActionsTaskActionTypeSetInsightsAndRecommendation             Actions = "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION"
 	ActionsTaskActionTypeSetAnalysisID                            Actions = "TASK_ACTION_TYPE_SET_ANALYSIS_ID"
 	ActionsTaskActionTypeRecalculateApproversList                 Actions = "TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST"
+	ActionsTaskActionTypeProcessNow                               Actions = "TASK_ACTION_TYPE_PROCESS_NOW"
 )
 
 func (e Actions) ToPointer() *Actions {
@@ -85,6 +86,8 @@ func (e *Actions) UnmarshalJSON(data []byte) error {
 	case "TASK_ACTION_TYPE_SET_ANALYSIS_ID":
 		fallthrough
 	case "TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST":
+		fallthrough
+	case "TASK_ACTION_TYPE_PROCESS_NOW":
 		*e = Actions(v)
 		return nil
 	default:

@@ -5,6 +5,7 @@ package shared
 // The ListAppUsersForIdentityWithGrantResponse message.
 type ListAppUsersForIdentityWithGrantResponse struct {
 	// The list of app users that may also have grant information.
+	//  Without a grant, only the tenant, app, and app user ID will be set. With a grant, the whole struct is populated
 	Bindings []AppEntitlementUserBinding `json:"bindings,omitempty"`
 }
 

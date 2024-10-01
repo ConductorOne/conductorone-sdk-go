@@ -1,6 +1,8 @@
 # WebhooksSearch
 (*WebhooksSearch*)
 
+## Overview
+
 ### Available Operations
 
 * [Search](#search) - Search
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                        | [shared.WebhooksSearchRequest](../../pkg/models/shared/webhookssearchrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 | `opts`                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                     | :heavy_minus_sign:                                                               | The options for this request.                                                    |
 
-
 ### Response
 
 **[*operations.C1APIWebhooksV1WebhooksSearchSearchResponse](../../pkg/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

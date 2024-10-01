@@ -14,14 +14,14 @@ type Provision struct {
 	//   - multiStep
 	//   - externalTicket
 	//
-	ProvisionPolicy *ProvisionPolicy `json:"provisionPolicy,omitempty"`
+	ProvisionPolicy *ProvisionPolicyInput `json:"provisionPolicy,omitempty"`
 	// ProvisionTarget indicates the specific app, app entitlement, and if known, the app user and grant duration of this provision step
 	ProvisionTarget *ProvisionTarget `json:"provisionTarget,omitempty"`
 	// A field indicating whether this step is assigned.
 	Assigned *bool `json:"assigned,omitempty"`
 }
 
-func (o *Provision) GetProvisionPolicy() *ProvisionPolicy {
+func (o *Provision) GetProvisionPolicy() *ProvisionPolicyInput {
 	if o == nil {
 		return nil
 	}

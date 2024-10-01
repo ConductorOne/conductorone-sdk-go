@@ -1,6 +1,8 @@
 # UserSearch
 (*UserSearch*)
 
+## Overview
+
 ### Available Operations
 
 * [Search](#search) - Search
@@ -48,10 +50,12 @@ func main() {
 | `request`                                                                  | [shared.SearchUsersRequest](../../pkg/models/shared/searchusersrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 | `opts`                                                                     | [][operations.Option](../../pkg/models/operations/option.md)               | :heavy_minus_sign:                                                         | The options for this request.                                              |
 
-
 ### Response
 
 **[*operations.C1APIUserV1UserSearchSearchResponse](../../pkg/models/operations/c1apiuserv1usersearchsearchresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

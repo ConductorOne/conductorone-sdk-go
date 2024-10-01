@@ -1,0 +1,10 @@
+# C1APIAppV1AppEntitlementsDeleteRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `DeleteAppEntitlementRequest`                                                                    | [*shared.DeleteAppEntitlementRequest](../../../pkg/models/shared/deleteappentitlementrequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `AppID`                                                                                          | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `ID`                                                                                             | *string*                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |

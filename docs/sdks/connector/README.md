@@ -1,6 +1,8 @@
 # Connector
 (*Connector*)
 
+## Overview
+
 ### Available Operations
 
 * [Create](#create) - Create
@@ -27,8 +29,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -39,11 +41,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceCreateRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.Create(ctx, request)
+    res, err := s.Connector.Create(ctx, operations.C1APIAppV1ConnectorServiceCreateRequest{
+        AppID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -61,13 +63,15 @@ func main() {
 | `request`                                                                                                                    | [operations.C1APIAppV1ConnectorServiceCreateRequest](../../pkg/models/operations/c1apiappv1connectorservicecreaterequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 | `opts`                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                           | The options for this request.                                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceCreateResponse](../../pkg/models/operations/c1apiappv1connectorservicecreateresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateDelegated
 
@@ -81,8 +85,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -93,11 +97,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.CreateDelegated(ctx, request)
+    res, err := s.Connector.CreateDelegated(ctx, operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest{
+        AppID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -115,13 +119,15 @@ func main() {
 | `request`                                                                                                                                      | [operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest](../../pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
 | `opts`                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                   | :heavy_minus_sign:                                                                                                                             | The options for this request.                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse](../../pkg/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Delete
 
@@ -135,8 +141,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -147,12 +153,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceDeleteRequest{
-        AppID: "<value>",
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.Delete(ctx, request)
+    res, err := s.Connector.Delete(ctx, operations.C1APIAppV1ConnectorServiceDeleteRequest{
+        AppID: "<id>",
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -170,13 +176,15 @@ func main() {
 | `request`                                                                                                                    | [operations.C1APIAppV1ConnectorServiceDeleteRequest](../../pkg/models/operations/c1apiappv1connectorservicedeleterequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 | `opts`                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                           | The options for this request.                                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceDeleteResponse](../../pkg/models/operations/c1apiappv1connectorservicedeleteresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ForceSync
 
@@ -190,8 +198,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -202,12 +210,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceForceSyncRequest{
-        AppID: "<value>",
-        ConnectorID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.ForceSync(ctx, request)
+    res, err := s.Connector.ForceSync(ctx, operations.C1APIAppV1ConnectorServiceForceSyncRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -225,13 +233,15 @@ func main() {
 | `request`                                                                                                                          | [operations.C1APIAppV1ConnectorServiceForceSyncRequest](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
 | `opts`                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                       | :heavy_minus_sign:                                                                                                                 | The options for this request.                                                                                                      |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceForceSyncResponse](../../pkg/models/operations/c1apiappv1connectorserviceforcesyncresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Get
 
@@ -245,8 +255,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -257,12 +267,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceGetRequest{
-        AppID: "<value>",
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.Get(ctx, request)
+    res, err := s.Connector.Get(ctx, operations.C1APIAppV1ConnectorServiceGetRequest{
+        AppID: "<id>",
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -280,13 +290,15 @@ func main() {
 | `request`                                                                                                              | [operations.C1APIAppV1ConnectorServiceGetRequest](../../pkg/models/operations/c1apiappv1connectorservicegetrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 | `opts`                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                           | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceGetResponse](../../pkg/models/operations/c1apiappv1connectorservicegetresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetCredentials
 
@@ -300,8 +312,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -312,13 +324,13 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
-        AppID: "<value>",
-        ConnectorID: "<value>",
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.GetCredentials(ctx, request)
+    res, err := s.Connector.GetCredentials(ctx, operations.C1APIAppV1ConnectorServiceGetCredentialsRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -336,13 +348,15 @@ func main() {
 | `request`                                                                                                                                    | [operations.C1APIAppV1ConnectorServiceGetCredentialsRequest](../../pkg/models/operations/c1apiappv1connectorservicegetcredentialsrequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
 | `opts`                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                 | :heavy_minus_sign:                                                                                                                           | The options for this request.                                                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceGetCredentialsResponse](../../pkg/models/operations/c1apiappv1connectorservicegetcredentialsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## List
 
@@ -356,8 +370,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -368,11 +382,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceListRequest{
-        AppID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.List(ctx, request)
+    res, err := s.Connector.List(ctx, operations.C1APIAppV1ConnectorServiceListRequest{
+        AppID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -390,13 +404,15 @@ func main() {
 | `request`                                                                                                                | [operations.C1APIAppV1ConnectorServiceListRequest](../../pkg/models/operations/c1apiappv1connectorservicelistrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
 | `opts`                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                             | :heavy_minus_sign:                                                                                                       | The options for this request.                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceListResponse](../../pkg/models/operations/c1apiappv1connectorservicelistresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## RevokeCredential
 
@@ -410,8 +426,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -422,13 +438,13 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
-        AppID: "<value>",
-        ConnectorID: "<value>",
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.RevokeCredential(ctx, request)
+    res, err := s.Connector.RevokeCredential(ctx, operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -446,13 +462,15 @@ func main() {
 | `request`                                                                                                                                        | [operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest](../../pkg/models/operations/c1apiappv1connectorservicerevokecredentialrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
 | `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse](../../pkg/models/operations/c1apiappv1connectorservicerevokecredentialresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## RotateCredential
 
@@ -466,8 +484,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -478,12 +496,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
-        AppID: "<value>",
-        ConnectorID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.RotateCredential(ctx, request)
+    res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -501,13 +519,15 @@ func main() {
 | `request`                                                                                                                                        | [operations.C1APIAppV1ConnectorServiceRotateCredentialRequest](../../pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
 | `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceRotateCredentialResponse](../../pkg/models/operations/c1apiappv1connectorservicerotatecredentialresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Update
 
@@ -521,8 +541,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -533,12 +553,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceUpdateRequest{
-        AppID: "<value>",
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.Update(ctx, request)
+    res, err := s.Connector.Update(ctx, operations.C1APIAppV1ConnectorServiceUpdateRequest{
+        AppID: "<id>",
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -556,13 +576,15 @@ func main() {
 | `request`                                                                                                                    | [operations.C1APIAppV1ConnectorServiceUpdateRequest](../../pkg/models/operations/c1apiappv1connectorserviceupdaterequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 | `opts`                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                 | :heavy_minus_sign:                                                                                                           | The options for this request.                                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceUpdateResponse](../../pkg/models/operations/c1apiappv1connectorserviceupdateresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## UpdateDelegated
 
@@ -576,8 +598,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -588,12 +610,12 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
-        ConnectorAppID: "<value>",
-        ConnectorID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.Connector.UpdateDelegated(ctx, request)
+    res, err := s.Connector.UpdateDelegated(ctx, operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest{
+        ConnectorAppID: "<id>",
+        ConnectorID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -611,10 +633,12 @@ func main() {
 | `request`                                                                                                                                      | [operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest](../../pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedrequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
 | `opts`                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                   | :heavy_minus_sign:                                                                                                                             | The options for this request.                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse](../../pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
