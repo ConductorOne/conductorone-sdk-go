@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 60cb5e519776e6ed2510482bbd262655
+  docChecksum: e49541dc90bd8886baad8802e2238349
   docVersion: 0.1.0-alpha
   speakeasyVersion: 1.405.6
   generationVersion: 2.428.1
-  releaseVersion: 1.20.0
-  configChecksum: 2c258c8ff1a2645ea01e8d61bb91da30
+  releaseVersion: 1.21.0
+  configChecksum: c9aabe3bb6067b449c442ab1f6f5d3b1
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -28,6 +28,7 @@ features:
     intellisenseMarkdownSupport: 0.1.0
     nameOverrides: 2.81.2
     nullables: 0.1.0
+    openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.83.0
     sdkHooks: 0.1.0
