@@ -1,6 +1,8 @@
 # User
 (*User*)
 
+## Overview
+
 ### Available Operations
 
 * [Get](#get) - Get
@@ -18,8 +20,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -30,11 +32,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIUserV1UserServiceGetRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.User.Get(ctx, request)
+    res, err := s.User.Get(ctx, operations.C1APIUserV1UserServiceGetRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -52,13 +54,15 @@ func main() {
 | `request`                                                                                                      | [operations.C1APIUserV1UserServiceGetRequest](../../pkg/models/operations/c1apiuserv1userservicegetrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 | `opts`                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                             | The options for this request.                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIUserV1UserServiceGetResponse](../../pkg/models/operations/c1apiuserv1userservicegetresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## List
 
@@ -72,8 +76,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -84,9 +88,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIUserV1UserServiceListRequest{}
+
     ctx := context.Background()
-    res, err := s.User.List(ctx, request)
+    res, err := s.User.List(ctx, operations.C1APIUserV1UserServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -104,10 +108,12 @@ func main() {
 | `request`                                                                                                        | [operations.C1APIUserV1UserServiceListRequest](../../pkg/models/operations/c1apiuserv1userservicelistrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 | `opts`                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                     | :heavy_minus_sign:                                                                                               | The options for this request.                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIUserV1UserServiceListResponse](../../pkg/models/operations/c1apiuserv1userservicelistresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

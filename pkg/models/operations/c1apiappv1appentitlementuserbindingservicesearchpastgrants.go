@@ -10,7 +10,7 @@ import (
 type C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// The SearchPastGrantsRequest message contains a list of results and a nextPageToken if applicable.
+	// The SearchPastGrantsResponse message contains a list of past grants and a nextPageToken if applicable.
 	SearchPastGrantsResponse *shared.SearchPastGrantsResponse
 	// HTTP response status code for this operation
 	StatusCode int

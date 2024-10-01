@@ -1,6 +1,8 @@
 # SystemLog
 (*SystemLog*)
 
+## Overview
+
 ### Available Operations
 
 * [ListEvents](#listevents) - List Events
@@ -51,10 +53,12 @@ func main() {
 | `request`                                                                                                | [shared.SystemLogServiceListEventsRequest](../../pkg/models/shared/systemlogservicelisteventsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `opts`                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                             | :heavy_minus_sign:                                                                                       | The options for this request.                                                                            |
 
-
 ### Response
 
 **[*operations.C1APISystemlogV1SystemLogServiceListEventsResponse](../../pkg/models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |

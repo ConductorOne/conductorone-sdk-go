@@ -1,12 +1,15 @@
 # RequestCatalogManagement
 (*RequestCatalogManagement*)
 
+## Overview
+
 ### Available Operations
 
 * [AddAccessEntitlements](#addaccessentitlements) - Add Access Entitlements
 * [AddAppEntitlements](#addappentitlements) - Add App Entitlements
 * [Create](#create) - Create
 * [Delete](#delete) - Delete
+* [ForceRunBundleAutomation](#forcerunbundleautomation) - Force Run Bundle Automation
 * [Get](#get) - Get
 * [GetBundleAutomation](#getbundleautomation) - Get Bundle Automation
 * [List](#list) - List
@@ -29,8 +32,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -41,11 +44,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.AddAccessEntitlements(ctx, request)
+    res, err := s.RequestCatalogManagement.AddAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -63,13 +66,15 @@ func main() {
 | `request`                                                                                                                                                                                                      | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsrequest.md) | :heavy_check_mark:                                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                                     |
 | `opts`                                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                             | The options for this request.                                                                                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## AddAppEntitlements
 
@@ -83,8 +88,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -95,11 +100,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.AddAppEntitlements(ctx, request)
+    res, err := s.RequestCatalogManagement.AddAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -117,13 +122,15 @@ func main() {
 | `request`                                                                                                                                                                                                | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsrequest.md) | :heavy_check_mark:                                                                                                                                                                                       | The request object to use for the request.                                                                                                                                                               |
 | `opts`                                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                       | The options for this request.                                                                                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Create
 
@@ -168,13 +175,15 @@ func main() {
 | `request`                                                                                                                      | [shared.RequestCatalogManagementServiceCreateRequest](../../pkg/models/shared/requestcatalogmanagementservicecreaterequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
 | `opts`                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                   | :heavy_minus_sign:                                                                                                             | The options for this request.                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Delete
 
@@ -188,8 +197,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -200,11 +209,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.Delete(ctx, request)
+    res, err := s.RequestCatalogManagement.Delete(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -222,13 +231,71 @@ func main() {
 | `request`                                                                                                                                                                        | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequest.md) | :heavy_check_mark:                                                                                                                                                               | The request object to use for the request.                                                                                                                                       |
 | `opts`                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                     | :heavy_minus_sign:                                                                                                                                                               | The options for this request.                                                                                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ForceRunBundleAutomation
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.RequestCatalogManagement.ForceRunBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ForceRunBundleAutomationResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                            | Type                                                                                                                                                                                                                 | Required                                                                                                                                                                                                             | Description                                                                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                   | The context to use for the request.                                                                                                                                                                                  |
+| `request`                                                                                                                                                                                                            | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                                   | The request object to use for the request.                                                                                                                                                                           |
+| `opts`                                                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                   | The options for this request.                                                                                                                                                                                        |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Get
 
@@ -242,8 +309,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -254,11 +321,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.Get(ctx, request)
+    res, err := s.RequestCatalogManagement.Get(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -276,13 +343,15 @@ func main() {
 | `request`                                                                                                                                                                  | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetrequest.md) | :heavy_check_mark:                                                                                                                                                         | The request object to use for the request.                                                                                                                                 |
 | `opts`                                                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                               | :heavy_minus_sign:                                                                                                                                                         | The options for this request.                                                                                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## GetBundleAutomation
 
@@ -296,8 +365,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -308,11 +377,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest{
-        RequestCatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.GetBundleAutomation(ctx, request)
+    res, err := s.RequestCatalogManagement.GetBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -330,13 +399,15 @@ func main() {
 | `request`                                                                                                                                                                                                  | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                         | The request object to use for the request.                                                                                                                                                                 |
 | `opts`                                                                                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                         | The options for this request.                                                                                                                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomationresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## List
 
@@ -350,8 +421,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -362,9 +433,9 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest{}
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.List(ctx, request)
+    res, err := s.RequestCatalogManagement.List(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -382,13 +453,15 @@ func main() {
 | `request`                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistrequest.md) | :heavy_check_mark:                                                                                                                                                           | The request object to use for the request.                                                                                                                                   |
 | `opts`                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                 | :heavy_minus_sign:                                                                                                                                                           | The options for this request.                                                                                                                                                |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListEntitlementsForAccess
 
@@ -402,8 +475,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -414,11 +487,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, request)
+    res, err := s.RequestCatalogManagement.ListEntitlementsForAccess(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -436,13 +509,15 @@ func main() {
 | `request`                                                                                                                                                                                                              | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessrequest.md) | :heavy_check_mark:                                                                                                                                                                                                     | The request object to use for the request.                                                                                                                                                                             |
 | `opts`                                                                                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                                     | The options for this request.                                                                                                                                                                                          |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementsforaccessresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ListEntitlementsPerCatalog
 
@@ -456,8 +531,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -468,11 +543,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, request)
+    res, err := s.RequestCatalogManagement.ListEntitlementsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -490,13 +565,15 @@ func main() {
 | `request`                                                                                                                                                                                                                | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogrequest.md) | :heavy_check_mark:                                                                                                                                                                                                       | The request object to use for the request.                                                                                                                                                                               |
 | `opts`                                                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                       | The options for this request.                                                                                                                                                                                            |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## RemoveAccessEntitlements
 
@@ -510,8 +587,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -522,11 +599,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.RemoveAccessEntitlements(ctx, request)
+    res, err := s.RequestCatalogManagement.RemoveAccessEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -544,13 +621,15 @@ func main() {
 | `request`                                                                                                                                                                                                            | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsrequest.md) | :heavy_check_mark:                                                                                                                                                                                                   | The request object to use for the request.                                                                                                                                                                           |
 | `opts`                                                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                   | The options for this request.                                                                                                                                                                                        |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveaccessentitlementsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## RemoveAppEntitlements
 
@@ -564,8 +643,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -576,11 +655,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
-        CatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.RemoveAppEntitlements(ctx, request)
+    res, err := s.RequestCatalogManagement.RemoveAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest{
+        CatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -598,13 +677,15 @@ func main() {
 | `request`                                                                                                                                                                                                      | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsrequest.md) | :heavy_check_mark:                                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                                     |
 | `opts`                                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                             | The options for this request.                                                                                                                                                                                  |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceremoveappentitlementsresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## SetBundleAutomation
 
@@ -618,8 +699,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -630,11 +711,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest{
-        RequestCatalogID: "<value>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.SetBundleAutomation(ctx, request)
+    res, err := s.RequestCatalogManagement.SetBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -652,13 +733,15 @@ func main() {
 | `request`                                                                                                                                                                                                  | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                         | The request object to use for the request.                                                                                                                                                                 |
 | `opts`                                                                                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                         | The options for this request.                                                                                                                                                                              |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesetbundleautomationresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Update
 
@@ -672,8 +755,8 @@ package main
 import(
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -684,11 +767,11 @@ func main() {
             Oauth: "<YOUR_OAUTH_HERE>",
         }),
     )
-    request := operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest{
-        ID: "<id>",
-    }
+
     ctx := context.Background()
-    res, err := s.RequestCatalogManagement.Update(ctx, request)
+    res, err := s.RequestCatalogManagement.Update(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest{
+        ID: "<id>",
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -706,10 +789,12 @@ func main() {
 | `request`                                                                                                                                                                        | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdaterequest.md) | :heavy_check_mark:                                                                                                                                                               | The request object to use for the request.                                                                                                                                       |
 | `opts`                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                     | :heavy_minus_sign:                                                                                                                                                               | The options for this request.                                                                                                                                                    |
 
-
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md), error**
-| Error Object       | Status Code        | Content Type       |
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4xx-5xx            | */*                |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
