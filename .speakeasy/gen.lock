@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: e49541dc90bd8886baad8802e2238349
+  docChecksum: 762248b20d220de1af274bd778d83c54
   docVersion: 0.1.0-alpha
   speakeasyVersion: 1.405.6
   generationVersion: 2.428.1
-  releaseVersion: 1.21.0
-  configChecksum: c9aabe3bb6067b449c442ab1f6f5d3b1
+  releaseVersion: 1.21.1
+  configChecksum: 9d1b134f07c9b377d2b03388d321c095
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -81,6 +81,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appsupdate.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceget.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
+  - /pkg/models/operations/c1apiappv1appuserservicelist.go
+  - /pkg/models/operations/c1apiappv1appuserservicelistappusercredentials.go
   - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
@@ -216,7 +218,10 @@ generatedFiles:
   - /pkg/models/shared/approvedaction.go
   - /pkg/models/shared/appusagecontrols.go
   - /pkg/models/shared/appuser.go
+  - /pkg/models/shared/appusercredential.go
   - /pkg/models/shared/appuserexpandmask.go
+  - /pkg/models/shared/appuserservicelistcredentialsresponse.go
+  - /pkg/models/shared/appuserservicelistresponse.go
   - /pkg/models/shared/appuserserviceupdaterequest.go
   - /pkg/models/shared/appuserserviceupdateresponse.go
   - /pkg/models/shared/appuserstatus.go
@@ -290,6 +295,7 @@ generatedFiles:
   - /pkg/models/shared/directoryservicegetresponse.go
   - /pkg/models/shared/directoryservicelistresponse.go
   - /pkg/models/shared/directoryview.go
+  - /pkg/models/shared/encrypteddata.go
   - /pkg/models/shared/entitlementownerapproval.go
   - /pkg/models/shared/erroredaction.go
   - /pkg/models/shared/exporter.go
@@ -651,6 +657,10 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -864,8 +874,12 @@ generatedFiles:
   - docs/pkg/models/shared/approvedaction.md
   - docs/pkg/models/shared/appusagecontrols.md
   - docs/pkg/models/shared/appuser.md
+  - docs/pkg/models/shared/appusercredential.md
   - docs/pkg/models/shared/appuserexpandmask.md
   - docs/pkg/models/shared/appuserinput.md
+  - docs/pkg/models/shared/appuserservicelistcredentialsresponse.md
+  - docs/pkg/models/shared/appuserservicelistresponse.md
+  - docs/pkg/models/shared/appuserservicelistresponseexpanded.md
   - docs/pkg/models/shared/appuserserviceupdaterequest.md
   - docs/pkg/models/shared/appuserserviceupdateresponse.md
   - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
@@ -959,6 +973,7 @@ generatedFiles:
   - docs/pkg/models/shared/directoryview.md
   - docs/pkg/models/shared/durationunset.md
   - docs/pkg/models/shared/emergencystatus.md
+  - docs/pkg/models/shared/encrypteddata.md
   - docs/pkg/models/shared/entitlementownerapproval.md
   - docs/pkg/models/shared/erroredaction.md
   - docs/pkg/models/shared/eventtype.md
@@ -1921,3 +1936,14 @@ examples:
       parameters:
         path:
           id: "<id>"
+  c1.api.app.v1.AppUserService.List:
+    speakeasy-default-c1-api-app-v1-app-user-service-list:
+      parameters:
+        path:
+          app_id: "<id>"
+  c1.api.app.v1.AppUserService.ListAppUserCredentials:
+    speakeasy-default-c1-api-app-v1-app-user-service-list-app-user-credentials:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_user_id: "<id>"
