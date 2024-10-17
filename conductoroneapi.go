@@ -16,7 +16,7 @@ import (
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
 	// The ConductorOne API server for the current tenant.
-	"https://{tenantDomain}.logan.d2.ductone.com:2443",
+	"https://{tenantDomain}.conductor.one",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -203,9 +203,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.21.1",
+			SDKVersion:        "1.21.2",
 			GenVersion:        "2.428.1",
-			UserAgent:         "speakeasy-sdk/go 1.21.1 2.428.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:         "speakeasy-sdk/go 1.21.2 2.428.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
