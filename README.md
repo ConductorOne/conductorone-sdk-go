@@ -104,6 +104,12 @@ func main() {
 * [SearchAppEntitlementsForAppUser](docs/sdks/appentitlementsearch/README.md#searchappentitlementsforappuser) - Search App Entitlements For App User
 * [SearchAppEntitlementsWithExpired](docs/sdks/appentitlementsearch/README.md#searchappentitlementswithexpired) - Search App Entitlements With Expired
 
+### [AppEntitlementsProxy](docs/sdks/appentitlementsproxy/README.md)
+
+* [Create](docs/sdks/appentitlementsproxy/README.md#create) - Create
+* [Delete](docs/sdks/appentitlementsproxy/README.md#delete) - Delete
+* [Get](docs/sdks/appentitlementsproxy/README.md#get) - Get
+
 ### [AppEntitlementUserBinding](docs/sdks/appentitlementuserbinding/README.md)
 
 * [ListAppUsersForIdentityWithGrant](docs/sdks/appentitlementuserbinding/README.md#listappusersforidentitywithgrant) - List App Users For Identity With Grant
