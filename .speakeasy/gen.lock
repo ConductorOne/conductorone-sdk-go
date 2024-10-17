@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: e49541dc90bd8886baad8802e2238349
+  docChecksum: f2cc09bc5c202c6f57b7d5277f26396a
   docVersion: 0.1.0-alpha
   speakeasyVersion: 1.405.6
   generationVersion: 2.428.1
-  releaseVersion: 1.21.0
-  configChecksum: c9aabe3bb6067b449c442ab1f6f5d3b1
+  releaseVersion: 1.21.2
+  configChecksum: 72b55aee838916370eee4828eae934a3
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -51,6 +51,9 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appentitlementslistforappresource.go
   - /pkg/models/operations/c1apiappv1appentitlementslistforappuser.go
   - /pkg/models/operations/c1apiappv1appentitlementslistusers.go
+  - /pkg/models/operations/c1apiappv1appentitlementsproxycreate.go
+  - /pkg/models/operations/c1apiappv1appentitlementsproxydelete.go
+  - /pkg/models/operations/c1apiappv1appentitlementsproxyget.go
   - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeed.go
@@ -180,6 +183,9 @@ generatedFiles:
   - /pkg/models/shared/appactionsservicegeneratereportresponse.go
   - /pkg/models/shared/appentitlement.go
   - /pkg/models/shared/appentitlementexpandmask.go
+  - /pkg/models/shared/appentitlementproxy.go
+  - /pkg/models/shared/appentitlementproxyexpandmask.go
+  - /pkg/models/shared/appentitlementproxyview.go
   - /pkg/models/shared/appentitlementref.go
   - /pkg/models/shared/appentitlementreference.go
   - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
@@ -212,6 +218,7 @@ generatedFiles:
   - /pkg/models/shared/appresourcetypeview.go
   - /pkg/models/shared/appresourceview.go
   - /pkg/models/shared/approval.go
+  - /pkg/models/shared/approvalinput.go
   - /pkg/models/shared/approvalinstance.go
   - /pkg/models/shared/approvedaction.go
   - /pkg/models/shared/appusagecontrols.go
@@ -255,6 +262,8 @@ generatedFiles:
   - /pkg/models/shared/connectorserviceupdateresponse.go
   - /pkg/models/shared/connectorstatus.go
   - /pkg/models/shared/connectorview.go
+  - /pkg/models/shared/createappentitlementproxyrequest.go
+  - /pkg/models/shared/createappentitlementproxyresponse.go
   - /pkg/models/shared/createappentitlementrequest.go
   - /pkg/models/shared/createappentitlementresponse.go
   - /pkg/models/shared/createapprequest.go
@@ -268,6 +277,8 @@ generatedFiles:
   - /pkg/models/shared/createpolicyrequest.go
   - /pkg/models/shared/createpolicyresponse.go
   - /pkg/models/shared/delegatedprovision.go
+  - /pkg/models/shared/deleteappentitlementproxyrequest.go
+  - /pkg/models/shared/deleteappentitlementproxyresponse.go
   - /pkg/models/shared/deleteappentitlementrequest.go
   - /pkg/models/shared/deleteappentitlementresponse.go
   - /pkg/models/shared/deleteapprequest.go
@@ -321,6 +332,7 @@ generatedFiles:
   - /pkg/models/shared/forcerunbundleautomationresponse.go
   - /pkg/models/shared/forcesyncrequest.go
   - /pkg/models/shared/forcesyncresponse.go
+  - /pkg/models/shared/getappentitlementproxyresponse.go
   - /pkg/models/shared/getappentitlementresponse.go
   - /pkg/models/shared/getappresponse.go
   - /pkg/models/shared/getappusagecontrolsresponse.go
@@ -343,6 +355,7 @@ generatedFiles:
   - /pkg/models/shared/listpolicyresponse.go
   - /pkg/models/shared/listrolesresponse.go
   - /pkg/models/shared/managerapproval.go
+  - /pkg/models/shared/managerapprovalinput.go
   - /pkg/models/shared/manualprovision.go
   - /pkg/models/shared/marker.go
   - /pkg/models/shared/multistep.go
@@ -369,6 +382,7 @@ generatedFiles:
   - /pkg/models/shared/policypostactions.go
   - /pkg/models/shared/policyref.go
   - /pkg/models/shared/policystep.go
+  - /pkg/models/shared/policystepinput.go
   - /pkg/models/shared/policystepinstance.go
   - /pkg/models/shared/policysteps.go
   - /pkg/models/shared/policystepsinput.go
@@ -387,7 +401,6 @@ generatedFiles:
   - /pkg/models/shared/removeappownerresponse.go
   - /pkg/models/shared/requestcatalog.go
   - /pkg/models/shared/requestcatalogexpandmask.go
-  - /pkg/models/shared/requestcataloginput.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsresponse.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.go
@@ -544,6 +557,7 @@ generatedFiles:
   - appentitlementowners.go
   - appentitlements.go
   - appentitlementsearch.go
+  - appentitlementsproxy.go
   - appentitlementuserbinding.go
   - appowners.go
   - appreport.go
@@ -596,6 +610,12 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementslistresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementslistusersrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxycreaterequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxycreateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxydeleterequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxydeleteresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
@@ -820,6 +840,9 @@ generatedFiles:
   - docs/pkg/models/shared/appentitlementexpandmask.md
   - docs/pkg/models/shared/appentitlementinput.md
   - docs/pkg/models/shared/appentitlementinput1.md
+  - docs/pkg/models/shared/appentitlementproxy.md
+  - docs/pkg/models/shared/appentitlementproxyexpandmask.md
+  - docs/pkg/models/shared/appentitlementproxyview.md
   - docs/pkg/models/shared/appentitlementref.md
   - docs/pkg/models/shared/appentitlementreference.md
   - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
@@ -859,6 +882,7 @@ generatedFiles:
   - docs/pkg/models/shared/appresourcetypeview.md
   - docs/pkg/models/shared/appresourceview.md
   - docs/pkg/models/shared/approval.md
+  - docs/pkg/models/shared/approvalinput.md
   - docs/pkg/models/shared/approvalinstance.md
   - docs/pkg/models/shared/approvalinstancestate.md
   - docs/pkg/models/shared/approvedaction.md
@@ -915,6 +939,9 @@ generatedFiles:
   - docs/pkg/models/shared/connectorstatus.md
   - docs/pkg/models/shared/connectorstatusstatus.md
   - docs/pkg/models/shared/connectorview.md
+  - docs/pkg/models/shared/createappentitlementproxyrequest.md
+  - docs/pkg/models/shared/createappentitlementproxyresponse.md
+  - docs/pkg/models/shared/createappentitlementproxyresponseexpanded.md
   - docs/pkg/models/shared/createappentitlementrequest.md
   - docs/pkg/models/shared/createappentitlementresponse.md
   - docs/pkg/models/shared/createappentitlementresponseexpanded.md
@@ -931,6 +958,8 @@ generatedFiles:
   - docs/pkg/models/shared/createpolicyresponse.md
   - docs/pkg/models/shared/currentstep.md
   - docs/pkg/models/shared/delegatedprovision.md
+  - docs/pkg/models/shared/deleteappentitlementproxyrequest.md
+  - docs/pkg/models/shared/deleteappentitlementproxyresponse.md
   - docs/pkg/models/shared/deleteappentitlementrequest.md
   - docs/pkg/models/shared/deleteappentitlementresponse.md
   - docs/pkg/models/shared/deleteapprequest.md
@@ -959,6 +988,7 @@ generatedFiles:
   - docs/pkg/models/shared/directoryview.md
   - docs/pkg/models/shared/durationunset.md
   - docs/pkg/models/shared/emergencystatus.md
+  - docs/pkg/models/shared/enrollmentbehavior.md
   - docs/pkg/models/shared/entitlementownerapproval.md
   - docs/pkg/models/shared/erroredaction.md
   - docs/pkg/models/shared/eventtype.md
@@ -995,6 +1025,8 @@ generatedFiles:
   - docs/pkg/models/shared/forcesyncrequest.md
   - docs/pkg/models/shared/forcesyncresponse.md
   - docs/pkg/models/shared/format.md
+  - docs/pkg/models/shared/getappentitlementproxyresponse.md
+  - docs/pkg/models/shared/getappentitlementproxyresponseexpanded.md
   - docs/pkg/models/shared/getappentitlementresponse.md
   - docs/pkg/models/shared/getappentitlementresponseexpanded.md
   - docs/pkg/models/shared/getappresponse.md
@@ -1022,6 +1054,7 @@ generatedFiles:
   - docs/pkg/models/shared/listpolicyresponse.md
   - docs/pkg/models/shared/listrolesresponse.md
   - docs/pkg/models/shared/managerapproval.md
+  - docs/pkg/models/shared/managerapprovalinput.md
   - docs/pkg/models/shared/manualprovision.md
   - docs/pkg/models/shared/marker.md
   - docs/pkg/models/shared/membershiptype.md
@@ -1056,6 +1089,7 @@ generatedFiles:
   - docs/pkg/models/shared/policypostactions.md
   - docs/pkg/models/shared/policyref.md
   - docs/pkg/models/shared/policystep.md
+  - docs/pkg/models/shared/policystepinput.md
   - docs/pkg/models/shared/policystepinstance.md
   - docs/pkg/models/shared/policystepinstancestate.md
   - docs/pkg/models/shared/policysteps.md
@@ -1212,6 +1246,7 @@ generatedFiles:
   - docs/pkg/models/shared/tasktyperevokeinput.md
   - docs/pkg/models/shared/tasktyperevokeoutcome.md
   - docs/pkg/models/shared/taskview.md
+  - docs/pkg/models/shared/unenrollmentbehavior.md
   - docs/pkg/models/shared/updateappentitlementrequest.md
   - docs/pkg/models/shared/updateappentitlementresponse.md
   - docs/pkg/models/shared/updateappentitlementresponseexpanded.md
@@ -1276,6 +1311,7 @@ generatedFiles:
   - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appentitlements/README.md
   - docs/sdks/appentitlementsearch/README.md
+  - docs/sdks/appentitlementsproxy/README.md
   - docs/sdks/appentitlementuserbinding/README.md
   - docs/sdks/appowners/README.md
   - docs/sdks/appreport/README.md
@@ -1921,3 +1957,27 @@ examples:
       parameters:
         path:
           id: "<id>"
+  c1.api.app.v1.AppEntitlementsProxy.Create:
+    speakeasy-default-c1-api-app-v1-app-entitlements-proxy-create:
+      parameters:
+        path:
+          src_app_id: "<id>"
+          src_app_entitlement_id: "<id>"
+          dst_app_id: "<id>"
+          dst_app_entitlement_id: "<id>"
+  c1.api.app.v1.AppEntitlementsProxy.Delete:
+    speakeasy-default-c1-api-app-v1-app-entitlements-proxy-delete:
+      parameters:
+        path:
+          src_app_id: "<id>"
+          src_app_entitlement_id: "<id>"
+          dst_app_id: "<id>"
+          dst_app_entitlement_id: "<id>"
+  c1.api.app.v1.AppEntitlementsProxy.Get:
+    speakeasy-default-c1-api-app-v1-app-entitlements-proxy-get:
+      parameters:
+        path:
+          src_app_id: "<id>"
+          src_app_entitlement_id: "<id>"
+          dst_app_id: "<id>"
+          dst_app_entitlement_id: "<id>"

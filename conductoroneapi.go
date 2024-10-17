@@ -86,6 +86,7 @@ type ConductoroneAPI struct {
 	AppResourceOwners         *AppResourceOwners
 	AppUsageControls          *AppUsageControls
 	AppUser                   *AppUser
+	AppEntitlementsProxy      *AppEntitlementsProxy
 	Attributes                *Attributes
 	Auth                      *Auth
 	RequestCatalogManagement  *RequestCatalogManagement
@@ -202,9 +203,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.21.0",
+			SDKVersion:        "1.21.2",
 			GenVersion:        "2.428.1",
-			UserAgent:         "speakeasy-sdk/go 1.21.0 2.428.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:         "speakeasy-sdk/go 1.21.2 2.428.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -258,6 +259,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.AppUsageControls = newAppUsageControls(sdk.sdkConfiguration)
 
 	sdk.AppUser = newAppUser(sdk.sdkConfiguration)
+
+	sdk.AppEntitlementsProxy = newAppEntitlementsProxy(sdk.sdkConfiguration)
 
 	sdk.Attributes = newAttributes(sdk.sdkConfiguration)
 

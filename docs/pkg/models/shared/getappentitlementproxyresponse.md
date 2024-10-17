@@ -1,0 +1,11 @@
+# GetAppEntitlementProxyResponse
+
+The GetAppEntitlementProxyResponse message.
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `AppEntitlementProxyView`                                                                                               | [*shared.AppEntitlementProxyView](../../../pkg/models/shared/appentitlementproxyview.md)                                | :heavy_minus_sign:                                                                                                      | The AppEntitlementProxyView message.                                                                                    |
+| `Expanded`                                                                                                              | [][shared.GetAppEntitlementProxyResponseExpanded](../../../pkg/models/shared/getappentitlementproxyresponseexpanded.md) | :heavy_minus_sign:                                                                                                      | The expanded field.                                                                                                     |
