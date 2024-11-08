@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: f2cc09bc5c202c6f57b7d5277f26396a
+  docChecksum: 2d8d933bcd221e245db99a135be3b1e0
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.419.0
-  generationVersion: 2.438.3
-  releaseVersion: 1.21.3
-  configChecksum: 74c493ae064ff3eb073202fe3cde70fe
+  speakeasyVersion: 1.434.6
+  generationVersion: 2.452.0
+  releaseVersion: 1.22.0
+  configChecksum: e81bf1f93df21b0ddb8eb61f1b384825
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,10 +15,10 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.5.13
+    core: 3.5.15
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.1
-    envVarSecurityUsage: 0.3.1
+    envVarSecurityUsage: 0.3.2
     globalSecurity: 2.82.10
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
@@ -32,6 +32,8 @@ features:
     responseFormat: 0.1.2
     retries: 2.83.0
     sdkHooks: 0.1.0
+    stringNumberFormats: 0.2.1
+    tests: 0.6.0
 generatedFiles:
   - .gitattributes
   - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaults.go
@@ -84,6 +86,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appsupdate.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceget.go
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
+  - /pkg/models/operations/c1apiappv1appuserservicelist.go
+  - /pkg/models/operations/c1apiappv1appuserservicelistappusercredentials.go
   - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
@@ -140,6 +144,7 @@ generatedFiles:
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
   - /pkg/models/operations/c1apisettingsv1awsexternalidsettingsget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceget.go
+  - /pkg/models/operations/c1apisettingsv1sessionsettingsservicetestsourceip.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdate.go
   - /pkg/models/operations/c1apisystemlogv1exportservicecreate.go
   - /pkg/models/operations/c1apisystemlogv1exportservicedelete.go
@@ -223,7 +228,10 @@ generatedFiles:
   - /pkg/models/shared/approvedaction.go
   - /pkg/models/shared/appusagecontrols.go
   - /pkg/models/shared/appuser.go
+  - /pkg/models/shared/appusercredential.go
   - /pkg/models/shared/appuserexpandmask.go
+  - /pkg/models/shared/appuserservicelistcredentialsresponse.go
+  - /pkg/models/shared/appuserservicelistresponse.go
   - /pkg/models/shared/appuserserviceupdaterequest.go
   - /pkg/models/shared/appuserserviceupdateresponse.go
   - /pkg/models/shared/appuserstatus.go
@@ -238,6 +246,7 @@ generatedFiles:
   - /pkg/models/shared/bundleautomationruleentitlement.go
   - /pkg/models/shared/cancelaccessrequestdefaultsrequest.go
   - /pkg/models/shared/cancelledaction.go
+  - /pkg/models/shared/cidrrestriction.go
   - /pkg/models/shared/completedaction.go
   - /pkg/models/shared/conditionsucceeded.go
   - /pkg/models/shared/conditiontimedout.go
@@ -301,6 +310,7 @@ generatedFiles:
   - /pkg/models/shared/directoryservicegetresponse.go
   - /pkg/models/shared/directoryservicelistresponse.go
   - /pkg/models/shared/directoryview.go
+  - /pkg/models/shared/encrypteddata.go
   - /pkg/models/shared/entitlementownerapproval.go
   - /pkg/models/shared/erroredaction.go
   - /pkg/models/shared/exporter.go
@@ -455,6 +465,7 @@ generatedFiles:
   - /pkg/models/shared/setappownersrequest.go
   - /pkg/models/shared/setappownersresponse.go
   - /pkg/models/shared/setbundleautomationrequest.go
+  - /pkg/models/shared/status.go
   - /pkg/models/shared/systemlogservicelisteventsrequest.go
   - /pkg/models/shared/systemlogservicelisteventsresponse.go
   - /pkg/models/shared/task.go
@@ -500,6 +511,8 @@ generatedFiles:
   - /pkg/models/shared/tasktyperevoke.go
   - /pkg/models/shared/tasktyperevokeinput.go
   - /pkg/models/shared/taskview.go
+  - /pkg/models/shared/testsourceiprequest.go
+  - /pkg/models/shared/testsourceipresponse.go
   - /pkg/models/shared/updateappentitlementrequest.go
   - /pkg/models/shared/updateappentitlementresponse.go
   - /pkg/models/shared/updateapprequest.go
@@ -671,6 +684,10 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsservicegetresponse.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -769,6 +786,7 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/pkg/models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
+  - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicetestsourceipresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicecreateresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicedeleterequest.md
@@ -839,7 +857,6 @@ generatedFiles:
   - docs/pkg/models/shared/appentitlementdurationunset.md
   - docs/pkg/models/shared/appentitlementexpandmask.md
   - docs/pkg/models/shared/appentitlementinput.md
-  - docs/pkg/models/shared/appentitlementinput1.md
   - docs/pkg/models/shared/appentitlementproxy.md
   - docs/pkg/models/shared/appentitlementproxyexpandmask.md
   - docs/pkg/models/shared/appentitlementproxyview.md
@@ -888,13 +905,18 @@ generatedFiles:
   - docs/pkg/models/shared/approvedaction.md
   - docs/pkg/models/shared/appusagecontrols.md
   - docs/pkg/models/shared/appuser.md
+  - docs/pkg/models/shared/appusercredential.md
   - docs/pkg/models/shared/appuserexpandmask.md
   - docs/pkg/models/shared/appuserinput.md
+  - docs/pkg/models/shared/appuserservicelistcredentialsresponse.md
+  - docs/pkg/models/shared/appuserservicelistresponse.md
+  - docs/pkg/models/shared/appuserservicelistresponseexpanded.md
   - docs/pkg/models/shared/appuserserviceupdaterequest.md
   - docs/pkg/models/shared/appuserserviceupdateresponse.md
   - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
   - docs/pkg/models/shared/appuserstatus.md
   - docs/pkg/models/shared/appuserstatusinput.md
+  - docs/pkg/models/shared/appuserstatusstatus.md
   - docs/pkg/models/shared/appusertype.md
   - docs/pkg/models/shared/appuserview.md
   - docs/pkg/models/shared/attributetype.md
@@ -907,6 +929,7 @@ generatedFiles:
   - docs/pkg/models/shared/bundleautomationruleentitlement.md
   - docs/pkg/models/shared/cancelaccessrequestdefaultsrequest.md
   - docs/pkg/models/shared/cancelledaction.md
+  - docs/pkg/models/shared/cidrrestriction.md
   - docs/pkg/models/shared/completedaction.md
   - docs/pkg/models/shared/conditionsucceeded.md
   - docs/pkg/models/shared/conditiontimedout.md
@@ -943,6 +966,8 @@ generatedFiles:
   - docs/pkg/models/shared/createappentitlementproxyresponse.md
   - docs/pkg/models/shared/createappentitlementproxyresponseexpanded.md
   - docs/pkg/models/shared/createappentitlementrequest.md
+  - docs/pkg/models/shared/createappentitlementrequestdurationunset.md
+  - docs/pkg/models/shared/createappentitlementrequestpurpose.md
   - docs/pkg/models/shared/createappentitlementresponse.md
   - docs/pkg/models/shared/createappentitlementresponseexpanded.md
   - docs/pkg/models/shared/createapprequest.md
@@ -973,6 +998,7 @@ generatedFiles:
   - docs/pkg/models/shared/deletepolicyrequest.md
   - docs/pkg/models/shared/deletepolicyresponse.md
   - docs/pkg/models/shared/deniedaction.md
+  - docs/pkg/models/shared/details.md
   - docs/pkg/models/shared/directory.md
   - docs/pkg/models/shared/directoryexpandmask.md
   - docs/pkg/models/shared/directoryservicecreaterequest.md
@@ -988,6 +1014,7 @@ generatedFiles:
   - docs/pkg/models/shared/directoryview.md
   - docs/pkg/models/shared/durationunset.md
   - docs/pkg/models/shared/emergencystatus.md
+  - docs/pkg/models/shared/encrypteddata.md
   - docs/pkg/models/shared/enrollmentbehavior.md
   - docs/pkg/models/shared/entitlementownerapproval.md
   - docs/pkg/models/shared/erroredaction.md
@@ -1061,6 +1088,7 @@ generatedFiles:
   - docs/pkg/models/shared/multistep.md
   - docs/pkg/models/shared/oauth2authorizedas.md
   - docs/pkg/models/shared/oauth2authorizedasinput.md
+  - docs/pkg/models/shared/origin.md
   - docs/pkg/models/shared/outcome.md
   - docs/pkg/models/shared/payload.md
   - docs/pkg/models/shared/payloadpolicyapprovalstep.md
@@ -1103,6 +1131,7 @@ generatedFiles:
   - docs/pkg/models/shared/provisionpolicy.md
   - docs/pkg/models/shared/provisionpolicyinput.md
   - docs/pkg/models/shared/provisiontarget.md
+  - docs/pkg/models/shared/purpose.md
   - docs/pkg/models/shared/reassignedaction.md
   - docs/pkg/models/shared/reassignedbyerroraction.md
   - docs/pkg/models/shared/recommendation.md
@@ -1246,7 +1275,10 @@ generatedFiles:
   - docs/pkg/models/shared/tasktyperevokeinput.md
   - docs/pkg/models/shared/tasktyperevokeoutcome.md
   - docs/pkg/models/shared/taskview.md
+  - docs/pkg/models/shared/testsourceiprequest.md
+  - docs/pkg/models/shared/testsourceipresponse.md
   - docs/pkg/models/shared/unenrollmentbehavior.md
+  - docs/pkg/models/shared/unenrollmententitlementbehavior.md
   - docs/pkg/models/shared/updateappentitlementrequest.md
   - docs/pkg/models/shared/updateappentitlementresponse.md
   - docs/pkg/models/shared/updateappentitlementresponseexpanded.md
@@ -1981,3 +2013,15 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+  c1.api.app.v1.AppUserService.List:
+    speakeasy-default-c1-api-app-v1-app-user-service-list:
+      parameters:
+        path:
+          app_id: "<id>"
+  c1.api.app.v1.AppUserService.ListAppUserCredentials:
+    speakeasy-default-c1-api-app-v1-app-user-service-list-app-user-credentials:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_user_id: "<id>"
+  c1.api.settings.v1.SessionSettingsService.TestSourceIP: {}

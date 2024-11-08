@@ -1,6 +1,6 @@
 # UnenrollmentBehavior
 
-The unenrollmentBehavior field.
+Defines how to handle the revocation of the entitlements in the catalog during unenrollment.
 
 
 ## Values

@@ -1,6 +1,6 @@
 # EnrollmentBehavior
 
-The enrollmentBehavior field.
+Defines how to handle the request policies of the entitlements in the catalog during enrollment.
 
 
 ## Values

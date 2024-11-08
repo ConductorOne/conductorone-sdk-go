@@ -17,7 +17,6 @@ ConductorOne API: The ConductorOne API is a HTTP API for managing ConductorOne r
 * [Server Selection](#server-selection)
 * [Custom HTTP Client](#custom-http-client)
 * [Authentication](#authentication)
-* [Special Types](#special-types)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -174,6 +173,8 @@ func main() {
 
 ### [AppUser](docs/sdks/appuser/README.md)
 
+* [List](docs/sdks/appuser/README.md#list) - List
+* [ListAppUserCredentials](docs/sdks/appuser/README.md#listappusercredentials) - List App User Credentials
 * [Update](docs/sdks/appuser/README.md#update) - Update
 
 ### [Attributes](docs/sdks/attributes/README.md)
@@ -289,6 +290,7 @@ func main() {
 ### [SessionSettings](docs/sdks/sessionsettings/README.md)
 
 * [Get](docs/sdks/sessionsettings/README.md#get) - Get
+* [TestSourceIP](docs/sdks/sessionsettings/README.md#testsourceip) - Test Source Ip
 * [Update](docs/sdks/sessionsettings/README.md#update) - Update
 
 ### [SystemLog](docs/sdks/systemlog/README.md)
