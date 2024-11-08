@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// EnrollmentBehavior - The enrollmentBehavior field.
+// EnrollmentBehavior - Defines how to handle the request policies of the entitlements in the catalog during enrollment.
 type EnrollmentBehavior string
 
 const (
@@ -20,7 +20,7 @@ func (e EnrollmentBehavior) ToPointer() *EnrollmentBehavior {
 	return &e
 }
 
-// UnenrollmentBehavior - The unenrollmentBehavior field.
+// UnenrollmentBehavior - Defines how to handle the revocation of the entitlements in the catalog during unenrollment.
 type UnenrollmentBehavior string
 
 const (
@@ -31,6 +31,19 @@ const (
 )
 
 func (e UnenrollmentBehavior) ToPointer() *UnenrollmentBehavior {
+	return &e
+}
+
+// UnenrollmentEntitlementBehavior - Defines how to handle the revoke policies of the entitlements in the catalog during unenrollment.
+type UnenrollmentEntitlementBehavior string
+
+const (
+	UnenrollmentEntitlementBehaviorRequestCatalogUnenrollmentEntitlementBehaviorUnspecified UnenrollmentEntitlementBehavior = "REQUEST_CATALOG_UNENROLLMENT_ENTITLEMENT_BEHAVIOR_UNSPECIFIED"
+	UnenrollmentEntitlementBehaviorRequestCatalogUnenrollmentEntitlementBehaviorBypass      UnenrollmentEntitlementBehavior = "REQUEST_CATALOG_UNENROLLMENT_ENTITLEMENT_BEHAVIOR_BYPASS"
+	UnenrollmentEntitlementBehaviorRequestCatalogUnenrollmentEntitlementBehaviorEnforce     UnenrollmentEntitlementBehavior = "REQUEST_CATALOG_UNENROLLMENT_ENTITLEMENT_BEHAVIOR_ENFORCE"
+)
+
+func (e UnenrollmentEntitlementBehavior) ToPointer() *UnenrollmentEntitlementBehavior {
 	return &e
 }
 
@@ -48,7 +61,7 @@ type RequestCatalog struct {
 	Description *string `json:"description,omitempty"`
 	// The display name of the request catalog.
 	DisplayName *string `json:"displayName,omitempty"`
-	// The enrollmentBehavior field.
+	// Defines how to handle the request policies of the entitlements in the catalog during enrollment.
 	EnrollmentBehavior *EnrollmentBehavior `json:"enrollmentBehavior,omitempty"`
 	// The id of the request catalog.
 	ID *string `json:"id,omitempty"`
@@ -56,9 +69,11 @@ type RequestCatalog struct {
 	Published *bool `json:"published,omitempty"`
 	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
 	RequestBundle *bool `json:"requestBundle,omitempty"`
-	// The unenrollmentBehavior field.
+	// Defines how to handle the revocation of the entitlements in the catalog during unenrollment.
 	UnenrollmentBehavior *UnenrollmentBehavior `json:"unenrollmentBehavior,omitempty"`
-	UpdatedAt            *time.Time            `json:"updatedAt,omitempty"`
+	// Defines how to handle the revoke policies of the entitlements in the catalog during unenrollment.
+	UnenrollmentEntitlementBehavior *UnenrollmentEntitlementBehavior `json:"unenrollmentEntitlementBehavior,omitempty"`
+	UpdatedAt                       *time.Time                       `json:"updatedAt,omitempty"`
 	// If this is true, the access entitlement requirement is ignored.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
 }
@@ -158,6 +173,13 @@ func (o *RequestCatalog) GetUnenrollmentBehavior() *UnenrollmentBehavior {
 	return o.UnenrollmentBehavior
 }
 
+func (o *RequestCatalog) GetUnenrollmentEntitlementBehavior() *UnenrollmentEntitlementBehavior {
+	if o == nil {
+		return nil
+	}
+	return o.UnenrollmentEntitlementBehavior
+}
+
 func (o *RequestCatalog) GetUpdatedAt() *time.Time {
 	if o == nil {
 		return nil
@@ -175,7 +197,7 @@ func (o *RequestCatalog) GetVisibleToEveryone() *bool {
 // RequestCatalogInput - The RequestCatalog is used for managing which entitlements are requestable, and who can request them.
 type RequestCatalogInput struct {
 	// An array of app entitlements that, if the user has, can view the contents of this catalog.
-	AccessEntitlements []AppEntitlementInput1 `json:"accessEntitlements,omitempty"`
+	AccessEntitlements []AppEntitlementInput `json:"accessEntitlements,omitempty"`
 	// The Apps contained in this request catalog.
 	AppIds []string `json:"appIds,omitempty"`
 	// The id of the user this request catalog was created by.
@@ -184,7 +206,7 @@ type RequestCatalogInput struct {
 	Description *string `json:"description,omitempty"`
 	// The display name of the request catalog.
 	DisplayName *string `json:"displayName,omitempty"`
-	// The enrollmentBehavior field.
+	// Defines how to handle the request policies of the entitlements in the catalog during enrollment.
 	EnrollmentBehavior *EnrollmentBehavior `json:"enrollmentBehavior,omitempty"`
 	// The id of the request catalog.
 	ID *string `json:"id,omitempty"`
@@ -192,13 +214,15 @@ type RequestCatalogInput struct {
 	Published *bool `json:"published,omitempty"`
 	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
 	RequestBundle *bool `json:"requestBundle,omitempty"`
-	// The unenrollmentBehavior field.
+	// Defines how to handle the revocation of the entitlements in the catalog during unenrollment.
 	UnenrollmentBehavior *UnenrollmentBehavior `json:"unenrollmentBehavior,omitempty"`
+	// Defines how to handle the revoke policies of the entitlements in the catalog during unenrollment.
+	UnenrollmentEntitlementBehavior *UnenrollmentEntitlementBehavior `json:"unenrollmentEntitlementBehavior,omitempty"`
 	// If this is true, the access entitlement requirement is ignored.
 	VisibleToEveryone *bool `json:"visibleToEveryone,omitempty"`
 }
 
-func (o *RequestCatalogInput) GetAccessEntitlements() []AppEntitlementInput1 {
+func (o *RequestCatalogInput) GetAccessEntitlements() []AppEntitlementInput {
 	if o == nil {
 		return nil
 	}
@@ -266,6 +290,13 @@ func (o *RequestCatalogInput) GetUnenrollmentBehavior() *UnenrollmentBehavior {
 		return nil
 	}
 	return o.UnenrollmentBehavior
+}
+
+func (o *RequestCatalogInput) GetUnenrollmentEntitlementBehavior() *UnenrollmentEntitlementBehavior {
+	if o == nil {
+		return nil
+	}
+	return o.UnenrollmentEntitlementBehavior
 }
 
 func (o *RequestCatalogInput) GetVisibleToEveryone() *bool {

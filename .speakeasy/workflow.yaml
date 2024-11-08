@@ -10,3 +10,7 @@ targets:
     conductorone-go:
         target: go
         source: my-source
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-code-samples
+            blocking: false
