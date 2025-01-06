@@ -83,6 +83,56 @@ func (e SortBy) ToPointer() *SortBy {
 	return &e
 }
 
+type StepApprovalTypes string
+
+const (
+	StepApprovalTypesStepApprovalTypeUnspecified       StepApprovalTypes = "STEP_APPROVAL_TYPE_UNSPECIFIED"
+	StepApprovalTypesStepApprovalTypeUsers             StepApprovalTypes = "STEP_APPROVAL_TYPE_USERS"
+	StepApprovalTypesStepApprovalTypeManager           StepApprovalTypes = "STEP_APPROVAL_TYPE_MANAGER"
+	StepApprovalTypesStepApprovalTypeAppOwners         StepApprovalTypes = "STEP_APPROVAL_TYPE_APP_OWNERS"
+	StepApprovalTypesStepApprovalTypeGroup             StepApprovalTypes = "STEP_APPROVAL_TYPE_GROUP"
+	StepApprovalTypesStepApprovalTypeSelf              StepApprovalTypes = "STEP_APPROVAL_TYPE_SELF"
+	StepApprovalTypesStepApprovalTypeEntitlementOwners StepApprovalTypes = "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS"
+	StepApprovalTypesStepApprovalTypeExpression        StepApprovalTypes = "STEP_APPROVAL_TYPE_EXPRESSION"
+	StepApprovalTypesStepApprovalTypeWebhook           StepApprovalTypes = "STEP_APPROVAL_TYPE_WEBHOOK"
+	StepApprovalTypesStepApprovalTypeResourceOwners    StepApprovalTypes = "STEP_APPROVAL_TYPE_RESOURCE_OWNERS"
+)
+
+func (e StepApprovalTypes) ToPointer() *StepApprovalTypes {
+	return &e
+}
+func (e *StepApprovalTypes) UnmarshalJSON(data []byte) error {
+	var v string
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+	switch v {
+	case "STEP_APPROVAL_TYPE_UNSPECIFIED":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_USERS":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_MANAGER":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_APP_OWNERS":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_GROUP":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_SELF":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_EXPRESSION":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_WEBHOOK":
+		fallthrough
+	case "STEP_APPROVAL_TYPE_RESOURCE_OWNERS":
+		*e = StepApprovalTypes(v)
+		return nil
+	default:
+		return fmt.Errorf("invalid value for StepApprovalTypes: %v", v)
+	}
+}
+
 type TaskStates string
 
 const (
@@ -167,6 +217,8 @@ type TaskSearchRequest struct {
 	Refs []TaskRef `json:"refs,omitempty"`
 	// Sort tasks in a specific order.
 	SortBy *SortBy `json:"sortBy,omitempty"`
+	// Search tasks that have a current policy step of this type
+	StepApprovalTypes []StepApprovalTypes `json:"stepApprovalTypes,omitempty"`
 	// Search tasks where these users are the subject.
 	SubjectIds []string `json:"subjectIds,omitempty"`
 	// Search tasks with this task state.
@@ -380,6 +432,13 @@ func (o *TaskSearchRequest) GetSortBy() *SortBy {
 		return nil
 	}
 	return o.SortBy
+}
+
+func (o *TaskSearchRequest) GetStepApprovalTypes() []StepApprovalTypes {
+	if o == nil {
+		return nil
+	}
+	return o.StepApprovalTypes
 }
 
 func (o *TaskSearchRequest) GetSubjectIds() []string {

@@ -1,0 +1,16 @@
+# WorkflowExecution
+
+The WorkflowExecution message.
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `WorkflowContext`                                                                      | [*shared.WorkflowContext](../../../pkg/models/shared/workflowcontext.md)               | :heavy_minus_sign:                                                                     | The WorkflowContext message.                                                           |
+| `CreatedAt`                                                                            | [*time.Time](https://pkg.go.dev/time#Time)                                             | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `DeletedAt`                                                                            | [*time.Time](https://pkg.go.dev/time#Time)                                             | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `ID`                                                                                   | **int64*                                                                               | :heavy_minus_sign:                                                                     | The id field.                                                                          |
+| `State`                                                                                | [*shared.WorkflowExecutionState](../../../pkg/models/shared/workflowexecutionstate.md) | :heavy_minus_sign:                                                                     | The state field.                                                                       |
+| `UpdatedAt`                                                                            | [*time.Time](https://pkg.go.dev/time#Time)                                             | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `WorkflowTemplateID`                                                                   | **string*                                                                              | :heavy_minus_sign:                                                                     | The workflowTemplateId field.                                                          |

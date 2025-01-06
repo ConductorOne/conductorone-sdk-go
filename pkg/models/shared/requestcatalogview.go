@@ -13,7 +13,7 @@ type RequestCatalogView struct {
 	// JSONPATH expression indicating the location of the User object, that created the request catalog, in the array.
 	CreatedByUserPath *string `json:"createdByUserPath,omitempty"`
 	// Total number of the members of the catalog
-	MemberCount *int64 `integer:"string" json:"memberCount,omitempty"`
+	MemberCount *string `integer:"string" json:"memberCount,omitempty"`
 }
 
 func (o *RequestCatalogView) GetRequestCatalog() *RequestCatalog {
@@ -44,7 +44,7 @@ func (o *RequestCatalogView) GetCreatedByUserPath() *string {
 	return o.CreatedByUserPath
 }
 
-func (o *RequestCatalogView) GetMemberCount() *int64 {
+func (o *RequestCatalogView) GetMemberCount() *string {
 	if o == nil {
 		return nil
 	}

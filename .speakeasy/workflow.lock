@@ -1,27 +1,27 @@
-speakeasyVersion: 1.434.6
+speakeasyVersion: 1.462.2
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:9107729de1d98b05c1908d06b39ee83157ad63bc739c90140c47e64b67ff398a
-        sourceBlobDigest: sha256:835cc6d63c1d30ddb3b65d86e2dc15b7eeae233613dac92e1692fed8d4147241
+        sourceRevisionDigest: sha256:3e6749ec08728616c0a373aa4221352cad86223a4bda6d3b1cb3c9aef866b86f
+        sourceBlobDigest: sha256:1d4cc20448e8d77908b1a5e7076a4759f77233e5dc8b3d96e321abc05c4bfd69
         tags:
             - latest
-            - main
+            - 0.1.0-alpha
 targets:
     conductorone-go:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:9107729de1d98b05c1908d06b39ee83157ad63bc739c90140c47e64b67ff398a
-        sourceBlobDigest: sha256:835cc6d63c1d30ddb3b65d86e2dc15b7eeae233613dac92e1692fed8d4147241
-        codeSamplesNamespace: my-source-code-samples
-        codeSamplesRevisionDigest: sha256:56a908506ef52bbd39bc49f46d29e751d4c11110bf52dbe5835e9c92ec9b5aee
+        sourceRevisionDigest: sha256:3e6749ec08728616c0a373aa4221352cad86223a4bda6d3b1cb3c9aef866b86f
+        sourceBlobDigest: sha256:1d4cc20448e8d77908b1a5e7076a4759f77233e5dc8b3d96e321abc05c4bfd69
+        codeSamplesNamespace: my-source-go-code-samples
+        codeSamplesRevisionDigest: sha256:596d47c5789063f445afb43992f3fc2653e5c8bb7d008c81015576a85d4ce74f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         my-source:
             inputs:
-                - location: https://insulator.conductor.one/api/v1/openapi.yaml
+                - location: https://c1dev.jirwin.d2.ductone.com:2443/api/v1/openapi.yaml
             registry:
                 location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source
     targets:
@@ -30,5 +30,5 @@ workflow:
             source: my-source
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-code-samples
+                    location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-go-code-samples
                 blocking: false

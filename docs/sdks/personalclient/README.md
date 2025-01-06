@@ -21,13 +21,15 @@ Create creates a new PersonalClient object for the current User.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -35,7 +37,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.PersonalClient.Create(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -74,14 +75,16 @@ Invokes the c1.api.iam.v1.PersonalClientService.Delete method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -89,7 +92,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.PersonalClient.Delete(ctx, operations.C1APIIamV1PersonalClientServiceDeleteRequest{
         ID: "<id>",
     })
@@ -130,14 +132,16 @@ Invokes the c1.api.iam.v1.PersonalClientService.Get method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -145,7 +149,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.PersonalClient.Get(ctx, operations.C1APIIamV1PersonalClientServiceGetRequest{
         ID: "<id>",
     })
@@ -186,13 +189,15 @@ Invokes the c1.api.iam.v1.PersonalClientService.List method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -200,7 +205,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.PersonalClient.List(ctx)
     if err != nil {
         log.Fatal(err)
@@ -238,14 +242,16 @@ Invokes the c1.api.iam.v1.PersonalClientService.Update method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -253,7 +259,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.PersonalClient.Update(ctx, operations.C1APIIamV1PersonalClientServiceUpdateRequest{
         ID: "<id>",
     })

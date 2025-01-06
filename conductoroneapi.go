@@ -16,7 +16,7 @@ import (
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
 	// The ConductorOne API server for the current tenant.
-	"https://{tenantDomain}.conductor.one",
+	"https://{tenantDomain}.jirwin.d2.ductone.com:2443",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -113,6 +113,10 @@ type ConductoroneAPI struct {
 	TaskActions               *TaskActions
 	User                      *User
 	Webhooks                  *Webhooks
+	WorkflowExecution         *WorkflowExecution
+	WorkflowExecutionSearch   *WorkflowExecutionSearch
+	WorkflowExecutionActions  *WorkflowExecutionActions
+	Workflow                  *Workflow
 
 	sdkConfiguration sdkConfiguration
 }
@@ -203,9 +207,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.22.0",
-			GenVersion:        "2.452.0",
-			UserAgent:         "speakeasy-sdk/go 1.22.0 2.452.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			SDKVersion:        "1.23.3",
+			GenVersion:        "2.486.1",
+			UserAgent:         "speakeasy-sdk/go 1.23.3 2.486.1 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -313,6 +317,14 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.User = newUser(sdk.sdkConfiguration)
 
 	sdk.Webhooks = newWebhooks(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecution = newWorkflowExecution(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecutionSearch = newWorkflowExecutionSearch(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecutionActions = newWorkflowExecutionActions(sdk.sdkConfiguration)
+
+	sdk.Workflow = newWorkflow(sdk.sdkConfiguration)
 
 	return sdk
 }

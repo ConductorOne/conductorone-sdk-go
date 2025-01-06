@@ -19,14 +19,16 @@ Returns a list of app users for the identity in the app. If that app user also h
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -34,7 +36,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementUserBinding.ListAppUsersForIdentityWithGrant(ctx, operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest{
         AppEntitlementID: "<id>",
         AppID: "<id>",
@@ -77,13 +78,15 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed metho
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -91,7 +94,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementUserBinding.SearchGrantFeed(ctx)
     if err != nil {
         log.Fatal(err)
@@ -129,13 +131,15 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants meth
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -143,7 +147,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementUserBinding.SearchPastGrants(ctx)
     if err != nil {
         log.Fatal(err)

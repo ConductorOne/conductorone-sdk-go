@@ -22,13 +22,15 @@ Create a system log export.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -36,7 +38,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.Create(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -75,14 +76,16 @@ Delete a policy by ID.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -90,7 +93,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.Delete(ctx, operations.C1APISystemlogV1ExportServiceDeleteRequest{
         ExportID: "<id>",
     })
@@ -131,14 +133,16 @@ Get a system log export by ID
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -146,7 +150,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.Get(ctx, operations.C1APISystemlogV1ExportServiceGetRequest{
         ExportID: "<id>",
     })
@@ -187,14 +190,16 @@ List Exports.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -202,7 +207,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.List(ctx, operations.C1APISystemlogV1ExportServiceListRequest{})
     if err != nil {
         log.Fatal(err)
@@ -241,14 +245,16 @@ Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -256,7 +262,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.ListEvents(ctx, operations.C1APISystemlogV1ExportServiceListEventsRequest{
         ExportID: "<id>",
     })
@@ -297,14 +302,16 @@ Update a system log export by providing a policy object and an update mask.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -312,7 +319,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Export.Update(ctx, operations.C1APISystemlogV1ExportServiceUpdateRequest{
         ExportID: "<id>",
     })

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 2d8d933bcd221e245db99a135be3b1e0
+  docChecksum: b7b597a30191d34396cd3ec2d5e421d7
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.434.6
-  generationVersion: 2.452.0
-  releaseVersion: 1.22.0
-  configChecksum: e81bf1f93df21b0ddb8eb61f1b384825
+  speakeasyVersion: 1.462.2
+  generationVersion: 2.486.1
+  releaseVersion: 1.23.3
+  configChecksum: d298c4f51a8232e62a4664d9bb6ac9b9
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,9 +15,9 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.5.15
+    core: 3.6.2
     defaultEnabledRetries: 0.2.0
-    deprecations: 2.81.1
+    deprecations: 2.81.2
     envVarSecurityUsage: 0.3.2
     globalSecurity: 2.82.10
     globalSecurityCallbacks: 0.1.0
@@ -30,10 +30,9 @@ features:
     nullables: 0.1.0
     openEnums: 0.1.0
     responseFormat: 0.1.2
-    retries: 2.83.0
+    retries: 2.83.1
     sdkHooks: 0.1.0
     stringNumberFormats: 0.2.1
-    tests: 0.6.0
 generatedFiles:
   - .gitattributes
   - /pkg/models/operations/c1apiappv1appaccessrequestsdefaultsservicecancelappaccessrequestsdefaults.go
@@ -43,6 +42,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appentitlementownerslist.go
   - /pkg/models/operations/c1apiappv1appentitlementownersremove.go
   - /pkg/models/operations/c1apiappv1appentitlementownersset.go
+  - /pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembers.go
   - /pkg/models/operations/c1apiappv1appentitlementscreate.go
   - /pkg/models/operations/c1apiappv1appentitlementsdelete.go
   - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
@@ -56,6 +56,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appentitlementsproxycreate.go
   - /pkg/models/operations/c1apiappv1appentitlementsproxydelete.go
   - /pkg/models/operations/c1apiappv1appentitlementsproxyget.go
+  - /pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembership.go
   - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeed.go
@@ -88,6 +89,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appusagecontrolsserviceupdate.go
   - /pkg/models/operations/c1apiappv1appuserservicelist.go
   - /pkg/models/operations/c1apiappv1appuserservicelistappusercredentials.go
+  - /pkg/models/operations/c1apiappv1appuserservicelistappusersforuser.go
+  - /pkg/models/operations/c1apiappv1appuserservicesearch.go
   - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
@@ -159,6 +162,7 @@ generatedFiles:
   - /pkg/models/operations/c1apitaskv1taskactionsservicedeny.go
   - /pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccess.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicehardreset.go
+  - /pkg/models/operations/c1apitaskv1taskactionsserviceprocessnow.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicereassign.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
   - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
@@ -176,12 +180,23 @@ generatedFiles:
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicelist.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicetest.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksserviceupdate.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionactionsserviceterminateworkflow.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionsearchservicesearchworkflowexecutions.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicegetworkflowexecution.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicelistworkflowexecutions.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicecreateworkflow.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflow.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowserviceexecuteworkflow.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicegetworkflow.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicelistworkflows.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowserviceupdateworkflow.go
   - /pkg/models/shared/accept.go
   - /pkg/models/shared/acceptinstance.go
   - /pkg/models/shared/addappentitlementownerrequest.go
   - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappownerrequest.go
   - /pkg/models/shared/addappownerresponse.go
+  - /pkg/models/shared/addmanuallymanagedusersrequest.go
   - /pkg/models/shared/app.go
   - /pkg/models/shared/appaccessrequestdefaults.go
   - /pkg/models/shared/appactionsservicegeneratereportrequest.go
@@ -230,10 +245,14 @@ generatedFiles:
   - /pkg/models/shared/appuser.go
   - /pkg/models/shared/appusercredential.go
   - /pkg/models/shared/appuserexpandmask.go
+  - /pkg/models/shared/appuserref.go
   - /pkg/models/shared/appuserservicelistcredentialsresponse.go
   - /pkg/models/shared/appuserservicelistresponse.go
+  - /pkg/models/shared/appuserservicesearchrequest.go
+  - /pkg/models/shared/appuserservicesearchresponse.go
   - /pkg/models/shared/appuserserviceupdaterequest.go
   - /pkg/models/shared/appuserserviceupdateresponse.go
+  - /pkg/models/shared/appusersforuserservicelistresponse.go
   - /pkg/models/shared/appuserstatus.go
   - /pkg/models/shared/appuserstatusinput.go
   - /pkg/models/shared/appuserview.go
@@ -271,6 +290,7 @@ generatedFiles:
   - /pkg/models/shared/connectorserviceupdateresponse.go
   - /pkg/models/shared/connectorstatus.go
   - /pkg/models/shared/connectorview.go
+  - /pkg/models/shared/createaccessreview.go
   - /pkg/models/shared/createappentitlementproxyrequest.go
   - /pkg/models/shared/createappentitlementproxyresponse.go
   - /pkg/models/shared/createappentitlementrequest.go
@@ -285,6 +305,8 @@ generatedFiles:
   - /pkg/models/shared/createmanuallymanagedresourcetyperesponse.go
   - /pkg/models/shared/createpolicyrequest.go
   - /pkg/models/shared/createpolicyresponse.go
+  - /pkg/models/shared/createworkflowrequest.go
+  - /pkg/models/shared/createworkflowresponse.go
   - /pkg/models/shared/delegatedprovision.go
   - /pkg/models/shared/deleteappentitlementproxyrequest.go
   - /pkg/models/shared/deleteappentitlementproxyresponse.go
@@ -300,6 +322,8 @@ generatedFiles:
   - /pkg/models/shared/deletemanuallymanagedresourcetyperesponse.go
   - /pkg/models/shared/deletepolicyrequest.go
   - /pkg/models/shared/deletepolicyresponse.go
+  - /pkg/models/shared/deleteworkflowrequest.go
+  - /pkg/models/shared/deleteworkflowresponse.go
   - /pkg/models/shared/deniedaction.go
   - /pkg/models/shared/directory.go
   - /pkg/models/shared/directoryexpandmask.go
@@ -313,6 +337,8 @@ generatedFiles:
   - /pkg/models/shared/encrypteddata.go
   - /pkg/models/shared/entitlementownerapproval.go
   - /pkg/models/shared/erroredaction.go
+  - /pkg/models/shared/executeworkflowrequest.go
+  - /pkg/models/shared/executeworkflowresponse.go
   - /pkg/models/shared/exporter.go
   - /pkg/models/shared/exporterinput.go
   - /pkg/models/shared/exporterref.go
@@ -351,6 +377,8 @@ generatedFiles:
   - /pkg/models/shared/getpolicyresponse.go
   - /pkg/models/shared/getrolesresponse.go
   - /pkg/models/shared/getsessionsettingsresponse.go
+  - /pkg/models/shared/getworkflowexecutionresponse.go
+  - /pkg/models/shared/getworkflowresponse.go
   - /pkg/models/shared/grantreason.go
   - /pkg/models/shared/introspectresponse.go
   - /pkg/models/shared/listappentitlementownersresponse.go
@@ -364,9 +392,13 @@ generatedFiles:
   - /pkg/models/shared/listattributevaluesresponse.go
   - /pkg/models/shared/listpolicyresponse.go
   - /pkg/models/shared/listrolesresponse.go
+  - /pkg/models/shared/listworkflowexecutionsresponse.go
+  - /pkg/models/shared/listworkflowsresponse.go
   - /pkg/models/shared/managerapproval.go
   - /pkg/models/shared/managerapprovalinput.go
+  - /pkg/models/shared/manuallymanagedusersresponse.go
   - /pkg/models/shared/manualprovision.go
+  - /pkg/models/shared/manualworkflowtrigger.go
   - /pkg/models/shared/marker.go
   - /pkg/models/shared/multistep.go
   - /pkg/models/shared/oauth2authorizedas.go
@@ -409,6 +441,8 @@ generatedFiles:
   - /pkg/models/shared/removeappentitlementownerresponse.go
   - /pkg/models/shared/removeappownerrequest.go
   - /pkg/models/shared/removeappownerresponse.go
+  - /pkg/models/shared/removeentitlementmembershiprequest.go
+  - /pkg/models/shared/removeentitlementmembershipresponse.go
   - /pkg/models/shared/requestcatalog.go
   - /pkg/models/shared/requestcatalogexpandmask.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
@@ -457,6 +491,8 @@ generatedFiles:
   - /pkg/models/shared/searchpoliciesrequest.go
   - /pkg/models/shared/searchusersrequest.go
   - /pkg/models/shared/searchusersresponse.go
+  - /pkg/models/shared/searchworkflowexecutionsrequest.go
+  - /pkg/models/shared/searchworkflowexecutionsresponse.go
   - /pkg/models/shared/security.go
   - /pkg/models/shared/selfapproval.go
   - /pkg/models/shared/sessionsettings.go
@@ -478,6 +514,8 @@ generatedFiles:
   - /pkg/models/shared/taskactionsserviceescalatetoemergencyaccessrequest.go
   - /pkg/models/shared/taskactionsservicehardresetrequest.go
   - /pkg/models/shared/taskactionsservicehardresetresponse.go
+  - /pkg/models/shared/taskactionsserviceprocessnowrequest.go
+  - /pkg/models/shared/taskactionsserviceprocessnowresponse.go
   - /pkg/models/shared/taskactionsservicereassignrequest.go
   - /pkg/models/shared/taskactionsservicereassignresponse.go
   - /pkg/models/shared/taskactionsservicerestartrequest.go
@@ -511,6 +549,8 @@ generatedFiles:
   - /pkg/models/shared/tasktyperevoke.go
   - /pkg/models/shared/tasktyperevokeinput.go
   - /pkg/models/shared/taskview.go
+  - /pkg/models/shared/terminateworkflowrequest.go
+  - /pkg/models/shared/terminateworkflowresponse.go
   - /pkg/models/shared/testsourceiprequest.go
   - /pkg/models/shared/testsourceipresponse.go
   - /pkg/models/shared/updateappentitlementrequest.go
@@ -527,10 +567,13 @@ generatedFiles:
   - /pkg/models/shared/updaterolesresponse.go
   - /pkg/models/shared/updatesessionsettingsrequest.go
   - /pkg/models/shared/updatesessionsettingsresponse.go
+  - /pkg/models/shared/updateworkflowrequest.go
+  - /pkg/models/shared/updateworkflowresponse.go
   - /pkg/models/shared/user.go
   - /pkg/models/shared/userapproval.go
   - /pkg/models/shared/userattributemappingsource.go
   - /pkg/models/shared/userexpandmask.go
+  - /pkg/models/shared/userprofilechangetrigger.go
   - /pkg/models/shared/userref.go
   - /pkg/models/shared/userservicegetresponse.go
   - /pkg/models/shared/userservicelistresponse.go
@@ -565,6 +608,12 @@ generatedFiles:
   - /pkg/models/shared/webhooksservicetestresponse.go
   - /pkg/models/shared/webhooksserviceupdaterequest.go
   - /pkg/models/shared/webhooksserviceupdateresponse.go
+  - /pkg/models/shared/workflow.go
+  - /pkg/models/shared/workflowcontext.go
+  - /pkg/models/shared/workflowexecution.go
+  - /pkg/models/shared/workflowinput.go
+  - /pkg/models/shared/workflowstep.go
+  - /pkg/models/shared/workflowtrigger.go
   - CONTRIBUTING.md
   - appaccessrequestsdefaults.go
   - appentitlementowners.go
@@ -604,6 +653,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementownersremoveresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementscreaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementscreateresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsdeleterequest.md
@@ -629,6 +680,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxydeleteresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershiprequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershipresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
@@ -686,8 +739,11 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appusagecontrolsserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsrequest.md
   - docs/pkg/models/operations/c1apiappv1appuserservicelistappusercredentialsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusersforuserrequest.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicelistappusersforuserresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserservicelistrequest.md
   - docs/pkg/models/operations/c1apiappv1appuserservicelistresponse.md
+  - docs/pkg/models/operations/c1apiappv1appuserservicesearchresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
@@ -811,6 +867,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccessresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicehardresetrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicehardresetresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceprocessnowrequest.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceprocessnowresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicereassignrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicereassignresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicerestartrequest.md
@@ -838,6 +896,22 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksservicetestresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhooksserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionactionsserviceterminateworkflowrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionactionsserviceterminateworkflowresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionsearchservicesearchworkflowexecutionsresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicegetworkflowexecutionrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicegetworkflowexecutionresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicelistworkflowexecutionsresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicecreateworkflowresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflowrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflowresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowserviceexecuteworkflowrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowserviceexecuteworkflowresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicegetworkflowrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicegetworkflowresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicelistworkflowsresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowserviceupdateworkflowrequest.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowserviceupdateworkflowresponse.md
   - docs/pkg/models/operations/option.md
   - docs/pkg/models/shared/accept.md
   - docs/pkg/models/shared/acceptinstance.md
@@ -847,6 +921,7 @@ generatedFiles:
   - docs/pkg/models/shared/addappentitlementownerresponse.md
   - docs/pkg/models/shared/addappownerrequest.md
   - docs/pkg/models/shared/addappownerresponse.md
+  - docs/pkg/models/shared/addmanuallymanagedusersrequest.md
   - docs/pkg/models/shared/annotations.md
   - docs/pkg/models/shared/app.md
   - docs/pkg/models/shared/appaccessrequestdefaults.md
@@ -908,16 +983,24 @@ generatedFiles:
   - docs/pkg/models/shared/appusercredential.md
   - docs/pkg/models/shared/appuserexpandmask.md
   - docs/pkg/models/shared/appuserinput.md
+  - docs/pkg/models/shared/appuserref.md
   - docs/pkg/models/shared/appuserservicelistcredentialsresponse.md
   - docs/pkg/models/shared/appuserservicelistresponse.md
   - docs/pkg/models/shared/appuserservicelistresponseexpanded.md
+  - docs/pkg/models/shared/appuserservicesearchrequest.md
+  - docs/pkg/models/shared/appuserservicesearchresponse.md
+  - docs/pkg/models/shared/appuserservicesearchresponseexpanded.md
   - docs/pkg/models/shared/appuserserviceupdaterequest.md
   - docs/pkg/models/shared/appuserserviceupdateresponse.md
   - docs/pkg/models/shared/appuserserviceupdateresponseexpanded.md
+  - docs/pkg/models/shared/appusersforuserservicelistresponse.md
+  - docs/pkg/models/shared/appusersforuserservicelistresponseexpanded.md
   - docs/pkg/models/shared/appuserstatus.md
+  - docs/pkg/models/shared/appuserstatuses.md
   - docs/pkg/models/shared/appuserstatusinput.md
   - docs/pkg/models/shared/appuserstatusstatus.md
   - docs/pkg/models/shared/appusertype.md
+  - docs/pkg/models/shared/appusertypes.md
   - docs/pkg/models/shared/appuserview.md
   - docs/pkg/models/shared/attributetype.md
   - docs/pkg/models/shared/attributevalue.md
@@ -962,6 +1045,7 @@ generatedFiles:
   - docs/pkg/models/shared/connectorstatus.md
   - docs/pkg/models/shared/connectorstatusstatus.md
   - docs/pkg/models/shared/connectorview.md
+  - docs/pkg/models/shared/createaccessreview.md
   - docs/pkg/models/shared/createappentitlementproxyrequest.md
   - docs/pkg/models/shared/createappentitlementproxyresponse.md
   - docs/pkg/models/shared/createappentitlementproxyresponseexpanded.md
@@ -981,6 +1065,8 @@ generatedFiles:
   - docs/pkg/models/shared/createmanuallymanagedresourcetyperesponseexpanded.md
   - docs/pkg/models/shared/createpolicyrequest.md
   - docs/pkg/models/shared/createpolicyresponse.md
+  - docs/pkg/models/shared/createworkflowrequest.md
+  - docs/pkg/models/shared/createworkflowresponse.md
   - docs/pkg/models/shared/currentstep.md
   - docs/pkg/models/shared/delegatedprovision.md
   - docs/pkg/models/shared/deleteappentitlementproxyrequest.md
@@ -997,6 +1083,8 @@ generatedFiles:
   - docs/pkg/models/shared/deletemanuallymanagedresourcetyperesponse.md
   - docs/pkg/models/shared/deletepolicyrequest.md
   - docs/pkg/models/shared/deletepolicyresponse.md
+  - docs/pkg/models/shared/deleteworkflowrequest.md
+  - docs/pkg/models/shared/deleteworkflowresponse.md
   - docs/pkg/models/shared/deniedaction.md
   - docs/pkg/models/shared/details.md
   - docs/pkg/models/shared/directory.md
@@ -1019,6 +1107,8 @@ generatedFiles:
   - docs/pkg/models/shared/entitlementownerapproval.md
   - docs/pkg/models/shared/erroredaction.md
   - docs/pkg/models/shared/eventtype.md
+  - docs/pkg/models/shared/executeworkflowrequest.md
+  - docs/pkg/models/shared/executeworkflowresponse.md
   - docs/pkg/models/shared/expanded.md
   - docs/pkg/models/shared/exporter.md
   - docs/pkg/models/shared/exporterinput.md
@@ -1063,6 +1153,8 @@ generatedFiles:
   - docs/pkg/models/shared/getpolicyresponse.md
   - docs/pkg/models/shared/getrolesresponse.md
   - docs/pkg/models/shared/getsessionsettingsresponse.md
+  - docs/pkg/models/shared/getworkflowexecutionresponse.md
+  - docs/pkg/models/shared/getworkflowresponse.md
   - docs/pkg/models/shared/grantedstatus.md
   - docs/pkg/models/shared/grantreason.md
   - docs/pkg/models/shared/identitymatching.md
@@ -1080,9 +1172,13 @@ generatedFiles:
   - docs/pkg/models/shared/listattributevaluesresponse.md
   - docs/pkg/models/shared/listpolicyresponse.md
   - docs/pkg/models/shared/listrolesresponse.md
+  - docs/pkg/models/shared/listworkflowexecutionsresponse.md
+  - docs/pkg/models/shared/listworkflowsresponse.md
   - docs/pkg/models/shared/managerapproval.md
   - docs/pkg/models/shared/managerapprovalinput.md
+  - docs/pkg/models/shared/manuallymanagedusersresponse.md
   - docs/pkg/models/shared/manualprovision.md
+  - docs/pkg/models/shared/manualworkflowtrigger.md
   - docs/pkg/models/shared/marker.md
   - docs/pkg/models/shared/membershiptype.md
   - docs/pkg/models/shared/multistep.md
@@ -1142,6 +1238,8 @@ generatedFiles:
   - docs/pkg/models/shared/removeappentitlementownerresponse.md
   - docs/pkg/models/shared/removeappownerrequest.md
   - docs/pkg/models/shared/removeappownerresponse.md
+  - docs/pkg/models/shared/removeentitlementmembershiprequest.md
+  - docs/pkg/models/shared/removeentitlementmembershipresponse.md
   - docs/pkg/models/shared/requestcatalog.md
   - docs/pkg/models/shared/requestcatalogexpandmask.md
   - docs/pkg/models/shared/requestcataloginput.md
@@ -1200,6 +1298,8 @@ generatedFiles:
   - docs/pkg/models/shared/searchusersrequest.md
   - docs/pkg/models/shared/searchusersresponse.md
   - docs/pkg/models/shared/searchusersresponseexpanded.md
+  - docs/pkg/models/shared/searchworkflowexecutionsrequest.md
+  - docs/pkg/models/shared/searchworkflowexecutionsresponse.md
   - docs/pkg/models/shared/security.md
   - docs/pkg/models/shared/selfapproval.md
   - docs/pkg/models/shared/sessionsettings.md
@@ -1213,6 +1313,7 @@ generatedFiles:
   - docs/pkg/models/shared/sortdirection.md
   - docs/pkg/models/shared/state.md
   - docs/pkg/models/shared/status.md
+  - docs/pkg/models/shared/stepapprovaltypes.md
   - docs/pkg/models/shared/systemlogservicelisteventsrequest.md
   - docs/pkg/models/shared/systemlogservicelisteventsresponse.md
   - docs/pkg/models/shared/task.md
@@ -1229,6 +1330,9 @@ generatedFiles:
   - docs/pkg/models/shared/taskactionsservicehardresetrequest.md
   - docs/pkg/models/shared/taskactionsservicehardresetresponse.md
   - docs/pkg/models/shared/taskactionsservicehardresetresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsserviceprocessnowrequest.md
+  - docs/pkg/models/shared/taskactionsserviceprocessnowresponse.md
+  - docs/pkg/models/shared/taskactionsserviceprocessnowresponseexpanded.md
   - docs/pkg/models/shared/taskactionsservicereassignrequest.md
   - docs/pkg/models/shared/taskactionsservicereassignresponse.md
   - docs/pkg/models/shared/taskactionsservicereassignresponseexpanded.md
@@ -1275,6 +1379,8 @@ generatedFiles:
   - docs/pkg/models/shared/tasktyperevokeinput.md
   - docs/pkg/models/shared/tasktyperevokeoutcome.md
   - docs/pkg/models/shared/taskview.md
+  - docs/pkg/models/shared/terminateworkflowrequest.md
+  - docs/pkg/models/shared/terminateworkflowresponse.md
   - docs/pkg/models/shared/testsourceiprequest.md
   - docs/pkg/models/shared/testsourceipresponse.md
   - docs/pkg/models/shared/unenrollmentbehavior.md
@@ -1295,10 +1401,13 @@ generatedFiles:
   - docs/pkg/models/shared/updaterolesresponse.md
   - docs/pkg/models/shared/updatesessionsettingsrequest.md
   - docs/pkg/models/shared/updatesessionsettingsresponse.md
+  - docs/pkg/models/shared/updateworkflowrequest.md
+  - docs/pkg/models/shared/updateworkflowresponse.md
   - docs/pkg/models/shared/user.md
   - docs/pkg/models/shared/userapproval.md
   - docs/pkg/models/shared/userattributemappingsource.md
   - docs/pkg/models/shared/userexpandmask.md
+  - docs/pkg/models/shared/userprofilechangetrigger.md
   - docs/pkg/models/shared/userref.md
   - docs/pkg/models/shared/userservicegetresponse.md
   - docs/pkg/models/shared/userservicegetresponseexpanded.md
@@ -1339,6 +1448,13 @@ generatedFiles:
   - docs/pkg/models/shared/webhooksservicetestresponse.md
   - docs/pkg/models/shared/webhooksserviceupdaterequest.md
   - docs/pkg/models/shared/webhooksserviceupdateresponse.md
+  - docs/pkg/models/shared/workflow.md
+  - docs/pkg/models/shared/workflowcontext.md
+  - docs/pkg/models/shared/workflowexecution.md
+  - docs/pkg/models/shared/workflowexecutionstate.md
+  - docs/pkg/models/shared/workflowinput.md
+  - docs/pkg/models/shared/workflowstep.md
+  - docs/pkg/models/shared/workflowtrigger.md
   - docs/sdks/appaccessrequestsdefaults/README.md
   - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appentitlements/README.md
@@ -1382,6 +1498,10 @@ generatedFiles:
   - docs/sdks/usersearch/README.md
   - docs/sdks/webhooks/README.md
   - docs/sdks/webhookssearch/README.md
+  - docs/sdks/workflow/README.md
+  - docs/sdks/workflowexecution/README.md
+  - docs/sdks/workflowexecutionactions/README.md
+  - docs/sdks/workflowexecutionsearch/README.md
   - export.go
   - exportssearch.go
   - internal/hooks/hooks.go
@@ -1396,6 +1516,7 @@ generatedFiles:
   - pkg/types/decimal.go
   - pkg/types/pointers.go
   - pkg/utils/contenttype.go
+  - pkg/utils/env.go
   - pkg/utils/form.go
   - pkg/utils/headers.go
   - pkg/utils/json.go
@@ -1420,67 +1541,112 @@ generatedFiles:
   - usersearch.go
   - webhooks.go
   - webhookssearch.go
+  - workflow.go
+  - workflowexecution.go
+  - workflowexecutionactions.go
+  - workflowexecutionsearch.go
 examples:
-  c1.api.app.v1.Apps.Create: {}
+  c1.api.app.v1.Apps.Create:
+    speakeasy-default-c1-api-app-v1-apps-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.Apps.Delete:
     speakeasy-default-c1-api-app-v1-apps-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.Apps.Get:
     speakeasy-default-c1-api-app-v1-apps-get:
       parameters:
         path:
           id: "<id>"
-  c1.api.app.v1.Apps.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.Apps.List:
+    speakeasy-default-c1-api-app-v1-apps-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.Apps.Update:
     speakeasy-default-c1-api-app-v1-apps-update:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessRequestsDefaults:
     speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-cancel-app-access-requests-defaults:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessRequestsDefaults:
     speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-create-app-access-requests-defaults:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsDefaults:
     speakeasy-default-c1-api-app-v1-app-access-requests-defaults-service-get-app-access-requests-defaults:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.Create:
     speakeasy-default-c1-api-app-v1-connector-service-create:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.CreateDelegated:
     speakeasy-default-c1-api-app-v1-connector-service-create-delegated:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.Delete:
     speakeasy-default-c1-api-app-v1-connector-service-delete:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.ForceSync:
     speakeasy-default-c1-api-app-v1-connector-service-force-sync:
       parameters:
         path:
           app_id: "<id>"
           connector_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.Get:
     speakeasy-default-c1-api-app-v1-connector-service-get:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.GetCredentials:
     speakeasy-default-c1-api-app-v1-connector-service-get-credentials:
       parameters:
@@ -1488,12 +1654,18 @@ examples:
           app_id: "<id>"
           connector_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.List:
     speakeasy-default-c1-api-app-v1-connector-service-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.RevokeCredential:
     speakeasy-default-c1-api-app-v1-connector-service-revoke-credential:
       parameters:
@@ -1501,47 +1673,71 @@ examples:
           app_id: "<id>"
           connector_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.RotateCredential:
     speakeasy-default-c1-api-app-v1-connector-service-rotate-credential:
       parameters:
         path:
           app_id: "<id>"
           connector_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.Update:
     speakeasy-default-c1-api-app-v1-connector-service-update:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.ConnectorService.UpdateDelegated:
     speakeasy-default-c1-api-app-v1-connector-service-update-delegated:
       parameters:
         path:
           connector_app_id: "<id>"
           connector_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.Create:
     speakeasy-default-c1-api-app-v1-app-entitlements-create:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.Delete:
     speakeasy-default-c1-api-app-v1-app-entitlements-delete:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.Get:
     speakeasy-default-c1-api-app-v1-app-entitlements-get:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.List:
     speakeasy-default-c1-api-app-v1-app-entitlements-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.ListForAppResource:
     speakeasy-default-c1-api-app-v1-app-entitlements-list-for-app-resource:
       parameters:
@@ -1550,6 +1746,9 @@ examples:
           app_resource_type_id: "<id>"
           app_resource_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.ListForAppUser:
     speakeasy-default-c1-api-app-v1-app-entitlements-list-for-app-user:
       parameters:
@@ -1557,6 +1756,9 @@ examples:
           app_id: "<id>"
           app_user_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.ListUsers:
     speakeasy-default-c1-api-app-v1-app-entitlements-list-users:
       parameters:
@@ -1564,13 +1766,23 @@ examples:
           app_id: "<id>"
           app_entitlement_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.Update:
     speakeasy-default-c1-api-app-v1-app-entitlements-update:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
-  c1.api.app.v1.AppEntitlementSearchService.Search: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlementSearchService.Search:
+    speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search:
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser:
     speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-app-entitlements-for-app-user:
       parameters:
@@ -1578,6 +1790,9 @@ examples:
           app_id: "<id>"
           app_user_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsWithExpired:
     speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-app-entitlements-with-expired:
       parameters:
@@ -1585,6 +1800,9 @@ examples:
           app_id: "<id>"
           app_entitlement_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-list-app-users-for-identity-with-grant:
       parameters:
@@ -1592,14 +1810,28 @@ examples:
           app_id: "<id>"
           app_entitlement_id: "<id>"
           identity_user_id: "<id>"
-  c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed: {}
-  c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-grant-feed:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-past-grants:
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementOwners.Add:
     speakeasy-default-c1-api-app-v1-app-entitlement-owners-add:
       parameters:
         path:
           app_id: "<id>"
           entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementOwners.List:
     speakeasy-default-c1-api-app-v1-app-entitlement-owners-list:
       parameters:
@@ -1607,6 +1839,9 @@ examples:
           app_id: "<id>"
           entitlement_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementOwners.Remove:
     speakeasy-default-c1-api-app-v1-app-entitlement-owners-remove:
       parameters:
@@ -1614,81 +1849,123 @@ examples:
           app_id: "<id>"
           entitlement_id: "<id>"
           user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementOwners.Set:
     speakeasy-default-c1-api-app-v1-app-entitlement-owners-set:
       parameters:
         path:
           app_id: "<id>"
           entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppOwners.Add:
     speakeasy-default-c1-api-app-v1-app-owners-add:
       parameters:
         path:
           app_id: "<id>"
           user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppOwners.List:
     speakeasy-default-c1-api-app-v1-app-owners-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppOwners.Remove:
     speakeasy-default-c1-api-app-v1-app-owners-remove:
       parameters:
         path:
           app_id: "<id>"
           user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppOwners.Set:
     speakeasy-default-c1-api-app-v1-app-owners-set:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppReportService.List:
     speakeasy-default-c1-api-app-v1-app-report-service-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppReportActionService.GenerateReport:
     speakeasy-default-c1-api-app-v1-app-report-action-service-generate-report:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceType:
     speakeasy-default-c1-api-app-v1-app-resource-type-service-create-manually-managed-resource-type:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceType:
     speakeasy-default-c1-api-app-v1-app-resource-type-service-delete-manually-managed-resource-type:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceTypeService.Get:
     speakeasy-default-c1-api-app-v1-app-resource-type-service-get:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceTypeService.List:
     speakeasy-default-c1-api-app-v1-app-resource-type-service-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceType:
     speakeasy-default-c1-api-app-v1-app-resource-type-service-update-manually-managed-resource-type:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceService.CreateManuallyManagedAppResource:
     speakeasy-default-c1-api-app-v1-app-resource-service-create-manually-managed-app-resource:
       parameters:
         path:
           app_id: "<id>"
           app_resource_type_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceService.DeleteManuallyManagedAppResource:
     speakeasy-default-c1-api-app-v1-app-resource-service-delete-manually-managed-app-resource:
       parameters:
@@ -1696,6 +1973,9 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceService.Get:
     speakeasy-default-c1-api-app-v1-app-resource-service-get:
       parameters:
@@ -1703,6 +1983,9 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceService.List:
     speakeasy-default-c1-api-app-v1-app-resource-service-list:
       parameters:
@@ -1710,6 +1993,9 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceService.Update:
     speakeasy-default-c1-api-app-v1-app-resource-service-update:
       parameters:
@@ -1717,6 +2003,9 @@ examples:
           app_id: "<id>"
           app_resource_type_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppResourceOwners.List:
     speakeasy-default-c1-api-app-v1-app-resource-owners-list:
       parameters:
@@ -1725,270 +2014,548 @@ examples:
           resource_type_id: "<id>"
           resource_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppUsageControlsService.Get:
     speakeasy-default-c1-api-app-v1-app-usage-controls-service-get:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppUsageControlsService.Update:
     speakeasy-default-c1-api-app-v1-app-usage-controls-service-update:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppUserService.Update:
     speakeasy-default-c1-api-app-v1-app-user-service-update:
       parameters:
         path:
           app_user_app_id: "<id>"
           app_user_id: "<id>"
-  c1.api.attribute.v1.Attributes.CreateAttributeValue: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.CreateAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-create-attribute-value:
+      responses:
+        "200":
+          application/json: {}
   c1.api.attribute.v1.Attributes.DeleteAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-delete-attribute-value:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.attribute.v1.Attributes.GetAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-get-attribute-value:
       parameters:
         path:
           id: "<id>"
-  c1.api.attribute.v1.Attributes.ListAttributeTypes: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.ListAttributeTypes:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-attribute-types:
+      responses:
+        "200":
+          application/json: {}
   c1.api.attribute.v1.Attributes.ListAttributeValues:
     speakeasy-default-c1-api-attribute-v1-attributes-list-attribute-values:
       parameters:
         path:
           attribute_type_id: "<id>"
         query: {}
-  c1.api.auth.v1.Auth.Introspect: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.auth.v1.Auth.Introspect:
+    speakeasy-default-c1-api-auth-v1-auth-introspect:
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAccessEntitlements:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-add-access-entitlements:
       parameters:
         path:
           catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAppEntitlements:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-add-app-entitlements:
       parameters:
         path:
           catalog_id: "<id>"
-  c1.api.requestcatalog.v1.RequestCatalogManagementService.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.Create:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-force-run-bundle-automation:
       parameters:
         path:
           request_catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.Get:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-get:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-get-bundle-automation:
       parameters:
         path:
           request_catalog_id: "<id>"
-  c1.api.requestcatalog.v1.RequestCatalogManagementService.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.List:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsForAccess:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list-entitlements-for-access:
       parameters:
         path:
           catalog_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsPerCatalog:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-list-entitlements-per-catalog:
       parameters:
         path:
           catalog_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAccessEntitlements:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-remove-access-entitlements:
       parameters:
         path:
           catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAppEntitlements:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-remove-app-entitlements:
       parameters:
         path:
           catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-set-bundle-automation:
       parameters:
         path:
           request_catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.Update:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-update:
       parameters:
         path:
           id: "<id>"
-  c1.api.directory.v1.DirectoryService.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.directory.v1.DirectoryService.Create:
+    speakeasy-default-c1-api-directory-v1-directory-service-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.directory.v1.DirectoryService.Delete:
     speakeasy-default-c1-api-directory-v1-directory-service-delete:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.directory.v1.DirectoryService.Get:
     speakeasy-default-c1-api-directory-v1-directory-service-get:
       parameters:
         path:
           app_id: "<id>"
-  c1.api.directory.v1.DirectoryService.List: {}
-  c1.api.iam.v1.PersonalClientService.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.directory.v1.DirectoryService.List:
+    speakeasy-default-c1-api-directory-v1-directory-service-list:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.iam.v1.PersonalClientService.Create:
+    speakeasy-default-c1-api-iam-v1-personal-client-service-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.iam.v1.PersonalClientService.Delete:
     speakeasy-default-c1-api-iam-v1-personal-client-service-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.iam.v1.PersonalClientService.Get:
     speakeasy-default-c1-api-iam-v1-personal-client-service-get:
       parameters:
         path:
           id: "<id>"
-  c1.api.iam.v1.PersonalClientService.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.iam.v1.PersonalClientService.List:
+    speakeasy-default-c1-api-iam-v1-personal-client-service-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.iam.v1.PersonalClientService.Update:
     speakeasy-default-c1-api-iam-v1-personal-client-service-update:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.iam.v1.Roles.Get:
     speakeasy-default-c1-api-iam-v1-roles-get:
       parameters:
         path:
           role_id: "<id>"
-  c1.api.iam.v1.Roles.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.iam.v1.Roles.List:
+    speakeasy-default-c1-api-iam-v1-roles-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.iam.v1.Roles.Update:
     speakeasy-default-c1-api-iam-v1-roles-update:
       parameters:
         path:
           role_id: "<id>"
-  c1.api.policy.v1.Policies.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.policy.v1.Policies.Create:
+    speakeasy-default-c1-api-policy-v1-policies-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.policy.v1.Policies.Delete:
     speakeasy-default-c1-api-policy-v1-policies-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.policy.v1.Policies.Get:
     speakeasy-default-c1-api-policy-v1-policies-get:
       parameters:
         path:
           id: "<id>"
-  c1.api.policy.v1.Policies.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.policy.v1.Policies.List:
+    speakeasy-default-c1-api-policy-v1-policies-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.policy.v1.Policies.Update:
     speakeasy-default-c1-api-policy-v1-policies-update:
       parameters:
         path:
           id: "<id>"
-  c1.api.policy.v1.PolicyValidate.ValidateCEL: {}
-  c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes: {}
-  c1.api.app.v1.AppSearch.Search: {}
-  c1.api.attribute.v1.AttributeSearch.SearchAttributeValues: {}
-  c1.api.iam.v1.PersonalClientSearchService.Search: {}
-  c1.api.policy.v1.PolicySearch.Search: {}
-  c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements: {}
-  c1.api.systemlog.v1.ExportsSearchService.Search: {}
-  c1.api.task.v1.TaskSearchService.Search: {}
-  c1.api.user.v1.UserSearch.Search: {}
-  c1.api.webhooks.v1.WebhooksSearch.Search: {}
-  c1.api.settings.v1.AWSExternalIDSettings.Get: {}
-  c1.api.settings.v1.SessionSettingsService.Get: {}
-  c1.api.settings.v1.SessionSettingsService.Update: {}
-  c1.api.systemlog.v1.SystemLogService.ListEvents: {}
-  c1.api.systemlog.v1.ExportService.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.policy.v1.PolicyValidate.ValidateCEL:
+    speakeasy-default-c1-api-policy-v1-policy-validate-validate-CEL:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppResourceSearch.SearchAppResourceTypes:
+    speakeasy-default-c1-api-app-v1-app-resource-search-search-app-resource-types:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppSearch.Search:
+    speakeasy-default-c1-api-app-v1-app-search-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.AttributeSearch.SearchAttributeValues:
+    speakeasy-default-c1-api-attribute-v1-attribute-search-search-attribute-values:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.iam.v1.PersonalClientSearchService.Search:
+    speakeasy-default-c1-api-iam-v1-personal-client-search-service-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.policy.v1.PolicySearch.Search:
+    speakeasy-default-c1-api-policy-v1-policy-search-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogSearchService.SearchEntitlements:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-search-service-search-entitlements:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.systemlog.v1.ExportsSearchService.Search:
+    speakeasy-default-c1-api-systemlog-v1-exports-search-service-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskSearchService.Search:
+    speakeasy-default-c1-api-task-v1-task-search-service-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.user.v1.UserSearch.Search:
+    speakeasy-default-c1-api-user-v1-user-search-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.webhooks.v1.WebhooksSearch.Search:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-search-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.AWSExternalIDSettings.Get:
+    speakeasy-default-c1-api-settings-v1-AWS-external-ID-settings-get:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.SessionSettingsService.Get:
+    speakeasy-default-c1-api-settings-v1-session-settings-service-get:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.SessionSettingsService.Update:
+    speakeasy-default-c1-api-settings-v1-session-settings-service-update:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.systemlog.v1.SystemLogService.ListEvents:
+    speakeasy-default-c1-api-systemlog-v1-system-log-service-list-events:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.systemlog.v1.ExportService.Create:
+    speakeasy-default-c1-api-systemlog-v1-export-service-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.systemlog.v1.ExportService.Delete:
     speakeasy-default-c1-api-systemlog-v1-export-service-delete:
       parameters:
         path:
           export_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.systemlog.v1.ExportService.Get:
     speakeasy-default-c1-api-systemlog-v1-export-service-get:
       parameters:
         path:
           export_id: "<id>"
-  c1.api.systemlog.v1.ExportService.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.systemlog.v1.ExportService.List:
+    speakeasy-default-c1-api-systemlog-v1-export-service-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.systemlog.v1.ExportService.ListEvents:
     speakeasy-default-c1-api-systemlog-v1-export-service-list-events:
       parameters:
         path:
           export_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.systemlog.v1.ExportService.Update:
     speakeasy-default-c1-api-systemlog-v1-export-service-update:
       parameters:
         path:
           export_id: "<id>"
-  c1.api.task.v1.TaskService.CreateGrantTask: {}
-  c1.api.task.v1.TaskService.CreateOffboardingTask: {}
-  c1.api.task.v1.TaskService.CreateRevokeTask: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskService.CreateGrantTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-grant-task:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskService.CreateOffboardingTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-offboarding-task:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskService.CreateRevokeTask:
+    speakeasy-default-c1-api-task-v1-task-service-create-revoke-task:
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskService.Get:
     speakeasy-default-c1-api-task-v1-task-service-get:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.Approve:
     speakeasy-default-c1-api-task-v1-task-actions-service-approve:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.Comment:
     speakeasy-default-c1-api-task-v1-task-actions-service-comment:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.Deny:
     speakeasy-default-c1-api-task-v1-task-actions-service-deny:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess:
     speakeasy-default-c1-api-task-v1-task-actions-service-escalate-to-emergency-access:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.HardReset:
     speakeasy-default-c1-api-task-v1-task-actions-service-hard-reset:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.Reassign:
     speakeasy-default-c1-api-task-v1-task-actions-service-reassign:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskActionsService.Restart:
     speakeasy-default-c1-api-task-v1-task-actions-service-restart:
       parameters:
         path:
           task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.user.v1.UserService.Get:
     speakeasy-default-c1-api-user-v1-user-service-get:
       parameters:
         path:
           id: "<id>"
-  c1.api.user.v1.UserService.List: {}
-  c1.api.webhooks.v1.WebhooksService.Create: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.user.v1.UserService.List:
+    speakeasy-default-c1-api-user-v1-user-service-list:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.webhooks.v1.WebhooksService.Create:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-create:
+      responses:
+        "200":
+          application/json: {}
   c1.api.webhooks.v1.WebhooksService.Delete:
     speakeasy-default-c1-api-webhooks-v1-webhooks-service-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.webhooks.v1.WebhooksService.Get:
     speakeasy-default-c1-api-webhooks-v1-webhooks-service-get:
       parameters:
         path:
           id: "<id>"
-  c1.api.webhooks.v1.WebhooksService.List: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.webhooks.v1.WebhooksService.List:
+    speakeasy-default-c1-api-webhooks-v1-webhooks-service-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.webhooks.v1.WebhooksService.Test:
     speakeasy-default-c1-api-webhooks-v1-webhooks-service-test:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.webhooks.v1.WebhooksService.Update:
     speakeasy-default-c1-api-webhooks-v1-webhooks-service-update:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementsProxy.Create:
     speakeasy-default-c1-api-app-v1-app-entitlements-proxy-create:
       parameters:
@@ -1997,6 +2564,9 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementsProxy.Delete:
     speakeasy-default-c1-api-app-v1-app-entitlements-proxy-delete:
       parameters:
@@ -2005,6 +2575,9 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementsProxy.Get:
     speakeasy-default-c1-api-app-v1-app-entitlements-proxy-get:
       parameters:
@@ -2013,15 +2586,161 @@ examples:
           src_app_entitlement_id: "<id>"
           dst_app_id: "<id>"
           dst_app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppUserService.List:
     speakeasy-default-c1-api-app-v1-app-user-service-list:
       parameters:
         path:
           app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppUserService.ListAppUserCredentials:
     speakeasy-default-c1-api-app-v1-app-user-service-list-app-user-credentials:
       parameters:
         path:
           app_id: "<id>"
           app_user_id: "<id>"
-  c1.api.settings.v1.SessionSettingsService.TestSourceIP: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.SessionSettingsService.TestSourceIP:
+    speakeasy-default-c1-api-settings-v1-session-settings-service-test-source-IP:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppUserService.ListAppUsersForUser:
+    speakeasy-default-c1-api-app-v1-app-user-service-list-app-users-for-user:
+      parameters:
+        path:
+          app_id: "<id>"
+          user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppUserService.Search:
+    speakeasy-default-c1-api-app-v1-app-user-service-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.accessbundle.v1.AccessBundleUserService.Add:
+    speakeasy-default-c1-api-accessbundle-v1-access-bundle-user-service-add:
+      parameters:
+        path:
+          access_bundle_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.accessbundle.v1.AccessBundleUserService.List:
+    speakeasy-default-c1-api-accessbundle-v1-access-bundle-user-service-list:
+      parameters:
+        path:
+          access_bundle_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.accessbundle.v1.AccessBundleUserService.Remove:
+    speakeasy-default-c1-api-accessbundle-v1-access-bundle-user-service-remove:
+      parameters:
+        path:
+          access_bundle_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskActionsService.ProcessNow:
+    speakeasy-default-c1-api-task-v1-task-actions-service-process-now:
+      parameters:
+        path:
+          task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowExecutionService.GetWorkflowExecution:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-execution-service-get-workflow-execution:
+      parameters:
+        path:
+          id: 931086
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowExecutionService.ListWorkflowExecutions:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-execution-service-list-workflow-executions:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowExecutionSearchService.SearchWorkflowExecutions:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-execution-search-service-search-workflow-executions:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowExecutionActionsService.TerminateWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-execution-actions-service-terminate-workflow:
+      parameters:
+        path:
+          id: 568176
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.CreateWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-create-workflow:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.DeleteWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-delete-workflow:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.ExecuteWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-execute-workflow:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.GetWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-get-workflow:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.ListWorkflows:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-list-workflows:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowService.UpdateWorkflow:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-service-update-workflow:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers:
+    speakeasy-default-c1-api-app-v1-app-entitlements-add-manually-managed-members:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership:
+    speakeasy-default-c1-api-app-v1-app-entitlements-remove-entitlement-membership:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+generatedTests: {}
