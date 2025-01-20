@@ -88,6 +88,7 @@ func main() {
 
 ### [AppEntitlements](docs/sdks/appentitlements/README.md)
 
+* [AddManuallyManagedMembers](docs/sdks/appentitlements/README.md#addmanuallymanagedmembers) - Add Manually Managed Members
 * [Create](docs/sdks/appentitlements/README.md#create) - Create
 * [Delete](docs/sdks/appentitlements/README.md#delete) - Delete
 * [Get](docs/sdks/appentitlements/README.md#get) - Get
@@ -95,6 +96,7 @@ func main() {
 * [ListForAppResource](docs/sdks/appentitlements/README.md#listforappresource) - List For App Resource
 * [ListForAppUser](docs/sdks/appentitlements/README.md#listforappuser) - List For App User
 * [~~ListUsers~~](docs/sdks/appentitlements/README.md#listusers) - List Users :warning: **Deprecated**
+* [RemoveEntitlementMembership](docs/sdks/appentitlements/README.md#removeentitlementmembership) - Remove Entitlement Membership
 * [Update](docs/sdks/appentitlements/README.md#update) - Update
 
 ### [AppEntitlementSearch](docs/sdks/appentitlementsearch/README.md)
@@ -140,7 +142,9 @@ func main() {
 
 ### [AppResourceOwners](docs/sdks/appresourceowners/README.md)
 
+* [Add](docs/sdks/appresourceowners/README.md#add) - Add
 * [List](docs/sdks/appresourceowners/README.md#list) - List
+* [Remove](docs/sdks/appresourceowners/README.md#remove) - Remove
 
 ### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
 
@@ -175,6 +179,8 @@ func main() {
 
 * [List](docs/sdks/appuser/README.md#list) - List
 * [ListAppUserCredentials](docs/sdks/appuser/README.md#listappusercredentials) - List App User Credentials
+* [ListAppUsersForUser](docs/sdks/appuser/README.md#listappusersforuser) - List App Users For User
+* [Search](docs/sdks/appuser/README.md#search) - Search
 * [Update](docs/sdks/appuser/README.md#update) - Update
 
 ### [Attributes](docs/sdks/attributes/README.md)
@@ -311,6 +317,7 @@ func main() {
 * [Deny](docs/sdks/taskactions/README.md#deny) - Deny
 * [EscalateToEmergencyAccess](docs/sdks/taskactions/README.md#escalatetoemergencyaccess) - Escalate To Emergency Access
 * [HardReset](docs/sdks/taskactions/README.md#hardreset) - Hard Reset
+* [ProcessNow](docs/sdks/taskactions/README.md#processnow) - Process Now
 * [Reassign](docs/sdks/taskactions/README.md#reassign) - Reassign
 * [Restart](docs/sdks/taskactions/README.md#restart) - Restart
 
@@ -339,6 +346,28 @@ func main() {
 ### [WebhooksSearch](docs/sdks/webhookssearch/README.md)
 
 * [Search](docs/sdks/webhookssearch/README.md#search) - Search
+
+### [Workflow](docs/sdks/workflow/README.md)
+
+* [CreateWorkflow](docs/sdks/workflow/README.md#createworkflow) - Create Workflow
+* [DeleteWorkflow](docs/sdks/workflow/README.md#deleteworkflow) - Delete Workflow
+* [ExecuteWorkflow](docs/sdks/workflow/README.md#executeworkflow) - Execute Workflow
+* [GetWorkflow](docs/sdks/workflow/README.md#getworkflow) - Get Workflow
+* [ListWorkflows](docs/sdks/workflow/README.md#listworkflows) - List Workflows
+* [UpdateWorkflow](docs/sdks/workflow/README.md#updateworkflow) - Update Workflow
+
+### [WorkflowExecution](docs/sdks/workflowexecution/README.md)
+
+* [GetWorkflowExecution](docs/sdks/workflowexecution/README.md#getworkflowexecution) - Get Workflow Execution
+* [ListWorkflowExecutions](docs/sdks/workflowexecution/README.md#listworkflowexecutions) - List Workflow Executions
+
+### [WorkflowExecutionActions](docs/sdks/workflowexecutionactions/README.md)
+
+* [TerminateWorkflow](docs/sdks/workflowexecutionactions/README.md#terminateworkflow) - Terminate Workflow
+
+### [WorkflowExecutionSearch](docs/sdks/workflowexecutionsearch/README.md)
+
+* [SearchWorkflowExecutions](docs/sdks/workflowexecutionsearch/README.md#searchworkflowexecutions) - Search Workflow Executions
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

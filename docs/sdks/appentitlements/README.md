@@ -5,6 +5,7 @@
 
 ### Available Operations
 
+* [AddManuallyManagedMembers](#addmanuallymanagedmembers) - Add Manually Managed Members
 * [Create](#create) - Create
 * [Delete](#delete) - Delete
 * [Get](#get) - Get
@@ -12,7 +13,65 @@
 * [ListForAppResource](#listforappresource) - List For App Resource
 * [ListForAppUser](#listforappuser) - List For App User
 * [~~ListUsers~~](#listusers) - List Users :warning: **Deprecated**
+* [RemoveEntitlementMembership](#removeentitlementmembership) - Remove Entitlement Membership
 * [Update](#update) - Update
+
+## AddManuallyManagedMembers
+
+Invokes the c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.AddManuallyManagedMembers(ctx, operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest{
+        AppEntitlementID: "<id>",
+        AppID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ManuallyManagedUsersResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                            | :heavy_check_mark:                                                                                                                                               | The context to use for the request.                                                                                                                              |
+| `request`                                                                                                                                                        | [operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest](../../pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersrequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
+| `opts`                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | The options for this request.                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersResponse](../../pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Create
 
@@ -407,6 +466,63 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementsListUsersResponse](../../pkg/models/operations/c1apiappv1appentitlementslistusersresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## RemoveEntitlementMembership
+
+Invokes the c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := s.AppEntitlements.RemoveEntitlementMembership(ctx, operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest{
+        AppEntitlementID: "<id>",
+        AppID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.RemoveEntitlementMembershipResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                            | Type                                                                                                                                                                 | Required                                                                                                                                                             | Description                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                | :heavy_check_mark:                                                                                                                                                   | The context to use for the request.                                                                                                                                  |
+| `request`                                                                                                                                                            | [operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest](../../pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershiprequest.md) | :heavy_check_mark:                                                                                                                                                   | The request object to use for the request.                                                                                                                           |
+| `opts`                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                         | :heavy_minus_sign:                                                                                                                                                   | The options for this request.                                                                                                                                        |
+
+### Response
+
+**[*operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipResponse](../../pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershipresponse.md), error**
 
 ### Errors
 
