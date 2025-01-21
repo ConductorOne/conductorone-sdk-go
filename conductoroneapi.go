@@ -113,6 +113,10 @@ type ConductoroneAPI struct {
 	TaskActions               *TaskActions
 	User                      *User
 	Webhooks                  *Webhooks
+	WorkflowExecution         *WorkflowExecution
+	WorkflowExecutionSearch   *WorkflowExecutionSearch
+	WorkflowExecutionActions  *WorkflowExecutionActions
+	Workflow                  *Workflow
 
 	sdkConfiguration sdkConfiguration
 }
@@ -203,9 +207,9 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.1.0-alpha",
-			SDKVersion:        "1.22.0",
+			SDKVersion:        "1.24.0",
 			GenVersion:        "2.452.0",
-			UserAgent:         "speakeasy-sdk/go 1.22.0 2.452.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:         "speakeasy-sdk/go 1.24.0 2.452.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerDefaults: []map[string]string{
 				{
 					"tenantDomain": "example",
@@ -313,6 +317,14 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.User = newUser(sdk.sdkConfiguration)
 
 	sdk.Webhooks = newWebhooks(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecution = newWorkflowExecution(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecutionSearch = newWorkflowExecutionSearch(sdk.sdkConfiguration)
+
+	sdk.WorkflowExecutionActions = newWorkflowExecutionActions(sdk.sdkConfiguration)
+
+	sdk.Workflow = newWorkflow(sdk.sdkConfiguration)
 
 	return sdk
 }
