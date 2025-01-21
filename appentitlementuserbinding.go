@@ -211,7 +211,7 @@ func (s *AppEntitlementUserBinding) ListAppUsersForIdentityWithGrant(ctx context
 
 // SearchGrantFeed - Search Grant Feed
 // Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed method.
-func (s *AppEntitlementUserBinding) SearchGrantFeed(ctx context.Context, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceSearchGrantFeedResponse, error) {
+func (s *AppEntitlementUserBinding) SearchGrantFeed(ctx context.Context, request *shared.SearchGrantFeedRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceSearchGrantFeedResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed",
@@ -237,6 +237,11 @@ func (s *AppEntitlementUserBinding) SearchGrantFeed(ctx context.Context, opts ..
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	if err != nil {
+		return nil, err
+	}
+
 	timeout := o.Timeout
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
@@ -248,12 +253,13 @@ func (s *AppEntitlementUserBinding) SearchGrantFeed(ctx context.Context, opts ..
 		defer cancel()
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("Content-Type", reqContentType)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
@@ -394,7 +400,7 @@ func (s *AppEntitlementUserBinding) SearchGrantFeed(ctx context.Context, opts ..
 
 // SearchPastGrants - Search Past Grants
 // Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants method.
-func (s *AppEntitlementUserBinding) SearchPastGrants(ctx context.Context, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponse, error) {
+func (s *AppEntitlementUserBinding) SearchPastGrants(ctx context.Context, request *shared.SearchPastGrantsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceSearchPastGrantsResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants",
@@ -420,6 +426,11 @@ func (s *AppEntitlementUserBinding) SearchPastGrants(ctx context.Context, opts .
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
+	if err != nil {
+		return nil, err
+	}
+
 	timeout := o.Timeout
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
@@ -431,12 +442,13 @@ func (s *AppEntitlementUserBinding) SearchPastGrants(ctx context.Context, opts .
 		defer cancel()
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "GET", opURL, nil)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+	req.Header.Set("Content-Type", reqContentType)
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
