@@ -12,5 +12,5 @@ targets:
         source: my-source
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-code-samples
+                location: registry.speakeasyapi.dev/conductor-one/conductorone/my-source-go-code-samples
             blocking: false

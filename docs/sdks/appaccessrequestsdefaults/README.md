@@ -19,14 +19,16 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessReques
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -34,7 +36,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppAccessRequestsDefaults.CancelAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest{
         AppID: "<id>",
     })
@@ -75,14 +76,16 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessReques
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -90,7 +93,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppAccessRequestsDefaults.CreateAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest{
         AppID: "<id>",
     })
@@ -131,14 +133,16 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsD
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -146,7 +150,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppAccessRequestsDefaults.GetAppAccessRequestsDefaults(ctx, operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest{
         AppID: "<id>",
     })

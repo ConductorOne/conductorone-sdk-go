@@ -19,14 +19,16 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Create method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -34,7 +36,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementsProxy.Create(ctx, operations.C1APIAppV1AppEntitlementsProxyCreateRequest{
         DstAppEntitlementID: "<id>",
         DstAppID: "<id>",
@@ -78,14 +79,16 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Delete method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -93,7 +96,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementsProxy.Delete(ctx, operations.C1APIAppV1AppEntitlementsProxyDeleteRequest{
         DstAppEntitlementID: "<id>",
         DstAppID: "<id>",
@@ -137,14 +139,16 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Get method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -152,7 +156,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppEntitlementsProxy.Get(ctx, operations.C1APIAppV1AppEntitlementsProxyGetRequest{
         DstAppEntitlementID: "<id>",
         DstAppID: "<id>",

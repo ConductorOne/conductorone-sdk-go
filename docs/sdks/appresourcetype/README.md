@@ -21,14 +21,16 @@ Invokes the c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceTy
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -36,7 +38,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppResourceType.CreateManuallyManagedResourceType(ctx, operations.C1APIAppV1AppResourceTypeServiceCreateManuallyManagedResourceTypeRequest{
         AppID: "<id>",
     })
@@ -77,14 +78,16 @@ Invokes the c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceTy
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -92,7 +95,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppResourceType.DeleteManuallyManagedResourceType(ctx, operations.C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequest{
         AppID: "<id>",
         ID: "<id>",
@@ -134,14 +136,16 @@ Get an app resource type.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -149,7 +153,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppResourceType.Get(ctx, operations.C1APIAppV1AppResourceTypeServiceGetRequest{
         AppID: "<id>",
         ID: "<id>",
@@ -191,14 +194,16 @@ List app resource types.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -206,7 +211,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppResourceType.List(ctx, operations.C1APIAppV1AppResourceTypeServiceListRequest{
         AppID: "<id>",
     })
@@ -247,14 +251,16 @@ Invokes the c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceTy
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -262,7 +268,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppResourceType.UpdateManuallyManagedResourceType(ctx, operations.C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequest{
         AppID: "<id>",
         ID: "<id>",
