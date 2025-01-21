@@ -22,13 +22,15 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Create method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -36,7 +38,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Create(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -75,14 +76,16 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -90,7 +93,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Delete(ctx, operations.C1APIWebhooksV1WebhooksServiceDeleteRequest{
         ID: "<id>",
     })
@@ -131,14 +133,16 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -146,7 +150,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Get(ctx, operations.C1APIWebhooksV1WebhooksServiceGetRequest{
         ID: "<id>",
     })
@@ -187,14 +190,16 @@ Invokes the c1.api.webhooks.v1.WebhooksService.List method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -202,7 +207,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.List(ctx, operations.C1APIWebhooksV1WebhooksServiceListRequest{})
     if err != nil {
         log.Fatal(err)
@@ -241,14 +245,16 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -256,7 +262,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Test(ctx, operations.C1APIWebhooksV1WebhooksServiceTestRequest{
         ID: "<id>",
     })
@@ -297,14 +302,16 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -312,7 +319,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.Webhooks.Update(ctx, operations.C1APIWebhooksV1WebhooksServiceUpdateRequest{
         ID: "<id>",
     })

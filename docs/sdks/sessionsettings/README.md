@@ -19,13 +19,15 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Get method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -33,7 +35,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.SessionSettings.Get(ctx)
     if err != nil {
         log.Fatal(err)
@@ -71,13 +72,15 @@ Invokes the c1.api.settings.v1.SessionSettingsService.TestSourceIP method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -85,7 +88,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.SessionSettings.TestSourceIP(ctx, nil)
     if err != nil {
         log.Fatal(err)
@@ -124,13 +126,15 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Update method.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -138,7 +142,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.SessionSettings.Update(ctx, nil)
     if err != nil {
         log.Fatal(err)

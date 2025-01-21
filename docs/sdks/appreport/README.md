@@ -17,14 +17,16 @@ Get a list of reports for the given app.
 package main
 
 import(
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
 func main() {
+    ctx := context.Background()
+    
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -32,7 +34,6 @@ func main() {
         }),
     )
 
-    ctx := context.Background()
     res, err := s.AppReport.List(ctx, operations.C1APIAppV1AppReportServiceListRequest{
         AppID: "<id>",
     })
