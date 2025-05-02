@@ -8,7 +8,9 @@
 * [AddAccessEntitlements](#addaccessentitlements) - Add Access Entitlements
 * [AddAppEntitlements](#addappentitlements) - Add App Entitlements
 * [Create](#create) - Create
+* [CreateBundleAutomation](#createbundleautomation) - Create Bundle Automation
 * [Delete](#delete) - Delete
+* [DeleteBundleAutomation](#deletebundleautomation) - Delete Bundle Automation
 * [ForceRunBundleAutomation](#forcerunbundleautomation) - Force Run Bundle Automation
 * [Get](#get) - Get
 * [GetBundleAutomation](#getbundleautomation) - Get Bundle Automation
@@ -39,7 +41,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -96,7 +98,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -152,7 +154,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -188,6 +190,63 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## CreateBundleAutomation
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.CreateBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.BundleAutomation != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                        | Type                                                                                                                                                                                                             | Required                                                                                                                                                                                                         | Description                                                                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                                               | The context to use for the request.                                                                                                                                                                              |
+| `request`                                                                                                                                                                                                        | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                               | The request object to use for the request.                                                                                                                                                                       |
+| `opts`                                                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                               | The options for this request.                                                                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## Delete
 
 Delete a catalog.
@@ -207,7 +266,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -245,6 +304,63 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## DeleteBundleAutomation
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.DeleteBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.DeleteBundleAutomationResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                        | Type                                                                                                                                                                                                             | Required                                                                                                                                                                                                         | Description                                                                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                                               | The context to use for the request.                                                                                                                                                                              |
+| `request`                                                                                                                                                                                                        | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                               | The request object to use for the request.                                                                                                                                                                       |
+| `opts`                                                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                               | The options for this request.                                                                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## ForceRunBundleAutomation
 
 Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation method.
@@ -264,7 +380,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -321,7 +437,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -378,7 +494,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -435,7 +551,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -490,7 +606,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -547,7 +663,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -604,7 +720,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -661,7 +777,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -718,7 +834,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -775,7 +891,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",

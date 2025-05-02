@@ -1,0 +1,10 @@
+# C1APIAppV1AppEntitlementsCreateAutomationRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `CreateAutomationRequest`                                                                | [*shared.CreateAutomationRequest](../../../pkg/models/shared/createautomationrequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `AppEntitlementID`                                                                       | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `AppID`                                                                                  | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |

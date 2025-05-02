@@ -2,8 +2,15 @@
 
 Indicates that a connector should perform the provisioning. This object has no fields.
 
+This message contains a oneof named provision_type. Only a single field of the following list may be set at a time:
+  - defaultBehavior
+  - account
+
+
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                                                                                                                                                           | Type                                                                                                                                                                            | Required                                                                                                                                                                        | Description                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AccountProvision`                                                                                                                                                              | [*shared.AccountProvision](../../../pkg/models/shared/accountprovision.md)                                                                                                      | :heavy_minus_sign:                                                                                                                                                              | The AccountProvision message.<br/><br/>This message contains a oneof named storage_type. Only a single field of the following list may be set at a time:<br/>  - saveToVault<br/>  - doNotSave<br/> |
+| `DefaultBehavior`                                                                                                                                                               | [*shared.DefaultBehavior](../../../pkg/models/shared/defaultbehavior.md)                                                                                                        | :heavy_minus_sign:                                                                                                                                                              | The DefaultBehavior message.                                                                                                                                                    |

@@ -1,0 +1,16 @@
+# AppUserCreatedTrigger
+
+The AppUserCreatedTrigger message.
+
+This message contains a oneof named app_identifier. Only a single field of the following list may be set at a time:
+  - appId
+  - appIdCel
+
+
+
+## Fields
+
+| Field                                                                                                                                                             | Type                                                                                                                                                              | Required                                                                                                                                                          | Description                                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AppID`                                                                                                                                                           | **string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                | The appId field.<br/>This field is part of the `app_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.AppUserCreatedTrigger` for more details. |
+| `AppIDCel`                                                                                                                                                        | **string*                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                | The appIdCel field.<br/>This field is part of the `app_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.AppUserCreatedTrigger` for more details. |

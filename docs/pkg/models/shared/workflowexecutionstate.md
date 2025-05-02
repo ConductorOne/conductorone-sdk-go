@@ -15,3 +15,5 @@ The state field.
 | `WorkflowExecutionStateWorkflowExecutionStateCompleteStep` | WORKFLOW_EXECUTION_STATE_COMPLETE_STEP                     |
 | `WorkflowExecutionStateWorkflowExecutionStateDone`         | WORKFLOW_EXECUTION_STATE_DONE                              |
 | `WorkflowExecutionStateWorkflowExecutionStateError`        | WORKFLOW_EXECUTION_STATE_ERROR                             |
+| `WorkflowExecutionStateWorkflowExecutionStateTerminate`    | WORKFLOW_EXECUTION_STATE_TERMINATE                         |
+| `WorkflowExecutionStateWorkflowExecutionStateWaiting`      | WORKFLOW_EXECUTION_STATE_WAITING                           |

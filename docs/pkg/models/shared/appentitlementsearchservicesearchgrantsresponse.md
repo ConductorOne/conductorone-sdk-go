@@ -1,0 +1,12 @@
+# AppEntitlementSearchServiceSearchGrantsResponse
+
+The AppEntitlementSearchServiceSearchGrantsResponse message.
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `Expanded`                                                                                            | [][shared.Expanded](../../../pkg/models/shared/expanded.md)                                           | :heavy_minus_sign:                                                                                    | The expanded field.                                                                                   |
+| `List`                                                                                                | [][shared.AppEntitlementWithUserBinding](../../../pkg/models/shared/appentitlementwithuserbinding.md) | :heavy_minus_sign:                                                                                    | The list field.                                                                                       |
+| `NextPageToken`                                                                                       | **string*                                                                                             | :heavy_minus_sign:                                                                                    | The nextPageToken field.                                                                              |

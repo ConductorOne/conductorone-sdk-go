@@ -13,3 +13,4 @@ The resourceType field.
 | `ResourceTypeProject` | PROJECT               |
 | `ResourceTypeCatalog` | CATALOG               |
 | `ResourceTypeCustom`  | CUSTOM                |
+| `ResourceTypeVault`   | VAULT                 |

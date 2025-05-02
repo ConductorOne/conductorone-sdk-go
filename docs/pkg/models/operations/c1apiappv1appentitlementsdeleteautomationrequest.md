@@ -1,0 +1,10 @@
+# C1APIAppV1AppEntitlementsDeleteAutomationRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `DeleteAutomationRequest`                                                                | [*shared.DeleteAutomationRequest](../../../pkg/models/shared/deleteautomationrequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `AppEntitlementID`                                                                       | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `AppID`                                                                                  | *string*                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
