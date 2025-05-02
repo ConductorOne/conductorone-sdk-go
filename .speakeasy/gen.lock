@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: e96f3257ad2c3b40378d5914a912dbaf
+  docChecksum: a931cc92430c74c2825f2235c187f14d
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.469.12
-  generationVersion: 2.493.34
-  releaseVersion: 1.23.0
-  configChecksum: 76511ea7b6571ff33db0af90495e47e0
+  speakeasyVersion: 1.542.0
+  generationVersion: 2.596.2
+  releaseVersion: 1.24.0
+  configChecksum: fa81bea29eaebd587cbb4edf0c530502
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,11 +15,11 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.6.9
+    core: 3.7.4
     defaultEnabledRetries: 0.2.0
-    deprecations: 2.81.2
+    deprecations: 2.81.3
     envVarSecurityUsage: 0.3.2
-    globalSecurity: 2.82.10
+    globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.2
     groups: 2.81.2
@@ -27,7 +27,7 @@ features:
     inputOutputModels: 2.83.0
     intellisenseMarkdownSupport: 0.1.0
     nameOverrides: 2.81.2
-    nullables: 0.1.0
+    nullables: 0.1.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.83.2
@@ -42,25 +42,35 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appentitlementownerslist.go
   - /pkg/models/operations/c1apiappv1appentitlementownersremove.go
   - /pkg/models/operations/c1apiappv1appentitlementownersset.go
+  - /pkg/models/operations/c1apiappv1appentitlementsaddautomationexclusion.go
   - /pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembers.go
   - /pkg/models/operations/c1apiappv1appentitlementscreate.go
+  - /pkg/models/operations/c1apiappv1appentitlementscreateautomation.go
   - /pkg/models/operations/c1apiappv1appentitlementsdelete.go
+  - /pkg/models/operations/c1apiappv1appentitlementsdeleteautomation.go
   - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearch.go
   - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuser.go
   - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpired.go
+  - /pkg/models/operations/c1apiappv1appentitlementsearchservicesearchgrants.go
   - /pkg/models/operations/c1apiappv1appentitlementsget.go
+  - /pkg/models/operations/c1apiappv1appentitlementsgetautomation.go
   - /pkg/models/operations/c1apiappv1appentitlementslist.go
+  - /pkg/models/operations/c1apiappv1appentitlementslistautomationexclusions.go
   - /pkg/models/operations/c1apiappv1appentitlementslistforappresource.go
   - /pkg/models/operations/c1apiappv1appentitlementslistforappuser.go
   - /pkg/models/operations/c1apiappv1appentitlementslistusers.go
   - /pkg/models/operations/c1apiappv1appentitlementsproxycreate.go
   - /pkg/models/operations/c1apiappv1appentitlementsproxydelete.go
   - /pkg/models/operations/c1apiappv1appentitlementsproxyget.go
+  - /pkg/models/operations/c1apiappv1appentitlementsremoveautomationexclusion.go
   - /pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembership.go
   - /pkg/models/operations/c1apiappv1appentitlementsupdate.go
+  - /pkg/models/operations/c1apiappv1appentitlementsupdateautomation.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrant.go
+  - /pkg/models/operations/c1apiappv1appentitlementuserbindingserviceremovegrantduration.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeed.go
   - /pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrants.go
+  - /pkg/models/operations/c1apiappv1appentitlementuserbindingserviceupdategrantduration.go
   - /pkg/models/operations/c1apiappv1appownersadd.go
   - /pkg/models/operations/c1apiappv1appownerslist.go
   - /pkg/models/operations/c1apiappv1appownersremove.go
@@ -106,9 +116,15 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1connectorserviceupdate.go
   - /pkg/models/operations/c1apiappv1connectorserviceupdatedelegated.go
   - /pkg/models/operations/c1apiattributev1attributescreateattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributescreatecomplianceframeworkattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributescreaterisklevelattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributesdeleteattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributesdeletecomplianceframeworkattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributesdeleterisklevelattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributesearchsearchattributevalues.go
   - /pkg/models/operations/c1apiattributev1attributesgetattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributesgetcomplianceframeworkattributevalue.go
+  - /pkg/models/operations/c1apiattributev1attributesgetrisklevelattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributetypes.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributevalues.go
   - /pkg/models/operations/c1apiauthv1authintrospect.go
@@ -125,6 +141,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiiamv1rolesget.go
   - /pkg/models/operations/c1apiiamv1roleslist.go
   - /pkg/models/operations/c1apiiamv1rolesupdate.go
+  - /pkg/models/operations/c1apipolicyv1accountprovisionpolicytesttest.go
   - /pkg/models/operations/c1apipolicyv1policiescreate.go
   - /pkg/models/operations/c1apipolicyv1policiesdelete.go
   - /pkg/models/operations/c1apipolicyv1policiesget.go
@@ -135,7 +152,9 @@ generatedFiles:
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlements.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlements.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreate.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomation.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedelete.go
+  - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomation.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomation.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceget.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicegetbundleautomation.go
@@ -148,9 +167,21 @@ generatedFiles:
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdate.go
   - /pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlements.go
   - /pkg/models/operations/c1apisettingsv1awsexternalidsettingsget.go
+  - /pkg/models/operations/c1apisettingsv1orgdomainservicelist.go
+  - /pkg/models/operations/c1apisettingsv1orgdomainserviceupdate.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceget.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsservicetestsourceip.go
   - /pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdate.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderservicecreate.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderservicedelete.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderserviceget.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderservicelist.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderservicesearch.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderservicetest.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderserviceupdate.go
+  - /pkg/models/operations/c1apistepupv1stepupproviderserviceupdatesecret.go
+  - /pkg/models/operations/c1apistepupv1stepuptransactionserviceget.go
+  - /pkg/models/operations/c1apistepupv1stepuptransactionservicesearch.go
   - /pkg/models/operations/c1apisystemlogv1exportservicecreate.go
   - /pkg/models/operations/c1apisystemlogv1exportservicedelete.go
   - /pkg/models/operations/c1apisystemlogv1exportserviceget.go
@@ -160,6 +191,7 @@ generatedFiles:
   - /pkg/models/operations/c1apisystemlogv1exportssearchservicesearch.go
   - /pkg/models/operations/c1apisystemlogv1systemlogservicelistevents.go
   - /pkg/models/operations/c1apitaskv1taskactionsserviceapprove.go
+  - /pkg/models/operations/c1apitaskv1taskactionsserviceapprovewithstepup.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicecomment.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicedeny.go
   - /pkg/models/operations/c1apitaskv1taskactionsserviceescalatetoemergencyaccess.go
@@ -167,6 +199,8 @@ generatedFiles:
   - /pkg/models/operations/c1apitaskv1taskactionsserviceprocessnow.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicereassign.go
   - /pkg/models/operations/c1apitaskv1taskactionsservicerestart.go
+  - /pkg/models/operations/c1apitaskv1taskactionsserviceskipstep.go
+  - /pkg/models/operations/c1apitaskv1taskauditlist.go
   - /pkg/models/operations/c1apitaskv1tasksearchservicesearch.go
   - /pkg/models/operations/c1apitaskv1taskservicecreategranttask.go
   - /pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtask.go
@@ -187,6 +221,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicegetworkflowexecution.go
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicelistworkflowexecutions.go
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowsearchservicesearchworkflows.go
+  - /pkg/models/operations/c1apiworkflowsv1betaworkflowsearchservicesearchworkflowtemplateversions.go
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicecreateworkflow.go
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflow.go
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowserviceexecuteworkflow.go
@@ -195,26 +230,43 @@ generatedFiles:
   - /pkg/models/operations/c1apiworkflowsv1betaworkflowserviceupdateworkflow.go
   - /pkg/models/shared/accept.go
   - /pkg/models/shared/acceptinstance.go
+  - /pkg/models/shared/accountprovision.go
   - /pkg/models/shared/addappentitlementownerrequest.go
   - /pkg/models/shared/addappentitlementownerresponse.go
   - /pkg/models/shared/addappownerrequest.go
   - /pkg/models/shared/addappownerresponse.go
   - /pkg/models/shared/addappresourceownerrequest.go
   - /pkg/models/shared/addappresourceownerresponse.go
+  - /pkg/models/shared/addautomationexclusionrequest.go
+  - /pkg/models/shared/addautomationexclusionresponse.go
   - /pkg/models/shared/addmanuallymanagedusersrequest.go
+  - /pkg/models/shared/agentapproval.go
   - /pkg/models/shared/app.go
   - /pkg/models/shared/appaccessrequestdefaults.go
   - /pkg/models/shared/appactionsservicegeneratereportrequest.go
   - /pkg/models/shared/appactionsservicegeneratereportresponse.go
   - /pkg/models/shared/appentitlement.go
+  - /pkg/models/shared/appentitlementautomation.go
+  - /pkg/models/shared/appentitlementautomationinput.go
+  - /pkg/models/shared/appentitlementautomationlastrunstatus.go
+  - /pkg/models/shared/appentitlementautomationlastrunstatusinput.go
+  - /pkg/models/shared/appentitlementautomationrulebasic.go
+  - /pkg/models/shared/appentitlementautomationrulecel.go
+  - /pkg/models/shared/appentitlementautomationruleentitlement.go
+  - /pkg/models/shared/appentitlementautomationrulenone.go
   - /pkg/models/shared/appentitlementexpandmask.go
   - /pkg/models/shared/appentitlementproxy.go
   - /pkg/models/shared/appentitlementproxyexpandmask.go
   - /pkg/models/shared/appentitlementproxyview.go
   - /pkg/models/shared/appentitlementref.go
   - /pkg/models/shared/appentitlementreference.go
+  - /pkg/models/shared/appentitlementsearchservicesearchgrantsrequest.go
+  - /pkg/models/shared/appentitlementsearchservicesearchgrantsresponse.go
   - /pkg/models/shared/appentitlementsearchservicesearchrequest.go
   - /pkg/models/shared/appentitlementsearchservicesearchresponse.go
+  - /pkg/models/shared/appentitlementservicegetautomationresponse.go
+  - /pkg/models/shared/appentitlementserviceupdateautomationrequest.go
+  - /pkg/models/shared/appentitlementserviceupdateautomationresponse.go
   - /pkg/models/shared/appentitlementuserbinding.go
   - /pkg/models/shared/appentitlementuserbindingexpandhistorymask.go
   - /pkg/models/shared/appentitlementuserbindingfeed.go
@@ -224,6 +276,7 @@ generatedFiles:
   - /pkg/models/shared/appentitlementuserview.go
   - /pkg/models/shared/appentitlementview.go
   - /pkg/models/shared/appentitlementwithexpired.go
+  - /pkg/models/shared/appentitlementwithuserbinding.go
   - /pkg/models/shared/appentitlementwithuserbindings.go
   - /pkg/models/shared/appgroupapproval.go
   - /pkg/models/shared/appmanagedstatebindingref.go
@@ -250,6 +303,7 @@ generatedFiles:
   - /pkg/models/shared/approvedaction.go
   - /pkg/models/shared/appusagecontrols.go
   - /pkg/models/shared/appuser.go
+  - /pkg/models/shared/appusercreatedtrigger.go
   - /pkg/models/shared/appusercredential.go
   - /pkg/models/shared/appuserexpandmask.go
   - /pkg/models/shared/appuserref.go
@@ -262,6 +316,7 @@ generatedFiles:
   - /pkg/models/shared/appusersforuserservicelistresponse.go
   - /pkg/models/shared/appuserstatus.go
   - /pkg/models/shared/appuserstatusinput.go
+  - /pkg/models/shared/appuserupdatedtrigger.go
   - /pkg/models/shared/appuserview.go
   - /pkg/models/shared/attributetype.go
   - /pkg/models/shared/attributevalue.go
@@ -273,13 +328,16 @@ generatedFiles:
   - /pkg/models/shared/cancelaccessrequestdefaultsrequest.go
   - /pkg/models/shared/cancelledaction.go
   - /pkg/models/shared/cidrrestriction.go
+  - /pkg/models/shared/closeaction.go
   - /pkg/models/shared/completedaction.go
   - /pkg/models/shared/conditionsucceeded.go
   - /pkg/models/shared/conditiontimedout.go
   - /pkg/models/shared/connector.go
+  - /pkg/models/shared/connectoraction.go
   - /pkg/models/shared/connectorcredential.go
   - /pkg/models/shared/connectorexpandmask.go
   - /pkg/models/shared/connectorprovision.go
+  - /pkg/models/shared/connectorref.go
   - /pkg/models/shared/connectorservicecreatedelegatedrequest.go
   - /pkg/models/shared/connectorservicecreaterequest.go
   - /pkg/models/shared/connectorservicecreateresponse.go
@@ -306,14 +364,25 @@ generatedFiles:
   - /pkg/models/shared/createappresponse.go
   - /pkg/models/shared/createattributevaluerequest.go
   - /pkg/models/shared/createattributevalueresponse.go
+  - /pkg/models/shared/createautomationrequest.go
+  - /pkg/models/shared/createautomationresponse.go
+  - /pkg/models/shared/createbundleautomationrequest.go
+  - /pkg/models/shared/createcomplianceframeworkattributevaluerequest.go
+  - /pkg/models/shared/createcomplianceframeworkattributevalueresponse.go
   - /pkg/models/shared/createmanuallymanagedappresourcerequest.go
   - /pkg/models/shared/createmanuallymanagedappresourceresponse.go
   - /pkg/models/shared/createmanuallymanagedresourcetyperequest.go
   - /pkg/models/shared/createmanuallymanagedresourcetyperesponse.go
   - /pkg/models/shared/createpolicyrequest.go
   - /pkg/models/shared/createpolicyresponse.go
+  - /pkg/models/shared/createrevoketasks.go
+  - /pkg/models/shared/createrisklevelattributevaluerequest.go
+  - /pkg/models/shared/createrisklevelattributevalueresponse.go
+  - /pkg/models/shared/createstepupproviderrequest.go
+  - /pkg/models/shared/createstepupproviderresponse.go
   - /pkg/models/shared/createworkflowrequest.go
   - /pkg/models/shared/createworkflowresponse.go
+  - /pkg/models/shared/defaultbehavior.go
   - /pkg/models/shared/delegatedprovision.go
   - /pkg/models/shared/deleteappentitlementproxyrequest.go
   - /pkg/models/shared/deleteappentitlementproxyresponse.go
@@ -323,12 +392,22 @@ generatedFiles:
   - /pkg/models/shared/deleteappresponse.go
   - /pkg/models/shared/deleteattributevaluerequest.go
   - /pkg/models/shared/deleteattributevalueresponse.go
+  - /pkg/models/shared/deleteautomationrequest.go
+  - /pkg/models/shared/deleteautomationresponse.go
+  - /pkg/models/shared/deletebundleautomationrequest.go
+  - /pkg/models/shared/deletebundleautomationresponse.go
+  - /pkg/models/shared/deletecomplianceframeworkattributevaluerequest.go
+  - /pkg/models/shared/deletecomplianceframeworkattributevalueresponse.go
   - /pkg/models/shared/deletemanuallymanagedappresourcerequest.go
   - /pkg/models/shared/deletemanuallymanagedappresourceresponse.go
   - /pkg/models/shared/deletemanuallymanagedresourcetyperequest.go
   - /pkg/models/shared/deletemanuallymanagedresourcetyperesponse.go
   - /pkg/models/shared/deletepolicyrequest.go
   - /pkg/models/shared/deletepolicyresponse.go
+  - /pkg/models/shared/deleterisklevelattributevaluerequest.go
+  - /pkg/models/shared/deleterisklevelattributevalueresponse.go
+  - /pkg/models/shared/deletestepupproviderrequest.go
+  - /pkg/models/shared/deletestepupproviderresponse.go
   - /pkg/models/shared/deleteworkflowrequest.go
   - /pkg/models/shared/deleteworkflowresponse.go
   - /pkg/models/shared/deniedaction.go
@@ -341,6 +420,7 @@ generatedFiles:
   - /pkg/models/shared/directoryservicegetresponse.go
   - /pkg/models/shared/directoryservicelistresponse.go
   - /pkg/models/shared/directoryview.go
+  - /pkg/models/shared/donotsave.go
   - /pkg/models/shared/encrypteddata.go
   - /pkg/models/shared/entitlementownerapproval.go
   - /pkg/models/shared/erroredaction.go
@@ -363,6 +443,7 @@ generatedFiles:
   - /pkg/models/shared/exportssearchservicesearchresponse.go
   - /pkg/models/shared/exporttodatasource.go
   - /pkg/models/shared/expressionapproval.go
+  - /pkg/models/shared/expressionapprovalinput.go
   - /pkg/models/shared/externalref.go
   - /pkg/models/shared/externalticketprovision.go
   - /pkg/models/shared/facetcategory.go
@@ -381,9 +462,13 @@ generatedFiles:
   - /pkg/models/shared/getappusagecontrolsresponse.go
   - /pkg/models/shared/getattributevalueresponse.go
   - /pkg/models/shared/getawsexternalidresponse.go
+  - /pkg/models/shared/getcomplianceframeworkattributevalueresponse.go
   - /pkg/models/shared/getpolicyresponse.go
+  - /pkg/models/shared/getrisklevelattributevalueresponse.go
   - /pkg/models/shared/getrolesresponse.go
   - /pkg/models/shared/getsessionsettingsresponse.go
+  - /pkg/models/shared/getstepupproviderresponse.go
+  - /pkg/models/shared/getstepuptransactionresponse.go
   - /pkg/models/shared/getworkflowexecutionresponse.go
   - /pkg/models/shared/getworkflowresponse.go
   - /pkg/models/shared/grantreason.go
@@ -397,8 +482,11 @@ generatedFiles:
   - /pkg/models/shared/listappusersforidentitywithgrantresponse.go
   - /pkg/models/shared/listattributetypesresponse.go
   - /pkg/models/shared/listattributevaluesresponse.go
+  - /pkg/models/shared/listautomationexclusionsresponse.go
+  - /pkg/models/shared/listorgdomainsresponse.go
   - /pkg/models/shared/listpolicyresponse.go
   - /pkg/models/shared/listrolesresponse.go
+  - /pkg/models/shared/liststepupprovidersresponse.go
   - /pkg/models/shared/listworkflowexecutionsresponse.go
   - /pkg/models/shared/listworkflowsresponse.go
   - /pkg/models/shared/managerapproval.go
@@ -410,10 +498,12 @@ generatedFiles:
   - /pkg/models/shared/multistep.go
   - /pkg/models/shared/oauth2authorizedas.go
   - /pkg/models/shared/oauth2authorizedasinput.go
+  - /pkg/models/shared/orgdomain.go
   - /pkg/models/shared/payloadpolicyapprovalstep.go
   - /pkg/models/shared/payloadpolicypostaction.go
   - /pkg/models/shared/payloadprovisionstep.go
   - /pkg/models/shared/payloadtest.go
+  - /pkg/models/shared/payloadworkflowstep.go
   - /pkg/models/shared/personalclient.go
   - /pkg/models/shared/personalclientinput.go
   - /pkg/models/shared/personalclientsearchservicesearchrequest.go
@@ -440,6 +530,7 @@ generatedFiles:
   - /pkg/models/shared/provisionpolicy.go
   - /pkg/models/shared/provisionpolicyinput.go
   - /pkg/models/shared/provisiontarget.go
+  - /pkg/models/shared/reassignaction.go
   - /pkg/models/shared/reassignedaction.go
   - /pkg/models/shared/reassignedbyerroraction.go
   - /pkg/models/shared/reject.go
@@ -450,8 +541,13 @@ generatedFiles:
   - /pkg/models/shared/removeappownerresponse.go
   - /pkg/models/shared/removeappresourceownerrequest.go
   - /pkg/models/shared/removeappresourceownerresponse.go
+  - /pkg/models/shared/removeautomationexclusionrequest.go
+  - /pkg/models/shared/removeautomationexclusionresponse.go
   - /pkg/models/shared/removeentitlementmembershiprequest.go
   - /pkg/models/shared/removeentitlementmembershipresponse.go
+  - /pkg/models/shared/removefromdelegation.go
+  - /pkg/models/shared/removegrantdurationrequest.go
+  - /pkg/models/shared/removegrantdurationresponse.go
   - /pkg/models/shared/requestcatalog.go
   - /pkg/models/shared/requestcatalogexpandmask.go
   - /pkg/models/shared/requestcatalogmanagementserviceaddaccessentitlementsrequest.go
@@ -484,10 +580,13 @@ generatedFiles:
   - /pkg/models/shared/responseprovisionstepcomplete.go
   - /pkg/models/shared/responseprovisionsteperrored.go
   - /pkg/models/shared/responsetest.go
+  - /pkg/models/shared/responseworkflowstep.go
   - /pkg/models/shared/restartaction.go
   - /pkg/models/shared/role.go
   - /pkg/models/shared/roleinput.go
   - /pkg/models/shared/rule.go
+  - /pkg/models/shared/runworkflow.go
+  - /pkg/models/shared/savetovault.go
   - /pkg/models/shared/searchappentitlementswithexpiredresponse.go
   - /pkg/models/shared/searchappresourcetypesrequest.go
   - /pkg/models/shared/searchappresourcetypesresponse.go
@@ -500,26 +599,48 @@ generatedFiles:
   - /pkg/models/shared/searchpastgrantsrequest.go
   - /pkg/models/shared/searchpastgrantsresponse.go
   - /pkg/models/shared/searchpoliciesrequest.go
+  - /pkg/models/shared/searchstepupprovidersrequest.go
+  - /pkg/models/shared/searchstepupprovidersresponse.go
+  - /pkg/models/shared/searchstepuptransactionsrequest.go
+  - /pkg/models/shared/searchstepuptransactionsresponse.go
   - /pkg/models/shared/searchusersrequest.go
   - /pkg/models/shared/searchusersresponse.go
   - /pkg/models/shared/searchworkflowexecutionsrequest.go
   - /pkg/models/shared/searchworkflowexecutionsresponse.go
   - /pkg/models/shared/searchworkflowsrequest.go
   - /pkg/models/shared/searchworkflowsresponse.go
+  - /pkg/models/shared/searchworkflowtemplateversionsrequest.go
+  - /pkg/models/shared/searchworkflowtemplateversionsresponse.go
+  - /pkg/models/shared/secrettrait.go
   - /pkg/models/shared/security.go
   - /pkg/models/shared/selfapproval.go
+  - /pkg/models/shared/selfapprovalinput.go
+  - /pkg/models/shared/sendemail.go
   - /pkg/models/shared/sessionsettings.go
   - /pkg/models/shared/setappentitlementownersrequest.go
   - /pkg/models/shared/setappentitlementownersresponse.go
   - /pkg/models/shared/setappownersrequest.go
   - /pkg/models/shared/setappownersresponse.go
   - /pkg/models/shared/setbundleautomationrequest.go
+  - /pkg/models/shared/skippedaction.go
   - /pkg/models/shared/status.go
+  - /pkg/models/shared/stepupmicrosoftsettings.go
+  - /pkg/models/shared/stepupoauth2settings.go
+  - /pkg/models/shared/stepupprovider.go
+  - /pkg/models/shared/stepupproviderinput.go
+  - /pkg/models/shared/stepupproviderref.go
+  - /pkg/models/shared/stepuptransaction.go
   - /pkg/models/shared/systemlogservicelisteventsrequest.go
   - /pkg/models/shared/systemlogservicelisteventsresponse.go
+  - /pkg/models/shared/targettask.go
+  - /pkg/models/shared/targettest.go
   - /pkg/models/shared/task.go
+  - /pkg/models/shared/taskaction.go
+  - /pkg/models/shared/taskaction1.go
   - /pkg/models/shared/taskactionsserviceapproverequest.go
   - /pkg/models/shared/taskactionsserviceapproveresponse.go
+  - /pkg/models/shared/taskactionsserviceapprovewithstepuprequest.go
+  - /pkg/models/shared/taskactionsserviceapprovewithstepupresponse.go
   - /pkg/models/shared/taskactionsservicecommentrequest.go
   - /pkg/models/shared/taskactionsservicecommentresponse.go
   - /pkg/models/shared/taskactionsservicedenyrequest.go
@@ -533,6 +654,61 @@ generatedFiles:
   - /pkg/models/shared/taskactionsservicereassignresponse.go
   - /pkg/models/shared/taskactionsservicerestartrequest.go
   - /pkg/models/shared/taskactionsservicerestartresponse.go
+  - /pkg/models/shared/taskactionsserviceskipsteprequest.go
+  - /pkg/models/shared/taskauditaccessrequestoutcome.go
+  - /pkg/models/shared/taskauditactionsubmitted.go
+  - /pkg/models/shared/taskauditapprovalautoacceptedbypolicy.go
+  - /pkg/models/shared/taskauditapprovalautorejectedbypolicy.go
+  - /pkg/models/shared/taskauditapprovalhappenedautomatically.go
+  - /pkg/models/shared/taskauditapprovalinstancechange.go
+  - /pkg/models/shared/taskauditbulkactionerror.go
+  - /pkg/models/shared/taskauditcancelledresult.go
+  - /pkg/models/shared/taskauditcertifyoutcome.go
+  - /pkg/models/shared/taskauditcomment.go
+  - /pkg/models/shared/taskauditconditionalpolicyexecutionresult.go
+  - /pkg/models/shared/taskauditconnectoractionresult.go
+  - /pkg/models/shared/taskauditerrorresult.go
+  - /pkg/models/shared/taskauditescalatetoemergencyaccess.go
+  - /pkg/models/shared/taskauditexpressionpolicysteperror.go
+  - /pkg/models/shared/taskauditexternalticketcreated.go
+  - /pkg/models/shared/taskauditexternalticketerror.go
+  - /pkg/models/shared/taskauditexternalticketprovisionstepresolved.go
+  - /pkg/models/shared/taskauditexternaltickettriggered.go
+  - /pkg/models/shared/taskauditfinishedconnectoractions.go
+  - /pkg/models/shared/taskauditgrantoutcome.go
+  - /pkg/models/shared/taskaudithardreset.go
+  - /pkg/models/shared/taskauditlistrequest.go
+  - /pkg/models/shared/taskauditlistresponse.go
+  - /pkg/models/shared/taskauditmetadata.go
+  - /pkg/models/shared/taskauditnewtask.go
+  - /pkg/models/shared/taskauditpolicyapprovalreassigned.go
+  - /pkg/models/shared/taskauditpolicyevaluationstep.go
+  - /pkg/models/shared/taskauditpolicyprovisionerror.go
+  - /pkg/models/shared/taskauditpolicyprovisionreassigned.go
+  - /pkg/models/shared/taskauditreassignedtodelegate.go
+  - /pkg/models/shared/taskauditreassignmentlisterror.go
+  - /pkg/models/shared/taskauditrestart.go
+  - /pkg/models/shared/taskauditrevokeoutcome.go
+  - /pkg/models/shared/taskauditstartedconnectoractions.go
+  - /pkg/models/shared/taskauditstatechange.go
+  - /pkg/models/shared/taskauditstepskipped.go
+  - /pkg/models/shared/taskauditstepupapproval.go
+  - /pkg/models/shared/taskauditsuccessresult.go
+  - /pkg/models/shared/taskauditview.go
+  - /pkg/models/shared/taskauditviewref.go
+  - /pkg/models/shared/taskauditwaitforanalysisstepsuccess.go
+  - /pkg/models/shared/taskauditwaitforanalysissteptimedout.go
+  - /pkg/models/shared/taskauditwaitforanalysisstepwaiting.go
+  - /pkg/models/shared/taskauditwaitstepsuccess.go
+  - /pkg/models/shared/taskauditwaitsteptimedout.go
+  - /pkg/models/shared/taskauditwaitstepwaiting.go
+  - /pkg/models/shared/taskauditwebhookapprovalattempt.go
+  - /pkg/models/shared/taskauditwebhookapprovalbadresponse.go
+  - /pkg/models/shared/taskauditwebhookapprovalsuccess.go
+  - /pkg/models/shared/taskauditwebhookapprovaltriggered.go
+  - /pkg/models/shared/taskauditwebhookattempt.go
+  - /pkg/models/shared/taskauditwebhooksuccess.go
+  - /pkg/models/shared/taskauditwebhooktriggered.go
   - /pkg/models/shared/taskexpandmask.go
   - /pkg/models/shared/taskgrantsource.go
   - /pkg/models/shared/taskref.go
@@ -564,22 +740,37 @@ generatedFiles:
   - /pkg/models/shared/taskview.go
   - /pkg/models/shared/terminateworkflowrequest.go
   - /pkg/models/shared/terminateworkflowresponse.go
+  - /pkg/models/shared/testaccountprovisionpolicyrequest.go
+  - /pkg/models/shared/testaccountprovisionpolicyresponse.go
   - /pkg/models/shared/testsourceiprequest.go
   - /pkg/models/shared/testsourceipresponse.go
+  - /pkg/models/shared/teststepupproviderrequest.go
+  - /pkg/models/shared/teststepupproviderresponse.go
+  - /pkg/models/shared/unconfiguredprovision.go
+  - /pkg/models/shared/unenrollfromallaccessprofiles.go
   - /pkg/models/shared/updateappentitlementrequest.go
   - /pkg/models/shared/updateappentitlementresponse.go
   - /pkg/models/shared/updateapprequest.go
   - /pkg/models/shared/updateappresponse.go
   - /pkg/models/shared/updateappusagecontrolsrequest.go
   - /pkg/models/shared/updateappusagecontrolsresponse.go
+  - /pkg/models/shared/updategrantdurationrequest.go
+  - /pkg/models/shared/updategrantdurationresponse.go
   - /pkg/models/shared/updatemanuallymanagedresourcetyperequest.go
   - /pkg/models/shared/updatemanuallymanagedresourcetyperesponse.go
+  - /pkg/models/shared/updateorgdomainrequest.go
+  - /pkg/models/shared/updateorgdomainresponse.go
   - /pkg/models/shared/updatepolicyrequest.go
   - /pkg/models/shared/updatepolicyresponse.go
   - /pkg/models/shared/updaterolerequest.go
   - /pkg/models/shared/updaterolesresponse.go
   - /pkg/models/shared/updatesessionsettingsrequest.go
   - /pkg/models/shared/updatesessionsettingsresponse.go
+  - /pkg/models/shared/updatestepupproviderrequest.go
+  - /pkg/models/shared/updatestepupproviderresponse.go
+  - /pkg/models/shared/updatestepupprovidersecretrequest.go
+  - /pkg/models/shared/updatestepupprovidersecretresponse.go
+  - /pkg/models/shared/updateuser.go
   - /pkg/models/shared/updateworkflowrequest.go
   - /pkg/models/shared/updateworkflowresponse.go
   - /pkg/models/shared/user.go
@@ -591,6 +782,7 @@ generatedFiles:
   - /pkg/models/shared/userservicegetresponse.go
   - /pkg/models/shared/userservicelistresponse.go
   - /pkg/models/shared/userview.go
+  - /pkg/models/shared/userwithappentitlementuserbindingview.go
   - /pkg/models/shared/validatepolicycelrequest.go
   - /pkg/models/shared/validatepolicycelresponse.go
   - /pkg/models/shared/wait.go
@@ -599,6 +791,7 @@ generatedFiles:
   - /pkg/models/shared/waitforduration.go
   - /pkg/models/shared/waitinstance.go
   - /pkg/models/shared/webhook.go
+  - /pkg/models/shared/webhook1.go
   - /pkg/models/shared/webhookapproval.go
   - /pkg/models/shared/webhookinput.go
   - /pkg/models/shared/webhookinstance.go
@@ -609,6 +802,7 @@ generatedFiles:
   - /pkg/models/shared/webhooksourcepolicypostaction.go
   - /pkg/models/shared/webhooksourceprovisionstep.go
   - /pkg/models/shared/webhooksourcetest.go
+  - /pkg/models/shared/webhooksourceworkflowstep.go
   - /pkg/models/shared/webhookspec.go
   - /pkg/models/shared/webhookssearchrequest.go
   - /pkg/models/shared/webhookssearchresponse.go
@@ -625,9 +819,15 @@ generatedFiles:
   - /pkg/models/shared/workflow.go
   - /pkg/models/shared/workflowcontext.go
   - /pkg/models/shared/workflowexecution.go
+  - /pkg/models/shared/workflowexecutionexpandmask.go
+  - /pkg/models/shared/workflowexecutionref.go
+  - /pkg/models/shared/workflowexecutionview.go
   - /pkg/models/shared/workflowinput.go
   - /pkg/models/shared/workflowstep.go
+  - /pkg/models/shared/workflowtemplateref.go
+  - /pkg/models/shared/workflowtemplateversion.go
   - /pkg/models/shared/workflowtrigger.go
+  - accountprovisionpolicytest.go
   - appaccessrequestsdefaults.go
   - appentitlementowners.go
   - appentitlements.go
@@ -666,19 +866,30 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementownersremoveresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementownerssetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsaddautomationexclusionrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsaddautomationexclusionresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsaddmanuallymanagedmembersresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementscreateautomationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementscreateautomationresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementscreaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementscreateresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsdeleteautomationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsdeleteautomationresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsdeleterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsdeleteresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuserrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementsforappuserresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchappentitlementswithexpiredresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchgrantsresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsgetautomationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsgetautomationresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsgetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsgetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistautomationexclusionsrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementslistautomationexclusionsresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourcerequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementslistforappresourceresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementslistforappuserrequest.md
@@ -693,14 +904,22 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxydeleteresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsproxygetresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsremoveautomationexclusionrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsremoveautomationexclusionresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershiprequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsremoveentitlementmembershipresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsupdateautomationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementsupdateautomationresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementsupdateresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantrequest.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicelistappusersforidentitywithgrantresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingserviceremovegrantdurationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingserviceremovegrantdurationresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchgrantfeedresponse.md
   - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingservicesearchpastgrantsresponse.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingserviceupdategrantdurationrequest.md
+  - docs/pkg/models/operations/c1apiappv1appentitlementuserbindingserviceupdategrantdurationresponse.md
   - docs/pkg/models/operations/c1apiappv1appownersaddrequest.md
   - docs/pkg/models/operations/c1apiappv1appownersaddresponse.md
   - docs/pkg/models/operations/c1apiappv1appownerslistrequest.md
@@ -786,11 +1005,21 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdateresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributescreateattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributescreatecomplianceframeworkattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributescreaterisklevelattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevaluerequest.md
   - docs/pkg/models/operations/c1apiattributev1attributesdeleteattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributesdeletecomplianceframeworkattributevaluerequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributesdeletecomplianceframeworkattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributesdeleterisklevelattributevaluerequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributesdeleterisklevelattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesearchsearchattributevaluesresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributesgetattributevaluerequest.md
   - docs/pkg/models/operations/c1apiattributev1attributesgetattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributesgetcomplianceframeworkattributevaluerequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributesgetcomplianceframeworkattributevalueresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributesgetrisklevelattributevaluerequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributesgetrisklevelattributevalueresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributetypesrequest.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributetypesresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md
@@ -818,6 +1047,7 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiiamv1roleslistresponse.md
   - docs/pkg/models/operations/c1apiiamv1rolesupdaterequest.md
   - docs/pkg/models/operations/c1apiiamv1rolesupdateresponse.md
+  - docs/pkg/models/operations/c1apipolicyv1accountprovisionpolicytesttestresponse.md
   - docs/pkg/models/operations/c1apipolicyv1policiescreateresponse.md
   - docs/pkg/models/operations/c1apipolicyv1policiesdeleterequest.md
   - docs/pkg/models/operations/c1apipolicyv1policiesdeleteresponse.md
@@ -833,7 +1063,11 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddaccessentitlementsresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsrequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceaddappentitlementsresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreatebundleautomationresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicecreateresponse.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationrequest.md
+  - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeletebundleautomationresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleterequest.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicedeleteresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceforcerunbundleautomationrequest.md
@@ -858,9 +1092,28 @@ generatedFiles:
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md
   - docs/pkg/models/operations/c1apirequestcatalogv1requestcatalogsearchservicesearchentitlementsresponse.md
   - docs/pkg/models/operations/c1apisettingsv1awsexternalidsettingsgetresponse.md
+  - docs/pkg/models/operations/c1apisettingsv1orgdomainservicelistrequest.md
+  - docs/pkg/models/operations/c1apisettingsv1orgdomainservicelistresponse.md
+  - docs/pkg/models/operations/c1apisettingsv1orgdomainserviceupdateresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicegetresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsservicetestsourceipresponse.md
   - docs/pkg/models/operations/c1apisettingsv1sessionsettingsserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicecreateresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicedeleterequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicedeleteresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicegetrequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicegetresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicelistresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicesearchresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicetestrequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderservicetestresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderserviceupdatesecretrequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepupproviderserviceupdatesecretresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepuptransactionservicegetrequest.md
+  - docs/pkg/models/operations/c1apistepupv1stepuptransactionservicegetresponse.md
+  - docs/pkg/models/operations/c1apistepupv1stepuptransactionservicesearchresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicecreateresponse.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicedeleterequest.md
   - docs/pkg/models/operations/c1apisystemlogv1exportservicedeleteresponse.md
@@ -876,6 +1129,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apisystemlogv1systemlogservicelisteventsresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapproverequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapproveresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapprovewithstepuprequest.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceapprovewithstepupresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicecommentrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicecommentresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicedenyrequest.md
@@ -890,6 +1145,9 @@ generatedFiles:
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicereassignresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicerestartrequest.md
   - docs/pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceskipsteprequest.md
+  - docs/pkg/models/operations/c1apitaskv1taskactionsserviceskipstepresponse.md
+  - docs/pkg/models/operations/c1apitaskv1taskauditlistresponse.md
   - docs/pkg/models/operations/c1apitaskv1tasksearchservicesearchresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskservicecreategranttaskresponse.md
   - docs/pkg/models/operations/c1apitaskv1taskservicecreateoffboardingtaskresponse.md
@@ -920,6 +1178,7 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicegetworkflowexecutionresponse.md
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowexecutionservicelistworkflowexecutionsresponse.md
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowsearchservicesearchworkflowsresponse.md
+  - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowsearchservicesearchworkflowtemplateversionsresponse.md
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicecreateworkflowresponse.md
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflowrequest.md
   - docs/pkg/models/operations/c1apiworkflowsv1betaworkflowservicedeleteworkflowresponse.md
@@ -933,15 +1192,20 @@ generatedFiles:
   - docs/pkg/models/operations/option.md
   - docs/pkg/models/shared/accept.md
   - docs/pkg/models/shared/acceptinstance.md
+  - docs/pkg/models/shared/accountprovision.md
   - docs/pkg/models/shared/accounttypes.md
   - docs/pkg/models/shared/actions.md
+  - docs/pkg/models/shared/actiontype.md
   - docs/pkg/models/shared/addappentitlementownerrequest.md
   - docs/pkg/models/shared/addappentitlementownerresponse.md
   - docs/pkg/models/shared/addappownerrequest.md
   - docs/pkg/models/shared/addappownerresponse.md
   - docs/pkg/models/shared/addappresourceownerrequest.md
   - docs/pkg/models/shared/addappresourceownerresponse.md
+  - docs/pkg/models/shared/addautomationexclusionrequest.md
+  - docs/pkg/models/shared/addautomationexclusionresponse.md
   - docs/pkg/models/shared/addmanuallymanagedusersrequest.md
+  - docs/pkg/models/shared/agentapproval.md
   - docs/pkg/models/shared/annotations.md
   - docs/pkg/models/shared/app.md
   - docs/pkg/models/shared/appaccessrequestdefaults.md
@@ -949,6 +1213,15 @@ generatedFiles:
   - docs/pkg/models/shared/appactionsservicegeneratereportrequest.md
   - docs/pkg/models/shared/appactionsservicegeneratereportresponse.md
   - docs/pkg/models/shared/appentitlement.md
+  - docs/pkg/models/shared/appentitlementautomation.md
+  - docs/pkg/models/shared/appentitlementautomationinput.md
+  - docs/pkg/models/shared/appentitlementautomationlastrunstatus.md
+  - docs/pkg/models/shared/appentitlementautomationlastrunstatusinput.md
+  - docs/pkg/models/shared/appentitlementautomationlastrunstatusstatus.md
+  - docs/pkg/models/shared/appentitlementautomationrulebasic.md
+  - docs/pkg/models/shared/appentitlementautomationrulecel.md
+  - docs/pkg/models/shared/appentitlementautomationruleentitlement.md
+  - docs/pkg/models/shared/appentitlementautomationrulenone.md
   - docs/pkg/models/shared/appentitlementdurationunset.md
   - docs/pkg/models/shared/appentitlementexpandmask.md
   - docs/pkg/models/shared/appentitlementinput.md
@@ -957,8 +1230,14 @@ generatedFiles:
   - docs/pkg/models/shared/appentitlementproxyview.md
   - docs/pkg/models/shared/appentitlementref.md
   - docs/pkg/models/shared/appentitlementreference.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchgrantsrequest.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchgrantsresponse.md
   - docs/pkg/models/shared/appentitlementsearchservicesearchrequest.md
   - docs/pkg/models/shared/appentitlementsearchservicesearchresponse.md
+  - docs/pkg/models/shared/appentitlementsearchservicesearchresponseexpanded.md
+  - docs/pkg/models/shared/appentitlementservicegetautomationresponse.md
+  - docs/pkg/models/shared/appentitlementserviceupdateautomationrequest.md
+  - docs/pkg/models/shared/appentitlementserviceupdateautomationresponse.md
   - docs/pkg/models/shared/appentitlementuserbinding.md
   - docs/pkg/models/shared/appentitlementuserbindingexpandhistorymask.md
   - docs/pkg/models/shared/appentitlementuserbindingfeed.md
@@ -968,6 +1247,7 @@ generatedFiles:
   - docs/pkg/models/shared/appentitlementuserview.md
   - docs/pkg/models/shared/appentitlementview.md
   - docs/pkg/models/shared/appentitlementwithexpired.md
+  - docs/pkg/models/shared/appentitlementwithuserbinding.md
   - docs/pkg/models/shared/appentitlementwithuserbindings.md
   - docs/pkg/models/shared/appgroupapproval.md
   - docs/pkg/models/shared/appinput.md
@@ -1002,7 +1282,9 @@ generatedFiles:
   - docs/pkg/models/shared/approvedaction.md
   - docs/pkg/models/shared/appusagecontrols.md
   - docs/pkg/models/shared/appuser.md
+  - docs/pkg/models/shared/appusercreatedtrigger.md
   - docs/pkg/models/shared/appusercredential.md
+  - docs/pkg/models/shared/appuserdomains.md
   - docs/pkg/models/shared/appuserexpandmask.md
   - docs/pkg/models/shared/appuserinput.md
   - docs/pkg/models/shared/appuserref.md
@@ -1023,6 +1305,7 @@ generatedFiles:
   - docs/pkg/models/shared/appuserstatusstatus.md
   - docs/pkg/models/shared/appusertype.md
   - docs/pkg/models/shared/appusertypes.md
+  - docs/pkg/models/shared/appuserupdatedtrigger.md
   - docs/pkg/models/shared/appuserview.md
   - docs/pkg/models/shared/attributetype.md
   - docs/pkg/models/shared/attributevalue.md
@@ -1035,15 +1318,18 @@ generatedFiles:
   - docs/pkg/models/shared/cancelaccessrequestdefaultsrequest.md
   - docs/pkg/models/shared/cancelledaction.md
   - docs/pkg/models/shared/cidrrestriction.md
+  - docs/pkg/models/shared/closeaction.md
   - docs/pkg/models/shared/completedaction.md
   - docs/pkg/models/shared/conditionsucceeded.md
   - docs/pkg/models/shared/conditiontimedout.md
   - docs/pkg/models/shared/config.md
   - docs/pkg/models/shared/connector.md
+  - docs/pkg/models/shared/connectoraction.md
   - docs/pkg/models/shared/connectorcredential.md
   - docs/pkg/models/shared/connectorexpandmask.md
   - docs/pkg/models/shared/connectorinput.md
   - docs/pkg/models/shared/connectorprovision.md
+  - docs/pkg/models/shared/connectorref.md
   - docs/pkg/models/shared/connectorservicecreatedelegatedrequest.md
   - docs/pkg/models/shared/connectorservicecreaterequest.md
   - docs/pkg/models/shared/connectorservicecreaterequestconfig.md
@@ -1077,9 +1363,15 @@ generatedFiles:
   - docs/pkg/models/shared/createappentitlementresponse.md
   - docs/pkg/models/shared/createappentitlementresponseexpanded.md
   - docs/pkg/models/shared/createapprequest.md
+  - docs/pkg/models/shared/createapprequestidentitymatching.md
   - docs/pkg/models/shared/createappresponse.md
   - docs/pkg/models/shared/createattributevaluerequest.md
   - docs/pkg/models/shared/createattributevalueresponse.md
+  - docs/pkg/models/shared/createautomationrequest.md
+  - docs/pkg/models/shared/createautomationresponse.md
+  - docs/pkg/models/shared/createbundleautomationrequest.md
+  - docs/pkg/models/shared/createcomplianceframeworkattributevaluerequest.md
+  - docs/pkg/models/shared/createcomplianceframeworkattributevalueresponse.md
   - docs/pkg/models/shared/createmanuallymanagedappresourcerequest.md
   - docs/pkg/models/shared/createmanuallymanagedappresourceresponse.md
   - docs/pkg/models/shared/createmanuallymanagedresourcetyperequest.md
@@ -1087,9 +1379,16 @@ generatedFiles:
   - docs/pkg/models/shared/createmanuallymanagedresourcetyperesponseexpanded.md
   - docs/pkg/models/shared/createpolicyrequest.md
   - docs/pkg/models/shared/createpolicyresponse.md
+  - docs/pkg/models/shared/createrevoketasks.md
+  - docs/pkg/models/shared/createrisklevelattributevaluerequest.md
+  - docs/pkg/models/shared/createrisklevelattributevalueresponse.md
+  - docs/pkg/models/shared/createstepupproviderrequest.md
+  - docs/pkg/models/shared/createstepupproviderresponse.md
   - docs/pkg/models/shared/createworkflowrequest.md
   - docs/pkg/models/shared/createworkflowresponse.md
+  - docs/pkg/models/shared/currentstate.md
   - docs/pkg/models/shared/currentstep.md
+  - docs/pkg/models/shared/defaultbehavior.md
   - docs/pkg/models/shared/delegatedprovision.md
   - docs/pkg/models/shared/deleteappentitlementproxyrequest.md
   - docs/pkg/models/shared/deleteappentitlementproxyresponse.md
@@ -1099,12 +1398,22 @@ generatedFiles:
   - docs/pkg/models/shared/deleteappresponse.md
   - docs/pkg/models/shared/deleteattributevaluerequest.md
   - docs/pkg/models/shared/deleteattributevalueresponse.md
+  - docs/pkg/models/shared/deleteautomationrequest.md
+  - docs/pkg/models/shared/deleteautomationresponse.md
+  - docs/pkg/models/shared/deletebundleautomationrequest.md
+  - docs/pkg/models/shared/deletebundleautomationresponse.md
+  - docs/pkg/models/shared/deletecomplianceframeworkattributevaluerequest.md
+  - docs/pkg/models/shared/deletecomplianceframeworkattributevalueresponse.md
   - docs/pkg/models/shared/deletemanuallymanagedappresourcerequest.md
   - docs/pkg/models/shared/deletemanuallymanagedappresourceresponse.md
   - docs/pkg/models/shared/deletemanuallymanagedresourcetyperequest.md
   - docs/pkg/models/shared/deletemanuallymanagedresourcetyperesponse.md
   - docs/pkg/models/shared/deletepolicyrequest.md
   - docs/pkg/models/shared/deletepolicyresponse.md
+  - docs/pkg/models/shared/deleterisklevelattributevaluerequest.md
+  - docs/pkg/models/shared/deleterisklevelattributevalueresponse.md
+  - docs/pkg/models/shared/deletestepupproviderrequest.md
+  - docs/pkg/models/shared/deletestepupproviderresponse.md
   - docs/pkg/models/shared/deleteworkflowrequest.md
   - docs/pkg/models/shared/deleteworkflowresponse.md
   - docs/pkg/models/shared/deniedaction.md
@@ -1122,6 +1431,7 @@ generatedFiles:
   - docs/pkg/models/shared/directoryservicelistresponseexpanded.md
   - docs/pkg/models/shared/directorystatus.md
   - docs/pkg/models/shared/directoryview.md
+  - docs/pkg/models/shared/donotsave.md
   - docs/pkg/models/shared/durationunset.md
   - docs/pkg/models/shared/emergencystatus.md
   - docs/pkg/models/shared/encrypteddata.md
@@ -1129,8 +1439,10 @@ generatedFiles:
   - docs/pkg/models/shared/entitlementownerapproval.md
   - docs/pkg/models/shared/erroredaction.md
   - docs/pkg/models/shared/eventtype.md
+  - docs/pkg/models/shared/excludetypes.md
   - docs/pkg/models/shared/executeworkflowrequest.md
   - docs/pkg/models/shared/executeworkflowresponse.md
+  - docs/pkg/models/shared/executionstepstates.md
   - docs/pkg/models/shared/expanded.md
   - docs/pkg/models/shared/exporter.md
   - docs/pkg/models/shared/exporterinput.md
@@ -1150,6 +1462,7 @@ generatedFiles:
   - docs/pkg/models/shared/exportssearchservicesearchresponse.md
   - docs/pkg/models/shared/exporttodatasource.md
   - docs/pkg/models/shared/expressionapproval.md
+  - docs/pkg/models/shared/expressionapprovalinput.md
   - docs/pkg/models/shared/externalref.md
   - docs/pkg/models/shared/externalrefsource.md
   - docs/pkg/models/shared/externalticketprovision.md
@@ -1172,9 +1485,13 @@ generatedFiles:
   - docs/pkg/models/shared/getappusagecontrolsresponse.md
   - docs/pkg/models/shared/getattributevalueresponse.md
   - docs/pkg/models/shared/getawsexternalidresponse.md
+  - docs/pkg/models/shared/getcomplianceframeworkattributevalueresponse.md
   - docs/pkg/models/shared/getpolicyresponse.md
+  - docs/pkg/models/shared/getrisklevelattributevalueresponse.md
   - docs/pkg/models/shared/getrolesresponse.md
   - docs/pkg/models/shared/getsessionsettingsresponse.md
+  - docs/pkg/models/shared/getstepupproviderresponse.md
+  - docs/pkg/models/shared/getstepuptransactionresponse.md
   - docs/pkg/models/shared/getworkflowexecutionresponse.md
   - docs/pkg/models/shared/getworkflowresponse.md
   - docs/pkg/models/shared/grantedstatus.md
@@ -1192,8 +1509,11 @@ generatedFiles:
   - docs/pkg/models/shared/listappusersforidentitywithgrantresponse.md
   - docs/pkg/models/shared/listattributetypesresponse.md
   - docs/pkg/models/shared/listattributevaluesresponse.md
+  - docs/pkg/models/shared/listautomationexclusionsresponse.md
+  - docs/pkg/models/shared/listorgdomainsresponse.md
   - docs/pkg/models/shared/listpolicyresponse.md
   - docs/pkg/models/shared/listrolesresponse.md
+  - docs/pkg/models/shared/liststepupprovidersresponse.md
   - docs/pkg/models/shared/listworkflowexecutionsresponse.md
   - docs/pkg/models/shared/listworkflowsresponse.md
   - docs/pkg/models/shared/managerapproval.md
@@ -1206,6 +1526,7 @@ generatedFiles:
   - docs/pkg/models/shared/multistep.md
   - docs/pkg/models/shared/oauth2authorizedas.md
   - docs/pkg/models/shared/oauth2authorizedasinput.md
+  - docs/pkg/models/shared/orgdomain.md
   - docs/pkg/models/shared/origin.md
   - docs/pkg/models/shared/outcome.md
   - docs/pkg/models/shared/payload.md
@@ -1216,6 +1537,7 @@ generatedFiles:
   - docs/pkg/models/shared/payloadprovisionstep.md
   - docs/pkg/models/shared/payloadprovisionstepexpanded.md
   - docs/pkg/models/shared/payloadtest.md
+  - docs/pkg/models/shared/payloadworkflowstep.md
   - docs/pkg/models/shared/personalclient.md
   - docs/pkg/models/shared/personalclientinput.md
   - docs/pkg/models/shared/personalclientsearchservicesearchrequest.md
@@ -1242,7 +1564,9 @@ generatedFiles:
   - docs/pkg/models/shared/policystepsinput.md
   - docs/pkg/models/shared/policytype.md
   - docs/pkg/models/shared/policytypes.md
+  - docs/pkg/models/shared/previousstate.md
   - docs/pkg/models/shared/processing.md
+  - docs/pkg/models/shared/providertype.md
   - docs/pkg/models/shared/provision.md
   - docs/pkg/models/shared/provisioninstance.md
   - docs/pkg/models/shared/provisioninstancestate.md
@@ -1250,6 +1574,7 @@ generatedFiles:
   - docs/pkg/models/shared/provisionpolicyinput.md
   - docs/pkg/models/shared/provisiontarget.md
   - docs/pkg/models/shared/purpose.md
+  - docs/pkg/models/shared/reassignaction.md
   - docs/pkg/models/shared/reassignedaction.md
   - docs/pkg/models/shared/reassignedbyerroraction.md
   - docs/pkg/models/shared/recommendation.md
@@ -1262,8 +1587,13 @@ generatedFiles:
   - docs/pkg/models/shared/removeappownerresponse.md
   - docs/pkg/models/shared/removeappresourceownerrequest.md
   - docs/pkg/models/shared/removeappresourceownerresponse.md
+  - docs/pkg/models/shared/removeautomationexclusionrequest.md
+  - docs/pkg/models/shared/removeautomationexclusionresponse.md
   - docs/pkg/models/shared/removeentitlementmembershiprequest.md
   - docs/pkg/models/shared/removeentitlementmembershipresponse.md
+  - docs/pkg/models/shared/removefromdelegation.md
+  - docs/pkg/models/shared/removegrantdurationrequest.md
+  - docs/pkg/models/shared/removegrantdurationresponse.md
   - docs/pkg/models/shared/requestcatalog.md
   - docs/pkg/models/shared/requestcatalogexpandmask.md
   - docs/pkg/models/shared/requestcataloginput.md
@@ -1272,6 +1602,9 @@ generatedFiles:
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsrequest.md
   - docs/pkg/models/shared/requestcatalogmanagementserviceaddappentitlementsresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequest.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequestenrollmentbehavior.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequestunenrollmentbehavior.md
+  - docs/pkg/models/shared/requestcatalogmanagementservicecreaterequestunenrollmententitlementbehavior.md
   - docs/pkg/models/shared/requestcatalogmanagementservicedeleterequest.md
   - docs/pkg/models/shared/requestcatalogmanagementservicedeleteresponse.md
   - docs/pkg/models/shared/requestcatalogmanagementservicegetresponse.md
@@ -1303,10 +1636,13 @@ generatedFiles:
   - docs/pkg/models/shared/responseprovisionstepcomplete.md
   - docs/pkg/models/shared/responseprovisionsteperrored.md
   - docs/pkg/models/shared/responsetest.md
+  - docs/pkg/models/shared/responseworkflowstep.md
   - docs/pkg/models/shared/restartaction.md
   - docs/pkg/models/shared/role.md
   - docs/pkg/models/shared/roleinput.md
   - docs/pkg/models/shared/rule.md
+  - docs/pkg/models/shared/runworkflow.md
+  - docs/pkg/models/shared/savetovault.md
   - docs/pkg/models/shared/searchappentitlementswithexpiredresponse.md
   - docs/pkg/models/shared/searchappresourcetypesrequest.md
   - docs/pkg/models/shared/searchappresourcetypesresponse.md
@@ -1321,15 +1657,26 @@ generatedFiles:
   - docs/pkg/models/shared/searchpastgrantsresponse.md
   - docs/pkg/models/shared/searchpastgrantsresponseexpanded.md
   - docs/pkg/models/shared/searchpoliciesrequest.md
+  - docs/pkg/models/shared/searchstepupprovidersrequest.md
+  - docs/pkg/models/shared/searchstepupprovidersresponse.md
+  - docs/pkg/models/shared/searchstepuptransactionsrequest.md
+  - docs/pkg/models/shared/searchstepuptransactionsrequeststate.md
+  - docs/pkg/models/shared/searchstepuptransactionsresponse.md
   - docs/pkg/models/shared/searchusersrequest.md
   - docs/pkg/models/shared/searchusersresponse.md
   - docs/pkg/models/shared/searchusersresponseexpanded.md
   - docs/pkg/models/shared/searchworkflowexecutionsrequest.md
   - docs/pkg/models/shared/searchworkflowexecutionsresponse.md
+  - docs/pkg/models/shared/searchworkflowexecutionsresponseexpanded.md
   - docs/pkg/models/shared/searchworkflowsrequest.md
   - docs/pkg/models/shared/searchworkflowsresponse.md
+  - docs/pkg/models/shared/searchworkflowtemplateversionsrequest.md
+  - docs/pkg/models/shared/searchworkflowtemplateversionsresponse.md
+  - docs/pkg/models/shared/secrettrait.md
   - docs/pkg/models/shared/security.md
   - docs/pkg/models/shared/selfapproval.md
+  - docs/pkg/models/shared/selfapprovalinput.md
+  - docs/pkg/models/shared/sendemail.md
   - docs/pkg/models/shared/sessionsettings.md
   - docs/pkg/models/shared/setappentitlementownersrequest.md
   - docs/pkg/models/shared/setappentitlementownersresponse.md
@@ -1337,17 +1684,34 @@ generatedFiles:
   - docs/pkg/models/shared/setappownersresponse.md
   - docs/pkg/models/shared/setbundleautomationrequest.md
   - docs/pkg/models/shared/severity.md
+  - docs/pkg/models/shared/skippedaction.md
   - docs/pkg/models/shared/sortby.md
   - docs/pkg/models/shared/sortdirection.md
+  - docs/pkg/models/shared/source.md
   - docs/pkg/models/shared/state.md
   - docs/pkg/models/shared/status.md
   - docs/pkg/models/shared/stepapprovaltypes.md
+  - docs/pkg/models/shared/stepupmicrosoftsettings.md
+  - docs/pkg/models/shared/stepupoauth2settings.md
+  - docs/pkg/models/shared/stepupprovider.md
+  - docs/pkg/models/shared/stepupproviderinput.md
+  - docs/pkg/models/shared/stepupproviderref.md
+  - docs/pkg/models/shared/stepuptransaction.md
+  - docs/pkg/models/shared/stepuptransactionstate.md
   - docs/pkg/models/shared/systemlogservicelisteventsrequest.md
   - docs/pkg/models/shared/systemlogservicelisteventsresponse.md
+  - docs/pkg/models/shared/targettask.md
+  - docs/pkg/models/shared/targettest.md
+  - docs/pkg/models/shared/targettype.md
   - docs/pkg/models/shared/task.md
+  - docs/pkg/models/shared/taskaction.md
+  - docs/pkg/models/shared/taskaction1.md
   - docs/pkg/models/shared/taskactionsserviceapproverequest.md
   - docs/pkg/models/shared/taskactionsserviceapproveresponse.md
   - docs/pkg/models/shared/taskactionsserviceapproveresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsserviceapprovewithstepuprequest.md
+  - docs/pkg/models/shared/taskactionsserviceapprovewithstepupresponse.md
+  - docs/pkg/models/shared/taskactionsserviceapprovewithstepupresponseexpanded.md
   - docs/pkg/models/shared/taskactionsservicecommentrequest.md
   - docs/pkg/models/shared/taskactionsservicecommentresponse.md
   - docs/pkg/models/shared/taskactionsservicecommentresponseexpanded.md
@@ -1367,6 +1731,66 @@ generatedFiles:
   - docs/pkg/models/shared/taskactionsservicerestartrequest.md
   - docs/pkg/models/shared/taskactionsservicerestartresponse.md
   - docs/pkg/models/shared/taskactionsservicerestartresponseexpanded.md
+  - docs/pkg/models/shared/taskactionsserviceskipsteprequest.md
+  - docs/pkg/models/shared/taskauditaccessrequestoutcome.md
+  - docs/pkg/models/shared/taskauditactionsubmitted.md
+  - docs/pkg/models/shared/taskauditapprovalautoacceptedbypolicy.md
+  - docs/pkg/models/shared/taskauditapprovalautorejectedbypolicy.md
+  - docs/pkg/models/shared/taskauditapprovalhappenedautomatically.md
+  - docs/pkg/models/shared/taskauditapprovalinstancechange.md
+  - docs/pkg/models/shared/taskauditbulkactionerror.md
+  - docs/pkg/models/shared/taskauditcancelledresult.md
+  - docs/pkg/models/shared/taskauditcertifyoutcome.md
+  - docs/pkg/models/shared/taskauditcertifyoutcomeoutcome.md
+  - docs/pkg/models/shared/taskauditcomment.md
+  - docs/pkg/models/shared/taskauditconditionalpolicyexecutionresult.md
+  - docs/pkg/models/shared/taskauditconnectoractionresult.md
+  - docs/pkg/models/shared/taskauditerrorresult.md
+  - docs/pkg/models/shared/taskauditescalatetoemergencyaccess.md
+  - docs/pkg/models/shared/taskauditexpressionpolicysteperror.md
+  - docs/pkg/models/shared/taskauditexternalticketcreated.md
+  - docs/pkg/models/shared/taskauditexternalticketerror.md
+  - docs/pkg/models/shared/taskauditexternalticketprovisionstepresolved.md
+  - docs/pkg/models/shared/taskauditexternaltickettriggered.md
+  - docs/pkg/models/shared/taskauditfinishedconnectoractions.md
+  - docs/pkg/models/shared/taskauditgrantoutcome.md
+  - docs/pkg/models/shared/taskauditgrantoutcomeoutcome.md
+  - docs/pkg/models/shared/taskaudithardreset.md
+  - docs/pkg/models/shared/taskauditlistrequest.md
+  - docs/pkg/models/shared/taskauditlistresponse.md
+  - docs/pkg/models/shared/taskauditmetadata.md
+  - docs/pkg/models/shared/taskauditnewtask.md
+  - docs/pkg/models/shared/taskauditpolicyapprovalreassigned.md
+  - docs/pkg/models/shared/taskauditpolicyevaluationstep.md
+  - docs/pkg/models/shared/taskauditpolicyprovisionerror.md
+  - docs/pkg/models/shared/taskauditpolicyprovisionreassigned.md
+  - docs/pkg/models/shared/taskauditreassignedtodelegate.md
+  - docs/pkg/models/shared/taskauditreassignmentlisterror.md
+  - docs/pkg/models/shared/taskauditrestart.md
+  - docs/pkg/models/shared/taskauditrevokeoutcome.md
+  - docs/pkg/models/shared/taskauditrevokeoutcomeoutcome.md
+  - docs/pkg/models/shared/taskauditstartedconnectoractions.md
+  - docs/pkg/models/shared/taskauditstatechange.md
+  - docs/pkg/models/shared/taskauditstepskipped.md
+  - docs/pkg/models/shared/taskauditstepupapproval.md
+  - docs/pkg/models/shared/taskauditsuccessresult.md
+  - docs/pkg/models/shared/taskauditsuccessresultannotations.md
+  - docs/pkg/models/shared/taskauditview.md
+  - docs/pkg/models/shared/taskauditvieweventtype.md
+  - docs/pkg/models/shared/taskauditviewref.md
+  - docs/pkg/models/shared/taskauditwaitforanalysisstepsuccess.md
+  - docs/pkg/models/shared/taskauditwaitforanalysissteptimedout.md
+  - docs/pkg/models/shared/taskauditwaitforanalysisstepwaiting.md
+  - docs/pkg/models/shared/taskauditwaitstepsuccess.md
+  - docs/pkg/models/shared/taskauditwaitsteptimedout.md
+  - docs/pkg/models/shared/taskauditwaitstepwaiting.md
+  - docs/pkg/models/shared/taskauditwebhookapprovalattempt.md
+  - docs/pkg/models/shared/taskauditwebhookapprovalbadresponse.md
+  - docs/pkg/models/shared/taskauditwebhookapprovalsuccess.md
+  - docs/pkg/models/shared/taskauditwebhookapprovaltriggered.md
+  - docs/pkg/models/shared/taskauditwebhookattempt.md
+  - docs/pkg/models/shared/taskauditwebhooksuccess.md
+  - docs/pkg/models/shared/taskauditwebhooktriggered.md
   - docs/pkg/models/shared/taskexpandmask.md
   - docs/pkg/models/shared/taskgrantsource.md
   - docs/pkg/models/shared/taskref.md
@@ -1396,6 +1820,7 @@ generatedFiles:
   - docs/pkg/models/shared/tasktype.md
   - docs/pkg/models/shared/tasktypecertify.md
   - docs/pkg/models/shared/tasktypecertifyinput.md
+  - docs/pkg/models/shared/tasktypecertifyoutcome.md
   - docs/pkg/models/shared/tasktypegrant.md
   - docs/pkg/models/shared/tasktypegrantinput.md
   - docs/pkg/models/shared/tasktypegrantoutcome.md
@@ -1409,8 +1834,15 @@ generatedFiles:
   - docs/pkg/models/shared/taskview.md
   - docs/pkg/models/shared/terminateworkflowrequest.md
   - docs/pkg/models/shared/terminateworkflowresponse.md
+  - docs/pkg/models/shared/testaccountprovisionpolicyrequest.md
+  - docs/pkg/models/shared/testaccountprovisionpolicyresponse.md
   - docs/pkg/models/shared/testsourceiprequest.md
   - docs/pkg/models/shared/testsourceipresponse.md
+  - docs/pkg/models/shared/teststepupproviderrequest.md
+  - docs/pkg/models/shared/teststepupproviderresponse.md
+  - docs/pkg/models/shared/type.md
+  - docs/pkg/models/shared/unconfiguredprovision.md
+  - docs/pkg/models/shared/unenrollfromallaccessprofiles.md
   - docs/pkg/models/shared/unenrollmentbehavior.md
   - docs/pkg/models/shared/unenrollmententitlementbehavior.md
   - docs/pkg/models/shared/updateappentitlementrequest.md
@@ -1420,15 +1852,24 @@ generatedFiles:
   - docs/pkg/models/shared/updateappresponse.md
   - docs/pkg/models/shared/updateappusagecontrolsrequest.md
   - docs/pkg/models/shared/updateappusagecontrolsresponse.md
+  - docs/pkg/models/shared/updategrantdurationrequest.md
+  - docs/pkg/models/shared/updategrantdurationresponse.md
   - docs/pkg/models/shared/updatemanuallymanagedresourcetyperequest.md
   - docs/pkg/models/shared/updatemanuallymanagedresourcetyperesponse.md
   - docs/pkg/models/shared/updatemanuallymanagedresourcetyperesponseexpanded.md
+  - docs/pkg/models/shared/updateorgdomainrequest.md
+  - docs/pkg/models/shared/updateorgdomainresponse.md
   - docs/pkg/models/shared/updatepolicyrequest.md
   - docs/pkg/models/shared/updatepolicyresponse.md
   - docs/pkg/models/shared/updaterolerequest.md
   - docs/pkg/models/shared/updaterolesresponse.md
   - docs/pkg/models/shared/updatesessionsettingsrequest.md
   - docs/pkg/models/shared/updatesessionsettingsresponse.md
+  - docs/pkg/models/shared/updatestepupproviderrequest.md
+  - docs/pkg/models/shared/updatestepupproviderresponse.md
+  - docs/pkg/models/shared/updatestepupprovidersecretrequest.md
+  - docs/pkg/models/shared/updatestepupprovidersecretresponse.md
+  - docs/pkg/models/shared/updateuser.md
   - docs/pkg/models/shared/updateworkflowrequest.md
   - docs/pkg/models/shared/updateworkflowresponse.md
   - docs/pkg/models/shared/user.md
@@ -1442,8 +1883,10 @@ generatedFiles:
   - docs/pkg/models/shared/userservicelistresponse.md
   - docs/pkg/models/shared/userservicelistresponseexpanded.md
   - docs/pkg/models/shared/userstatus.md
+  - docs/pkg/models/shared/userstatusenum.md
   - docs/pkg/models/shared/userstatuses.md
   - docs/pkg/models/shared/userview.md
+  - docs/pkg/models/shared/userwithappentitlementuserbindingview.md
   - docs/pkg/models/shared/validatepolicycelrequest.md
   - docs/pkg/models/shared/validatepolicycelresponse.md
   - docs/pkg/models/shared/wait.md
@@ -1453,6 +1896,7 @@ generatedFiles:
   - docs/pkg/models/shared/waitinstance.md
   - docs/pkg/models/shared/waitinstancestate.md
   - docs/pkg/models/shared/webhook.md
+  - docs/pkg/models/shared/webhook1.md
   - docs/pkg/models/shared/webhookapproval.md
   - docs/pkg/models/shared/webhookinput.md
   - docs/pkg/models/shared/webhookinstance.md
@@ -1464,6 +1908,7 @@ generatedFiles:
   - docs/pkg/models/shared/webhooksourcepolicypostaction.md
   - docs/pkg/models/shared/webhooksourceprovisionstep.md
   - docs/pkg/models/shared/webhooksourcetest.md
+  - docs/pkg/models/shared/webhooksourceworkflowstep.md
   - docs/pkg/models/shared/webhookspec.md
   - docs/pkg/models/shared/webhookssearchrequest.md
   - docs/pkg/models/shared/webhookssearchresponse.md
@@ -1480,10 +1925,16 @@ generatedFiles:
   - docs/pkg/models/shared/workflow.md
   - docs/pkg/models/shared/workflowcontext.md
   - docs/pkg/models/shared/workflowexecution.md
+  - docs/pkg/models/shared/workflowexecutionexpandmask.md
+  - docs/pkg/models/shared/workflowexecutionref.md
   - docs/pkg/models/shared/workflowexecutionstate.md
+  - docs/pkg/models/shared/workflowexecutionview.md
   - docs/pkg/models/shared/workflowinput.md
   - docs/pkg/models/shared/workflowstep.md
+  - docs/pkg/models/shared/workflowtemplateref.md
+  - docs/pkg/models/shared/workflowtemplateversion.md
   - docs/pkg/models/shared/workflowtrigger.md
+  - docs/sdks/accountprovisionpolicytest/README.md
   - docs/sdks/appaccessrequestsdefaults/README.md
   - docs/sdks/appentitlementowners/README.md
   - docs/sdks/appentitlements/README.md
@@ -1510,6 +1961,7 @@ generatedFiles:
   - docs/sdks/directory/README.md
   - docs/sdks/export/README.md
   - docs/sdks/exportssearch/README.md
+  - docs/sdks/orgdomain/README.md
   - docs/sdks/personalclient/README.md
   - docs/sdks/personalclientsearch/README.md
   - docs/sdks/policies/README.md
@@ -1519,9 +1971,12 @@ generatedFiles:
   - docs/sdks/requestcatalogsearch/README.md
   - docs/sdks/roles/README.md
   - docs/sdks/sessionsettings/README.md
+  - docs/sdks/stepupprovider/README.md
+  - docs/sdks/stepuptransaction/README.md
   - docs/sdks/systemlog/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taskactions/README.md
+  - docs/sdks/taskaudit/README.md
   - docs/sdks/tasksearch/README.md
   - docs/sdks/user/README.md
   - docs/sdks/usersearch/README.md
@@ -1535,6 +1990,7 @@ generatedFiles:
   - export.go
   - exportssearch.go
   - internal/hooks/hooks.go
+  - orgdomain.go
   - personalclient.go
   - personalclientsearch.go
   - pkg/models/operations/options.go
@@ -1563,9 +2019,12 @@ generatedFiles:
   - requestcatalogsearch.go
   - roles.go
   - sessionsettings.go
+  - stepupprovider.go
+  - stepuptransaction.go
   - systemlog.go
   - task.go
   - taskactions.go
+  - taskaudit.go
   - tasksearch.go
   - user.go
   - usersearch.go
@@ -1640,6 +2099,7 @@ examples:
       parameters:
         path:
           app_id: "<id>"
+        query: {}
       responses:
         "200":
           application/json: {}
@@ -1649,6 +2109,7 @@ examples:
         path:
           app_id: "<id>"
           app_user_id: "<id>"
+        query: {}
       responses:
         "200":
           application/json: {}
@@ -1658,6 +2119,7 @@ examples:
         path:
           app_id: "<id>"
           user_id: "<id>"
+        query: {}
       responses:
         "200":
           application/json: {}
@@ -1774,6 +2236,15 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlements.AddAutomationExclusion:
+    speakeasy-default-c1-api-app-v1-app-entitlements-add-automation-exclusion:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers:
     speakeasy-default-c1-api-app-v1-app-entitlements-add-manually-managed-members:
       parameters:
@@ -1791,12 +2262,30 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlements.CreateAutomation:
+    speakeasy-default-c1-api-app-v1-app-entitlements-create-automation:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.Delete:
     speakeasy-default-c1-api-app-v1-app-entitlements-delete:
       parameters:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlements.DeleteAutomation:
+    speakeasy-default-c1-api-app-v1-app-entitlements-delete-automation:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
       responses:
         "200":
           application/json: {}
@@ -1809,12 +2298,30 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlements.GetAutomation:
+    speakeasy-default-c1-api-app-v1-app-entitlements-get-automation:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.List:
     speakeasy-default-c1-api-app-v1-app-entitlements-list:
       parameters:
         path:
           app_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlements.ListAutomationExclusions:
+    speakeasy-default-c1-api-app-v1-app-entitlements-list-automation-exclusions:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
       responses:
         "200":
           application/json: {}
@@ -1849,6 +2356,15 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlements.RemoveAutomationExclusion:
+    speakeasy-default-c1-api-app-v1-app-entitlements-remove-automation-exclusion:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership:
     speakeasy-default-c1-api-app-v1-app-entitlements-remove-entitlement-membership:
       parameters:
@@ -1864,6 +2380,15 @@ examples:
         path:
           app_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlements.UpdateAutomation:
+    speakeasy-default-c1-api-app-v1-app-entitlements-update-automation:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
       responses:
         "200":
           application/json: {}
@@ -1892,6 +2417,11 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlementSearchService.SearchGrants:
+    speakeasy-default-c1-api-app-v1-app-entitlement-search-service-search-grants:
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-list-app-users-for-identity-with-grant:
       parameters:
@@ -1902,6 +2432,16 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-remove-grant-duration:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+          app_user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-grant-feed:
       responses:
@@ -1909,6 +2449,16 @@ examples:
           application/json: {}
   c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants:
     speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-search-past-grants:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration:
+    speakeasy-default-c1-api-app-v1-app-entitlement-user-binding-service-update-grant-duration:
+      parameters:
+        path:
+          app_id: "<id>"
+          app_entitlement_id: "<id>"
+          app_user_id: "<id>"
       responses:
         "200":
           application/json: {}
@@ -2180,6 +2730,16 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.attribute.v1.Attributes.CreateComplianceFrameworkAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-create-compliance-framework-attribute-value:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.CreateRiskLevelAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-create-risk-level-attribute-value:
+      responses:
+        "200":
+          application/json: {}
   c1.api.attribute.v1.Attributes.DeleteAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-delete-attribute-value:
       parameters:
@@ -2188,8 +2748,40 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.attribute.v1.Attributes.DeleteComplianceFrameworkAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-delete-compliance-framework-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.DeleteRiskLevelAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-delete-risk-level-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.attribute.v1.Attributes.GetAttributeValue:
     speakeasy-default-c1-api-attribute-v1-attributes-get-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.GetComplianceFrameworkAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-get-compliance-framework-attribute-value:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.GetRiskLevelAttributeValue:
+    speakeasy-default-c1-api-attribute-v1-attributes-get-risk-level-attribute-value:
       parameters:
         path:
           id: "<id>"
@@ -2236,11 +2828,27 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-create-bundle-automation:
+      parameters:
+        path:
+          request_catalog_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete:
     speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-delete:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation:
+    speakeasy-default-c1-api-requestcatalog-v1-request-catalog-management-service-delete-bundle-automation:
+      parameters:
+        path:
+          request_catalog_id: "<id>"
       responses:
         "200":
           application/json: {}
@@ -2438,6 +3046,11 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.policy.v1.AccountProvisionPolicyTest.Test:
+    speakeasy-default-c1-api-policy-v1-account-provision-policy-test-test:
+      responses:
+        "200":
+          application/json: {}
   c1.api.policy.v1.PolicyValidate.ValidateCEL:
     speakeasy-default-c1-api-policy-v1-policy-validate-validate-CEL:
       responses:
@@ -2473,6 +3086,74 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Create:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-create:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Delete:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-delete:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Get:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-get:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.List:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-list:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Search:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-search:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Test:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-test:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.Update:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-update:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpProviderService.UpdateSecret:
+    speakeasy-default-c1-api-stepup-v1-step-up-provider-service-update-secret:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpTransactionService.Get:
+    speakeasy-default-c1-api-stepup-v1-step-up-transaction-service-get:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.stepup.v1.StepUpTransactionService.Search:
+    speakeasy-default-c1-api-stepup-v1-step-up-transaction-service-search:
+      responses:
+        "200":
+          application/json: {}
   c1.api.systemlog.v1.ExportsSearchService.Search:
     speakeasy-default-c1-api-systemlog-v1-exports-search-service-search:
       responses:
@@ -2495,6 +3176,16 @@ examples:
           application/json: {}
   c1.api.settings.v1.AWSExternalIDSettings.Get:
     speakeasy-default-c1-api-settings-v1-AWS-external-ID-settings-get:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.OrgDomainService.List:
+    speakeasy-default-c1-api-settings-v1-org-domain-service-list:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.settings.v1.OrgDomainService.Update:
+    speakeasy-default-c1-api-settings-v1-org-domain-service-update:
       responses:
         "200":
           application/json: {}
@@ -2560,6 +3251,11 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.task.v1.TaskAudit.List:
+    speakeasy-default-c1-api-task-v1-task-audit-list:
+      responses:
+        "200":
+          application/json: {}
   c1.api.task.v1.TaskService.CreateGrantTask:
     speakeasy-default-c1-api-task-v1-task-service-create-grant-task:
       responses:
@@ -2585,6 +3281,14 @@ examples:
           application/json: {}
   c1.api.task.v1.TaskActionsService.Approve:
     speakeasy-default-c1-api-task-v1-task-actions-service-approve:
+      parameters:
+        path:
+          task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskActionsService.ApproveWithStepUp:
+    speakeasy-default-c1-api-task-v1-task-actions-service-approve-with-step-up:
       parameters:
         path:
           task_id: "<id>"
@@ -2641,6 +3345,14 @@ examples:
           application/json: {}
   c1.api.task.v1.TaskActionsService.Restart:
     speakeasy-default-c1-api-task-v1-task-actions-service-restart:
+      parameters:
+        path:
+          task_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.task.v1.TaskActionsService.SkipStep:
+    speakeasy-default-c1-api-task-v1-task-actions-service-skip-step:
       parameters:
         path:
           task_id: "<id>"
@@ -2706,7 +3418,7 @@ examples:
     speakeasy-default-c1-api-workflows-v1beta-workflow-execution-service-get-workflow-execution:
       parameters:
         path:
-          id: 931086
+          id: "931086"
       responses:
         "200":
           application/json: {}
@@ -2724,7 +3436,17 @@ examples:
     speakeasy-default-c1-api-workflows-v1beta-workflow-execution-actions-service-terminate-workflow:
       parameters:
         path:
-          id: 568176
+          id: "568176"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowSearchService.SearchWorkflowTemplateVersions:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-search-service-search-workflow-template-versions:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.workflows.v1beta.WorkflowSearchService.SearchWorkflows:
+    speakeasy-default-c1-api-workflows-v1beta-workflow-search-service-search-workflows:
       responses:
         "200":
           application/json: {}
@@ -2770,10 +3492,5 @@ examples:
       responses:
         "200":
           application/json: {}
-  c1.api.workflows.v1beta.WorkflowSearchService.SearchWorkflows:
-    speakeasy-default-c1-api-workflows-v1beta-workflow-search-service-search-workflows:
-      responses:
-        "200":
-          application/json: {}
-examplesVersion: 1.0.0
+examplesVersion: 1.0.1
 generatedTests: {}

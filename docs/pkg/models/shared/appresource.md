@@ -2,11 +2,16 @@
 
 The app resource message is a single resource that can have entitlements.
 
+This message contains a oneof named metadata. Only a single field of the following list may be set at a time:
+  - secretTrait
+
+
 
 ## Fields
 
 | Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `SecretTrait`                                                                 | [*shared.SecretTrait](../../../pkg/models/shared/secrettrait.md)              | :heavy_minus_sign:                                                            | The SecretTrait message.                                                      |
 | `AppID`                                                                       | **string*                                                                     | :heavy_minus_sign:                                                            | The app that this resource belongs to.                                        |
 | `AppResourceTypeID`                                                           | **string*                                                                     | :heavy_minus_sign:                                                            | The resource type that this resource is.                                      |
 | `CreatedAt`                                                                   | [*time.Time](https://pkg.go.dev/time#Time)                                    | :heavy_minus_sign:                                                            | N/A                                                                           |
@@ -16,6 +21,7 @@ The app resource message is a single resource that can have entitlements.
 | `DisplayName`                                                                 | **string*                                                                     | :heavy_minus_sign:                                                            | The display name for this resource.                                           |
 | `GrantCount`                                                                  | **int64*                                                                      | :heavy_minus_sign:                                                            | The number of grants to this resource.                                        |
 | `ID`                                                                          | **string*                                                                     | :heavy_minus_sign:                                                            | The id of the resource.                                                       |
+| `MatchBatonID`                                                                | **string*                                                                     | :heavy_minus_sign:                                                            | The matchBatonId field.                                                       |
 | `ParentAppResourceID`                                                         | **string*                                                                     | :heavy_minus_sign:                                                            | The parent resource id, if this resource is a child of another resource.      |
 | `ParentAppResourceTypeID`                                                     | **string*                                                                     | :heavy_minus_sign:                                                            | The parent resource type id, if this resource is a child of another resource. |
 | `UpdatedAt`                                                                   | [*time.Time](https://pkg.go.dev/time#Time)                                    | :heavy_minus_sign:                                                            | N/A                                                                           |

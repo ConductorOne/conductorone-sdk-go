@@ -1,0 +1,11 @@
+# TaskAuditListResponse
+
+The TaskAuditListResponse message.
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `List`                                                                | [][shared.TaskAuditView](../../../pkg/models/shared/taskauditview.md) | :heavy_minus_sign:                                                    | The list field.                                                       |
+| `NextPageToken`                                                       | **string*                                                             | :heavy_minus_sign:                                                    | The nextPageToken field.                                              |

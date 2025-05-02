@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [Approve](#approve) - Approve
+* [ApproveWithStepUp](#approvewithstepup) - Approve With Step Up
 * [Comment](#comment) - Comment
 * [Deny](#deny) - Deny
 * [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Escalate To Emergency Access
@@ -13,6 +14,7 @@
 * [ProcessNow](#processnow) - Process Now
 * [Reassign](#reassign) - Reassign
 * [Restart](#restart) - Restart
+* [SkipStep](#skipstep) - Skip Step
 
 ## Approve
 
@@ -33,7 +35,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -71,6 +73,63 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ApproveWithStepUp
+
+Invokes the c1.api.task.v1.TaskActionsService.ApproveWithStepUp method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.TaskActions.ApproveWithStepUp(ctx, operations.C1APITaskV1TaskActionsServiceApproveWithStepUpRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskActionsServiceApproveWithStepUpResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                    | :heavy_check_mark:                                                                                                                                       | The context to use for the request.                                                                                                                      |
+| `request`                                                                                                                                                | [operations.C1APITaskV1TaskActionsServiceApproveWithStepUpRequest](../../pkg/models/operations/c1apitaskv1taskactionsserviceapprovewithstepuprequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
+| `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceApproveWithStepUpResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceapprovewithstepupresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## Comment
 
 Invokes the c1.api.task.v1.TaskActionsService.Comment method.
@@ -90,7 +149,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -147,7 +206,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -204,7 +263,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -261,7 +320,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -318,7 +377,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -375,7 +434,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -432,7 +491,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := conductoronesdkgo.New(
         conductoronesdkgo.WithSecurity(shared.Security{
             BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
@@ -463,6 +522,63 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskActionsServiceRestartResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SkipStep
+
+Invokes the c1.api.task.v1.TaskActionsService.SkipStep method.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.TaskActions.SkipStep(ctx, operations.C1APITaskV1TaskActionsServiceSkipStepRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskServiceActionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                  | :heavy_check_mark:                                                                                                                     | The context to use for the request.                                                                                                    |
+| `request`                                                                                                                              | [operations.C1APITaskV1TaskActionsServiceSkipStepRequest](../../pkg/models/operations/c1apitaskv1taskactionsserviceskipsteprequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
+| `opts`                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                           | :heavy_minus_sign:                                                                                                                     | The options for this request.                                                                                                          |
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceSkipStepResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceskipstepresponse.md), error**
 
 ### Errors
 

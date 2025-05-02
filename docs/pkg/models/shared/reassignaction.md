@@ -1,0 +1,23 @@
+# ReassignAction
+
+The ReassignAction message.
+
+This message contains a oneof named assignee_user_identifier. Only a single field of the following list may be set at a time:
+  - assigneeUserIdCel
+  - assigneeUserRef
+
+
+This message contains a oneof named subject_user_identifier. Only a single field of the following list may be set at a time:
+  - subjectUserIdCel
+  - subjectUserRef
+
+
+
+## Fields
+
+| Field                                                                                                                                                                         | Type                                                                                                                                                                          | Required                                                                                                                                                                      | Description                                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `UserRef`                                                                                                                                                                     | [*shared.UserRef](../../../pkg/models/shared/userref.md)                                                                                                                      | :heavy_minus_sign:                                                                                                                                                            | A reference to a user.                                                                                                                                                        |
+| `UserRef1`                                                                                                                                                                    | [*shared.UserRef](../../../pkg/models/shared/userref.md)                                                                                                                      | :heavy_minus_sign:                                                                                                                                                            | A reference to a user.                                                                                                                                                        |
+| `AssigneeUserIDCel`                                                                                                                                                           | **string*                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                            | The assigneeUserIdCel field.<br/>This field is part of the `assignee_user_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.ReassignAction` for more details. |
+| `SubjectUserIDCel`                                                                                                                                                            | **string*                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                            | The subjectUserIdCel field.<br/>This field is part of the `subject_user_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.ReassignAction` for more details. |

@@ -17,8 +17,8 @@
 | `ActionsTaskActionTypeProvisionComplete`                        | TASK_ACTION_TYPE_PROVISION_COMPLETE                             |
 | `ActionsTaskActionTypeProvisionCancelled`                       | TASK_ACTION_TYPE_PROVISION_CANCELLED                            |
 | `ActionsTaskActionTypeProvisionErrored`                         | TASK_ACTION_TYPE_PROVISION_ERRORED                              |
-| `ActionsTaskActionTypeProvisionAppUserTargetCreated`            | TASK_ACTION_TYPE_PROVISION_APP_USER_TARGET_CREATED              |
 | `ActionsTaskActionTypeRollbackSkipped`                          | TASK_ACTION_TYPE_ROLLBACK_SKIPPED                               |
+| `ActionsTaskActionTypeProvisionAppUserTargetCreated`            | TASK_ACTION_TYPE_PROVISION_APP_USER_TARGET_CREATED              |
 | `ActionsTaskActionTypeHardReset`                                | TASK_ACTION_TYPE_HARD_RESET                                     |
 | `ActionsTaskActionTypeEscalateToEmergencyAccess`                | TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS                   |
 | `ActionsTaskActionTypeChangePolicy`                             | TASK_ACTION_TYPE_CHANGE_POLICY                                  |
@@ -27,3 +27,5 @@
 | `ActionsTaskActionTypeSetAnalysisID`                            | TASK_ACTION_TYPE_SET_ANALYSIS_ID                                |
 | `ActionsTaskActionTypeRecalculateApproversList`                 | TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST                     |
 | `ActionsTaskActionTypeProcessNow`                               | TASK_ACTION_TYPE_PROCESS_NOW                                    |
+| `ActionsTaskActionTypeApproveWithStepUp`                        | TASK_ACTION_TYPE_APPROVE_WITH_STEP_UP                           |
+| `ActionsTaskActionTypeSkipStep`                                 | TASK_ACTION_TYPE_SKIP_STEP                                      |

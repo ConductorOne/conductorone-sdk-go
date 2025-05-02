@@ -15,3 +15,4 @@
 | `StepApprovalTypesStepApprovalTypeExpression`        | STEP_APPROVAL_TYPE_EXPRESSION                        |
 | `StepApprovalTypesStepApprovalTypeWebhook`           | STEP_APPROVAL_TYPE_WEBHOOK                           |
 | `StepApprovalTypesStepApprovalTypeResourceOwners`    | STEP_APPROVAL_TYPE_RESOURCE_OWNERS                   |
+| `StepApprovalTypesStepApprovalTypeAgent`             | STEP_APPROVAL_TYPE_AGENT                             |

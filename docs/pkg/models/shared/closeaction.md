@@ -1,0 +1,16 @@
+# CloseAction
+
+The CloseAction message.
+
+This message contains a oneof named user_identifier. Only a single field of the following list may be set at a time:
+  - userIdCel
+  - userRef
+
+
+
+## Fields
+
+| Field                                                                                                                                                     | Type                                                                                                                                                      | Required                                                                                                                                                  | Description                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `UserRef`                                                                                                                                                 | [*shared.UserRef](../../../pkg/models/shared/userref.md)                                                                                                  | :heavy_minus_sign:                                                                                                                                        | A reference to a user.                                                                                                                                    |
+| `UserIDCel`                                                                                                                                               | **string*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                        | The userIdCel field.<br/>This field is part of the `user_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.CloseAction` for more details. |
