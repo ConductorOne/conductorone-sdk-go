@@ -73,6 +73,13 @@ func main() {
 <details open>
 <summary>Available methods</summary>
 
+### [AccessConflict](docs/sdks/accessconflict/README.md)
+
+* [CreateMonitor](docs/sdks/accessconflict/README.md#createmonitor) - Create Monitor
+* [DeleteMonitor](docs/sdks/accessconflict/README.md#deletemonitor) - Delete Monitor
+* [GetMonitor](docs/sdks/accessconflict/README.md#getmonitor) - Get Monitor
+* [UpdateMonitor](docs/sdks/accessconflict/README.md#updatemonitor) - Update Monitor
+
 ### [AccountProvisionPolicyTest](docs/sdks/accountprovisionpolicytest/README.md)
 
 * [Test](docs/sdks/accountprovisionpolicytest/README.md#test) - Test
@@ -163,6 +170,7 @@ func main() {
 ### [AppResourceSearch](docs/sdks/appresourcesearch/README.md)
 
 * [SearchAppResourceTypes](docs/sdks/appresourcesearch/README.md#searchappresourcetypes) - Search App Resource Types
+* [SearchAppResources](docs/sdks/appresourcesearch/README.md#searchappresources) - Search App Resources
 
 ### [AppResourceType](docs/sdks/appresourcetype/README.md)
 
@@ -219,6 +227,33 @@ func main() {
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
+### [Automation](docs/sdks/automation/README.md)
+
+* [CreateAutomation](docs/sdks/automation/README.md#createautomation) - Create Automation
+* [DeleteAutomation](docs/sdks/automation/README.md#deleteautomation) - Delete Automation
+* [ExecuteAutomation](docs/sdks/automation/README.md#executeautomation) - Execute Automation
+* [GetAutomation](docs/sdks/automation/README.md#getautomation) - Get Automation
+* [ListAutomations](docs/sdks/automation/README.md#listautomations) - List Automations
+* [UpdateAutomation](docs/sdks/automation/README.md#updateautomation) - Update Automation
+
+### [AutomationExecution](docs/sdks/automationexecution/README.md)
+
+* [GetAutomationExecution](docs/sdks/automationexecution/README.md#getautomationexecution) - Get Automation Execution
+* [ListAutomationExecutions](docs/sdks/automationexecution/README.md#listautomationexecutions) - List Automation Executions
+
+### [AutomationExecutionActions](docs/sdks/automationexecutionactions/README.md)
+
+* [TerminateAutomation](docs/sdks/automationexecutionactions/README.md#terminateautomation) - Terminate Automation
+
+### [AutomationExecutionSearch](docs/sdks/automationexecutionsearch/README.md)
+
+* [SearchAutomationExecutions](docs/sdks/automationexecutionsearch/README.md#searchautomationexecutions) - Search Automation Executions
+
+### [AutomationSearch](docs/sdks/automationsearch/README.md)
+
+* [SearchAutomationTemplateVersions](docs/sdks/automationsearch/README.md#searchautomationtemplateversions) - Search Automation Template Versions
+* [SearchAutomations](docs/sdks/automationsearch/README.md#searchautomations) - Search Automations
+
 ### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
 
 * [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
@@ -237,6 +272,7 @@ func main() {
 * [RotateCredential](docs/sdks/connector/README.md#rotatecredential) - Rotate Credential
 * [Update](docs/sdks/connector/README.md#update) - Update
 * [UpdateDelegated](docs/sdks/connector/README.md#updatedelegated) - Update Delegated
+* [ValidateHTTPConnectorConfig](docs/sdks/connector/README.md#validatehttpconnectorconfig) - Validate Http Connector Config
 
 ### [Directory](docs/sdks/directory/README.md)
 
@@ -357,6 +393,7 @@ func main() {
 
 * [Approve](docs/sdks/taskactions/README.md#approve) - Approve
 * [ApproveWithStepUp](docs/sdks/taskactions/README.md#approvewithstepup) - Approve With Step Up
+* [Close](docs/sdks/taskactions/README.md#close) - Close
 * [Comment](docs/sdks/taskactions/README.md#comment) - Comment
 * [Deny](docs/sdks/taskactions/README.md#deny) - Deny
 * [EscalateToEmergencyAccess](docs/sdks/taskactions/README.md#escalatetoemergencyaccess) - Escalate To Emergency Access
@@ -395,33 +432,6 @@ func main() {
 ### [WebhooksSearch](docs/sdks/webhookssearch/README.md)
 
 * [Search](docs/sdks/webhookssearch/README.md#search) - Search
-
-### [Workflow](docs/sdks/workflow/README.md)
-
-* [CreateWorkflow](docs/sdks/workflow/README.md#createworkflow) - Create Workflow
-* [DeleteWorkflow](docs/sdks/workflow/README.md#deleteworkflow) - Delete Workflow
-* [ExecuteWorkflow](docs/sdks/workflow/README.md#executeworkflow) - Execute Workflow
-* [GetWorkflow](docs/sdks/workflow/README.md#getworkflow) - Get Workflow
-* [ListWorkflows](docs/sdks/workflow/README.md#listworkflows) - List Workflows
-* [UpdateWorkflow](docs/sdks/workflow/README.md#updateworkflow) - Update Workflow
-
-### [WorkflowExecution](docs/sdks/workflowexecution/README.md)
-
-* [GetWorkflowExecution](docs/sdks/workflowexecution/README.md#getworkflowexecution) - Get Workflow Execution
-* [ListWorkflowExecutions](docs/sdks/workflowexecution/README.md#listworkflowexecutions) - List Workflow Executions
-
-### [WorkflowExecutionActions](docs/sdks/workflowexecutionactions/README.md)
-
-* [TerminateWorkflow](docs/sdks/workflowexecutionactions/README.md#terminateworkflow) - Terminate Workflow
-
-### [WorkflowExecutionSearch](docs/sdks/workflowexecutionsearch/README.md)
-
-* [SearchWorkflowExecutions](docs/sdks/workflowexecutionsearch/README.md#searchworkflowexecutions) - Search Workflow Executions
-
-### [WorkflowSearch](docs/sdks/workflowsearch/README.md)
-
-* [SearchWorkflowTemplateVersions](docs/sdks/workflowsearch/README.md#searchworkflowtemplateversions) - Search Workflow Template Versions
-* [SearchWorkflows](docs/sdks/workflowsearch/README.md#searchworkflows) - Search Workflows
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -557,7 +567,7 @@ func main() {
 		}),
 	)
 
-	res, err := s.Apps.Create(ctx, nil, operations.WithRetries(
+	res, err := s.AccessConflict.CreateMonitor(ctx, nil, operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
 			Backoff: &retry.BackoffStrategy{
@@ -571,7 +581,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.CreateAppResponse != nil {
+	if res.ConflictMonitor != nil {
 		// handle response
 	}
 }
@@ -611,11 +621,11 @@ func main() {
 		}),
 	)
 
-	res, err := s.Apps.Create(ctx, nil)
+	res, err := s.AccessConflict.CreateMonitor(ctx, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.CreateAppResponse != nil {
+	if res.ConflictMonitor != nil {
 		// handle response
 	}
 }

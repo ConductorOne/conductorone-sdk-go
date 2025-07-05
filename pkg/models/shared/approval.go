@@ -24,6 +24,13 @@ type Approval struct {
 	AppOwnerApproval *AppOwnerApproval `json:"appOwners,omitempty"`
 	// The entitlement owner approval allows configuration of the approval step when the target approvers are the entitlement owners.
 	EntitlementOwnerApproval *EntitlementOwnerApproval `json:"entitlementOwners,omitempty"`
+	// The Escalation message.
+	//
+	// This message contains a oneof named escalation_policy. Only a single field of the following list may be set at a time:
+	//   - replacePolicy
+	//   - reassignToApprovers
+	//
+	Escalation *Escalation `json:"escalation,omitempty"`
 	// The ExpressionApproval message.
 	ExpressionApproval *ExpressionApproval `json:"expression,omitempty"`
 	// The manager approval object provides configuration options for approval when the target of the approval is the manager of the user in the task.
@@ -42,6 +49,8 @@ type Approval struct {
 	AllowedReassignees []string `json:"allowedReassignees,omitempty"`
 	// A field indicating whether this step is assigned.
 	Assigned *bool `json:"assigned,omitempty"`
+	// Whether escalation is enabled for this step.
+	EscalationEnabled *bool `json:"escalationEnabled,omitempty"`
 	// Configuration to require a reason when approving this step.
 	RequireApprovalReason *bool `json:"requireApprovalReason,omitempty"`
 	// Configuration to require a reason when denying this step.
@@ -79,6 +88,13 @@ func (o *Approval) GetEntitlementOwnerApproval() *EntitlementOwnerApproval {
 		return nil
 	}
 	return o.EntitlementOwnerApproval
+}
+
+func (o *Approval) GetEscalation() *Escalation {
+	if o == nil {
+		return nil
+	}
+	return o.Escalation
 }
 
 func (o *Approval) GetExpressionApproval() *ExpressionApproval {
@@ -142,6 +158,13 @@ func (o *Approval) GetAssigned() *bool {
 		return nil
 	}
 	return o.Assigned
+}
+
+func (o *Approval) GetEscalationEnabled() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.EscalationEnabled
 }
 
 func (o *Approval) GetRequireApprovalReason() *bool {

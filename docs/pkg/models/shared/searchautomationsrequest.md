@@ -1,0 +1,15 @@
+# SearchAutomationsRequest
+
+The SearchAutomationsRequest message.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `AppID`                                                                               | **string*                                                                             | :heavy_minus_sign:                                                                    | The appId field.                                                                      |
+| `PageSize`                                                                            | **int*                                                                                | :heavy_minus_sign:                                                                    | The pageSize field.                                                                   |
+| `PageToken`                                                                           | **string*                                                                             | :heavy_minus_sign:                                                                    | The pageToken field.                                                                  |
+| `Query`                                                                               | **string*                                                                             | :heavy_minus_sign:                                                                    | The query field.                                                                      |
+| `Refs`                                                                                | [][shared.AutomationTemplateRef](../../../pkg/models/shared/automationtemplateref.md) | :heavy_minus_sign:                                                                    | The refs field.                                                                       |
+| `TriggerTypes`                                                                        | [][shared.TriggerTypes](../../../pkg/models/shared/triggertypes.md)                   | :heavy_minus_sign:                                                                    | The triggerTypes field.                                                               |

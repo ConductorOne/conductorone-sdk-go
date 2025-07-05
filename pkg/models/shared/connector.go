@@ -60,8 +60,12 @@ type Connector struct {
 	// The downloadUrl for a spreadsheet if the connector was created from uploading a file.
 	DownloadURL *string `json:"downloadUrl,omitempty"`
 	// The id of the connector.
-	ID             *string    `json:"id,omitempty"`
-	SyncDisabledAt *time.Time `json:"syncDisabledAt,omitempty"`
+	ID *string `json:"id,omitempty"`
+	// List of profile attributes to sync, when set only these attributes will be synced
+	ProfileAllowList []string `json:"profileAllowList,omitempty"`
+	// List of profile attributes to ignore (not sync), when set other attributes will be synced, but these will not.
+	ProfileIgnoreList []string   `json:"profileIgnoreList,omitempty"`
+	SyncDisabledAt    *time.Time `json:"syncDisabledAt,omitempty"`
 	// The category of the connector sync that was disabled.
 	SyncDisabledCategory *string `json:"syncDisabledCategory,omitempty"`
 	// The reason the connector sync was disabled.
@@ -159,6 +163,20 @@ func (o *Connector) GetID() *string {
 	return o.ID
 }
 
+func (o *Connector) GetProfileAllowList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileAllowList
+}
+
+func (o *Connector) GetProfileIgnoreList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileIgnoreList
+}
+
 func (o *Connector) GetSyncDisabledAt() *time.Time {
 	if o == nil {
 		return nil
@@ -212,6 +230,10 @@ type ConnectorInput struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// The id of the connector.
 	ID *string `json:"id,omitempty"`
+	// List of profile attributes to sync, when set only these attributes will be synced
+	ProfileAllowList []string `json:"profileAllowList,omitempty"`
+	// List of profile attributes to ignore (not sync), when set other attributes will be synced, but these will not.
+	ProfileIgnoreList []string `json:"profileIgnoreList,omitempty"`
 	// The category of the connector sync that was disabled.
 	SyncDisabledCategory *string `json:"syncDisabledCategory,omitempty"`
 	// The reason the connector sync was disabled.
@@ -274,6 +296,20 @@ func (o *ConnectorInput) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+func (o *ConnectorInput) GetProfileAllowList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileAllowList
+}
+
+func (o *ConnectorInput) GetProfileIgnoreList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileIgnoreList
 }
 
 func (o *ConnectorInput) GetSyncDisabledCategory() *string {

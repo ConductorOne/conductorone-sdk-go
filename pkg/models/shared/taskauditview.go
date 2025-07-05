@@ -97,6 +97,7 @@ func (e Source) ToPointer() *Source {
 //   - externalTicketProvisionStepResolved
 //   - stepSkipped
 //   - reassignmentListError
+//   - slaEscalation
 type TaskAuditView struct {
 	// The TaskAuditAccessRequestOutcome message.
 	TaskAuditAccessRequestOutcome *TaskAuditAccessRequestOutcome `json:"accessRequestOutcome,omitempty"`
@@ -164,6 +165,8 @@ type TaskAuditView struct {
 	TaskAuditRestart *TaskAuditRestart `json:"taskRestarted,omitempty"`
 	// The TaskAuditRevokeOutcome message.
 	TaskAuditRevokeOutcome *TaskAuditRevokeOutcome `json:"revokeOutcome,omitempty"`
+	// The TaskAuditSLAEscalation message.
+	TaskAuditSLAEscalation *TaskAuditSLAEscalation `json:"slaEscalation,omitempty"`
 	// The TaskAuditStartedConnectorActions message.
 	TaskAuditStartedConnectorActions *TaskAuditStartedConnectorActions `json:"connectorActionsStart,omitempty"`
 	// The TaskAuditStateChange message.
@@ -432,6 +435,13 @@ func (o *TaskAuditView) GetTaskAuditRevokeOutcome() *TaskAuditRevokeOutcome {
 		return nil
 	}
 	return o.TaskAuditRevokeOutcome
+}
+
+func (o *TaskAuditView) GetTaskAuditSLAEscalation() *TaskAuditSLAEscalation {
+	if o == nil {
+		return nil
+	}
+	return o.TaskAuditSLAEscalation
 }
 
 func (o *TaskAuditView) GetTaskAuditStartedConnectorActions() *TaskAuditStartedConnectorActions {
