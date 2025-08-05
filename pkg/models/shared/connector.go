@@ -55,13 +55,19 @@ type Connector struct {
 	DeletedAt *time.Time `json:"deletedAt,omitempty"`
 	// The description of the connector.
 	Description *string `json:"description,omitempty"`
+	// The disableCheckBadSync field.
+	DisableCheckBadSync *bool `json:"disableCheckBadSync,omitempty"`
 	// The display name of the connector.
 	DisplayName *string `json:"displayName,omitempty"`
 	// The downloadUrl for a spreadsheet if the connector was created from uploading a file.
 	DownloadURL *string `json:"downloadUrl,omitempty"`
 	// The id of the connector.
-	ID             *string    `json:"id,omitempty"`
-	SyncDisabledAt *time.Time `json:"syncDisabledAt,omitempty"`
+	ID *string `json:"id,omitempty"`
+	// List of profile attributes to sync, when set only these attributes will be synced
+	ProfileAllowList []string `json:"profileAllowList,omitempty"`
+	// List of profile attributes to ignore (not sync), when set other attributes will be synced, but these will not.
+	ProfileIgnoreList []string   `json:"profileIgnoreList,omitempty"`
+	SyncDisabledAt    *time.Time `json:"syncDisabledAt,omitempty"`
 	// The category of the connector sync that was disabled.
 	SyncDisabledCategory *string `json:"syncDisabledCategory,omitempty"`
 	// The reason the connector sync was disabled.
@@ -138,6 +144,13 @@ func (o *Connector) GetDescription() *string {
 	return o.Description
 }
 
+func (o *Connector) GetDisableCheckBadSync() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.DisableCheckBadSync
+}
+
 func (o *Connector) GetDisplayName() *string {
 	if o == nil {
 		return nil
@@ -157,6 +170,20 @@ func (o *Connector) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+func (o *Connector) GetProfileAllowList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileAllowList
+}
+
+func (o *Connector) GetProfileIgnoreList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileIgnoreList
 }
 
 func (o *Connector) GetSyncDisabledAt() *time.Time {
@@ -208,10 +235,16 @@ type ConnectorInput struct {
 	Config *Config `json:"config,omitempty"`
 	// The description of the connector.
 	Description *string `json:"description,omitempty"`
+	// The disableCheckBadSync field.
+	DisableCheckBadSync *bool `json:"disableCheckBadSync,omitempty"`
 	// The display name of the connector.
 	DisplayName *string `json:"displayName,omitempty"`
 	// The id of the connector.
 	ID *string `json:"id,omitempty"`
+	// List of profile attributes to sync, when set only these attributes will be synced
+	ProfileAllowList []string `json:"profileAllowList,omitempty"`
+	// List of profile attributes to ignore (not sync), when set other attributes will be synced, but these will not.
+	ProfileIgnoreList []string `json:"profileIgnoreList,omitempty"`
 	// The category of the connector sync that was disabled.
 	SyncDisabledCategory *string `json:"syncDisabledCategory,omitempty"`
 	// The reason the connector sync was disabled.
@@ -262,6 +295,13 @@ func (o *ConnectorInput) GetDescription() *string {
 	return o.Description
 }
 
+func (o *ConnectorInput) GetDisableCheckBadSync() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.DisableCheckBadSync
+}
+
 func (o *ConnectorInput) GetDisplayName() *string {
 	if o == nil {
 		return nil
@@ -274,6 +314,20 @@ func (o *ConnectorInput) GetID() *string {
 		return nil
 	}
 	return o.ID
+}
+
+func (o *ConnectorInput) GetProfileAllowList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileAllowList
+}
+
+func (o *ConnectorInput) GetProfileIgnoreList() []string {
+	if o == nil {
+		return nil
+	}
+	return o.ProfileIgnoreList
 }
 
 func (o *ConnectorInput) GetSyncDisabledCategory() *string {

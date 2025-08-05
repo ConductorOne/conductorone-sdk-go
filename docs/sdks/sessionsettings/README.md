@@ -15,6 +15,7 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.SessionSettingsService.Get" method="get" path="/api/v1/settings/session" -->
 ```go
 package main
 
@@ -68,6 +69,7 @@ Invokes the c1.api.settings.v1.SessionSettingsService.TestSourceIP method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.SessionSettingsService.TestSourceIP" method="post" path="/api/v1/settings/session/test-source-ip" -->
 ```go
 package main
 
@@ -122,6 +124,7 @@ Invokes the c1.api.settings.v1.SessionSettingsService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.SessionSettingsService.Update" method="post" path="/api/v1/settings/session" -->
 ```go
 package main
 

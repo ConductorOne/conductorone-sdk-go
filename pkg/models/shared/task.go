@@ -3,8 +3,6 @@
 package shared
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"time"
 )
@@ -36,69 +34,12 @@ const (
 	ActionsTaskActionTypeProcessNow                               Actions = "TASK_ACTION_TYPE_PROCESS_NOW"
 	ActionsTaskActionTypeApproveWithStepUp                        Actions = "TASK_ACTION_TYPE_APPROVE_WITH_STEP_UP"
 	ActionsTaskActionTypeSkipStep                                 Actions = "TASK_ACTION_TYPE_SKIP_STEP"
+	ActionsTaskActionTypeRollbackCancelled                        Actions = "TASK_ACTION_TYPE_ROLLBACK_CANCELLED"
+	ActionsTaskActionTypeUpdateRequestData                        Actions = "TASK_ACTION_TYPE_UPDATE_REQUEST_DATA"
 )
 
 func (e Actions) ToPointer() *Actions {
 	return &e
-}
-func (e *Actions) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "TASK_ACTION_TYPE_UNSPECIFIED":
-		fallthrough
-	case "TASK_ACTION_TYPE_CLOSE":
-		fallthrough
-	case "TASK_ACTION_TYPE_APPROVE":
-		fallthrough
-	case "TASK_ACTION_TYPE_DENY":
-		fallthrough
-	case "TASK_ACTION_TYPE_COMMENT":
-		fallthrough
-	case "TASK_ACTION_TYPE_DELETE":
-		fallthrough
-	case "TASK_ACTION_TYPE_REASSIGN":
-		fallthrough
-	case "TASK_ACTION_TYPE_RESTART":
-		fallthrough
-	case "TASK_ACTION_TYPE_SEND_REMINDER":
-		fallthrough
-	case "TASK_ACTION_TYPE_PROVISION_COMPLETE":
-		fallthrough
-	case "TASK_ACTION_TYPE_PROVISION_CANCELLED":
-		fallthrough
-	case "TASK_ACTION_TYPE_PROVISION_ERRORED":
-		fallthrough
-	case "TASK_ACTION_TYPE_ROLLBACK_SKIPPED":
-		fallthrough
-	case "TASK_ACTION_TYPE_PROVISION_APP_USER_TARGET_CREATED":
-		fallthrough
-	case "TASK_ACTION_TYPE_HARD_RESET":
-		fallthrough
-	case "TASK_ACTION_TYPE_ESCALATE_TO_EMERGENCY_ACCESS":
-		fallthrough
-	case "TASK_ACTION_TYPE_CHANGE_POLICY":
-		fallthrough
-	case "TASK_ACTION_TYPE_RECALCULATE_DENIAL_FROM_BASE_POLICY_DECISIONS":
-		fallthrough
-	case "TASK_ACTION_TYPE_SET_INSIGHTS_AND_RECOMMENDATION":
-		fallthrough
-	case "TASK_ACTION_TYPE_SET_ANALYSIS_ID":
-		fallthrough
-	case "TASK_ACTION_TYPE_RECALCULATE_APPROVERS_LIST":
-		fallthrough
-	case "TASK_ACTION_TYPE_PROCESS_NOW":
-		fallthrough
-	case "TASK_ACTION_TYPE_APPROVE_WITH_STEP_UP":
-		fallthrough
-	case "TASK_ACTION_TYPE_SKIP_STEP":
-		*e = Actions(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for Actions: %v", v)
-	}
 }
 
 // Annotations - Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
@@ -195,6 +136,8 @@ func (e TaskState) ToPointer() *TaskState {
 
 // Task - A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more.
 type Task struct {
+	// A form is a collection of fields to be filled out by a user
+	Form *FormInput `json:"form,omitempty"`
 	// A policy instance is an object that contains a reference to the policy it was created from, the currently executing step, the next steps, and the history of previously completed steps.
 	PolicyInstance *PolicyInstance `json:"policy,omitempty"`
 	// Task Type provides configuration for the type of task: certify, grant, or revoke
@@ -216,8 +159,9 @@ type Task struct {
 	CommentCount *int       `json:"commentCount,omitempty"`
 	CreatedAt    *time.Time `json:"createdAt,omitempty"`
 	// The ID of the user that is the creator of this task. This may not always match the userId field.
-	CreatedByUserID *string    `json:"createdByUserId,omitempty"`
-	DeletedAt       *time.Time `json:"deletedAt,omitempty"`
+	CreatedByUserID *string        `json:"createdByUserId,omitempty"`
+	Data            map[string]any `json:"data,omitempty"`
+	DeletedAt       *time.Time     `json:"deletedAt,omitempty"`
 	// The description of the task. This is also known as justification.
 	Description *string `json:"description,omitempty"`
 	// The display name of the task.
@@ -258,6 +202,13 @@ func (t *Task) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *Task) GetForm() *FormInput {
+	if o == nil {
+		return nil
+	}
+	return o.Form
 }
 
 func (o *Task) GetPolicyInstance() *PolicyInstance {
@@ -314,6 +265,13 @@ func (o *Task) GetCreatedByUserID() *string {
 		return nil
 	}
 	return o.CreatedByUserID
+}
+
+func (o *Task) GetData() map[string]any {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 func (o *Task) GetDeletedAt() *time.Time {

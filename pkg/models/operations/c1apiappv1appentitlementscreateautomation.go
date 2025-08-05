@@ -8,12 +8,12 @@ import (
 )
 
 type C1APIAppV1AppEntitlementsCreateAutomationRequest struct {
-	CreateAutomationRequest *shared.CreateAutomationRequest `request:"mediaType=application/json"`
-	AppEntitlementID        string                          `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
-	AppID                   string                          `pathParam:"style=simple,explode=false,name=app_id"`
+	CreateAutomationRequest *shared.CreateAutomationRequestInput `request:"mediaType=application/json"`
+	AppEntitlementID        string                               `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
+	AppID                   string                               `pathParam:"style=simple,explode=false,name=app_id"`
 }
 
-func (o *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetCreateAutomationRequest() *shared.CreateAutomationRequest {
+func (o *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetCreateAutomationRequest() *shared.CreateAutomationRequestInput {
 	if o == nil {
 		return nil
 	}

@@ -15,6 +15,7 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Create method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementsProxy.Create" method="post" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Delete method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementsProxy.Delete" method="delete" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```go
 package main
 
@@ -135,6 +137,7 @@ Invokes the c1.api.app.v1.AppEntitlementsProxy.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementsProxy.Get" method="get" path="/api/v1/apps/{src_app_id}/{src_app_entitlement_id}/bindings/{dst_app_id}/{dst_app_entitlement_id}" -->
 ```go
 package main
 

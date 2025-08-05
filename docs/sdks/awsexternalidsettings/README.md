@@ -13,6 +13,7 @@ Invokes the c1.api.settings.v1.AWSExternalIDSettings.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.AWSExternalIDSettings.Get" method="get" path="/api/v1/settings/aws-external-id" -->
 ```go
 package main
 

@@ -13,6 +13,7 @@ Search users based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.user.v1.UserSearch.Search" method="post" path="/api/v1/search/users" -->
 ```go
 package main
 

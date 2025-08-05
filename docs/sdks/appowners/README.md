@@ -16,6 +16,7 @@ Adds an owner to an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppOwners.Add" method="post" path="/api/v1/apps/{app_id}/owners/{user_id}" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ List owners of an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppOwners.List" method="get" path="/api/v1/apps/{app_id}/owners" -->
 ```go
 package main
 
@@ -131,6 +133,7 @@ Removes an owner from an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/owners/{user_id}" -->
 ```go
 package main
 
@@ -189,6 +192,7 @@ Sets the owners for a given app to the specified list of users.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppOwners.Set" method="put" path="/api/v1/apps/{app_id}/owners" -->
 ```go
 package main
 

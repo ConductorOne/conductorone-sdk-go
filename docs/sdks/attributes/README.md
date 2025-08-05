@@ -23,6 +23,7 @@ Create a new attribute value.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.CreateAttributeValue" method="post" path="/api/v1/attributes" -->
 ```go
 package main
 
@@ -77,6 +78,7 @@ Create a compliance framework value.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.CreateComplianceFrameworkAttributeValue" method="post" path="/api/v1/attributes/compliance_frameworks" -->
 ```go
 package main
 
@@ -131,6 +133,7 @@ Create a risk level attribute.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.CreateRiskLevelAttributeValue" method="post" path="/api/v1/attributes/risk_levels" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ Delete an attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.DeleteAttributeValue" method="delete" path="/api/v1/attribute/{id}" -->
 ```go
 package main
 
@@ -242,6 +246,7 @@ Delete an attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.DeleteComplianceFrameworkAttributeValue" method="delete" path="/api/v1/attributes/compliance_frameworks/{id}" -->
 ```go
 package main
 
@@ -299,6 +304,7 @@ Delete a risk level attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.DeleteRiskLevelAttributeValue" method="delete" path="/api/v1/attributes/risk_levels/{id}" -->
 ```go
 package main
 
@@ -356,6 +362,7 @@ Get an attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.GetAttributeValue" method="get" path="/api/v1/attributes/{id}" -->
 ```go
 package main
 
@@ -413,6 +420,7 @@ Get an attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.GetComplianceFrameworkAttributeValue" method="get" path="/api/v1/attributes/compliance_frameworks/{id}" -->
 ```go
 package main
 
@@ -470,6 +478,7 @@ Get a risk level attribute value by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.GetRiskLevelAttributeValue" method="get" path="/api/v1/attributes/risk_levels/{id}" -->
 ```go
 package main
 
@@ -527,6 +536,7 @@ List all attribute types.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.ListAttributeTypes" method="get" path="/api/v1/attributes/types" -->
 ```go
 package main
 
@@ -582,6 +592,7 @@ List all attribute values for a given attribute type.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.ListAttributeValues" method="get" path="/api/v1/attributes/types/{attribute_type_id}/values" -->
 ```go
 package main
 

@@ -1,0 +1,17 @@
+# SendSlackMessage
+
+The SendSlackMessage message.
+
+This message contains a oneof named channel. Only a single field of the following list may be set at a time:
+  - channelId
+  - channelIdCel
+
+
+
+## Fields
+
+| Field                                                                                                                                                   | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Body`                                                                                                                                                  | **string*                                                                                                                                               | :heavy_minus_sign:                                                                                                                                      | The body field.                                                                                                                                         |
+| `ChannelID`                                                                                                                                             | **string*                                                                                                                                               | :heavy_minus_sign:                                                                                                                                      | The channelId field.<br/>This field is part of the `channel` oneof.<br/>See the documentation for `c1.api.automations.v1.SendSlackMessage` for more details. |
+| `ChannelIDCel`                                                                                                                                          | **string*                                                                                                                                               | :heavy_minus_sign:                                                                                                                                      | The channelIdCel field.<br/>This field is part of the `channel` oneof.<br/>See the documentation for `c1.api.automations.v1.SendSlackMessage` for more details. |

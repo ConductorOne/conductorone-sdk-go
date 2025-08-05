@@ -2,16 +2,15 @@
 
 The Webhook message.
 
-This message contains a oneof named webhook_identifier. Only a single field of the following list may be set at a time:
-  - webhookId
-  - webhookIdCel
-
-
 
 ## Fields
 
-| Field                                                                                                                                                       | Type                                                                                                                                                        | Required                                                                                                                                                    | Description                                                                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Payload`                                                                                                                                                   | map[string]*any*                                                                                                                                            | :heavy_minus_sign:                                                                                                                                          | N/A                                                                                                                                                         |
-| `WebhookID`                                                                                                                                                 | **string*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                          | The webhookId field.<br/>This field is part of the `webhook_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.Webhook` for more details. |
-| `WebhookIDCel`                                                                                                                                              | **string*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                          | The webhookIdCel field.<br/>This field is part of the `webhook_identifier` oneof.<br/>See the documentation for `c1.api.workflows.v1beta.Webhook` for more details. |
+| Field                                      | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `CreatedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
+| `DeletedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
+| `Description`                              | **string*                                  | :heavy_minus_sign:                         | The description field.                     |
+| `DisplayName`                              | **string*                                  | :heavy_minus_sign:                         | The displayName field.                     |
+| `ID`                                       | **string*                                  | :heavy_minus_sign:                         | The id field.                              |
+| `UpdatedAt`                                | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
+| `URL`                                      | **string*                                  | :heavy_minus_sign:                         | The url field.                             |

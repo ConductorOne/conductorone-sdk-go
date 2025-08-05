@@ -7,6 +7,7 @@
 
 * [Approve](#approve) - Approve
 * [ApproveWithStepUp](#approvewithstepup) - Approve With Step Up
+* [Close](#close) - Close
 * [Comment](#comment) - Comment
 * [Deny](#deny) - Deny
 * [EscalateToEmergencyAccess](#escalatetoemergencyaccess) - Escalate To Emergency Access
@@ -15,6 +16,7 @@
 * [Reassign](#reassign) - Reassign
 * [Restart](#restart) - Restart
 * [SkipStep](#skipstep) - Skip Step
+* [UpdateRequestData](#updaterequestdata) - Update Request Data
 
 ## Approve
 
@@ -22,6 +24,7 @@ Invokes the c1.api.task.v1.TaskActionsService.Approve method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Approve" method="post" path="/api/v1/tasks/{task_id}/action/approve" -->
 ```go
 package main
 
@@ -79,6 +82,7 @@ Invokes the c1.api.task.v1.TaskActionsService.ApproveWithStepUp method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.ApproveWithStepUp" method="post" path="/api/v1/tasks/{task_id}/action/approve-with-step-up" -->
 ```go
 package main
 
@@ -130,12 +134,71 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## Close
+
+Invokes the c1.api.task.v1.TaskActionsService.Close method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Close" method="post" path="/api/v1/tasks/{task_id}/action/close" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.TaskActions.Close(ctx, operations.C1APITaskV1TaskActionsServiceCloseRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskActionsServiceCloseResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                            | :heavy_check_mark:                                                                                                               | The context to use for the request.                                                                                              |
+| `request`                                                                                                                        | [operations.C1APITaskV1TaskActionsServiceCloseRequest](../../pkg/models/operations/c1apitaskv1taskactionsservicecloserequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| `opts`                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                     | :heavy_minus_sign:                                                                                                               | The options for this request.                                                                                                    |
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceCloseResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicecloseresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## Comment
 
 Invokes the c1.api.task.v1.TaskActionsService.Comment method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Comment" method="post" path="/api/v1/tasks/{task_id}/action/comment" -->
 ```go
 package main
 
@@ -193,6 +256,7 @@ Invokes the c1.api.task.v1.TaskActionsService.Deny method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Deny" method="post" path="/api/v1/tasks/{task_id}/action/deny" -->
 ```go
 package main
 
@@ -250,6 +314,7 @@ Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess" method="post" path="/api/v1/tasks/{task_id}/action/escalate" -->
 ```go
 package main
 
@@ -307,6 +372,7 @@ Invokes the c1.api.task.v1.TaskActionsService.HardReset method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.HardReset" method="post" path="/api/v1/tasks/{task_id}/action/reset" -->
 ```go
 package main
 
@@ -364,6 +430,7 @@ Invokes the c1.api.task.v1.TaskActionsService.ProcessNow method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.ProcessNow" method="post" path="/api/v1/tasks/{task_id}/action/process" -->
 ```go
 package main
 
@@ -421,6 +488,7 @@ Invokes the c1.api.task.v1.TaskActionsService.Reassign method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Reassign" method="post" path="/api/v1/tasks/{task_id}/action/reassign" -->
 ```go
 package main
 
@@ -478,6 +546,7 @@ Invokes the c1.api.task.v1.TaskActionsService.Restart method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.Restart" method="post" path="/api/v1/tasks/{task_id}/action/restart" -->
 ```go
 package main
 
@@ -535,6 +604,7 @@ Invokes the c1.api.task.v1.TaskActionsService.SkipStep method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.SkipStep" method="post" path="/api/v1/tasks/{task_id}/action/skip-step" -->
 ```go
 package main
 
@@ -579,6 +649,64 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskActionsServiceSkipStepResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceskipstepresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateRequestData
+
+Invokes the c1.api.task.v1.TaskActionsService.UpdateRequestData method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.UpdateRequestData" method="post" path="/api/v1/tasks/{task_id}/action/update-request-data" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.TaskActions.UpdateRequestData(ctx, operations.C1APITaskV1TaskActionsServiceUpdateRequestDataRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskServiceActionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                    | :heavy_check_mark:                                                                                                                                       | The context to use for the request.                                                                                                                      |
+| `request`                                                                                                                                                | [operations.C1APITaskV1TaskActionsServiceUpdateRequestDataRequest](../../pkg/models/operations/c1apitaskv1taskactionsserviceupdaterequestdatarequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
+| `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceUpdateRequestDataResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceupdaterequestdataresponse.md), error**
 
 ### Errors
 

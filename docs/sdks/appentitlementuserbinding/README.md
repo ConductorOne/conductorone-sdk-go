@@ -17,6 +17,7 @@ Returns a list of app users for the identity in the app. If that app user also h
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementUserBindingService.ListAppUsersForIdentityWithGrant" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{identity_user_id}/grants" -->
 ```go
 package main
 
@@ -76,6 +77,7 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration m
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{app_user_id}/remove-grant-duration" -->
 ```go
 package main
 
@@ -135,6 +137,7 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed metho
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed" method="post" path="/api/v1/grants/feed" -->
 ```go
 package main
 
@@ -189,6 +192,7 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants meth
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants" method="post" path="/api/v1/search/past-grants" -->
 ```go
 package main
 
@@ -243,6 +247,7 @@ Invokes the c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration m
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration" method="post" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/users/{app_user_id}/update-grant-duration" -->
 ```go
 package main
 

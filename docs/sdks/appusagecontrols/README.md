@@ -14,6 +14,7 @@ Get usage controls, as an AppUsageControls object which describes some periphera
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUsageControlsService.Get" method="get" path="/api/v1/apps/{app_id}/usage_controls" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Update usage controls for an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUsageControlsService.Update" method="post" path="/api/v1/apps/{app_id}/usage_controls" -->
 ```go
 package main
 

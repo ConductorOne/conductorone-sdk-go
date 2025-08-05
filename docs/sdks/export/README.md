@@ -18,6 +18,7 @@ Create a system log export.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.Create" method="post" path="/api/v1/systemlog/exports" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ Delete a policy by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.Delete" method="delete" path="/api/v1/systemlog/exports/{export_id}" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Get a system log export by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.Get" method="get" path="/api/v1/systemlog/exports/{export_id}" -->
 ```go
 package main
 
@@ -186,6 +189,7 @@ List Exports.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.List" method="get" path="/api/v1/systemlog/exports" -->
 ```go
 package main
 
@@ -241,6 +245,7 @@ Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.ListEvents" method="post" path="/api/v1/systemlog/exports/{export_id}/events" -->
 ```go
 package main
 
@@ -298,6 +303,7 @@ Update a system log export by providing a policy object and an update mask.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportService.Update" method="post" path="/api/v1/systemlog/exports/{export_id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ Create creates a new PersonalClient object for the current User.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientService.Create" method="post" path="/api/v1/iam/personal_clients" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Invokes the c1.api.iam.v1.PersonalClientService.Delete method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientService.Delete" method="delete" path="/api/v1/iam/personal_clients/{id}" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ Invokes the c1.api.iam.v1.PersonalClientService.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientService.Get" method="get" path="/api/v1/iam/personal_clients/{id}" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ Invokes the c1.api.iam.v1.PersonalClientService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientService.List" method="get" path="/api/v1/iam/personal_clients" -->
 ```go
 package main
 
@@ -238,6 +242,7 @@ Invokes the c1.api.iam.v1.PersonalClientService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientService.Update" method="post" path="/api/v1/iam/personal_clients/{id}" -->
 ```go
 package main
 

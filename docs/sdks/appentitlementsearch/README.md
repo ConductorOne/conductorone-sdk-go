@@ -16,6 +16,7 @@ Search app entitlements based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementSearchService.Search" method="post" path="/api/v1/search/entitlements" -->
 ```go
 package main
 
@@ -41,7 +42,19 @@ func main() {
         log.Fatal(err)
     }
     if res.AppEntitlementSearchServiceSearchResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```
@@ -70,6 +83,7 @@ Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAp
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser" method="get" path="/api/v1/search/apps/{app_id}/entitlements/users/{app_user_id}" -->
 ```go
 package main
 
@@ -128,6 +142,7 @@ Search app entitlements, include app users, users, expires, discovered.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsWithExpired" method="get" path="/api/v1/apps/{app_id}/entitlements/{app_entitlement_id}/grants" -->
 ```go
 package main
 
@@ -186,6 +201,7 @@ Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchGrants method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchGrants" method="post" path="/api/v1/search/grants" -->
 ```go
 package main
 

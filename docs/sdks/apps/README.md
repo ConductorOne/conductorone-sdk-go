@@ -17,6 +17,7 @@ Create a new manual app without a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.Apps.Create" method="post" path="/api/v1/apps" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Delete an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.Apps.Delete" method="delete" path="/api/v1/apps/{id}" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ Get an app by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.Apps.Get" method="get" path="/api/v1/apps/{id}" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ List all apps.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.Apps.List" method="get" path="/api/v1/apps" -->
 ```go
 package main
 
@@ -240,6 +244,7 @@ Update an existing app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.Apps.Update" method="post" path="/api/v1/apps/{id}" -->
 ```go
 package main
 

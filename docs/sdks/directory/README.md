@@ -16,6 +16,7 @@ Create a directory.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.directory.v1.DirectoryService.Create" method="post" path="/api/v1/directories" -->
 ```go
 package main
 
@@ -70,6 +71,7 @@ Delete a directory by app_id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.directory.v1.DirectoryService.Delete" method="delete" path="/api/v1/directories/{app_id}" -->
 ```go
 package main
 
@@ -127,6 +129,7 @@ Get a directory by app_id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.directory.v1.DirectoryService.Get" method="get" path="/api/v1/directories/{app_id}" -->
 ```go
 package main
 
@@ -184,6 +187,7 @@ List directories.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.directory.v1.DirectoryService.List" method="get" path="/api/v1/directories" -->
 ```go
 package main
 

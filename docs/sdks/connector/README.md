@@ -16,6 +16,7 @@
 * [RotateCredential](#rotatecredential) - Rotate Credential
 * [Update](#update) - Update
 * [UpdateDelegated](#updatedelegated) - Update Delegated
+* [ValidateHTTPConnectorConfig](#validatehttpconnectorconfig) - Validate Http Connector Config
 
 ## Create
 
@@ -23,6 +24,7 @@ Create a configured connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.Create" method="post" path="/api/v1/apps/{app_id}/connectors/create" -->
 ```go
 package main
 
@@ -80,6 +82,7 @@ Create a connector that is pending a connector config.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.CreateDelegated" method="post" path="/api/v1/apps/{app_id}/connectors" -->
 ```go
 package main
 
@@ -137,6 +140,7 @@ Delete a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.Delete" method="delete" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```go
 package main
 
@@ -195,6 +199,7 @@ Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.ForceSync" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/force_sync" -->
 ```go
 package main
 
@@ -253,6 +258,7 @@ Get a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.Get" method="get" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```go
 package main
 
@@ -311,6 +317,7 @@ Get credentials for a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.GetCredentials" method="get" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials/{id}" -->
 ```go
 package main
 
@@ -370,6 +377,7 @@ List connectors for an app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.List" method="get" path="/api/v1/apps/{app_id}/connectors" -->
 ```go
 package main
 
@@ -427,6 +435,7 @@ Revoke credentials for a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.RevokeCredential" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials/{id}" -->
 ```go
 package main
 
@@ -486,6 +495,7 @@ Rotate credentials for a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.RotateCredential" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials" -->
 ```go
 package main
 
@@ -544,6 +554,7 @@ Update a connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.Update" method="post" path="/api/v1/apps/{app_id}/connectors/{id}" -->
 ```go
 package main
 
@@ -602,6 +613,7 @@ Update a delegated connector.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.UpdateDelegated" method="post" path="/api/v1/apps/{connector_app_id}/connectors/{connector_id}/delegated" -->
 ```go
 package main
 
@@ -647,6 +659,61 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse](../../pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ValidateHTTPConnectorConfig
+
+Invokes the c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig" method="post" path="/api/v1/apps/connectors/validate_config/http" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Connector.ValidateHTTPConnectorConfig(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.EditorValidateResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |
+| `request`                                                                        | [shared.EditorValidateRequest](../../pkg/models/shared/editorvalidaterequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `opts`                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                     | :heavy_minus_sign:                                                               | The options for this request.                                                    |
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse](../../pkg/models/operations/c1apiappv1connectorservicevalidatehttpconnectorconfigresponse.md), error**
 
 ### Errors
 

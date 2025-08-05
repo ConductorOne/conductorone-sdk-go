@@ -16,6 +16,7 @@ Add an owner to a given app entitlement.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementOwners.Add" method="post" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ List owners for a given app entitlement.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementOwners.List" method="get" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```go
 package main
 
@@ -132,6 +134,7 @@ Remove an owner from a given app entitlement.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners/{user_id}" -->
 ```go
 package main
 
@@ -191,6 +194,7 @@ Sets the owners for a given app entitlement to the specified list of users.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementOwners.Set" method="put" path="/api/v1/apps/{app_id}/entitlements/{entitlement_id}/owners" -->
 ```go
 package main
 
