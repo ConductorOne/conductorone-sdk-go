@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 0afbbacc638e4195ed3941e77a69a1fe
+  docChecksum: eb8d3486a851f907cf4f1009c7e66348
   docVersion: 0.1.0-alpha
   speakeasyVersion: 1.598.0
   generationVersion: 2.674.1
-  releaseVersion: 1.25.0
-  configChecksum: 61181e90a100100ca6b70f85341a70d4
+  releaseVersion: 1.25.1
+  configChecksum: aa9d78951571ee53240dae9ef420a55d
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -158,6 +158,7 @@ generatedFiles:
   - /pkg/models/operations/c1apifunctionsv1functionsservicedeletefunction.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicegetcommit.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicegetfunction.go
+  - /pkg/models/operations/c1apifunctionsv1functionsserviceinvoke.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicelistcommits.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicelistfunctions.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicelisttags.go
@@ -536,6 +537,8 @@ generatedFiles:
   - /pkg/models/shared/functionsservicedeletefunctionresponse.go
   - /pkg/models/shared/functionsservicegetcommitresponse.go
   - /pkg/models/shared/functionsservicegetfunctionresponse.go
+  - /pkg/models/shared/functionsserviceinvokerequest.go
+  - /pkg/models/shared/functionsserviceinvokeresponse.go
   - /pkg/models/shared/functionsservicelistcommitsresponse.go
   - /pkg/models/shared/functionsservicelistfunctionsresponse.go
   - /pkg/models/shared/functionsservicelisttagsresponse.go
@@ -1191,6 +1194,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicegetcommitresponse.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionrequest.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionresponse.md
+  - docs/pkg/models/operations/c1apifunctionsv1functionsserviceinvokerequest.md
+  - docs/pkg/models/operations/c1apifunctionsv1functionsserviceinvokeresponse.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicelistcommitsrequest.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicelistcommitsresponse.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicelistfunctionsresponse.md
@@ -1697,6 +1702,8 @@ generatedFiles:
   - docs/pkg/models/shared/functionsservicedeletefunctionresponse.md
   - docs/pkg/models/shared/functionsservicegetcommitresponse.md
   - docs/pkg/models/shared/functionsservicegetfunctionresponse.md
+  - docs/pkg/models/shared/functionsserviceinvokerequest.md
+  - docs/pkg/models/shared/functionsserviceinvokeresponse.md
   - docs/pkg/models/shared/functionsservicelistcommitsresponse.md
   - docs/pkg/models/shared/functionsservicelistfunctionsresponse.md
   - docs/pkg/models/shared/functionsservicelisttagsresponse.md
@@ -3879,6 +3886,14 @@ examples:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.functions.v1.FunctionsService.Invoke:
+    speakeasy-default-c1-api-functions-v1-functions-service-invoke:
+      parameters:
+        path:
+          function_id: "<id>"
       responses:
         "200":
           application/json: {}

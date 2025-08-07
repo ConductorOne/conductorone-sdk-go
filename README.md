@@ -303,6 +303,7 @@ func main() {
 * [DeleteFunction](docs/sdks/functions/README.md#deletefunction) - Delete Function
 * [GetCommit](docs/sdks/functions/README.md#getcommit) - Get Commit
 * [GetFunction](docs/sdks/functions/README.md#getfunction) - Get Function
+* [Invoke](docs/sdks/functions/README.md#invoke) - Invoke
 * [ListCommits](docs/sdks/functions/README.md#listcommits) - List Commits
 * [ListFunctions](docs/sdks/functions/README.md#listfunctions) - List Functions
 * [ListTags](docs/sdks/functions/README.md#listtags) - List Tags

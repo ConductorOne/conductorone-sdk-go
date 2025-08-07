@@ -11,6 +11,7 @@
 * [DeleteFunction](#deletefunction) - Delete Function
 * [GetCommit](#getcommit) - Get Commit
 * [GetFunction](#getfunction) - Get Function
+* [Invoke](#invoke) - Invoke
 * [ListCommits](#listcommits) - List Commits
 * [ListFunctions](#listfunctions) - List Functions
 * [ListTags](#listtags) - List Tags
@@ -355,6 +356,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIFunctionsV1FunctionsServiceGetFunctionResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## Invoke
+
+Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.Invoke" method="post" path="/api/v1/functions/{function_id}/invoke" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.Invoke(ctx, operations.C1APIFunctionsV1FunctionsServiceInvokeRequest{
+        FunctionID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceInvokeResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                    | :heavy_check_mark:                                                                                                                       | The context to use for the request.                                                                                                      |
+| `request`                                                                                                                                | [operations.C1APIFunctionsV1FunctionsServiceInvokeRequest](../../pkg/models/operations/c1apifunctionsv1functionsserviceinvokerequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
+| `opts`                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                             | :heavy_minus_sign:                                                                                                                       | The options for this request.                                                                                                            |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceInvokeResponse](../../pkg/models/operations/c1apifunctionsv1functionsserviceinvokeresponse.md), error**
 
 ### Errors
 
