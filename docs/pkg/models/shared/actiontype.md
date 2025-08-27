@@ -31,3 +31,6 @@ The actionType field.
 | `ActionTypeTaskActionTypeProcessNow`                               | TASK_ACTION_TYPE_PROCESS_NOW                                       |
 | `ActionTypeTaskActionTypeApproveWithStepUp`                        | TASK_ACTION_TYPE_APPROVE_WITH_STEP_UP                              |
 | `ActionTypeTaskActionTypeSkipStep`                                 | TASK_ACTION_TYPE_SKIP_STEP                                         |
+| `ActionTypeTaskActionTypeRollbackCancelled`                        | TASK_ACTION_TYPE_ROLLBACK_CANCELLED                                |
+| `ActionTypeTaskActionTypeUpdateRequestData`                        | TASK_ACTION_TYPE_UPDATE_REQUEST_DATA                               |
+| `ActionTypeTaskActionTypeUpdateGrantDuration`                      | TASK_ACTION_TYPE_UPDATE_GRANT_DURATION                             |

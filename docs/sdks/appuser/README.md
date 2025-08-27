@@ -17,6 +17,7 @@ Invokes the c1.api.app.v1.AppUserService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.List" method="get" path="/api/v1/apps/{app_id}/app_users" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Invokes the c1.api.app.v1.AppUserService.ListAppUserCredentials method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.ListAppUserCredentials" method="get" path="/api/v1/apps/{app_id}/app_users/{app_user_id}/credentials" -->
 ```go
 package main
 
@@ -132,6 +134,7 @@ Invokes the c1.api.app.v1.AppUserService.ListAppUsersForUser method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.ListAppUsersForUser" method="get" path="/api/v1/apps/{app_id}/users/{user_id}/app_users" -->
 ```go
 package main
 
@@ -190,6 +193,7 @@ Search app users based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.Search" method="post" path="/api/v1/search/app_users" -->
 ```go
 package main
 
@@ -245,6 +249,7 @@ Update an app user by ID. Only the fields specified in the update mask are updat
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.Update" method="post" path="/api/v1/apps/{app_user_app_id}/app_users/{app_user_id}" -->
 ```go
 package main
 

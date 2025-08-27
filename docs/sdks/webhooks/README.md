@@ -18,6 +18,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Create method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.Create" method="post" path="/api/v1/webhooks" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.Delete" method="delete" path="/api/v1/webhooks/{id}" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.Get" method="get" path="/api/v1/webhooks/{id}" -->
 ```go
 package main
 
@@ -186,6 +189,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.List" method="get" path="/api/v1/webhooks" -->
 ```go
 package main
 
@@ -241,6 +245,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.Test" method="post" path="/api/v1/webhooks/{id}/test" -->
 ```go
 package main
 
@@ -298,6 +303,7 @@ Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksService.Update" method="post" path="/api/v1/webhooks/{id}" -->
 ```go
 package main
 

@@ -17,6 +17,7 @@ Create a policy.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.Policies.Create" method="post" path="/api/v1/policies" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Delete a policy by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.Policies.Delete" method="delete" path="/api/v1/policies/{id}" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ Get a policy by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.Policies.Get" method="get" path="/api/v1/policies/{id}" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ List policies.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.Policies.List" method="get" path="/api/v1/policies" -->
 ```go
 package main
 
@@ -240,6 +244,7 @@ Update a policy by providing a policy object and an update mask.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.Policies.Update" method="post" path="/api/v1/policies/{id}" -->
 ```go
 package main
 

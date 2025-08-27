@@ -15,6 +15,7 @@ Get a role by id.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.Roles.Get" method="get" path="/api/v1/iam/roles/{role_id}" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ List all roles for the current user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.Roles.List" method="get" path="/api/v1/iam/roles" -->
 ```go
 package main
 
@@ -127,6 +129,7 @@ Update a role by passing a Role object.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.Roles.Update" method="post" path="/api/v1/iam/roles/{role_id}" -->
 ```go
 package main
 

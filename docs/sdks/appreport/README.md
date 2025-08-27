@@ -13,6 +13,7 @@ Get a list of reports for the given app.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppReportService.List" method="get" path="/api/v1/apps/{app_id}/report" -->
 ```go
 package main
 

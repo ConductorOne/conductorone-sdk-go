@@ -13,6 +13,7 @@ Search policies based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.PolicySearch.Search" method="post" path="/api/v1/search/policies" -->
 ```go
 package main
 
@@ -37,7 +38,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.ListPolicyResponse != nil {
+    if res.SearchPoliciesResponse != nil {
         // handle response
     }
 }

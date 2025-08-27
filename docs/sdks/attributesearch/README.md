@@ -13,6 +13,7 @@ Search attributes based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.AttributeSearch.SearchAttributeValues" method="post" path="/api/v1/search/attributes" -->
 ```go
 package main
 

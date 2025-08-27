@@ -1,0 +1,9 @@
+# C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ConflictMonitorUpdateRequest`                                                                     | [*shared.ConflictMonitorUpdateRequest](../../../pkg/models/shared/conflictmonitorupdaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `ID`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

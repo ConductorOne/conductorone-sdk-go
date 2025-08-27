@@ -13,6 +13,7 @@ Search apps based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppSearch.Search" method="post" path="/api/v1/search/apps" -->
 ```go
 package main
 

@@ -13,6 +13,7 @@ Invokes the c1.api.systemlog.v1.ExportsSearchService.Search method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.ExportsSearchService.Search" method="post" path="/api/v1/search/systemlog/exports" -->
 ```go
 package main
 

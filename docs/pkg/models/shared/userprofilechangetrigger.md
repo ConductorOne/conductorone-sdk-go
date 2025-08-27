@@ -5,7 +5,6 @@ The UserProfileChangeTrigger message.
 
 ## Fields
 
-| Field                          | Type                           | Required                       | Description                    |
-| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `ProfileAttributeCel`          | **string*                      | :heavy_minus_sign:             | The profileAttributeCel field. |
-| `ProfileAttributeKey`          | **string*                      | :heavy_minus_sign:             | The profileAttributeKey field. |
+| Field                | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `Condition`          | **string*            | :heavy_minus_sign:   | The condition field. |

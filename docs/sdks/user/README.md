@@ -14,6 +14,7 @@ Get a user by ID.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.user.v1.UserService.Get" method="get" path="/api/v1/users/{id}" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ List users.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.user.v1.UserService.List" method="get" path="/api/v1/users" -->
 ```go
 package main
 

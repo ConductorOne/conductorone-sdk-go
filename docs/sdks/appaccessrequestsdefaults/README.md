@@ -15,6 +15,7 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessReques
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessRequestsDefaults" method="post" path="/api/v1/apps/{app_id}/access_request_defaults/cancel" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessReques
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessRequestsDefaults" method="post" path="/api/v1/apps/{app_id}/access_request_defaults" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsD
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsDefaults" method="get" path="/api/v1/apps/{app_id}/access_request_defaults" -->
 ```go
 package main
 

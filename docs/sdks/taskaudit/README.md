@@ -13,6 +13,7 @@ Invokes the c1.api.task.v1.TaskAudit.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskAudit.List" method="post" path="/api/v1/task/audits" -->
 ```go
 package main
 

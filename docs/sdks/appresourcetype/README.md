@@ -17,6 +17,7 @@ Invokes the c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceTy
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceType" method="post" path="/api/v1/apps/{app_id}/resource_types" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Invokes the c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceTy
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceType" method="delete" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```go
 package main
 
@@ -132,6 +134,7 @@ Get an app resource type.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceTypeService.Get" method="get" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```go
 package main
 
@@ -190,6 +193,7 @@ List app resource types.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceTypeService.List" method="get" path="/api/v1/apps/{app_id}/resource_types" -->
 ```go
 package main
 
@@ -247,6 +251,7 @@ Invokes the c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceTy
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceType" method="post" path="/api/v1/apps/{app_id}/resource_types/{id}" -->
 ```go
 package main
 

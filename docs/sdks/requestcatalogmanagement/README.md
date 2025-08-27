@@ -15,12 +15,15 @@
 * [Get](#get) - Get
 * [GetBundleAutomation](#getbundleautomation) - Get Bundle Automation
 * [List](#list) - List
+* [ListAllEntitlementIdsPerApp](#listallentitlementidsperapp) - List All Entitlement Ids Per App
 * [ListEntitlementsForAccess](#listentitlementsforaccess) - List Entitlements For Access
 * [ListEntitlementsPerCatalog](#listentitlementspercatalog) - List Entitlements Per Catalog
 * [RemoveAccessEntitlements](#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](#removeappentitlements) - Remove App Entitlements
+* [ResumePausedBundleAutomation](#resumepausedbundleautomation) - Resume Paused Bundle Automation
 * [SetBundleAutomation](#setbundleautomation) - Set Bundle Automation
 * [Update](#update) - Update
+* [UpdateAppEntitlements](#updateappentitlements) - Update App Entitlements
 
 ## AddAccessEntitlements
 
@@ -28,6 +31,7 @@ Add visibility bindings (access entitlements) to a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAccessEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/visibility_bindings" -->
 ```go
 package main
 
@@ -85,6 +89,7 @@ Add requestable entitlements to a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.AddAppEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/requestable_entries" -->
 ```go
 package main
 
@@ -142,6 +147,7 @@ Creates a new request catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Create" method="post" path="/api/v1/catalogs" -->
 ```go
 package main
 
@@ -196,6 +202,7 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundl
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/create" -->
 ```go
 package main
 
@@ -253,6 +260,7 @@ Delete a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Delete" method="delete" path="/api/v1/catalogs/{id}" -->
 ```go
 package main
 
@@ -310,6 +318,7 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundl
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation" method="delete" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```go
 package main
 
@@ -367,6 +376,7 @@ Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBun
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/run" -->
 ```go
 package main
 
@@ -424,6 +434,7 @@ Get a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Get" method="get" path="/api/v1/catalogs/{id}" -->
 ```go
 package main
 
@@ -481,6 +492,7 @@ Get bundle automation
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation" method="get" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```go
 package main
 
@@ -538,6 +550,7 @@ Get a list of request catalogs.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.List" method="get" path="/api/v1/catalogs" -->
 ```go
 package main
 
@@ -587,12 +600,71 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ListAllEntitlementIdsPerApp
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEntitlementIdsPerApp method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEntitlementIdsPerApp" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entitlementIDs" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.ListAllEntitlementIdsPerApp(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppRequest{
+        CatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.RequestCatalogManagementServiceListAllEntitlementIdsPerCatalogResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                  | Type                                                                                                                                                                                                                       | Required                                                                                                                                                                                                                   | Description                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                      | :heavy_check_mark:                                                                                                                                                                                                         | The context to use for the request.                                                                                                                                                                                        |
+| `request`                                                                                                                                                                                                                  | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistallentitlementidsperapprequest.md) | :heavy_check_mark:                                                                                                                                                                                                         | The request object to use for the request.                                                                                                                                                                                 |
+| `opts`                                                                                                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                         | The options for this request.                                                                                                                                                                                              |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistallentitlementidsperappresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## ListEntitlementsForAccess
 
 List visibility bindings (access entitlements) for a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsForAccess" method="get" path="/api/v1/catalogs/{catalog_id}/visibility_entitlements" -->
 ```go
 package main
 
@@ -650,6 +722,7 @@ List entitlements in a catalog that are requestable.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ListEntitlementsPerCatalog" method="get" path="/api/v1/catalogs/{catalog_id}/requestable_entitlements" -->
 ```go
 package main
 
@@ -707,6 +780,7 @@ Remove visibility bindings (access entitlements) to a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAccessEntitlements" method="delete" path="/api/v1/catalogs/{catalog_id}/visibility_bindings" -->
 ```go
 package main
 
@@ -764,6 +838,7 @@ Remove requestable entitlements from a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.RemoveAppEntitlements" method="delete" path="/api/v1/catalogs/{catalog_id}/requestable_entries" -->
 ```go
 package main
 
@@ -815,12 +890,71 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ResumePausedBundleAutomation
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePausedBundleAutomation method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePausedBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation/resume" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.ResumePausedBundleAutomation(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationRequest{
+        RequestCatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ResumePausedBundleAutomationResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                         | Required                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                           | The context to use for the request.                                                                                                                                                                                          |
+| `request`                                                                                                                                                                                                                    | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceresumepausedbundleautomationrequest.md) | :heavy_check_mark:                                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                                   |
+| `opts`                                                                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                           | The options for this request.                                                                                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceresumepausedbundleautomationresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## SetBundleAutomation
 
 Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation" method="post" path="/api/v1/catalogs/{request_catalog_id}/bundle_automation" -->
 ```go
 package main
 
@@ -878,6 +1012,7 @@ Update a catalog.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.Update" method="post" path="/api/v1/catalogs/{id}" -->
 ```go
 package main
 
@@ -922,6 +1057,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateAppEntitlements
+
+Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEntitlements method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEntitlements" method="post" path="/api/v1/catalogs/{catalog_id}/requestable_entitlements/update" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.UpdateAppEntitlements(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsRequest{
+        CatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.RequestCatalogManagementServiceUpdateAppEntitlementsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                      | Type                                                                                                                                                                                                           | Required                                                                                                                                                                                                       | Description                                                                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                                             | The context to use for the request.                                                                                                                                                                            |
+| `request`                                                                                                                                                                                                      | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateappentitlementsrequest.md) | :heavy_check_mark:                                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                                     |
+| `opts`                                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                             | The options for this request.                                                                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceupdateappentitlementsresponse.md), error**
 
 ### Errors
 

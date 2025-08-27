@@ -13,6 +13,7 @@ Invokes the c1.api.webhooks.v1.WebhooksSearch.Search method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.webhooks.v1.WebhooksSearch.Search" method="post" path="/api/v1/search/webhooks" -->
 ```go
 package main
 

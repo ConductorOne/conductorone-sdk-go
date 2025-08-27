@@ -16,6 +16,7 @@ Create a grant task
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.CreateGrantTask" method="post" path="/api/v1/task/grant" -->
 ```go
 package main
 
@@ -70,6 +71,7 @@ Invokes the c1.api.task.v1.TaskService.CreateOffboardingTask method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.CreateOffboardingTask" method="post" path="/api/v1/task/offboarding" -->
 ```go
 package main
 
@@ -124,6 +126,7 @@ Create a revoke task
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.CreateRevokeTask" method="post" path="/api/v1/task/revoke" -->
 ```go
 package main
 
@@ -178,6 +181,7 @@ Get a task by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.Get" method="get" path="/api/v1/tasks/{id}" -->
 ```go
 package main
 

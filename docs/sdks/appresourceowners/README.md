@@ -15,6 +15,7 @@ Invokes the c1.api.app.v1.AppResourceOwners.Add method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceOwners.Add" method="post" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ List all owners of an app resource.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceOwners.List" method="get" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```go
 package main
 
@@ -133,6 +135,7 @@ Invokes the c1.api.app.v1.AppResourceOwners.Remove method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceOwners.Remove" method="delete" path="/api/v1/apps/{app_id}/resource_types/{resource_type_id}/resource/{resource_id}/owners" -->
 ```go
 package main
 
