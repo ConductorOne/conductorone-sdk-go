@@ -14,6 +14,7 @@ Invokes the c1.api.settings.v1.OrgDomainService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.OrgDomainService.List" method="get" path="/api/v1/settings/domains" -->
 ```go
 package main
 
@@ -69,6 +70,7 @@ Invokes the c1.api.settings.v1.OrgDomainService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.settings.v1.OrgDomainService.Update" method="put" path="/api/v1/settings/domains" -->
 ```go
 package main
 

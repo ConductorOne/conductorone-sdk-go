@@ -1,0 +1,19 @@
+# CreateAutomationRequestInput
+
+The CreateAutomationRequest message.
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `AutomationContext`                                                           | [*shared.AutomationContext](../../../pkg/models/shared/automationcontext.md)  | :heavy_minus_sign:                                                            | The AutomationContext message.                                                |
+| `AppID`                                                                       | **string*                                                                     | :heavy_minus_sign:                                                            | the app id this workflow_template belongs to                                  |
+| `AutomationSteps`                                                             | [][shared.AutomationStep](../../../pkg/models/shared/automationstep.md)       | :heavy_minus_sign:                                                            | The automationSteps field.                                                    |
+| `Description`                                                                 | **string*                                                                     | :heavy_minus_sign:                                                            | The description field.                                                        |
+| `DisplayName`                                                                 | **string*                                                                     | :heavy_minus_sign:                                                            | The displayName field.                                                        |
+| `DraftAutomationSteps`                                                        | [][shared.AutomationStep](../../../pkg/models/shared/automationstep.md)       | :heavy_minus_sign:                                                            | The draftAutomationSteps field.                                               |
+| `DraftTriggers`                                                               | [][shared.AutomationTrigger](../../../pkg/models/shared/automationtrigger.md) | :heavy_minus_sign:                                                            | The draftTriggers field.                                                      |
+| `Enabled`                                                                     | **bool*                                                                       | :heavy_minus_sign:                                                            | The enabled field.                                                            |
+| `IsDraft`                                                                     | **bool*                                                                       | :heavy_minus_sign:                                                            | The isDraft field.                                                            |
+| `Triggers`                                                                    | [][shared.AutomationTrigger](../../../pkg/models/shared/automationtrigger.md) | :heavy_minus_sign:                                                            | The triggers field.                                                           |

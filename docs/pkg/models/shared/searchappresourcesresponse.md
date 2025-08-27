@@ -1,0 +1,12 @@
+# SearchAppResourcesResponse
+
+The SearchAppResourcesResponse message.
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Expanded`                                                                                                      | [][shared.SearchAppResourcesResponseExpanded](../../../pkg/models/shared/searchappresourcesresponseexpanded.md) | :heavy_minus_sign:                                                                                              | The expanded field.                                                                                             |
+| `List`                                                                                                          | [][shared.AppResourceView](../../../pkg/models/shared/appresourceview.md)                                       | :heavy_minus_sign:                                                                                              | The list field.                                                                                                 |
+| `NextPageToken`                                                                                                 | **string*                                                                                                       | :heavy_minus_sign:                                                                                              | The nextPageToken field.                                                                                        |

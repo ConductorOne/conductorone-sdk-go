@@ -13,6 +13,7 @@ Invokes the c1.api.policy.v1.AccountProvisionPolicyTest.Test method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.policy.v1.AccountProvisionPolicyTest.Test" method="post" path="/api/v1/policies/test-account-provision-policy" -->
 ```go
 package main
 

@@ -24,6 +24,10 @@ github.com/grpc-ecosystem/go-grpc-middleware/tags
 # github.com/pquerna/xjwt v0.2.0
 ## explicit; go 1.20
 github.com/pquerna/xjwt
+# github.com/spyzhov/ajson v0.9.6
+## explicit; go 1.16
+github.com/spyzhov/ajson
+github.com/spyzhov/ajson/internal
 # github.com/stretchr/testify v1.8.3
 ## explicit; go 1.20
 # go.uber.org/multierr v1.11.0

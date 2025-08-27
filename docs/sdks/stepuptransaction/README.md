@@ -14,6 +14,7 @@ Get retrieves a specific step-up transaction by ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpTransactionService.Get" method="get" path="/api/v1/step-up/transactions/{id}" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Search allows searching for step-up transactions with various filters
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpTransactionService.Search" method="post" path="/api/v1/search/step-up/transactions" -->
 ```go
 package main
 

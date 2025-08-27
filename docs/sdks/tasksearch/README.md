@@ -13,6 +13,7 @@ Search tasks based on filters specified in the request body.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskSearchService.Search" method="post" path="/api/v1/search/tasks" -->
 ```go
 package main
 

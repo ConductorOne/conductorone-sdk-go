@@ -1,0 +1,9 @@
+# C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `ResumePausedBundleAutomationRequest`                                                                            | [*shared.ResumePausedBundleAutomationRequest](../../../pkg/models/shared/resumepausedbundleautomationrequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `RequestCatalogID`                                                                                               | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

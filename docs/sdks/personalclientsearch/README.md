@@ -13,6 +13,7 @@ Invokes the c1.api.iam.v1.PersonalClientSearchService.Search method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.iam.v1.PersonalClientSearchService.Search" method="post" path="/api/v1/search/iam/personal_clients" -->
 ```go
 package main
 

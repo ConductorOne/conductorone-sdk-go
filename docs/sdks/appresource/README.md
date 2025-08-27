@@ -17,6 +17,7 @@ Invokes the c1.api.app.v1.AppResourceService.CreateManuallyManagedAppResource me
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.CreateManuallyManagedAppResource" method="post" path="/api/v1/apps/{app_id}/resource_types/{app_resource_type_id}/resources" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ Invokes the c1.api.app.v1.AppResourceService.DeleteManuallyManagedAppResource me
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.DeleteManuallyManagedAppResource" method="delete" path="/api/v1/apps/{app_id}/resource_types/{app_resource_type_id}/resources/{id}" -->
 ```go
 package main
 
@@ -134,6 +136,7 @@ Invokes the c1.api.app.v1.AppResourceService.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.Get" method="get" path="/api/v1/apps/{app_id}/resource_types/{app_resource_type_id}/resources/{id}" -->
 ```go
 package main
 
@@ -193,6 +196,7 @@ Invokes the c1.api.app.v1.AppResourceService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.List" method="get" path="/api/v1/apps/{app_id}/resource_types/{app_resource_type_id}/resources" -->
 ```go
 package main
 
@@ -251,6 +255,7 @@ Invokes the c1.api.app.v1.AppResourceService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.Update" method="post" path="/api/v1/apps/{app_id}/resource_types/{app_resource_type_id}/resources/{id}" -->
 ```go
 package main
 

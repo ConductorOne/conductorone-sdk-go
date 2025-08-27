@@ -29,3 +29,6 @@
 | `ActionsTaskActionTypeProcessNow`                               | TASK_ACTION_TYPE_PROCESS_NOW                                    |
 | `ActionsTaskActionTypeApproveWithStepUp`                        | TASK_ACTION_TYPE_APPROVE_WITH_STEP_UP                           |
 | `ActionsTaskActionTypeSkipStep`                                 | TASK_ACTION_TYPE_SKIP_STEP                                      |
+| `ActionsTaskActionTypeRollbackCancelled`                        | TASK_ACTION_TYPE_ROLLBACK_CANCELLED                             |
+| `ActionsTaskActionTypeUpdateRequestData`                        | TASK_ACTION_TYPE_UPDATE_REQUEST_DATA                            |
+| `ActionsTaskActionTypeUpdateGrantDuration`                      | TASK_ACTION_TYPE_UPDATE_GRANT_DURATION                          |

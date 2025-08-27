@@ -20,6 +20,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Create method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Create" method="post" path="/api/v1/step-up/providers" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Delete method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Delete" method="delete" path="/api/v1/step-up/providers/{id}" -->
 ```go
 package main
 
@@ -131,6 +133,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Get method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Get" method="get" path="/api/v1/step-up/providers/{id}" -->
 ```go
 package main
 
@@ -188,6 +191,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.List method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.List" method="get" path="/api/v1/step-up/providers" -->
 ```go
 package main
 
@@ -241,6 +245,7 @@ Search allows searching for step-up providers with various filters
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Search" method="post" path="/api/v1/search/step-up/providers" -->
 ```go
 package main
 
@@ -295,6 +300,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Test method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Test" method="post" path="/api/v1/step-up/providers/{id}/test" -->
 ```go
 package main
 
@@ -352,6 +358,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.Update method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.Update" method="post" path="/api/v1/step-up/providers/{id}" -->
 ```go
 package main
 
@@ -409,6 +416,7 @@ Invokes the c1.api.stepup.v1.StepUpProviderService.UpdateSecret method.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.stepup.v1.StepUpProviderService.UpdateSecret" method="post" path="/api/v1/step-up/providers/{id}/secret" -->
 ```go
 package main
 

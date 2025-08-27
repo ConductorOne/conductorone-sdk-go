@@ -16,3 +16,7 @@ The origin field.
 | `OriginTaskOriginWebapp`                      | TASK_ORIGIN_WEBAPP                            |
 | `OriginTaskOriginTimeRevoke`                  | TASK_ORIGIN_TIME_REVOKE                       |
 | `OriginTaskOriginNonUsageRevoke`              | TASK_ORIGIN_NON_USAGE_REVOKE                  |
+| `OriginTaskOriginProfileMembershipManual`     | TASK_ORIGIN_PROFILE_MEMBERSHIP_MANUAL         |
+| `OriginTaskOriginProfileMembership`           | TASK_ORIGIN_PROFILE_MEMBERSHIP                |
+| `OriginTaskOriginAutomation`                  | TASK_ORIGIN_AUTOMATION                        |
+| `OriginTaskOriginAccessReview`                | TASK_ORIGIN_ACCESS_REVIEW                     |

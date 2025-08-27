@@ -13,6 +13,7 @@ Introspect returns the current user's principle_id, user_id and a list of roles,
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.auth.v1.Auth.Introspect" method="get" path="/api/v1/auth/introspect" -->
 ```go
 package main
 

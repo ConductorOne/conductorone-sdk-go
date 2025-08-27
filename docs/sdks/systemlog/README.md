@@ -16,6 +16,7 @@ ListEvents pulls Events from the ConductorOne system.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="c1.api.systemlog.v1.SystemLogService.ListEvents" method="post" path="/api/v1/systemlog/events" -->
 ```go
 package main
 

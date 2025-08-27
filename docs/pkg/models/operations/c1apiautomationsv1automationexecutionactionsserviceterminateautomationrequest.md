@@ -1,0 +1,9 @@
+# C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `TerminateAutomationRequest`                                                                   | [*shared.TerminateAutomationRequest](../../../pkg/models/shared/terminateautomationrequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `ID`                                                                                           | *int64*                                                                                        | :heavy_check_mark:                                                                             | N/A                                                                                            |
