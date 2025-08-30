@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 5631d4c7926ff0de44195235ce4b7a13
+  docChecksum: 5da2a9bbf1f768d3c7c5c686179a59c5
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.606.5
-  generationVersion: 2.687.1
-  releaseVersion: 1.25.0
-  configChecksum: 61181e90a100100ca6b70f85341a70d4
+  speakeasyVersion: 1.606.9
+  generationVersion: 2.687.13
+  releaseVersion: 1.25.1
+  configChecksum: aa9d78951571ee53240dae9ef420a55d
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -139,6 +139,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiattributev1attributesgetrisklevelattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributetypes.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributevalues.go
+  - /pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworks.go
+  - /pkg/models/operations/c1apiattributev1attributeslistrisklevels.go
   - /pkg/models/operations/c1apiauthv1authintrospect.go
   - /pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomation.go
   - /pkg/models/operations/c1apiautomationsv1automationexecutionsearchservicesearchautomationexecutions.go
@@ -598,8 +600,10 @@ generatedFiles:
   - /pkg/models/shared/listautomationexclusionsresponse.go
   - /pkg/models/shared/listautomationexecutionsresponse.go
   - /pkg/models/shared/listautomationsresponse.go
+  - /pkg/models/shared/listcomplianceframeworksresponse.go
   - /pkg/models/shared/listorgdomainsresponse.go
   - /pkg/models/shared/listpolicyresponse.go
+  - /pkg/models/shared/listrisklevelsresponse.go
   - /pkg/models/shared/listrolesresponse.go
   - /pkg/models/shared/liststepupprovidersresponse.go
   - /pkg/models/shared/managerapproval.go
@@ -855,9 +859,11 @@ generatedFiles:
   - /pkg/models/shared/taskauditwaitforanalysisstepwaiting.go
   - /pkg/models/shared/taskauditwaitstepsuccess.go
   - /pkg/models/shared/taskauditwaitsteptimedout.go
+  - /pkg/models/shared/taskauditwaitstepuntiltime.go
   - /pkg/models/shared/taskauditwaitstepwaiting.go
   - /pkg/models/shared/taskauditwebhookapprovalattempt.go
   - /pkg/models/shared/taskauditwebhookapprovalbadresponse.go
+  - /pkg/models/shared/taskauditwebhookapprovalfatalerror.go
   - /pkg/models/shared/taskauditwebhookapprovalsuccess.go
   - /pkg/models/shared/taskauditwebhookapprovaltriggered.go
   - /pkg/models/shared/taskauditwebhookattempt.go
@@ -947,8 +953,11 @@ generatedFiles:
   - /pkg/models/shared/wait.go
   - /pkg/models/shared/waitcondition.go
   - /pkg/models/shared/waitconditioninstance.go
+  - /pkg/models/shared/waitduration.go
   - /pkg/models/shared/waitforduration.go
   - /pkg/models/shared/waitinstance.go
+  - /pkg/models/shared/waituntiltime.go
+  - /pkg/models/shared/waituntiltimeinstance.go
   - /pkg/models/shared/webhook.go
   - /pkg/models/shared/webhook1.go
   - /pkg/models/shared/webhookapproval.go
@@ -1171,7 +1180,6 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1connectorserviceresumesyncresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md
@@ -1198,6 +1206,10 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributetypesresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksrequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistrisklevelsrequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistrisklevelsresponse.md
   - docs/pkg/models/operations/c1apiauthv1authintrospectresponse.md
   - docs/pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomationrequest.md
   - docs/pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomationresponse.md
@@ -1819,8 +1831,10 @@ generatedFiles:
   - docs/pkg/models/shared/listautomationexclusionsresponse.md
   - docs/pkg/models/shared/listautomationexecutionsresponse.md
   - docs/pkg/models/shared/listautomationsresponse.md
+  - docs/pkg/models/shared/listcomplianceframeworksresponse.md
   - docs/pkg/models/shared/listorgdomainsresponse.md
   - docs/pkg/models/shared/listpolicyresponse.md
+  - docs/pkg/models/shared/listrisklevelsresponse.md
   - docs/pkg/models/shared/listrolesresponse.md
   - docs/pkg/models/shared/liststepupprovidersresponse.md
   - docs/pkg/models/shared/managerapproval.md
@@ -2135,9 +2149,11 @@ generatedFiles:
   - docs/pkg/models/shared/taskauditwaitforanalysisstepwaiting.md
   - docs/pkg/models/shared/taskauditwaitstepsuccess.md
   - docs/pkg/models/shared/taskauditwaitsteptimedout.md
+  - docs/pkg/models/shared/taskauditwaitstepuntiltime.md
   - docs/pkg/models/shared/taskauditwaitstepwaiting.md
   - docs/pkg/models/shared/taskauditwebhookapprovalattempt.md
   - docs/pkg/models/shared/taskauditwebhookapprovalbadresponse.md
+  - docs/pkg/models/shared/taskauditwebhookapprovalfatalerror.md
   - docs/pkg/models/shared/taskauditwebhookapprovalsuccess.md
   - docs/pkg/models/shared/taskauditwebhookapprovaltriggered.md
   - docs/pkg/models/shared/taskauditwebhookattempt.md
@@ -2251,9 +2267,12 @@ generatedFiles:
   - docs/pkg/models/shared/wait.md
   - docs/pkg/models/shared/waitcondition.md
   - docs/pkg/models/shared/waitconditioninstance.md
+  - docs/pkg/models/shared/waitduration.md
   - docs/pkg/models/shared/waitforduration.md
   - docs/pkg/models/shared/waitinstance.md
   - docs/pkg/models/shared/waitinstancestate.md
+  - docs/pkg/models/shared/waituntiltime.md
+  - docs/pkg/models/shared/waituntiltimeinstance.md
   - docs/pkg/models/shared/webhook.md
   - docs/pkg/models/shared/webhook1.md
   - docs/pkg/models/shared/webhookapproval.md
@@ -4031,5 +4050,16 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.attribute.v1.Attributes.ListComplianceFrameworks:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-compliance-frameworks:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.ListRiskLevels:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-risk-levels:
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## SDK Changes Detected:\n* `ConductoroneApi.Connector.RotateCredential()`: \n  *  `request.Request` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `ConductoroneApi.Task.Get()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.SkipStep()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.Attributes.ListRiskLevels()`: **Added**\n* `ConductoroneApi.Policies.Create()`: \n  *  `request.Request.PolicySteps.{}.Steps.[].Wait` **Changed**\n  *  `response.Policy.PolicySteps.{}.Steps.[].Wait` **Changed**\n* `ConductoroneApi.Policies.Get()`:  `response.Policy.PolicySteps.{}.Steps.[].Wait` **Changed**\n* `ConductoroneApi.Policies.List()`:  `response.List.[].PolicySteps.{}.Steps.[].Wait` **Changed**\n* `ConductoroneApi.Policies.Update()`: \n  *  `request.Request.UpdatePolicyRequest.Policy.PolicySteps.{}.Steps.[].Wait` **Changed**\n  *  `response.Policy.PolicySteps.{}.Steps.[].Wait` **Changed**\n* `ConductoroneApi.PolicySearch.Search()`:  `response.List.[].PolicySteps.{}.Steps.[].Wait` **Changed**\n* `ConductoroneApi.TaskSearch.Search()`:  `response.List.[].Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskAudit.List()`:  `response.List.[]` **Changed**\n* `ConductoroneApi.Task.CreateGrantTask()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Approve()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.Connector.GetCredentials()`:  `response.ConnectorCredential.ClientSecret` **Added**\n* `ConductoroneApi.Task.CreateRevokeTask()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.Task.CreateOffboardingTask()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.ApproveWithStepUp()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Close()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Comment()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Deny()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.EscalateToEmergencyAccess()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.HardReset()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.ProcessNow()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Reassign()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.Restart()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.Attributes.ListComplianceFrameworks()`: **Added**\n* `ConductoroneApi.TaskActions.UpdateGrantDuration()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n* `ConductoroneApi.TaskActions.UpdateRequestData()`:  `response.TaskView.Task.PolicyInstance` **Changed**\n"

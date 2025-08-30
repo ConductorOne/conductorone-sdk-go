@@ -18,7 +18,7 @@ func (l ListAppEntitlementsResponseExpanded) MarshalJSON() ([]byte, error) {
 }
 
 func (l *ListAppEntitlementsResponseExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

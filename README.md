@@ -225,6 +225,8 @@ func main() {
 * [GetRiskLevelAttributeValue](docs/sdks/attributes/README.md#getrisklevelattributevalue) - Get Risk Level Attribute Value
 * [ListAttributeTypes](docs/sdks/attributes/README.md#listattributetypes) - List Attribute Types
 * [ListAttributeValues](docs/sdks/attributes/README.md#listattributevalues) - List Attribute Values
+* [ListComplianceFrameworks](docs/sdks/attributes/README.md#listcomplianceframeworks) - List Compliance Frameworks
+* [ListRiskLevels](docs/sdks/attributes/README.md#listrisklevels) - List Risk Levels
 
 ### [AttributeSearch](docs/sdks/attributesearch/README.md)
 

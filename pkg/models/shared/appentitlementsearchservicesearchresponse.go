@@ -18,7 +18,7 @@ func (a AppEntitlementSearchServiceSearchResponseExpanded) MarshalJSON() ([]byte
 }
 
 func (a *AppEntitlementSearchServiceSearchResponseExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

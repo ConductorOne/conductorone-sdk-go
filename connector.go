@@ -2136,7 +2136,7 @@ func (s *Connector) RevokeCredential(ctx context.Context, request operations.C1A
 
 // RotateCredential - Rotate Credential
 // Rotate credentials for a connector.
-func (s *Connector) RotateCredential(ctx context.Context, request operations.C1APIAppV1ConnectorServiceRotateCredentialRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceRotateCredentialResponse, error) {
+func (s *Connector) RotateCredential(ctx context.Context, request *shared.ConnectorServiceRotateCredentialRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceRotateCredentialResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2155,7 +2155,7 @@ func (s *Connector) RotateCredential(ctx context.Context, request operations.C1A
 	} else {
 		baseURL = *o.ServerURL
 	}
-	opURL, err := utils.GenerateURL(ctx, baseURL, "/api/v1/apps/{app_id}/connectors/{connector_id}/credentials", request, nil)
+	opURL, err := url.JoinPath(baseURL, "/api/v1/apps/connectors/credentials")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
@@ -2169,7 +2169,7 @@ func (s *Connector) RotateCredential(ctx context.Context, request operations.C1A
 		OAuth2Scopes:     []string{},
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "ConnectorServiceRotateCredentialRequest", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

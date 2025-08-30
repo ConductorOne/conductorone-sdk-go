@@ -18,7 +18,7 @@ func (p PayloadPolicyPostActionExpanded) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PayloadPolicyPostActionExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil
