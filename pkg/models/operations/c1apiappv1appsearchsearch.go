@@ -16,6 +16,8 @@ type C1APIAppV1AppSearchSearchResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+
+	Next func() (*C1APIAppV1AppSearchSearchResponse, error)
 }
 
 func (o *C1APIAppV1AppSearchSearchResponse) GetContentType() string {

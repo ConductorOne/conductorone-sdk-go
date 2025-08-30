@@ -18,7 +18,7 @@ func (t TaskActionsServiceApproveWithStepUpResponseExpanded) MarshalJSON() ([]by
 }
 
 func (t *TaskActionsServiceApproveWithStepUpResponseExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -18,7 +18,7 @@ func (a AppUserServiceSearchResponseExpanded) MarshalJSON() ([]byte, error) {
 }
 
 func (a *AppUserServiceSearchResponseExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

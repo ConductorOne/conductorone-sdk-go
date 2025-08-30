@@ -16,6 +16,8 @@ type C1APIPolicyV1PolicySearchSearchResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+
+	Next func() (*C1APIPolicyV1PolicySearchSearchResponse, error)
 }
 
 func (o *C1APIPolicyV1PolicySearchSearchResponse) GetContentType() string {

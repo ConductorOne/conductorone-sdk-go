@@ -7,33 +7,6 @@ import (
 	"net/http"
 )
 
-type C1APIAppV1ConnectorServiceRotateCredentialRequest struct {
-	ConnectorServiceRotateCredentialRequest *shared.ConnectorServiceRotateCredentialRequest `request:"mediaType=application/json"`
-	AppID                                   string                                          `pathParam:"style=simple,explode=false,name=app_id"`
-	ConnectorID                             string                                          `pathParam:"style=simple,explode=false,name=connector_id"`
-}
-
-func (o *C1APIAppV1ConnectorServiceRotateCredentialRequest) GetConnectorServiceRotateCredentialRequest() *shared.ConnectorServiceRotateCredentialRequest {
-	if o == nil {
-		return nil
-	}
-	return o.ConnectorServiceRotateCredentialRequest
-}
-
-func (o *C1APIAppV1ConnectorServiceRotateCredentialRequest) GetAppID() string {
-	if o == nil {
-		return ""
-	}
-	return o.AppID
-}
-
-func (o *C1APIAppV1ConnectorServiceRotateCredentialRequest) GetConnectorID() string {
-	if o == nil {
-		return ""
-	}
-	return o.ConnectorID
-}
-
 type C1APIAppV1ConnectorServiceRotateCredentialResponse struct {
 	// ConnectorServiceRotateCredentialResponse is the response returned by the rotate method.
 	ConnectorServiceRotateCredentialResponse *shared.ConnectorServiceRotateCredentialResponse

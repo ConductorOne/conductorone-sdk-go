@@ -6,8 +6,6 @@ package shared
 type ConnectorServiceRotateCredentialResponse struct {
 	// ConnectorCredential is used by a connector to authenticate with conductor one.
 	ConnectorCredential *ConnectorCredential `json:"credential,omitempty"`
-	// The new clientSecret returned after rotating the connector credential.
-	ClientSecret *string `json:"clientSecret,omitempty"`
 }
 
 func (o *ConnectorServiceRotateCredentialResponse) GetConnectorCredential() *ConnectorCredential {
@@ -15,11 +13,4 @@ func (o *ConnectorServiceRotateCredentialResponse) GetConnectorCredential() *Con
 		return nil
 	}
 	return o.ConnectorCredential
-}
-
-func (o *ConnectorServiceRotateCredentialResponse) GetClientSecret() *string {
-	if o == nil {
-		return nil
-	}
-	return o.ClientSecret
 }

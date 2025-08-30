@@ -25,6 +25,7 @@ func (e WaitInstanceState) ToPointer() *WaitInstanceState {
 //
 // This message contains a oneof named until. Only a single field of the following list may be set at a time:
 //   - condition
+//   - untilTime
 //
 // This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
 //   - succeeded
@@ -39,6 +40,8 @@ type WaitInstance struct {
 	SkippedAction *SkippedAction `json:"skipped,omitempty"`
 	// Used by the policy engine to describe an instantiated condition to wait on.
 	WaitConditionInstance *WaitConditionInstance `json:"condition,omitempty"`
+	// The WaitUntilTimeInstance message.
+	WaitUntilTimeInstance *WaitUntilTimeInstance `json:"untilTime,omitempty"`
 	// The comment to post on first failed check.
 	CommentOnFirstWait *string `json:"commentOnFirstWait,omitempty"`
 	// The comment to post if we timeout.
@@ -57,7 +60,7 @@ func (w WaitInstance) MarshalJSON() ([]byte, error) {
 }
 
 func (w *WaitInstance) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &w, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &w, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -89,6 +92,13 @@ func (o *WaitInstance) GetWaitConditionInstance() *WaitConditionInstance {
 		return nil
 	}
 	return o.WaitConditionInstance
+}
+
+func (o *WaitInstance) GetWaitUntilTimeInstance() *WaitUntilTimeInstance {
+	if o == nil {
+		return nil
+	}
+	return o.WaitUntilTimeInstance
 }
 
 func (o *WaitInstance) GetCommentOnFirstWait() *string {

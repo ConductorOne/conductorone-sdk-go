@@ -18,7 +18,7 @@ func (u UserServiceListResponseExpanded) MarshalJSON() ([]byte, error) {
 }
 
 func (u *UserServiceListResponseExpanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &u, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &u, "", false, nil); err != nil {
 		return err
 	}
 	return nil
