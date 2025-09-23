@@ -7,12 +7,15 @@ package shared
 // This message contains a oneof named view. Only a single field of the following list may be set at a time:
 //   - textField
 //   - passwordField
+//   - selectField
 //
 // This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
 //   - rules
 type StringField struct {
 	// The PasswordField message.
 	PasswordField *PasswordField `json:"passwordField,omitempty"`
+	// The SelectField message.
+	SelectField *SelectField `json:"selectField,omitempty"`
 	// StringRules describe the constraints applied to `string` values
 	//
 	// This message contains a oneof named well_known. Only a single field of the following list may be set at a time:
@@ -36,37 +39,44 @@ type StringField struct {
 	Placeholder *string `json:"placeholder,omitempty"`
 }
 
-func (o *StringField) GetPasswordField() *PasswordField {
-	if o == nil {
+func (s *StringField) GetPasswordField() *PasswordField {
+	if s == nil {
 		return nil
 	}
-	return o.PasswordField
+	return s.PasswordField
 }
 
-func (o *StringField) GetStringRules() *StringRules {
-	if o == nil {
+func (s *StringField) GetSelectField() *SelectField {
+	if s == nil {
 		return nil
 	}
-	return o.StringRules
+	return s.SelectField
 }
 
-func (o *StringField) GetTextField() *TextField {
-	if o == nil {
+func (s *StringField) GetStringRules() *StringRules {
+	if s == nil {
 		return nil
 	}
-	return o.TextField
+	return s.StringRules
 }
 
-func (o *StringField) GetDefaultValue() *string {
-	if o == nil {
+func (s *StringField) GetTextField() *TextField {
+	if s == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return s.TextField
 }
 
-func (o *StringField) GetPlaceholder() *string {
-	if o == nil {
+func (s *StringField) GetDefaultValue() *string {
+	if s == nil {
 		return nil
 	}
-	return o.Placeholder
+	return s.DefaultValue
+}
+
+func (s *StringField) GetPlaceholder() *string {
+	if s == nil {
+		return nil
+	}
+	return s.Placeholder
 }

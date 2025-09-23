@@ -225,6 +225,8 @@ func main() {
 * [GetRiskLevelAttributeValue](docs/sdks/attributes/README.md#getrisklevelattributevalue) - Get Risk Level Attribute Value
 * [ListAttributeTypes](docs/sdks/attributes/README.md#listattributetypes) - List Attribute Types
 * [ListAttributeValues](docs/sdks/attributes/README.md#listattributevalues) - List Attribute Values
+* [ListComplianceFrameworks](docs/sdks/attributes/README.md#listcomplianceframeworks) - List Compliance Frameworks
+* [ListRiskLevels](docs/sdks/attributes/README.md#listrisklevels) - List Risk Levels
 
 ### [AttributeSearch](docs/sdks/attributesearch/README.md)
 
@@ -268,6 +270,7 @@ func main() {
 
 ### [Connector](docs/sdks/connector/README.md)
 
+* [ConfirmSyncValid](docs/sdks/connector/README.md#confirmsyncvalid) - Confirm Sync Valid
 * [Create](docs/sdks/connector/README.md#create) - Create
 * [CreateDelegated](docs/sdks/connector/README.md#createdelegated) - Create Delegated
 * [Delete](docs/sdks/connector/README.md#delete) - Delete
@@ -289,6 +292,7 @@ func main() {
 * [Delete](docs/sdks/directory/README.md#delete) - Delete
 * [Get](docs/sdks/directory/README.md#get) - Get
 * [List](docs/sdks/directory/README.md#list) - List
+* [Update](docs/sdks/directory/README.md#update) - Update
 
 ### [Export](docs/sdks/export/README.md)
 
@@ -446,6 +450,7 @@ func main() {
 ### [User](docs/sdks/user/README.md)
 
 * [Get](docs/sdks/user/README.md#get) - Get
+* [GetUserProfileTypes](docs/sdks/user/README.md#getuserprofiletypes) - Get User Profile Types
 * [List](docs/sdks/user/README.md#list) - List
 
 ### [UserSearch](docs/sdks/usersearch/README.md)

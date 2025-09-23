@@ -23,36 +23,36 @@ func (s ScheduleTrigger) MarshalJSON() ([]byte, error) {
 }
 
 func (s *ScheduleTrigger) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *ScheduleTrigger) GetAdvanced() *bool {
-	if o == nil {
+func (s *ScheduleTrigger) GetAdvanced() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.Advanced
+	return s.Advanced
 }
 
-func (o *ScheduleTrigger) GetCronSpec() *string {
-	if o == nil {
+func (s *ScheduleTrigger) GetCronSpec() *string {
+	if s == nil {
 		return nil
 	}
-	return o.CronSpec
+	return s.CronSpec
 }
 
-func (o *ScheduleTrigger) GetSkipIfTrueCel() *string {
-	if o == nil {
+func (s *ScheduleTrigger) GetSkipIfTrueCel() *string {
+	if s == nil {
 		return nil
 	}
-	return o.SkipIfTrueCel
+	return s.SkipIfTrueCel
 }
 
-func (o *ScheduleTrigger) GetStart() *time.Time {
-	if o == nil {
+func (s *ScheduleTrigger) GetStart() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.Start
+	return s.Start
 }

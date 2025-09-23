@@ -16,6 +16,8 @@
 * [GetRiskLevelAttributeValue](#getrisklevelattributevalue) - Get Risk Level Attribute Value
 * [ListAttributeTypes](#listattributetypes) - List Attribute Types
 * [ListAttributeValues](#listattributevalues) - List Attribute Values
+* [ListComplianceFrameworks](#listcomplianceframeworks) - List Compliance Frameworks
+* [ListRiskLevels](#listrisklevels) - List Risk Levels
 
 ## CreateAttributeValue
 
@@ -637,6 +639,118 @@ func main() {
 ### Response
 
 **[*operations.C1APIAttributeV1AttributesListAttributeValuesResponse](../../pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListComplianceFrameworks
+
+Invokes the c1.api.attribute.v1.Attributes.ListComplianceFrameworks method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.ListComplianceFrameworks" method="get" path="/api/v1/attributes/compliance_frameworks" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Attributes.ListComplianceFrameworks(ctx, operations.C1APIAttributeV1AttributesListComplianceFrameworksRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListComplianceFrameworksResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                            | :heavy_check_mark:                                                                                                                                               | The context to use for the request.                                                                                                                              |
+| `request`                                                                                                                                                        | [operations.C1APIAttributeV1AttributesListComplianceFrameworksRequest](../../pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksrequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
+| `opts`                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | The options for this request.                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIAttributeV1AttributesListComplianceFrameworksResponse](../../pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListRiskLevels
+
+Invokes the c1.api.attribute.v1.Attributes.ListRiskLevels method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.attribute.v1.Attributes.ListRiskLevels" method="get" path="/api/v1/attributes/risk_levels" -->
+```go
+package main
+
+import(
+	"context"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Attributes.ListRiskLevels(ctx, operations.C1APIAttributeV1AttributesListRiskLevelsRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListRiskLevelsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                        | :heavy_check_mark:                                                                                                                           | The context to use for the request.                                                                                                          |
+| `request`                                                                                                                                    | [operations.C1APIAttributeV1AttributesListRiskLevelsRequest](../../pkg/models/operations/c1apiattributev1attributeslistrisklevelsrequest.md) | :heavy_check_mark:                                                                                                                           | The request object to use for the request.                                                                                                   |
+| `opts`                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                 | :heavy_minus_sign:                                                                                                                           | The options for this request.                                                                                                                |
+
+### Response
+
+**[*operations.C1APIAttributeV1AttributesListRiskLevelsResponse](../../pkg/models/operations/c1apiattributev1attributeslistrisklevelsresponse.md), error**
 
 ### Errors
 

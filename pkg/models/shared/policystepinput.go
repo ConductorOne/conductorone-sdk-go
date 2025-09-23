@@ -39,48 +39,50 @@ type PolicyStepInput struct {
 	//
 	// This message contains a oneof named until. Only a single field of the following list may be set at a time:
 	//   - condition
+	//   - duration
+	//   - untilTime
 	//
 	Wait *Wait `json:"wait,omitempty"`
 }
 
-func (o *PolicyStepInput) GetAccept() *Accept {
-	if o == nil {
+func (p *PolicyStepInput) GetAccept() *Accept {
+	if p == nil {
 		return nil
 	}
-	return o.Accept
+	return p.Accept
 }
 
-func (o *PolicyStepInput) GetApproval() *ApprovalInput {
-	if o == nil {
+func (p *PolicyStepInput) GetApproval() *ApprovalInput {
+	if p == nil {
 		return nil
 	}
-	return o.Approval
+	return p.Approval
 }
 
-func (o *PolicyStepInput) GetForm() *FormInput1 {
-	if o == nil {
+func (p *PolicyStepInput) GetForm() *FormInput1 {
+	if p == nil {
 		return nil
 	}
-	return o.Form
+	return p.Form
 }
 
-func (o *PolicyStepInput) GetProvision() *Provision {
-	if o == nil {
+func (p *PolicyStepInput) GetProvision() *Provision {
+	if p == nil {
 		return nil
 	}
-	return o.Provision
+	return p.Provision
 }
 
-func (o *PolicyStepInput) GetReject() *Reject {
-	if o == nil {
+func (p *PolicyStepInput) GetReject() *Reject {
+	if p == nil {
 		return nil
 	}
-	return o.Reject
+	return p.Reject
 }
 
-func (o *PolicyStepInput) GetWait() *Wait {
-	if o == nil {
+func (p *PolicyStepInput) GetWait() *Wait {
+	if p == nil {
 		return nil
 	}
-	return o.Wait
+	return p.Wait
 }

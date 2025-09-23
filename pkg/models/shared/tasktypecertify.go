@@ -47,64 +47,64 @@ func (t TaskTypeCertify) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TaskTypeCertify) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *TaskTypeCertify) GetAccessReviewID() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetAccessReviewID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AccessReviewID
+	return t.AccessReviewID
 }
 
-func (o *TaskTypeCertify) GetAccessReviewSelection() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetAccessReviewSelection() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AccessReviewSelection
+	return t.AccessReviewSelection
 }
 
-func (o *TaskTypeCertify) GetAppEntitlementID() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetAppEntitlementID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppEntitlementID
+	return t.AppEntitlementID
 }
 
-func (o *TaskTypeCertify) GetAppID() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetAppID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppID
+	return t.AppID
 }
 
-func (o *TaskTypeCertify) GetAppUserID() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetAppUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppUserID
+	return t.AppUserID
 }
 
-func (o *TaskTypeCertify) GetIdentityUserID() *string {
-	if o == nil {
+func (t *TaskTypeCertify) GetIdentityUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.IdentityUserID
+	return t.IdentityUserID
 }
 
-func (o *TaskTypeCertify) GetOutcome() *TaskTypeCertifyOutcome {
-	if o == nil {
+func (t *TaskTypeCertify) GetOutcome() *TaskTypeCertifyOutcome {
+	if t == nil {
 		return nil
 	}
-	return o.Outcome
+	return t.Outcome
 }
 
-func (o *TaskTypeCertify) GetOutcomeTime() *time.Time {
-	if o == nil {
+func (t *TaskTypeCertify) GetOutcomeTime() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.OutcomeTime
+	return t.OutcomeTime
 }

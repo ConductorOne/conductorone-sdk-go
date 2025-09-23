@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 )
 
 type AppEntitlementSearch struct {
@@ -230,6 +231,9 @@ func (s *AppEntitlementSearch) Search(ctx context.Context, request *shared.AppEn
 				return nil, nil
 			}
 			nCVal = val.(string)
+			if strings.TrimSpace(nCVal) == "" {
+				return nil, nil
+			}
 		}
 
 		return s.Search(

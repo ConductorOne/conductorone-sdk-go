@@ -18,23 +18,23 @@ type BoolField struct {
 	DefaultValue *bool `json:"defaultValue,omitempty"`
 }
 
-func (o *BoolField) GetBoolRules() *BoolRules {
-	if o == nil {
+func (b *BoolField) GetBoolRules() *BoolRules {
+	if b == nil {
 		return nil
 	}
-	return o.BoolRules
+	return b.BoolRules
 }
 
-func (o *BoolField) GetCheckboxField() *CheckboxField {
-	if o == nil {
+func (b *BoolField) GetCheckboxField() *CheckboxField {
+	if b == nil {
 		return nil
 	}
-	return o.CheckboxField
+	return b.CheckboxField
 }
 
-func (o *BoolField) GetDefaultValue() *bool {
-	if o == nil {
+func (b *BoolField) GetDefaultValue() *bool {
+	if b == nil {
 		return nil
 	}
-	return o.DefaultValue
+	return b.DefaultValue
 }

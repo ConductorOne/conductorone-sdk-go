@@ -18,30 +18,30 @@ type Escalation struct {
 	Expiration *int64 `integer:"string" json:"expiration,omitempty"`
 }
 
-func (o *Escalation) GetReassignToApprovers() *ReassignToApprovers {
-	if o == nil {
+func (e *Escalation) GetReassignToApprovers() *ReassignToApprovers {
+	if e == nil {
 		return nil
 	}
-	return o.ReassignToApprovers
+	return e.ReassignToApprovers
 }
 
-func (o *Escalation) GetReplacePolicy() *ReplacePolicy {
-	if o == nil {
+func (e *Escalation) GetReplacePolicy() *ReplacePolicy {
+	if e == nil {
 		return nil
 	}
-	return o.ReplacePolicy
+	return e.ReplacePolicy
 }
 
-func (o *Escalation) GetEscalationComment() *string {
-	if o == nil {
+func (e *Escalation) GetEscalationComment() *string {
+	if e == nil {
 		return nil
 	}
-	return o.EscalationComment
+	return e.EscalationComment
 }
 
-func (o *Escalation) GetExpiration() *int64 {
-	if o == nil {
+func (e *Escalation) GetExpiration() *int64 {
+	if e == nil {
 		return nil
 	}
-	return o.Expiration
+	return e.Expiration
 }

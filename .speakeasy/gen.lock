@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 5631d4c7926ff0de44195235ce4b7a13
+  docChecksum: c8b19d2eeb0c6c4f0a9e5b064eb5fb87
   docVersion: 0.1.0-alpha
-  speakeasyVersion: 1.606.5
-  generationVersion: 2.687.1
-  releaseVersion: 1.25.0
-  configChecksum: 61181e90a100100ca6b70f85341a70d4
+  speakeasyVersion: 1.622.1
+  generationVersion: 2.709.0
+  releaseVersion: 1.26.0
+  configChecksum: 01504ce87ee51da410a301233d189763
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
@@ -15,11 +15,11 @@ features:
   go:
     additionalDependencies: 0.1.0
     additionalProperties: 0.1.2
-    core: 3.9.3
+    core: 3.11.0
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     envVarSecurityUsage: 0.3.2
-    globalSecurity: 2.82.11
+    globalSecurity: 2.82.12
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.3
     groups: 2.81.2
@@ -27,7 +27,7 @@ features:
     inputOutputModels: 2.83.0
     intellisenseMarkdownSupport: 0.1.0
     nameOverrides: 2.81.2
-    nullables: 0.1.1
+    nullables: 0.2.0
     openEnums: 0.1.0
     pagination: 2.82.4
     responseFormat: 0.1.2
@@ -113,6 +113,7 @@ generatedFiles:
   - /pkg/models/operations/c1apiappv1appuserservicelistappusersforuser.go
   - /pkg/models/operations/c1apiappv1appuserservicesearch.go
   - /pkg/models/operations/c1apiappv1appuserserviceupdate.go
+  - /pkg/models/operations/c1apiappv1connectorserviceconfirmsyncvalid.go
   - /pkg/models/operations/c1apiappv1connectorservicecreate.go
   - /pkg/models/operations/c1apiappv1connectorservicecreatedelegated.go
   - /pkg/models/operations/c1apiappv1connectorservicedelete.go
@@ -139,6 +140,8 @@ generatedFiles:
   - /pkg/models/operations/c1apiattributev1attributesgetrisklevelattributevalue.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributetypes.go
   - /pkg/models/operations/c1apiattributev1attributeslistattributevalues.go
+  - /pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworks.go
+  - /pkg/models/operations/c1apiattributev1attributeslistrisklevels.go
   - /pkg/models/operations/c1apiauthv1authintrospect.go
   - /pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomation.go
   - /pkg/models/operations/c1apiautomationsv1automationexecutionsearchservicesearchautomationexecutions.go
@@ -156,6 +159,7 @@ generatedFiles:
   - /pkg/models/operations/c1apidirectoryv1directoryservicedelete.go
   - /pkg/models/operations/c1apidirectoryv1directoryserviceget.go
   - /pkg/models/operations/c1apidirectoryv1directoryservicelist.go
+  - /pkg/models/operations/c1apidirectoryv1directoryserviceupdate.go
   - /pkg/models/operations/c1apifunctionsv1functionssearchsearch.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicecommit.go
   - /pkg/models/operations/c1apifunctionsv1functionsservicecreatefunction.go
@@ -250,6 +254,7 @@ generatedFiles:
   - /pkg/models/operations/c1apitaskv1taskserviceget.go
   - /pkg/models/operations/c1apiuserv1usersearchsearch.go
   - /pkg/models/operations/c1apiuserv1userserviceget.go
+  - /pkg/models/operations/c1apiuserv1userservicegetuserprofiletypes.go
   - /pkg/models/operations/c1apiuserv1userservicelist.go
   - /pkg/models/operations/c1apiwebhooksv1webhookssearchsearch.go
   - /pkg/models/operations/c1apiwebhooksv1webhooksservicecreate.go
@@ -384,6 +389,8 @@ generatedFiles:
   - /pkg/models/shared/completedaction.go
   - /pkg/models/shared/conditionsucceeded.go
   - /pkg/models/shared/conditiontimedout.go
+  - /pkg/models/shared/confirmsyncvalidrequest.go
+  - /pkg/models/shared/confirmsyncvalidresponse.go
   - /pkg/models/shared/conflictmonitor.go
   - /pkg/models/shared/conflictmonitorcreaterequest.go
   - /pkg/models/shared/conflictmonitordeleterequest.go
@@ -472,6 +479,8 @@ generatedFiles:
   - /pkg/models/shared/deletestepupproviderresponse.go
   - /pkg/models/shared/deniedaction.go
   - /pkg/models/shared/directory.go
+  - /pkg/models/shared/directoryaccountfilterall.go
+  - /pkg/models/shared/directoryaccountfiltercel.go
   - /pkg/models/shared/directoryexpandmask.go
   - /pkg/models/shared/directoryservicecreaterequest.go
   - /pkg/models/shared/directoryservicecreateresponse.go
@@ -479,6 +488,8 @@ generatedFiles:
   - /pkg/models/shared/directoryservicedeleteresponse.go
   - /pkg/models/shared/directoryservicegetresponse.go
   - /pkg/models/shared/directoryservicelistresponse.go
+  - /pkg/models/shared/directoryserviceupdaterequest.go
+  - /pkg/models/shared/directoryserviceupdateresponse.go
   - /pkg/models/shared/directoryview.go
   - /pkg/models/shared/disabledreasoncircuitbreaker.go
   - /pkg/models/shared/donotsave.go
@@ -576,6 +587,7 @@ generatedFiles:
   - /pkg/models/shared/getsessionsettingsresponse.go
   - /pkg/models/shared/getstepupproviderresponse.go
   - /pkg/models/shared/getstepuptransactionresponse.go
+  - /pkg/models/shared/getuserprofiletypesresponse.go
   - /pkg/models/shared/grantdeletedtrigger.go
   - /pkg/models/shared/grantentitlements.go
   - /pkg/models/shared/grantfilter.go
@@ -598,8 +610,10 @@ generatedFiles:
   - /pkg/models/shared/listautomationexclusionsresponse.go
   - /pkg/models/shared/listautomationexecutionsresponse.go
   - /pkg/models/shared/listautomationsresponse.go
+  - /pkg/models/shared/listcomplianceframeworksresponse.go
   - /pkg/models/shared/listorgdomainsresponse.go
   - /pkg/models/shared/listpolicyresponse.go
+  - /pkg/models/shared/listrisklevelsresponse.go
   - /pkg/models/shared/listrolesresponse.go
   - /pkg/models/shared/liststepupprovidersresponse.go
   - /pkg/models/shared/managerapproval.go
@@ -645,6 +659,7 @@ generatedFiles:
   - /pkg/models/shared/policystepinstance.go
   - /pkg/models/shared/policysteps.go
   - /pkg/models/shared/policystepsinput.go
+  - /pkg/models/shared/profiletype.go
   - /pkg/models/shared/provision.go
   - /pkg/models/shared/provisioninstance.go
   - /pkg/models/shared/provisionpolicy.go
@@ -750,6 +765,8 @@ generatedFiles:
   - /pkg/models/shared/searchusersresponse.go
   - /pkg/models/shared/secrettrait.go
   - /pkg/models/shared/security.go
+  - /pkg/models/shared/selectfield.go
+  - /pkg/models/shared/selectoption.go
   - /pkg/models/shared/selfapproval.go
   - /pkg/models/shared/selfapprovalinput.go
   - /pkg/models/shared/sendemail.go
@@ -855,9 +872,11 @@ generatedFiles:
   - /pkg/models/shared/taskauditwaitforanalysisstepwaiting.go
   - /pkg/models/shared/taskauditwaitstepsuccess.go
   - /pkg/models/shared/taskauditwaitsteptimedout.go
+  - /pkg/models/shared/taskauditwaitstepuntiltime.go
   - /pkg/models/shared/taskauditwaitstepwaiting.go
   - /pkg/models/shared/taskauditwebhookapprovalattempt.go
   - /pkg/models/shared/taskauditwebhookapprovalbadresponse.go
+  - /pkg/models/shared/taskauditwebhookapprovalfatalerror.go
   - /pkg/models/shared/taskauditwebhookapprovalsuccess.go
   - /pkg/models/shared/taskauditwebhookapprovaltriggered.go
   - /pkg/models/shared/taskauditwebhookattempt.go
@@ -947,8 +966,11 @@ generatedFiles:
   - /pkg/models/shared/wait.go
   - /pkg/models/shared/waitcondition.go
   - /pkg/models/shared/waitconditioninstance.go
+  - /pkg/models/shared/waitduration.go
   - /pkg/models/shared/waitforduration.go
   - /pkg/models/shared/waitinstance.go
+  - /pkg/models/shared/waituntiltime.go
+  - /pkg/models/shared/waituntiltimeinstance.go
   - /pkg/models/shared/webhook.go
   - /pkg/models/shared/webhook1.go
   - /pkg/models/shared/webhookapproval.go
@@ -1151,6 +1173,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1appuserservicesearchresponse.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdaterequest.md
   - docs/pkg/models/operations/c1apiappv1appuserserviceupdateresponse.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceconfirmsyncvalidrequest.md
+  - docs/pkg/models/operations/c1apiappv1connectorserviceconfirmsyncvalidresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreatedelegatedresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicecreaterequest.md
@@ -1171,7 +1195,6 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiappv1connectorserviceresumesyncresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerevokecredentialresponse.md
-  - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorservicerotatecredentialresponse.md
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedrequest.md
   - docs/pkg/models/operations/c1apiappv1connectorserviceupdatedelegatedresponse.md
@@ -1198,6 +1221,10 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributetypesresponse.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesrequest.md
   - docs/pkg/models/operations/c1apiattributev1attributeslistattributevaluesresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksrequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistcomplianceframeworksresponse.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistrisklevelsrequest.md
+  - docs/pkg/models/operations/c1apiattributev1attributeslistrisklevelsresponse.md
   - docs/pkg/models/operations/c1apiauthv1authintrospectresponse.md
   - docs/pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomationrequest.md
   - docs/pkg/models/operations/c1apiautomationsv1automationexecutionactionsserviceterminateautomationresponse.md
@@ -1224,6 +1251,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicegetresponse.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicelistrequest.md
   - docs/pkg/models/operations/c1apidirectoryv1directoryservicelistresponse.md
+  - docs/pkg/models/operations/c1apidirectoryv1directoryserviceupdaterequest.md
+  - docs/pkg/models/operations/c1apidirectoryv1directoryserviceupdateresponse.md
   - docs/pkg/models/operations/c1apifunctionsv1functionssearchsearchresponse.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicecommitrequest.md
   - docs/pkg/models/operations/c1apifunctionsv1functionsservicecommitresponse.md
@@ -1381,6 +1410,8 @@ generatedFiles:
   - docs/pkg/models/operations/c1apiuserv1usersearchsearchresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicegetrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicegetresponse.md
+  - docs/pkg/models/operations/c1apiuserv1userservicegetuserprofiletypesrequest.md
+  - docs/pkg/models/operations/c1apiuserv1userservicegetuserprofiletypesresponse.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistrequest.md
   - docs/pkg/models/operations/c1apiuserv1userservicelistresponse.md
   - docs/pkg/models/operations/c1apiwebhooksv1webhookssearchsearchresponse.md
@@ -1557,6 +1588,8 @@ generatedFiles:
   - docs/pkg/models/shared/conditionsucceeded.md
   - docs/pkg/models/shared/conditiontimedout.md
   - docs/pkg/models/shared/config.md
+  - docs/pkg/models/shared/confirmsyncvalidrequest.md
+  - docs/pkg/models/shared/confirmsyncvalidresponse.md
   - docs/pkg/models/shared/conflictmonitor.md
   - docs/pkg/models/shared/conflictmonitorcreaterequest.md
   - docs/pkg/models/shared/conflictmonitordeleterequest.md
@@ -1663,6 +1696,8 @@ generatedFiles:
   - docs/pkg/models/shared/deniedaction.md
   - docs/pkg/models/shared/details.md
   - docs/pkg/models/shared/directory.md
+  - docs/pkg/models/shared/directoryaccountfilterall.md
+  - docs/pkg/models/shared/directoryaccountfiltercel.md
   - docs/pkg/models/shared/directoryexpandmask.md
   - docs/pkg/models/shared/directoryservicecreaterequest.md
   - docs/pkg/models/shared/directoryservicecreateresponse.md
@@ -1673,6 +1708,9 @@ generatedFiles:
   - docs/pkg/models/shared/directoryservicegetresponseexpanded.md
   - docs/pkg/models/shared/directoryservicelistresponse.md
   - docs/pkg/models/shared/directoryservicelistresponseexpanded.md
+  - docs/pkg/models/shared/directoryserviceupdaterequest.md
+  - docs/pkg/models/shared/directoryserviceupdateresponse.md
+  - docs/pkg/models/shared/directoryserviceupdateresponseexpanded.md
   - docs/pkg/models/shared/directorystatus.md
   - docs/pkg/models/shared/directoryview.md
   - docs/pkg/models/shared/disabledreasoncircuitbreaker.md
@@ -1790,6 +1828,7 @@ generatedFiles:
   - docs/pkg/models/shared/getsessionsettingsresponse.md
   - docs/pkg/models/shared/getstepupproviderresponse.md
   - docs/pkg/models/shared/getstepuptransactionresponse.md
+  - docs/pkg/models/shared/getuserprofiletypesresponse.md
   - docs/pkg/models/shared/grantdeletedtrigger.md
   - docs/pkg/models/shared/grantedstatus.md
   - docs/pkg/models/shared/grantentitlements.md
@@ -1819,8 +1858,10 @@ generatedFiles:
   - docs/pkg/models/shared/listautomationexclusionsresponse.md
   - docs/pkg/models/shared/listautomationexecutionsresponse.md
   - docs/pkg/models/shared/listautomationsresponse.md
+  - docs/pkg/models/shared/listcomplianceframeworksresponse.md
   - docs/pkg/models/shared/listorgdomainsresponse.md
   - docs/pkg/models/shared/listpolicyresponse.md
+  - docs/pkg/models/shared/listrisklevelsresponse.md
   - docs/pkg/models/shared/listrolesresponse.md
   - docs/pkg/models/shared/liststepupprovidersresponse.md
   - docs/pkg/models/shared/managerapproval.md
@@ -1881,6 +1922,7 @@ generatedFiles:
   - docs/pkg/models/shared/previousstate.md
   - docs/pkg/models/shared/primarytriggertype.md
   - docs/pkg/models/shared/processing.md
+  - docs/pkg/models/shared/profiletype.md
   - docs/pkg/models/shared/providertype.md
   - docs/pkg/models/shared/provision.md
   - docs/pkg/models/shared/provisioninstance.md
@@ -2007,6 +2049,8 @@ generatedFiles:
   - docs/pkg/models/shared/searchusersresponseexpanded.md
   - docs/pkg/models/shared/secrettrait.md
   - docs/pkg/models/shared/security.md
+  - docs/pkg/models/shared/selectfield.md
+  - docs/pkg/models/shared/selectoption.md
   - docs/pkg/models/shared/selfapproval.md
   - docs/pkg/models/shared/selfapprovalinput.md
   - docs/pkg/models/shared/sendemail.md
@@ -2135,9 +2179,11 @@ generatedFiles:
   - docs/pkg/models/shared/taskauditwaitforanalysisstepwaiting.md
   - docs/pkg/models/shared/taskauditwaitstepsuccess.md
   - docs/pkg/models/shared/taskauditwaitsteptimedout.md
+  - docs/pkg/models/shared/taskauditwaitstepuntiltime.md
   - docs/pkg/models/shared/taskauditwaitstepwaiting.md
   - docs/pkg/models/shared/taskauditwebhookapprovalattempt.md
   - docs/pkg/models/shared/taskauditwebhookapprovalbadresponse.md
+  - docs/pkg/models/shared/taskauditwebhookapprovalfatalerror.md
   - docs/pkg/models/shared/taskauditwebhookapprovalsuccess.md
   - docs/pkg/models/shared/taskauditwebhookapprovaltriggered.md
   - docs/pkg/models/shared/taskauditwebhookattempt.md
@@ -2184,6 +2230,7 @@ generatedFiles:
   - docs/pkg/models/shared/tasktyperevokeinput.md
   - docs/pkg/models/shared/tasktyperevokeoutcome.md
   - docs/pkg/models/shared/tasktypes.md
+  - docs/pkg/models/shared/taskuserrelation.md
   - docs/pkg/models/shared/taskview.md
   - docs/pkg/models/shared/terminateautomationrequest.md
   - docs/pkg/models/shared/terminateautomationresponse.md
@@ -2251,9 +2298,12 @@ generatedFiles:
   - docs/pkg/models/shared/wait.md
   - docs/pkg/models/shared/waitcondition.md
   - docs/pkg/models/shared/waitconditioninstance.md
+  - docs/pkg/models/shared/waitduration.md
   - docs/pkg/models/shared/waitforduration.md
   - docs/pkg/models/shared/waitinstance.md
   - docs/pkg/models/shared/waitinstancestate.md
+  - docs/pkg/models/shared/waituntiltime.md
+  - docs/pkg/models/shared/waituntiltimeinstance.md
   - docs/pkg/models/shared/webhook.md
   - docs/pkg/models/shared/webhook1.md
   - docs/pkg/models/shared/webhookapproval.md
@@ -2353,6 +2403,8 @@ generatedFiles:
   - personalclientsearch.go
   - pkg/models/operations/options.go
   - pkg/models/sdkerrors/sdkerror.go
+  - pkg/optionalnullable/optionalnullable.go
+  - pkg/optionalnullable/optionalnullable_test.go
   - pkg/retry/config.go
   - pkg/types/bigint.go
   - pkg/types/date.go
@@ -4031,5 +4083,42 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v1.ConnectorService.ConfirmSyncValid:
+    speakeasy-default-c1-api-app-v1-connector-service-confirm-sync-valid:
+      parameters:
+        path:
+          app_id: "<id>"
+          connector_id: "<id>"
+          sync_lifecycle_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.ListComplianceFrameworks:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-compliance-frameworks:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.attribute.v1.Attributes.ListRiskLevels:
+    speakeasy-default-c1-api-attribute-v1-attributes-list-risk-levels:
+      responses:
+        "200":
+          application/json: {}
+  c1.api.directory.v1.DirectoryService.Update:
+    speakeasy-default-c1-api-directory-v1-directory-service-update:
+      parameters:
+        path:
+          app_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.user.v1.UserService.GetUserProfileTypes:
+    speakeasy-default-c1-api-user-v1-user-service-get-user-profile-types:
+      parameters:
+        path:
+          user_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes Detected:\n* `ConductoroneApi.Connector.RotateCredential()`: \n  *  `request.Request` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `ConductoroneApi.PolicySearch.Search()`:  `response.List.[].PolicySteps.{}.Steps.[]` **Changed**\n* `ConductoroneApi.Directory.List()`:  `response.List.[].Directory` **Changed**\n* `ConductoroneApi.Directory.Update()`: **Added**\n* `ConductoroneApi.User.GetUserProfileTypes()`: **Added**\n* `ConductoroneApi.Connector.GetCredentials()`:  `response.ConnectorCredential.ClientSecret` **Added**\n* `ConductoroneApi.Attributes.ListComplianceFrameworks()`: **Added**\n* `ConductoroneApi.AutomationSearch.SearchAutomationTemplateVersions()`:  `response.List.[]` **Changed**\n* `ConductoroneApi.AutomationSearch.SearchAutomations()`:  `response.List.[]` **Changed**\n* `ConductoroneApi.Automation.CreateAutomation()`: \n  *  `request.Request` **Changed**\n  *  `response.Automation` **Changed**\n* `ConductoroneApi.Automation.GetAutomation()`:  `response.Automation` **Changed**\n* `ConductoroneApi.Automation.ListAutomations()`:  `response.List.[]` **Changed**\n* `ConductoroneApi.Automation.UpdateAutomation()`: \n  *  `request.Request.UpdateAutomationRequest.Automation` **Changed**\n  *  `response.Automation` **Changed**\n* `ConductoroneApi.Directory.Create()`: \n  *  `request.Request` **Changed**\n  *  `response.DirectoryView.Directory` **Changed**\n* `ConductoroneApi.Directory.Get()`:  `response.DirectoryView.Directory` **Changed**\n* `ConductoroneApi.Connector.ConfirmSyncValid()`: **Added**\n* `ConductoroneApi.Policies.Create()`: \n  *  `request.Request.PolicySteps.{}.Steps.[]` **Changed**\n  *  `response.Policy.PolicySteps.{}.Steps.[]` **Changed**\n* `ConductoroneApi.Policies.Get()`:  `response.Policy.PolicySteps.{}.Steps.[]` **Changed**\n* `ConductoroneApi.Policies.List()`:  `response.List.[].PolicySteps.{}.Steps.[]` **Changed**\n* `ConductoroneApi.Attributes.ListRiskLevels()`: **Added**\n* `ConductoroneApi.Policies.Update()`: \n  *  `request.Request.UpdatePolicyRequest.Policy.PolicySteps.{}.Steps.[]` **Changed**\n  *  `response.Policy.PolicySteps.{}.Steps.[]` **Changed**\n* `ConductoroneApi.Task.CreateRevokeTask()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.UserSearch.Search()`:  `request.Request` **Changed**\n* `ConductoroneApi.TaskAudit.List()`:  `response.List.[]` **Changed**\n* `ConductoroneApi.Task.CreateGrantTask()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.Task.CreateOffboardingTask()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskSearch.Search()`:  `response.List.[].Task` **Changed**\n* `ConductoroneApi.Task.Get()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Approve()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.ApproveWithStepUp()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Close()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Comment()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Deny()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.EscalateToEmergencyAccess()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.HardReset()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.ProcessNow()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Reassign()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.Restart()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.SkipStep()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.UpdateGrantDuration()`:  `response.TaskView.Task` **Changed**\n* `ConductoroneApi.TaskActions.UpdateRequestData()`:  `response.TaskView.Task` **Changed**\n"

@@ -66,64 +66,64 @@ func (t TaskAction1) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TaskAction1) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *TaskAction1) GetActionType() *ActionType {
-	if o == nil {
+func (t *TaskAction1) GetActionType() *ActionType {
+	if t == nil {
 		return nil
 	}
-	return o.ActionType
+	return t.ActionType
 }
 
-func (o *TaskAction1) GetBulkActionID() *string {
-	if o == nil {
+func (t *TaskAction1) GetBulkActionID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.BulkActionID
+	return t.BulkActionID
 }
 
-func (o *TaskAction1) GetCreatedAt() *time.Time {
-	if o == nil {
+func (t *TaskAction1) GetCreatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return t.CreatedAt
 }
 
-func (o *TaskAction1) GetDeletedAt() *time.Time {
-	if o == nil {
+func (t *TaskAction1) GetDeletedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return t.DeletedAt
 }
 
-func (o *TaskAction1) GetID() *string {
-	if o == nil {
+func (t *TaskAction1) GetID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.ID
+	return t.ID
 }
 
-func (o *TaskAction1) GetPolicyStepID() *string {
-	if o == nil {
+func (t *TaskAction1) GetPolicyStepID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.PolicyStepID
+	return t.PolicyStepID
 }
 
-func (o *TaskAction1) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (t *TaskAction1) GetUpdatedAt() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return t.UpdatedAt
 }
 
-func (o *TaskAction1) GetUserID() *string {
-	if o == nil {
+func (t *TaskAction1) GetUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.UserID
+	return t.UserID
 }

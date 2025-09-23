@@ -34,6 +34,8 @@ type SearchUsersRequest struct {
 	// The user expand mask is used to indicate which related objects should be expanded in the response.
 	//  The supported paths are 'role_ids', 'manager_ids', 'delegated_user_id', 'directory_ids', and '*'.
 	UserExpandMask *UserExpandMask `json:"expandMask,omitempty"`
+	// Search for users that have any of the departments on this list.
+	Departments []string `json:"departments,omitempty"`
 	// Search for users based on their email (exact match).
 	Email *string `json:"email,omitempty"`
 	// An array of users IDs to exclude from the results.
@@ -42,6 +44,10 @@ type SearchUsersRequest struct {
 	ExcludeTypes []ExcludeTypes `json:"excludeTypes,omitempty"`
 	// Deprecated. Use refs array instead.
 	Ids []string `json:"ids,omitempty"`
+	// Search for users that have any of the job titles on this list.
+	JobTitles []string `json:"jobTitles,omitempty"`
+	// Search for users that have any of the manager IDs on this list.
+	ManagerIds []string `json:"managerIds,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
@@ -56,79 +62,100 @@ type SearchUsersRequest struct {
 	UserStatuses []UserStatuses `json:"userStatuses,omitempty"`
 }
 
-func (o *SearchUsersRequest) GetUserExpandMask() *UserExpandMask {
-	if o == nil {
+func (s *SearchUsersRequest) GetUserExpandMask() *UserExpandMask {
+	if s == nil {
 		return nil
 	}
-	return o.UserExpandMask
+	return s.UserExpandMask
 }
 
-func (o *SearchUsersRequest) GetEmail() *string {
-	if o == nil {
+func (s *SearchUsersRequest) GetDepartments() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Email
+	return s.Departments
 }
 
-func (o *SearchUsersRequest) GetExcludeIds() []string {
-	if o == nil {
+func (s *SearchUsersRequest) GetEmail() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ExcludeIds
+	return s.Email
 }
 
-func (o *SearchUsersRequest) GetExcludeTypes() []ExcludeTypes {
-	if o == nil {
+func (s *SearchUsersRequest) GetExcludeIds() []string {
+	if s == nil {
 		return nil
 	}
-	return o.ExcludeTypes
+	return s.ExcludeIds
 }
 
-func (o *SearchUsersRequest) GetIds() []string {
-	if o == nil {
+func (s *SearchUsersRequest) GetExcludeTypes() []ExcludeTypes {
+	if s == nil {
 		return nil
 	}
-	return o.Ids
+	return s.ExcludeTypes
 }
 
-func (o *SearchUsersRequest) GetPageSize() *int {
-	if o == nil {
+func (s *SearchUsersRequest) GetIds() []string {
+	if s == nil {
 		return nil
 	}
-	return o.PageSize
+	return s.Ids
 }
 
-func (o *SearchUsersRequest) GetPageToken() *string {
-	if o == nil {
+func (s *SearchUsersRequest) GetJobTitles() []string {
+	if s == nil {
 		return nil
 	}
-	return o.PageToken
+	return s.JobTitles
 }
 
-func (o *SearchUsersRequest) GetQuery() *string {
-	if o == nil {
+func (s *SearchUsersRequest) GetManagerIds() []string {
+	if s == nil {
 		return nil
 	}
-	return o.Query
+	return s.ManagerIds
 }
 
-func (o *SearchUsersRequest) GetRefs() []UserRef {
-	if o == nil {
+func (s *SearchUsersRequest) GetPageSize() *int {
+	if s == nil {
 		return nil
 	}
-	return o.Refs
+	return s.PageSize
 }
 
-func (o *SearchUsersRequest) GetRoleIds() []string {
-	if o == nil {
+func (s *SearchUsersRequest) GetPageToken() *string {
+	if s == nil {
 		return nil
 	}
-	return o.RoleIds
+	return s.PageToken
 }
 
-func (o *SearchUsersRequest) GetUserStatuses() []UserStatuses {
-	if o == nil {
+func (s *SearchUsersRequest) GetQuery() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UserStatuses
+	return s.Query
+}
+
+func (s *SearchUsersRequest) GetRefs() []UserRef {
+	if s == nil {
+		return nil
+	}
+	return s.Refs
+}
+
+func (s *SearchUsersRequest) GetRoleIds() []string {
+	if s == nil {
+		return nil
+	}
+	return s.RoleIds
+}
+
+func (s *SearchUsersRequest) GetUserStatuses() []UserStatuses {
+	if s == nil {
+		return nil
+	}
+	return s.UserStatuses
 }

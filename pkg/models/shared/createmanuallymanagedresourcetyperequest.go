@@ -6,13 +6,14 @@ package shared
 type ResourceType string
 
 const (
-	ResourceTypeRole    ResourceType = "ROLE"
-	ResourceTypeGroup   ResourceType = "GROUP"
-	ResourceTypeLicense ResourceType = "LICENSE"
-	ResourceTypeProject ResourceType = "PROJECT"
-	ResourceTypeCatalog ResourceType = "CATALOG"
-	ResourceTypeCustom  ResourceType = "CUSTOM"
-	ResourceTypeVault   ResourceType = "VAULT"
+	ResourceTypeRole        ResourceType = "ROLE"
+	ResourceTypeGroup       ResourceType = "GROUP"
+	ResourceTypeLicense     ResourceType = "LICENSE"
+	ResourceTypeProject     ResourceType = "PROJECT"
+	ResourceTypeCatalog     ResourceType = "CATALOG"
+	ResourceTypeCustom      ResourceType = "CUSTOM"
+	ResourceTypeVault       ResourceType = "VAULT"
+	ResourceTypeProfileType ResourceType = "PROFILE_TYPE"
 )
 
 func (e ResourceType) ToPointer() *ResourceType {
@@ -27,16 +28,16 @@ type CreateManuallyManagedResourceTypeRequest struct {
 	ResourceType ResourceType `json:"resourceType"`
 }
 
-func (o *CreateManuallyManagedResourceTypeRequest) GetDisplayName() string {
-	if o == nil {
+func (c *CreateManuallyManagedResourceTypeRequest) GetDisplayName() string {
+	if c == nil {
 		return ""
 	}
-	return o.DisplayName
+	return c.DisplayName
 }
 
-func (o *CreateManuallyManagedResourceTypeRequest) GetResourceType() ResourceType {
-	if o == nil {
+func (c *CreateManuallyManagedResourceTypeRequest) GetResourceType() ResourceType {
+	if c == nil {
 		return ResourceType("")
 	}
-	return o.ResourceType
+	return c.ResourceType
 }

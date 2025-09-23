@@ -16,37 +16,37 @@ type FormInput struct {
 	ID *string `json:"id,omitempty"`
 }
 
-func (o *FormInput) GetDescription() *string {
-	if o == nil {
+func (f *FormInput) GetDescription() *string {
+	if f == nil {
 		return nil
 	}
-	return o.Description
+	return f.Description
 }
 
-func (o *FormInput) GetDisplayName() *string {
-	if o == nil {
+func (f *FormInput) GetDisplayName() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DisplayName
+	return f.DisplayName
 }
 
-func (o *FormInput) GetFieldRelationships() []FieldRelationship {
-	if o == nil {
+func (f *FormInput) GetFieldRelationships() []FieldRelationship {
+	if f == nil {
 		return nil
 	}
-	return o.FieldRelationships
+	return f.FieldRelationships
 }
 
-func (o *FormInput) GetFields() []Field {
-	if o == nil {
+func (f *FormInput) GetFields() []Field {
+	if f == nil {
 		return nil
 	}
-	return o.Fields
+	return f.Fields
 }
 
-func (o *FormInput) GetID() *string {
-	if o == nil {
+func (f *FormInput) GetID() *string {
+	if f == nil {
 		return nil
 	}
-	return o.ID
+	return f.ID
 }

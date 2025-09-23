@@ -24,9 +24,9 @@ type TaskAuditRevokeOutcome struct {
 	Outcome *TaskAuditRevokeOutcomeOutcome `json:"outcome,omitempty"`
 }
 
-func (o *TaskAuditRevokeOutcome) GetOutcome() *TaskAuditRevokeOutcomeOutcome {
-	if o == nil {
+func (t *TaskAuditRevokeOutcome) GetOutcome() *TaskAuditRevokeOutcomeOutcome {
+	if t == nil {
 		return nil
 	}
-	return o.Outcome
+	return t.Outcome
 }

@@ -38,43 +38,43 @@ func (c ConnectorStatus) MarshalJSON() ([]byte, error) {
 }
 
 func (c *ConnectorStatus) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *ConnectorStatus) GetCompletedAt() *time.Time {
-	if o == nil {
+func (c *ConnectorStatus) GetCompletedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.CompletedAt
+	return c.CompletedAt
 }
 
-func (o *ConnectorStatus) GetLastError() *string {
-	if o == nil {
+func (c *ConnectorStatus) GetLastError() *string {
+	if c == nil {
 		return nil
 	}
-	return o.LastError
+	return c.LastError
 }
 
-func (o *ConnectorStatus) GetStartedAt() *time.Time {
-	if o == nil {
+func (c *ConnectorStatus) GetStartedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.StartedAt
+	return c.StartedAt
 }
 
-func (o *ConnectorStatus) GetStatus() *ConnectorStatusStatus {
-	if o == nil {
+func (c *ConnectorStatus) GetStatus() *ConnectorStatusStatus {
+	if c == nil {
 		return nil
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *ConnectorStatus) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (c *ConnectorStatus) GetUpdatedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return c.UpdatedAt
 }

@@ -36,29 +36,29 @@ func (t TaskTypeOffboarding) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TaskTypeOffboarding) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *TaskTypeOffboarding) GetOutcome() *TaskTypeOffboardingOutcome {
-	if o == nil {
+func (t *TaskTypeOffboarding) GetOutcome() *TaskTypeOffboardingOutcome {
+	if t == nil {
 		return nil
 	}
-	return o.Outcome
+	return t.Outcome
 }
 
-func (o *TaskTypeOffboarding) GetOutcomeTime() *time.Time {
-	if o == nil {
+func (t *TaskTypeOffboarding) GetOutcomeTime() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.OutcomeTime
+	return t.OutcomeTime
 }
 
-func (o *TaskTypeOffboarding) GetSubjectUserID() *string {
-	if o == nil {
+func (t *TaskTypeOffboarding) GetSubjectUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.SubjectUserID
+	return t.SubjectUserID
 }

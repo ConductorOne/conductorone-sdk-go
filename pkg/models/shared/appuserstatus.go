@@ -24,16 +24,16 @@ type AppUserStatus struct {
 	Status *AppUserStatusStatus `json:"status,omitempty"`
 }
 
-func (o *AppUserStatus) GetDetails() *string {
-	if o == nil {
+func (a *AppUserStatus) GetDetails() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Details
+	return a.Details
 }
 
-func (o *AppUserStatus) GetStatus() *AppUserStatusStatus {
-	if o == nil {
+func (a *AppUserStatus) GetStatus() *AppUserStatusStatus {
+	if a == nil {
 		return nil
 	}
-	return o.Status
+	return a.Status
 }

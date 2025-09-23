@@ -46,64 +46,64 @@ func (t TaskTypeGrant) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TaskTypeGrant) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *TaskTypeGrant) GetTaskGrantSource() *TaskGrantSource {
-	if o == nil {
+func (t *TaskTypeGrant) GetTaskGrantSource() *TaskGrantSource {
+	if t == nil {
 		return nil
 	}
-	return o.TaskGrantSource
+	return t.TaskGrantSource
 }
 
-func (o *TaskTypeGrant) GetAppEntitlementID() *string {
-	if o == nil {
+func (t *TaskTypeGrant) GetAppEntitlementID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppEntitlementID
+	return t.AppEntitlementID
 }
 
-func (o *TaskTypeGrant) GetAppID() *string {
-	if o == nil {
+func (t *TaskTypeGrant) GetAppID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppID
+	return t.AppID
 }
 
-func (o *TaskTypeGrant) GetAppUserID() *string {
-	if o == nil {
+func (t *TaskTypeGrant) GetAppUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.AppUserID
+	return t.AppUserID
 }
 
-func (o *TaskTypeGrant) GetGrantDuration() *string {
-	if o == nil {
+func (t *TaskTypeGrant) GetGrantDuration() *string {
+	if t == nil {
 		return nil
 	}
-	return o.GrantDuration
+	return t.GrantDuration
 }
 
-func (o *TaskTypeGrant) GetIdentityUserID() *string {
-	if o == nil {
+func (t *TaskTypeGrant) GetIdentityUserID() *string {
+	if t == nil {
 		return nil
 	}
-	return o.IdentityUserID
+	return t.IdentityUserID
 }
 
-func (o *TaskTypeGrant) GetOutcome() *TaskTypeGrantOutcome {
-	if o == nil {
+func (t *TaskTypeGrant) GetOutcome() *TaskTypeGrantOutcome {
+	if t == nil {
 		return nil
 	}
-	return o.Outcome
+	return t.Outcome
 }
 
-func (o *TaskTypeGrant) GetOutcomeTime() *time.Time {
-	if o == nil {
+func (t *TaskTypeGrant) GetOutcomeTime() *time.Time {
+	if t == nil {
 		return nil
 	}
-	return o.OutcomeTime
+	return t.OutcomeTime
 }

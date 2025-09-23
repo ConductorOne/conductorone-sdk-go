@@ -18,24 +18,24 @@ func (e Expanded) MarshalJSON() ([]byte, error) {
 }
 
 func (e *Expanded) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &e, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &e, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *Expanded) GetAtType() *string {
-	if o == nil {
+func (e *Expanded) GetAtType() *string {
+	if e == nil {
 		return nil
 	}
-	return o.AtType
+	return e.AtType
 }
 
-func (o *Expanded) GetAdditionalProperties() map[string]any {
-	if o == nil {
+func (e *Expanded) GetAdditionalProperties() map[string]any {
+	if e == nil {
 		return nil
 	}
-	return o.AdditionalProperties
+	return e.AdditionalProperties
 }
 
 // The AppEntitlementSearchServiceSearchGrantsResponse message.
@@ -48,23 +48,23 @@ type AppEntitlementSearchServiceSearchGrantsResponse struct {
 	NextPageToken *string `json:"nextPageToken,omitempty"`
 }
 
-func (o *AppEntitlementSearchServiceSearchGrantsResponse) GetExpanded() []Expanded {
-	if o == nil {
+func (a *AppEntitlementSearchServiceSearchGrantsResponse) GetExpanded() []Expanded {
+	if a == nil {
 		return nil
 	}
-	return o.Expanded
+	return a.Expanded
 }
 
-func (o *AppEntitlementSearchServiceSearchGrantsResponse) GetList() []AppEntitlementWithUserBinding {
-	if o == nil {
+func (a *AppEntitlementSearchServiceSearchGrantsResponse) GetList() []AppEntitlementWithUserBinding {
+	if a == nil {
 		return nil
 	}
-	return o.List
+	return a.List
 }
 
-func (o *AppEntitlementSearchServiceSearchGrantsResponse) GetNextPageToken() *string {
-	if o == nil {
+func (a *AppEntitlementSearchServiceSearchGrantsResponse) GetNextPageToken() *string {
+	if a == nil {
 		return nil
 	}
-	return o.NextPageToken
+	return a.NextPageToken
 }

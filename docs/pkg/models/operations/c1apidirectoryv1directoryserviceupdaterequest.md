@@ -1,0 +1,9 @@
+# C1APIDirectoryV1DirectoryServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `DirectoryServiceUpdateRequest`                                                                      | [*shared.DirectoryServiceUpdateRequest](../../../pkg/models/shared/directoryserviceupdaterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `AppID`                                                                                              | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

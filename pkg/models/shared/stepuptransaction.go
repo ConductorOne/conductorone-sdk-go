@@ -52,85 +52,85 @@ func (s StepUpTransaction) MarshalJSON() ([]byte, error) {
 }
 
 func (s *StepUpTransaction) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *StepUpTransaction) GetTargetTask() *TargetTask {
-	if o == nil {
+func (s *StepUpTransaction) GetTargetTask() *TargetTask {
+	if s == nil {
 		return nil
 	}
-	return o.TargetTask
+	return s.TargetTask
 }
 
-func (o *StepUpTransaction) GetTargetTest() *TargetTest {
-	if o == nil {
+func (s *StepUpTransaction) GetTargetTest() *TargetTest {
+	if s == nil {
 		return nil
 	}
-	return o.TargetTest
+	return s.TargetTest
 }
 
-func (o *StepUpTransaction) GetClaims() map[string]any {
-	if o == nil {
+func (s *StepUpTransaction) GetClaims() map[string]any {
+	if s == nil {
 		return nil
 	}
-	return o.Claims
+	return s.Claims
 }
 
-func (o *StepUpTransaction) GetCreatedAt() *time.Time {
-	if o == nil {
+func (s *StepUpTransaction) GetCreatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.CreatedAt
+	return s.CreatedAt
 }
 
-func (o *StepUpTransaction) GetErrorMessage() *string {
-	if o == nil {
+func (s *StepUpTransaction) GetErrorMessage() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ErrorMessage
+	return s.ErrorMessage
 }
 
-func (o *StepUpTransaction) GetExpiresAt() *time.Time {
-	if o == nil {
+func (s *StepUpTransaction) GetExpiresAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return s.ExpiresAt
 }
 
-func (o *StepUpTransaction) GetID() *string {
-	if o == nil {
+func (s *StepUpTransaction) GetID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ID
+	return s.ID
 }
 
-func (o *StepUpTransaction) GetProviderID() *string {
-	if o == nil {
+func (s *StepUpTransaction) GetProviderID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.ProviderID
+	return s.ProviderID
 }
 
-func (o *StepUpTransaction) GetState() *StepUpTransactionState {
-	if o == nil {
+func (s *StepUpTransaction) GetState() *StepUpTransactionState {
+	if s == nil {
 		return nil
 	}
-	return o.State
+	return s.State
 }
 
-func (o *StepUpTransaction) GetUpdatedAt() *time.Time {
-	if o == nil {
+func (s *StepUpTransaction) GetUpdatedAt() *time.Time {
+	if s == nil {
 		return nil
 	}
-	return o.UpdatedAt
+	return s.UpdatedAt
 }
 
-func (o *StepUpTransaction) GetUserID() *string {
-	if o == nil {
+func (s *StepUpTransaction) GetUserID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.UserID
+	return s.UserID
 }
