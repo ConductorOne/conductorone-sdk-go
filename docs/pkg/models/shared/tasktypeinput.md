@@ -7,6 +7,7 @@ This message contains a oneof named task_type. Only a single field of the follow
   - revoke
   - certify
   - offboarding
+  - action
 
 
 
@@ -14,6 +15,7 @@ This message contains a oneof named task_type. Only a single field of the follow
 
 | Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
 | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `TaskTypeAction`                                                                             | [*shared.TaskTypeActionInput](../../../pkg/models/shared/tasktypeactioninput.md)             | :heavy_minus_sign:                                                                           | The TaskTypeAction message.                                                                  |
 | `TaskTypeCertify`                                                                            | [*shared.TaskTypeCertifyInput](../../../pkg/models/shared/tasktypecertifyinput.md)           | :heavy_minus_sign:                                                                           | The TaskTypeCertify message indicates that a task is a certify task and all related details. |
 | `TaskTypeGrant`                                                                              | [*shared.TaskTypeGrantInput](../../../pkg/models/shared/tasktypegrantinput.md)               | :heavy_minus_sign:                                                                           | The TaskTypeGrant message indicates that a task is a grant task and all related details.     |
 | `TaskTypeOffboarding`                                                                        | [*shared.TaskTypeOffboardingInput](../../../pkg/models/shared/tasktypeoffboardinginput.md)   | :heavy_minus_sign:                                                                           | The TaskTypeOffboarding message.                                                             |

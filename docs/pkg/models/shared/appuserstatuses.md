@@ -3,9 +3,9 @@
 
 ## Values
 
-| Name                               | Value                              |
-| ---------------------------------- | ---------------------------------- |
-| `AppUserStatusesStatusUnspecified` | STATUS_UNSPECIFIED                 |
-| `AppUserStatusesStatusEnabled`     | STATUS_ENABLED                     |
-| `AppUserStatusesStatusDisabled`    | STATUS_DISABLED                    |
-| `AppUserStatusesStatusDeleted`     | STATUS_DELETED                     |
+| Name                                      | Value                                     |
+| ----------------------------------------- | ----------------------------------------- |
+| `AppUserStatusesAppUserStatusUnspecified` | APP_USER_STATUS_UNSPECIFIED               |
+| `AppUserStatusesAppUserStatusEnabled`     | APP_USER_STATUS_ENABLED                   |
+| `AppUserStatusesAppUserStatusDisabled`    | APP_USER_STATUS_DISABLED                  |
+| `AppUserStatusesAppUserStatusDeleted`     | APP_USER_STATUS_DELETED                   |

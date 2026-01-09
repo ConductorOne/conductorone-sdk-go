@@ -16,3 +16,5 @@
 | `TriggerTypesTriggerTypeWebhook`           | TRIGGER_TYPE_WEBHOOK                       |
 | `TriggerTypesTriggerTypeSchedule`          | TRIGGER_TYPE_SCHEDULE                      |
 | `TriggerTypesTriggerTypeForm`              | TRIGGER_TYPE_FORM                          |
+| `TriggerTypesTriggerTypeScheduleAppUser`   | TRIGGER_TYPE_SCHEDULE_APP_USER             |
+| `TriggerTypesTriggerTypeAccessConflict`    | TRIGGER_TYPE_ACCESS_CONFLICT               |

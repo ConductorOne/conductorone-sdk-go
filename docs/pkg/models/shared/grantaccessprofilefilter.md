@@ -1,0 +1,12 @@
+# GrantAccessProfileFilter
+
+The GrantAccessProfileFilter message.
+
+
+## Fields
+
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `ExcludedAccessProfileIds`                                                                                    | []*string*                                                                                                    | :heavy_minus_sign:                                                                                            | Access profile IDs to EXCLUDE from the campaign<br/> Used when filter_type = EXCLUDE_SPECIFIC<br/> Max 32 profile IDs |
+| `FilterType`                                                                                                  | [*shared.FilterType](../../../pkg/models/shared/filtertype.md)                                                | :heavy_minus_sign:                                                                                            | The filterType field.                                                                                         |
+| `IncludedAccessProfileIds`                                                                                    | []*string*                                                                                                    | :heavy_minus_sign:                                                                                            | Access profile IDs to INCLUDE in the campaign<br/> Used when filter_type = INCLUDE_SPECIFIC<br/> Max 32 profile IDs |

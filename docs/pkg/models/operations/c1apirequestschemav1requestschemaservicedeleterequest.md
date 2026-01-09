@@ -1,0 +1,9 @@
+# C1APIRequestSchemaV1RequestSchemaServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `RequestSchemaServiceDeleteRequest`                                                                          | [*shared.RequestSchemaServiceDeleteRequest](../../../pkg/models/shared/requestschemaservicedeleterequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `RequestSchemaID`                                                                                            | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

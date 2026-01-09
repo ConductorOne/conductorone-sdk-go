@@ -1,0 +1,13 @@
+# UserCriteriaScope
+
+The UserCriteriaScope message.
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `GroupAppEntitlementsRef`                                                                                  | [][shared.AppEntitlementRef](../../../pkg/models/shared/appentitlementref.md)                              | :heavy_minus_sign:                                                                                         | The groupAppEntitlementsRef field.                                                                         |
+| `ManagerUserIds`                                                                                           | []*string*                                                                                                 | :heavy_minus_sign:                                                                                         | The managerUserIds field.                                                                                  |
+| `MultiUserProfileAttributes`                                                                               | map[string][shared.IncludedUserAttributeValues](../../../pkg/models/shared/includeduserattributevalues.md) | :heavy_minus_sign:                                                                                         | The multiUserProfileAttributes field.                                                                      |
+| `UserStatus`                                                                                               | [][shared.UserStatus](../../../pkg/models/shared/userstatus.md)                                            | :heavy_minus_sign:                                                                                         | The userStatus field.                                                                                      |

@@ -1,15 +1,16 @@
 # Connector
-(*Connector*)
 
 ## Overview
 
 ### Available Operations
 
+* [ConfirmSyncValid](#confirmsyncvalid) - Confirm Sync Valid
 * [Create](#create) - Create
 * [CreateDelegated](#createdelegated) - Create Delegated
 * [Delete](#delete) - Delete
 * [ForceSync](#forcesync) - Force Sync
 * [Get](#get) - Get
+* [GetConnectorSyncDownloadURL](#getconnectorsyncdownloadurl) - Get Connector Sync Download Url
 * [GetCredentials](#getcredentials) - Get Credentials
 * [List](#list) - List
 * [PauseSync](#pausesync) - Pause Sync
@@ -19,6 +20,66 @@
 * [Update](#update) - Update
 * [UpdateDelegated](#updatedelegated) - Update Delegated
 * [ValidateHTTPConnectorConfig](#validatehttpconnectorconfig) - Validate Http Connector Config
+
+## ConfirmSyncValid
+
+Invokes the c1.api.app.v1.ConnectorService.ConfirmSyncValid method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.ConfirmSyncValid" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/confirm_sync_valid/{sync_lifecycle_id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Connector.ConfirmSyncValid(ctx, operations.C1APIAppV1ConnectorServiceConfirmSyncValidRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+        SyncLifecycleID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ConfirmSyncValidResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                            | :heavy_check_mark:                                                                                                                               | The context to use for the request.                                                                                                              |
+| `request`                                                                                                                                        | [operations.C1APIAppV1ConnectorServiceConfirmSyncValidRequest](../../pkg/models/operations/c1apiappv1connectorserviceconfirmsyncvalidrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
+| `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceConfirmSyncValidResponse](../../pkg/models/operations/c1apiappv1connectorserviceconfirmsyncvalidresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Create
 
@@ -32,8 +93,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -90,8 +151,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -148,8 +209,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -207,8 +268,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -266,8 +327,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -313,6 +374,66 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## GetConnectorSyncDownloadURL
+
+GetConnectorSyncDownloadURL generates a short-lived download URL for a completed connector sync artifact.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.GetConnectorSyncDownloadURL" method="get" path="/api/v1/apps/{app_id}/connectors/{connector_id}/syncs/{sync_id}/download_url" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Connector.GetConnectorSyncDownloadURL(ctx, operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+        SyncID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.GetConnectorSyncDownloadURLResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                              | Type                                                                                                                                                                   | Required                                                                                                                                                               | Description                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                  | :heavy_check_mark:                                                                                                                                                     | The context to use for the request.                                                                                                                                    |
+| `request`                                                                                                                                                              | [operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLRequest](../../pkg/models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlrequest.md) | :heavy_check_mark:                                                                                                                                                     | The request object to use for the request.                                                                                                                             |
+| `opts`                                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                           | :heavy_minus_sign:                                                                                                                                                     | The options for this request.                                                                                                                                          |
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLResponse](../../pkg/models/operations/c1apiappv1connectorservicegetconnectorsyncdownloadurlresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## GetCredentials
 
 Get credentials for a connector.
@@ -325,8 +446,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -385,8 +506,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -443,8 +564,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -502,8 +623,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -561,8 +682,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -615,15 +736,14 @@ Rotate credentials for a connector.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.RotateCredential" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/credentials" -->
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.RotateCredential" method="post" path="/api/v1/apps/connectors/credentials" -->
 ```go
 package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"log"
 )
 
@@ -637,10 +757,7 @@ func main() {
         }),
     )
 
-    res, err := s.Connector.RotateCredential(ctx, operations.C1APIAppV1ConnectorServiceRotateCredentialRequest{
-        AppID: "<id>",
-        ConnectorID: "<id>",
-    })
+    res, err := s.Connector.RotateCredential(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -652,11 +769,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                            | :heavy_check_mark:                                                                                                                               | The context to use for the request.                                                                                                              |
-| `request`                                                                                                                                        | [operations.C1APIAppV1ConnectorServiceRotateCredentialRequest](../../pkg/models/operations/c1apiappv1connectorservicerotatecredentialrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
-| `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                | :heavy_check_mark:                                                                                                   | The context to use for the request.                                                                                  |
+| `request`                                                                                                            | [shared.ConnectorServiceRotateCredentialRequest](../../pkg/models/shared/connectorservicerotatecredentialrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `opts`                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                         | :heavy_minus_sign:                                                                                                   | The options for this request.                                                                                        |
 
 ### Response
 
@@ -680,8 +797,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -739,8 +856,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
@@ -798,8 +915,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"log"
 )
 

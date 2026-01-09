@@ -3,9 +3,9 @@
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `UserStatusesUnknown`  | UNKNOWN                |
-| `UserStatusesEnabled`  | ENABLED                |
-| `UserStatusesDisabled` | DISABLED               |
-| `UserStatusesDeleted`  | DELETED                |
+| Name                       | Value                      |
+| -------------------------- | -------------------------- |
+| `UserStatusesUserUnknown`  | USER_UNKNOWN               |
+| `UserStatusesUserEnabled`  | USER_ENABLED               |
+| `UserStatusesUserDisabled` | USER_DISABLED              |
+| `UserStatusesUserDeleted`  | USER_DELETED               |

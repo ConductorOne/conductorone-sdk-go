@@ -1,14 +1,13 @@
 # Type
 
-The type of the user.
+The type field.
 
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `TypeUserTypeUnspecified` | USER_TYPE_UNSPECIFIED     |
-| `TypeUserTypeSystem`      | USER_TYPE_SYSTEM          |
-| `TypeUserTypeHuman`       | USER_TYPE_HUMAN           |
-| `TypeUserTypeService`     | USER_TYPE_SERVICE         |
-| `TypeUserTypeAgent`       | USER_TYPE_AGENT           |
+| Name                        | Value                       |
+| --------------------------- | --------------------------- |
+| `TypeSelectTypeUnspecified` | SELECT_TYPE_UNSPECIFIED     |
+| `TypeSelectTypeDropdown`    | SELECT_TYPE_DROPDOWN        |
+| `TypeSelectTypeRadio`       | SELECT_TYPE_RADIO           |
+| `TypeSelectTypeButtons`     | SELECT_TYPE_BUTTONS         |

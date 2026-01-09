@@ -1,5 +1,4 @@
 # AppResourceSearch
-(*AppResourceSearch*)
 
 ## Overview
 
@@ -20,8 +19,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"log"
 )
 
@@ -40,7 +39,19 @@ func main() {
         log.Fatal(err)
     }
     if res.SearchAppResourceTypesResponse != nil {
-        // handle response
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
     }
 }
 ```
@@ -75,8 +86,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"log"
 )
 

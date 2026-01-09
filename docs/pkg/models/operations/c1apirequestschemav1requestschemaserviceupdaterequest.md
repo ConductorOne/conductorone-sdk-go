@@ -1,0 +1,9 @@
+# C1APIRequestSchemaV1RequestSchemaServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `RequestSchemaServiceUpdateRequest`                                                                          | [*shared.RequestSchemaServiceUpdateRequest](../../../pkg/models/shared/requestschemaserviceupdaterequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `RequestSchemaID`                                                                                            | *string*                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

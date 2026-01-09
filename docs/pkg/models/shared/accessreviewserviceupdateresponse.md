@@ -1,0 +1,11 @@
+# AccessReviewServiceUpdateResponse
+
+The AccessReviewServiceUpdateResponse message.
+
+
+## Fields
+
+| Field                                                                                                                         | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `AccessReviewView`                                                                                                            | [*shared.AccessReviewView](../../../pkg/models/shared/accessreviewview.md)                                                    | :heavy_minus_sign:                                                                                                            | The AccessReviewView message.                                                                                                 |
+| `Expanded`                                                                                                                    | [][shared.AccessReviewServiceUpdateResponseExpanded](../../../pkg/models/shared/accessreviewserviceupdateresponseexpanded.md) | :heavy_minus_sign:                                                                                                            | The expanded field.                                                                                                           |

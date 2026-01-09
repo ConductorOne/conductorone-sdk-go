@@ -18,3 +18,5 @@ The primaryTriggerType field.
 | `PrimaryTriggerTypeTriggerTypeWebhook`           | TRIGGER_TYPE_WEBHOOK                             |
 | `PrimaryTriggerTypeTriggerTypeSchedule`          | TRIGGER_TYPE_SCHEDULE                            |
 | `PrimaryTriggerTypeTriggerTypeForm`              | TRIGGER_TYPE_FORM                                |
+| `PrimaryTriggerTypeTriggerTypeScheduleAppUser`   | TRIGGER_TYPE_SCHEDULE_APP_USER                   |
+| `PrimaryTriggerTypeTriggerTypeAccessConflict`    | TRIGGER_TYPE_ACCESS_CONFLICT                     |

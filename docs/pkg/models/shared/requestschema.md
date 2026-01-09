@@ -1,0 +1,15 @@
+# RequestSchema
+
+The RequestSchema message.
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `Form`                                                                                   | [*shared.FormInput](../../../pkg/models/shared/forminput.md)                             | :heavy_minus_sign:                                                                       | A form is a collection of fields to be filled out by a user                              |
+| `CreatedAt`                                                                              | [*time.Time](https://pkg.go.dev/time#Time)                                               | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `DeletedAt`                                                                              | [*time.Time](https://pkg.go.dev/time#Time)                                               | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `ID`                                                                                     | **string*                                                                                | :heavy_minus_sign:                                                                       | The id field.                                                                            |
+| `JustificationVisibility`                                                                | [*shared.JustificationVisibility](../../../pkg/models/shared/justificationvisibility.md) | :heavy_minus_sign:                                                                       | The justificationVisibility field.                                                       |
+| `ModifiedAt`                                                                             | [*time.Time](https://pkg.go.dev/time#Time)                                               | :heavy_minus_sign:                                                                       | N/A                                                                                      |

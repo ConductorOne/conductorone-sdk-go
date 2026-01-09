@@ -1,5 +1,4 @@
 # PolicyValidate
-(*PolicyValidate*)
 
 ## Overview
 
@@ -19,8 +18,8 @@ package main
 
 import(
 	"context"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
 	"log"
 )
 
