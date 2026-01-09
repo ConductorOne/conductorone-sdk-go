@@ -1,0 +1,9 @@
+# C1APIAccessreviewV1AccessReviewServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `AccessReviewServiceDeleteRequest`                                                                         | [*shared.AccessReviewServiceDeleteRequest](../../../pkg/models/shared/accessreviewservicedeleterequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `ID`                                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

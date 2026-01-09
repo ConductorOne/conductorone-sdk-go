@@ -1,16 +1,22 @@
 # State
 
-The last applied state of the app access request defaults.
+The state field.
 
 
 ## Values
 
-| Name                                                        | Value                                                       |
-| ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `StateAppAccessRequestDefaultsLastApplyStateUnspecified`    | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_UNSPECIFIED    |
-| `StateAppAccessRequestDefaultsLastApplyStateRunning`        | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_RUNNING        |
-| `StateAppAccessRequestDefaultsLastApplyStateSuccess`        | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_SUCCESS        |
-| `StateAppAccessRequestDefaultsLastApplyStateFailed`         | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_FAILED         |
-| `StateAppAccessRequestDefaultsLastApplyStateCanceling`      | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCELING      |
-| `StateAppAccessRequestDefaultsLastApplyStateCancelSuccess`  | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_SUCCESS |
-| `StateAppAccessRequestDefaultsLastApplyStateCancelError`    | APP_ACCESS_REQUEST_DEFAULTS_LAST_APPLY_STATE_CANCEL_ERROR   |
+| Name                                                  | Value                                                 |
+| ----------------------------------------------------- | ----------------------------------------------------- |
+| `StateAccessReviewStateUnspecified`                   | ACCESS_REVIEW_STATE_UNSPECIFIED                       |
+| `StateAccessReviewStateOpen`                          | ACCESS_REVIEW_STATE_OPEN                              |
+| `StateAccessReviewStateClosed`                        | ACCESS_REVIEW_STATE_CLOSED                            |
+| `StateAccessReviewStatePending`                       | ACCESS_REVIEW_STATE_PENDING                           |
+| `StateAccessReviewStateReview`                        | ACCESS_REVIEW_STATE_REVIEW                            |
+| `StateAccessReviewStatePreparing`                     | ACCESS_REVIEW_STATE_PREPARING                         |
+| `StateAccessReviewStateStarting`                      | ACCESS_REVIEW_STATE_STARTING                          |
+| `StateAccessReviewStateDraft`                         | ACCESS_REVIEW_STATE_DRAFT                             |
+| `StateAccessReviewStateDeleting`                      | ACCESS_REVIEW_STATE_DELETING                          |
+| `StateAccessReviewStateDeleted`                       | ACCESS_REVIEW_STATE_DELETED                           |
+| `StateAccessReviewStateResettingPolicies`             | ACCESS_REVIEW_STATE_RESETTING_POLICIES                |
+| `StateAccessReviewStateCopyingSetupEntitlements`      | ACCESS_REVIEW_STATE_COPYING_SETUP_ENTITLEMENTS        |
+| `StateAccessReviewStateCopyingResourceTypeSelections` | ACCESS_REVIEW_STATE_COPYING_RESOURCE_TYPE_SELECTIONS  |

@@ -1,0 +1,11 @@
+# AccessReviewServiceGetResponse
+
+The AccessReviewServiceGetResponse message.
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `AccessReviewView`                                                                                                      | [*shared.AccessReviewView](../../../pkg/models/shared/accessreviewview.md)                                              | :heavy_minus_sign:                                                                                                      | The AccessReviewView message.                                                                                           |
+| `Expanded`                                                                                                              | [][shared.AccessReviewServiceGetResponseExpanded](../../../pkg/models/shared/accessreviewservicegetresponseexpanded.md) | :heavy_minus_sign:                                                                                                      | The expanded field.                                                                                                     |

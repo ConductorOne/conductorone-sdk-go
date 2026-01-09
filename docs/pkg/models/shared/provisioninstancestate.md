@@ -16,4 +16,6 @@ This property indicates the current state of this step.
 | `ProvisionInstanceStateProvisionInstanceStateWebhookWaiting`                  | PROVISION_INSTANCE_STATE_WEBHOOK_WAITING                                      |
 | `ProvisionInstanceStateProvisionInstanceStateExternalTicket`                  | PROVISION_INSTANCE_STATE_EXTERNAL_TICKET                                      |
 | `ProvisionInstanceStateProvisionInstanceStateExternalTicketWaiting`           | PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING                              |
+| `ProvisionInstanceStateProvisionInstanceStateAccountLifecycleActions`         | PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS                            |
+| `ProvisionInstanceStateProvisionInstanceStateAccountLifecycleActionsWaiting`  | PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS_WAITING                    |
 | `ProvisionInstanceStateProvisionInstanceStateDone`                            | PROVISION_INSTANCE_STATE_DONE                                                 |

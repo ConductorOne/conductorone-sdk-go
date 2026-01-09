@@ -5,7 +5,7 @@ The NotificationConfig message.
 
 ## Fields
 
-| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `EmailNotifications`                                                           | [*shared.EmailNotifications](../../../pkg/models/shared/emailnotifications.md) | :heavy_minus_sign:                                                             | The EmailNotifications message.                                                |
-| `SlackNotifications`                                                           | [*shared.SlackNotifications](../../../pkg/models/shared/slacknotifications.md) | :heavy_minus_sign:                                                             | The SlackNotifications message.                                                |
+| Field                    | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `SendClose`              | **bool*                  | :heavy_minus_sign:       | The sendClose field.     |
+| `SendReminders`          | **bool*                  | :heavy_minus_sign:       | The sendReminders field. |

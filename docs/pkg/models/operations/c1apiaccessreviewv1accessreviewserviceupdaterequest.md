@@ -1,0 +1,9 @@
+# C1APIAccessreviewV1AccessReviewServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `AccessReviewServiceUpdateRequest`                                                                         | [*shared.AccessReviewServiceUpdateRequest](../../../pkg/models/shared/accessreviewserviceupdaterequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `ID`                                                                                                       | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
