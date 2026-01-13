@@ -1,9 +1,0 @@
-# C1APIFunctionsV1FunctionsServiceCommitRequest
-
-
-## Fields
-
-| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `FunctionsServiceCommitRequest`                                                                      | [*shared.FunctionsServiceCommitRequest](../../../pkg/models/shared/functionsservicecommitrequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
-| `FunctionID`                                                                                         | *string*                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
