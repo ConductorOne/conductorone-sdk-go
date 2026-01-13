@@ -5,7 +5,6 @@ go 1.21
 toolchain go1.21.3
 
 require (
-	github.com/ericlagergren/decimal v0.0.0-20221120152707-495c53812d05
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
 	github.com/pquerna/xjwt v0.2.0
 	github.com/spyzhov/ajson v0.9.6

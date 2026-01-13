@@ -18,6 +18,7 @@
 * [RevokeCredential](#revokecredential) - Revoke Credential
 * [RotateCredential](#rotatecredential) - Rotate Credential
 * [Update](#update) - Update
+* [UpdateConnectorSchedule](#updateconnectorschedule) - Update Connector Schedule
 * [UpdateDelegated](#updatedelegated) - Update Delegated
 * [ValidateHTTPConnectorConfig](#validatehttpconnectorconfig) - Validate Http Connector Config
 
@@ -837,6 +838,65 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1ConnectorServiceUpdateResponse](../../pkg/models/operations/c1apiappv1connectorserviceupdateresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## UpdateConnectorSchedule
+
+Invokes the c1.api.app.v1.ConnectorService.UpdateConnectorSchedule method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.ConnectorService.UpdateConnectorSchedule" method="post" path="/api/v1/apps/{app_id}/connectors/{connector_id}/schedule" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Connector.UpdateConnectorSchedule(ctx, operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.UpdateConnectorScheduleResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                          | :heavy_check_mark:                                                                                                                                             | The context to use for the request.                                                                                                                            |
+| `request`                                                                                                                                                      | [operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleRequest](../../pkg/models/operations/c1apiappv1connectorserviceupdateconnectorschedulerequest.md) | :heavy_check_mark:                                                                                                                                             | The request object to use for the request.                                                                                                                     |
+| `opts`                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | The options for this request.                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleResponse](../../pkg/models/operations/c1apiappv1connectorserviceupdateconnectorscheduleresponse.md), error**
 
 ### Errors
 
