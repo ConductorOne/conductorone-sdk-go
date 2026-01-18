@@ -142,6 +142,8 @@ func (e *Source) IsExact() bool {
 //   - actionInstanceCreated
 //   - actionInstanceSucceeded
 //   - actionInstanceFailed
+//   - createdReplacementExtensionGrantTask
+//   - taskCreatedFrom
 type TaskAuditView struct {
 	// The TaskAuditAccessRequestOutcome message.
 	TaskAuditAccessRequestOutcome *TaskAuditAccessRequestOutcome `json:"accessRequestOutcome,omitempty"`
@@ -181,6 +183,9 @@ type TaskAuditView struct {
 	//   - cancelled
 	//
 	TaskAuditConnectorActionResult *TaskAuditConnectorActionResult `json:"actionResult,omitempty"`
+	// TaskAuditCreatedReplacementExtensionGrantTask is used when a replacement extension grant task is created
+	//  (e.g. when an extension grant task is cancelled due to app user deletion).
+	TaskAuditCreatedReplacementExtensionGrantTask *TaskAuditCreatedReplacementExtensionGrantTask `json:"createdReplacementExtensionGrantTask,omitempty"`
 	// The TaskAuditEscalateToEmergencyAccess message.
 	TaskAuditEscalateToEmergencyAccess *TaskAuditEscalateToEmergencyAccess `json:"taskEscalated,omitempty"`
 	// The TaskAuditExpressionPolicyStepError message.
@@ -207,6 +212,10 @@ type TaskAuditView struct {
 	TaskAuditMetaData *TaskAuditMetaData `json:"metadata,omitempty"`
 	// The TaskAuditNewTask message.
 	TaskAuditNewTask *TaskAuditNewTask `json:"taskCreated,omitempty"`
+	// TaskAuditNewTaskCreatedFrom is used when a task is created from another task
+	//  (e.g. when a replacement extension grant task is created after the original is cancelled).
+	//  This is set on the NEW task to indicate its origin.
+	TaskAuditNewTaskCreatedFrom *TaskAuditNewTaskCreatedFrom `json:"taskCreatedFrom,omitempty"`
 	// The TaskAuditPolicyApprovalReassigned message.
 	TaskAuditPolicyApprovalReassigned *TaskAuditPolicyApprovalReassigned `json:"approvalReassigned,omitempty"`
 	// The TaskAuditPolicyChanged message.
@@ -407,6 +416,13 @@ func (t *TaskAuditView) GetTaskAuditConnectorActionResult() *TaskAuditConnectorA
 	return t.TaskAuditConnectorActionResult
 }
 
+func (t *TaskAuditView) GetTaskAuditCreatedReplacementExtensionGrantTask() *TaskAuditCreatedReplacementExtensionGrantTask {
+	if t == nil {
+		return nil
+	}
+	return t.TaskAuditCreatedReplacementExtensionGrantTask
+}
+
 func (t *TaskAuditView) GetTaskAuditEscalateToEmergencyAccess() *TaskAuditEscalateToEmergencyAccess {
 	if t == nil {
 		return nil
@@ -496,6 +512,13 @@ func (t *TaskAuditView) GetTaskAuditNewTask() *TaskAuditNewTask {
 		return nil
 	}
 	return t.TaskAuditNewTask
+}
+
+func (t *TaskAuditView) GetTaskAuditNewTaskCreatedFrom() *TaskAuditNewTaskCreatedFrom {
+	if t == nil {
+		return nil
+	}
+	return t.TaskAuditNewTaskCreatedFrom
 }
 
 func (t *TaskAuditView) GetTaskAuditPolicyApprovalReassigned() *TaskAuditPolicyApprovalReassigned {
