@@ -340,7 +340,6 @@ func main() {
 * [CreateTag](docs/sdks/functions/README.md#createtag) - Create Tag
 * [DeleteFunction](docs/sdks/functions/README.md#deletefunction) - Delete Function
 * [GetFunction](docs/sdks/functions/README.md#getfunction) - Get Function
-* [GetFunctionSecretEncryptionKey](docs/sdks/functions/README.md#getfunctionsecretencryptionkey) - Get Function Secret Encryption Key
 * [Invoke](docs/sdks/functions/README.md#invoke) - Invoke
 * [ListCommits](docs/sdks/functions/README.md#listcommits) - List Commits
 * [ListFunctions](docs/sdks/functions/README.md#listfunctions) - List Functions

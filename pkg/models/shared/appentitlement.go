@@ -17,6 +17,7 @@ const (
 	PurposeAppEntitlementPurposeValueUnspecified Purpose = "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED"
 	PurposeAppEntitlementPurposeValueAssignment  Purpose = "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT"
 	PurposeAppEntitlementPurposeValuePermission  Purpose = "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION"
+	PurposeAppEntitlementPurposeValueOwnership   Purpose = "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP"
 )
 
 func (e Purpose) ToPointer() *Purpose {
@@ -27,7 +28,7 @@ func (e Purpose) ToPointer() *Purpose {
 func (e *Purpose) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED", "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT", "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION":
+		case "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED", "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT", "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION", "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP":
 			return true
 		}
 	}

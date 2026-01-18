@@ -2,6 +2,10 @@
 
 package shared
 
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+)
+
 // AppResourceInput - The app resource message is a single resource that can have entitlements.
 //
 // This message contains a oneof named metadata. Only a single field of the following list may be set at a time:
@@ -29,6 +33,17 @@ type AppResourceInput struct {
 	ParentAppResourceID *string `json:"parentAppResourceId,omitempty"`
 	// The parent resource type id, if this resource is a child of another resource.
 	ParentAppResourceTypeID *string `json:"parentAppResourceTypeId,omitempty"`
+}
+
+func (a AppResourceInput) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *AppResourceInput) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (a *AppResourceInput) GetSecretTrait() *SecretTrait {
