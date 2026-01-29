@@ -1,6 +1,6 @@
 # ActionTargetAutomation
 
-The ActionTargetAutomation message.
+ActionTargetAutomation targets automation templates for policy actions.
 
 
 ## Fields

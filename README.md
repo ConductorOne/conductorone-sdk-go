@@ -334,13 +334,16 @@ func main() {
 
 * [Search](docs/sdks/exportssearch/README.md#search) - Search
 
+### [ExternalClientSearch](docs/sdks/externalclientsearch/README.md)
+
+* [Search](docs/sdks/externalclientsearch/README.md#search) - NOTE: Searches external client grants for all users
+
 ### [Functions](docs/sdks/functions/README.md)
 
 * [CreateFunction](docs/sdks/functions/README.md#createfunction) - Create Function
 * [CreateTag](docs/sdks/functions/README.md#createtag) - Create Tag
 * [DeleteFunction](docs/sdks/functions/README.md#deletefunction) - Delete Function
 * [GetFunction](docs/sdks/functions/README.md#getfunction) - Get Function
-* [GetFunctionSecretEncryptionKey](docs/sdks/functions/README.md#getfunctionsecretencryptionkey) - Get Function Secret Encryption Key
 * [Invoke](docs/sdks/functions/README.md#invoke) - Invoke
 * [ListCommits](docs/sdks/functions/README.md#listcommits) - List Commits
 * [ListFunctions](docs/sdks/functions/README.md#listfunctions) - List Functions

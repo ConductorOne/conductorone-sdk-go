@@ -94,6 +94,8 @@ type FieldInput struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// The name field.
 	Name *string `json:"name,omitempty"`
+	// The required field.
+	Required *bool `json:"required,omitempty"`
 }
 
 func (f *FieldInput) GetAdminProviderConfig() *AdminProviderConfig {
@@ -178,4 +180,11 @@ func (f *FieldInput) GetName() *string {
 		return nil
 	}
 	return f.Name
+}
+
+func (f *FieldInput) GetRequired() *bool {
+	if f == nil {
+		return nil
+	}
+	return f.Required
 }
