@@ -132,6 +132,32 @@ func (e *GrantOutcomes) IsExact() bool {
 	return false
 }
 
+// PendingActionFilter - Filter tasks by pending action status. Only applies when exactly one access_review_id is specified.
+//
+//	Requires the REVIEWS_PENDING_ACTIONS feature flag to be enabled.
+type PendingActionFilter string
+
+const (
+	PendingActionFilterPendingActionFilterUnspecified    PendingActionFilter = "PENDING_ACTION_FILTER_UNSPECIFIED"
+	PendingActionFilterPendingActionFilterWithPending    PendingActionFilter = "PENDING_ACTION_FILTER_WITH_PENDING"
+	PendingActionFilterPendingActionFilterWithoutPending PendingActionFilter = "PENDING_ACTION_FILTER_WITHOUT_PENDING"
+)
+
+func (e PendingActionFilter) ToPointer() *PendingActionFilter {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PendingActionFilter) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PENDING_ACTION_FILTER_UNSPECIFIED", "PENDING_ACTION_FILTER_WITH_PENDING", "PENDING_ACTION_FILTER_WITHOUT_PENDING":
+			return true
+		}
+	}
+	return false
+}
+
 type RevokeOutcomes string
 
 const (
@@ -300,6 +326,9 @@ type TaskSearchRequest struct {
 	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
+	// Filter tasks by pending action status. Only applies when exactly one access_review_id is specified.
+	//  Requires the REVIEWS_PENDING_ACTIONS feature flag to be enabled.
+	PendingActionFilter *PendingActionFilter `json:"pendingActionFilter,omitempty"`
 	// Search tasks that were acted on by any of these users.
 	PreviouslyActedOnIds []string `json:"previouslyActedOnIds,omitempty"`
 	// Fuzzy search tasks by display name, description, or ID.
@@ -548,6 +577,13 @@ func (t *TaskSearchRequest) GetPageToken() *string {
 		return nil
 	}
 	return t.PageToken
+}
+
+func (t *TaskSearchRequest) GetPendingActionFilter() *PendingActionFilter {
+	if t == nil {
+		return nil
+	}
+	return t.PendingActionFilter
 }
 
 func (t *TaskSearchRequest) GetPreviouslyActedOnIds() []string {
