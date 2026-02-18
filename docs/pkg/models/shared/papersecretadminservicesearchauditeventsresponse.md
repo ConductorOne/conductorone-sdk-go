@@ -1,0 +1,11 @@
+# PaperSecretAdminServiceSearchAuditEventsResponse
+
+The PaperSecretAdminServiceSearchAuditEventsResponse message.
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `List`                                                                                                               | []map[string]*any*                                                                                                   | :heavy_minus_sign:                                                                                                   | List contains OCSF events directly as JSON structs.<br/> Follows the same pattern as SystemLogServiceListEventsResponse. |
+| `NextPageToken`                                                                                                      | **string*                                                                                                            | :heavy_minus_sign:                                                                                                   | The nextPageToken field.                                                                                             |

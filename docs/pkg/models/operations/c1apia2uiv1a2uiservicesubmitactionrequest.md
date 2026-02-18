@@ -1,0 +1,9 @@
+# C1APIA2uiV1A2UIServiceSubmitActionRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `A2UIServiceSubmitActionRequest`                                                                       | [*shared.A2UIServiceSubmitActionRequest](../../../pkg/models/shared/a2uiservicesubmitactionrequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `SurfaceID`                                                                                            | *string*                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

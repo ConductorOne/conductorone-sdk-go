@@ -12,6 +12,7 @@ const (
 	CreateAppEntitlementRequestPurposeAppEntitlementPurposeValueUnspecified CreateAppEntitlementRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED"
 	CreateAppEntitlementRequestPurposeAppEntitlementPurposeValueAssignment  CreateAppEntitlementRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT"
 	CreateAppEntitlementRequestPurposeAppEntitlementPurposeValuePermission  CreateAppEntitlementRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION"
+	CreateAppEntitlementRequestPurposeAppEntitlementPurposeValueOwnership   CreateAppEntitlementRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP"
 )
 
 func (e CreateAppEntitlementRequestPurpose) ToPointer() *CreateAppEntitlementRequestPurpose {
@@ -22,7 +23,7 @@ func (e CreateAppEntitlementRequestPurpose) ToPointer() *CreateAppEntitlementReq
 func (e *CreateAppEntitlementRequestPurpose) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED", "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT", "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION":
+		case "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED", "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT", "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION", "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP":
 			return true
 		}
 	}

@@ -1,0 +1,9 @@
+# C1APISecretsV1PaperSecretServiceGetContentRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `PaperSecretServiceGetContentRequest`                                                                            | [*shared.PaperSecretServiceGetContentRequest](../../../pkg/models/shared/papersecretservicegetcontentrequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `VaultID`                                                                                                        | *string*                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

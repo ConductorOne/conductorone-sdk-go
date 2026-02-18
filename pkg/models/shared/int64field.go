@@ -2,6 +2,10 @@
 
 package shared
 
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+)
+
 // The Int64Field message.
 //
 // This message contains a oneof named view. Only a single field of the following list may be set at a time:
@@ -23,6 +27,17 @@ type Int64Field struct {
 	DefaultValue *int64 `integer:"string" json:"defaultValue,omitempty"`
 	// The placeholder field.
 	Placeholder *string `json:"placeholder,omitempty"`
+}
+
+func (i Int64Field) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(i, "", false)
+}
+
+func (i *Int64Field) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (i *Int64Field) GetInt64Rules() *Int64Rules {

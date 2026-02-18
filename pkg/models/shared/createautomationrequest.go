@@ -4,20 +4,94 @@ package shared
 
 // The CreateAutomationRequest message.
 type CreateAutomationRequest struct {
-	// The AppEntitlementAutomation message.
-	//
-	// This message contains a oneof named conditions. Only a single field of the following list may be set at a time:
-	//   - none
-	//   - entitlements
-	//   - cel
-	//   - basic
-	//
-	AppEntitlementAutomation *AppEntitlementAutomationInput `json:"automation,omitempty"`
+	// The AutomationContext message.
+	AutomationContext *AutomationContext `json:"context,omitempty"`
+	// the app id this workflow_template belongs to
+	AppID *string `json:"appId,omitempty"`
+	// The automationSteps field.
+	AutomationSteps []AutomationStep `json:"automationSteps,omitempty"`
+	// The description field.
+	Description *string `json:"description,omitempty"`
+	// The displayName field.
+	DisplayName *string `json:"displayName,omitempty"`
+	// The draftAutomationSteps field.
+	DraftAutomationSteps []AutomationStep `json:"draftAutomationSteps,omitempty"`
+	// The draftTriggers field.
+	DraftTriggers []AutomationTrigger `json:"draftTriggers,omitempty"`
+	// The enabled field.
+	Enabled *bool `json:"enabled,omitempty"`
+	// The isDraft field.
+	IsDraft *bool `json:"isDraft,omitempty"`
+	// The triggers field.
+	Triggers []AutomationTrigger `json:"triggers,omitempty"`
 }
 
-func (c *CreateAutomationRequest) GetAppEntitlementAutomation() *AppEntitlementAutomationInput {
+func (c *CreateAutomationRequest) GetAutomationContext() *AutomationContext {
 	if c == nil {
 		return nil
 	}
-	return c.AppEntitlementAutomation
+	return c.AutomationContext
+}
+
+func (c *CreateAutomationRequest) GetAppID() *string {
+	if c == nil {
+		return nil
+	}
+	return c.AppID
+}
+
+func (c *CreateAutomationRequest) GetAutomationSteps() []AutomationStep {
+	if c == nil {
+		return nil
+	}
+	return c.AutomationSteps
+}
+
+func (c *CreateAutomationRequest) GetDescription() *string {
+	if c == nil {
+		return nil
+	}
+	return c.Description
+}
+
+func (c *CreateAutomationRequest) GetDisplayName() *string {
+	if c == nil {
+		return nil
+	}
+	return c.DisplayName
+}
+
+func (c *CreateAutomationRequest) GetDraftAutomationSteps() []AutomationStep {
+	if c == nil {
+		return nil
+	}
+	return c.DraftAutomationSteps
+}
+
+func (c *CreateAutomationRequest) GetDraftTriggers() []AutomationTrigger {
+	if c == nil {
+		return nil
+	}
+	return c.DraftTriggers
+}
+
+func (c *CreateAutomationRequest) GetEnabled() *bool {
+	if c == nil {
+		return nil
+	}
+	return c.Enabled
+}
+
+func (c *CreateAutomationRequest) GetIsDraft() *bool {
+	if c == nil {
+		return nil
+	}
+	return c.IsDraft
+}
+
+func (c *CreateAutomationRequest) GetTriggers() []AutomationTrigger {
+	if c == nil {
+		return nil
+	}
+	return c.Triggers
 }

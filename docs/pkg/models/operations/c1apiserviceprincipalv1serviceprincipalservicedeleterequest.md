@@ -1,0 +1,9 @@
+# C1APIServicePrincipalV1ServicePrincipalServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ServicePrincipalServiceDeleteRequest`                                                                             | [*shared.ServicePrincipalServiceDeleteRequest](../../../pkg/models/shared/serviceprincipalservicedeleterequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `ID`                                                                                                               | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

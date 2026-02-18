@@ -4,12 +4,24 @@ package operations
 
 import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 	"net/http"
 )
 
 type C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest struct {
 	TerminateAutomationRequest *shared.TerminateAutomationRequest `request:"mediaType=application/json"`
 	ID                         int64                              `integer:"string" pathParam:"style=simple,explode=false,name=id"`
+}
+
+func (c C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(c, "", false)
+}
+
+func (c *C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &c, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (c *C1APIAutomationsV1AutomationExecutionActionsServiceTerminateAutomationRequest) GetTerminateAutomationRequest() *shared.TerminateAutomationRequest {

@@ -2,6 +2,30 @@
 
 package shared
 
+type AppEntitlementSearchServiceSearchGrantsRequestPurpose string
+
+const (
+	AppEntitlementSearchServiceSearchGrantsRequestPurposeAppEntitlementPurposeValueUnspecified AppEntitlementSearchServiceSearchGrantsRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED"
+	AppEntitlementSearchServiceSearchGrantsRequestPurposeAppEntitlementPurposeValueAssignment  AppEntitlementSearchServiceSearchGrantsRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT"
+	AppEntitlementSearchServiceSearchGrantsRequestPurposeAppEntitlementPurposeValuePermission  AppEntitlementSearchServiceSearchGrantsRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION"
+	AppEntitlementSearchServiceSearchGrantsRequestPurposeAppEntitlementPurposeValueOwnership   AppEntitlementSearchServiceSearchGrantsRequestPurpose = "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP"
+)
+
+func (e AppEntitlementSearchServiceSearchGrantsRequestPurpose) ToPointer() *AppEntitlementSearchServiceSearchGrantsRequestPurpose {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AppEntitlementSearchServiceSearchGrantsRequestPurpose) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "APP_ENTITLEMENT_PURPOSE_VALUE_UNSPECIFIED", "APP_ENTITLEMENT_PURPOSE_VALUE_ASSIGNMENT", "APP_ENTITLEMENT_PURPOSE_VALUE_PERMISSION", "APP_ENTITLEMENT_PURPOSE_VALUE_OWNERSHIP":
+			return true
+		}
+	}
+	return false
+}
+
 // The AppEntitlementSearchServiceSearchGrantsRequest message.
 type AppEntitlementSearchServiceSearchGrantsRequest struct {
 	// The app entitlement expand mask allows the user to get additional information when getting responses containing app entitlement views.
@@ -16,6 +40,8 @@ type AppEntitlementSearchServiceSearchGrantsRequest struct {
 	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
+	// Filter for entitlements with these purposes (e.g., ASSIGNMENT for membership entitlements)
+	Purpose []AppEntitlementSearchServiceSearchGrantsRequestPurpose `json:"purpose,omitempty"`
 	// Search for grants within a resource.
 	ResourceIds []string `json:"resourceIds,omitempty"`
 	// Search grants for given resource types.
@@ -64,6 +90,13 @@ func (a *AppEntitlementSearchServiceSearchGrantsRequest) GetPageToken() *string 
 		return nil
 	}
 	return a.PageToken
+}
+
+func (a *AppEntitlementSearchServiceSearchGrantsRequest) GetPurpose() []AppEntitlementSearchServiceSearchGrantsRequestPurpose {
+	if a == nil {
+		return nil
+	}
+	return a.Purpose
 }
 
 func (a *AppEntitlementSearchServiceSearchGrantsRequest) GetResourceIds() []string {

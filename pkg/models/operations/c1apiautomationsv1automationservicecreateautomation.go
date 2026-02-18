@@ -11,7 +11,7 @@ type C1APIAutomationsV1AutomationServiceCreateAutomationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
 	// Successful response
-	CreateAutomationResponse *shared.CreateAutomationResponseInput
+	CreateAutomationResponse *shared.CreateAutomationResponse1
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
@@ -25,7 +25,7 @@ func (c *C1APIAutomationsV1AutomationServiceCreateAutomationResponse) GetContent
 	return c.ContentType
 }
 
-func (c *C1APIAutomationsV1AutomationServiceCreateAutomationResponse) GetCreateAutomationResponse() *shared.CreateAutomationResponseInput {
+func (c *C1APIAutomationsV1AutomationServiceCreateAutomationResponse) GetCreateAutomationResponse() *shared.CreateAutomationResponse1 {
 	if c == nil {
 		return nil
 	}

@@ -1,0 +1,18 @@
+# ExternalClientInfo
+
+ExternalClientInfo provides information about an approved external client.
+ Used by both List (user's own grants) and Search (admin view of all grants).
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `ClientID`                                                                            | **string*                                                                             | :heavy_minus_sign:                                                                    | OAuth2 client ID - canonical identifier for this connection (globally unique per DCR) |
+| `ClientName`                                                                          | **string*                                                                             | :heavy_minus_sign:                                                                    | Original client name from DCR registration                                            |
+| `CreatedAt`                                                                           | [*time.Time](https://pkg.go.dev/time#Time)                                            | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `DisplayName`                                                                         | **string*                                                                             | :heavy_minus_sign:                                                                    | User-provided custom name (defaults to client_name if not set)                        |
+| `LastUsedAt`                                                                          | [*time.Time](https://pkg.go.dev/time#Time)                                            | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `RoleIds`                                                                             | []*string*                                                                            | :heavy_minus_sign:                                                                    | Role IDs granted to this client - frontend can fetch display names via SearchRoles    |
+| `UserID`                                                                              | **string*                                                                             | :heavy_minus_sign:                                                                    | The user who approved this external client (always populated)                         |
+| `WellKnownClient`                                                                     | [*shared.WellKnownClient](../../../pkg/models/shared/wellknownclient.md)              | :heavy_minus_sign:                                                                    | The wellKnownClient field.                                                            |

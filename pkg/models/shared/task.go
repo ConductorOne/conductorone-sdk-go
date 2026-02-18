@@ -103,6 +103,7 @@ const (
 	OriginTaskOriginProfileMembership           Origin = "TASK_ORIGIN_PROFILE_MEMBERSHIP"
 	OriginTaskOriginAutomation                  Origin = "TASK_ORIGIN_AUTOMATION"
 	OriginTaskOriginAccessReview                Origin = "TASK_ORIGIN_ACCESS_REVIEW"
+	OriginTaskOriginCascadeDelete               Origin = "TASK_ORIGIN_CASCADE_DELETE"
 )
 
 func (e Origin) ToPointer() *Origin {
@@ -113,7 +114,7 @@ func (e Origin) ToPointer() *Origin {
 func (e *Origin) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "TASK_ORIGIN_UNSPECIFIED", "TASK_ORIGIN_PROFILE_MEMBERSHIP_AUTOMATION", "TASK_ORIGIN_SLACK", "TASK_ORIGIN_API", "TASK_ORIGIN_JIRA", "TASK_ORIGIN_COPILOT", "TASK_ORIGIN_WEBAPP", "TASK_ORIGIN_TIME_REVOKE", "TASK_ORIGIN_NON_USAGE_REVOKE", "TASK_ORIGIN_PROFILE_MEMBERSHIP_MANUAL", "TASK_ORIGIN_PROFILE_MEMBERSHIP", "TASK_ORIGIN_AUTOMATION", "TASK_ORIGIN_ACCESS_REVIEW":
+		case "TASK_ORIGIN_UNSPECIFIED", "TASK_ORIGIN_PROFILE_MEMBERSHIP_AUTOMATION", "TASK_ORIGIN_SLACK", "TASK_ORIGIN_API", "TASK_ORIGIN_JIRA", "TASK_ORIGIN_COPILOT", "TASK_ORIGIN_WEBAPP", "TASK_ORIGIN_TIME_REVOKE", "TASK_ORIGIN_NON_USAGE_REVOKE", "TASK_ORIGIN_PROFILE_MEMBERSHIP_MANUAL", "TASK_ORIGIN_PROFILE_MEMBERSHIP", "TASK_ORIGIN_AUTOMATION", "TASK_ORIGIN_ACCESS_REVIEW", "TASK_ORIGIN_CASCADE_DELETE":
 			return true
 		}
 	}
@@ -216,6 +217,8 @@ type Task struct {
 	AnalysisID *string `json:"analysisId,omitempty"`
 	// An array of `google.protobuf.Any` annotations with various base64-encoded data.
 	Annotations []Annotations `json:"annotations,omitempty"`
+	// An array of IDs belonging to Identity Users that have approved or denied any step in this task.
+	ApproverIds []string `json:"approverIds,omitempty"`
 	// The count of comments.
 	CommentCount *int       `json:"commentCount,omitempty"`
 	CreatedAt    *time.Time `json:"createdAt,omitempty"`
@@ -305,6 +308,13 @@ func (t *Task) GetAnnotations() []Annotations {
 		return nil
 	}
 	return t.Annotations
+}
+
+func (t *Task) GetApproverIds() []string {
+	if t == nil {
+		return nil
+	}
+	return t.ApproverIds
 }
 
 func (t *Task) GetCommentCount() *int {

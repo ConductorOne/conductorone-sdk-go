@@ -5,11 +5,8 @@ The frequency field.
 
 ## Values
 
-| Name                            | Value                           |
-| ------------------------------- | ------------------------------- |
-| `FrequencyFrequencyUnspecified` | FREQUENCY_UNSPECIFIED           |
-| `FrequencyFrequencyNone`        | FREQUENCY_NONE                  |
-| `FrequencyFrequencyDaily`       | FREQUENCY_DAILY                 |
-| `FrequencyFrequencyWeekly`      | FREQUENCY_WEEKLY                |
-| `FrequencyFrequencyMonthly`     | FREQUENCY_MONTHLY               |
-| `FrequencyFrequencyYearly`      | FREQUENCY_YEARLY                |
+| Name                                  | Value                                 |
+| ------------------------------------- | ------------------------------------- |
+| `FrequencyDigestFrequencyUnspecified` | DIGEST_FREQUENCY_UNSPECIFIED          |
+| `FrequencyDigestFrequencyDaily`       | DIGEST_FREQUENCY_DAILY                |
+| `FrequencyDigestFrequencyWeekly`      | DIGEST_FREQUENCY_WEEKLY               |

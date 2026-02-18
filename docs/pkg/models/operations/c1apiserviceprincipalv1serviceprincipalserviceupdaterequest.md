@@ -1,0 +1,9 @@
+# C1APIServicePrincipalV1ServicePrincipalServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ServicePrincipalServiceUpdateRequest`                                                                             | [*shared.ServicePrincipalServiceUpdateRequest](../../../pkg/models/shared/serviceprincipalserviceupdaterequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `ID`                                                                                                               | *string*                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

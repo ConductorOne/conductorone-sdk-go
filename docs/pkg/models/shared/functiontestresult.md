@@ -1,0 +1,14 @@
+# FunctionTestResult
+
+FunctionTestResult contains the result of a single test case execution.
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `Assertions`                                                                                      | [][shared.FunctionTestResultAssertion](../../../pkg/models/shared/functiontestresultassertion.md) | :heavy_minus_sign:                                                                                | The assertions evaluated during the test.                                                         |
+| `Error`                                                                                           | **string*                                                                                         | :heavy_minus_sign:                                                                                | Error message if the test errored (distinct from assertion failure).                              |
+| `Logs`                                                                                            | [][shared.FunctionTestResultLog](../../../pkg/models/shared/functiontestresultlog.md)             | :heavy_minus_sign:                                                                                | The log entries captured during the test.                                                         |
+| `Name`                                                                                            | **string*                                                                                         | :heavy_minus_sign:                                                                                | The test name.                                                                                    |
+| `Status`                                                                                          | [*shared.FunctionTestResultStatus](../../../pkg/models/shared/functiontestresultstatus.md)        | :heavy_minus_sign:                                                                                | The test result status.                                                                           |

@@ -1,0 +1,9 @@
+# C1APIFunctionsV1FunctionsInvocationSearchServiceSearchRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `FunctionsInvocationSearchRequest`                                                                         | [*shared.FunctionsInvocationSearchRequest](../../../pkg/models/shared/functionsinvocationsearchrequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `FunctionID`                                                                                               | *string*                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

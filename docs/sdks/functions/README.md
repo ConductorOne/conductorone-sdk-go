@@ -8,11 +8,11 @@
 * [CreateTag](#createtag) - Create Tag
 * [DeleteFunction](#deletefunction) - Delete Function
 * [GetFunction](#getfunction) - Get Function
-* [GetFunctionSecretEncryptionKey](#getfunctionsecretencryptionkey) - Get Function Secret Encryption Key
 * [Invoke](#invoke) - Invoke
 * [ListCommits](#listcommits) - List Commits
 * [ListFunctions](#listfunctions) - List Functions
 * [ListTags](#listtags) - List Tags
+* [Test](#test) - Test
 * [UpdateFunction](#updatefunction) - Update Function
 
 ## CreateFunction
@@ -244,64 +244,6 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetFunctionSecretEncryptionKey
-
-GetFunctionSecretEncryptionKey retrieves or generates the public key for encrypting function secrets
-
-### Example Usage
-
-<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.GetFunctionSecretEncryptionKey" method="get" path="/api/v1/functions/{function_id}/secret-encryption-key" -->
-```go
-package main
-
-import(
-	"context"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-
-    s := conductoronesdkgo.New(
-        conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
-        }),
-    )
-
-    res, err := s.Functions.GetFunctionSecretEncryptionKey(ctx, operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest{
-        FunctionID: "<id>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.FunctionsServiceGetFunctionSecretEncryptionKeyResponse != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                                | Type                                                                                                                                                                                     | Required                                                                                                                                                                                 | Description                                                                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                       | The context to use for the request.                                                                                                                                                      |
-| `request`                                                                                                                                                                                | [operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyrequest.md) | :heavy_check_mark:                                                                                                                                                                       | The request object to use for the request.                                                                                                                                               |
-| `opts`                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                       | The options for this request.                                                                                                                                                            |
-
-### Response
-
-**[*operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyresponse.md), error**
-
-### Errors
-
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
-
 ## Invoke
 
 Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
@@ -523,6 +465,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIFunctionsV1FunctionsServiceListTagsResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicelisttagsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## Test
+
+Invokes the c1.api.functions.v1.FunctionsService.Test method.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.Test" method="post" path="/api/v1/functions/{function_id}/test" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.Test(ctx, operations.C1APIFunctionsV1FunctionsServiceTestRequest{
+        FunctionID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceTestResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                | :heavy_check_mark:                                                                                                                   | The context to use for the request.                                                                                                  |
+| `request`                                                                                                                            | [operations.C1APIFunctionsV1FunctionsServiceTestRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicetestrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| `opts`                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                                   | The options for this request.                                                                                                        |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceTestResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicetestresponse.md), error**
 
 ### Errors
 

@@ -32,6 +32,7 @@ func (e *ActionInstanceState) IsExact() bool {
 //
 // This message contains a oneof named target_instance. Only a single field of the following list may be set at a time:
 //   - automation
+//   - batonResourceActionInstance
 //
 // This message contains a oneof named outcome. Only a single field of the following list may be set at a time:
 //   - success
@@ -43,8 +44,9 @@ type ActionInstance struct {
 	//
 	// This message contains a oneof named target. Only a single field of the following list may be set at a time:
 	//   - automation
+	//   - batonResourceAction
 	//
-	Action *Action `json:"action,omitempty"`
+	Action *Action1 `json:"action,omitempty"`
 	// The ActionOutcomeCancelled message.
 	ActionOutcomeCancelled *ActionOutcomeCancelled `json:"cancelled,omitempty"`
 	// The ActionOutcomeDenied message.
@@ -55,11 +57,13 @@ type ActionInstance struct {
 	ActionOutcomeSuccess *ActionOutcomeSuccess `json:"success,omitempty"`
 	// The ActionTargetAutomationInstance message.
 	ActionTargetAutomationInstance *ActionTargetAutomationInstance `json:"automation,omitempty"`
+	// The ActionTargetBatonResourceActionInstance message.
+	ActionTargetBatonResourceActionInstance *ActionTargetBatonResourceActionInstance `json:"batonResourceActionInstance,omitempty"`
 	// The current state of the action execution.
 	State *ActionInstanceState `json:"state,omitempty"`
 }
 
-func (a *ActionInstance) GetAction() *Action {
+func (a *ActionInstance) GetAction() *Action1 {
 	if a == nil {
 		return nil
 	}
@@ -99,6 +103,13 @@ func (a *ActionInstance) GetActionTargetAutomationInstance() *ActionTargetAutoma
 		return nil
 	}
 	return a.ActionTargetAutomationInstance
+}
+
+func (a *ActionInstance) GetActionTargetBatonResourceActionInstance() *ActionTargetBatonResourceActionInstance {
+	if a == nil {
+		return nil
+	}
+	return a.ActionTargetBatonResourceActionInstance
 }
 
 func (a *ActionInstance) GetState() *ActionInstanceState {

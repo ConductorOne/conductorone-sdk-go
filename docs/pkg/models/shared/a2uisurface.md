@@ -1,0 +1,21 @@
+# A2UISurface
+
+A2UISurface represents a rendered UI surface within a conversation.
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `CatalogID`                                                           | **string*                                                             | :heavy_minus_sign:                                                    | The catalogId field.                                                  |
+| `Components`                                                          | [][shared.A2UIComponent](../../../pkg/models/shared/a2uicomponent.md) | :heavy_minus_sign:                                                    | The components field.                                                 |
+| `ConversationID`                                                      | **string*                                                             | :heavy_minus_sign:                                                    | The conversationId field.                                             |
+| `CreatedAt`                                                           | [*time.Time](https://pkg.go.dev/time#Time)                            | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `DataModelJSON`                                                       | **string*                                                             | :heavy_minus_sign:                                                    | The dataModelJson field.                                              |
+| `DeletedAt`                                                           | [*time.Time](https://pkg.go.dev/time#Time)                            | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `SchemaVersion`                                                       | **int64*                                                              | :heavy_minus_sign:                                                    | The schemaVersion field.                                              |
+| `SendDataModel`                                                       | **bool*                                                               | :heavy_minus_sign:                                                    | The sendDataModel field.                                              |
+| `State`                                                               | [*shared.State](../../../pkg/models/shared/state.md)                  | :heavy_minus_sign:                                                    | The state field.                                                      |
+| `SurfaceID`                                                           | **string*                                                             | :heavy_minus_sign:                                                    | The surfaceId field.                                                  |
+| `TenantID`                                                            | **string*                                                             | :heavy_minus_sign:                                                    | The tenantId field.                                                   |
+| `UpdatedAt`                                                           | [*time.Time](https://pkg.go.dev/time#Time)                            | :heavy_minus_sign:                                                    | N/A                                                                   |

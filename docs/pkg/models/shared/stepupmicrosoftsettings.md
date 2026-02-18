@@ -1,11 +1,12 @@
 # StepUpMicrosoftSettings
 
-StepUpMicrosoftSettings represents a Microsoft Entra Provider using Conditional Access Policies to enforce step-up authentication.
+StepUpMicrosoftSettings configures a Microsoft Entra step-up provider using Conditional Access.
 
 
 ## Fields
 
-| Field                           | Type                            | Required                        | Description                     |
-| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| `ConditionalAccessIds`          | []*string*                      | :heavy_minus_sign:              | The conditionalAccessIds field. |
-| `Tenant`                        | **string*                       | :heavy_minus_sign:              | The tenant field.               |
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `ConditionalAccessIds`                                                              | []*string*                                                                          | :heavy_minus_sign:                                                                  | Authentication context IDs (C1-C99). Required for ACRS mode; ignored for OIDC mode. |
+| `Tenant`                                                                            | **string*                                                                           | :heavy_minus_sign:                                                                  | Microsoft Entra tenant ID (GUID or domain). Used for response validation.           |
+| `ValidationMode`                                                                    | [*shared.ValidationMode](../../../pkg/models/shared/validationmode.md)              | :heavy_minus_sign:                                                                  | Validation approach. See MicrosoftValidationMode for details on each mode.          |

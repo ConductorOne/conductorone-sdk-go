@@ -33,7 +33,7 @@ func newAutomation(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, 
 
 // CreateAutomation - Create Automation
 // Invokes the c1.api.automations.v1.AutomationService.CreateAutomation method.
-func (s *Automation) CreateAutomation(ctx context.Context, request *shared.CreateAutomationRequestInput, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceCreateAutomationResponse, error) {
+func (s *Automation) CreateAutomation(ctx context.Context, request *shared.CreateAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceCreateAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -206,7 +206,7 @@ func (s *Automation) CreateAutomation(ctx context.Context, request *shared.Creat
 				return nil, err
 			}
 
-			var out shared.CreateAutomationResponseInput
+			var out shared.CreateAutomationResponse1
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

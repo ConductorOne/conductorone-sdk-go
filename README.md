@@ -74,6 +74,13 @@ func main() {
 <details open>
 <summary>Available methods</summary>
 
+### [A2Ui](docs/sdks/a2ui/README.md)
+
+* [CreateSurfaceFeedback](docs/sdks/a2ui/README.md#createsurfacefeedback) - Create Surface Feedback
+* [ListSurfaceFeedback](docs/sdks/a2ui/README.md#listsurfacefeedback) - List Surface Feedback
+* [ListSurfaces](docs/sdks/a2ui/README.md#listsurfaces) - List Surfaces
+* [SubmitAction](docs/sdks/a2ui/README.md#submitaction) - Submit Action
+
 ### [AccessConflict](docs/sdks/accessconflict/README.md)
 
 * [CreateMonitor](docs/sdks/accessconflict/README.md#createmonitor) - Create Monitor
@@ -89,12 +96,22 @@ func main() {
 * [List](docs/sdks/accessreview/README.md#list) - List
 * [Update](docs/sdks/accessreview/README.md#update) - Update
 
+### [AccessReviewSetupEntitlement](docs/sdks/accessreviewsetupentitlement/README.md)
+
+* [SetCampaignScopeAndEntitlements](docs/sdks/accessreviewsetupentitlement/README.md#setcampaignscopeandentitlements) - Set Campaign Scope And Entitlements
+* [SetCampaignScopeByResourceType](docs/sdks/accessreviewsetupentitlement/README.md#setcampaignscopebyresourcetype) - Set Campaign Scope By Resource Type
+
 ### [AccessReviewTemplate](docs/sdks/accessreviewtemplate/README.md)
 
 * [Create](docs/sdks/accessreviewtemplate/README.md#create) - Create
 * [Delete](docs/sdks/accessreviewtemplate/README.md#delete) - Delete
 * [Get](docs/sdks/accessreviewtemplate/README.md#get) - Get
 * [Update](docs/sdks/accessreviewtemplate/README.md#update) - Update
+
+### [AccessReviewTemplateSetupEntitlement](docs/sdks/accessreviewtemplatesetupentitlement/README.md)
+
+* [SetScopeAndEntitlements](docs/sdks/accessreviewtemplatesetupentitlement/README.md#setscopeandentitlements) - Set Scope And Entitlements
+* [SetScopeByResourceType](docs/sdks/accessreviewtemplatesetupentitlement/README.md#setscopebyresourcetype) - Set Scope By Resource Type
 
 ### [AccountProvisionPolicyTest](docs/sdks/accountprovisionpolicytest/README.md)
 
@@ -334,23 +351,31 @@ func main() {
 
 * [Search](docs/sdks/exportssearch/README.md#search) - Search
 
+### [ExternalClientSearch](docs/sdks/externalclientsearch/README.md)
+
+* [Search](docs/sdks/externalclientsearch/README.md#search) - NOTE: Searches external client grants for all users
+
 ### [Functions](docs/sdks/functions/README.md)
 
 * [CreateFunction](docs/sdks/functions/README.md#createfunction) - Create Function
 * [CreateTag](docs/sdks/functions/README.md#createtag) - Create Tag
 * [DeleteFunction](docs/sdks/functions/README.md#deletefunction) - Delete Function
 * [GetFunction](docs/sdks/functions/README.md#getfunction) - Get Function
-* [GetFunctionSecretEncryptionKey](docs/sdks/functions/README.md#getfunctionsecretencryptionkey) - Get Function Secret Encryption Key
 * [Invoke](docs/sdks/functions/README.md#invoke) - Invoke
 * [ListCommits](docs/sdks/functions/README.md#listcommits) - List Commits
 * [ListFunctions](docs/sdks/functions/README.md#listfunctions) - List Functions
 * [ListTags](docs/sdks/functions/README.md#listtags) - List Tags
+* [Test](docs/sdks/functions/README.md#test) - Test
 * [UpdateFunction](docs/sdks/functions/README.md#updatefunction) - Update Function
 
 ### [FunctionsInvocation](docs/sdks/functionsinvocation/README.md)
 
 * [Get](docs/sdks/functionsinvocation/README.md#get) - Get
 * [List](docs/sdks/functionsinvocation/README.md#list) - List
+
+### [FunctionsInvocationSearch](docs/sdks/functionsinvocationsearch/README.md)
+
+* [Search](docs/sdks/functionsinvocationsearch/README.md#search) - Search
 
 ### [FunctionsSearch](docs/sdks/functionssearch/README.md)
 
@@ -360,6 +385,30 @@ func main() {
 
 * [List](docs/sdks/orgdomain/README.md#list) - List
 * [Update](docs/sdks/orgdomain/README.md#update) - Update
+
+### [OrgNotificationSettings](docs/sdks/orgnotificationsettings/README.md)
+
+* [Get](docs/sdks/orgnotificationsettings/README.md#get) - Get
+* [Update](docs/sdks/orgnotificationsettings/README.md#update) - Update
+
+### [PaperSecret](docs/sdks/papersecret/README.md)
+
+* [CreateExternal](docs/sdks/papersecret/README.md#createexternal) - Create External
+* [CreateInternal](docs/sdks/papersecret/README.md#createinternal) - Create Internal
+* [Get](docs/sdks/papersecret/README.md#get) - Get
+* [GetByShareCode](docs/sdks/papersecret/README.md#getbysharecode) - Get By Share Code
+* [GetContent](docs/sdks/papersecret/README.md#getcontent) - Get Content
+* [Revoke](docs/sdks/papersecret/README.md#revoke) - Revoke
+* [SearchAuditEvents](docs/sdks/papersecret/README.md#searchauditevents) - Search Audit Events
+* [SearchMySecrets](docs/sdks/papersecret/README.md#searchmysecrets) - Search My Secrets
+* [SetTextContent](docs/sdks/papersecret/README.md#settextcontent) - Set Text Content
+
+### [PaperSecretAdmin](docs/sdks/papersecretadmin/README.md)
+
+* [Get](docs/sdks/papersecretadmin/README.md#get) - Get
+* [Revoke](docs/sdks/papersecretadmin/README.md#revoke) - Revoke
+* [Search](docs/sdks/papersecretadmin/README.md#search) - Search
+* [SearchAuditEvents](docs/sdks/papersecretadmin/README.md#searchauditevents) - Search Audit Events
 
 ### [PersonalClient](docs/sdks/personalclient/README.md)
 
@@ -388,6 +437,19 @@ func main() {
 ### [PolicyValidate](docs/sdks/policyvalidate/README.md)
 
 * [ValidateCEL](docs/sdks/policyvalidate/README.md#validatecel) - Validate Cel
+
+### [Principal](docs/sdks/principal/README.md)
+
+* [Create](docs/sdks/principal/README.md#create) - Create
+* [CreateCredential](docs/sdks/principal/README.md#createcredential) - Create Credential
+* [Delete](docs/sdks/principal/README.md#delete) - Delete
+* [Get](docs/sdks/principal/README.md#get) - Get
+* [GetCredential](docs/sdks/principal/README.md#getcredential) - Get Credential
+* [List](docs/sdks/principal/README.md#list) - List
+* [ListCredentials](docs/sdks/principal/README.md#listcredentials) - List Credentials
+* [RevokeCredential](docs/sdks/principal/README.md#revokecredential) - Revoke Credential
+* [Update](docs/sdks/principal/README.md#update) - Update
+* [UpdateCredential](docs/sdks/principal/README.md#updatecredential) - Update Credential
 
 ### [RequestCatalogManagement](docs/sdks/requestcatalogmanagement/README.md)
 
@@ -498,6 +560,11 @@ func main() {
 * [List](docs/sdks/user/README.md#list) - List
 * [SetExpiringUserDelegationBindingByAdmin](docs/sdks/user/README.md#setexpiringuserdelegationbindingbyadmin) - Set Expiring User Delegation Binding By Admin
 
+### [UserNotificationSettings](docs/sdks/usernotificationsettings/README.md)
+
+* [Get](docs/sdks/usernotificationsettings/README.md#get) - Get
+* [Update](docs/sdks/usernotificationsettings/README.md#update) - Update
+
 ### [UserSearch](docs/sdks/usersearch/README.md)
 
 * [Search](docs/sdks/usersearch/README.md#search) - Search
@@ -521,6 +588,22 @@ func main() {
 ### [WebhooksSearch](docs/sdks/webhookssearch/README.md)
 
 * [Search](docs/sdks/webhookssearch/README.md#search) - Search
+
+### [WorkloadFederation](docs/sdks/workloadfederation/README.md)
+
+* [CreateProvider](docs/sdks/workloadfederation/README.md#createprovider) - Create Provider
+* [CreateTrust](docs/sdks/workloadfederation/README.md#createtrust) - Create Trust
+* [DeleteProvider](docs/sdks/workloadfederation/README.md#deleteprovider) - Delete Provider
+* [DeleteTrust](docs/sdks/workloadfederation/README.md#deletetrust) - Delete Trust
+* [GetProvider](docs/sdks/workloadfederation/README.md#getprovider) - Get Provider
+* [GetTrust](docs/sdks/workloadfederation/README.md#gettrust) - Get Trust
+* [ListProviders](docs/sdks/workloadfederation/README.md#listproviders) - List Providers
+* [ListTrusts](docs/sdks/workloadfederation/README.md#listtrusts) - List Trusts
+* [SearchTrusts](docs/sdks/workloadfederation/README.md#searchtrusts) - Search Trusts
+* [TestCEL](docs/sdks/workloadfederation/README.md#testcel) - Test Cel
+* [TestToken](docs/sdks/workloadfederation/README.md#testtoken) - Test Token
+* [UpdateProvider](docs/sdks/workloadfederation/README.md#updateprovider) - Update Provider
+* [UpdateTrust](docs/sdks/workloadfederation/README.md#updatetrust) - Update Trust
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -692,6 +775,7 @@ package main
 import (
 	"context"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
 	"log"
@@ -708,7 +792,9 @@ func main() {
 		}),
 	)
 
-	res, err := s.AccessReview.Create(ctx, nil, operations.WithRetries(
+	res, err := s.A2UI.CreateSurfaceFeedback(ctx, operations.C1APIA2uiV1A2UIServiceCreateSurfaceFeedbackRequest{
+		SurfaceID: "<id>",
+	}, operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
 			Backoff: &retry.BackoffStrategy{
@@ -722,7 +808,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.AccessReviewServiceCreateResponse != nil {
+	if res.A2UIServiceCreateSurfaceFeedbackResponse != nil {
 		// handle response
 	}
 }
@@ -736,6 +822,7 @@ package main
 import (
 	"context"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
 	"log"
@@ -762,11 +849,13 @@ func main() {
 		}),
 	)
 
-	res, err := s.AccessReview.Create(ctx, nil)
+	res, err := s.A2UI.CreateSurfaceFeedback(ctx, operations.C1APIA2uiV1A2UIServiceCreateSurfaceFeedbackRequest{
+		SurfaceID: "<id>",
+	})
 	if err != nil {
 		log.Fatal(err)
 	}
-	if res.AccessReviewServiceCreateResponse != nil {
+	if res.A2UIServiceCreateSurfaceFeedbackResponse != nil {
 		// handle response
 	}
 }

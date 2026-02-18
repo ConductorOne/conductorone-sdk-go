@@ -10,7 +10,7 @@
 
 ListEvents pulls Events from the ConductorOne system.
 
- This endpoint should be used to synchorize the
+ This endpoint should be used to synchronize the
  system log events to external systems.
 
 ### Example Usage
