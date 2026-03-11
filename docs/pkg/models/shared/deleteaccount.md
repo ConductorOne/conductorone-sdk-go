@@ -7,4 +7,4 @@ The DeleteAccount message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ConnectorID`          | **string*              | :heavy_minus_sign:     | The connectorId field. |
+| `ConnectorID`          | `*string`              | :heavy_minus_sign:     | The connectorId field. |

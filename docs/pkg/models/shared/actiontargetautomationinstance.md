@@ -7,4 +7,4 @@ The ActionTargetAutomationInstance message.
 
 | Field                            | Type                             | Required                         | Description                      |
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `AutomationExecutionID`          | **string*                        | :heavy_minus_sign:               | The automationExecutionId field. |
+| `AutomationExecutionID`          | `*string`                        | :heavy_minus_sign:               | The automationExecutionId field. |

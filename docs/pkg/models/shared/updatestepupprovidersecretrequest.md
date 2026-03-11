@@ -7,4 +7,4 @@ The UpdateStepUpProviderSecretRequest message.
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `ClientSecret`          | **string*               | :heavy_minus_sign:      | The clientSecret field. |
+| `ClientSecret`          | `*string`               | :heavy_minus_sign:      | The clientSecret field. |

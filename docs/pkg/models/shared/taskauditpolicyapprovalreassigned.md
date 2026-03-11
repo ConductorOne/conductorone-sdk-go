@@ -7,7 +7,7 @@ The TaskAuditPolicyApprovalReassigned message.
 
 | Field                                               | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `NewPolicyStepID`                                   | **string*                                           | :heavy_minus_sign:                                  | The newPolicyStepId field.                          |
-| `NewUsers`                                          | []*string*                                          | :heavy_minus_sign:                                  | The newUsers field.                                 |
-| `OldPolicyStepID`                                   | **string*                                           | :heavy_minus_sign:                                  | The oldPolicyStepId field.                          |
+| `NewPolicyStepID`                                   | `*string`                                           | :heavy_minus_sign:                                  | The newPolicyStepId field.                          |
+| `NewUsers`                                          | []`string`                                          | :heavy_minus_sign:                                  | The newUsers field.                                 |
+| `OldPolicyStepID`                                   | `*string`                                           | :heavy_minus_sign:                                  | The oldPolicyStepId field.                          |
 | `Users`                                             | [][shared.User](../../../pkg/models/shared/user.md) | :heavy_minus_sign:                                  | The users field.                                    |

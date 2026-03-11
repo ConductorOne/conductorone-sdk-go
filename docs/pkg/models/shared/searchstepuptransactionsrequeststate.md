@@ -2,6 +2,19 @@
 
 Filter by transaction state
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.SearchStepUpTransactionsRequestStateStepUpTransactionStateUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.SearchStepUpTransactionsRequestState("custom_value")
+```
+
 
 ## Values
 

@@ -8,4 +8,4 @@ The denied action indicates that the c1.api.policy.v1.ApprovalInstance had an ou
 | Field                                      | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
 | `DeniedAt`                                 | [*time.Time](https://pkg.go.dev/time#Time) | :heavy_minus_sign:                         | N/A                                        |
-| `UserID`                                   | **string*                                  | :heavy_minus_sign:                         | The UserID that denied this step.          |
+| `UserID`                                   | `*string`                                  | :heavy_minus_sign:                         | The UserID that denied this step.          |

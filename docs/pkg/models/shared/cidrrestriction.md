@@ -7,5 +7,5 @@ The CIDRRestriction message.
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `Enabled`             | **bool*               | :heavy_minus_sign:    | The enabled field.    |
-| `SourceCidr`          | []*string*            | :heavy_minus_sign:    | The sourceCidr field. |
+| `Enabled`             | `*bool`               | :heavy_minus_sign:    | The enabled field.    |
+| `SourceCidr`          | []`string`            | :heavy_minus_sign:    | The sourceCidr field. |

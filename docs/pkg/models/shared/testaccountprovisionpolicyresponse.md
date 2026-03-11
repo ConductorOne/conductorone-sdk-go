@@ -7,5 +7,5 @@ The TestAccountProvisionPolicyResponse message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Type`             | **string*          | :heavy_minus_sign: | The type field.    |
-| `Value`            | **string*          | :heavy_minus_sign: | The value field.   |
+| `Type`             | `*string`          | :heavy_minus_sign: | The type field.    |
+| `Value`            | `*string`          | :heavy_minus_sign: | The value field.   |

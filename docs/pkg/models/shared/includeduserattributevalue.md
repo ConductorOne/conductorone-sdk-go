@@ -7,4 +7,4 @@ The IncludedUserAttributeValue message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Value`            | **string*          | :heavy_minus_sign: | The value field.   |
+| `Value`            | `*string`          | :heavy_minus_sign: | The value field.   |

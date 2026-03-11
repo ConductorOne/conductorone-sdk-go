@@ -12,7 +12,7 @@ Invokes the c1.api.automations.v1.AutomationExecutionSearchService.SearchAutomat
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationExecutionSearchService.SearchAutomationExecutions" method="post" path="/api/v1/automation_executions/search" -->
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationExecutionSearchService.SearchAutomationExecutions" method="post" path="/api/v1/search/automation_executions" -->
 ```go
 package main
 

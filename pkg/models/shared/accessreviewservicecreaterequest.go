@@ -14,6 +14,7 @@ const (
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeUnspecified       AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED"
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByEntitlements    AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS"
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByAccessConflicts AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS"
+	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByResource        AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE"
 )
 
 func (e AccessReviewServiceCreateRequestScopeType) ToPointer() *AccessReviewServiceCreateRequestScopeType {
@@ -24,7 +25,7 @@ func (e AccessReviewServiceCreateRequestScopeType) ToPointer() *AccessReviewServ
 func (e *AccessReviewServiceCreateRequestScopeType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS":
+		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE":
 			return true
 		}
 	}
@@ -35,6 +36,42 @@ func (e *AccessReviewServiceCreateRequestScopeType) IsExact() bool {
 type AccessReviewServiceCreateRequest struct {
 	// The AccessReviewExpandMask message.
 	AccessReviewExpandMask *AccessReviewExpandMask `json:"expandMask,omitempty"`
+	// The AccessReviewScopeV2 message.
+	//
+	// This message contains a oneof named apps_and_resources_scope. Only a single field of the following list may be set at a time:
+	//   - appAccess
+	//   - specificResources
+	//   - appSelectionCriteria
+	//   - resourceTypeSelections
+	//
+	//
+	// This message contains a oneof named users_scope. Only a single field of the following list may be set at a time:
+	//   - allUsers
+	//   - selectedUsers
+	//   - userCriteria
+	//   - celExpression
+	//
+	//
+	// This message contains a oneof named accounts_scope. Only a single field of the following list may be set at a time:
+	//   - allAccounts
+	//   - accountCriteria
+	//   - accountCelExpression
+	//
+	//
+	// This message contains a oneof named grants_scope. Only a single field of the following list may be set at a time:
+	//   - allGrants
+	//   - grantsByCriteria
+	//
+	//
+	// This message contains a oneof named access_conflicts_scope. Only a single field of the following list may be set at a time:
+	//   - allAccessConflicts
+	//   - specificAccessConflicts
+	//
+	//
+	// This message contains a oneof named resource_scope. Only a single field of the following list may be set at a time:
+	//   - resourceSelection
+	//
+	AccessReviewScopeV2 *AccessReviewScopeV2 `json:"scopeV2,omitempty"`
 	// The NotificationConfig message.
 	NotificationConfig *NotificationConfig `json:"notificationConfig,omitempty"`
 	CompletionDate     *time.Time          `json:"completionDate,omitempty"`
@@ -68,6 +105,13 @@ func (a *AccessReviewServiceCreateRequest) GetAccessReviewExpandMask() *AccessRe
 		return nil
 	}
 	return a.AccessReviewExpandMask
+}
+
+func (a *AccessReviewServiceCreateRequest) GetAccessReviewScopeV2() *AccessReviewScopeV2 {
+	if a == nil {
+		return nil
+	}
+	return a.AccessReviewScopeV2
 }
 
 func (a *AccessReviewServiceCreateRequest) GetNotificationConfig() *NotificationConfig {

@@ -7,4 +7,4 @@ The TaskAuditWaitForAnalysisStepWaiting message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `StepID`           | **string*          | :heavy_minus_sign: | The stepId field.  |
+| `StepID`           | `*string`          | :heavy_minus_sign: | The stepId field.  |

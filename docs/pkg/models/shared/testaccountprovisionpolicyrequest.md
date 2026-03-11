@@ -7,4 +7,4 @@ The TestAccountProvisionPolicyRequest message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Cel`              | **string*          | :heavy_minus_sign: | The cel field.     |
+| `Cel`              | `*string`          | :heavy_minus_sign: | The cel field.     |

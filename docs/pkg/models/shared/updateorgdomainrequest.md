@@ -7,4 +7,4 @@ The UpdateOrgDomainRequest message.
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `NewDomains`          | []*string*            | :heavy_minus_sign:    | The newDomains field. |
+| `NewDomains`          | []`string`            | :heavy_minus_sign:    | The newDomains field. |

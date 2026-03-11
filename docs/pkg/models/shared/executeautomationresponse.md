@@ -7,4 +7,4 @@ The ExecuteAutomationResponse message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ExecutionID`          | **int64*               | :heavy_minus_sign:     | The executionId field. |
+| `ExecutionID`          | `*int64`               | :heavy_minus_sign:     | The executionId field. |

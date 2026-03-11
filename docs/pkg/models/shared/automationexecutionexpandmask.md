@@ -7,4 +7,4 @@ The AutomationExecutionExpandMask message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Paths`            | []*string*         | :heavy_minus_sign: | The paths field.   |
+| `Paths`            | []`string`         | :heavy_minus_sign: | The paths field.   |

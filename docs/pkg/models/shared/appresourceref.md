@@ -7,6 +7,6 @@ The AppResourceRef message.
 
 | Field                        | Type                         | Required                     | Description                  |
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `AppID`                      | **string*                    | :heavy_minus_sign:           | The appId field.             |
-| `AppResourceTypeID`          | **string*                    | :heavy_minus_sign:           | The appResourceTypeId field. |
-| `ID`                         | **string*                    | :heavy_minus_sign:           | The id field.                |
+| `AppID`                      | `*string`                    | :heavy_minus_sign:           | The appId field.             |
+| `AppResourceTypeID`          | `*string`                    | :heavy_minus_sign:           | The appResourceTypeId field. |
+| `ID`                         | `*string`                    | :heavy_minus_sign:           | The id field.                |

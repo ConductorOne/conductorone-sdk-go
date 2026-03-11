@@ -7,4 +7,4 @@ The WebhookSourceProvisionStep message.
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `TicketID`          | **string*           | :heavy_minus_sign:  | The ticketId field. |
+| `TicketID`          | `*string`           | :heavy_minus_sign:  | The ticketId field. |

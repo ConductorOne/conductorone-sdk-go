@@ -7,4 +7,4 @@ The TextField message.
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `Multiline`          | **bool*              | :heavy_minus_sign:   | The multiline field. |
+| `Multiline`          | `*bool`              | :heavy_minus_sign:   | The multiline field. |

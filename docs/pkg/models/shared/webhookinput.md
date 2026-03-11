@@ -7,7 +7,8 @@ The Webhook message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `Description`          | **string*              | :heavy_minus_sign:     | The description field. |
-| `DisplayName`          | **string*              | :heavy_minus_sign:     | The displayName field. |
-| `ID`                   | **string*              | :heavy_minus_sign:     | The id field.          |
-| `URL`                  | **string*              | :heavy_minus_sign:     | The url field.         |
+| `CallbackTimeout`      | `*string`              | :heavy_minus_sign:     | N/A                    |
+| `Description`          | `*string`              | :heavy_minus_sign:     | The description field. |
+| `DisplayName`          | `*string`              | :heavy_minus_sign:     | The displayName field. |
+| `ID`                   | `*string`              | :heavy_minus_sign:     | The id field.          |
+| `URL`                  | `*string`              | :heavy_minus_sign:     | The url field.         |

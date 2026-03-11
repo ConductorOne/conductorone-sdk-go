@@ -7,4 +7,4 @@ The TaskAuditViewRef message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ID`               | **string*          | :heavy_minus_sign: | The id field.      |
+| `ID`               | `*string`          | :heavy_minus_sign: | The id field.      |
