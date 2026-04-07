@@ -245,7 +245,7 @@ func (s *PersonalClient) Create(ctx context.Context, request *shared.PersonalCli
 
 // Delete
 // Invokes the c1.api.iam.v1.PersonalClientService.Delete method.
-func (s *PersonalClient) Delete(ctx context.Context, request operations.C1APIIamV1PersonalClientServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceDeleteResponse, error) {
+func (s *PersonalClient) Delete(ctx context.Context, request *operations.C1APIIamV1PersonalClientServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *PersonalClient) Delete(ctx context.Context, request operations.C1APIIam
 
 // Get
 // Invokes the c1.api.iam.v1.PersonalClientService.Get method.
-func (s *PersonalClient) Get(ctx context.Context, request operations.C1APIIamV1PersonalClientServiceGetRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceGetResponse, error) {
+func (s *PersonalClient) Get(ctx context.Context, request *operations.C1APIIamV1PersonalClientServiceGetRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -867,7 +867,7 @@ func (s *PersonalClient) List(ctx context.Context, opts ...operations.Option) (*
 
 // Update
 // Invokes the c1.api.iam.v1.PersonalClientService.Update method.
-func (s *PersonalClient) Update(ctx context.Context, request operations.C1APIIamV1PersonalClientServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceUpdateResponse, error) {
+func (s *PersonalClient) Update(ctx context.Context, request *operations.C1APIIamV1PersonalClientServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

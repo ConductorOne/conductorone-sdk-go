@@ -245,7 +245,7 @@ func (s *Export) Create(ctx context.Context, request *shared.ExportServiceCreate
 
 // Delete
 // Delete a policy by ID.
-func (s *Export) Delete(ctx context.Context, request operations.C1APISystemlogV1ExportServiceDeleteRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceDeleteResponse, error) {
+func (s *Export) Delete(ctx context.Context, request *operations.C1APISystemlogV1ExportServiceDeleteRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Export) Delete(ctx context.Context, request operations.C1APISystemlogV1
 
 // Get
 // Get a system log export by ID
-func (s *Export) Get(ctx context.Context, request operations.C1APISystemlogV1ExportServiceGetRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceGetResponse, error) {
+func (s *Export) Get(ctx context.Context, request *operations.C1APISystemlogV1ExportServiceGetRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Export) Get(ctx context.Context, request operations.C1APISystemlogV1Exp
 
 // List
 // List Exports.
-func (s *Export) List(ctx context.Context, request operations.C1APISystemlogV1ExportServiceListRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceListResponse, error) {
+func (s *Export) List(ctx context.Context, request *operations.C1APISystemlogV1ExportServiceListRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *Export) List(ctx context.Context, request operations.C1APISystemlogV1Ex
 
 // ListEvents - List Events
 // Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
-func (s *Export) ListEvents(ctx context.Context, request operations.C1APISystemlogV1ExportServiceListEventsRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceListEventsResponse, error) {
+func (s *Export) ListEvents(ctx context.Context, request *operations.C1APISystemlogV1ExportServiceListEventsRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceListEventsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1083,7 +1083,7 @@ func (s *Export) ListEvents(ctx context.Context, request operations.C1APISysteml
 
 // Update
 // Update a system log export by providing a policy object and an update mask.
-func (s *Export) Update(ctx context.Context, request operations.C1APISystemlogV1ExportServiceUpdateRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceUpdateResponse, error) {
+func (s *Export) Update(ctx context.Context, request *operations.C1APISystemlogV1ExportServiceUpdateRequest, opts ...operations.Option) (*operations.C1APISystemlogV1ExportServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -32,7 +32,7 @@ func newAppEntitlementOwners(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfi
 
 // Add
 // Add an owner to a given app entitlement.
-func (s *AppEntitlementOwners) Add(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersAddResponse, error) {
+func (s *AppEntitlementOwners) Add(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersAddResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppEntitlementOwners) Add(ctx context.Context, request operations.C1API
 
 // Delete
 // Delete deletes the owners from a given app entitlement.
-func (s *AppEntitlementOwners) Delete(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersDeleteResponse, error) {
+func (s *AppEntitlementOwners) Delete(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppEntitlementOwners) Delete(ctx context.Context, request operations.C1
 
 // List
 // List owners for a given app entitlement.
-func (s *AppEntitlementOwners) List(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersListResponse, error) {
+func (s *AppEntitlementOwners) List(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -665,7 +665,7 @@ func (s *AppEntitlementOwners) List(ctx context.Context, request operations.C1AP
 
 // ListOwnerIDs - List Owner I Ds
 // ListUserIDs lists owner IDs for a given app entitlement.
-func (s *AppEntitlementOwners) ListOwnerIDs(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersListOwnerIDsResponse, error) {
+func (s *AppEntitlementOwners) ListOwnerIDs(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersListOwnerIDsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -870,7 +870,7 @@ func (s *AppEntitlementOwners) ListOwnerIDs(ctx context.Context, request operati
 
 // Remove
 // Remove an owner from a given app entitlement.
-func (s *AppEntitlementOwners) Remove(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersRemoveResponse, error) {
+func (s *AppEntitlementOwners) Remove(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersRemoveResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1082,7 +1082,7 @@ func (s *AppEntitlementOwners) Remove(ctx context.Context, request operations.C1
 
 // Set
 // Sets the owners for a given app entitlement to the specified list of users.
-func (s *AppEntitlementOwners) Set(ctx context.Context, request operations.C1APIAppV1AppEntitlementOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersSetResponse, error) {
+func (s *AppEntitlementOwners) Set(ctx context.Context, request *operations.C1APIAppV1AppEntitlementOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementOwnersSetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

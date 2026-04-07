@@ -32,7 +32,7 @@ func newAppResourceType(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigurat
 
 // CreateManuallyManagedResourceType - Create Manually Managed Resource Type
 // Invokes the c1.api.app.v1.AppResourceTypeService.CreateManuallyManagedResourceType method.
-func (s *AppResourceType) CreateManuallyManagedResourceType(ctx context.Context, request operations.C1APIAppV1AppResourceTypeServiceCreateManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceCreateManuallyManagedResourceTypeResponse, error) {
+func (s *AppResourceType) CreateManuallyManagedResourceType(ctx context.Context, request *operations.C1APIAppV1AppResourceTypeServiceCreateManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceCreateManuallyManagedResourceTypeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppResourceType) CreateManuallyManagedResourceType(ctx context.Context,
 
 // DeleteManuallyManagedResourceType - Delete Manually Managed Resource Type
 // Invokes the c1.api.app.v1.AppResourceTypeService.DeleteManuallyManagedResourceType method.
-func (s *AppResourceType) DeleteManuallyManagedResourceType(ctx context.Context, request operations.C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeResponse, error) {
+func (s *AppResourceType) DeleteManuallyManagedResourceType(ctx context.Context, request *operations.C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceDeleteManuallyManagedResourceTypeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppResourceType) DeleteManuallyManagedResourceType(ctx context.Context,
 
 // Get
 // Get an app resource type.
-func (s *AppResourceType) Get(ctx context.Context, request operations.C1APIAppV1AppResourceTypeServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceGetResponse, error) {
+func (s *AppResourceType) Get(ctx context.Context, request *operations.C1APIAppV1AppResourceTypeServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -661,7 +661,7 @@ func (s *AppResourceType) Get(ctx context.Context, request operations.C1APIAppV1
 
 // List
 // List app resource types.
-func (s *AppResourceType) List(ctx context.Context, request operations.C1APIAppV1AppResourceTypeServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceListResponse, error) {
+func (s *AppResourceType) List(ctx context.Context, request *operations.C1APIAppV1AppResourceTypeServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -870,7 +870,7 @@ func (s *AppResourceType) List(ctx context.Context, request operations.C1APIAppV
 
 // UpdateManuallyManagedResourceType - Update Manually Managed Resource Type
 // Invokes the c1.api.app.v1.AppResourceTypeService.UpdateManuallyManagedResourceType method.
-func (s *AppResourceType) UpdateManuallyManagedResourceType(ctx context.Context, request operations.C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeResponse, error) {
+func (s *AppResourceType) UpdateManuallyManagedResourceType(ctx context.Context, request *operations.C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceTypeServiceUpdateManuallyManagedResourceTypeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -669,7 +669,7 @@ func (s *Task) CreateRevokeTask(ctx context.Context, request *shared.TaskService
 
 // Get
 // Get a task by ID
-func (s *Task) Get(ctx context.Context, request operations.C1APITaskV1TaskServiceGetRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskServiceGetResponse, error) {
+func (s *Task) Get(ctx context.Context, request *operations.C1APITaskV1TaskServiceGetRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

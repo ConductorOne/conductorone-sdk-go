@@ -457,7 +457,7 @@ func (s *RequestSchema) CreateEntitlementBinding(ctx context.Context, request *s
 
 // Delete
 // Invokes the c1.api.request_schema.v1.RequestSchemaService.Delete method.
-func (s *RequestSchema) Delete(ctx context.Context, request operations.C1APIRequestSchemaV1RequestSchemaServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceDeleteResponse, error) {
+func (s *RequestSchema) Delete(ctx context.Context, request *operations.C1APIRequestSchemaV1RequestSchemaServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -881,7 +881,7 @@ func (s *RequestSchema) FindBindingForAppEntitlement(ctx context.Context, reques
 
 // Get
 // Invokes the c1.api.request_schema.v1.RequestSchemaService.Get method.
-func (s *RequestSchema) Get(ctx context.Context, request operations.C1APIRequestSchemaV1RequestSchemaServiceGetRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceGetResponse, error) {
+func (s *RequestSchema) Get(ctx context.Context, request *operations.C1APIRequestSchemaV1RequestSchemaServiceGetRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1298,7 +1298,7 @@ func (s *RequestSchema) RemoveEntitlementBinding(ctx context.Context, request *s
 
 // Update
 // Invokes the c1.api.request_schema.v1.RequestSchemaService.Update method.
-func (s *RequestSchema) Update(ctx context.Context, request operations.C1APIRequestSchemaV1RequestSchemaServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceUpdateResponse, error) {
+func (s *RequestSchema) Update(ctx context.Context, request *operations.C1APIRequestSchemaV1RequestSchemaServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIRequestSchemaV1RequestSchemaServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

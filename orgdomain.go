@@ -33,7 +33,7 @@ func newOrgDomain(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 
 // List
 // Invokes the c1.api.settings.v1.OrgDomainService.List method.
-func (s *OrgDomain) List(ctx context.Context, request operations.C1APISettingsV1OrgDomainServiceListRequest, opts ...operations.Option) (*operations.C1APISettingsV1OrgDomainServiceListResponse, error) {
+func (s *OrgDomain) List(ctx context.Context, request *operations.C1APISettingsV1OrgDomainServiceListRequest, opts ...operations.Option) (*operations.C1APISettingsV1OrgDomainServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

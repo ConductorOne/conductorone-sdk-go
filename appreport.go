@@ -32,7 +32,7 @@ func newAppReport(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 
 // List
 // Get a list of reports for the given app.
-func (s *AppReport) List(ctx context.Context, request operations.C1APIAppV1AppReportServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppReportServiceListResponse, error) {
+func (s *AppReport) List(ctx context.Context, request *operations.C1APIAppV1AppReportServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppReportServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

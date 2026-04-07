@@ -245,7 +245,7 @@ func (s *StepUpProvider) Create(ctx context.Context, request *shared.CreateStepU
 
 // Delete
 // Invokes the c1.api.stepup.v1.StepUpProviderService.Delete method.
-func (s *StepUpProvider) Delete(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceDeleteResponse, error) {
+func (s *StepUpProvider) Delete(ctx context.Context, request *operations.C1APIStepupV1StepUpProviderServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *StepUpProvider) Delete(ctx context.Context, request operations.C1APISte
 
 // Get
 // Invokes the c1.api.stepup.v1.StepUpProviderService.Get method.
-func (s *StepUpProvider) Get(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceGetRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceGetResponse, error) {
+func (s *StepUpProvider) Get(ctx context.Context, request *operations.C1APIStepupV1StepUpProviderServiceGetRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1079,7 +1079,7 @@ func (s *StepUpProvider) Search(ctx context.Context, request *shared.SearchStepU
 
 // Test
 // Invokes the c1.api.stepup.v1.StepUpProviderService.Test method.
-func (s *StepUpProvider) Test(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceTestRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceTestResponse, error) {
+func (s *StepUpProvider) Test(ctx context.Context, request *operations.C1APIStepupV1StepUpProviderServiceTestRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceTestResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1291,7 +1291,7 @@ func (s *StepUpProvider) Test(ctx context.Context, request operations.C1APIStepu
 
 // Update
 // Invokes the c1.api.stepup.v1.StepUpProviderService.Update method.
-func (s *StepUpProvider) Update(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceUpdateResponse, error) {
+func (s *StepUpProvider) Update(ctx context.Context, request *operations.C1APIStepupV1StepUpProviderServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1503,7 +1503,7 @@ func (s *StepUpProvider) Update(ctx context.Context, request operations.C1APISte
 
 // UpdateSecret - Update Secret
 // Invokes the c1.api.stepup.v1.StepUpProviderService.UpdateSecret method.
-func (s *StepUpProvider) UpdateSecret(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceUpdateSecretRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceUpdateSecretResponse, error) {
+func (s *StepUpProvider) UpdateSecret(ctx context.Context, request *operations.C1APIStepupV1StepUpProviderServiceUpdateSecretRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceUpdateSecretResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -33,7 +33,7 @@ func newAppEntitlementUserBinding(rootSDK *ConductoroneAPI, sdkConfig config.SDK
 
 // ListAppUsersForIdentityWithGrant - List App Users For Identity With Grant
 // Returns a list of app users for the identity in the app. If that app user also has a grant to the entitlement from the request, data about the grant is also returned. It will always return ALL app users for this identity, but only SOME may have grant data.
-func (s *AppEntitlementUserBinding) ListAppUsersForIdentityWithGrant(ctx context.Context, request operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse, error) {
+func (s *AppEntitlementUserBinding) ListAppUsersForIdentityWithGrant(ctx context.Context, request *operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceListAppUsersForIdentityWithGrantResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -238,7 +238,7 @@ func (s *AppEntitlementUserBinding) ListAppUsersForIdentityWithGrant(ctx context
 
 // RemoveGrantDuration - Remove Grant Duration
 // Invokes the c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration method.
-func (s *AppEntitlementUserBinding) RemoveGrantDuration(ctx context.Context, request operations.C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationResponse, error) {
+func (s *AppEntitlementUserBinding) RemoveGrantDuration(ctx context.Context, request *operations.C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceRemoveGrantDurationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -874,7 +874,7 @@ func (s *AppEntitlementUserBinding) SearchPastGrants(ctx context.Context, reques
 
 // UpdateGrantDuration - Update Grant Duration
 // Invokes the c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration method.
-func (s *AppEntitlementUserBinding) UpdateGrantDuration(ctx context.Context, request operations.C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationResponse, error) {
+func (s *AppEntitlementUserBinding) UpdateGrantDuration(ctx context.Context, request *operations.C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementUserBindingServiceUpdateGrantDurationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

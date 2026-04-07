@@ -32,7 +32,7 @@ func newFunctionsInvocation(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfig
 
 // Get
 // Get retrieves a specific invocation by ID
-func (s *FunctionsInvocation) Get(ctx context.Context, request operations.C1APIFunctionsV1FunctionsInvocationServiceGetRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsInvocationServiceGetResponse, error) {
+func (s *FunctionsInvocation) Get(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsInvocationServiceGetRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsInvocationServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -237,7 +237,7 @@ func (s *FunctionsInvocation) Get(ctx context.Context, request operations.C1APIF
 
 // List
 // List retrieves the invocation history for a function
-func (s *FunctionsInvocation) List(ctx context.Context, request operations.C1APIFunctionsV1FunctionsInvocationServiceListRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsInvocationServiceListResponse, error) {
+func (s *FunctionsInvocation) List(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsInvocationServiceListRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsInvocationServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

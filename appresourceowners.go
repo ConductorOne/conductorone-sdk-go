@@ -32,7 +32,7 @@ func newAppResourceOwners(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigur
 
 // Add
 // Invokes the c1.api.app.v1.AppResourceOwners.Add method.
-func (s *AppResourceOwners) Add(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersAddResponse, error) {
+func (s *AppResourceOwners) Add(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersAddResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppResourceOwners) Add(ctx context.Context, request operations.C1APIApp
 
 // Delete
 // Delete deletes the owners from a given app resource.
-func (s *AppResourceOwners) Delete(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersDeleteResponse, error) {
+func (s *AppResourceOwners) Delete(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppResourceOwners) Delete(ctx context.Context, request operations.C1API
 
 // List
 // List all owners of an app resource.
-func (s *AppResourceOwners) List(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersListResponse, error) {
+func (s *AppResourceOwners) List(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -665,7 +665,7 @@ func (s *AppResourceOwners) List(ctx context.Context, request operations.C1APIAp
 
 // ListOwnerIDs - List Owner I Ds
 // ListOwnerIDs lists owner IDs for a given app resource.
-func (s *AppResourceOwners) ListOwnerIDs(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse, error) {
+func (s *AppResourceOwners) ListOwnerIDs(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersListOwnerIDsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -870,7 +870,7 @@ func (s *AppResourceOwners) ListOwnerIDs(ctx context.Context, request operations
 
 // Remove
 // Invokes the c1.api.app.v1.AppResourceOwners.Remove method.
-func (s *AppResourceOwners) Remove(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersRemoveResponse, error) {
+func (s *AppResourceOwners) Remove(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersRemoveResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1082,7 +1082,7 @@ func (s *AppResourceOwners) Remove(ctx context.Context, request operations.C1API
 
 // Set
 // Sets the owners for a given app resource to the specified list of users.
-func (s *AppResourceOwners) Set(ctx context.Context, request operations.C1APIAppV1AppResourceOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersSetResponse, error) {
+func (s *AppResourceOwners) Set(ctx context.Context, request *operations.C1APIAppV1AppResourceOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceOwnersSetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -245,7 +245,7 @@ func (s *AccessReview) Create(ctx context.Context, request *shared.AccessReviewS
 
 // Delete
 // Invokes the c1.api.accessreview.v1.AccessReviewService.Delete method.
-func (s *AccessReview) Delete(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceDeleteResponse, error) {
+func (s *AccessReview) Delete(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *AccessReview) Delete(ctx context.Context, request operations.C1APIAcces
 
 // Get
 // Invokes the c1.api.accessreview.v1.AccessReviewService.Get method.
-func (s *AccessReview) Get(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewServiceGetRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceGetResponse, error) {
+func (s *AccessReview) Get(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewServiceGetRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *AccessReview) Get(ctx context.Context, request operations.C1APIAccessre
 
 // List
 // Invokes the c1.api.accessreview.v1.AccessReviewService.List method.
-func (s *AccessReview) List(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewServiceListRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceListResponse, error) {
+func (s *AccessReview) List(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewServiceListRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *AccessReview) List(ctx context.Context, request operations.C1APIAccessr
 
 // Update
 // Invokes the c1.api.accessreview.v1.AccessReviewService.Update method.
-func (s *AccessReview) Update(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceUpdateResponse, error) {
+func (s *AccessReview) Update(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

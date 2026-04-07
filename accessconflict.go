@@ -245,7 +245,7 @@ func (s *AccessConflict) CreateMonitor(ctx context.Context, request *shared.Conf
 
 // DeleteMonitor - Delete Monitor
 // Invokes the c1.api.accessconflict.v1.AccessConflictService.DeleteMonitor method.
-func (s *AccessConflict) DeleteMonitor(ctx context.Context, request operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorResponse, error) {
+func (s *AccessConflict) DeleteMonitor(ctx context.Context, request *operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceDeleteMonitorResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *AccessConflict) DeleteMonitor(ctx context.Context, request operations.C
 
 // GetMonitor - Get Monitor
 // Invokes the c1.api.accessconflict.v1.AccessConflictService.GetMonitor method.
-func (s *AccessConflict) GetMonitor(ctx context.Context, request operations.C1APIAccessconflictV1AccessConflictServiceGetMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceGetMonitorResponse, error) {
+func (s *AccessConflict) GetMonitor(ctx context.Context, request *operations.C1APIAccessconflictV1AccessConflictServiceGetMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceGetMonitorResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *AccessConflict) GetMonitor(ctx context.Context, request operations.C1AP
 
 // UpdateMonitor - Update Monitor
 // Invokes the c1.api.accessconflict.v1.AccessConflictService.UpdateMonitor method.
-func (s *AccessConflict) UpdateMonitor(ctx context.Context, request operations.C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceUpdateMonitorResponse, error) {
+func (s *AccessConflict) UpdateMonitor(ctx context.Context, request *operations.C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequest, opts ...operations.Option) (*operations.C1APIAccessconflictV1AccessConflictServiceUpdateMonitorResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

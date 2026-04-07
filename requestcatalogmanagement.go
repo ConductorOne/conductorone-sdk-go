@@ -33,7 +33,7 @@ func newRequestCatalogManagement(rootSDK *ConductoroneAPI, sdkConfig config.SDKC
 
 // AddAccessEntitlements - Add Access Entitlements
 // Add visibility bindings (access entitlements) to a catalog.
-func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse, error) {
+func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAccessEntitlementsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -245,7 +245,7 @@ func (s *RequestCatalogManagement) AddAccessEntitlements(ctx context.Context, re
 
 // AddAppEntitlements - Add App Entitlements
 // Add requestable entitlements to a catalog.
-func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse, error) {
+func (s *RequestCatalogManagement) AddAppEntitlements(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceAddAppEntitlementsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -669,7 +669,7 @@ func (s *RequestCatalogManagement) Create(ctx context.Context, request *shared.R
 
 // CreateBundleAutomation - Create Bundle Automation
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation method.
-func (s *RequestCatalogManagement) CreateBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) CreateBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -881,7 +881,7 @@ func (s *RequestCatalogManagement) CreateBundleAutomation(ctx context.Context, r
 
 // CreateRequestableEntry - Create Requestable Entry
 // Create a single requestable entry
-func (s *RequestCatalogManagement) CreateRequestableEntry(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryResponse, error) {
+func (s *RequestCatalogManagement) CreateRequestableEntry(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceCreateRequestableEntryResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1093,7 +1093,7 @@ func (s *RequestCatalogManagement) CreateRequestableEntry(ctx context.Context, r
 
 // Delete
 // Delete a catalog.
-func (s *RequestCatalogManagement) Delete(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse, error) {
+func (s *RequestCatalogManagement) Delete(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1305,7 +1305,7 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 
 // DeleteBundleAutomation - Delete Bundle Automation
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation method.
-func (s *RequestCatalogManagement) DeleteBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) DeleteBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1517,7 +1517,7 @@ func (s *RequestCatalogManagement) DeleteBundleAutomation(ctx context.Context, r
 
 // DeleteRequestableEntry - Delete Requestable Entry
 // Delete a single requestable entry
-func (s *RequestCatalogManagement) DeleteRequestableEntry(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryResponse, error) {
+func (s *RequestCatalogManagement) DeleteRequestableEntry(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteRequestableEntryResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1729,7 +1729,7 @@ func (s *RequestCatalogManagement) DeleteRequestableEntry(ctx context.Context, r
 
 // ForceRunBundleAutomation - Force Run Bundle Automation
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation method.
-func (s *RequestCatalogManagement) ForceRunBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) ForceRunBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceForceRunBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1941,7 +1941,7 @@ func (s *RequestCatalogManagement) ForceRunBundleAutomation(ctx context.Context,
 
 // Get
 // Get a catalog.
-func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse, error) {
+func (s *RequestCatalogManagement) Get(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2146,7 +2146,7 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 
 // GetBundleAutomation - Get Bundle Automation
 // Get bundle automation
-func (s *RequestCatalogManagement) GetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) GetBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2351,7 +2351,7 @@ func (s *RequestCatalogManagement) GetBundleAutomation(ctx context.Context, requ
 
 // GetRequestableEntry - Get Requestable Entry
 // Get a single requestable entry
-func (s *RequestCatalogManagement) GetRequestableEntry(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryResponse, error) {
+func (s *RequestCatalogManagement) GetRequestableEntry(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetRequestableEntryResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2556,7 +2556,7 @@ func (s *RequestCatalogManagement) GetRequestableEntry(ctx context.Context, requ
 
 // List
 // Get a list of request catalogs.
-func (s *RequestCatalogManagement) List(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse, error) {
+func (s *RequestCatalogManagement) List(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2765,7 +2765,7 @@ func (s *RequestCatalogManagement) List(ctx context.Context, request operations.
 
 // ListAllEntitlementIdsPerApp - List All Entitlement Ids Per App
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEntitlementIdsPerApp method.
-func (s *RequestCatalogManagement) ListAllEntitlementIdsPerApp(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppResponse, error) {
+func (s *RequestCatalogManagement) ListAllEntitlementIdsPerApp(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListAllEntitlementIdsPerAppResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2970,7 +2970,7 @@ func (s *RequestCatalogManagement) ListAllEntitlementIdsPerApp(ctx context.Conte
 
 // ListEntitlementsForAccess - List Entitlements For Access
 // List visibility bindings (access entitlements) for a catalog.
-func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse, error) {
+func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsForAccessResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3179,7 +3179,7 @@ func (s *RequestCatalogManagement) ListEntitlementsForAccess(ctx context.Context
 
 // ListEntitlementsPerCatalog - List Entitlements Per Catalog
 // List entitlements in a catalog that are requestable.
-func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse, error) {
+func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3388,7 +3388,7 @@ func (s *RequestCatalogManagement) ListEntitlementsPerCatalog(ctx context.Contex
 
 // RemoveAccessEntitlements - Remove Access Entitlements
 // Remove visibility bindings (access entitlements) to a catalog.
-func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse, error) {
+func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAccessEntitlementsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3600,7 +3600,7 @@ func (s *RequestCatalogManagement) RemoveAccessEntitlements(ctx context.Context,
 
 // RemoveAppEntitlements - Remove App Entitlements
 // Remove requestable entitlements from a catalog.
-func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse, error) {
+func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceRemoveAppEntitlementsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3812,7 +3812,7 @@ func (s *RequestCatalogManagement) RemoveAppEntitlements(ctx context.Context, re
 
 // ResumePausedBundleAutomation - Resume Paused Bundle Automation
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePausedBundleAutomation method.
-func (s *RequestCatalogManagement) ResumePausedBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) ResumePausedBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -4024,7 +4024,7 @@ func (s *RequestCatalogManagement) ResumePausedBundleAutomation(ctx context.Cont
 
 // SetBundleAutomation - Set Bundle Automation
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation method.
-func (s *RequestCatalogManagement) SetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse, error) {
+func (s *RequestCatalogManagement) SetBundleAutomation(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -4236,7 +4236,7 @@ func (s *RequestCatalogManagement) SetBundleAutomation(ctx context.Context, requ
 
 // Update
 // Update a catalog.
-func (s *RequestCatalogManagement) Update(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse, error) {
+func (s *RequestCatalogManagement) Update(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -4448,7 +4448,7 @@ func (s *RequestCatalogManagement) Update(ctx context.Context, request operation
 
 // UpdateAppEntitlements - Update App Entitlements
 // Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEntitlements method.
-func (s *RequestCatalogManagement) UpdateAppEntitlements(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsResponse, error) {
+func (s *RequestCatalogManagement) UpdateAppEntitlements(ctx context.Context, request *operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceUpdateAppEntitlementsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -669,7 +669,7 @@ func (s *Attributes) CreateRiskLevelAttributeValue(ctx context.Context, request 
 
 // DeleteAttributeValue - Delete Attribute Value
 // Delete an attribute value by id.
-func (s *Attributes) DeleteAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse, error) {
+func (s *Attributes) DeleteAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesDeleteAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -881,7 +881,7 @@ func (s *Attributes) DeleteAttributeValue(ctx context.Context, request operation
 
 // DeleteComplianceFrameworkAttributeValue - Delete Compliance Framework Attribute Value
 // Delete an attribute value by id.
-func (s *Attributes) DeleteComplianceFrameworkAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueResponse, error) {
+func (s *Attributes) DeleteComplianceFrameworkAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteComplianceFrameworkAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1093,7 +1093,7 @@ func (s *Attributes) DeleteComplianceFrameworkAttributeValue(ctx context.Context
 
 // DeleteRiskLevelAttributeValue - Delete Risk Level Attribute Value
 // Delete a risk level attribute value by id.
-func (s *Attributes) DeleteRiskLevelAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueResponse, error) {
+func (s *Attributes) DeleteRiskLevelAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesDeleteRiskLevelAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1305,7 +1305,7 @@ func (s *Attributes) DeleteRiskLevelAttributeValue(ctx context.Context, request 
 
 // GetAttributeValue - Get Attribute Value
 // Get an attribute value by id.
-func (s *Attributes) GetAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesGetAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetAttributeValueResponse, error) {
+func (s *Attributes) GetAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesGetAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1510,7 +1510,7 @@ func (s *Attributes) GetAttributeValue(ctx context.Context, request operations.C
 
 // GetComplianceFrameworkAttributeValue - Get Compliance Framework Attribute Value
 // Get an attribute value by id.
-func (s *Attributes) GetComplianceFrameworkAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesGetComplianceFrameworkAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetComplianceFrameworkAttributeValueResponse, error) {
+func (s *Attributes) GetComplianceFrameworkAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesGetComplianceFrameworkAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetComplianceFrameworkAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1715,7 +1715,7 @@ func (s *Attributes) GetComplianceFrameworkAttributeValue(ctx context.Context, r
 
 // GetRiskLevelAttributeValue - Get Risk Level Attribute Value
 // Get a risk level attribute value by id.
-func (s *Attributes) GetRiskLevelAttributeValue(ctx context.Context, request operations.C1APIAttributeV1AttributesGetRiskLevelAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetRiskLevelAttributeValueResponse, error) {
+func (s *Attributes) GetRiskLevelAttributeValue(ctx context.Context, request *operations.C1APIAttributeV1AttributesGetRiskLevelAttributeValueRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesGetRiskLevelAttributeValueResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1920,7 +1920,7 @@ func (s *Attributes) GetRiskLevelAttributeValue(ctx context.Context, request ope
 
 // ListAttributeTypes - List Attribute Types
 // List all attribute types.
-func (s *Attributes) ListAttributeTypes(ctx context.Context, request operations.C1APIAttributeV1AttributesListAttributeTypesRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListAttributeTypesResponse, error) {
+func (s *Attributes) ListAttributeTypes(ctx context.Context, request *operations.C1APIAttributeV1AttributesListAttributeTypesRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListAttributeTypesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2129,7 +2129,7 @@ func (s *Attributes) ListAttributeTypes(ctx context.Context, request operations.
 
 // ListAttributeValues - List Attribute Values
 // List all attribute values for a given attribute type.
-func (s *Attributes) ListAttributeValues(ctx context.Context, request operations.C1APIAttributeV1AttributesListAttributeValuesRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListAttributeValuesResponse, error) {
+func (s *Attributes) ListAttributeValues(ctx context.Context, request *operations.C1APIAttributeV1AttributesListAttributeValuesRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListAttributeValuesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2338,7 +2338,7 @@ func (s *Attributes) ListAttributeValues(ctx context.Context, request operations
 
 // ListComplianceFrameworks - List Compliance Frameworks
 // Invokes the c1.api.attribute.v1.Attributes.ListComplianceFrameworks method.
-func (s *Attributes) ListComplianceFrameworks(ctx context.Context, request operations.C1APIAttributeV1AttributesListComplianceFrameworksRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListComplianceFrameworksResponse, error) {
+func (s *Attributes) ListComplianceFrameworks(ctx context.Context, request *operations.C1APIAttributeV1AttributesListComplianceFrameworksRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListComplianceFrameworksResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2547,7 +2547,7 @@ func (s *Attributes) ListComplianceFrameworks(ctx context.Context, request opera
 
 // ListRiskLevels - List Risk Levels
 // Invokes the c1.api.attribute.v1.Attributes.ListRiskLevels method.
-func (s *Attributes) ListRiskLevels(ctx context.Context, request operations.C1APIAttributeV1AttributesListRiskLevelsRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListRiskLevelsResponse, error) {
+func (s *Attributes) ListRiskLevels(ctx context.Context, request *operations.C1APIAttributeV1AttributesListRiskLevelsRequest, opts ...operations.Option) (*operations.C1APIAttributeV1AttributesListRiskLevelsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

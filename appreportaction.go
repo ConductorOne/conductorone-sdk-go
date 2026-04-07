@@ -32,7 +32,7 @@ func newAppReportAction(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigurat
 
 // GenerateReport - Generate Report
 // Generate a report for the given app.
-func (s *AppReportAction) GenerateReport(ctx context.Context, request operations.C1APIAppV1AppReportActionServiceGenerateReportRequest, opts ...operations.Option) (*operations.C1APIAppV1AppReportActionServiceGenerateReportResponse, error) {
+func (s *AppReportAction) GenerateReport(ctx context.Context, request *operations.C1APIAppV1AppReportActionServiceGenerateReportRequest, opts ...operations.Option) (*operations.C1APIAppV1AppReportActionServiceGenerateReportResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

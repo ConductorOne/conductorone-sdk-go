@@ -33,7 +33,7 @@ func newUser(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, hooks 
 
 // Get
 // Get a user by ID.
-func (s *User) Get(ctx context.Context, request operations.C1APIUserV1UserServiceGetRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceGetResponse, error) {
+func (s *User) Get(ctx context.Context, request *operations.C1APIUserV1UserServiceGetRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -238,7 +238,7 @@ func (s *User) Get(ctx context.Context, request operations.C1APIUserV1UserServic
 
 // GetUserProfileTypes - Get User Profile Types
 // Invokes the c1.api.user.v1.UserService.GetUserProfileTypes method.
-func (s *User) GetUserProfileTypes(ctx context.Context, request operations.C1APIUserV1UserServiceGetUserProfileTypesRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceGetUserProfileTypesResponse, error) {
+func (s *User) GetUserProfileTypes(ctx context.Context, request *operations.C1APIUserV1UserServiceGetUserProfileTypesRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceGetUserProfileTypesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -443,7 +443,7 @@ func (s *User) GetUserProfileTypes(ctx context.Context, request operations.C1API
 
 // List
 // List users.
-func (s *User) List(ctx context.Context, request operations.C1APIUserV1UserServiceListRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceListResponse, error) {
+func (s *User) List(ctx context.Context, request *operations.C1APIUserV1UserServiceListRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -652,7 +652,7 @@ func (s *User) List(ctx context.Context, request operations.C1APIUserV1UserServi
 
 // SetExpiringUserDelegationBindingByAdmin - Set Expiring User Delegation Binding By Admin
 // Invokes the c1.api.user.v1.UserService.SetExpiringUserDelegationBindingByAdmin method.
-func (s *User) SetExpiringUserDelegationBindingByAdmin(ctx context.Context, request operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminResponse, error) {
+func (s *User) SetExpiringUserDelegationBindingByAdmin(ctx context.Context, request *operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminRequest, opts ...operations.Option) (*operations.C1APIUserV1UserServiceSetExpiringUserDelegationBindingByAdminResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

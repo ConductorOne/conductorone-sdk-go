@@ -33,7 +33,7 @@ func newRoles(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, hooks
 
 // Get
 // Get a role by id.
-func (s *Roles) Get(ctx context.Context, request operations.C1APIIamV1RolesGetRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesGetResponse, error) {
+func (s *Roles) Get(ctx context.Context, request *operations.C1APIIamV1RolesGetRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -238,7 +238,7 @@ func (s *Roles) Get(ctx context.Context, request operations.C1APIIamV1RolesGetRe
 
 // List
 // List all roles for the current user.
-func (s *Roles) List(ctx context.Context, request operations.C1APIIamV1RolesListRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesListResponse, error) {
+func (s *Roles) List(ctx context.Context, request *operations.C1APIIamV1RolesListRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -447,7 +447,7 @@ func (s *Roles) List(ctx context.Context, request operations.C1APIIamV1RolesList
 
 // Update
 // Update a role by passing a Role object.
-func (s *Roles) Update(ctx context.Context, request operations.C1APIIamV1RolesUpdateRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesUpdateResponse, error) {
+func (s *Roles) Update(ctx context.Context, request *operations.C1APIIamV1RolesUpdateRequest, opts ...operations.Option) (*operations.C1APIIamV1RolesUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

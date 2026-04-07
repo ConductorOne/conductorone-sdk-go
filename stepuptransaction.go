@@ -33,7 +33,7 @@ func newStepUpTransaction(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigur
 
 // Get
 // Get retrieves a specific step-up transaction by ID
-func (s *StepUpTransaction) Get(ctx context.Context, request operations.C1APIStepupV1StepUpTransactionServiceGetRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpTransactionServiceGetResponse, error) {
+func (s *StepUpTransaction) Get(ctx context.Context, request *operations.C1APIStepupV1StepUpTransactionServiceGetRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpTransactionServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
