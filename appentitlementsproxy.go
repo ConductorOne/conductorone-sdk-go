@@ -32,7 +32,7 @@ func newAppEntitlementsProxy(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfi
 
 // Create
 // Invokes the c1.api.app.v1.AppEntitlementsProxy.Create method.
-func (s *AppEntitlementsProxy) Create(ctx context.Context, request operations.C1APIAppV1AppEntitlementsProxyCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyCreateResponse, error) {
+func (s *AppEntitlementsProxy) Create(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsProxyCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyCreateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppEntitlementsProxy) Create(ctx context.Context, request operations.C1
 
 // Delete
 // Invokes the c1.api.app.v1.AppEntitlementsProxy.Delete method.
-func (s *AppEntitlementsProxy) Delete(ctx context.Context, request operations.C1APIAppV1AppEntitlementsProxyDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyDeleteResponse, error) {
+func (s *AppEntitlementsProxy) Delete(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsProxyDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppEntitlementsProxy) Delete(ctx context.Context, request operations.C1
 
 // Get
 // Invokes the c1.api.app.v1.AppEntitlementsProxy.Get method.
-func (s *AppEntitlementsProxy) Get(ctx context.Context, request operations.C1APIAppV1AppEntitlementsProxyGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyGetResponse, error) {
+func (s *AppEntitlementsProxy) Get(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsProxyGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsProxyGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

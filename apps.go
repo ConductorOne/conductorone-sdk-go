@@ -245,7 +245,7 @@ func (s *Apps) Create(ctx context.Context, request *shared.CreateAppRequest, opt
 
 // Delete
 // Delete an app.
-func (s *Apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsDeleteResponse, error) {
+func (s *Apps) Delete(ctx context.Context, request *operations.C1APIAppV1AppsDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Apps) Delete(ctx context.Context, request operations.C1APIAppV1AppsDele
 
 // Get
 // Get an app by ID.
-func (s *Apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsGetResponse, error) {
+func (s *Apps) Get(ctx context.Context, request *operations.C1APIAppV1AppsGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Apps) Get(ctx context.Context, request operations.C1APIAppV1AppsGetRequ
 
 // List
 // List all apps.
-func (s *Apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsListResponse, error) {
+func (s *Apps) List(ctx context.Context, request *operations.C1APIAppV1AppsListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *Apps) List(ctx context.Context, request operations.C1APIAppV1AppsListRe
 
 // Update
 // Update an existing app.
-func (s *Apps) Update(ctx context.Context, request operations.C1APIAppV1AppsUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsUpdateResponse, error) {
+func (s *Apps) Update(ctx context.Context, request *operations.C1APIAppV1AppsUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppsUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

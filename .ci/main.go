@@ -20,7 +20,7 @@ func main() {
 
 // Get
 func getTest(ctx context.Context, client *c1.ConductoroneAPI, taskId string) (*shared.TaskServiceGetResponse, error) {
-	resp, err := client.Task.Get(ctx, operations.C1APITaskV1TaskServiceGetRequest{ID: taskId})
+	resp, err := client.Task.Get(ctx, &operations.C1APITaskV1TaskServiceGetRequest{ID: taskId})
 	if err != nil {
 		return nil, err
 	}
@@ -40,7 +40,7 @@ func createTest(ctx context.Context, client *c1.ConductoroneAPI, request *shared
 
 // Update
 func updateTest(ctx context.Context, client *c1.ConductoroneAPI, taskId string, comment string, policyId string) (*shared.TaskActionsServiceApproveResponse, error) {
-	resp, err := client.TaskActions.Approve(ctx, operations.C1APITaskV1TaskActionsServiceApproveRequest{
+	resp, err := client.TaskActions.Approve(ctx, &operations.C1APITaskV1TaskActionsServiceApproveRequest{
 		TaskActionsServiceApproveRequest: &shared.TaskActionsServiceApproveRequest{
 			Comment:      &comment,
 			PolicyStepID: policyId,

@@ -32,7 +32,7 @@ func newAppOwners(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 
 // Add
 // Adds an owner to an app.
-func (s *AppOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersAddResponse, error) {
+func (s *AppOwners) Add(ctx context.Context, request *operations.C1APIAppV1AppOwnersAddRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersAddResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppOwners) Add(ctx context.Context, request operations.C1APIAppV1AppOwn
 
 // Delete
 // Delete deletes the owners from a given app.
-func (s *AppOwners) Delete(ctx context.Context, request operations.C1APIAppV1AppOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersDeleteResponse, error) {
+func (s *AppOwners) Delete(ctx context.Context, request *operations.C1APIAppV1AppOwnersDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppOwners) Delete(ctx context.Context, request operations.C1APIAppV1App
 
 // List
 // List owners of an app.
-func (s *AppOwners) List(ctx context.Context, request operations.C1APIAppV1AppOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersListResponse, error) {
+func (s *AppOwners) List(ctx context.Context, request *operations.C1APIAppV1AppOwnersListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -665,7 +665,7 @@ func (s *AppOwners) List(ctx context.Context, request operations.C1APIAppV1AppOw
 
 // ListOwnerIDs - List Owner I Ds
 // ListOwnerIDs lists owner IDs for a given app.
-func (s *AppOwners) ListOwnerIDs(ctx context.Context, request operations.C1APIAppV1AppOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersListOwnerIDsResponse, error) {
+func (s *AppOwners) ListOwnerIDs(ctx context.Context, request *operations.C1APIAppV1AppOwnersListOwnerIDsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersListOwnerIDsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -870,7 +870,7 @@ func (s *AppOwners) ListOwnerIDs(ctx context.Context, request operations.C1APIAp
 
 // Remove
 // Removes an owner from an app.
-func (s *AppOwners) Remove(ctx context.Context, request operations.C1APIAppV1AppOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersRemoveResponse, error) {
+func (s *AppOwners) Remove(ctx context.Context, request *operations.C1APIAppV1AppOwnersRemoveRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersRemoveResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1082,7 +1082,7 @@ func (s *AppOwners) Remove(ctx context.Context, request operations.C1APIAppV1App
 
 // Set
 // Sets the owners for a given app to the specified list of users.
-func (s *AppOwners) Set(ctx context.Context, request operations.C1APIAppV1AppOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersSetResponse, error) {
+func (s *AppOwners) Set(ctx context.Context, request *operations.C1APIAppV1AppOwnersSetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppOwnersSetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

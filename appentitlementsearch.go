@@ -318,7 +318,7 @@ func (s *AppEntitlementSearch) Search(ctx context.Context, request *shared.AppEn
 
 // SearchAppEntitlementsForAppUser - Search App Entitlements For App User
 // Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser method.
-func (s *AppEntitlementSearch) SearchAppEntitlementsForAppUser(ctx context.Context, request operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsForAppUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsForAppUserResponse, error) {
+func (s *AppEntitlementSearch) SearchAppEntitlementsForAppUser(ctx context.Context, request *operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsForAppUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsForAppUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -527,7 +527,7 @@ func (s *AppEntitlementSearch) SearchAppEntitlementsForAppUser(ctx context.Conte
 
 // SearchAppEntitlementsWithExpired - Search App Entitlements With Expired
 // Search app entitlements, include app users, users, expires, discovered.
-func (s *AppEntitlementSearch) SearchAppEntitlementsWithExpired(ctx context.Context, request operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsWithExpiredRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsWithExpiredResponse, error) {
+func (s *AppEntitlementSearch) SearchAppEntitlementsWithExpired(ctx context.Context, request *operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsWithExpiredRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementSearchServiceSearchAppEntitlementsWithExpiredResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

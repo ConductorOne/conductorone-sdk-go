@@ -245,7 +245,7 @@ func (s *Automation) CreateAutomation(ctx context.Context, request *shared.Creat
 
 // DeleteAutomation - Delete Automation
 // Invokes the c1.api.automations.v1.AutomationService.DeleteAutomation method.
-func (s *Automation) DeleteAutomation(ctx context.Context, request operations.C1APIAutomationsV1AutomationServiceDeleteAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceDeleteAutomationResponse, error) {
+func (s *Automation) DeleteAutomation(ctx context.Context, request *operations.C1APIAutomationsV1AutomationServiceDeleteAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceDeleteAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Automation) DeleteAutomation(ctx context.Context, request operations.C1
 
 // ExecuteAutomation - Execute Automation
 // Invokes the c1.api.automations.v1.AutomationService.ExecuteAutomation method.
-func (s *Automation) ExecuteAutomation(ctx context.Context, request operations.C1APIAutomationsV1AutomationServiceExecuteAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceExecuteAutomationResponse, error) {
+func (s *Automation) ExecuteAutomation(ctx context.Context, request *operations.C1APIAutomationsV1AutomationServiceExecuteAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceExecuteAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -669,7 +669,7 @@ func (s *Automation) ExecuteAutomation(ctx context.Context, request operations.C
 
 // GetAutomation - Get Automation
 // Invokes the c1.api.automations.v1.AutomationService.GetAutomation method.
-func (s *Automation) GetAutomation(ctx context.Context, request operations.C1APIAutomationsV1AutomationServiceGetAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceGetAutomationResponse, error) {
+func (s *Automation) GetAutomation(ctx context.Context, request *operations.C1APIAutomationsV1AutomationServiceGetAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceGetAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1079,7 +1079,7 @@ func (s *Automation) ListAutomations(ctx context.Context, opts ...operations.Opt
 
 // UpdateAutomation - Update Automation
 // Invokes the c1.api.automations.v1.AutomationService.UpdateAutomation method.
-func (s *Automation) UpdateAutomation(ctx context.Context, request operations.C1APIAutomationsV1AutomationServiceUpdateAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceUpdateAutomationResponse, error) {
+func (s *Automation) UpdateAutomation(ctx context.Context, request *operations.C1APIAutomationsV1AutomationServiceUpdateAutomationRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationServiceUpdateAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

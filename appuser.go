@@ -33,7 +33,7 @@ func newAppUser(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, hoo
 
 // List
 // Invokes the c1.api.app.v1.AppUserService.List method.
-func (s *AppUser) List(ctx context.Context, request operations.C1APIAppV1AppUserServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListResponse, error) {
+func (s *AppUser) List(ctx context.Context, request *operations.C1APIAppV1AppUserServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -242,7 +242,7 @@ func (s *AppUser) List(ctx context.Context, request operations.C1APIAppV1AppUser
 
 // ListAppUserCredentials - List App User Credentials
 // Invokes the c1.api.app.v1.AppUserService.ListAppUserCredentials method.
-func (s *AppUser) ListAppUserCredentials(ctx context.Context, request operations.C1APIAppV1AppUserServiceListAppUserCredentialsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListAppUserCredentialsResponse, error) {
+func (s *AppUser) ListAppUserCredentials(ctx context.Context, request *operations.C1APIAppV1AppUserServiceListAppUserCredentialsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListAppUserCredentialsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -451,7 +451,7 @@ func (s *AppUser) ListAppUserCredentials(ctx context.Context, request operations
 
 // ListAppUsersForUser - List App Users For User
 // Invokes the c1.api.app.v1.AppUserService.ListAppUsersForUser method.
-func (s *AppUser) ListAppUsersForUser(ctx context.Context, request operations.C1APIAppV1AppUserServiceListAppUsersForUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListAppUsersForUserResponse, error) {
+func (s *AppUser) ListAppUsersForUser(ctx context.Context, request *operations.C1APIAppV1AppUserServiceListAppUsersForUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceListAppUsersForUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -874,7 +874,7 @@ func (s *AppUser) Search(ctx context.Context, request *shared.AppUserServiceSear
 // Update an app user by ID. Only the fields specified in the update mask are updated.
 //
 //	Currently, only the appUserType, and identityUserId fields can be updated.
-func (s *AppUser) Update(ctx context.Context, request operations.C1APIAppV1AppUserServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceUpdateResponse, error) {
+func (s *AppUser) Update(ctx context.Context, request *operations.C1APIAppV1AppUserServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

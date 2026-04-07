@@ -245,7 +245,7 @@ func (s *Webhooks) Create(ctx context.Context, request *shared.WebhooksServiceCr
 
 // Delete
 // Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
-func (s *Webhooks) Delete(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceDeleteResponse, error) {
+func (s *Webhooks) Delete(ctx context.Context, request *operations.C1APIWebhooksV1WebhooksServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Webhooks) Delete(ctx context.Context, request operations.C1APIWebhooksV
 
 // Get
 // Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
-func (s *Webhooks) Get(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceGetRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceGetResponse, error) {
+func (s *Webhooks) Get(ctx context.Context, request *operations.C1APIWebhooksV1WebhooksServiceGetRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Webhooks) Get(ctx context.Context, request operations.C1APIWebhooksV1We
 
 // List
 // Invokes the c1.api.webhooks.v1.WebhooksService.List method.
-func (s *Webhooks) List(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceListRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceListResponse, error) {
+func (s *Webhooks) List(ctx context.Context, request *operations.C1APIWebhooksV1WebhooksServiceListRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *Webhooks) List(ctx context.Context, request operations.C1APIWebhooksV1W
 
 // Test
 // Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
-func (s *Webhooks) Test(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceTestRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceTestResponse, error) {
+func (s *Webhooks) Test(ctx context.Context, request *operations.C1APIWebhooksV1WebhooksServiceTestRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceTestResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1083,7 +1083,7 @@ func (s *Webhooks) Test(ctx context.Context, request operations.C1APIWebhooksV1W
 
 // Update
 // Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
-func (s *Webhooks) Update(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceUpdateResponse, error) {
+func (s *Webhooks) Update(ctx context.Context, request *operations.C1APIWebhooksV1WebhooksServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

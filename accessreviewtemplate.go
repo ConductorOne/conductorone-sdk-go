@@ -245,7 +245,7 @@ func (s *AccessReviewTemplate) Create(ctx context.Context, request *shared.Acces
 
 // Delete
 // Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Delete method.
-func (s *AccessReviewTemplate) Delete(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewTemplateServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceDeleteResponse, error) {
+func (s *AccessReviewTemplate) Delete(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewTemplateServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *AccessReviewTemplate) Delete(ctx context.Context, request operations.C1
 
 // Get
 // Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Get method.
-func (s *AccessReviewTemplate) Get(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewTemplateServiceGetRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceGetResponse, error) {
+func (s *AccessReviewTemplate) Get(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewTemplateServiceGetRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *AccessReviewTemplate) Get(ctx context.Context, request operations.C1API
 
 // Update
 // Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Update method.
-func (s *AccessReviewTemplate) Update(ctx context.Context, request operations.C1APIAccessreviewV1AccessReviewTemplateServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceUpdateResponse, error) {
+func (s *AccessReviewTemplate) Update(ctx context.Context, request *operations.C1APIAccessreviewV1AccessReviewTemplateServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAccessreviewV1AccessReviewTemplateServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

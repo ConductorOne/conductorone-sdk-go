@@ -33,7 +33,7 @@ func newAutomationExecution(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfig
 
 // GetAutomationExecution - Get Automation Execution
 // Invokes the c1.api.automations.v1.AutomationExecutionService.GetAutomationExecution method.
-func (s *AutomationExecution) GetAutomationExecution(ctx context.Context, request operations.C1APIAutomationsV1AutomationExecutionServiceGetAutomationExecutionRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationExecutionServiceGetAutomationExecutionResponse, error) {
+func (s *AutomationExecution) GetAutomationExecution(ctx context.Context, request *operations.C1APIAutomationsV1AutomationExecutionServiceGetAutomationExecutionRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationExecutionServiceGetAutomationExecutionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

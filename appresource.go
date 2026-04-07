@@ -32,7 +32,7 @@ func newAppResource(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration,
 
 // CreateManuallyManagedAppResource - Create Manually Managed App Resource
 // Invokes the c1.api.app.v1.AppResourceService.CreateManuallyManagedAppResource method.
-func (s *AppResource) CreateManuallyManagedAppResource(ctx context.Context, request operations.C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceResponse, error) {
+func (s *AppResource) CreateManuallyManagedAppResource(ctx context.Context, request *operations.C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceCreateManuallyManagedAppResourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppResource) CreateManuallyManagedAppResource(ctx context.Context, requ
 
 // DeleteManuallyManagedAppResource - Delete Manually Managed App Resource
 // Invokes the c1.api.app.v1.AppResourceService.DeleteManuallyManagedAppResource method.
-func (s *AppResource) DeleteManuallyManagedAppResource(ctx context.Context, request operations.C1APIAppV1AppResourceServiceDeleteManuallyManagedAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceDeleteManuallyManagedAppResourceResponse, error) {
+func (s *AppResource) DeleteManuallyManagedAppResource(ctx context.Context, request *operations.C1APIAppV1AppResourceServiceDeleteManuallyManagedAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceDeleteManuallyManagedAppResourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppResource) DeleteManuallyManagedAppResource(ctx context.Context, requ
 
 // Get
 // Invokes the c1.api.app.v1.AppResourceService.Get method.
-func (s *AppResource) Get(ctx context.Context, request operations.C1APIAppV1AppResourceServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceGetResponse, error) {
+func (s *AppResource) Get(ctx context.Context, request *operations.C1APIAppV1AppResourceServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -661,7 +661,7 @@ func (s *AppResource) Get(ctx context.Context, request operations.C1APIAppV1AppR
 
 // List
 // Invokes the c1.api.app.v1.AppResourceService.List method.
-func (s *AppResource) List(ctx context.Context, request operations.C1APIAppV1AppResourceServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceListResponse, error) {
+func (s *AppResource) List(ctx context.Context, request *operations.C1APIAppV1AppResourceServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -870,7 +870,7 @@ func (s *AppResource) List(ctx context.Context, request operations.C1APIAppV1App
 
 // Update
 // Invokes the c1.api.app.v1.AppResourceService.Update method.
-func (s *AppResource) Update(ctx context.Context, request operations.C1APIAppV1AppResourceServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceUpdateResponse, error) {
+func (s *AppResource) Update(ctx context.Context, request *operations.C1APIAppV1AppResourceServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppResourceServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

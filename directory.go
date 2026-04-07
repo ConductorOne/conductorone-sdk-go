@@ -245,7 +245,7 @@ func (s *Directory) Create(ctx context.Context, request *shared.DirectoryService
 
 // Delete
 // Delete a directory by app_id.
-func (s *Directory) Delete(ctx context.Context, request operations.C1APIDirectoryV1DirectoryServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceDeleteResponse, error) {
+func (s *Directory) Delete(ctx context.Context, request *operations.C1APIDirectoryV1DirectoryServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Directory) Delete(ctx context.Context, request operations.C1APIDirector
 
 // Get
 // Get a directory by app_id.
-func (s *Directory) Get(ctx context.Context, request operations.C1APIDirectoryV1DirectoryServiceGetRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceGetResponse, error) {
+func (s *Directory) Get(ctx context.Context, request *operations.C1APIDirectoryV1DirectoryServiceGetRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Directory) Get(ctx context.Context, request operations.C1APIDirectoryV1
 
 // List
 // List directories.
-func (s *Directory) List(ctx context.Context, request operations.C1APIDirectoryV1DirectoryServiceListRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceListResponse, error) {
+func (s *Directory) List(ctx context.Context, request *operations.C1APIDirectoryV1DirectoryServiceListRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *Directory) List(ctx context.Context, request operations.C1APIDirectoryV
 
 // Update
 // Update a directory by app_id.
-func (s *Directory) Update(ctx context.Context, request operations.C1APIDirectoryV1DirectoryServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceUpdateResponse, error) {
+func (s *Directory) Update(ctx context.Context, request *operations.C1APIDirectoryV1DirectoryServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIDirectoryV1DirectoryServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

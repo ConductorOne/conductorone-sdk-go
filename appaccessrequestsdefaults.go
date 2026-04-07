@@ -32,7 +32,7 @@ func newAppAccessRequestsDefaults(rootSDK *ConductoroneAPI, sdkConfig config.SDK
 
 // CancelAppAccessRequestsDefaults - Cancel App Access Requests Defaults
 // Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CancelAppAccessRequestsDefaults method.
-func (s *AppAccessRequestsDefaults) CancelAppAccessRequestsDefaults(ctx context.Context, request operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsResponse, error) {
+func (s *AppAccessRequestsDefaults) CancelAppAccessRequestsDefaults(ctx context.Context, request *operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCancelAppAccessRequestsDefaultsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppAccessRequestsDefaults) CancelAppAccessRequestsDefaults(ctx context.
 
 // CreateAppAccessRequestsDefaults - Create App Access Requests Defaults
 // Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.CreateAppAccessRequestsDefaults method.
-func (s *AppAccessRequestsDefaults) CreateAppAccessRequestsDefaults(ctx context.Context, request operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsResponse, error) {
+func (s *AppAccessRequestsDefaults) CreateAppAccessRequestsDefaults(ctx context.Context, request *operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceCreateAppAccessRequestsDefaultsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppAccessRequestsDefaults) CreateAppAccessRequestsDefaults(ctx context.
 
 // GetAppAccessRequestsDefaults - Get App Access Requests Defaults
 // Invokes the c1.api.app.v1.AppAccessRequestsDefaultsService.GetAppAccessRequestsDefaults method.
-func (s *AppAccessRequestsDefaults) GetAppAccessRequestsDefaults(ctx context.Context, request operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponse, error) {
+func (s *AppAccessRequestsDefaults) GetAppAccessRequestsDefaults(ctx context.Context, request *operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppAccessRequestsDefaultsServiceGetAppAccessRequestsDefaultsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

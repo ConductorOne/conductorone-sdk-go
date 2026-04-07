@@ -245,7 +245,7 @@ func (s *Functions) CreateFunction(ctx context.Context, request *shared.Function
 
 // CreateTag - Create Tag
 // CreateTag creates a named reference to a specific commit
-func (s *Functions) CreateTag(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceCreateTagRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceCreateTagResponse, error) {
+func (s *Functions) CreateTag(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceCreateTagRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceCreateTagResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Functions) CreateTag(ctx context.Context, request operations.C1APIFunct
 
 // DeleteFunction - Delete Function
 // Delete removes a function
-func (s *Functions) DeleteFunction(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceDeleteFunctionRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceDeleteFunctionResponse, error) {
+func (s *Functions) DeleteFunction(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceDeleteFunctionRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceDeleteFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -669,7 +669,7 @@ func (s *Functions) DeleteFunction(ctx context.Context, request operations.C1API
 
 // GetFunction - Get Function
 // Get retrieves a specific function by ID
-func (s *Functions) GetFunction(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceGetFunctionRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceGetFunctionResponse, error) {
+func (s *Functions) GetFunction(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceGetFunctionRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceGetFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -874,7 +874,7 @@ func (s *Functions) GetFunction(ctx context.Context, request operations.C1APIFun
 
 // GetFunctionSecretEncryptionKey - Get Function Secret Encryption Key
 // GetFunctionSecretEncryptionKey retrieves or generates the public key for encrypting function secrets
-func (s *Functions) GetFunctionSecretEncryptionKey(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyResponse, error) {
+func (s *Functions) GetFunctionSecretEncryptionKey(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1079,7 +1079,7 @@ func (s *Functions) GetFunctionSecretEncryptionKey(ctx context.Context, request 
 
 // Invoke
 // Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
-func (s *Functions) Invoke(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceInvokeRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceInvokeResponse, error) {
+func (s *Functions) Invoke(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceInvokeRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceInvokeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1291,7 +1291,7 @@ func (s *Functions) Invoke(ctx context.Context, request operations.C1APIFunction
 
 // ListCommits - List Commits
 // ListCommits retrieves the commit history
-func (s *Functions) ListCommits(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceListCommitsRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListCommitsResponse, error) {
+func (s *Functions) ListCommits(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceListCommitsRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListCommitsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1701,7 +1701,7 @@ func (s *Functions) ListFunctions(ctx context.Context, opts ...operations.Option
 
 // ListTags - List Tags
 // ListTags lists all tags for a function
-func (s *Functions) ListTags(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceListTagsRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListTagsResponse, error) {
+func (s *Functions) ListTags(ctx context.Context, request *operations.C1APIFunctionsV1FunctionsServiceListTagsRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListTagsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

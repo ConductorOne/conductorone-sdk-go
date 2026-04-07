@@ -33,7 +33,7 @@ func newConnector(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 
 // ConfirmSyncValid - Confirm Sync Valid
 // Invokes the c1.api.app.v1.ConnectorService.ConfirmSyncValid method.
-func (s *Connector) ConfirmSyncValid(ctx context.Context, request operations.C1APIAppV1ConnectorServiceConfirmSyncValidRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceConfirmSyncValidResponse, error) {
+func (s *Connector) ConfirmSyncValid(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceConfirmSyncValidRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceConfirmSyncValidResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -245,7 +245,7 @@ func (s *Connector) ConfirmSyncValid(ctx context.Context, request operations.C1A
 
 // Create
 // Create a configured connector.
-func (s *Connector) Create(ctx context.Context, request operations.C1APIAppV1ConnectorServiceCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceCreateResponse, error) {
+func (s *Connector) Create(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceCreateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Connector) Create(ctx context.Context, request operations.C1APIAppV1Con
 
 // CreateDelegated - Create Delegated
 // Create a connector that is pending a connector config.
-func (s *Connector) CreateDelegated(ctx context.Context, request operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse, error) {
+func (s *Connector) CreateDelegated(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceCreateDelegatedRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceCreateDelegatedResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -669,7 +669,7 @@ func (s *Connector) CreateDelegated(ctx context.Context, request operations.C1AP
 
 // Delete
 // Delete a connector.
-func (s *Connector) Delete(ctx context.Context, request operations.C1APIAppV1ConnectorServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceDeleteResponse, error) {
+func (s *Connector) Delete(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -881,7 +881,7 @@ func (s *Connector) Delete(ctx context.Context, request operations.C1APIAppV1Con
 
 // ForceSync - Force Sync
 // Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
-func (s *Connector) ForceSync(ctx context.Context, request operations.C1APIAppV1ConnectorServiceForceSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceForceSyncResponse, error) {
+func (s *Connector) ForceSync(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceForceSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceForceSyncResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1093,7 +1093,7 @@ func (s *Connector) ForceSync(ctx context.Context, request operations.C1APIAppV1
 
 // Get
 // Get a connector.
-func (s *Connector) Get(ctx context.Context, request operations.C1APIAppV1ConnectorServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetResponse, error) {
+func (s *Connector) Get(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1298,7 +1298,7 @@ func (s *Connector) Get(ctx context.Context, request operations.C1APIAppV1Connec
 
 // GetConnectorSyncDownloadURL - Get Connector Sync Download Url
 // GetConnectorSyncDownloadURL generates a short-lived download URL for a completed connector sync artifact.
-func (s *Connector) GetConnectorSyncDownloadURL(ctx context.Context, request operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLResponse, error) {
+func (s *Connector) GetConnectorSyncDownloadURL(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetConnectorSyncDownloadURLResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1503,7 +1503,7 @@ func (s *Connector) GetConnectorSyncDownloadURL(ctx context.Context, request ope
 
 // GetCredentials - Get Credentials
 // Get credentials for a connector.
-func (s *Connector) GetCredentials(ctx context.Context, request operations.C1APIAppV1ConnectorServiceGetCredentialsRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetCredentialsResponse, error) {
+func (s *Connector) GetCredentials(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceGetCredentialsRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceGetCredentialsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1708,7 +1708,7 @@ func (s *Connector) GetCredentials(ctx context.Context, request operations.C1API
 
 // List
 // List connectors for an app.
-func (s *Connector) List(ctx context.Context, request operations.C1APIAppV1ConnectorServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceListResponse, error) {
+func (s *Connector) List(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceListRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1917,7 +1917,7 @@ func (s *Connector) List(ctx context.Context, request operations.C1APIAppV1Conne
 
 // PauseSync - Pause Sync
 // Invokes the c1.api.app.v1.ConnectorService.PauseSync method.
-func (s *Connector) PauseSync(ctx context.Context, request operations.C1APIAppV1ConnectorServicePauseSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServicePauseSyncResponse, error) {
+func (s *Connector) PauseSync(ctx context.Context, request *operations.C1APIAppV1ConnectorServicePauseSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServicePauseSyncResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2129,7 +2129,7 @@ func (s *Connector) PauseSync(ctx context.Context, request operations.C1APIAppV1
 
 // ResumeSync - Resume Sync
 // Invokes the c1.api.app.v1.ConnectorService.ResumeSync method.
-func (s *Connector) ResumeSync(ctx context.Context, request operations.C1APIAppV1ConnectorServiceResumeSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceResumeSyncResponse, error) {
+func (s *Connector) ResumeSync(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceResumeSyncRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceResumeSyncResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2341,7 +2341,7 @@ func (s *Connector) ResumeSync(ctx context.Context, request operations.C1APIAppV
 
 // RevokeCredential - Revoke Credential
 // Revoke credentials for a connector.
-func (s *Connector) RevokeCredential(ctx context.Context, request operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse, error) {
+func (s *Connector) RevokeCredential(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceRevokeCredentialRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceRevokeCredentialResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2765,7 +2765,7 @@ func (s *Connector) RotateCredential(ctx context.Context, request *shared.Connec
 
 // Update
 // Update a connector.
-func (s *Connector) Update(ctx context.Context, request operations.C1APIAppV1ConnectorServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateResponse, error) {
+func (s *Connector) Update(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2977,7 +2977,7 @@ func (s *Connector) Update(ctx context.Context, request operations.C1APIAppV1Con
 
 // UpdateConnectorSchedule - Update Connector Schedule
 // Invokes the c1.api.app.v1.ConnectorService.UpdateConnectorSchedule method.
-func (s *Connector) UpdateConnectorSchedule(ctx context.Context, request operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleResponse, error) {
+func (s *Connector) UpdateConnectorSchedule(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateConnectorScheduleResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3189,7 +3189,7 @@ func (s *Connector) UpdateConnectorSchedule(ctx context.Context, request operati
 
 // UpdateDelegated - Update Delegated
 // Update a delegated connector.
-func (s *Connector) UpdateDelegated(ctx context.Context, request operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse, error) {
+func (s *Connector) UpdateDelegated(ctx context.Context, request *operations.C1APIAppV1ConnectorServiceUpdateDelegatedRequest, opts ...operations.Option) (*operations.C1APIAppV1ConnectorServiceUpdateDelegatedResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

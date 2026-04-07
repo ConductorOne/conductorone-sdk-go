@@ -245,7 +245,7 @@ func (s *Vault) Create(ctx context.Context, request *shared.VaultServiceCreateRe
 
 // Delete
 // Invokes the c1.api.vault.v1.VaultService.Delete method.
-func (s *Vault) Delete(ctx context.Context, request operations.C1APIVaultV1VaultServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceDeleteResponse, error) {
+func (s *Vault) Delete(ctx context.Context, request *operations.C1APIVaultV1VaultServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Vault) Delete(ctx context.Context, request operations.C1APIVaultV1Vault
 
 // Get
 // Invokes the c1.api.vault.v1.VaultService.Get method.
-func (s *Vault) Get(ctx context.Context, request operations.C1APIVaultV1VaultServiceGetRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceGetResponse, error) {
+func (s *Vault) Get(ctx context.Context, request *operations.C1APIVaultV1VaultServiceGetRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Vault) Get(ctx context.Context, request operations.C1APIVaultV1VaultSer
 
 // Update
 // Invokes the c1.api.vault.v1.VaultService.Update method.
-func (s *Vault) Update(ctx context.Context, request operations.C1APIVaultV1VaultServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceUpdateResponse, error) {
+func (s *Vault) Update(ctx context.Context, request *operations.C1APIVaultV1VaultServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIVaultV1VaultServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

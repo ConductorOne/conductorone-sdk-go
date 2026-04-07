@@ -32,7 +32,7 @@ func newTaskActions(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration,
 
 // Approve
 // Invokes the c1.api.task.v1.TaskActionsService.Approve method.
-func (s *TaskActions) Approve(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceApproveRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceApproveResponse, error) {
+func (s *TaskActions) Approve(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceApproveRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceApproveResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *TaskActions) Approve(ctx context.Context, request operations.C1APITaskV
 
 // ApproveWithStepUp - Approve With Step Up
 // Invokes the c1.api.task.v1.TaskActionsService.ApproveWithStepUp method.
-func (s *TaskActions) ApproveWithStepUp(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceApproveWithStepUpRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceApproveWithStepUpResponse, error) {
+func (s *TaskActions) ApproveWithStepUp(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceApproveWithStepUpRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceApproveWithStepUpResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *TaskActions) ApproveWithStepUp(ctx context.Context, request operations.
 
 // Close
 // Invokes the c1.api.task.v1.TaskActionsService.Close method.
-func (s *TaskActions) Close(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceCloseRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceCloseResponse, error) {
+func (s *TaskActions) Close(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceCloseRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceCloseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -668,7 +668,7 @@ func (s *TaskActions) Close(ctx context.Context, request operations.C1APITaskV1T
 
 // Comment
 // Invokes the c1.api.task.v1.TaskActionsService.Comment method.
-func (s *TaskActions) Comment(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceCommentRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceCommentResponse, error) {
+func (s *TaskActions) Comment(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceCommentRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceCommentResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -880,7 +880,7 @@ func (s *TaskActions) Comment(ctx context.Context, request operations.C1APITaskV
 
 // Deny
 // Invokes the c1.api.task.v1.TaskActionsService.Deny method.
-func (s *TaskActions) Deny(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceDenyRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceDenyResponse, error) {
+func (s *TaskActions) Deny(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceDenyRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceDenyResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1092,7 +1092,7 @@ func (s *TaskActions) Deny(ctx context.Context, request operations.C1APITaskV1Ta
 
 // EscalateToEmergencyAccess - Escalate To Emergency Access
 // Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
-func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse, error) {
+func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceEscalateToEmergencyAccessResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1304,7 +1304,7 @@ func (s *TaskActions) EscalateToEmergencyAccess(ctx context.Context, request ope
 
 // HardReset - Hard Reset
 // Invokes the c1.api.task.v1.TaskActionsService.HardReset method.
-func (s *TaskActions) HardReset(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceHardResetRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceHardResetResponse, error) {
+func (s *TaskActions) HardReset(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceHardResetRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceHardResetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1516,7 +1516,7 @@ func (s *TaskActions) HardReset(ctx context.Context, request operations.C1APITas
 
 // ProcessNow - Process Now
 // Invokes the c1.api.task.v1.TaskActionsService.ProcessNow method.
-func (s *TaskActions) ProcessNow(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceProcessNowRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceProcessNowResponse, error) {
+func (s *TaskActions) ProcessNow(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceProcessNowRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceProcessNowResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1728,7 +1728,7 @@ func (s *TaskActions) ProcessNow(ctx context.Context, request operations.C1APITa
 
 // Reassign
 // Invokes the c1.api.task.v1.TaskActionsService.Reassign method.
-func (s *TaskActions) Reassign(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceReassignRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceReassignResponse, error) {
+func (s *TaskActions) Reassign(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceReassignRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceReassignResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1940,7 +1940,7 @@ func (s *TaskActions) Reassign(ctx context.Context, request operations.C1APITask
 
 // Restart
 // Invokes the c1.api.task.v1.TaskActionsService.Restart method.
-func (s *TaskActions) Restart(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceRestartRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceRestartResponse, error) {
+func (s *TaskActions) Restart(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceRestartRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceRestartResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2152,7 +2152,7 @@ func (s *TaskActions) Restart(ctx context.Context, request operations.C1APITaskV
 
 // SkipStep - Skip Step
 // Invokes the c1.api.task.v1.TaskActionsService.SkipStep method.
-func (s *TaskActions) SkipStep(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceSkipStepRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceSkipStepResponse, error) {
+func (s *TaskActions) SkipStep(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceSkipStepRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceSkipStepResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2364,7 +2364,7 @@ func (s *TaskActions) SkipStep(ctx context.Context, request operations.C1APITask
 
 // UpdateGrantDuration - Update Grant Duration
 // Invokes the c1.api.task.v1.TaskActionsService.UpdateGrantDuration method.
-func (s *TaskActions) UpdateGrantDuration(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceUpdateGrantDurationRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceUpdateGrantDurationResponse, error) {
+func (s *TaskActions) UpdateGrantDuration(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceUpdateGrantDurationRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceUpdateGrantDurationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2576,7 +2576,7 @@ func (s *TaskActions) UpdateGrantDuration(ctx context.Context, request operation
 
 // UpdateRequestData - Update Request Data
 // Invokes the c1.api.task.v1.TaskActionsService.UpdateRequestData method.
-func (s *TaskActions) UpdateRequestData(ctx context.Context, request operations.C1APITaskV1TaskActionsServiceUpdateRequestDataRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceUpdateRequestDataResponse, error) {
+func (s *TaskActions) UpdateRequestData(ctx context.Context, request *operations.C1APITaskV1TaskActionsServiceUpdateRequestDataRequest, opts ...operations.Option) (*operations.C1APITaskV1TaskActionsServiceUpdateRequestDataResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

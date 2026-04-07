@@ -32,7 +32,7 @@ func newAppEntitlements(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigurat
 
 // AddAutomationExclusion - Add Automation Exclusion
 // Invokes the c1.api.app.v1.AppEntitlements.AddAutomationExclusion method.
-func (s *AppEntitlements) AddAutomationExclusion(ctx context.Context, request operations.C1APIAppV1AppEntitlementsAddAutomationExclusionRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsAddAutomationExclusionResponse, error) {
+func (s *AppEntitlements) AddAutomationExclusion(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsAddAutomationExclusionRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsAddAutomationExclusionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -244,7 +244,7 @@ func (s *AppEntitlements) AddAutomationExclusion(ctx context.Context, request op
 
 // AddManuallyManagedMembers - Add Manually Managed Members
 // Invokes the c1.api.app.v1.AppEntitlements.AddManuallyManagedMembers method.
-func (s *AppEntitlements) AddManuallyManagedMembers(ctx context.Context, request operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersResponse, error) {
+func (s *AppEntitlements) AddManuallyManagedMembers(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsAddManuallyManagedMembersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -456,7 +456,7 @@ func (s *AppEntitlements) AddManuallyManagedMembers(ctx context.Context, request
 
 // Create
 // Invokes the c1.api.app.v1.AppEntitlements.Create method.
-func (s *AppEntitlements) Create(ctx context.Context, request operations.C1APIAppV1AppEntitlementsCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsCreateResponse, error) {
+func (s *AppEntitlements) Create(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsCreateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsCreateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -668,7 +668,7 @@ func (s *AppEntitlements) Create(ctx context.Context, request operations.C1APIAp
 
 // CreateAutomation - Create Automation
 // Invokes the c1.api.app.v1.AppEntitlements.CreateAutomation method.
-func (s *AppEntitlements) CreateAutomation(ctx context.Context, request operations.C1APIAppV1AppEntitlementsCreateAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsCreateAutomationResponse, error) {
+func (s *AppEntitlements) CreateAutomation(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsCreateAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsCreateAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -880,7 +880,7 @@ func (s *AppEntitlements) CreateAutomation(ctx context.Context, request operatio
 
 // Delete
 // Invokes the c1.api.app.v1.AppEntitlements.Delete method.
-func (s *AppEntitlements) Delete(ctx context.Context, request operations.C1APIAppV1AppEntitlementsDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsDeleteResponse, error) {
+func (s *AppEntitlements) Delete(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1092,7 +1092,7 @@ func (s *AppEntitlements) Delete(ctx context.Context, request operations.C1APIAp
 
 // DeleteAutomation - Delete Automation
 // Invokes the c1.api.app.v1.AppEntitlements.DeleteAutomation method.
-func (s *AppEntitlements) DeleteAutomation(ctx context.Context, request operations.C1APIAppV1AppEntitlementsDeleteAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsDeleteAutomationResponse, error) {
+func (s *AppEntitlements) DeleteAutomation(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsDeleteAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsDeleteAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1304,7 +1304,7 @@ func (s *AppEntitlements) DeleteAutomation(ctx context.Context, request operatio
 
 // Get
 // Get an app entitlement by ID.
-func (s *AppEntitlements) Get(ctx context.Context, request operations.C1APIAppV1AppEntitlementsGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsGetResponse, error) {
+func (s *AppEntitlements) Get(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1509,7 +1509,7 @@ func (s *AppEntitlements) Get(ctx context.Context, request operations.C1APIAppV1
 
 // GetAutomation - Get Automation
 // Invokes the c1.api.app.v1.AppEntitlements.GetAutomation method.
-func (s *AppEntitlements) GetAutomation(ctx context.Context, request operations.C1APIAppV1AppEntitlementsGetAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsGetAutomationResponse, error) {
+func (s *AppEntitlements) GetAutomation(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsGetAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsGetAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1714,7 +1714,7 @@ func (s *AppEntitlements) GetAutomation(ctx context.Context, request operations.
 
 // List
 // List app entitlements associated with an app.
-func (s *AppEntitlements) List(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListResponse, error) {
+func (s *AppEntitlements) List(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsListRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1923,7 +1923,7 @@ func (s *AppEntitlements) List(ctx context.Context, request operations.C1APIAppV
 
 // ListAutomationExclusions - List Automation Exclusions
 // Invokes the c1.api.app.v1.AppEntitlements.ListAutomationExclusions method.
-func (s *AppEntitlements) ListAutomationExclusions(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListAutomationExclusionsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListAutomationExclusionsResponse, error) {
+func (s *AppEntitlements) ListAutomationExclusions(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsListAutomationExclusionsRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListAutomationExclusionsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2128,7 +2128,7 @@ func (s *AppEntitlements) ListAutomationExclusions(ctx context.Context, request 
 
 // ListForAppResource - List For App Resource
 // List app entitlements associated with an app resource.
-func (s *AppEntitlements) ListForAppResource(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListForAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListForAppResourceResponse, error) {
+func (s *AppEntitlements) ListForAppResource(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsListForAppResourceRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListForAppResourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2337,7 +2337,7 @@ func (s *AppEntitlements) ListForAppResource(ctx context.Context, request operat
 
 // ListForAppUser - List For App User
 // List app entitlements associated with an app user.
-func (s *AppEntitlements) ListForAppUser(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListForAppUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListForAppUserResponse, error) {
+func (s *AppEntitlements) ListForAppUser(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsListForAppUserRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListForAppUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2548,7 +2548,7 @@ func (s *AppEntitlements) ListForAppUser(ctx context.Context, request operations
 // List the users, as AppEntitlementUsers objects, of an app entitlement.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *AppEntitlements) ListUsers(ctx context.Context, request operations.C1APIAppV1AppEntitlementsListUsersRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListUsersResponse, error) {
+func (s *AppEntitlements) ListUsers(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsListUsersRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsListUsersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2757,7 +2757,7 @@ func (s *AppEntitlements) ListUsers(ctx context.Context, request operations.C1AP
 
 // RemoveAutomationExclusion - Remove Automation Exclusion
 // Invokes the c1.api.app.v1.AppEntitlements.RemoveAutomationExclusion method.
-func (s *AppEntitlements) RemoveAutomationExclusion(ctx context.Context, request operations.C1APIAppV1AppEntitlementsRemoveAutomationExclusionRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsRemoveAutomationExclusionResponse, error) {
+func (s *AppEntitlements) RemoveAutomationExclusion(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsRemoveAutomationExclusionRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsRemoveAutomationExclusionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2969,7 +2969,7 @@ func (s *AppEntitlements) RemoveAutomationExclusion(ctx context.Context, request
 
 // RemoveEntitlementMembership - Remove Entitlement Membership
 // Invokes the c1.api.app.v1.AppEntitlements.RemoveEntitlementMembership method.
-func (s *AppEntitlements) RemoveEntitlementMembership(ctx context.Context, request operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipResponse, error) {
+func (s *AppEntitlements) RemoveEntitlementMembership(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsRemoveEntitlementMembershipResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3181,7 +3181,7 @@ func (s *AppEntitlements) RemoveEntitlementMembership(ctx context.Context, reque
 
 // Update
 // Update an app entitlement by ID.
-func (s *AppEntitlements) Update(ctx context.Context, request operations.C1APIAppV1AppEntitlementsUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsUpdateResponse, error) {
+func (s *AppEntitlements) Update(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -3393,7 +3393,7 @@ func (s *AppEntitlements) Update(ctx context.Context, request operations.C1APIAp
 
 // UpdateAutomation - Update Automation
 // Invokes the c1.api.app.v1.AppEntitlements.UpdateAutomation method.
-func (s *AppEntitlements) UpdateAutomation(ctx context.Context, request operations.C1APIAppV1AppEntitlementsUpdateAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsUpdateAutomationResponse, error) {
+func (s *AppEntitlements) UpdateAutomation(ctx context.Context, request *operations.C1APIAppV1AppEntitlementsUpdateAutomationRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsUpdateAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -32,7 +32,7 @@ func newAppUsageControls(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfigura
 
 // Get
 // Get usage controls, as an AppUsageControls object which describes some peripheral configuration, for an app.
-func (s *AppUsageControls) Get(ctx context.Context, request operations.C1APIAppV1AppUsageControlsServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUsageControlsServiceGetResponse, error) {
+func (s *AppUsageControls) Get(ctx context.Context, request *operations.C1APIAppV1AppUsageControlsServiceGetRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUsageControlsServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -237,7 +237,7 @@ func (s *AppUsageControls) Get(ctx context.Context, request operations.C1APIAppV
 
 // Update
 // Update usage controls for an app.
-func (s *AppUsageControls) Update(ctx context.Context, request operations.C1APIAppV1AppUsageControlsServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUsageControlsServiceUpdateResponse, error) {
+func (s *AppUsageControls) Update(ctx context.Context, request *operations.C1APIAppV1AppUsageControlsServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUsageControlsServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,

@@ -245,7 +245,7 @@ func (s *Policies) Create(ctx context.Context, request *shared.CreatePolicyReque
 
 // Delete
 // Delete a policy by ID.
-func (s *Policies) Delete(ctx context.Context, request operations.C1APIPolicyV1PoliciesDeleteRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesDeleteResponse, error) {
+func (s *Policies) Delete(ctx context.Context, request *operations.C1APIPolicyV1PoliciesDeleteRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -457,7 +457,7 @@ func (s *Policies) Delete(ctx context.Context, request operations.C1APIPolicyV1P
 
 // Get
 // Get a policy by ID.
-func (s *Policies) Get(ctx context.Context, request operations.C1APIPolicyV1PoliciesGetRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesGetResponse, error) {
+func (s *Policies) Get(ctx context.Context, request *operations.C1APIPolicyV1PoliciesGetRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -662,7 +662,7 @@ func (s *Policies) Get(ctx context.Context, request operations.C1APIPolicyV1Poli
 
 // List
 // List policies.
-func (s *Policies) List(ctx context.Context, request operations.C1APIPolicyV1PoliciesListRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesListResponse, error) {
+func (s *Policies) List(ctx context.Context, request *operations.C1APIPolicyV1PoliciesListRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -871,7 +871,7 @@ func (s *Policies) List(ctx context.Context, request operations.C1APIPolicyV1Pol
 
 // Update
 // Update a policy by providing a policy object and an update mask.
-func (s *Policies) Update(ctx context.Context, request operations.C1APIPolicyV1PoliciesUpdateRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesUpdateResponse, error) {
+func (s *Policies) Update(ctx context.Context, request *operations.C1APIPolicyV1PoliciesUpdateRequest, opts ...operations.Option) (*operations.C1APIPolicyV1PoliciesUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
