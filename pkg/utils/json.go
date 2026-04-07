@@ -499,7 +499,8 @@ func unmarshalValue(value json.RawMessage, v reflect.Value, tag reflect.StructTa
 			return nil
 		}
 	case reflect.Map:
-		if bytes.Equal(value, []byte("null")) || !isComplexValueType(dereferenceTypePointer(typ.Elem())) {
+		elemType := dereferenceTypePointer(typ.Elem())
+		if bytes.Equal(value, []byte("null")) || (!isComplexValueType(elemType) && !isModelType(elemType)) {
 			if v.CanAddr() {
 				return json.Unmarshal(value, v.Addr().Interface())
 			} else {
@@ -523,6 +524,13 @@ func unmarshalValue(value json.RawMessage, v reflect.Value, tag reflect.StructTa
 			}
 
 			m.SetMapIndex(reflect.ValueOf(k), itemVal.Elem())
+		}
+
+		if v.Kind() == reflect.Pointer {
+			if v.IsNil() {
+				v.Set(reflect.New(typ))
+			}
+			v = v.Elem()
 		}
 
 		v.Set(m)
