@@ -1,0 +1,11 @@
+# UpdateOnboardingSettingsRequest
+
+The UpdateOnboardingSettingsRequest message.
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ConversationID`                                                                                                     | `*string`                                                                                                            | :heavy_minus_sign:                                                                                                   | The conversationId field.                                                                                            |
+| `Status`                                                                                                             | [*shared.UpdateOnboardingSettingsRequestStatus](../../../pkg/models/shared/updateonboardingsettingsrequeststatus.md) | :heavy_minus_sign:                                                                                                   | The status field.                                                                                                    |

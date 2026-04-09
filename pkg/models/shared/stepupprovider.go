@@ -13,7 +13,7 @@ import (
 //   - oauth2
 //   - microsoft
 type StepUpProvider struct {
-	// StepUpMicrosoftSettings represents a Microsoft Entra Provider using Conditional Access Policies to enforce step-up authentication.
+	// StepUpMicrosoftSettings configures a Microsoft Entra step-up provider using Conditional Access.
 	StepUpMicrosoftSettings *StepUpMicrosoftSettings `json:"microsoft,omitempty"`
 	// StepUpOAuth2Settings repersents an OAuth2 provider that supports RFC 9470 <https://www.rfc-editor.org/rfc/rfc9470>
 	//

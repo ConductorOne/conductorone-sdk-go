@@ -138,3 +138,6 @@ func (t *TaskAction1) GetUserID() *string {
 	}
 	return t.UserID
 }
+
+// #region class-body-taskaction1
+// #endregion class-body-taskaction1

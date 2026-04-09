@@ -45,3 +45,6 @@ func (c *C1APISystemlogV1ExportsSearchServiceSearchResponse) GetRawResponse() *h
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apisystemlogv1exportssearchservicesearchresponse
+// #endregion class-body-c1apisystemlogv1exportssearchservicesearchresponse

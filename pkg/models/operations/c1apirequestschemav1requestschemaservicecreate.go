@@ -45,3 +45,6 @@ func (c *C1APIRequestSchemaV1RequestSchemaServiceCreateResponse) GetRawResponse(
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apirequestschemav1requestschemaservicecreateresponse
+// #endregion class-body-c1apirequestschemav1requestschemaservicecreateresponse

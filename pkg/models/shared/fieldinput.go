@@ -11,6 +11,7 @@ package shared
 //   - int64Field
 //   - fileField
 //   - oauth2Field
+//   - stringMapField
 //
 // This message contains a oneof named provider_config. Only a single field of the following list may be set at a time:
 //   - userConfig
@@ -75,6 +76,12 @@ type FieldInput struct {
 	//   - rules
 	//
 	StringField *StringField `json:"stringField,omitempty"`
+	// The StringMapField message.
+	//
+	// This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
+	//   - rules
+	//
+	StringMapField *StringMapField `json:"stringMapField,omitempty"`
 	// The StringSliceField message.
 	//
 	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
@@ -94,6 +101,8 @@ type FieldInput struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// The name field.
 	Name *string `json:"name,omitempty"`
+	// The required field.
+	Required *bool `json:"required,omitempty"`
 }
 
 func (f *FieldInput) GetAdminProviderConfig() *AdminProviderConfig {
@@ -145,6 +154,13 @@ func (f *FieldInput) GetStringField() *StringField {
 	return f.StringField
 }
 
+func (f *FieldInput) GetStringMapField() *StringMapField {
+	if f == nil {
+		return nil
+	}
+	return f.StringMapField
+}
+
 func (f *FieldInput) GetStringSliceField() *StringSliceField {
 	if f == nil {
 		return nil
@@ -178,4 +194,11 @@ func (f *FieldInput) GetName() *string {
 		return nil
 	}
 	return f.Name
+}
+
+func (f *FieldInput) GetRequired() *bool {
+	if f == nil {
+		return nil
+	}
+	return f.Required
 }

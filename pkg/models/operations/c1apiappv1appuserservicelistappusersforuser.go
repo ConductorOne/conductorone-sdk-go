@@ -42,6 +42,9 @@ func (c *C1APIAppV1AppUserServiceListAppUsersForUserRequest) GetUserID() string 
 	return c.UserID
 }
 
+// #region class-body-c1apiappv1appuserservicelistappusersforuserrequest
+// #endregion class-body-c1apiappv1appuserservicelistappusersforuserrequest
+
 type C1APIAppV1AppUserServiceListAppUsersForUserResponse struct {
 	// Successful response
 	AppUsersForUserServiceListResponse *shared.AppUsersForUserServiceListResponse
@@ -80,3 +83,6 @@ func (c *C1APIAppV1AppUserServiceListAppUsersForUserResponse) GetRawResponse() *
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appuserservicelistappusersforuserresponse
+// #endregion class-body-c1apiappv1appuserservicelistappusersforuserresponse

@@ -7,4 +7,4 @@ The RunDelayed message.
 
 | Field                         | Type                          | Required                      | Description                   |
 | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
-| `ColdStartDelayDays`          | *int64*                       | :heavy_check_mark:            | The coldStartDelayDays field. |
+| `ColdStartDelayDays`          | `int64`                       | :heavy_check_mark:            | The coldStartDelayDays field. |

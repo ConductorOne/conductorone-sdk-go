@@ -45,3 +45,6 @@ func (c *C1APIAccessconflictV1AccessConflictServiceCreateMonitorResponse) GetRaw
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiaccessconflictv1accessconflictservicecreatemonitorresponse
+// #endregion class-body-c1apiaccessconflictv1accessconflictservicecreatemonitorresponse

@@ -7,4 +7,4 @@ The EditorValidateRequest message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Text`             | **string*          | :heavy_minus_sign: | The text field.    |
+| `Text`             | `*string`          | :heavy_minus_sign: | The text field.    |

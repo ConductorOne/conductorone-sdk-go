@@ -2,12 +2,42 @@
 
 package shared
 
+// RequestSchemaServiceCreateRequestJustificationVisibility - The justificationVisibility field.
+type RequestSchemaServiceCreateRequestJustificationVisibility string
+
+const (
+	RequestSchemaServiceCreateRequestJustificationVisibilityJustificationVisibilityUnspecified RequestSchemaServiceCreateRequestJustificationVisibility = "JUSTIFICATION_VISIBILITY_UNSPECIFIED"
+	RequestSchemaServiceCreateRequestJustificationVisibilityJustificationVisibilityShow        RequestSchemaServiceCreateRequestJustificationVisibility = "JUSTIFICATION_VISIBILITY_SHOW"
+	RequestSchemaServiceCreateRequestJustificationVisibilityJustificationVisibilityHide        RequestSchemaServiceCreateRequestJustificationVisibility = "JUSTIFICATION_VISIBILITY_HIDE"
+)
+
+func (e RequestSchemaServiceCreateRequestJustificationVisibility) ToPointer() *RequestSchemaServiceCreateRequestJustificationVisibility {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *RequestSchemaServiceCreateRequestJustificationVisibility) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "JUSTIFICATION_VISIBILITY_UNSPECIFIED", "JUSTIFICATION_VISIBILITY_SHOW", "JUSTIFICATION_VISIBILITY_HIDE":
+			return true
+		}
+	}
+	return false
+}
+
 // The RequestSchemaServiceCreateRequest message.
 type RequestSchemaServiceCreateRequest struct {
 	// The description field.
 	Description *string `json:"description,omitempty"`
+	// The fieldGroups field.
+	FieldGroups []FieldGroup `json:"fieldGroups,omitempty"`
+	// The fieldRelationships field.
+	FieldRelationships []FieldRelationship `json:"fieldRelationships,omitempty"`
 	// The fields field.
 	Fields []FieldInput `json:"fields,omitempty"`
+	// The justificationVisibility field.
+	JustificationVisibility *RequestSchemaServiceCreateRequestJustificationVisibility `json:"justificationVisibility,omitempty"`
 	// The name field.
 	Name *string `json:"name,omitempty"`
 }
@@ -19,11 +49,32 @@ func (r *RequestSchemaServiceCreateRequest) GetDescription() *string {
 	return r.Description
 }
 
+func (r *RequestSchemaServiceCreateRequest) GetFieldGroups() []FieldGroup {
+	if r == nil {
+		return nil
+	}
+	return r.FieldGroups
+}
+
+func (r *RequestSchemaServiceCreateRequest) GetFieldRelationships() []FieldRelationship {
+	if r == nil {
+		return nil
+	}
+	return r.FieldRelationships
+}
+
 func (r *RequestSchemaServiceCreateRequest) GetFields() []FieldInput {
 	if r == nil {
 		return nil
 	}
 	return r.Fields
+}
+
+func (r *RequestSchemaServiceCreateRequest) GetJustificationVisibility() *RequestSchemaServiceCreateRequestJustificationVisibility {
+	if r == nil {
+		return nil
+	}
+	return r.JustificationVisibility
 }
 
 func (r *RequestSchemaServiceCreateRequest) GetName() *string {

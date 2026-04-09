@@ -1,5 +1,18 @@
 # AccessReviewInclusionScopeAppUserStatuses
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.AccessReviewInclusionScopeAppUserStatusesAppUserStatusUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.AccessReviewInclusionScopeAppUserStatuses("custom_value")
+```
+
 
 ## Values
 

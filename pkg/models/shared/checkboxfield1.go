@@ -14,3 +14,6 @@ func (c *CheckboxField1) GetChecked() *bool {
 	}
 	return c.Checked
 }
+
+// #region class-body-checkboxfield1
+// #endregion class-body-checkboxfield1

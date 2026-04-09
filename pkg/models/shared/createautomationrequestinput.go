@@ -4,94 +4,20 @@ package shared
 
 // CreateAutomationRequestInput - The CreateAutomationRequest message.
 type CreateAutomationRequestInput struct {
-	// The AutomationContext message.
-	AutomationContext *AutomationContext `json:"context,omitempty"`
-	// the app id this workflow_template belongs to
-	AppID *string `json:"appId,omitempty"`
-	// The automationSteps field.
-	AutomationSteps []AutomationStep `json:"automationSteps,omitempty"`
-	// The description field.
-	Description *string `json:"description,omitempty"`
-	// The displayName field.
-	DisplayName *string `json:"displayName,omitempty"`
-	// The draftAutomationSteps field.
-	DraftAutomationSteps []AutomationStep `json:"draftAutomationSteps,omitempty"`
-	// The draftTriggers field.
-	DraftTriggers []AutomationTrigger `json:"draftTriggers,omitempty"`
-	// The enabled field.
-	Enabled *bool `json:"enabled,omitempty"`
-	// The isDraft field.
-	IsDraft *bool `json:"isDraft,omitempty"`
-	// The triggers field.
-	Triggers []AutomationTrigger `json:"triggers,omitempty"`
+	// The AppEntitlementAutomation message.
+	//
+	// This message contains a oneof named conditions. Only a single field of the following list may be set at a time:
+	//   - none
+	//   - entitlements
+	//   - cel
+	//   - basic
+	//
+	AppEntitlementAutomation *AppEntitlementAutomationInput `json:"automation,omitempty"`
 }
 
-func (c *CreateAutomationRequestInput) GetAutomationContext() *AutomationContext {
+func (c *CreateAutomationRequestInput) GetAppEntitlementAutomation() *AppEntitlementAutomationInput {
 	if c == nil {
 		return nil
 	}
-	return c.AutomationContext
-}
-
-func (c *CreateAutomationRequestInput) GetAppID() *string {
-	if c == nil {
-		return nil
-	}
-	return c.AppID
-}
-
-func (c *CreateAutomationRequestInput) GetAutomationSteps() []AutomationStep {
-	if c == nil {
-		return nil
-	}
-	return c.AutomationSteps
-}
-
-func (c *CreateAutomationRequestInput) GetDescription() *string {
-	if c == nil {
-		return nil
-	}
-	return c.Description
-}
-
-func (c *CreateAutomationRequestInput) GetDisplayName() *string {
-	if c == nil {
-		return nil
-	}
-	return c.DisplayName
-}
-
-func (c *CreateAutomationRequestInput) GetDraftAutomationSteps() []AutomationStep {
-	if c == nil {
-		return nil
-	}
-	return c.DraftAutomationSteps
-}
-
-func (c *CreateAutomationRequestInput) GetDraftTriggers() []AutomationTrigger {
-	if c == nil {
-		return nil
-	}
-	return c.DraftTriggers
-}
-
-func (c *CreateAutomationRequestInput) GetEnabled() *bool {
-	if c == nil {
-		return nil
-	}
-	return c.Enabled
-}
-
-func (c *CreateAutomationRequestInput) GetIsDraft() *bool {
-	if c == nil {
-		return nil
-	}
-	return c.IsDraft
-}
-
-func (c *CreateAutomationRequestInput) GetTriggers() []AutomationTrigger {
-	if c == nil {
-		return nil
-	}
-	return c.Triggers
+	return c.AppEntitlementAutomation
 }

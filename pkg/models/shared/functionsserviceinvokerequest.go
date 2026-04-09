@@ -13,6 +13,8 @@ type FunctionsServiceInvokeRequest struct {
 	// This field is part of the `arg` oneof.
 	// See the documentation for `c1.api.functions.v1.FunctionsServiceInvokeRequest` for more details.
 	JSON *string `json:"json,omitempty"`
+	// Optional VFS volume ID to attach to this invocation. If empty, VFS operations will error.
+	VfsID *string `json:"vfsId,omitempty"`
 }
 
 func (f *FunctionsServiceInvokeRequest) GetCommitID() *string {
@@ -27,4 +29,11 @@ func (f *FunctionsServiceInvokeRequest) GetJSON() *string {
 		return nil
 	}
 	return f.JSON
+}
+
+func (f *FunctionsServiceInvokeRequest) GetVfsID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.VfsID
 }

@@ -2,6 +2,19 @@
 
 The origin field.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.OriginTaskOriginUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.Origin("custom_value")
+```
+
 
 ## Values
 
@@ -20,3 +33,4 @@ The origin field.
 | `OriginTaskOriginProfileMembership`           | TASK_ORIGIN_PROFILE_MEMBERSHIP                |
 | `OriginTaskOriginAutomation`                  | TASK_ORIGIN_AUTOMATION                        |
 | `OriginTaskOriginAccessReview`                | TASK_ORIGIN_ACCESS_REVIEW                     |
+| `OriginTaskOriginCascadeDelete`               | TASK_ORIGIN_CASCADE_DELETE                    |

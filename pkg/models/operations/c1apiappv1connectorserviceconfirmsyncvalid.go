@@ -42,6 +42,9 @@ func (c *C1APIAppV1ConnectorServiceConfirmSyncValidRequest) GetSyncLifecycleID()
 	return c.SyncLifecycleID
 }
 
+// #region class-body-c1apiappv1connectorserviceconfirmsyncvalidrequest
+// #endregion class-body-c1apiappv1connectorserviceconfirmsyncvalidrequest
+
 type C1APIAppV1ConnectorServiceConfirmSyncValidResponse struct {
 	// Successful response
 	ConfirmSyncValidResponse *shared.ConfirmSyncValidResponse
@@ -80,3 +83,6 @@ func (c *C1APIAppV1ConnectorServiceConfirmSyncValidResponse) GetRawResponse() *h
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1connectorserviceconfirmsyncvalidresponse
+// #endregion class-body-c1apiappv1connectorserviceconfirmsyncvalidresponse

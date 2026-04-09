@@ -42,6 +42,9 @@ func (c *C1APIAppV1AppResourceServiceUpdateRequest) GetID() string {
 	return c.ID
 }
 
+// #region class-body-c1apiappv1appresourceserviceupdaterequest
+// #endregion class-body-c1apiappv1appresourceserviceupdaterequest
+
 type C1APIAppV1AppResourceServiceUpdateResponse struct {
 	// Successful response
 	AppResourceServiceUpdateResponse *shared.AppResourceServiceUpdateResponse
@@ -80,3 +83,6 @@ func (c *C1APIAppV1AppResourceServiceUpdateResponse) GetRawResponse() *http.Resp
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appresourceserviceupdateresponse
+// #endregion class-body-c1apiappv1appresourceserviceupdateresponse

@@ -26,6 +26,9 @@ func (c *C1APIAccessconflictV1AccessConflictServiceDeleteMonitorRequest) GetID()
 	return c.ID
 }
 
+// #region class-body-c1apiaccessconflictv1accessconflictservicedeletemonitorrequest
+// #endregion class-body-c1apiaccessconflictv1accessconflictservicedeletemonitorrequest
+
 type C1APIAccessconflictV1AccessConflictServiceDeleteMonitorResponse struct {
 	// Successful response
 	ConflictMonitorDeleteResponse *shared.ConflictMonitorDeleteResponse
@@ -64,3 +67,6 @@ func (c *C1APIAccessconflictV1AccessConflictServiceDeleteMonitorResponse) GetRaw
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiaccessconflictv1accessconflictservicedeletemonitorresponse
+// #endregion class-body-c1apiaccessconflictv1accessconflictservicedeletemonitorresponse

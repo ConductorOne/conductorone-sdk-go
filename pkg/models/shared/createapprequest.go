@@ -9,6 +9,7 @@ const (
 	CreateAppRequestIdentityMatchingAppUserIdentityMatchingUnspecified CreateAppRequestIdentityMatching = "APP_USER_IDENTITY_MATCHING_UNSPECIFIED"
 	CreateAppRequestIdentityMatchingAppUserIdentityMatchingStrict      CreateAppRequestIdentityMatching = "APP_USER_IDENTITY_MATCHING_STRICT"
 	CreateAppRequestIdentityMatchingAppUserIdentityMatchingDisplayName CreateAppRequestIdentityMatching = "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME"
+	CreateAppRequestIdentityMatchingAppUserIdentityMatchingCustom      CreateAppRequestIdentityMatching = "APP_USER_IDENTITY_MATCHING_CUSTOM"
 )
 
 func (e CreateAppRequestIdentityMatching) ToPointer() *CreateAppRequestIdentityMatching {
@@ -19,7 +20,7 @@ func (e CreateAppRequestIdentityMatching) ToPointer() *CreateAppRequestIdentityM
 func (e *CreateAppRequestIdentityMatching) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "APP_USER_IDENTITY_MATCHING_UNSPECIFIED", "APP_USER_IDENTITY_MATCHING_STRICT", "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME":
+		case "APP_USER_IDENTITY_MATCHING_UNSPECIFIED", "APP_USER_IDENTITY_MATCHING_STRICT", "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME", "APP_USER_IDENTITY_MATCHING_CUSTOM":
 			return true
 		}
 	}

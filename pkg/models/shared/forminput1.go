@@ -14,3 +14,6 @@ func (f *FormInput1) GetForm() *FormInput {
 	}
 	return f.Form
 }
+
+// #region class-body-forminput1
+// #endregion class-body-forminput1

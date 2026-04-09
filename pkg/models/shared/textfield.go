@@ -3,9 +3,16 @@
 package shared
 
 // The TextField message.
+//
+// This message contains a oneof named _suffix. Only a single field of the following list may be set at a time:
+//   - suffix
 type TextField struct {
 	// The multiline field.
 	Multiline *bool `json:"multiline,omitempty"`
+	// Static text displayed as an end adornment (e.g. ".example.com" for domain fields).
+	// This field is part of the `_suffix` oneof.
+	// See the documentation for `c1.api.form.v1.TextField` for more details.
+	Suffix *string `json:"suffix,omitempty"`
 }
 
 func (t *TextField) GetMultiline() *bool {
@@ -13,4 +20,11 @@ func (t *TextField) GetMultiline() *bool {
 		return nil
 	}
 	return t.Multiline
+}
+
+func (t *TextField) GetSuffix() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Suffix
 }

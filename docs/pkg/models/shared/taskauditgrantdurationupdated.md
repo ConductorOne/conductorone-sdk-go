@@ -7,4 +7,4 @@ The TaskAuditGrantDurationUpdated message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Duration`         | **string*          | :heavy_minus_sign: | N/A                |
+| `Duration`         | `*string`          | :heavy_minus_sign: | N/A                |

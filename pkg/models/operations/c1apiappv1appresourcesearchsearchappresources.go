@@ -47,3 +47,6 @@ func (c *C1APIAppV1AppResourceSearchSearchAppResourcesResponse) GetRawResponse()
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appresourcesearchsearchappresourcesresponse
+// #endregion class-body-c1apiappv1appresourcesearchsearchappresourcesresponse

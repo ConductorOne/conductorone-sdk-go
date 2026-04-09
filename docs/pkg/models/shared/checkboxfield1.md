@@ -7,4 +7,4 @@ The CheckboxField message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Checked`          | **bool*            | :heavy_minus_sign: | The checked field. |
+| `Checked`          | `*bool`            | :heavy_minus_sign: | The checked field. |

@@ -45,3 +45,6 @@ func (c *C1APIAccessconflictV1AppEntitlementMonitorBindingServiceCreateAppEntitl
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiaccessconflictv1appentitlementmonitorbindingservicecreateappentitlementmonitorbindingresponse
+// #endregion class-body-c1apiaccessconflictv1appentitlementmonitorbindingservicecreateappentitlementmonitorbindingresponse

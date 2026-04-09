@@ -7,5 +7,5 @@ The MagicVault message.
 
 | Field                         | Type                          | Required                      | Description                   |
 | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
-| `AllowUnauthedViews`          | **bool*                       | :heavy_minus_sign:            | The allowUnauthedViews field. |
-| `AllowedViews`                | **int64*                      | :heavy_minus_sign:            | The allowedViews field.       |
+| `AllowUnauthedViews`          | `*bool`                       | :heavy_minus_sign:            | The allowUnauthedViews field. |
+| `AllowedViews`                | `*int64`                      | :heavy_minus_sign:            | The allowedViews field.       |

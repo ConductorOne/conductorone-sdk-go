@@ -43,6 +43,8 @@ func (c *Config) GetAdditionalProperties() map[string]any {
 type Connector struct {
 	// The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 	ConnectorStatus *ConnectorStatus `json:"status,omitempty"`
+	// The ConnectorSyncCronSchedule message.
+	ConnectorSyncCronSchedule *ConnectorSyncCronSchedule `json:"connectorSyncCronSchedule,omitempty"`
 	// OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 	OAuth2AuthorizedAs *OAuth2AuthorizedAs `json:"oauthAuthorizedAs,omitempty"`
 	// The SyncConfig message.
@@ -54,9 +56,12 @@ type Connector struct {
 	// The catalogId describes which catalog entry this connector is an instance of. For example, every Okta connector will have the same catalogId indicating it is an Okta connector.
 	CatalogID *string `json:"catalogId,omitempty"`
 	// Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
-	Config    *Config    `json:"config,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	DeletedAt *time.Time `json:"deletedAt,omitempty"`
+	Config          *Config    `json:"config,omitempty"`
+	ConfigUpdatedAt *time.Time `json:"configUpdatedAt,omitempty"`
+	// The connectorApiVersion field.
+	ConnectorAPIVersion *int64     `json:"connectorApiVersion,omitempty"`
+	CreatedAt           *time.Time `json:"createdAt,omitempty"`
+	DeletedAt           *time.Time `json:"deletedAt,omitempty"`
 	// The description of the connector.
 	Description *string `json:"description,omitempty"`
 	// The disableCheckBadSync field.
@@ -99,6 +104,13 @@ func (c *Connector) GetConnectorStatus() *ConnectorStatus {
 	return c.ConnectorStatus
 }
 
+func (c *Connector) GetConnectorSyncCronSchedule() *ConnectorSyncCronSchedule {
+	if c == nil {
+		return nil
+	}
+	return c.ConnectorSyncCronSchedule
+}
+
 func (c *Connector) GetOAuth2AuthorizedAs() *OAuth2AuthorizedAs {
 	if c == nil {
 		return nil
@@ -139,6 +151,20 @@ func (c *Connector) GetConfig() *Config {
 		return nil
 	}
 	return c.Config
+}
+
+func (c *Connector) GetConfigUpdatedAt() *time.Time {
+	if c == nil {
+		return nil
+	}
+	return c.ConfigUpdatedAt
+}
+
+func (c *Connector) GetConnectorAPIVersion() *int64 {
+	if c == nil {
+		return nil
+	}
+	return c.ConnectorAPIVersion
 }
 
 func (c *Connector) GetCreatedAt() *time.Time {
@@ -243,6 +269,8 @@ func (c *Connector) GetUserIds() []string {
 type ConnectorInput struct {
 	// The status field on the connector is used to track the status of the connectors sync, and when syncing last started, completed, or caused the connector to update.
 	ConnectorStatus *ConnectorStatus `json:"status,omitempty"`
+	// The ConnectorSyncCronSchedule message.
+	ConnectorSyncCronSchedule *ConnectorSyncCronSchedule `json:"connectorSyncCronSchedule,omitempty"`
 	// OAuth2AuthorizedAs tracks the user that OAuthed with the connector.
 	OAuth2AuthorizedAs *OAuth2AuthorizedAsInput `json:"oauthAuthorizedAs,omitempty"`
 	// The SyncConfig message.
@@ -280,6 +308,13 @@ func (c *ConnectorInput) GetConnectorStatus() *ConnectorStatus {
 		return nil
 	}
 	return c.ConnectorStatus
+}
+
+func (c *ConnectorInput) GetConnectorSyncCronSchedule() *ConnectorSyncCronSchedule {
+	if c == nil {
+		return nil
+	}
+	return c.ConnectorSyncCronSchedule
 }
 
 func (c *ConnectorInput) GetOAuth2AuthorizedAs() *OAuth2AuthorizedAsInput {

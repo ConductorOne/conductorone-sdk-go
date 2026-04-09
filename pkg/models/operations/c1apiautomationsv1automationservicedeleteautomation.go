@@ -26,6 +26,9 @@ func (c *C1APIAutomationsV1AutomationServiceDeleteAutomationRequest) GetID() str
 	return c.ID
 }
 
+// #region class-body-c1apiautomationsv1automationservicedeleteautomationrequest
+// #endregion class-body-c1apiautomationsv1automationservicedeleteautomationrequest
+
 type C1APIAutomationsV1AutomationServiceDeleteAutomationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -64,3 +67,6 @@ func (c *C1APIAutomationsV1AutomationServiceDeleteAutomationResponse) GetRawResp
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiautomationsv1automationservicedeleteautomationresponse
+// #endregion class-body-c1apiautomationsv1automationservicedeleteautomationresponse

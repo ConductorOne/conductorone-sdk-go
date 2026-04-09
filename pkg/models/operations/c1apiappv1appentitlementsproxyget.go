@@ -42,6 +42,9 @@ func (c *C1APIAppV1AppEntitlementsProxyGetRequest) GetSrcAppID() string {
 	return c.SrcAppID
 }
 
+// #region class-body-c1apiappv1appentitlementsproxygetrequest
+// #endregion class-body-c1apiappv1appentitlementsproxygetrequest
+
 type C1APIAppV1AppEntitlementsProxyGetResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -80,3 +83,6 @@ func (c *C1APIAppV1AppEntitlementsProxyGetResponse) GetRawResponse() *http.Respo
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appentitlementsproxygetresponse
+// #endregion class-body-c1apiappv1appentitlementsproxygetresponse

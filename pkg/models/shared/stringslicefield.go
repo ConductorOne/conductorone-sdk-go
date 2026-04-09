@@ -18,6 +18,7 @@ type StringSliceField struct {
 	// This message contains a oneof named type. Only a single field of the following list may be set at a time:
 	//   - appUserPicker
 	//   - resourcePicker
+	//   - c1UserPicker
 	//
 	PickerField *PickerField `json:"pickerField,omitempty"`
 	// RepeatedRules describe the constraints applied to `repeated` values

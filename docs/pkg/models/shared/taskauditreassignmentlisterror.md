@@ -7,4 +7,4 @@ The TaskAuditReassignmentListError message.
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `ErrorMessage`          | **string*               | :heavy_minus_sign:      | The errorMessage field. |
+| `ErrorMessage`          | `*string`               | :heavy_minus_sign:      | The errorMessage field. |

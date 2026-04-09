@@ -2,6 +2,10 @@
 
 package shared
 
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+)
+
 type ExecutionStepStates string
 
 const (
@@ -50,6 +54,17 @@ type SearchAutomationExecutionsRequest struct {
 	Query *string `json:"query,omitempty"`
 	// The refs field.
 	Refs []AutomationExecutionRef `json:"refs,omitempty"`
+}
+
+func (s SearchAutomationExecutionsRequest) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *SearchAutomationExecutionsRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (s *SearchAutomationExecutionsRequest) GetAutomationExecutionExpandMask() *AutomationExecutionExpandMask {

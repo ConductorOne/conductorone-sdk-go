@@ -20,6 +20,7 @@ type StringField struct {
 	// This message contains a oneof named type. Only a single field of the following list may be set at a time:
 	//   - appUserPicker
 	//   - resourcePicker
+	//   - c1UserPicker
 	//
 	PickerField *PickerField `json:"pickerField,omitempty"`
 	// The SelectField message.
@@ -40,6 +41,10 @@ type StringField struct {
 	//
 	StringRules *StringRules `json:"rules,omitempty"`
 	// The TextField message.
+	//
+	// This message contains a oneof named _suffix. Only a single field of the following list may be set at a time:
+	//   - suffix
+	//
 	TextField *TextField `json:"textField,omitempty"`
 	// The defaultValue field.
 	DefaultValue *string `json:"defaultValue,omitempty"`

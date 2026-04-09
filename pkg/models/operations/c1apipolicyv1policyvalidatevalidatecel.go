@@ -45,3 +45,6 @@ func (c *C1APIPolicyV1PolicyValidateValidateCELResponse) GetRawResponse() *http.
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apipolicyv1policyvalidatevalidatecelresponse
+// #endregion class-body-c1apipolicyv1policyvalidatevalidatecelresponse

@@ -14,6 +14,7 @@ const (
 	IdentityMatchingAppUserIdentityMatchingUnspecified IdentityMatching = "APP_USER_IDENTITY_MATCHING_UNSPECIFIED"
 	IdentityMatchingAppUserIdentityMatchingStrict      IdentityMatching = "APP_USER_IDENTITY_MATCHING_STRICT"
 	IdentityMatchingAppUserIdentityMatchingDisplayName IdentityMatching = "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME"
+	IdentityMatchingAppUserIdentityMatchingCustom      IdentityMatching = "APP_USER_IDENTITY_MATCHING_CUSTOM"
 )
 
 func (e IdentityMatching) ToPointer() *IdentityMatching {
@@ -24,7 +25,7 @@ func (e IdentityMatching) ToPointer() *IdentityMatching {
 func (e *IdentityMatching) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "APP_USER_IDENTITY_MATCHING_UNSPECIFIED", "APP_USER_IDENTITY_MATCHING_STRICT", "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME":
+		case "APP_USER_IDENTITY_MATCHING_UNSPECIFIED", "APP_USER_IDENTITY_MATCHING_STRICT", "APP_USER_IDENTITY_MATCHING_DISPLAY_NAME", "APP_USER_IDENTITY_MATCHING_CUSTOM":
 			return true
 		}
 	}
@@ -33,6 +34,8 @@ func (e *IdentityMatching) IsExact() bool {
 
 // The App object provides all of the details for an app, as well as some configuration.
 type App struct {
+	// AppUserMapper configures custom account mapping for uplift.
+	AppUserMapper *AppUserMapper `json:"appUserMapper,omitempty"`
 	// The ID of the Account named by AccountName.
 	AppAccountID *string `json:"appAccountId,omitempty"`
 	// The AccountName of the app. For example, AWS is AccountID, Github is Org Name, and Okta is Okta Subdomain.
@@ -51,7 +54,9 @@ type App struct {
 	Description *string `json:"description,omitempty"`
 	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
-	FieldMask   *string `json:"fieldMask,omitempty"`
+	// When enabled, resource ownership is sourced from the connector.
+	EnableConnectorSourcedOwnership *bool   `json:"enableConnectorSourcedOwnership,omitempty"`
+	FieldMask                       *string `json:"fieldMask,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -90,6 +95,13 @@ func (a *App) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (a *App) GetAppUserMapper() *AppUserMapper {
+	if a == nil {
+		return nil
+	}
+	return a.AppUserMapper
 }
 
 func (a *App) GetAppAccountID() *string {
@@ -160,6 +172,13 @@ func (a *App) GetDisplayName() *string {
 		return nil
 	}
 	return a.DisplayName
+}
+
+func (a *App) GetEnableConnectorSourcedOwnership() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EnableConnectorSourcedOwnership
 }
 
 func (a *App) GetFieldMask() *string {
@@ -269,6 +288,8 @@ func (a *App) GetUserCount() *int64 {
 
 // AppInput - The App object provides all of the details for an app, as well as some configuration.
 type AppInput struct {
+	// AppUserMapper configures custom account mapping for uplift.
+	AppUserMapper *AppUserMapper `json:"appUserMapper,omitempty"`
 	// The ID of the Certify Policy associated with this App.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
 	// The connectorVersion field.
@@ -279,6 +300,8 @@ type AppInput struct {
 	Description *string `json:"description,omitempty"`
 	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
+	// When enabled, resource ownership is sourced from the connector.
+	EnableConnectorSourcedOwnership *bool `json:"enableConnectorSourcedOwnership,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -295,6 +318,13 @@ type AppInput struct {
 	RevokePolicyID *string `json:"revokePolicyId,omitempty"`
 	// The strictAccessEntitlementProvisioning field.
 	StrictAccessEntitlementProvisioning *bool `json:"strictAccessEntitlementProvisioning,omitempty"`
+}
+
+func (a *AppInput) GetAppUserMapper() *AppUserMapper {
+	if a == nil {
+		return nil
+	}
+	return a.AppUserMapper
 }
 
 func (a *AppInput) GetCertifyPolicyID() *string {
@@ -330,6 +360,13 @@ func (a *AppInput) GetDisplayName() *string {
 		return nil
 	}
 	return a.DisplayName
+}
+
+func (a *AppInput) GetEnableConnectorSourcedOwnership() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EnableConnectorSourcedOwnership
 }
 
 func (a *AppInput) GetGrantPolicyID() *string {

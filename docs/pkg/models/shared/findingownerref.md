@@ -1,0 +1,20 @@
+# FindingOwnerRef
+
+The FindingOwnerRef message.
+
+This message contains a oneof named owner. Only a single field of the following list may be set at a time:
+  - identityUserId
+  - appOwnerAppId
+  - managerOfUserId
+  - userSetId
+
+
+
+## Fields
+
+| Field                                                                                                                                                  | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AppOwnerAppID`                                                                                                                                        | `*string`                                                                                                                                              | :heavy_minus_sign:                                                                                                                                     | The appOwnerAppId field.<br/>This field is part of the `owner` oneof.<br/>See the documentation for `c1.models.finding.v1.FindingOwnerRef` for more details. |
+| `IdentityUserID`                                                                                                                                       | `*string`                                                                                                                                              | :heavy_minus_sign:                                                                                                                                     | The identityUserId field.<br/>This field is part of the `owner` oneof.<br/>See the documentation for `c1.models.finding.v1.FindingOwnerRef` for more details. |
+| `ManagerOfUserID`                                                                                                                                      | `*string`                                                                                                                                              | :heavy_minus_sign:                                                                                                                                     | The managerOfUserId field.<br/>This field is part of the `owner` oneof.<br/>See the documentation for `c1.models.finding.v1.FindingOwnerRef` for more details. |
+| `UserSetID`                                                                                                                                            | `*string`                                                                                                                                              | :heavy_minus_sign:                                                                                                                                     | The userSetId field.<br/>This field is part of the `owner` oneof.<br/>See the documentation for `c1.models.finding.v1.FindingOwnerRef` for more details. |

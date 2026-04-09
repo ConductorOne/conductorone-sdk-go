@@ -42,6 +42,9 @@ func (c *C1APIAppV1AppUserServiceListAppUserCredentialsRequest) GetPageToken() *
 	return c.PageToken
 }
 
+// #region class-body-c1apiappv1appuserservicelistappusercredentialsrequest
+// #endregion class-body-c1apiappv1appuserservicelistappusercredentialsrequest
+
 type C1APIAppV1AppUserServiceListAppUserCredentialsResponse struct {
 	// Successful response
 	AppUserServiceListCredentialsResponse *shared.AppUserServiceListCredentialsResponse
@@ -80,3 +83,6 @@ func (c *C1APIAppV1AppUserServiceListAppUserCredentialsResponse) GetRawResponse(
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appuserservicelistappusercredentialsresponse
+// #endregion class-body-c1apiappv1appuserservicelistappusercredentialsresponse

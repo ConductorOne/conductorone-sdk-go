@@ -13,7 +13,7 @@ Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomationTempla
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions" method="post" path="/api/v1/automation_versions/search" -->
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions" method="post" path="/api/v1/search/automation_versions" -->
 ```go
 package main
 
@@ -68,7 +68,7 @@ Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomations meth
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomations" method="post" path="/api/v1/automations/search" -->
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomations" method="post" path="/api/v1/search/automations" -->
 ```go
 package main
 

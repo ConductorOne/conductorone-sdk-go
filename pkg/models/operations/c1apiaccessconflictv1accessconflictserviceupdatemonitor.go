@@ -26,6 +26,9 @@ func (c *C1APIAccessconflictV1AccessConflictServiceUpdateMonitorRequest) GetID()
 	return c.ID
 }
 
+// #region class-body-c1apiaccessconflictv1accessconflictserviceupdatemonitorrequest
+// #endregion class-body-c1apiaccessconflictv1accessconflictserviceupdatemonitorrequest
+
 type C1APIAccessconflictV1AccessConflictServiceUpdateMonitorResponse struct {
 	// Successful response
 	ConflictMonitor *shared.ConflictMonitor
@@ -64,3 +67,6 @@ func (c *C1APIAccessconflictV1AccessConflictServiceUpdateMonitorResponse) GetRaw
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiaccessconflictv1accessconflictserviceupdatemonitorresponse
+// #endregion class-body-c1apiaccessconflictv1accessconflictserviceupdatemonitorresponse

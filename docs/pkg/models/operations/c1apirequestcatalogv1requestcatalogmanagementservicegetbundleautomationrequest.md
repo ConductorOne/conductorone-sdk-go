@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `RequestCatalogID` | *string*           | :heavy_check_mark: | N/A                |
+| `RequestCatalogID` | `string`           | :heavy_check_mark: | N/A                |

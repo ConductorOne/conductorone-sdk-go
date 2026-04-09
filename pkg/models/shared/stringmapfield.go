@@ -3,14 +3,26 @@
 package shared
 
 // The StringMapField message.
+//
+// This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
+//   - rules
 type StringMapField struct {
-	// The optional field.
-	Optional *bool `json:"optional,omitempty"`
+	// The StringMapRules message.
+	StringMapRules *StringMapRules `json:"rules,omitempty"`
+	// The defaultValue field.
+	DefaultValue map[string]string `json:"defaultValue,omitempty"`
 }
 
-func (s *StringMapField) GetOptional() *bool {
+func (s *StringMapField) GetStringMapRules() *StringMapRules {
 	if s == nil {
 		return nil
 	}
-	return s.Optional
+	return s.StringMapRules
+}
+
+func (s *StringMapField) GetDefaultValue() map[string]string {
+	if s == nil {
+		return nil
+	}
+	return s.DefaultValue
 }

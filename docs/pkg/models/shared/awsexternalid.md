@@ -7,4 +7,4 @@ The AWSExternalID message.
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `ExternalID`          | **string*             | :heavy_minus_sign:    | The externalId field. |
+| `ExternalID`          | `*string`             | :heavy_minus_sign:    | The externalId field. |

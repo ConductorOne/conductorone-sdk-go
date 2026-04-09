@@ -8,6 +8,7 @@ type FunctionsServiceCreateFunctionRequestFunctionType string
 const (
 	FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeUnspecified FunctionsServiceCreateFunctionRequestFunctionType = "FUNCTION_TYPE_UNSPECIFIED"
 	FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeAny         FunctionsServiceCreateFunctionRequestFunctionType = "FUNCTION_TYPE_ANY"
+	FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeCodeMode    FunctionsServiceCreateFunctionRequestFunctionType = "FUNCTION_TYPE_CODE_MODE"
 )
 
 func (e FunctionsServiceCreateFunctionRequestFunctionType) ToPointer() *FunctionsServiceCreateFunctionRequestFunctionType {
@@ -18,7 +19,7 @@ func (e FunctionsServiceCreateFunctionRequestFunctionType) ToPointer() *Function
 func (e *FunctionsServiceCreateFunctionRequestFunctionType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "FUNCTION_TYPE_UNSPECIFIED", "FUNCTION_TYPE_ANY":
+		case "FUNCTION_TYPE_UNSPECIFIED", "FUNCTION_TYPE_ANY", "FUNCTION_TYPE_CODE_MODE":
 			return true
 		}
 	}

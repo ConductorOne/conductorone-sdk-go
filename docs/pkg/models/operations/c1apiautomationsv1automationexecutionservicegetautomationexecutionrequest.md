@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ID`               | *int64*            | :heavy_check_mark: | N/A                |
+| `ID`               | `int64`            | :heavy_check_mark: | N/A                |

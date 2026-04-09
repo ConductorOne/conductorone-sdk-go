@@ -2,6 +2,10 @@
 
 package shared
 
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+)
+
 // The FileField message.
 //
 // This message contains a oneof named view. Only a single field of the following list may be set at a time:
@@ -18,6 +22,17 @@ type FileField struct {
 	// This field is part of the `_max_file_size` oneof.
 	// See the documentation for `c1.api.form.v1.FileField` for more details.
 	MaxFileSize *int64 `integer:"string" json:"maxFileSize,omitempty"`
+}
+
+func (f FileField) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(f, "", false)
+}
+
+func (f *FileField) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &f, "", false, nil); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (f *FileField) GetFileInputField() *FileInputField {
