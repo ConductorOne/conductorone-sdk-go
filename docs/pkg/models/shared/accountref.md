@@ -7,4 +7,4 @@ The AccountRef message.
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `AccountIDCel`          | **string*               | :heavy_minus_sign:      | The accountIdCel field. |
+| `AccountIDCel`          | `*string`               | :heavy_minus_sign:      | The accountIdCel field. |

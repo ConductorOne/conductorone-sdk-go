@@ -7,4 +7,4 @@ The DirectoryAccountFilterCel message.
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `Expression`          | **string*             | :heavy_minus_sign:    | The expression field. |
+| `Expression`          | `*string`             | :heavy_minus_sign:    | The expression field. |

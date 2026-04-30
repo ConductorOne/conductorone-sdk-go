@@ -1,6 +1,19 @@
 # DeleteAppEntitlementMonitorBindingRequestEntitlementGroup
 
-The entitlementGroup field.
+Which side of the conflict monitor (A or B) the binding belongs to.
+
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.DeleteAppEntitlementMonitorBindingRequestEntitlementGroupEntitlementGroupUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.DeleteAppEntitlementMonitorBindingRequestEntitlementGroup("custom_value")
+```
 
 
 ## Values

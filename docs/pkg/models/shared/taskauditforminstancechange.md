@@ -7,4 +7,4 @@ The TaskAuditFormInstanceChange message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `IsValid`          | **bool*            | :heavy_minus_sign: | The isValid field. |
+| `IsValid`          | `*bool`            | :heavy_minus_sign: | The isValid field. |

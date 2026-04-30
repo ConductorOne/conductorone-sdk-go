@@ -9,11 +9,11 @@
 
 ## SearchAutomationTemplateVersions
 
-Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions method.
+Search for versioned snapshots of an automation template's steps and triggers.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions" method="post" path="/api/v1/automation_versions/search" -->
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomationTemplateVersions" method="post" path="/api/v1/search/automation_versions" -->
 ```go
 package main
 
@@ -64,11 +64,11 @@ func main() {
 
 ## SearchAutomations
 
-Invokes the c1.api.automations.v1.AutomationSearchService.SearchAutomations method.
+Search for automations matching the provided filters, including query text, template refs, app, and trigger types.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomations" method="post" path="/api/v1/automations/search" -->
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationSearchService.SearchAutomations" method="post" path="/api/v1/search/automations" -->
 ```go
 package main
 

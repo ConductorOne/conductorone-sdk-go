@@ -72,7 +72,7 @@ func main() {
 
 ## RemoveGrantDuration
 
-Invokes the c1.api.app.v1.AppEntitlementUserBindingService.RemoveGrantDuration method.
+Remove the expiration time from a grant, converting it to an indefinite (standing) grant.
 
 ### Example Usage
 
@@ -132,7 +132,7 @@ func main() {
 
 ## SearchGrantFeed
 
-Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchGrantFeed method.
+Search a chronological feed of grant and revoke events, filtered by app user, entitlement, or time range.
 
 ### Example Usage
 
@@ -187,7 +187,7 @@ func main() {
 
 ## SearchPastGrants
 
-Invokes the c1.api.app.v1.AppEntitlementUserBindingService.SearchPastGrants method.
+Search historical grants that have been revoked, filtered by app user or entitlement.
 
 ### Example Usage
 
@@ -242,7 +242,7 @@ func main() {
 
 ## UpdateGrantDuration
 
-Invokes the c1.api.app.v1.AppEntitlementUserBindingService.UpdateGrantDuration method.
+Update the expiration time of an existing grant, changing when automatic revocation will occur.
 
 ### Example Usage
 

@@ -1,6 +1,19 @@
 # ActionType
 
-The actionType field.
+The type of action that was performed.
+
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.ActionTypeTaskActionTypeUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.ActionType("custom_value")
+```
 
 
 ## Values

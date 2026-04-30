@@ -7,4 +7,4 @@ The TaskAuditSLAEscalation message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Message`          | **string*          | :heavy_minus_sign: | The message field. |
+| `Message`          | `*string`          | :heavy_minus_sign: | The message field. |

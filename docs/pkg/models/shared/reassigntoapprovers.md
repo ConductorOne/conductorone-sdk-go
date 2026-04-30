@@ -7,4 +7,4 @@ The ReassignToApprovers message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ApproverIds`          | []*string*             | :heavy_minus_sign:     | The approverIds field. |
+| `ApproverIds`          | []`string`             | :heavy_minus_sign:     | The approverIds field. |

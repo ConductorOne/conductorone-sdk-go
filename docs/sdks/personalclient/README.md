@@ -67,7 +67,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.iam.v1.PersonalClientService.Delete method.
+Delete a personal client credential, revoking it and preventing further API access.
 
 ### Example Usage
 
@@ -125,7 +125,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.iam.v1.PersonalClientService.Get method.
+Get retrieves a single personal client credential by its ID.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ func main() {
 
 ## List
 
-Invokes the c1.api.iam.v1.PersonalClientService.List method.
+List returns all personal client credentials owned by the calling user.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.iam.v1.PersonalClientService.Update method.
+Update modifies an existing personal client credential. Use the update mask to specify which fields to change.
 
 ### Example Usage
 

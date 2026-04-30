@@ -14,7 +14,7 @@
 
 ## Create
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.Create method.
+Create a new request schema that defines a form template for access requests.
 
 ### Example Usage
 
@@ -69,7 +69,7 @@ func main() {
 
 ## CreateEntitlementBinding
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.CreateEntitlementBinding method.
+Link a request schema to a single app entitlement so the form is shown when requesting that entitlement.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.Delete method.
+Delete a request schema by ID. Associated entitlement bindings are also deleted.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ func main() {
 
 ## FindBindingForAppEntitlement
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.FindBindingForAppEntitlement method.
+Look up which request schema is bound to a given app entitlement.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.Get method.
+Retrieve a single request schema by ID.
 
 ### Example Usage
 
@@ -295,7 +295,7 @@ func main() {
 
 ## RemoveEntitlementBinding
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.RemoveEntitlementBinding method.
+Remove the link between a request schema and a single app entitlement.
 
 ### Example Usage
 
@@ -350,7 +350,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.request_schema.v1.RequestSchemaService.Update method.
+Update an existing request schema's form definition or settings.
 
 ### Example Usage
 

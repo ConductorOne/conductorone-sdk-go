@@ -1,5 +1,18 @@
 # TriggerTypes
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.TriggerTypesTriggerTypeUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.TriggerTypes("custom_value")
+```
+
 
 ## Values
 
@@ -18,3 +31,4 @@
 | `TriggerTypesTriggerTypeForm`              | TRIGGER_TYPE_FORM                          |
 | `TriggerTypesTriggerTypeScheduleAppUser`   | TRIGGER_TYPE_SCHEDULE_APP_USER             |
 | `TriggerTypesTriggerTypeAccessConflict`    | TRIGGER_TYPE_ACCESS_CONFLICT               |
+| `TriggerTypesTriggerTypeScheduleNoUser`    | TRIGGER_TYPE_SCHEDULE_NO_USER              |

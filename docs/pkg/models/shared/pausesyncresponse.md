@@ -1,6 +1,6 @@
 # PauseSyncResponse
 
-The PauseSyncResponse message.
+Empty response body. Status code indicates success.
 
 
 ## Fields

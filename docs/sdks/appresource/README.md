@@ -12,7 +12,7 @@
 
 ## CreateManuallyManagedAppResource
 
-Invokes the c1.api.app.v1.AppResourceService.CreateManuallyManagedAppResource method.
+Create a manually managed app resource tracked directly by ConductorOne under an existing resource type.
 
 ### Example Usage
 
@@ -71,7 +71,7 @@ func main() {
 
 ## DeleteManuallyManagedAppResource
 
-Invokes the c1.api.app.v1.AppResourceService.DeleteManuallyManagedAppResource method.
+Delete a manually managed app resource and its associated entitlements from an app.
 
 ### Example Usage
 
@@ -131,7 +131,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.app.v1.AppResourceService.Get method.
+Retrieve a single app resource by its app, resource type, and resource ID.
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ func main() {
 
 ## List
 
-Invokes the c1.api.app.v1.AppResourceService.List method.
+List app resources for a given app and optionally filter by resource type.
 
 ### Example Usage
 
@@ -250,7 +250,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.app.v1.AppResourceService.Update method.
+Update an app resource's fields. Only the fields specified in the update mask are modified.
 
 ### Example Usage
 

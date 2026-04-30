@@ -200,7 +200,7 @@ func main() {
 
 ## CreateBundleAutomation
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.CreateBundleAutomation method.
+Create a new bundle automation rule for a catalog that automatically syncs catalog membership from a query.
 
 ### Example Usage
 
@@ -376,7 +376,7 @@ func main() {
 
 ## DeleteBundleAutomation
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation method.
+Delete the bundle automation rule for a catalog, stopping automatic membership syncing.
 
 ### Example Usage
 
@@ -494,7 +494,7 @@ func main() {
 
 ## ForceRunBundleAutomation
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ForceRunBundleAutomation method.
+Trigger an immediate execution of a catalog's bundle automation, bypassing the normal schedule.
 
 ### Example Usage
 
@@ -784,7 +784,7 @@ func main() {
 
 ## ListAllEntitlementIdsPerApp
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ListAllEntitlementIdsPerApp method.
+List all requestable entitlement IDs in a catalog without pagination.
 
 ### Example Usage
 
@@ -958,7 +958,7 @@ func main() {
 
 ## RemoveAccessEntitlements
 
-Remove visibility bindings (access entitlements) to a catalog.
+Remove visibility bindings (access entitlements) from a catalog.
 
 ### Example Usage
 
@@ -1074,7 +1074,7 @@ func main() {
 
 ## ResumePausedBundleAutomation
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.ResumePausedBundleAutomation method.
+Resume a bundle automation that was paused by the circuit breaker after detecting excessive membership changes.
 
 ### Example Usage
 
@@ -1132,7 +1132,7 @@ func main() {
 
 ## SetBundleAutomation
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation method.
+Create or update the bundle automation rule for a catalog that automatically syncs catalog membership.
 
 ### Example Usage
 
@@ -1248,7 +1248,7 @@ func main() {
 
 ## UpdateAppEntitlements
 
-Invokes the c1.api.requestcatalog.v1.RequestCatalogManagementService.UpdateAppEntitlements method.
+Replace the full set of requestable entitlements in a catalog with the provided list.
 
 ### Example Usage
 

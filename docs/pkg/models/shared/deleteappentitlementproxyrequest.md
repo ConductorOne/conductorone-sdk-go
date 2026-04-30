@@ -1,6 +1,6 @@
 # DeleteAppEntitlementProxyRequest
 
-The DeleteAppEntitlementProxyRequest message.
+The request message for deleting an entitlement proxy binding.
 
 
 ## Fields

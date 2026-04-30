@@ -7,4 +7,4 @@ The WebhookListenerAuthJWT message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `JwksURL`          | **string*          | :heavy_minus_sign: | The jwksUrl field. |
+| `JwksURL`          | `*string`          | :heavy_minus_sign: | The jwksUrl field. |

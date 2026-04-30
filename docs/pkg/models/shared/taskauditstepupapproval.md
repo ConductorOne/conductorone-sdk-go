@@ -7,4 +7,4 @@ The TaskAuditStepUpApproval message.
 
 | Field                          | Type                           | Required                       | Description                    |
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `StepUpTransactionID`          | **string*                      | :heavy_minus_sign:             | The stepUpTransactionId field. |
+| `StepUpTransactionID`          | `*string`                      | :heavy_minus_sign:             | The stepUpTransactionId field. |

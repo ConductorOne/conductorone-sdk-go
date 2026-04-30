@@ -11,7 +11,7 @@
 
 ## Create
 
-Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Create method.
+Create creates a new access review template that defines a reusable configuration for launching campaigns.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Delete method.
+Delete an access review template. The template can no longer be used to create campaigns.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Get method.
+Get retrieves a single access review template by ID.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.accessreview.v1.AccessReviewTemplateService.Update method.
+Update modifies an existing access review template. Use the update_mask to specify which fields to change.
 
 ### Example Usage
 

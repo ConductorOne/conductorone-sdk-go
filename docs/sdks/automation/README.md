@@ -13,7 +13,7 @@
 
 ## CreateAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.CreateAutomation method.
+Create a new automation with the specified steps, triggers, and configuration.
 
 ### Example Usage
 
@@ -42,7 +42,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.CreateAutomationResponse != nil {
+    if res.AutomationsCreateAutomationResponse != nil {
         // handle response
     }
 }
@@ -50,11 +50,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [shared.CreateAutomationRequestInput](../../pkg/models/shared/createautomationrequestinput.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                   | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [shared.AutomationsCreateAutomationRequest](../../pkg/models/shared/automationscreateautomationrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `opts`                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                               | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 ### Response
 
@@ -68,7 +68,7 @@ func main() {
 
 ## DeleteAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.DeleteAutomation method.
+Delete an automation by its unique identifier, removing it and its associated triggers.
 
 ### Example Usage
 
@@ -100,7 +100,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.DeleteAutomationResponse != nil {
+    if res.AutomationsDeleteAutomationResponse != nil {
         // handle response
     }
 }
@@ -126,7 +126,7 @@ func main() {
 
 ## ExecuteAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.ExecuteAutomation method.
+Trigger an on-demand execution of an automation, returning the new execution's identifier.
 
 ### Example Usage
 
@@ -184,7 +184,7 @@ func main() {
 
 ## GetAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.GetAutomation method.
+Retrieve a single automation by its unique identifier.
 
 ### Example Usage
 
@@ -242,7 +242,7 @@ func main() {
 
 ## ListAutomations
 
-Invokes the c1.api.automations.v1.AutomationService.ListAutomations method.
+List all automations in the tenant with pagination support.
 
 ### Example Usage
 
@@ -296,7 +296,7 @@ func main() {
 
 ## UpdateAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.UpdateAutomation method.
+Update an existing automation's properties, steps, or triggers using a field mask.
 
 ### Example Usage
 

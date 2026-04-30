@@ -9,9 +9,6 @@ package shared
 //   - passwordField
 //   - selectField
 //   - pickerField
-//
-// This message contains a oneof named _rules. Only a single field of the following list may be set at a time:
-//   - rules
 type StringField struct {
 	// The PasswordField message.
 	PasswordField *PasswordField `json:"passwordField,omitempty"`
@@ -20,6 +17,7 @@ type StringField struct {
 	// This message contains a oneof named type. Only a single field of the following list may be set at a time:
 	//   - appUserPicker
 	//   - resourcePicker
+	//   - c1UserPicker
 	//
 	PickerField *PickerField `json:"pickerField,omitempty"`
 	// The SelectField message.

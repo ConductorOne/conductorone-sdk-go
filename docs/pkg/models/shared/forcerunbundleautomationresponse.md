@@ -1,6 +1,6 @@
 # ForceRunBundleAutomationResponse
 
-The ForceRunBundleAutomationResponse message.
+The response message for triggering a bundle automation run.
 
 
 ## Fields

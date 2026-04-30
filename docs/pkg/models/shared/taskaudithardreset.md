@@ -7,4 +7,4 @@ The TaskAuditHardReset message.
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `OldPolicyStepID`          | **string*                  | :heavy_minus_sign:         | The oldPolicyStepId field. |
+| `OldPolicyStepID`          | `*string`                  | :heavy_minus_sign:         | The oldPolicyStepId field. |

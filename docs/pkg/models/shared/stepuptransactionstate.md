@@ -2,6 +2,19 @@
 
 Current state of the transaction
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.StepUpTransactionStateStepUpTransactionStateUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.StepUpTransactionState("custom_value")
+```
+
 
 ## Values
 

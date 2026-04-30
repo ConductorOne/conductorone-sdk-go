@@ -7,4 +7,4 @@ The TaskAuditExpressionPolicyStepError message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Error`            | **string*          | :heavy_minus_sign: | The error field.   |
+| `Error`            | `*string`          | :heavy_minus_sign: | The error field.   |

@@ -2,7 +2,7 @@
 
 package shared
 
-// The PolicyStep message.
+// PolicyStep - A single step in a policy workflow. Exactly one step type is set.
 //
 // This message contains a oneof named step. Only a single field of the following list may be set at a time:
 //   - approval
@@ -19,6 +19,7 @@ type PolicyStep struct {
 	//
 	// This message contains a oneof named target. Only a single field of the following list may be set at a time:
 	//   - automation
+	//   - batonResourceAction
 	//
 	Action *Action `json:"action,omitempty"`
 	// The Approval message.
@@ -37,7 +38,7 @@ type PolicyStep struct {
 	//
 	Approval *Approval `json:"approval,omitempty"`
 	// The Form message.
-	Form *Form `json:"form,omitempty"`
+	PolicyForm *PolicyForm `json:"form,omitempty"`
 	// The provision step references a provision policy for this step.
 	Provision *Provision `json:"provision,omitempty"`
 	// This policy step indicates that a ticket should have a denied outcome. This is a terminal approval state and is used to explicitly define the end of approval steps.
@@ -73,11 +74,11 @@ func (p *PolicyStep) GetApproval() *Approval {
 	return p.Approval
 }
 
-func (p *PolicyStep) GetForm() *Form {
+func (p *PolicyStep) GetPolicyForm() *PolicyForm {
 	if p == nil {
 		return nil
 	}
-	return p.Form
+	return p.PolicyForm
 }
 
 func (p *PolicyStep) GetProvision() *Provision {

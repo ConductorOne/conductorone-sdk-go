@@ -7,4 +7,4 @@ The UserProviderConfig message.
 
 | Field                             | Type                              | Required                          | Description                       |
 | --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `InputTransformationCel`          | **string*                         | :heavy_minus_sign:                | The inputTransformationCel field. |
+| `InputTransformationCel`          | `*string`                         | :heavy_minus_sign:                | The inputTransformationCel field. |

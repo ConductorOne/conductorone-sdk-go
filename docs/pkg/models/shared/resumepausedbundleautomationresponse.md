@@ -1,6 +1,6 @@
 # ResumePausedBundleAutomationResponse
 
-The ResumePausedBundleAutomationResponse message.
+The response message for resuming a paused bundle automation.
 
 
 ## Fields

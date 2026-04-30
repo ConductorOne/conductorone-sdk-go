@@ -7,4 +7,4 @@ The GetConnectorSyncDownloadURLResponse message.
 
 | Field                                                    | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `DownloadURL`                                            | **string*                                                | :heavy_minus_sign:                                       | Short-lived download URL for the connector sync artifact |
+| `DownloadURL`                                            | `*string`                                                | :heavy_minus_sign:                                       | Short-lived download URL for the connector sync artifact |

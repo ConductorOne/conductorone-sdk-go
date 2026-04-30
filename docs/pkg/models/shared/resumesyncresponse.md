@@ -1,6 +1,6 @@
 # ResumeSyncResponse
 
-The ResumeSyncResponse message.
+Empty response body. Status code indicates success.
 
 
 ## Fields

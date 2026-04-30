@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `RequestSchemaID`  | *string*           | :heavy_check_mark: | N/A                |
+| `RequestSchemaID`  | `string`           | :heavy_check_mark: | N/A                |
