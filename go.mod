@@ -1,4 +1,4 @@
-module github.com/conductorone/conductorone-sdk-go
+module github.com/conductorone/conductorone-sdk-go/v2
 
 go 1.21
 

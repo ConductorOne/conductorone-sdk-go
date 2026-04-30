@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/optionalnullable"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/optionalnullable"
 )
 
 const (

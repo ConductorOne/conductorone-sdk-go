@@ -7,11 +7,11 @@ package conductoronesdkgo
 import (
 	"context"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/internal/config"
-	"github.com/conductorone/conductorone-sdk-go/internal/hooks"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/internal/config"
+	"github.com/conductorone/conductorone-sdk-go/v2/internal/hooks"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/retry"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 	"net/http"
 	"time"
 )

@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/optionalnullable"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/optionalnullable"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 )
 
 func populateForm(paramName string, explode bool, objType reflect.Type, objValue reflect.Value, delimiter string, defaultValue *string, allowEmptyValue map[string]struct{}, getFieldName func(reflect.StructField) string) url.Values {

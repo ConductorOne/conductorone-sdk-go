@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc/status"
 	"gopkg.in/square/go-jose.v2/json"
 
-	"github.com/conductorone/conductorone-sdk-go/uhttp"
+	"github.com/conductorone/conductorone-sdk-go/v2/uhttp"
 )
 
 const (

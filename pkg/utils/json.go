@@ -14,7 +14,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 )
 
 func MarshalJSON(v interface{}, tag reflect.StructTag, topLevel bool) ([]byte, error) {

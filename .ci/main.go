@@ -3,9 +3,9 @@ package conductoronesdkgo
 import (
 	"context"
 
-	c1 "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	c1 "github.com/conductorone/conductorone-sdk-go/v2"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/operations"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 )
 
 // This is a test to make sure that the generated code still builds, it attemps to use a variety of methods from the SDK.

@@ -2,7 +2,7 @@
 
 package shared
 
-import "github.com/conductorone/conductorone-sdk-go/pkg/utils"
+import "github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 
 // The Escalation message.
 //

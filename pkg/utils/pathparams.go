@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/optionalnullable"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/optionalnullable"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 )
 
 func GenerateURL(_ context.Context, serverURL, path string, pathParams interface{}, globals interface{}) (string, error) {

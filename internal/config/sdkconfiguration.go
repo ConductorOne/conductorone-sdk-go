@@ -4,7 +4,7 @@ package config
 
 import (
 	"context"
-	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/retry"
 	"net/http"
 	"time"
 )

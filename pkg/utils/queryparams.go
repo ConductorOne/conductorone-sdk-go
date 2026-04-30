@@ -12,8 +12,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/optionalnullable"
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/optionalnullable"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 )
 
 func PopulateQueryParams(_ context.Context, req *http.Request, queryParams interface{}, globals interface{}, allowEmptyValue map[string]struct{}) error {

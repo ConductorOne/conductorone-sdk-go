@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/conductorone/conductorone-sdk-go/pkg/retry"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/retry"
 	"io"
 	"math"
 	"math/rand"

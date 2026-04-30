@@ -5,7 +5,7 @@ package hooks
 import (
 	"context"
 	"errors"
-	"github.com/conductorone/conductorone-sdk-go/internal/config"
+	"github.com/conductorone/conductorone-sdk-go/v2/internal/config"
 	"net/http"
 )
 

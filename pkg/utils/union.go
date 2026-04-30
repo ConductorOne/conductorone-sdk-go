@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/types"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/types"
 )
 
 // UnionCandidate represents a candidate type during union deserialization

@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/optionalnullable"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/optionalnullable"
 )
 
 func PopulateHeaders(_ context.Context, req *http.Request, headers interface{}, globals interface{}) {

@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/utils"
 )
 
 type ClientCredentials struct {

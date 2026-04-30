@@ -13,7 +13,7 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/oauth2"
 
-	"github.com/conductorone/conductorone-sdk-go/uhttp"
+	"github.com/conductorone/conductorone-sdk-go/v2/uhttp"
 )
 
 const c1TenantDomain = ".conductor.one"

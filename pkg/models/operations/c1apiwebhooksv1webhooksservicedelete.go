@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	"github.com/conductorone/conductorone-sdk-go/v2/pkg/models/shared"
 	"net/http"
 )
 

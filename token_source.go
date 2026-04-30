@@ -21,7 +21,7 @@ import (
 	"gopkg.in/square/go-jose.v2/json"
 	"gopkg.in/square/go-jose.v2/jwt"
 
-	"github.com/conductorone/conductorone-sdk-go/uhttp"
+	"github.com/conductorone/conductorone-sdk-go/v2/uhttp"
 )
 
 const (
