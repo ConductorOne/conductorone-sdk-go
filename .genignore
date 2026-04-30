@@ -11,3 +11,5 @@ go.mod
 go.sum
 USAGE.md
 RELEASES.md
+MIGRATING.md
+CHANGELOG.md
