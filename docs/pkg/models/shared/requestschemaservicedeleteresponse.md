@@ -1,6 +1,6 @@
 # RequestSchemaServiceDeleteResponse
 
-The RequestSchemaServiceDeleteResponse message.
+The response message for deleting a request schema.
 
 
 ## Fields

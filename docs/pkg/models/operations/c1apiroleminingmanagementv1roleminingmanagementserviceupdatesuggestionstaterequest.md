@@ -1,0 +1,9 @@
+# C1APIRoleMiningManagementV1RoleMiningManagementServiceUpdateSuggestionStateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `UpdateSuggestionStateRequest`                                                                     | [*shared.UpdateSuggestionStateRequest](../../../pkg/models/shared/updatesuggestionstaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `ID`                                                                                               | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

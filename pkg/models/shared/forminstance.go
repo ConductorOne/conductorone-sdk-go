@@ -35,7 +35,7 @@ func (e *FormInstanceState) IsExact() bool {
 //   - skipped
 type FormInstance struct {
 	// A form is a collection of fields to be filled out by a user
-	Form *FormInput `json:"form,omitempty"`
+	Form *Form `json:"form,omitempty"`
 	// The FormCompletedAction message.
 	FormCompletedAction *FormCompletedAction `json:"completed,omitempty"`
 	// The ReassignedAction object describes the outcome of a policy step that has been reassigned.
@@ -49,7 +49,7 @@ type FormInstance struct {
 	State *FormInstanceState `json:"state,omitempty"`
 }
 
-func (f *FormInstance) GetForm() *FormInput {
+func (f *FormInstance) GetForm() *Form {
 	if f == nil {
 		return nil
 	}

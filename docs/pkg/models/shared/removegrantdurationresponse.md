@@ -1,6 +1,6 @@
 # RemoveGrantDurationResponse
 
-The RemoveGrantDurationResponse message.
+The response message for removing the expiration time from a grant.
 
 
 ## Fields

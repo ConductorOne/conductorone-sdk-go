@@ -8,16 +8,16 @@ import (
 )
 
 type C1APIAppV1AppEntitlementsCreateAutomationRequest struct {
-	CreateAutomationRequest *shared.CreateAutomationRequest `request:"mediaType=application/json"`
-	AppEntitlementID        string                          `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
-	AppID                   string                          `pathParam:"style=simple,explode=false,name=app_id"`
+	AppCreateAutomationRequest *shared.AppCreateAutomationRequest `request:"mediaType=application/json"`
+	AppEntitlementID           string                             `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
+	AppID                      string                             `pathParam:"style=simple,explode=false,name=app_id"`
 }
 
-func (c *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetCreateAutomationRequest() *shared.CreateAutomationRequest {
+func (c *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetAppCreateAutomationRequest() *shared.AppCreateAutomationRequest {
 	if c == nil {
 		return nil
 	}
-	return c.CreateAutomationRequest
+	return c.AppCreateAutomationRequest
 }
 
 func (c *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetAppEntitlementID() string {
@@ -34,15 +34,25 @@ func (c *C1APIAppV1AppEntitlementsCreateAutomationRequest) GetAppID() string {
 	return c.AppID
 }
 
+// #region class-body-c1apiappv1appentitlementscreateautomationrequest
+// #endregion class-body-c1apiappv1appentitlementscreateautomationrequest
+
 type C1APIAppV1AppEntitlementsCreateAutomationResponse struct {
+	// Successful response
+	AppCreateAutomationResponse *shared.AppCreateAutomationResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	CreateAutomationResponse *shared.CreateAutomationResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetAppCreateAutomationResponse() *shared.AppCreateAutomationResponse {
+	if c == nil {
+		return nil
+	}
+	return c.AppCreateAutomationResponse
 }
 
 func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetContentType() string {
@@ -50,13 +60,6 @@ func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetContentType() str
 		return ""
 	}
 	return c.ContentType
-}
-
-func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetCreateAutomationResponse() *shared.CreateAutomationResponse {
-	if c == nil {
-		return nil
-	}
-	return c.CreateAutomationResponse
 }
 
 func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetStatusCode() int {
@@ -72,3 +75,6 @@ func (c *C1APIAppV1AppEntitlementsCreateAutomationResponse) GetRawResponse() *ht
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1appentitlementscreateautomationresponse
+// #endregion class-body-c1apiappv1appentitlementscreateautomationresponse

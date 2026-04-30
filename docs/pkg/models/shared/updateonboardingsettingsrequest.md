@@ -1,0 +1,11 @@
+# UpdateOnboardingSettingsRequest
+
+The UpdateOnboardingSettingsRequest message.
+
+
+## Fields
+
+| Field                                                                                                                | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ConversationID`                                                                                                     | `*string`                                                                                                            | :heavy_minus_sign:                                                                                                   | The identifier of the onboarding conversation thread to associate.                                                   |
+| `Status`                                                                                                             | [*shared.UpdateOnboardingSettingsRequestStatus](../../../pkg/models/shared/updateonboardingsettingsrequeststatus.md) | :heavy_minus_sign:                                                                                                   | The new onboarding status to set.                                                                                    |

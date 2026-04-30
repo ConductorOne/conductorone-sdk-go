@@ -7,5 +7,5 @@ This object references an app entitlement's ID and AppID.
 
 | Field                                          | Type                                           | Required                                       | Description                                    |
 | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| `AppEntitlementID`                             | **string*                                      | :heavy_minus_sign:                             | The ID of the Entitlement.                     |
-| `AppID`                                        | **string*                                      | :heavy_minus_sign:                             | The ID of the App this entitlement belongs to. |
+| `AppEntitlementID`                             | `*string`                                      | :heavy_minus_sign:                             | The ID of the Entitlement.                     |
+| `AppID`                                        | `*string`                                      | :heavy_minus_sign:                             | The ID of the App this entitlement belongs to. |

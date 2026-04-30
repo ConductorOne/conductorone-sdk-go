@@ -8,14 +8,21 @@ import (
 )
 
 type C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse struct {
+	// The EditorValidateResponse message contains validation results.
+	AppEditorValidateResponse *shared.AppEditorValidateResponse
 	// HTTP response content type for this operation
 	ContentType string
-	// Successful response
-	EditorValidateResponse *shared.EditorValidateResponse
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetAppEditorValidateResponse() *shared.AppEditorValidateResponse {
+	if c == nil {
+		return nil
+	}
+	return c.AppEditorValidateResponse
 }
 
 func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetContentType() string {
@@ -23,13 +30,6 @@ func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetConte
 		return ""
 	}
 	return c.ContentType
-}
-
-func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetEditorValidateResponse() *shared.EditorValidateResponse {
-	if c == nil {
-		return nil
-	}
-	return c.EditorValidateResponse
 }
 
 func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetStatusCode() int {
@@ -45,3 +45,6 @@ func (c *C1APIAppV1ConnectorServiceValidateHTTPConnectorConfigResponse) GetRawRe
 	}
 	return c.RawResponse
 }
+
+// #region class-body-c1apiappv1connectorservicevalidatehttpconnectorconfigresponse
+// #endregion class-body-c1apiappv1connectorservicevalidatehttpconnectorconfigresponse

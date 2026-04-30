@@ -7,4 +7,4 @@ The ReplacePolicy message.
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `PolicyID`          | **string*           | :heavy_minus_sign:  | The policyId field. |
+| `PolicyID`          | `*string`           | :heavy_minus_sign:  | The policyId field. |

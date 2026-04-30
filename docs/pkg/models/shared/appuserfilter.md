@@ -7,4 +7,4 @@ The AppUserFilter message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `AppID`            | **string*          | :heavy_minus_sign: | The appId field.   |
+| `AppID`            | `*string`          | :heavy_minus_sign: | The appId field.   |

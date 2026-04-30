@@ -24,6 +24,8 @@ package shared
 //   - accountLifecycleAction
 //   - generatePassword
 //   - evaluateExpressions
+//   - setCredential
+//   - storeCredential
 type AutomationStep struct {
 	// The AccountLifecycleAction message.
 	//
@@ -32,6 +34,20 @@ type AutomationStep struct {
 	//   - accountInContext
 	//
 	AccountLifecycleAction *AccountLifecycleAction `json:"accountLifecycleAction,omitempty"`
+	// The TaskAction message.
+	//
+	// This message contains a oneof named action. Only a single field of the following list may be set at a time:
+	//   - close
+	//   - reassign
+	//
+	AutomationsTaskAction *AutomationsTaskAction `json:"taskAction,omitempty"`
+	// The Webhook message.
+	//
+	// This message contains a oneof named webhook_identifier. Only a single field of the following list may be set at a time:
+	//   - webhookId
+	//   - webhookIdCel
+	//
+	AutomationsWebhook *AutomationsWebhook `json:"webhook,omitempty"`
 	// The CallFunction message.
 	CallFunction *CallFunction `json:"callFunction,omitempty"`
 	// The ConnectorAction message.
@@ -78,6 +94,19 @@ type AutomationStep struct {
 	// The GeneratePassword message.
 	GeneratePassword *GeneratePassword `json:"generatePassword,omitempty"`
 	// The GrantEntitlements message.
+	//
+	// This message contains a oneof named inclusion. Only a single field of the following list may be set at a time:
+	//   - inclusionList
+	//   - inclusionCriteria
+	//   - inclusionListCel
+	//
+	//
+	// This message contains a oneof named exclusion. Only a single field of the following list may be set at a time:
+	//   - exclusionNone
+	//   - exclusionList
+	//   - exclusionCriteria
+	//   - exclusionListCel
+	//
 	GrantEntitlements *GrantEntitlements `json:"grantEntitlements,omitempty"`
 	// RemoveFromDelegation: find all users that have the target user as their delegated user, and modify the delegation.
 	//
@@ -95,20 +124,26 @@ type AutomationStep struct {
 	RunAutomation *RunAutomation `json:"runAutomation,omitempty"`
 	// The SendEmail message.
 	SendEmail *SendEmail `json:"sendEmail,omitempty"`
-	// The SendSlackMessage message.
+	// SendSlackMessage posts to a channel or DMs one or more users. Delivery mode is
+	//  inferred from which fields are populated: DM if any user field is set
+	//  (use_subject_user, user_ids_cel, user_refs), otherwise channel. Priority for DM
+	//  recipient resolution: use_subject_user > user_ids_cel > user_refs.
 	//
 	// This message contains a oneof named channel. Only a single field of the following list may be set at a time:
 	//   - channelName
 	//   - channelNameCel
 	//
 	SendSlackMessage *SendSlackMessage `json:"sendSlackMessage,omitempty"`
-	// The TaskAction message.
+	// SetCredential submits a RotateCredentials baton task to the target connector,
+	//  re-encrypting the given password CEL expression with the connector's public JWK.
 	//
-	// This message contains a oneof named action. Only a single field of the following list may be set at a time:
-	//   - close
-	//   - reassign
+	// This message contains a oneof named connector_identifier. Only a single field of the following list may be set at a time:
+	//   - connectorRef
 	//
-	TaskAction *TaskAction `json:"taskAction,omitempty"`
+	SetCredential *SetCredential `json:"setCredential,omitempty"`
+	// StoreCredential stores a credential from GeneratePassword in a vault.
+	//  Supports Paper Vault (SSO/email) and App Vault (entitlement-bound).
+	StoreCredential *StoreCredential `json:"storeCredential,omitempty"`
 	// The UnenrollFromAllAccessProfiles message.
 	UnenrollFromAllAccessProfiles *UnenrollFromAllAccessProfiles `json:"unenrollFromAllAccessProfiles,omitempty"`
 	// The UpdateUser message.
@@ -125,13 +160,6 @@ type AutomationStep struct {
 	UpdateUser *UpdateUser `json:"updateUser,omitempty"`
 	// The WaitForDuration message.
 	WaitForDuration *WaitForDuration `json:"waitForDuration,omitempty"`
-	// The Webhook message.
-	//
-	// This message contains a oneof named webhook_identifier. Only a single field of the following list may be set at a time:
-	//   - webhookId
-	//   - webhookIdCel
-	//
-	Webhook *Webhook `json:"webhook,omitempty"`
 	// The skipIfTrueCel field.
 	SkipIfTrueCel *string `json:"skipIfTrueCel,omitempty"`
 	// The stepDisplayName field.
@@ -145,6 +173,20 @@ func (a *AutomationStep) GetAccountLifecycleAction() *AccountLifecycleAction {
 		return nil
 	}
 	return a.AccountLifecycleAction
+}
+
+func (a *AutomationStep) GetAutomationsTaskAction() *AutomationsTaskAction {
+	if a == nil {
+		return nil
+	}
+	return a.AutomationsTaskAction
+}
+
+func (a *AutomationStep) GetAutomationsWebhook() *AutomationsWebhook {
+	if a == nil {
+		return nil
+	}
+	return a.AutomationsWebhook
 }
 
 func (a *AutomationStep) GetCallFunction() *CallFunction {
@@ -238,11 +280,18 @@ func (a *AutomationStep) GetSendSlackMessage() *SendSlackMessage {
 	return a.SendSlackMessage
 }
 
-func (a *AutomationStep) GetTaskAction() *TaskAction {
+func (a *AutomationStep) GetSetCredential() *SetCredential {
 	if a == nil {
 		return nil
 	}
-	return a.TaskAction
+	return a.SetCredential
+}
+
+func (a *AutomationStep) GetStoreCredential() *StoreCredential {
+	if a == nil {
+		return nil
+	}
+	return a.StoreCredential
 }
 
 func (a *AutomationStep) GetUnenrollFromAllAccessProfiles() *UnenrollFromAllAccessProfiles {
@@ -264,13 +313,6 @@ func (a *AutomationStep) GetWaitForDuration() *WaitForDuration {
 		return nil
 	}
 	return a.WaitForDuration
-}
-
-func (a *AutomationStep) GetWebhook() *Webhook {
-	if a == nil {
-		return nil
-	}
-	return a.Webhook
 }
 
 func (a *AutomationStep) GetSkipIfTrueCel() *string {

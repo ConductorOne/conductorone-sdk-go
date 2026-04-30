@@ -1,6 +1,6 @@
 # UpdateGrantDurationRequest
 
-The UpdateGrantDurationRequest message.
+The request message for updating the duration of an existing grant.
 
 
 ## Fields

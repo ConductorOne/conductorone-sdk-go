@@ -7,4 +7,4 @@ The UpdateOrgDomainResponse message.
 
 | Field                                                         | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `List`                                                        | [][shared.OrgDomain](../../../pkg/models/shared/orgdomain.md) | :heavy_minus_sign:                                            | The list field.                                               |
+| `List`                                                        | [][shared.OrgDomain](../../../pkg/models/shared/orgdomain.md) | :heavy_minus_sign:                                            | The resulting list of verified domains after the update.      |

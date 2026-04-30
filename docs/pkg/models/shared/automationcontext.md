@@ -7,4 +7,4 @@ The AutomationContext message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Context`          | map[string]*any*   | :heavy_minus_sign: | N/A                |
+| `Context`          | map[string]`any`   | :heavy_minus_sign: | N/A                |

@@ -9,7 +9,7 @@
 
 ## List
 
-Invokes the c1.api.settings.v1.OrgDomainService.List method.
+List returns all verified domains configured for the tenant.
 
 ### Example Usage
 
@@ -65,7 +65,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.settings.v1.OrgDomainService.Update method.
+Update replaces the tenant's set of verified domains with the provided list.
 
 ### Example Usage
 

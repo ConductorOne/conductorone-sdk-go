@@ -1,0 +1,9 @@
+# C1APIAuthConfigV1TenantAuthConfigServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `TenantAuthConfigServiceDeleteRequest`                                                                             | [*shared.TenantAuthConfigServiceDeleteRequest](../../../pkg/models/shared/tenantauthconfigservicedeleterequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `ID`                                                                                                               | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

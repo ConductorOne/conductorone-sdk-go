@@ -2,15 +2,60 @@
 
 package shared
 
-// The Form message.
+// Form - A form is a collection of fields to be filled out by a user
 type Form struct {
-	// A form is a collection of fields to be filled out by a user
-	Form *FormInput `json:"form,omitempty"`
+	// The description field.
+	Description *string `json:"description,omitempty"`
+	// The displayName field.
+	DisplayName *string `json:"displayName,omitempty"`
+	// The fieldGroups field.
+	FieldGroups []FieldGroup `json:"fieldGroups,omitempty"`
+	// The fieldRelationships field.
+	FieldRelationships []FieldRelationship `json:"fieldRelationships,omitempty"`
+	// The fields field.
+	Fields []Field `json:"fields,omitempty"`
+	// The id field.
+	ID *string `json:"id,omitempty"`
 }
 
-func (f *Form) GetForm() *FormInput {
+func (f *Form) GetDescription() *string {
 	if f == nil {
 		return nil
 	}
-	return f.Form
+	return f.Description
+}
+
+func (f *Form) GetDisplayName() *string {
+	if f == nil {
+		return nil
+	}
+	return f.DisplayName
+}
+
+func (f *Form) GetFieldGroups() []FieldGroup {
+	if f == nil {
+		return nil
+	}
+	return f.FieldGroups
+}
+
+func (f *Form) GetFieldRelationships() []FieldRelationship {
+	if f == nil {
+		return nil
+	}
+	return f.FieldRelationships
+}
+
+func (f *Form) GetFields() []Field {
+	if f == nil {
+		return nil
+	}
+	return f.Fields
+}
+
+func (f *Form) GetID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.ID
 }

@@ -1,0 +1,11 @@
+# C1APIAppV2AppOwnersSetResponse
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ContentType`                                                                          | `string`                                                                               | :heavy_check_mark:                                                                     | HTTP response content type for this operation                                          |
+| `SetAppOwnersResponseV2`                                                               | [*shared.SetAppOwnersResponseV2](../../../pkg/models/shared/setappownersresponsev2.md) | :heavy_minus_sign:                                                                     | SetAppOwnersResponse is the empty response for setting app owners.                     |
+| `StatusCode`                                                                           | `int`                                                                                  | :heavy_check_mark:                                                                     | HTTP response status code for this operation                                           |
+| `RawResponse`                                                                          | [*http.Response](https://pkg.go.dev/net/http#Response)                                 | :heavy_check_mark:                                                                     | Raw HTTP response; suitable for custom response parsing                                |

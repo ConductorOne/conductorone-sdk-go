@@ -7,4 +7,4 @@ The EntitlementExclusionListCel message.
 
 | Field                                    | Type                                     | Required                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `ExcludedAppEntitlementRefsCel`          | **string*                                | :heavy_minus_sign:                       | The excludedAppEntitlementRefsCel field. |
+| `ExcludedAppEntitlementRefsCel`          | `*string`                                | :heavy_minus_sign:                       | The excludedAppEntitlementRefsCel field. |

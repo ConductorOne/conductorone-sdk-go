@@ -8,7 +8,7 @@
 
 ## Get
 
-Invokes the c1.api.settings.v1.AWSExternalIDSettings.Get method.
+Get retrieves the AWS external ID for the tenant, used in IAM role trust policies for AWS connectors.
 
 ### Example Usage
 

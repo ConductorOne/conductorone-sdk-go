@@ -1,6 +1,6 @@
 # ConfirmSyncValidResponse
 
-The ConfirmSyncValidResponse message.
+Empty response body. Status code indicates success.
 
 
 ## Fields

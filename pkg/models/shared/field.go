@@ -2,127 +2,121 @@
 
 package shared
 
-// The Field message.
+// Field - A field is a single input meant to collect a piece of data from a user
 //
-// This message contains a oneof named field. Only a single field of the following list may be set at a time:
-//   - str
-//   - select
-//   - random
-//   - import
-//   - oauth2
-//   - readOnly
-//   - options
-//   - checkbox
-//   - secret
-//   - strList
-//   - text
-//   - keyValue
-//   - stringMap
+// This message contains a oneof named type. Only a single field of the following list may be set at a time:
+//   - stringField
+//   - boolField
+//   - stringSliceField
+//   - int64Field
+//   - fileField
+//   - oauth2Field
+//   - stringMapField
+//
+// This message contains a oneof named provider_config. Only a single field of the following list may be set at a time:
+//   - userConfig
+//   - adminConfig
+//   - sharedConfig
 type Field struct {
-	// The CheckboxField message.
-	CheckboxField *CheckboxField1 `json:"checkbox,omitempty"`
-	// The ImportField message.
-	ImportField *ImportField `json:"import,omitempty"`
-	// The KeyValueField message.
-	KeyValueField *KeyValueField `json:"keyValue,omitempty"`
-	// The OAuth2Field message.
-	OAuth2Field *OAuth2Field `json:"oauth2,omitempty"`
-	// The OptionsField message.
-	OptionsField *OptionsField `json:"options,omitempty"`
-	// The RandomStringField message.
-	RandomStringField *RandomStringField `json:"random,omitempty"`
-	// The ReadOnlyField message.
-	ReadOnlyField *ReadOnlyField `json:"readOnly,omitempty"`
-	// The RotatableSecretField message.
-	RotatableSecretField *RotatableSecretField `json:"secret,omitempty"`
-	// The SelectField message.
-	SelectField *SelectField `json:"select,omitempty"`
+	// The AdminProviderConfig message.
+	AdminProviderConfig *AdminProviderConfig `json:"adminConfig,omitempty"`
+	// The BoolField message.
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - checkboxField
+	//   - toggleField
+	//
+	BoolField *BoolField `json:"boolField,omitempty"`
+	// The FileField message.
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - fileInputField
+	//
+	FileField *FileField `json:"fileField,omitempty"`
+	// The Int64Field message.
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - numberField
+	//
+	Int64Field *Int64Field `json:"int64Field,omitempty"`
+	// The Oauth2Field message.
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - oauth2FieldView
+	//
+	Oauth2Field *Oauth2Field1 `json:"oauth2Field,omitempty"`
+	// The SharedProviderConfig message.
+	SharedProviderConfig *SharedProviderConfig `json:"sharedConfig,omitempty"`
 	// The StringField message.
-	StringField *StringField `json:"str,omitempty"`
-	// The StringListField message.
-	StringListField *StringListField `json:"strList,omitempty"`
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - textField
+	//   - passwordField
+	//   - selectField
+	//   - pickerField
+	//
+	StringField *StringField `json:"stringField,omitempty"`
 	// The StringMapField message.
-	StringMapField *StringMapField `json:"stringMap,omitempty"`
-	// The TextField message.
-	TextField *TextField `json:"text,omitempty"`
-	// Optional. Additional placeholder text for the field
-	//  In cases where a single placeholder is not enough to describe the field
-	AdditionalPlaceholder *string `json:"additionalPlaceholder,omitempty"`
-	// The dependsOnFields field.
-	DependsOnFields []string `json:"dependsOnFields,omitempty"`
-	// Human-readable label for this Field
+	StringMapField *StringMapField `json:"stringMapField,omitempty"`
+	// The StringSliceField message.
+	//
+	// This message contains a oneof named view. Only a single field of the following list may be set at a time:
+	//   - chipsField
+	//   - pickerField
+	//
+	StringSliceField *StringSliceField `json:"stringSliceField,omitempty"`
+	// The UserProviderConfig message.
+	UserProviderConfig *UserProviderConfig `json:"userConfig,omitempty"`
+	// The description field.
+	Description *string `json:"description,omitempty"`
+	// The displayName field.
 	DisplayName *string `json:"displayName,omitempty"`
-	// empty or https URL
-	HelpURL *string `json:"helpUrl,omitempty"`
-	// Must not start with `C1_` and match [a-zA-Z0-9_]{2,64}.  Must be unique within a connector.
+	// The name field.
 	Name *string `json:"name,omitempty"`
-	// The placeholder field.
-	Placeholder *string `json:"placeholder,omitempty"`
-	// The postCreate field.
-	PostCreate *bool `json:"postCreate,omitempty"`
+	// The required field.
+	Required *bool `json:"required,omitempty"`
 }
 
-func (f *Field) GetCheckboxField() *CheckboxField1 {
+func (f *Field) GetAdminProviderConfig() *AdminProviderConfig {
 	if f == nil {
 		return nil
 	}
-	return f.CheckboxField
+	return f.AdminProviderConfig
 }
 
-func (f *Field) GetImportField() *ImportField {
+func (f *Field) GetBoolField() *BoolField {
 	if f == nil {
 		return nil
 	}
-	return f.ImportField
+	return f.BoolField
 }
 
-func (f *Field) GetKeyValueField() *KeyValueField {
+func (f *Field) GetFileField() *FileField {
 	if f == nil {
 		return nil
 	}
-	return f.KeyValueField
+	return f.FileField
 }
 
-func (f *Field) GetOAuth2Field() *OAuth2Field {
+func (f *Field) GetInt64Field() *Int64Field {
 	if f == nil {
 		return nil
 	}
-	return f.OAuth2Field
+	return f.Int64Field
 }
 
-func (f *Field) GetOptionsField() *OptionsField {
+func (f *Field) GetOauth2Field() *Oauth2Field1 {
 	if f == nil {
 		return nil
 	}
-	return f.OptionsField
+	return f.Oauth2Field
 }
 
-func (f *Field) GetRandomStringField() *RandomStringField {
+func (f *Field) GetSharedProviderConfig() *SharedProviderConfig {
 	if f == nil {
 		return nil
 	}
-	return f.RandomStringField
-}
-
-func (f *Field) GetReadOnlyField() *ReadOnlyField {
-	if f == nil {
-		return nil
-	}
-	return f.ReadOnlyField
-}
-
-func (f *Field) GetRotatableSecretField() *RotatableSecretField {
-	if f == nil {
-		return nil
-	}
-	return f.RotatableSecretField
-}
-
-func (f *Field) GetSelectField() *SelectField {
-	if f == nil {
-		return nil
-	}
-	return f.SelectField
+	return f.SharedProviderConfig
 }
 
 func (f *Field) GetStringField() *StringField {
@@ -132,13 +126,6 @@ func (f *Field) GetStringField() *StringField {
 	return f.StringField
 }
 
-func (f *Field) GetStringListField() *StringListField {
-	if f == nil {
-		return nil
-	}
-	return f.StringListField
-}
-
 func (f *Field) GetStringMapField() *StringMapField {
 	if f == nil {
 		return nil
@@ -146,25 +133,25 @@ func (f *Field) GetStringMapField() *StringMapField {
 	return f.StringMapField
 }
 
-func (f *Field) GetTextField() *TextField {
+func (f *Field) GetStringSliceField() *StringSliceField {
 	if f == nil {
 		return nil
 	}
-	return f.TextField
+	return f.StringSliceField
 }
 
-func (f *Field) GetAdditionalPlaceholder() *string {
+func (f *Field) GetUserProviderConfig() *UserProviderConfig {
 	if f == nil {
 		return nil
 	}
-	return f.AdditionalPlaceholder
+	return f.UserProviderConfig
 }
 
-func (f *Field) GetDependsOnFields() []string {
+func (f *Field) GetDescription() *string {
 	if f == nil {
 		return nil
 	}
-	return f.DependsOnFields
+	return f.Description
 }
 
 func (f *Field) GetDisplayName() *string {
@@ -174,13 +161,6 @@ func (f *Field) GetDisplayName() *string {
 	return f.DisplayName
 }
 
-func (f *Field) GetHelpURL() *string {
-	if f == nil {
-		return nil
-	}
-	return f.HelpURL
-}
-
 func (f *Field) GetName() *string {
 	if f == nil {
 		return nil
@@ -188,16 +168,9 @@ func (f *Field) GetName() *string {
 	return f.Name
 }
 
-func (f *Field) GetPlaceholder() *string {
+func (f *Field) GetRequired() *bool {
 	if f == nil {
 		return nil
 	}
-	return f.Placeholder
-}
-
-func (f *Field) GetPostCreate() *bool {
-	if f == nil {
-		return nil
-	}
-	return f.PostCreate
+	return f.Required
 }

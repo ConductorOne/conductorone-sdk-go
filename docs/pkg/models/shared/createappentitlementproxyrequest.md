@@ -1,6 +1,6 @@
 # CreateAppEntitlementProxyRequest
 
-The CreateAppEntitlementProxyRequest message.
+The request message for creating an entitlement proxy binding.
 
 
 ## Fields

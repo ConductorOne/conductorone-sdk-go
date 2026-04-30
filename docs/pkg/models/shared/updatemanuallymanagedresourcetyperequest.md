@@ -1,6 +1,6 @@
 # UpdateManuallyManagedResourceTypeRequest
 
-The UpdateManuallyManagedResourceTypeRequest message.
+The request message for updating a manually managed resource type.
 
 
 ## Fields
@@ -8,4 +8,4 @@ The UpdateManuallyManagedResourceTypeRequest message.
 | Field                                                                                                                    | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | `AppResourceType`                                                                                                        | [*shared.AppResourceTypeInput](../../../pkg/models/shared/appresourcetypeinput.md)                                       | :heavy_minus_sign:                                                                                                       | The AppResourceType is referenced by an app entitlement defining its resource types. Commonly things like Group or Role. |
-| `UpdateMask`                                                                                                             | **string*                                                                                                                | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |
+| `UpdateMask`                                                                                                             | `*string`                                                                                                                | :heavy_minus_sign:                                                                                                       | N/A                                                                                                                      |

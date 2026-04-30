@@ -1,6 +1,6 @@
 # ConfirmSyncValidRequest
 
-The ConfirmSyncValidRequest message.
+The ConfirmSyncValidRequest message contains the fields required to confirm a sync as valid.
 
 
 ## Fields

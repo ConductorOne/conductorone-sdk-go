@@ -1,6 +1,6 @@
 # VaultServiceDeleteRequest
 
-The VaultServiceDeleteRequest message.
+VaultServiceDeleteRequest is the request message for deleting a vault.
 
 
 ## Fields

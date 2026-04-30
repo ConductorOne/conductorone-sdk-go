@@ -13,7 +13,7 @@
 
 ## Create
 
-Invokes the c1.api.webhooks.v1.WebhooksService.Create method.
+Create a new webhook subscription to receive event notifications at the specified URL.
 
 ### Example Usage
 
@@ -68,7 +68,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.webhooks.v1.WebhooksService.Delete method.
+Delete a webhook subscription, stopping all future event deliveries to its URL.
 
 ### Example Usage
 
@@ -126,7 +126,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.webhooks.v1.WebhooksService.Get method.
+Retrieve a single webhook by its ID.
 
 ### Example Usage
 
@@ -184,7 +184,7 @@ func main() {
 
 ## List
 
-Invokes the c1.api.webhooks.v1.WebhooksService.List method.
+List all webhook subscriptions in the tenant, with pagination.
 
 ### Example Usage
 
@@ -240,7 +240,7 @@ func main() {
 
 ## Test
 
-Invokes the c1.api.webhooks.v1.WebhooksService.Test method.
+Send a sample event to the webhook URL to verify that the endpoint is reachable and responding correctly.
 
 ### Example Usage
 
@@ -298,7 +298,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.webhooks.v1.WebhooksService.Update method.
+Update an existing webhook subscription's properties, such as its URL or display name.
 
 ### Example Usage
 

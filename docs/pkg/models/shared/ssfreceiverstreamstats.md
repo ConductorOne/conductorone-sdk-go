@@ -1,0 +1,19 @@
+# SSFReceiverStreamStats
+
+SSFReceiverStreamStats is a lightweight read-only stats object.
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `EventsActedOnCount`                                                    | `*int64`                                                                | :heavy_minus_sign:                                                      | Number of events that triggered an action (e.g., session revocation).   |
+| `EventsFailedCount`                                                     | `*int64`                                                                | :heavy_minus_sign:                                                      | Number of events that failed processing.                                |
+| `EventsReceivedCount`                                                   | `*int64`                                                                | :heavy_minus_sign:                                                      | Total number of events received on this stream.                         |
+| `LastErrorAt`                                                           | [*time.Time](https://pkg.go.dev/time#Time)                              | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `LastErrorMessage`                                                      | `*string`                                                               | :heavy_minus_sign:                                                      | Human-readable description of the most recent processing error.         |
+| `LastEventReceivedAt`                                                   | [*time.Time](https://pkg.go.dev/time#Time)                              | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `LastVerifiedAt`                                                        | [*time.Time](https://pkg.go.dev/time#Time)                              | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `StreamID`                                                              | `*string`                                                               | :heavy_minus_sign:                                                      | The SSF receiver stream these stats belong to.                          |
+| `TransmitterStatus`                                                     | `*string`                                                               | :heavy_minus_sign:                                                      | Current status reported by the transmitter (e.g., "enabled", "paused"). |
+| `TransmitterStatusReason`                                               | `*string`                                                               | :heavy_minus_sign:                                                      | Reason provided by the transmitter for its current status.              |

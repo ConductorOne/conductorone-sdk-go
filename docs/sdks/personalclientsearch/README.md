@@ -8,7 +8,7 @@
 
 ## Search
 
-Invokes the c1.api.iam.v1.PersonalClientSearchService.Search method.
+Search finds personal client credentials across all users, with optional filtering by query text or user.
 
 ### Example Usage
 

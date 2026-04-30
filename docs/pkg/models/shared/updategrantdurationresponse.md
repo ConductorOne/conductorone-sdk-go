@@ -1,6 +1,6 @@
 # UpdateGrantDurationResponse
 
-The UpdateGrantDurationResponse message.
+The response message for updating the duration of a grant.
 
 
 ## Fields

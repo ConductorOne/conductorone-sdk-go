@@ -1,6 +1,19 @@
 # ResourceType
 
-The resourceType field.
+The category of the resource type (e.g., ROLE, GROUP, LICENSE).
+
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.ResourceTypeRole
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.ResourceType("custom_value")
+```
 
 
 ## Values

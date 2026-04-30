@@ -2,6 +2,19 @@
 
 The last applied state of the app access request defaults.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.AppAccessRequestDefaultsStateAppAccessRequestDefaultsLastApplyStateUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.AppAccessRequestDefaultsState("custom_value")
+```
+
 
 ## Values
 

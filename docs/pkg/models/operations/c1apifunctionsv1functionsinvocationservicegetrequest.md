@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `FunctionID`       | *string*           | :heavy_check_mark: | N/A                |
-| `ID`               | *string*           | :heavy_check_mark: | N/A                |
+| `FunctionID`       | `string`           | :heavy_check_mark: | N/A                |
+| `ID`               | `string`           | :heavy_check_mark: | N/A                |

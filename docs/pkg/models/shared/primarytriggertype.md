@@ -2,6 +2,19 @@
 
 The primaryTriggerType field.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.PrimaryTriggerTypeTriggerTypeUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.PrimaryTriggerType("custom_value")
+```
+
 
 ## Values
 
@@ -20,3 +33,4 @@ The primaryTriggerType field.
 | `PrimaryTriggerTypeTriggerTypeForm`              | TRIGGER_TYPE_FORM                                |
 | `PrimaryTriggerTypeTriggerTypeScheduleAppUser`   | TRIGGER_TYPE_SCHEDULE_APP_USER                   |
 | `PrimaryTriggerTypeTriggerTypeAccessConflict`    | TRIGGER_TYPE_ACCESS_CONFLICT                     |
+| `PrimaryTriggerTypeTriggerTypeScheduleNoUser`    | TRIGGER_TYPE_SCHEDULE_NO_USER                    |

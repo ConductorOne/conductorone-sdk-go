@@ -7,4 +7,4 @@ The SaveToVault message.
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `VaultIds`          | []*string*          | :heavy_minus_sign:  | The vaultIds field. |
+| `VaultIds`          | []`string`          | :heavy_minus_sign:  | The vaultIds field. |
