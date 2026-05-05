@@ -8,7 +8,7 @@
 
 ## Test
 
-Invokes the c1.api.policy.v1.AccountProvisionPolicyTest.Test method.
+Test an account provision policy by evaluating a CEL expression and returning the computed result.
 
 ### Example Usage
 

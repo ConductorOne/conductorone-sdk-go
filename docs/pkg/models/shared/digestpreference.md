@@ -1,0 +1,13 @@
+# DigestPreference
+
+DigestPreference controls whether summary digest notifications are sent and how often.
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `DayOfWeek`                                                                                   | [*shared.DayOfWeek](../../../pkg/models/shared/dayofweek.md)                                  | :heavy_minus_sign:                                                                            | The day of the week to send weekly digests.                                                   |
+| `Enabled`                                                                                     | `*bool`                                                                                       | :heavy_minus_sign:                                                                            | Whether digest notifications are enabled.                                                     |
+| `Frequency`                                                                                   | [*shared.Frequency](../../../pkg/models/shared/frequency.md)                                  | :heavy_minus_sign:                                                                            | How often digest notifications are sent.                                                      |
+| `Locked`                                                                                      | `*bool`                                                                                       | :heavy_minus_sign:                                                                            | Whether this preference is locked by org-level settings, preventing users from overriding it. |

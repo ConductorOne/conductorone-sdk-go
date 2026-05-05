@@ -1,0 +1,11 @@
+# C1APIAppV2AppOwnersCreateUserOwnerRequest
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `CreateUserOwnerRequest`                                                               | [*shared.CreateUserOwnerRequest](../../../pkg/models/shared/createuserownerrequest.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `AppID`                                                                                | `string`                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `RoleSlug`                                                                             | `string`                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |
+| `UserRefID`                                                                            | `string`                                                                               | :heavy_check_mark:                                                                     | N/A                                                                                    |

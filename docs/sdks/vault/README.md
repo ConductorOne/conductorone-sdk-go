@@ -11,7 +11,7 @@
 
 ## Create
 
-Invokes the c1.api.vault.v1.VaultService.Create method.
+Create provisions a new external secret storage vault and returns it.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.vault.v1.VaultService.Delete method.
+Delete a vault by its ID. Active connectors using this vault will no longer be able to access their stored credentials.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.vault.v1.VaultService.Get method.
+Get returns a single vault by its ID.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.vault.v1.VaultService.Update method.
+Update modifies an existing vault's properties using a field mask.
 
 ### Example Usage
 

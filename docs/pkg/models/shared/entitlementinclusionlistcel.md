@@ -7,4 +7,4 @@ The EntitlementInclusionListCel message.
 
 | Field                            | Type                             | Required                         | Description                      |
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `AppEntitlementRefsCel`          | **string*                        | :heavy_minus_sign:               | The appEntitlementRefsCel field. |
+| `AppEntitlementRefsCel`          | `*string`                        | :heavy_minus_sign:               | The appEntitlementRefsCel field. |

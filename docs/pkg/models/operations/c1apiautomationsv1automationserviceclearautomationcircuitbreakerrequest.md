@@ -1,0 +1,9 @@
+# C1APIAutomationsV1AutomationServiceClearAutomationCircuitBreakerRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `ClearAutomationCircuitBreakerRequest`                                                                             | [*shared.ClearAutomationCircuitBreakerRequest](../../../pkg/models/shared/clearautomationcircuitbreakerrequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `ID`                                                                                                               | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

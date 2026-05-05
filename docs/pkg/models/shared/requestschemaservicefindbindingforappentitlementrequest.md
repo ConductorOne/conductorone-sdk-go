@@ -1,6 +1,6 @@
 # RequestSchemaServiceFindBindingForAppEntitlementRequest
 
-The RequestSchemaServiceFindBindingForAppEntitlementRequest message.
+The request message for finding which request schema is bound to a given app entitlement.
 
 
 ## Fields

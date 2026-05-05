@@ -9,7 +9,7 @@
 
 ## GetAutomationExecution
 
-Invokes the c1.api.automations.v1.AutomationExecutionService.GetAutomationExecution method.
+Retrieve a single automation execution by its unique identifier, with optional expanded related objects.
 
 ### Example Usage
 
@@ -67,7 +67,7 @@ func main() {
 
 ## ListAutomationExecutions
 
-Invokes the c1.api.automations.v1.AutomationExecutionService.ListAutomationExecutions method.
+List all automation executions in the tenant with pagination support.
 
 ### Example Usage
 

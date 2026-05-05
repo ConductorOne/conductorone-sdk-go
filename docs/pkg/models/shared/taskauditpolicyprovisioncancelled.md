@@ -7,4 +7,4 @@ The TaskAuditPolicyProvisionCancelled message.
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `CancelReason`          | **string*               | :heavy_minus_sign:      | The cancelReason field. |
+| `CancelReason`          | `*string`               | :heavy_minus_sign:      | The cancelReason field. |

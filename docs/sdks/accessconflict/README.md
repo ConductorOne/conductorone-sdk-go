@@ -11,7 +11,7 @@
 
 ## CreateMonitor
 
-Invokes the c1.api.accessconflict.v1.AccessConflictService.CreateMonitor method.
+Create a new conflict monitor for defining a Separation of Duty rule. Entitlement sets are bound separately via AppEntitlementMonitorBindingService.
 
 ### Example Usage
 
@@ -66,7 +66,7 @@ func main() {
 
 ## DeleteMonitor
 
-Invokes the c1.api.accessconflict.v1.AccessConflictService.DeleteMonitor method.
+Delete a conflict monitor and its associated entitlement set bindings.
 
 ### Example Usage
 
@@ -124,7 +124,7 @@ func main() {
 
 ## GetMonitor
 
-Invokes the c1.api.accessconflict.v1.AccessConflictService.GetMonitor method.
+Retrieve a single conflict monitor by ID.
 
 ### Example Usage
 
@@ -182,7 +182,7 @@ func main() {
 
 ## UpdateMonitor
 
-Invokes the c1.api.accessconflict.v1.AccessConflictService.UpdateMonitor method.
+Update the display name, description, or notification settings of a conflict monitor.
 
 ### Example Usage
 

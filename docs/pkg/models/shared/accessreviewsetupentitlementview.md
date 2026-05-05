@@ -1,0 +1,13 @@
+# AccessReviewSetupEntitlementView
+
+The AccessReviewSetupEntitlementView message.
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `AccessReviewSetupEntitlement`                                                                     | [*shared.AccessReviewSetupEntitlement](../../../pkg/models/shared/accessreviewsetupentitlement.md) | :heavy_minus_sign:                                                                                 | An entitlement that has been selected for inclusion in an access review campaign during setup.     |
+| `AppPath`                                                                                          | `*string`                                                                                          | :heavy_minus_sign:                                                                                 | The appPath field.                                                                                 |
+| `EntitlementPath`                                                                                  | `*string`                                                                                          | :heavy_minus_sign:                                                                                 | The entitlementPath field.                                                                         |
+| `PolicyPath`                                                                                       | `*string`                                                                                          | :heavy_minus_sign:                                                                                 | The policyPath field.                                                                              |

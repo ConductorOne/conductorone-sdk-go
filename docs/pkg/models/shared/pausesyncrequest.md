@@ -1,6 +1,6 @@
 # PauseSyncRequest
 
-The PauseSyncRequest message.
+The PauseSyncRequest message contains the fields required to pause syncing for a connector.
 
 
 ## Fields

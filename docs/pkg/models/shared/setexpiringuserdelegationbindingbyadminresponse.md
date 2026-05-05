@@ -1,6 +1,6 @@
 # SetExpiringUserDelegationBindingByAdminResponse
 
-The SetExpiringUserDelegationBindingByAdminResponse message.
+SetExpiringUserDelegationBindingByAdminResponse is the response containing the created or updated delegation binding.
 
 
 ## Fields

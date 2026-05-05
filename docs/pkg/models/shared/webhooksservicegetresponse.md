@@ -5,6 +5,6 @@ The WebhooksServiceGetResponse message.
 
 ## Fields
 
-| Field                                                      | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `Webhook`                                                  | [*shared.Webhook1](../../../pkg/models/shared/webhook1.md) | :heavy_minus_sign:                                         | The Webhook message.                                       |
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `WebhookEndpoint`                                                        | [*shared.WebhookEndpoint](../../../pkg/models/shared/webhookendpoint.md) | :heavy_minus_sign:                                                       | The Webhook message.                                                     |

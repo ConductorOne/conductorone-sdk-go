@@ -1,6 +1,6 @@
 # DeleteBundleAutomationResponse
 
-The DeleteBundleAutomationResponse message.
+The response message for deleting a bundle automation.
 
 
 ## Fields

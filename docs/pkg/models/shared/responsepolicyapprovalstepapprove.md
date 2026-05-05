@@ -7,4 +7,4 @@ The ResponsePolicyApprovalStepApprove message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `Comment`          | **string*          | :heavy_minus_sign: | optional comment   |
+| `Comment`          | `*string`          | :heavy_minus_sign: | optional comment   |

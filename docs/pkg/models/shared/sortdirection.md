@@ -2,6 +2,19 @@
 
 The sortDirection field.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.SortDirectionSortDirectionUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.SortDirection("custom_value")
+```
+
 
 ## Values
 

@@ -7,4 +7,4 @@ The StringMapField message.
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `Optional`          | **bool*             | :heavy_minus_sign:  | The optional field. |
+| `Optional`          | `*bool`             | :heavy_minus_sign:  | The optional field. |

@@ -4,16 +4,78 @@
 
 ### Available Operations
 
+* [ClearAutomationCircuitBreaker](#clearautomationcircuitbreaker) - Clear Automation Circuit Breaker
 * [CreateAutomation](#createautomation) - Create Automation
 * [DeleteAutomation](#deleteautomation) - Delete Automation
 * [ExecuteAutomation](#executeautomation) - Execute Automation
 * [GetAutomation](#getautomation) - Get Automation
 * [ListAutomations](#listautomations) - List Automations
+* [ResolvePausedAutomationExecutions](#resolvepausedautomationexecutions) - Resolve Paused Automation Executions
 * [UpdateAutomation](#updateautomation) - Update Automation
+
+## ClearAutomationCircuitBreaker
+
+Clear the circuit breaker on an automation that was auto-disabled by the
+ rate cap. Future events flow normally; existing paused executions are not
+ affected (use ResolvePausedAutomationExecutions to run or cancel them).
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationService.ClearAutomationCircuitBreaker" method="post" path="/api/v1/automations/{id}/circuit_breaker/clear" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Automation.ClearAutomationCircuitBreaker(ctx, operations.C1APIAutomationsV1AutomationServiceClearAutomationCircuitBreakerRequest{
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ClearAutomationCircuitBreakerResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                           | The context to use for the request.                                                                                                                                                          |
+| `request`                                                                                                                                                                                    | [operations.C1APIAutomationsV1AutomationServiceClearAutomationCircuitBreakerRequest](../../pkg/models/operations/c1apiautomationsv1automationserviceclearautomationcircuitbreakerrequest.md) | :heavy_check_mark:                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                   |
+| `opts`                                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                           | The options for this request.                                                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIAutomationsV1AutomationServiceClearAutomationCircuitBreakerResponse](../../pkg/models/operations/c1apiautomationsv1automationserviceclearautomationcircuitbreakerresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.CreateAutomation method.
+Create a new automation with the specified steps, triggers, and configuration.
 
 ### Example Usage
 
@@ -42,7 +104,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.CreateAutomationResponse != nil {
+    if res.AutomationsCreateAutomationResponse != nil {
         // handle response
     }
 }
@@ -50,11 +112,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |
-| `request`                                                                                      | [shared.CreateAutomationRequestInput](../../pkg/models/shared/createautomationrequestinput.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `opts`                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                   | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [shared.AutomationsCreateAutomationRequest](../../pkg/models/shared/automationscreateautomationrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `opts`                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                               | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 ### Response
 
@@ -68,7 +130,7 @@ func main() {
 
 ## DeleteAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.DeleteAutomation method.
+Delete an automation by its unique identifier, removing it and its associated triggers.
 
 ### Example Usage
 
@@ -100,7 +162,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.DeleteAutomationResponse != nil {
+    if res.AutomationsDeleteAutomationResponse != nil {
         // handle response
     }
 }
@@ -126,7 +188,7 @@ func main() {
 
 ## ExecuteAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.ExecuteAutomation method.
+Trigger an on-demand execution of an automation, returning the new execution's identifier.
 
 ### Example Usage
 
@@ -184,7 +246,7 @@ func main() {
 
 ## GetAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.GetAutomation method.
+Retrieve a single automation by its unique identifier.
 
 ### Example Usage
 
@@ -242,7 +304,7 @@ func main() {
 
 ## ListAutomations
 
-Invokes the c1.api.automations.v1.AutomationService.ListAutomations method.
+List all automations in the tenant with pagination support.
 
 ### Example Usage
 
@@ -294,9 +356,68 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ResolvePausedAutomationExecutions
+
+Decide what to do with the executions that were paused while the
+ automation's circuit breaker was tripped. Idempotent.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationService.ResolvePausedAutomationExecutions" method="post" path="/api/v1/automations/{id}/circuit_breaker/resolve_paused" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Automation.ResolvePausedAutomationExecutions(ctx, operations.C1APIAutomationsV1AutomationServiceResolvePausedAutomationExecutionsRequest{
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ResolvePausedAutomationExecutionsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                            | Type                                                                                                                                                                                                 | Required                                                                                                                                                                                             | Description                                                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                   | The context to use for the request.                                                                                                                                                                  |
+| `request`                                                                                                                                                                                            | [operations.C1APIAutomationsV1AutomationServiceResolvePausedAutomationExecutionsRequest](../../pkg/models/operations/c1apiautomationsv1automationserviceresolvepausedautomationexecutionsrequest.md) | :heavy_check_mark:                                                                                                                                                                                   | The request object to use for the request.                                                                                                                                                           |
+| `opts`                                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                   | The options for this request.                                                                                                                                                                        |
+
+### Response
+
+**[*operations.C1APIAutomationsV1AutomationServiceResolvePausedAutomationExecutionsResponse](../../pkg/models/operations/c1apiautomationsv1automationserviceresolvepausedautomationexecutionsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## UpdateAutomation
 
-Invokes the c1.api.automations.v1.AutomationService.UpdateAutomation method.
+Update an existing automation's properties, steps, or triggers using a field mask.
 
 ### Example Usage
 

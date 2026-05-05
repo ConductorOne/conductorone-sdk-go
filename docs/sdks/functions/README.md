@@ -4,20 +4,83 @@
 
 ### Available Operations
 
+* [CreateFinalCommit](#createfinalcommit) - Create Final Commit
 * [CreateFunction](#createfunction) - Create Function
+* [CreateInitialCommit](#createinitialcommit) - Create Initial Commit
 * [CreateTag](#createtag) - Create Tag
 * [DeleteFunction](#deletefunction) - Delete Function
+* [GetCommitContent](#getcommitcontent) - Get Commit Content
 * [GetFunction](#getfunction) - Get Function
-* [GetFunctionSecretEncryptionKey](#getfunctionsecretencryptionkey) - Get Function Secret Encryption Key
+* [GetLockFile](#getlockfile) - Get Lock File
 * [Invoke](#invoke) - Invoke
 * [ListCommits](#listcommits) - List Commits
 * [ListFunctions](#listfunctions) - List Functions
 * [ListTags](#listtags) - List Tags
+* [Test](#test) - Test
 * [UpdateFunction](#updatefunction) - Update Function
+
+## CreateFinalCommit
+
+CreateFinalCommit completes a commit after files are uploaded
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.CreateFinalCommit" method="post" path="/api/v1/functions/{function_id}/commits/{commit_id}/finalize" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.CreateFinalCommit(ctx, operations.C1APIFunctionsV1FunctionsServiceCreateFinalCommitRequest{
+        CommitID: "<id>",
+        FunctionID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceCreateFinalCommitResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                          | :heavy_check_mark:                                                                                                                                             | The context to use for the request.                                                                                                                            |
+| `request`                                                                                                                                                      | [operations.C1APIFunctionsV1FunctionsServiceCreateFinalCommitRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicecreatefinalcommitrequest.md) | :heavy_check_mark:                                                                                                                                             | The request object to use for the request.                                                                                                                     |
+| `opts`                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | The options for this request.                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceCreateFinalCommitResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicecreatefinalcommitresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateFunction
 
-Invokes the c1.api.functions.v1.FunctionsService.CreateFunction method.
+CreateFunction registers a new serverless function and creates its initial code commit.
 
 ### Example Usage
 
@@ -63,6 +126,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIFunctionsV1FunctionsServiceCreateFunctionResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicecreatefunctionresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## CreateInitialCommit
+
+CreateInitialCommit starts a new commit and returns upload URLs for files
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.CreateInitialCommit" method="post" path="/api/v1/functions/{function_id}/commits" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.CreateInitialCommit(ctx, operations.C1APIFunctionsV1FunctionsServiceCreateInitialCommitRequest{
+        FunctionID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceCreateInitialCommitResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                          | Type                                                                                                                                                               | Required                                                                                                                                                           | Description                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                                              | :heavy_check_mark:                                                                                                                                                 | The context to use for the request.                                                                                                                                |
+| `request`                                                                                                                                                          | [operations.C1APIFunctionsV1FunctionsServiceCreateInitialCommitRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicecreateinitialcommitrequest.md) | :heavy_check_mark:                                                                                                                                                 | The request object to use for the request.                                                                                                                         |
+| `opts`                                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                       | :heavy_minus_sign:                                                                                                                                                 | The options for this request.                                                                                                                                      |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceCreateInitialCommitResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicecreateinitialcommitresponse.md), error**
 
 ### Errors
 
@@ -186,6 +307,66 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## GetCommitContent
+
+GetCommitContent retrieves a commit and all its file contents in a single unary response.
+ This is a non-streaming alternative to GetCommit for REST API consumers.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.GetCommitContent" method="get" path="/api/v1/functions/{function_id}/commits/{id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.GetCommitContent(ctx, operations.C1APIFunctionsV1FunctionsServiceGetCommitContentRequest{
+        FunctionID: "<id>",
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceGetCommitContentResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                    | Type                                                                                                                                                         | Required                                                                                                                                                     | Description                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                        | :heavy_check_mark:                                                                                                                                           | The context to use for the request.                                                                                                                          |
+| `request`                                                                                                                                                    | [operations.C1APIFunctionsV1FunctionsServiceGetCommitContentRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicegetcommitcontentrequest.md) | :heavy_check_mark:                                                                                                                                           | The request object to use for the request.                                                                                                                   |
+| `opts`                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                 | :heavy_minus_sign:                                                                                                                                           | The options for this request.                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceGetCommitContentResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicegetcommitcontentresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## GetFunction
 
 Get retrieves a specific function by ID
@@ -244,13 +425,13 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## GetFunctionSecretEncryptionKey
+## GetLockFile
 
-GetFunctionSecretEncryptionKey retrieves or generates the public key for encrypting function secrets
+GetLockFile retrieves the deno lock file for a specific commit, if it exists.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.GetFunctionSecretEncryptionKey" method="get" path="/api/v1/functions/{function_id}/secret-encryption-key" -->
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.GetLockFile" method="get" path="/api/v1/functions/{function_id}/commits/{commit_id}/lockfile" -->
 ```go
 package main
 
@@ -272,13 +453,14 @@ func main() {
         }),
     )
 
-    res, err := s.Functions.GetFunctionSecretEncryptionKey(ctx, operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest{
+    res, err := s.Functions.GetLockFile(ctx, operations.C1APIFunctionsV1FunctionsServiceGetLockFileRequest{
+        CommitID: "<id>",
         FunctionID: "<id>",
     })
     if err != nil {
         log.Fatal(err)
     }
-    if res.FunctionsServiceGetFunctionSecretEncryptionKeyResponse != nil {
+    if res.FunctionsServiceGetLockFileResponse != nil {
         // handle response
     }
 }
@@ -286,15 +468,15 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                | Type                                                                                                                                                                                     | Required                                                                                                                                                                                 | Description                                                                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                       | The context to use for the request.                                                                                                                                                      |
-| `request`                                                                                                                                                                                | [operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyrequest.md) | :heavy_check_mark:                                                                                                                                                                       | The request object to use for the request.                                                                                                                                               |
-| `opts`                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                       | The options for this request.                                                                                                                                                            |
+| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                              | :heavy_check_mark:                                                                                                                                 | The context to use for the request.                                                                                                                |
+| `request`                                                                                                                                          | [operations.C1APIFunctionsV1FunctionsServiceGetLockFileRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicegetlockfilerequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
+| `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
 
 ### Response
 
-**[*operations.C1APIFunctionsV1FunctionsServiceGetFunctionSecretEncryptionKeyResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicegetfunctionsecretencryptionkeyresponse.md), error**
+**[*operations.C1APIFunctionsV1FunctionsServiceGetLockFileResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicegetlockfileresponse.md), error**
 
 ### Errors
 
@@ -304,7 +486,7 @@ func main() {
 
 ## Invoke
 
-Invokes the c1.api.functions.v1.FunctionsService.Invoke method.
+Invoke executes a function at a specific commit with the provided input data.
 
 ### Example Usage
 
@@ -523,6 +705,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIFunctionsV1FunctionsServiceListTagsResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicelisttagsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## Test
+
+Test runs a function's test suite in a sandboxed environment and returns the results.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsService.Test" method="post" path="/api/v1/functions/{function_id}/test" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Functions.Test(ctx, operations.C1APIFunctionsV1FunctionsServiceTestRequest{
+        FunctionID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsServiceTestResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                | :heavy_check_mark:                                                                                                                   | The context to use for the request.                                                                                                  |
+| `request`                                                                                                                            | [operations.C1APIFunctionsV1FunctionsServiceTestRequest](../../pkg/models/operations/c1apifunctionsv1functionsservicetestrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
+| `opts`                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                         | :heavy_minus_sign:                                                                                                                   | The options for this request.                                                                                                        |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsServiceTestResponse](../../pkg/models/operations/c1apifunctionsv1functionsservicetestresponse.md), error**
 
 ### Errors
 

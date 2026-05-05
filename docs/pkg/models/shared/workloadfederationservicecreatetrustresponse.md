@@ -1,0 +1,10 @@
+# WorkloadFederationServiceCreateTrustResponse
+
+The WorkloadFederationServiceCreateTrustResponse message.
+
+
+## Fields
+
+| Field                                                                                                                                             | Type                                                                                                                                              | Required                                                                                                                                          | Description                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `WorkloadFederationTrust`                                                                                                                         | [*shared.WorkloadFederationTrust](../../../pkg/models/shared/workloadfederationtrust.md)                                                          | :heavy_minus_sign:                                                                                                                                | WorkloadFederationTrust represents a per-SP trust policy that references<br/> a tenant-level provider and defines a CEL condition for claim matching. |

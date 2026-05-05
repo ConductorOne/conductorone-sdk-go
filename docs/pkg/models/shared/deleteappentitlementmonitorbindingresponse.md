@@ -1,6 +1,6 @@
 # DeleteAppEntitlementMonitorBindingResponse
 
-The DeleteAppEntitlementMonitorBindingResponse message.
+The response message for deleting an app entitlement monitor binding.
 
 
 ## Fields

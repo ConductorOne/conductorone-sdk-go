@@ -24,7 +24,7 @@
 
 ## ConfirmSyncValid
 
-Invokes the c1.api.app.v1.ConnectorService.ConfirmSyncValid method.
+Confirm that a sync which errored due to a data drop is valid, overriding the error and triggering a new sync. Only applicable when the sync status is ERRORED_NO_DATA.
 
 ### Example Usage
 
@@ -259,7 +259,7 @@ func main() {
 
 ## ForceSync
 
-Invokes the c1.api.app.v1.ConnectorService.ForceSync method.
+Trigger an immediate sync for a connector. The sync is queued and may not start instantly.
 
 ### Example Usage
 
@@ -555,7 +555,7 @@ func main() {
 
 ## PauseSync
 
-Invokes the c1.api.app.v1.ConnectorService.PauseSync method.
+Pause syncing and provisioning for a connector. No new syncs or grant/revoke operations will run until the connector is resumed.
 
 ### Example Usage
 
@@ -614,7 +614,7 @@ func main() {
 
 ## ResumeSync
 
-Invokes the c1.api.app.v1.ConnectorService.ResumeSync method.
+Resume syncing and provisioning for a connector that was previously paused. Clears the paused state and triggers a new sync.
 
 ### Example Usage
 
@@ -847,7 +847,7 @@ func main() {
 
 ## UpdateConnectorSchedule
 
-Invokes the c1.api.app.v1.ConnectorService.UpdateConnectorSchedule method.
+Update the sync schedule for a connector.
 
 ### Example Usage
 
@@ -965,7 +965,7 @@ func main() {
 
 ## ValidateHTTPConnectorConfig
 
-Invokes the c1.api.app.v1.ConnectorService.ValidateHTTPConnectorConfig method.
+Validate an HTTP connector configuration and return any diagnostics or errors found.
 
 ### Example Usage
 

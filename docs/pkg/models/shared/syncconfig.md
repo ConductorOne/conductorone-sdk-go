@@ -7,4 +7,4 @@ The SyncConfig message.
 
 | Field                          | Type                           | Required                       | Description                    |
 | ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `SyncResourceTypeIds`          | []*string*                     | :heavy_minus_sign:             | The syncResourceTypeIds field. |
+| `SyncResourceTypeIds`          | []`string`                     | :heavy_minus_sign:             | The syncResourceTypeIds field. |

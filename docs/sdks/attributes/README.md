@@ -647,7 +647,7 @@ func main() {
 
 ## ListComplianceFrameworks
 
-Invokes the c1.api.attribute.v1.Attributes.ListComplianceFrameworks method.
+List all compliance framework attribute values (e.g., SOC 2, HIPAA) with pagination.
 
 ### Example Usage
 
@@ -703,7 +703,7 @@ func main() {
 
 ## ListRiskLevels
 
-Invokes the c1.api.attribute.v1.Attributes.ListRiskLevels method.
+List all risk level attribute values with pagination.
 
 ### Example Usage
 

@@ -7,5 +7,5 @@ The EmailNotifications message.
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `Enabled`                  | **bool*                    | :heavy_minus_sign:         | The enabled field.         |
-| `IdentityUserIds`          | []*string*                 | :heavy_minus_sign:         | The identityUserIds field. |
+| `Enabled`                  | `*bool`                    | :heavy_minus_sign:         | The enabled field.         |
+| `IdentityUserIds`          | []`string`                 | :heavy_minus_sign:         | The identityUserIds field. |

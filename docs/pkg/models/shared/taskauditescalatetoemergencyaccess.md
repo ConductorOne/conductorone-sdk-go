@@ -7,5 +7,5 @@ The TaskAuditEscalateToEmergencyAccess message.
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `OldPolicyID`              | **string*                  | :heavy_minus_sign:         | The oldPolicyId field.     |
-| `OldPolicyStepID`          | **string*                  | :heavy_minus_sign:         | The oldPolicyStepId field. |
+| `OldPolicyID`              | `*string`                  | :heavy_minus_sign:         | The oldPolicyId field.     |
+| `OldPolicyStepID`          | `*string`                  | :heavy_minus_sign:         | The oldPolicyStepId field. |
