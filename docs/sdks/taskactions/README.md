@@ -20,7 +20,7 @@
 
 ## Approve
 
-Invokes the c1.api.task.v1.TaskActionsService.Approve method.
+Approve the specified policy step on a task.
 
 ### Example Usage
 
@@ -78,7 +78,7 @@ func main() {
 
 ## ApproveWithStepUp
 
-Invokes the c1.api.task.v1.TaskActionsService.ApproveWithStepUp method.
+Approve a task that requires step-up authentication. If a verified step-up transaction ID is provided, the approval is processed immediately. Otherwise, a redirect URL is returned for the caller to complete authentication first.
 
 ### Example Usage
 
@@ -136,7 +136,7 @@ func main() {
 
 ## Close
 
-Invokes the c1.api.task.v1.TaskActionsService.Close method.
+Close a task, ending its workflow.
 
 ### Example Usage
 
@@ -194,7 +194,7 @@ func main() {
 
 ## Comment
 
-Invokes the c1.api.task.v1.TaskActionsService.Comment method.
+Post a comment on a task without changing its state.
 
 ### Example Usage
 
@@ -252,7 +252,7 @@ func main() {
 
 ## Deny
 
-Invokes the c1.api.task.v1.TaskActionsService.Deny method.
+Deny the specified policy step on a task. In multi-step policies, this may route to fallback steps rather than finalizing the task outcome.
 
 ### Example Usage
 
@@ -310,7 +310,7 @@ func main() {
 
 ## EscalateToEmergencyAccess
 
-Invokes the c1.api.task.v1.TaskActionsService.EscalateToEmergencyAccess method.
+Escalate a grant task to use the emergency access policy, bypassing the normal approval flow. Only valid for grant tasks.
 
 ### Example Usage
 
@@ -368,7 +368,7 @@ func main() {
 
 ## HardReset
 
-Invokes the c1.api.task.v1.TaskActionsService.HardReset method.
+Reset a task and recalculate its policy from scratch. Unlike Restart, this re-evaluates which policy applies to the task.
 
 ### Example Usage
 
@@ -426,7 +426,7 @@ func main() {
 
 ## ProcessNow
 
-Invokes the c1.api.task.v1.TaskActionsService.ProcessNow method.
+Trigger immediate processing of a task, bypassing any scheduled wait. For tasks linked to an external system, this also attempts to sync the external state.
 
 ### Example Usage
 
@@ -484,7 +484,7 @@ func main() {
 
 ## Reassign
 
-Invokes the c1.api.task.v1.TaskActionsService.Reassign method.
+Reassign a task's current policy step to a different set of users. The target step must be an approval, provision, or form step.
 
 ### Example Usage
 
@@ -542,7 +542,7 @@ func main() {
 
 ## Restart
 
-Invokes the c1.api.task.v1.TaskActionsService.Restart method.
+Restart a task, returning it to the beginning of its current policy workflow.
 
 ### Example Usage
 
@@ -600,7 +600,7 @@ func main() {
 
 ## SkipStep
 
-Invokes the c1.api.task.v1.TaskActionsService.SkipStep method.
+Skip a specific policy step in a task, advancing the task to the next step in the workflow.
 
 ### Example Usage
 
@@ -658,7 +658,7 @@ func main() {
 
 ## UpdateGrantDuration
 
-Invokes the c1.api.task.v1.TaskActionsService.UpdateGrantDuration method.
+Update the grant duration for a task. Only applies to grant tasks with a single entitlement that are not in a provision step. The new duration must not exceed the entitlement's maximum allowed provision time.
 
 ### Example Usage
 
@@ -716,7 +716,7 @@ func main() {
 
 ## UpdateRequestData
 
-Invokes the c1.api.task.v1.TaskActionsService.UpdateRequestData method.
+Update the request data on a task that is currently in a form step. The submitted data is validated against the form schema before being applied.
 
 ### Example Usage
 

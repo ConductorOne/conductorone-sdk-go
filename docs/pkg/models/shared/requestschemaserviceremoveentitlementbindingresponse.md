@@ -1,6 +1,6 @@
 # RequestSchemaServiceRemoveEntitlementBindingResponse
 
-The RequestSchemaServiceRemoveEntitlementBindingResponse message.
+The response message for removing a single entitlement binding.
 
 
 ## Fields

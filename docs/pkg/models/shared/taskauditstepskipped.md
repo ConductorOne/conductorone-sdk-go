@@ -7,4 +7,4 @@ The TaskAuditStepSkipped message.
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `SkippedBy`          | **string*            | :heavy_minus_sign:   | The skippedBy field. |
+| `SkippedBy`          | `*string`            | :heavy_minus_sign:   | The skippedBy field. |

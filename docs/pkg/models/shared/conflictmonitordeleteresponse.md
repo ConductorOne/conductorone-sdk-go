@@ -1,6 +1,6 @@
 # ConflictMonitorDeleteResponse
 
-The ConflictMonitorDeleteResponse message.
+The response message for deleting a conflict monitor.
 
 
 ## Fields

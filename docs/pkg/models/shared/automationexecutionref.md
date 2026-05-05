@@ -7,4 +7,4 @@ The AutomationExecutionRef message.
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `ID`               | **int64*           | :heavy_minus_sign: | The id field.      |
+| `ID`               | `*int64`           | :heavy_minus_sign: | The id field.      |

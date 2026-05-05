@@ -7,5 +7,5 @@ The TaskAuditPolicyChanged message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `NewPolicyID`          | **string*              | :heavy_minus_sign:     | The newPolicyId field. |
-| `OldPolicyID`          | **string*              | :heavy_minus_sign:     | The oldPolicyId field. |
+| `NewPolicyID`          | `*string`              | :heavy_minus_sign:     | The newPolicyId field. |
+| `OldPolicyID`          | `*string`              | :heavy_minus_sign:     | The oldPolicyId field. |

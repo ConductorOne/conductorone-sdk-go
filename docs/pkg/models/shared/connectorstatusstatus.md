@@ -2,6 +2,19 @@
 
 The status of the connector sync.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.ConnectorStatusStatusSyncStatusUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.ConnectorStatusStatus("custom_value")
+```
+
 
 ## Values
 

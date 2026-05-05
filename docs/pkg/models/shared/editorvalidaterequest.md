@@ -1,10 +1,10 @@
 # EditorValidateRequest
 
-The EditorValidateRequest message.
+The EditorValidateRequest message contains the configuration text to validate.
 
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `Text`             | **string*          | :heavy_minus_sign: | The text field.    |
+| Field                               | Type                                | Required                            | Description                         |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| `Text`                              | `*string`                           | :heavy_minus_sign:                  | The configuration text to validate. |

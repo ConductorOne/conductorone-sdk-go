@@ -7,4 +7,4 @@ The TaskAuditPolicyEvaluationStep message.
 
 | Field                  | Type                   | Required               | Description            |
 | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `StepComment`          | **string*              | :heavy_minus_sign:     | The stepComment field. |
+| `StepComment`          | `*string`              | :heavy_minus_sign:     | The stepComment field. |

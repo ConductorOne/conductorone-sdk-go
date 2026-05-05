@@ -78,7 +78,7 @@ func main() {
 
 ## SearchAppEntitlementsForAppUser
 
-Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchAppEntitlementsForAppUser method.
+Search for app entitlements associated with a specific app user, with optional resource type trait filtering.
 
 ### Example Usage
 
@@ -196,7 +196,7 @@ func main() {
 
 ## SearchGrants
 
-Invokes the c1.api.app.v1.AppEntitlementSearchService.SearchGrants method.
+Search grants (user-to-entitlement bindings) across apps, with filters for app, user, resource type, and entitlement.
 
 ### Example Usage
 

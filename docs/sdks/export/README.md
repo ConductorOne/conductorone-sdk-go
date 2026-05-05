@@ -68,7 +68,7 @@ func main() {
 
 ## Delete
 
-Delete a policy by ID.
+Delete a system log export by ID.
 
 ### Example Usage
 
@@ -240,7 +240,7 @@ func main() {
 
 ## ListEvents
 
-Invokes the c1.api.systemlog.v1.ExportService.ListEvents method.
+List audit events belonging to a specific system log export.
 
 ### Example Usage
 
@@ -298,7 +298,7 @@ func main() {
 
 ## Update
 
-Update a system log export by providing a policy object and an update mask.
+Update a system log export by providing an export object and an update mask.
 
 ### Example Usage
 

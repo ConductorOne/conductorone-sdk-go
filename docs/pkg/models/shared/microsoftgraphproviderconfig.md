@@ -1,0 +1,13 @@
+# MicrosoftGraphProviderConfig
+
+MicrosoftGraphProviderConfig configures sending via Microsoft Graph sendMail API.
+ Requires an Azure AD app registration with Mail.Send application permission (admin-consented).
+
+
+## Fields
+
+| Field                                                                                                                       | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `AzureTenantID`                                                                                                             | `*string`                                                                                                                   | :heavy_minus_sign:                                                                                                          | Customer's Azure AD tenant ID (directory ID).                                                                               |
+| `ClientID`                                                                                                                  | `*string`                                                                                                                   | :heavy_minus_sign:                                                                                                          | App registration client ID with Mail.Send application permission.                                                           |
+| `ClientSecret`                                                                                                              | `*string`                                                                                                                   | :heavy_minus_sign:                                                                                                          | Client secret. Write-only: accepted on create/update, never returned in Get.<br/> Empty on update means "keep existing secret". |

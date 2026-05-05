@@ -1,15 +1,25 @@
 # Frequency
 
-The frequency field.
+How often digest notifications are sent.
+
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.FrequencyDigestFrequencyUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.Frequency("custom_value")
+```
 
 
 ## Values
 
-| Name                            | Value                           |
-| ------------------------------- | ------------------------------- |
-| `FrequencyFrequencyUnspecified` | FREQUENCY_UNSPECIFIED           |
-| `FrequencyFrequencyNone`        | FREQUENCY_NONE                  |
-| `FrequencyFrequencyDaily`       | FREQUENCY_DAILY                 |
-| `FrequencyFrequencyWeekly`      | FREQUENCY_WEEKLY                |
-| `FrequencyFrequencyMonthly`     | FREQUENCY_MONTHLY               |
-| `FrequencyFrequencyYearly`      | FREQUENCY_YEARLY                |
+| Name                                  | Value                                 |
+| ------------------------------------- | ------------------------------------- |
+| `FrequencyDigestFrequencyUnspecified` | DIGEST_FREQUENCY_UNSPECIFIED          |
+| `FrequencyDigestFrequencyDaily`       | DIGEST_FREQUENCY_DAILY                |
+| `FrequencyDigestFrequencyWeekly`      | DIGEST_FREQUENCY_WEEKLY               |

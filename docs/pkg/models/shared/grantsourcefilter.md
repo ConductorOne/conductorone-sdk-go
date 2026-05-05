@@ -2,6 +2,19 @@
 
 The grantSourceFilter field.
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.GrantSourceFilterGrantSourceFilterUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.GrantSourceFilter("custom_value")
+```
+
 
 ## Values
 

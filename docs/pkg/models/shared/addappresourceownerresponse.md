@@ -1,6 +1,6 @@
 # AddAppResourceOwnerResponse
 
-The AddAppResourceOwnerResponse message.
+The empty response message for adding an owner to an app resource.
 
 
 ## Fields

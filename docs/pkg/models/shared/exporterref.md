@@ -7,4 +7,4 @@ The ExporterRef message.
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `ExportID`          | **string*           | :heavy_minus_sign:  | The exportId field. |
+| `ExportID`          | `*string`           | :heavy_minus_sign:  | The exportId field. |

@@ -1,6 +1,6 @@
 # ResumeSyncRequest
 
-The ResumeSyncRequest message.
+The ResumeSyncRequest message contains the fields required to resume syncing for a connector.
 
 
 ## Fields

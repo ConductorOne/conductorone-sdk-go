@@ -2,6 +2,19 @@
 
 The processing state of a task as defined by the `processing_enum`
 
+## Example Usage
+
+```go
+import (
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+)
+
+value := shared.ProcessingTaskProcessingTypeUnspecified
+
+// Open enum: custom values can be created with a direct type cast
+custom := shared.Processing("custom_value")
+```
+
 
 ## Values
 

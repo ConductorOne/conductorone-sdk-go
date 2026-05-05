@@ -15,4 +15,4 @@ StepUpOAuth2Settings repersents an OAuth2 provider that supports RFC 9470 <https
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `AcrValues`          | []*string*           | :heavy_minus_sign:   | The acrValues field. |
+| `AcrValues`          | []`string`           | :heavy_minus_sign:   | The acrValues field. |

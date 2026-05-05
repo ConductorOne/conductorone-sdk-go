@@ -1,6 +1,6 @@
 # DeleteManuallyManagedResourceTypeResponse
 
-The DeleteManuallyManagedResourceTypeResponse message.
+The empty response message for deleting a manually managed resource type.
 
 
 ## Fields

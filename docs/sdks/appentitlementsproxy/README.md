@@ -10,7 +10,7 @@
 
 ## Create
 
-Invokes the c1.api.app.v1.AppEntitlementsProxy.Create method.
+Create a proxy binding between a source and destination entitlement, establishing a hierarchical relationship.
 
 ### Example Usage
 
@@ -71,7 +71,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.app.v1.AppEntitlementsProxy.Delete method.
+Delete a proxy binding between a source and destination entitlement.
 
 ### Example Usage
 
@@ -132,7 +132,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.app.v1.AppEntitlementsProxy.Get method.
+Retrieve a specific proxy binding between a source and destination entitlement.
 
 ### Example Usage
 

@@ -76,7 +76,7 @@ func main() {
 
 ## SearchAppResources
 
-Invokes the c1.api.app.v1.AppResourceSearch.SearchAppResources method.
+Search app resources based on filters specified in the request body.
 
 ### Example Usage
 

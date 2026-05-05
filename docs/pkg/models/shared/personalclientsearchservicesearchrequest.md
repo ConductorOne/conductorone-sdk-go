@@ -5,9 +5,9 @@ The PersonalClientSearchServiceSearchRequest message.
 
 ## Fields
 
-| Field                                                     | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `PageSize`                                                | **int*                                                    | :heavy_minus_sign:                                        | The pageSize field.                                       |
-| `PageToken`                                               | **string*                                                 | :heavy_minus_sign:                                        | The pageToken field.                                      |
-| `Query`                                                   | **string*                                                 | :heavy_minus_sign:                                        | The query field.                                          |
-| `Users`                                                   | [][shared.UserRef](../../../pkg/models/shared/userref.md) | :heavy_minus_sign:                                        | The users field.                                          |
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `PageSize`                                                       | `*int`                                                           | :heavy_minus_sign:                                               | The maximum number of results to return per page.                |
+| `PageToken`                                                      | `*string`                                                        | :heavy_minus_sign:                                               | A pagination token returned from a previous Search call.         |
+| `Query`                                                          | `*string`                                                        | :heavy_minus_sign:                                               | A text query to filter personal clients by display name.         |
+| `Users`                                                          | [][shared.UserRef](../../../pkg/models/shared/userref.md)        | :heavy_minus_sign:                                               | Filter results to personal clients owned by the specified users. |

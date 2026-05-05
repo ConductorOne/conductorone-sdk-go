@@ -1,0 +1,9 @@
+# C1APIFindingV1FindingRoutingRuleServiceUpdateFindingRoutingRuleRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `UpdateFindingRoutingRuleRequest`                                                                        | [*shared.UpdateFindingRoutingRuleRequest](../../../pkg/models/shared/updatefindingroutingrulerequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `RoutingRuleID`                                                                                          | `string`                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

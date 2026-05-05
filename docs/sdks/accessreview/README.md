@@ -12,7 +12,7 @@
 
 ## Create
 
-Invokes the c1.api.accessreview.v1.AccessReviewService.Create method.
+Create creates a new access review campaign with the specified name, policy, and owners.
 
 ### Example Usage
 
@@ -67,7 +67,7 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.accessreview.v1.AccessReviewService.Delete method.
+Delete transitions an access review campaign to the deleted state, along with its dependent objects.
 
 ### Example Usage
 
@@ -125,7 +125,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.accessreview.v1.AccessReviewService.Get method.
+Get retrieves a single access review campaign by ID.
 
 ### Example Usage
 
@@ -183,7 +183,7 @@ func main() {
 
 ## List
 
-Invokes the c1.api.accessreview.v1.AccessReviewService.List method.
+List returns a paginated list of access review campaigns.
 
 ### Example Usage
 
@@ -239,7 +239,7 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.accessreview.v1.AccessReviewService.Update method.
+Update modifies an existing access review campaign. Use the update_mask to specify which fields to change.
 
 ### Example Usage
 

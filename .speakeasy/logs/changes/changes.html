@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>SDK Changelog - go</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --text-secondary: #666666;
+            --code-bg: #f4f4f4;
+            --border-color: #e0e0e0;
+            --added-color: #22863a;
+            --removed-color: #cb2431;
+            --changed-color: #6f42c1;
+            --breaking-color: #d73a49;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #e6e6e6;
+                --text-secondary: #a0a0a0;
+                --code-bg: #2d2d2d;
+                --border-color: #404040;
+                --added-color: #85e89d;
+                --removed-color: #f97583;
+                --changed-color: #b392f0;
+                --breaking-color: #f97583;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.7;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        code {
+            background: var(--code-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        h2 {
+            color: var(--text-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 32px;
+        }
+        ul {
+            padding-left: 24px;
+            list-style-type: disc;
+            list-style-position: outside;
+        }
+        ul ul {
+            padding-left: 28px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            list-style-type: circle;
+        }
+        li {
+            margin: 10px 0;
+            display: list-item;
+        }
+        li li {
+            margin: 4px 0;
+            color: var(--text-secondary);
+            display: list-item;
+        }
+        li li code {
+            font-size: 0.85em;
+        }
+        /* Ensure nested list items always show bullets */
+        ul > li {
+            list-style: disc;
+        }
+        ul ul > li {
+            list-style: circle;
+        }
+        strong {
+            font-weight: 600;
+        }
+        /* Semantic coloring for change types */
+        strong:contains('Added'), li:has(strong:contains('Added')) strong:first-of-type {
+            color: var(--added-color);
+        }
+        /* Warning emoji styling */
+        li {
+            list-style-position: outside;
+        }
+    </style>
+</head>
+<body><h2 id="go-sdk-changes">Go SDK Changes:</h2>
+
+<ul>
+<li><code>ConductoroneApi.AccessConflict.CreateMonitor()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AccessConflictNotificationConfig</code> <strong>Added</strong></li>
+<li><code>NotificationConfig</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AccessConflictNotificationConfig</code> <strong>Added</strong></li>
+<li><code>NotificationConfig</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessConflict.GetMonitor()</code>: <code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AccessConflictNotificationConfig</code> <strong>Added</strong></li>
+<li><code>NotificationConfig</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>ConductoroneApi.AccessConflict.UpdateMonitor()</code>:
+
+<ul>
+<li><code>request.Request.ConflictMonitorUpdateRequest</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AccessConflictNotificationConfig</code> <strong>Added</strong></li>
+<li><code>NotificationConfig</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AccessConflictNotificationConfig</code> <strong>Added</strong></li>
+<li><code>NotificationConfig</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AutomationSearch.SearchAutomationTemplateVersions()</code>: <code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>Triggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Triggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Triggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Triggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>Triggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AutomationSearch.SearchAutomations()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AppIds</code> <strong>Added</strong></li>
+<li><code>Direction</code> <strong>Added</strong></li>
+<li><code>IsDraft</code> <strong>Added</strong></li>
+<li><code>SortField</code> <strong>Added</strong></li>
+<li><code>Statuses</code> <strong>Added</strong></li>
+<li><code>TriggerTypes[].Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Webhooks.Update()</code>:
+
+<ul>
+<li><code>request.Request.WebhooksServiceUpdateRequest</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>WebhookEndpoint</code> <strong>Added</strong></li>
+<li><code>Webhook</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>WebhookEndpoint</code> <strong>Added</strong></li>
+<li><code>Webhook</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Webhooks.Get()</code>: <code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>WebhookEndpoint</code> <strong>Added</strong></li>
+<li><code>Webhook</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>ConductoroneApi.Webhooks.Create()</code>:
+
+<ul>
+<li><code>request.Request.CallbackTimeout</code> <strong>Added</strong></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>WebhookEndpoint</code> <strong>Added</strong></li>
+<li><code>Webhook</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.UpdateRequestData()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.UpdateGrantDuration()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.SkipStep()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Restart()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Reassign()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.ProcessNow()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.HardReset()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.EscalateToEmergencyAccess()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Deny()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Comment()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Close()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.ApproveWithStepUp()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskActions.Approve()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Task.Get()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Task.CreateRevokeTask()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Task.CreateOffboardingTask()</code>: <code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Task.CreateGrantTask()</code>:
+
+<ul>
+<li><code>request.Request.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+<li><code>response.TaskView</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskAudit.List()</code>: <code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>TaskAuditActionInstanceCreated.ActionInstance.Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>TaskAuditActionInstanceCreated.ActionInstance.Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>TaskAuditActionInstanceCreated.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>TaskAuditActionInstanceCreated.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>TaskAuditActionSubmitted.SubmittedTaskAction</code> <strong>Added</strong></li>
+<li><code>TaskAuditActionSubmitted.TaskAction</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>TaskAuditApprovalInstanceChange.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>TaskAuditConnectorActionResult.TaskAuditCancelledResult.CancelReason</code> <strong>Added</strong></li>
+<li><code>TaskAuditConnectorActionResult.TaskAuditPendingResult</code> <strong>Added</strong></li>
+<li><code>TaskAuditConnectorActionResult.TaskAuditSuccessResult.SuccessReason</code> <strong>Added</strong></li>
+<li><code>TaskAuditCreatedReplacementExtensionGrantTask</code> <strong>Added</strong></li>
+<li><code>TaskAuditMetaData.User.Origin</code> <strong>Added</strong></li>
+<li><code>TaskAuditNewTaskCreatedFrom</code> <strong>Added</strong></li>
+<li><code>TaskAuditReassignmentFallbackToAdmin</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.TaskSearch.Search()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ExcludeApplicationIds</code> <strong>Added</strong></li>
+<li><code>PendingActionFilter</code> <strong>Added</strong></li>
+<li><code>RequireApprovalReason</code> <strong>Added</strong></li>
+<li><code>RequireDenialReason</code> <strong>Added</strong></li>
+<li><code>TaskTypes[].TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>TaskTypes[].TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>TaskTypes[].TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>TaskTypes[].TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ApproversPath</code> <strong>Added</strong></li>
+<li><code>ResourceBindingsPath</code> <strong>Added</strong></li>
+<li><code>RoleResourcePath</code> <strong>Added</strong></li>
+<li><code>ScopeResourcePath</code> <strong>Added</strong></li>
+<li><code>Task.ApproverIds</code> <strong>Added</strong></li>
+<li><code>Task.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.Origin.Enum(taskOriginCascadeDelete)</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetBatonResourceActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ActionInstance.ActionTargetClientIdApprovalInstance</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.CancelTicket</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceCancelTicket</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReassignToApprovers</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceReplacePolicy</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.EscalationInstanceSkipStep</code> <strong>Added</strong></li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReassignToApprovers</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.ReplacePolicy</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.ApprovalInstance.EscalationInstance.SkipStep</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Task.PolicyInstance.PolicyStepInstance.FormInstance.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Task.RevocationTargets</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.DisplayName</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.ScopeRole</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.TaskActionInstance</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeAction.Type</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeFinding</code> <strong>Added</strong></li>
+<li><code>Task.TaskType.TaskTypeGrant.TaskGrantSource.IsExtension</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.PolicySearch.Search()</code>: <code>response.List[].PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.FunctionsSearch.Search()</code>:
+
+<ul>
+<li><code>request.Request.FunctionTypes[].Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+<li><code>UseSpn</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestSchema.Update()</code>:
+
+<ul>
+<li><code>request.Request.RequestSchemaServiceUpdateRequest.RequestSchema</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>RequestSchemaForm</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.RequestSchema</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>RequestSchemaForm</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestSchema.Get()</code>: <code>response.RequestSchema</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>RequestSchemaForm</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestSchema.Create()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>FieldGroups</code> <strong>Added</strong></li>
+<li><code>FieldRelationships</code> <strong>Added</strong></li>
+<li><code>Fields[].FormStringField</code> <strong>Added</strong></li>
+<li><code>Fields[].FormStringMapField</code> <strong>Added</strong></li>
+<li><code>Fields[].Required</code> <strong>Added</strong></li>
+<li><code>Fields[].StringField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Fields[].StringSliceField.PickerField.C1UserFilter</code> <strong>Added</strong></li>
+<li><code>JustificationVisibility</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.RequestSchema</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>RequestSchemaForm</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Policies.Update()</code>:
+
+<ul>
+<li><code>request.Request.UpdatePolicyRequest.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Policies.List()</code>: <code>response.List[].PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Policies.Get()</code>: <code>response.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Policies.Create()</code>:
+
+<ul>
+<li><code>request.Request.PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.Policy.PolicySteps.Map&lt;PolicySteps&gt;.Steps[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Action.ActionTargetBatonResourceAction</code> <strong>Added</strong></li>
+<li><code>Action.ActionTargetClientIdApproval</code> <strong>Added</strong></li>
+<li><code>Form.Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form.RequestSchemaForm</code> <strong>Added</strong></li>
+<li><code>Provision.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Functions.UpdateFunction()</code>:
+
+<ul>
+<li><code>request.Request.Function</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.Function</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+<li><code>UseSpn</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Functions.ListFunctions()</code>: <code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+<li><code>UseSpn</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Functions.GetFunction()</code>: <code>response.Function</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+<li><code>UseSpn</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Functions.CreateFunction()</code>:
+
+<ul>
+<li><code>request.Request.FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>response.Function</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>EncryptedValues</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>FunctionType.Enum(functionTypeCodeMode)</code> <strong>Added</strong></li>
+<li><code>Secret</code> <strong>Added</strong></li>
+<li><code>UseSpn</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.ConnectorCatalog.ConfigurationSchema()</code>: <code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>ConfigSchema.FieldGroups[].FieldNames</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.FieldGroups[].Fields</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].CheckboxField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].ConnectorCheckboxField</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.Fields[].ConnectorSelectField</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.Fields[].ConnectorTextField</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.Fields[].KeyValueField.SupportsFileUpload</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.Fields[].SelectField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.DefaultValue</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.PasswordField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.PickerField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.Placeholder</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.Secret</code> <strong>Added</strong></li>
+<li><code>ConfigSchema.Fields[].StringField.SelectField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].StringField.StringRules</code> <strong>Changed</strong></li>
+<li><code>ConfigSchema.Fields[].StringField.TextField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConfigSchema.Fields[].TextField</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Form</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>RequestSchemaForm</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.UpdateAutomation()</code>:
+
+<ul>
+<li><code>request.Request.UpdateAutomationRequest.Automation</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Automation.AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>Automation.CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>Automation.CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>Automation.DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>Automation.DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>Automation.PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+<li><code>WebhookCapabilityUrl</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.ListAutomations()</code>: <code>response.List[]</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.GetAutomation()</code>: <code>response.Automation</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.DeleteAutomation()</code>: <code>request.Request</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationsDeleteAutomationRequest</code> <strong>Added</strong></li>
+<li><code>DeleteAutomationRequest</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.CreateAutomation()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response</code> <strong>Changed</strong> (Breaking ⚠️)
+
+<ul>
+<li><code>Automation.AutomationSteps[].ConnectorCreateAccount.PasswordCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GeneratePassword.GeneratePasswordPolicy</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GeneratePassword.PasswordPolicyId</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.AppEntitlementRefsCel</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.AppEntitlementRefs</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionCriteria</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionListCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionList</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementExclusionNone</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionCriteria</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionListCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].GrantEntitlements.GrantEntitlementInclusionList</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendEmail.EmailCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendEmail.Email</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UseSubjectUser</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UserIdsCel</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SendSlackMessage.UserRefs</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].SetCredential</code> <strong>Added</strong></li>
+<li><code>Automation.AutomationSteps[].StoreCredential</code> <strong>Added</strong></li>
+<li><code>Automation.CircuitBreakerMax</code> <strong>Added</strong></li>
+<li><code>Automation.CircuitBreakerPeriod</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.ObservedCount</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.Period</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.Threshold</code> <strong>Added</strong></li>
+<li><code>Automation.DisabledReasonCircuitBreaker.TrippedAt</code> <strong>Added</strong></li>
+<li><code>Automation.DraftTriggers[].FormTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].GrantDeletedTrigger.GrantTriggerFilter.EntitlementFilter</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].ManualAutomationTrigger</code> <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>Automation.DraftTriggers[].ScheduleTriggerNoUser</code> <strong>Added</strong></li>
+<li><code>Automation.DraftTriggers[].WebhookAutomationTrigger.WebhookListenerAuthCapabilityUrl</code> <strong>Added</strong></li>
+<li><code>Automation.PrimaryTriggerType.Enum(triggerTypeScheduleNoUser)</code> <strong>Added</strong></li>
+<li><code>WebhookCapabilityUrl</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.SsfReceiverStream.Test()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Apps.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppOwners[].Origin</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.LocalDirectoryConfig.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalUserInvitation.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalUserInvitation.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalUserInvitation.Revoke()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalUserInvitation.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.CreateAccessProfileFromCohort()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.GetCustomAnalysisResult()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.GetLatestRun()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.GetRoleMiningConfig()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.GetSuggestion()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.ListRuns()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.ListSuggestions()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.SearchCohortUsers()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.TriggerAnalysis()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.TriggerCustomAnalysis()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.UpdateRoleMiningConfig()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagement.UpdateSuggestionState()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AutomationExecutionSearch.SearchAllAutomationExecutions()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppSearch.SearchUserOwnership()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.HooksSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.ExternalClientSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RoleMiningManagementSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecretAdmin.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecretAdmin.Revoke()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecretAdmin.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecretAdmin.SearchAuditEvents()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.CreateExternal()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.CreateInternal()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.GetByShareCode()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.GetContent()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.Revoke()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.SearchAuditEvents()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.SearchMySecrets()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.PaperSecret.SetTextContent()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverEventSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.CreateProvider()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.CreateTrust()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.DeleteProvider()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.DeleteTrust()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.GetProvider()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.GetTrust()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.ListProviders()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.ListTrusts()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.SearchTrusts()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.TestCel()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.TestToken()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.UpdateProvider()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.WorkloadFederation.UpdateTrust()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.AddBinding()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.CreateCredential()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.DeleteBinding()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.GetCredential()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.ListBindings()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.ListCredentials()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.RevokeCredential()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.UpdateCredential()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Contacts.GetContacts()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Contacts.UpdateContacts()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantEmailProvider.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantEmailProvider.GetEmailCapabilities()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantEmailProvider.SearchAuditEvents()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantEmailProvider.Test()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantEmailProvider.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.OrgNotificationSettings.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.OrgNotificationSettings.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.UserNotificationSettings.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.UserNotificationSettings.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.OnboardingSettings.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.OnboardingSettings.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.GetStats()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalDirectoryConfig.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverStream.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SsfReceiverEvent.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlementOwnersV2.SearchEntitlementOwners()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlementOwnersV2.SearchUserOwners()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlementOwnersV2.Set()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.CreateEntitlementOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.CreateUserOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.DeleteEntitlementOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.DeleteUserOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.GetEntitlementOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.GetUserOwner()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.SearchEntitlementOwners()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.SearchUserOwners()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwnersV2.Set()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.GetFunctionSecretEncryptionKey()</code>: <strong>Removed</strong> (Breaking ⚠️)</li>
+<li><code>ConductoroneApi.AccessReview.Create()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewScopeV2</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AccessReviewView.AccessReview</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>CampaignHealthSnapshot</code> <strong>Added</strong></li>
+<li><code>CampaignInsights</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>ErrorState</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScheduledStartDate</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReview.Get()</code>: <code>response.AccessReviewView.AccessReview</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>CampaignHealthSnapshot</code> <strong>Added</strong></li>
+<li><code>CampaignInsights</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>ErrorState</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScheduledStartDate</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReview.List()</code>: <code>response.List[].AccessReview</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>CampaignHealthSnapshot</code> <strong>Added</strong></li>
+<li><code>CampaignInsights</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>ErrorState</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScheduledStartDate</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReview.Update()</code>:
+
+<ul>
+<li><code>request.Request.AccessReviewServiceUpdateRequest.AccessReview</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>CampaignHealthSnapshot</code> <strong>Added</strong></li>
+<li><code>CampaignInsights</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScheduledStartDate</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AccessReviewView.AccessReview</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>CampaignHealthSnapshot</code> <strong>Added</strong></li>
+<li><code>CampaignInsights</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>ErrorState</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScheduledStartDate</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReviewTemplate.Create()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoGenerateReport</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>DefaultView</code> <strong>Added</strong></li>
+<li><code>ExemptCertifiedAccessConflicts</code> <strong>Added</strong></li>
+<li><code>IsCampaignScheduleEnabled</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>RecurrenceRule</code> <strong>Added</strong></li>
+<li><code>ReviewInstructions</code> <strong>Added</strong></li>
+<li><code>ReviewSignatureConfig</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+<li><code>UsePolicyOverride</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AccessReviewTemplate</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReviewTemplate.Get()</code>: <code>response.AccessReviewTemplate</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AccessReviewTemplate.Update()</code>:
+
+<ul>
+<li><code>request.Request.AccessReviewTemplateServiceUpdateRequest.AccessReviewTemplate</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AccessReviewTemplate</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessReviewColumnConfig</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.ComplianceFrameworkAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.AppSelectionCriteriaScope.RiskLevelAttributeValueIds</code> <strong>Added</strong></li>
+<li><code>AccessReviewScopeV2.ResourceSelectionScope</code> <strong>Added</strong></li>
+<li><code>AccuracyIssueAction</code> <strong>Added</strong></li>
+<li><code>AutoCloseCampaign</code> <strong>Added</strong></li>
+<li><code>AutoCloseDecision</code> <strong>Added</strong></li>
+<li><code>AutoStartCampaign</code> <strong>Added</strong></li>
+<li><code>DefaultView.Enum(accessReviewViewTypeByResource)</code> <strong>Added</strong></li>
+<li><code>NotificationConfig.SendKickoff</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByInheritance)</code> <strong>Added</strong></li>
+<li><code>ScopeType.Enum(accessReviewScopeTypeByResource)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Apps.Create()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AppEntitlementOwnerRefs</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.App</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppOwners[].Origin</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Apps.Get()</code>: <code>response.App</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppOwners[].Origin</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.LocalDirectoryConfig.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Apps.Update()</code>:
+
+<ul>
+<li><code>request.Request.UpdateAppRequest.App</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.App</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppOwners[].Origin</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.Create()</code>: <code>response.ConnectorView.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.CreateDelegated()</code>:
+
+<ul>
+<li><code>request.Request.ConnectorServiceCreateDelegatedRequest.AppEntitlementOwnerRefs</code> <strong>Added</strong></li>
+<li><code>response.ConnectorView.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.Get()</code>: <code>response.ConnectorView.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.List()</code>: <code>response.List[].Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.Update()</code>:
+
+<ul>
+<li><code>request.Request.ConnectorServiceUpdateRequest.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.ConnectorView.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Connector.UpdateDelegated()</code>:
+
+<ul>
+<li><code>request.Request.ConnectorServiceUpdateDelegatedRequest.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.ConnectorView.Connector</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ConfigUpdatedAt</code> <strong>Added</strong></li>
+<li><code>ConnectorApiVersion</code> <strong>Added</strong></li>
+<li><code>ConnectorSyncCronSchedule</code> <strong>Added</strong></li>
+<li><code>ParallelSyncWorkerCount</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AppAccessRequestsDefaults.CancelAppAccessRequestsDefaults()</code>:  <code>response.RequestSchemaId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppAccessRequestsDefaults.CreateAppAccessRequestsDefaults()</code>:
+
+<ul>
+<li><code>request.Request.AppAccessRequestDefaults.RequestSchemaId</code> <strong>Added</strong></li>
+<li><code>response.RequestSchemaId</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppAccessRequestsDefaults.GetAppAccessRequestsDefaults()</code>:  <code>response.RequestSchemaId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.AddManuallyManagedMembers()</code>:  <code>response.BulkActionId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.Create()</code>:
+
+<ul>
+<li><code>request.Request.CreateAppEntitlementRequest</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AppEntitlementView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.CreateAutomation()</code>:  <code>response.AppEntitlementAutomation.ManagedByRequestCatalogId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.Get()</code>: <code>response.AppEntitlementView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.GetAutomation()</code>:  <code>response.AppEntitlementAutomation.ManagedByRequestCatalogId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.ListAutomationExclusions()</code>:  <code>response.List[].User.Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.ListForAppResource()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.ListForAppUser()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.ListUsers()</code>:  <code>response.List[].OriginatingTicketId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlements.Update()</code>:
+
+<ul>
+<li><code>request.Request.UpdateAppEntitlementRequest.AppEntitlement</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.AppEntitlementView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlements.UpdateAutomation()</code>:  <code>response.AppEntitlementAutomation.ManagedByRequestCatalogId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlementSearch.Search()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlementSearch.SearchAppEntitlementsForAppUser()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlementSearch.SearchAppEntitlementsWithExpired()</code>:  <code>response.List[].User.Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppEntitlementSearch.SearchGrants()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>EntitlementSlugs</code> <strong>Added</strong></li>
+<li><code>Purpose</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AppEntitlementUserView.OriginatingTicketId</code> <strong>Added</strong></li>
+<li><code>AppEntitlementView.ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlementView.AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlementView.AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlementView.AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlementOwners.List()</code>:  <code>response.List[].Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppOwners.List()</code>:  <code>response.List[].Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppResource.CreateManuallyManagedAppResource()</code>: <code>response.AppResource</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessConfigId</code> <strong>Added</strong></li>
+<li><code>ExternalId</code> <strong>Added</strong></li>
+<li><code>Profile</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppResource.Get()</code>: <code>response.AppResourceView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppResource.AccessConfigId</code> <strong>Added</strong></li>
+<li><code>AppResource.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppResource.Profile</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppResource.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppResource.AccessConfigId</code> <strong>Added</strong></li>
+<li><code>AppResource.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppResource.Profile</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.LocalDirectoryConfig.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.LocalDirectoryConfig.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Hooks.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Hooks.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Hooks.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppResource.Update()</code>:
+
+<ul>
+<li><code>request.Request.AppResourceServiceUpdateRequest.AppResource.AccessConfigId</code> <strong>Added</strong></li>
+<li><code>response.AppResourceView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppResource.AccessConfigId</code> <strong>Added</strong></li>
+<li><code>AppResource.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppResource.Profile</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.AppResourceOwners.List()</code>: <code>response</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ImmutableUserIds</code> <strong>Added</strong></li>
+<li><code>List[].Origin</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.Create()</code>:
+
+<ul>
+<li><code>request.Request.GrantPolicyId</code> <strong>Added</strong></li>
+<li><code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessEntitlements[].ExternalId</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+<li><code>GrantPolicyId</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.CreateBundleAutomation()</code>:
+
+<ul>
+<li><code>request.Request.CreateBundleAutomationRequest.BundleAutomationRuleCel</code> <strong>Added</strong></li>
+<li><code>response</code> <strong>Changed</strong>
+
+<ul>
+<li><code>BundleAutomationCircuitBreaker.State.Enum(circuitBreakerStateSupportDisabled)</code> <strong>Added</strong></li>
+<li><code>BundleAutomationLastRunState.BundleAutomationCelEvaluationState</code> <strong>Added</strong></li>
+<li><code>BundleAutomationRuleCel</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.Get()</code>: <code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessEntitlements[].ExternalId</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+<li><code>GrantPolicyId</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.GetBundleAutomation()</code>: <code>response</code> <strong>Changed</strong>
+
+<ul>
+<li><code>BundleAutomationCircuitBreaker.State.Enum(circuitBreakerStateSupportDisabled)</code> <strong>Added</strong></li>
+<li><code>BundleAutomationLastRunState.BundleAutomationCelEvaluationState</code> <strong>Added</strong></li>
+<li><code>BundleAutomationRuleCel</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.List()</code>: <code>response.List[].RequestCatalog</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessEntitlements[].ExternalId</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+<li><code>GrantPolicyId</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.ListEntitlementsForAccess()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.ListEntitlementsPerCatalog()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.SetBundleAutomation()</code>:
+
+<ul>
+<li><code>request.Request.SetBundleAutomationRequest.BundleAutomationRuleCel</code> <strong>Added</strong></li>
+<li><code>response</code> <strong>Changed</strong>
+
+<ul>
+<li><code>BundleAutomationCircuitBreaker.State.Enum(circuitBreakerStateSupportDisabled)</code> <strong>Added</strong></li>
+<li><code>BundleAutomationLastRunState.BundleAutomationCelEvaluationState</code> <strong>Added</strong></li>
+<li><code>BundleAutomationRuleCel</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.RequestCatalogManagement.Update()</code>:
+
+<ul>
+<li><code>request.Request.RequestCatalogManagementServiceUpdateRequest.RequestCatalog</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessEntitlements[].ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+<li><code>GrantPolicyId</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessEntitlements[].ExternalId</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AccessEntitlements[].Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+<li><code>GrantPolicyId</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Hooks.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Directory.Create()</code>:
+
+<ul>
+<li><code>request.Request.DirectoryMergeConfig</code> <strong>Added</strong></li>
+<li><code>response.DirectoryView.Directory.DirectoryMergeConfig</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Directory.Get()</code>:  <code>response.DirectoryView.Directory.DirectoryMergeConfig</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Directory.List()</code>:  <code>response.List[].Directory.DirectoryMergeConfig</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Directory.Update()</code>:
+
+<ul>
+<li><code>request.Request.DirectoryServiceUpdateRequest.DirectoryMergeConfig</code> <strong>Added</strong></li>
+<li><code>response.DirectoryView.Directory.DirectoryMergeConfig</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Hooks.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FunctionsInvocationSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.Invoke()</code>:
+
+<ul>
+<li><code>request.Request.FunctionsServiceInvokeRequest.VfsId</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Functions.Test()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.GetLockFile()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.GetCommitContent()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.CreateInitialCommit()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Functions.CreateFinalCommit()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingRoutingRule.UpdateFindingRoutingRule()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingRoutingRule.ListFindingRoutingRules()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingRoutingRule.GetFindingRoutingRule()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AppResourceSearch.SearchAppResources()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppResource.AccessConfigId</code> <strong>Added</strong></li>
+<li><code>AppResource.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppResource.Profile</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.AppSearch.Search()</code>: <code>response.List[]</code> <strong>Changed</strong>
+
+<ul>
+<li><code>AccessModel</code> <strong>Added</strong></li>
+<li><code>AppOwners[].Origin</code> <strong>Added</strong></li>
+<li><code>AppUserMapper</code> <strong>Added</strong></li>
+<li><code>EnableConnectorSourcedOwnership</code> <strong>Added</strong></li>
+<li><code>IdentityMatching.Enum(appUserIdentityMatchingCustom)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.FindingRoutingRule.DeleteFindingRoutingRule()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingRoutingRule.CreateFindingRoutingRule()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.RequestCatalogSearch.SearchEntitlements()</code>: <code>response.List[].AppEntitlementView</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ActorObjectPermissions</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ExternalId</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.ProvisionPolicy.ManualProvision.ProvisionerAssignment</code> <strong>Added</strong></li>
+<li><code>AppEntitlement.Purpose.Enum(appEntitlementPurposeValueOwnership)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.StepUpProvider.Create()</code>:
+
+<ul>
+<li><code>request.Request.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>response.StepUpProvider.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.StepUpProvider.Get()</code>:  <code>response.StepUpProvider.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.StepUpProvider.List()</code>:  <code>response.List[].StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.StepUpProvider.Search()</code>:  <code>response.List[].StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.StepUpProvider.Update()</code>:
+
+<ul>
+<li><code>request.Request.UpdateStepUpProviderRequest.StepUpProvider.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>response.StepUpProvider.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.StepUpProvider.UpdateSecret()</code>:  <code>response.StepUpProvider.StepUpMicrosoftSettings.ValidationMode</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Finding.UpdateFindingState()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.UserSearch.Search()</code>:
+
+<ul>
+<li><code>request.Request</code> <strong>Changed</strong>
+
+<ul>
+<li><code>DelegateStatus</code> <strong>Added</strong></li>
+<li><code>DelegatedUserIds</code> <strong>Added</strong></li>
+<li><code>ExcludeOrigins</code> <strong>Added</strong></li>
+<li><code>IsDelegate</code> <strong>Added</strong></li>
+<li><code>Origins</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.List[].User.Origin</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.WebhooksSearch.Search()</code>:  <code>response.List[].CallbackTimeout</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.SessionSettings.Get()</code>: <code>response.SessionSettings</code> <strong>Changed</strong>
+
+<ul>
+<li><code>CidrRestriction1</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction2</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction3</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction4</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction5</code> <strong>Added</strong></li>
+<li><code>ClientIdApprovalRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ClientIdMetadataDocumentPolicy</code> <strong>Added</strong></li>
+<li><code>ExternalClientsEnabled</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.SessionSettings.Update()</code>:
+
+<ul>
+<li><code>request.Request.SessionSettings</code> <strong>Changed</strong>
+
+<ul>
+<li><code>CidrRestriction1</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction2</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction3</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction4</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction5</code> <strong>Added</strong></li>
+<li><code>ClientIdApprovalRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ClientIdMetadataDocumentPolicy</code> <strong>Added</strong></li>
+<li><code>ExternalClientsEnabled</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.SessionSettings</code> <strong>Changed</strong>
+
+<ul>
+<li><code>CidrRestriction1</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction2</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction3</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction4</code> <strong>Changed</strong></li>
+<li><code>CidrRestriction5</code> <strong>Added</strong></li>
+<li><code>ClientIdApprovalRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ClientIdMetadataDocumentPolicy</code> <strong>Added</strong></li>
+<li><code>ExternalClientsEnabled</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.SystemLog.ListEvents()</code>:
+
+<ul>
+<li><code>request.Request.UntilEventUid</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Finding.GetFinding()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Finding.CreateFindingTask()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Finding.BulkUpdateFindingState()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Finding.BulkCreateFindingTasks()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Automation.ResolvePausedAutomationExecutions()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Automation.ClearAutomationCircuitBreaker()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantAuthConfig.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantAuthConfig.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantAuthConfig.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantAuthConfig.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.TenantAuthConfig.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.SetScopeByResourceType()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.SetScopeAndEntitlements()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.GetScopeAndEntitlements()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewSetupEntitlement.SetCampaignScopeByResourceType()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewSetupEntitlement.SetCampaignScopeAndEntitlements()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReviewSetupEntitlement.GetCampaignScopeAndEntitlements()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.A2Ui.SubmitAction()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.User.Get()</code>:  <code>response.UserView.User.Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.User.List()</code>:  <code>response.List[].User.Origin</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.A2Ui.ListSurfaces()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.A2Ui.ListSurfaceFeedback()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Webhooks.List()</code>:  <code>response.List[].CallbackTimeout</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.A2Ui.CreateSurfaceFeedback()</code>: <strong>Added</strong></li>
+</ul>
+</body>
+</html>

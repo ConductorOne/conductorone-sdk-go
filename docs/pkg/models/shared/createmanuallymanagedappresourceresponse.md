@@ -1,6 +1,6 @@
 # CreateManuallyManagedAppResourceResponse
 
-The CreateManuallyManagedAppResourceResponse message.
+The response message for creating a manually managed app resource.
 
 
 ## Fields

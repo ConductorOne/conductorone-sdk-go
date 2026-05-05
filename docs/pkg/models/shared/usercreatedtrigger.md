@@ -7,4 +7,4 @@ The UserCreatedTrigger message.
 
 | Field                | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
-| `Condition`          | **string*            | :heavy_minus_sign:   | The condition field. |
+| `Condition`          | `*string`            | :heavy_minus_sign:   | The condition field. |
