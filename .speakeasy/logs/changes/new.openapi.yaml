@@ -8049,6 +8049,35 @@ components:
             title: Set App Owners Response
             type: object
             x-speakeasy-name-override: SetAppOwnersResponseV2
+        c1.api.app.v2.SetConnectorOwnersV2RequestInput:
+            description: SetConnectorOwnersV2Request is the request for setting the owners of a connector for a given role.
+            properties:
+                appEntitlementRefs:
+                    description: The appEntitlementRefs field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.AppEntitlementRef'
+                    nullable: true
+                    readOnly: false
+                    type: array
+                roleSlug:
+                    description: The role slug for this ownership grant. Required.
+                    readOnly: false
+                    type: string
+                userRefs:
+                    description: The userRefs field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.user.v1.UserRef'
+                    nullable: true
+                    readOnly: false
+                    type: array
+            title: Set Connector Owners V 2 Request
+            type: object
+            x-speakeasy-name-override: SetConnectorOwnersV2Request
+        c1.api.app.v2.SetConnectorOwnersV2Response:
+            description: SetConnectorOwnersV2Response is the empty response for setting connector owners.
+            title: Set Connector Owners V 2 Response
+            type: object
+            x-speakeasy-name-override: SetConnectorOwnersV2Response
         c1.api.attribute.v1.AttributeType:
             description: AttributeType defines the type of an attribute.
             properties:
@@ -41149,6 +41178,43 @@ paths:
                 - Workload Federation
             x-speakeasy-group: WorkloadFederation
             x-speakeasy-name-override: TestCEL
+    /api/v2/apps/{app_id}/connectors/{connector_id}/owners:
+        put:
+            description: Set replaces all owners for a given connector and role.
+            operationId: c1.api.app.v2.ConnectorOwners.Set
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The appId field.
+                    readOnly: false
+                    type: string
+                - in: path
+                  name: connector_id
+                  required: true
+                  schema:
+                    description: The connectorId field.
+                    readOnly: false
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.app.v2.SetConnectorOwnersV2RequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.app.v2.SetConnectorOwnersV2Response'
+                    description: SetConnectorOwnersV2Response is the empty response for setting connector owners.
+            summary: Set
+            tags:
+                - Connector Owner V2
+            x-speakeasy-group: ConnectorOwnersV2
+            x-speakeasy-name-override: Set
+            x-stability-level: draft
     /api/v2/apps/{app_id}/entitlements/{entitlement_id}/owners:
         put:
             description: Set replaces all owners for a given app entitlement and role.

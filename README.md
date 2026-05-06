@@ -354,6 +354,10 @@ func main() {
 
 * [ConfigurationSchema](docs/sdks/connectorcatalog/README.md#configurationschema) - Configuration Schema
 
+### [ConnectorOwnersV2](docs/sdks/connectorownersv2/README.md)
+
+* [Set](docs/sdks/connectorownersv2/README.md#set) - Set
+
 ### [Contacts](docs/sdks/contacts/README.md)
 
 * [GetContacts](docs/sdks/contacts/README.md#getcontacts) - Get Contacts

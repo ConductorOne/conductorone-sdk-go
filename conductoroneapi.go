@@ -140,6 +140,7 @@ type ConductoroneAPI struct {
 	User                                 *User
 	Vault                                *Vault
 	Webhooks                             *Webhooks
+	ConnectorOwnersV2                    *ConnectorOwnersV2
 	AppEntitlementOwnersV2               *AppEntitlementOwnersV2
 	AppOwnersV2                          *AppOwnersV2
 
@@ -230,9 +231,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk := &ConductoroneAPI{
-		SDKVersion: "1.28.0",
+		SDKVersion: "1.28.1",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.28.0 2.882.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:  "speakeasy-sdk/go 1.28.1 2.882.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{
@@ -347,6 +348,7 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.User = newUser(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Vault = newVault(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Webhooks = newWebhooks(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ConnectorOwnersV2 = newConnectorOwnersV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppEntitlementOwnersV2 = newAppEntitlementOwnersV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppOwnersV2 = newAppOwnersV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 

@@ -1,0 +1,10 @@
+# C1APIAppV2ConnectorOwnersSetRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `SetConnectorOwnersV2Request`                                                                    | [*shared.SetConnectorOwnersV2Request](../../../pkg/models/shared/setconnectorownersv2request.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `AppID`                                                                                          | `string`                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `ConnectorID`                                                                                    | `string`                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
