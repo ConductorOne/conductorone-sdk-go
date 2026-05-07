@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: 92b09ddd-c177-4138-92d3-695ede152b21
 management:
-  docChecksum: 84d1d46a98638f86876354ade2c9387a
+  docChecksum: 9aa92ea3cdddcebf8b7dddf4eef5701a
   docVersion: 0.1.0-alpha
   speakeasyVersion: 1.762.0
   generationVersion: 2.882.0
-  releaseVersion: 1.28.1
-  configChecksum: 850e795237445b91989da2decba58a57
+  releaseVersion: 1.28.2
+  configChecksum: eb23c8cb626b9303a7a02a61907bf08b
   repoURL: https://github.com/ConductorOne/conductorone-sdk-go.git
   repoSubDirectory: .
   installationURL: https://github.com/ConductorOne/conductorone-sdk-go
   published: true
 persistentEdits:
-  generation_id: 951bbea8-6652-486d-a337-666f69894a0e
-  pristine_commit_hash: aeff7111f5b11d1de5211220a9bb2822223c616c
-  pristine_tree_hash: a3e601f9961388d6b68c340ea93c73ba56b9f6ca
+  generation_id: 7d94227f-905f-41e9-b069-9ac6262be8ce
+  pristine_commit_hash: c41f147d04fd4807f33b16128b4b11581b6d222d
+  pristine_tree_hash: 5117addee1b65ef2efaa25bfb92a2509275111f6
 features:
   go:
     additionalDependencies: 0.1.0
@@ -189,8 +189,8 @@ trackedFiles:
     pristine_git_object: b470b740f8261c0291138f9269fa3147fe8c17fa
   conductoroneapi.go:
     id: e5ba30c7c4ce
-    last_write_checksum: sha1:5d33da3649acd3897cf3e5cce4b0fcd6b8bdf214
-    pristine_git_object: abad55b990bbf096f8fd5b3226415f6bc24c1f45
+    last_write_checksum: sha1:4825c83d718ebd4df778f1b638126b06ef63c729
+    pristine_git_object: 0a899b8f3c8ec69a97fe40cc23498714588906ed
   connector.go:
     id: f7ed3a032daf
     last_write_checksum: sha1:40bd5265238266202490b5eefb64d5d6b7a6fd78
@@ -201,8 +201,8 @@ trackedFiles:
     pristine_git_object: b161e20136826b2804b63daf5314c3ef0937ede7
   connectorownersv2.go:
     id: dd5b99959320
-    last_write_checksum: sha1:72e65749894424ed6394f1747640fa85c3ea829c
-    pristine_git_object: a78089e95a270d4c5020a9cf12b24e73a0fec66b
+    last_write_checksum: sha1:ff7939ecc8b7900fc502229f421cdfb37252d8a4
+    pristine_git_object: 787e1ce6dc887408d34ffe4b5363e4046ca17045
   contacts.go:
     id: bac181c17bed
     last_write_checksum: sha1:b0d7dcea9b64091479fc1d7b0171c9a241a62698
@@ -1203,6 +1203,22 @@ trackedFiles:
     id: f894dfc6ed8d
     last_write_checksum: sha1:a706834e90ee24b5e1a951659cbb022217d3bba8
     pristine_git_object: e7b4d11e6dcc374d545773b247ca36d5d0251ebf
+  docs/pkg/models/operations/c1apiappv2connectorownerssearchentitlementownersrequest.md:
+    id: 5e7954a81c30
+    last_write_checksum: sha1:6e07b27b8cfc1c66f6c674e339d3955a9f982a70
+    pristine_git_object: d1f0b63b48ff367281147e901a4562b3bd1f4d1f
+  docs/pkg/models/operations/c1apiappv2connectorownerssearchentitlementownersresponse.md:
+    id: c627dfe19dcd
+    last_write_checksum: sha1:aa11fd10ec2dd4482a424f043c90c59fd76d3e91
+    pristine_git_object: 47a0caa76f7deedafc06e0482c60bdbc0801ef66
+  docs/pkg/models/operations/c1apiappv2connectorownerssearchuserownersrequest.md:
+    id: 5b6fc0f49bac
+    last_write_checksum: sha1:28dbb7ddaf7eb692ccac28bacf9ed1939f1465ac
+    pristine_git_object: 1d432efdbd3a7e91b28dac03c939d4666ba5ac9d
+  docs/pkg/models/operations/c1apiappv2connectorownerssearchuserownersresponse.md:
+    id: 0fda66ab3cf7
+    last_write_checksum: sha1:cb684c64da2e92bc88766b0289bbccf0846db32b
+    pristine_git_object: 212102988388df26cfd9f067bcd971ee897d3a74
   docs/pkg/models/operations/c1apiappv2connectorownerssetrequest.md:
     id: 848e56b200b6
     last_write_checksum: sha1:692c6d395c8a994e4e11a6739ff210b4b0c309b6
@@ -4479,6 +4495,14 @@ trackedFiles:
     id: f5d4dddf5d65
     last_write_checksum: sha1:0bfff6596862b868fcf9394b56dff559aa374218
     pristine_git_object: 2e5961ce51c73e21a9503e5e69d3ae82a95fd73c
+  docs/pkg/models/shared/connectorownerentitlement.md:
+    id: 5658b1fb8fe0
+    last_write_checksum: sha1:5364d07430ac406d65ef8b3081ac5bad71f1650d
+    pristine_git_object: 7d099dc45585660746b5b410eea1bea3d2601b1c
+  docs/pkg/models/shared/connectorowneruser.md:
+    id: 1dca7ce4ad77
+    last_write_checksum: sha1:3be96425495325f63d6d982dcab1616489725f57
+    pristine_git_object: 830c0b791b8a428c80796d16c22e5c13dbbeb7b2
   docs/pkg/models/shared/connectorprovision.md:
     id: b9cf3a94e162
     last_write_checksum: sha1:34dd359ff32a6df48ad11f400c081b6496bd9195
@@ -7487,6 +7511,14 @@ trackedFiles:
     id: 38726be51dc0
     last_write_checksum: sha1:006f4f8eea074495aa50da4fbacc6d8b0985a0be
     pristine_git_object: ffcee161f17e95f7f8af505e582a417c34b7e426
+  docs/pkg/models/shared/searchconnectorentitlementownersresponse.md:
+    id: dcdea15e42f3
+    last_write_checksum: sha1:2565784180ffc96f83cd4e0b0f26d811d7b760d7
+    pristine_git_object: c76de6a9a3a7ee3f911f8386e25a46736f75d325
+  docs/pkg/models/shared/searchconnectoruserownersresponse.md:
+    id: ea99011616a1
+    last_write_checksum: sha1:3a8fd08832657c2ffac29d83a4d8dd3af360215a
+    pristine_git_object: c5673c336263297087d873861185447797e58bfc
   docs/pkg/models/shared/searchemailauditeventsrequest.md:
     id: dcefb6e044b1
     last_write_checksum: sha1:aa85e110761c65c68779ce34c60a82a7575295b1
@@ -9805,8 +9837,8 @@ trackedFiles:
     pristine_git_object: cdd0eb6ad977de0c253f755720ed4cc87edc384b
   docs/sdks/connectorownersv2/README.md:
     id: 14475fc73c9b
-    last_write_checksum: sha1:f66b0f1dcabcf6252c3a80b556efac312854763f
-    pristine_git_object: dbb3e05567bede61145c54b422a79acbe4c50d6c
+    last_write_checksum: sha1:66b4ea75a6aceba4574da6c8667448daa4d8d0d4
+    pristine_git_object: afa58e4d9649d29c0a5b1f6b82494e2f86cdf687
   docs/sdks/contacts/README.md:
     id: 4174fb287a81
     last_write_checksum: sha1:c161ce970b7111a9fcd714a79af6f78e952af9b0
@@ -10643,6 +10675,14 @@ trackedFiles:
     id: 7011d79ca5e1
     last_write_checksum: sha1:bd81e5d6673fbe6d41988bb29bf8be1ec460dac8
     pristine_git_object: ea491162b2dde056bb230cd8d0b7d81b27ee1c7e
+  pkg/models/operations/c1apiappv2connectorownerssearchentitlementowners.go:
+    id: 1a63db0cd060
+    last_write_checksum: sha1:117abeafc0304276a3f4bfbfa5a81c80e29b0566
+    pristine_git_object: d192b793271ce6f5f3862a5a697c708fd88f1733
+  pkg/models/operations/c1apiappv2connectorownerssearchuserowners.go:
+    id: aa677c5567af
+    last_write_checksum: sha1:428fe4184edd63fe8d900f5cc70ef4bd5fccf3d5
+    pristine_git_object: 24f40a8c2c442a4a41969d462a19f61c04282b54
   pkg/models/operations/c1apiappv2connectorownersset.go:
     id: c420dc699e35
     last_write_checksum: sha1:25adef4bd5ecc48a5505d8fe5510a24dc2ce893e
@@ -12939,6 +12979,14 @@ trackedFiles:
     id: 73832c39c226
     last_write_checksum: sha1:100065e277bedeabe39770b0b957e3d6e378a1b2
     pristine_git_object: 754a24e5e5f64528ef48bf7b79c7f0ed8bbf5856
+  pkg/models/shared/connectorownerentitlement.go:
+    id: 23cc9d352024
+    last_write_checksum: sha1:28a59d808885b9aceef323b11a3d8cda4e399cb9
+    pristine_git_object: 6eb26ca5b630614ac27efba887f30818f25993cb
+  pkg/models/shared/connectorowneruser.go:
+    id: 64891f87d034
+    last_write_checksum: sha1:e0de1df24e397bd10aca9500549f006205dd3f3b
+    pristine_git_object: bde527cf2dd1031cd4e28e9e7c844dd98331f943
   pkg/models/shared/connectorprovision.go:
     id: 233872b4e1fb
     last_write_checksum: sha1:3f3f5431c5e0295ffd9ba4677688b1c510604922
@@ -15371,6 +15419,14 @@ trackedFiles:
     id: 6fb48cf844ee
     last_write_checksum: sha1:f9285445c184a837c6e729a048afefe2e1011eda
     pristine_git_object: 95839b6097841e803040eb8129caf37b2f4c4a80
+  pkg/models/shared/searchconnectorentitlementownersresponse.go:
+    id: c2bcfc1ad7c7
+    last_write_checksum: sha1:d946c3642bb56fc635a9209b3de84b7256bb0f1c
+    pristine_git_object: 2b9f1435526b3726f81825001e5cb68b87816518
+  pkg/models/shared/searchconnectoruserownersresponse.go:
+    id: 53456ab2e734
+    last_write_checksum: sha1:3d0f021e5a4e3acbddce0bae4c5e2f5623e5a3d5
+    pristine_git_object: 1e34d904dc10098208277e798cdcc4521a786703
   pkg/models/shared/searchemailauditeventsrequest.go:
     id: 6c60787cfab9
     last_write_checksum: sha1:a03a07b372ae9b154ebb55d1b043492faa1161e5
@@ -20272,11 +20328,30 @@ examples:
       responses:
         "200":
           application/json: {}
+  c1.api.app.v2.ConnectorOwners.SearchEntitlementOwners:
+    speakeasy-default-c1-api-app-v2-connector-owners-search-entitlement-owners:
+      parameters:
+        path:
+          app_id: "<id>"
+          connector_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  c1.api.app.v2.ConnectorOwners.SearchUserOwners:
+    speakeasy-default-c1-api-app-v2-connector-owners-search-user-owners:
+      parameters:
+        path:
+          app_id: "<id>"
+          connector_id: "<id>"
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Go SDK Changes:
-  * `ConductoroneApi.ConnectorOwnersV2.Set()`: **Added**
+  * `ConductoroneApi.ConnectorOwnersV2.SearchEntitlementOwners()`: **Added**
+  * `ConductoroneApi.ConnectorOwnersV2.SearchUserOwners()`: **Added**
 generatedFiles:
   - .gitattributes
   - /pkg/models/operations/c1apiaccessconflictv1accessconflictservicecreatemonitor.go
