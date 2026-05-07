@@ -356,6 +356,8 @@ func main() {
 
 ### [ConnectorOwnersV2](docs/sdks/connectorownersv2/README.md)
 
+* [SearchEntitlementOwners](docs/sdks/connectorownersv2/README.md#searchentitlementowners) - Search Entitlement Owners
+* [SearchUserOwners](docs/sdks/connectorownersv2/README.md#searchuserowners) - Search User Owners
 * [Set](docs/sdks/connectorownersv2/README.md#set) - Set
 
 ### [Contacts](docs/sdks/contacts/README.md)

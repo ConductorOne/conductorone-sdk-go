@@ -231,9 +231,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk := &ConductoroneAPI{
-		SDKVersion: "1.28.1",
+		SDKVersion: "1.28.2",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.28.1 2.882.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:  "speakeasy-sdk/go 1.28.2 2.882.0 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{
