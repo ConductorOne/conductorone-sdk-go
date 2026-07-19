@@ -25,3 +25,5 @@ custom := shared.TaskTypeActionType("custom_value")
 | `TaskTypeActionTypeTypeGrant`          | TYPE_GRANT                             |
 | `TaskTypeActionTypeTypeWorkflow`       | TYPE_WORKFLOW                          |
 | `TaskTypeActionTypeTypeResourceAction` | TYPE_RESOURCE_ACTION                   |
+| `TaskTypeActionTypeTypeToolCall`       | TYPE_TOOL_CALL                         |
+| `TaskTypeActionTypeTypeManual`         | TYPE_MANUAL                            |

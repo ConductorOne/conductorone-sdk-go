@@ -1,0 +1,21 @@
+# PersonalDeviceClient
+
+PersonalDeviceClient is a single app client on a device. The client
+ authenticates with its own asymmetric key; there is no client secret.
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `ClientID`                                                               | `*string`                                                                | :heavy_minus_sign:                                                       | The full client_id of the device credential.                             |
+| `ClientName`                                                             | `*string`                                                                | :heavy_minus_sign:                                                       | The human-friendly client name from its registration metadata.           |
+| `ConsumerKeyID`                                                          | `*string`                                                                | :heavy_minus_sign:                                                       | The stable identity of this client's per-app key.                        |
+| `CreatedAt`                                                              | [*time.Time](https://pkg.go.dev/time#Time)                               | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `DeviceOs`                                                               | `*string`                                                                | :heavy_minus_sign:                                                       | The device operating system captured for this client, e.g. "macos-14.5". |
+| `DeviceSurface`                                                          | `*string`                                                                | :heavy_minus_sign:                                                       | The device surface captured for this client, e.g. "macos-desktop".       |
+| `DisplayName`                                                            | `*string`                                                                | :heavy_minus_sign:                                                       | The display name of the device credential.                               |
+| `ID`                                                                     | `*string`                                                                | :heavy_minus_sign:                                                       | The unique ID of the device client (the local part of client_id).        |
+| `LastUsedAt`                                                             | [*time.Time](https://pkg.go.dev/time#Time)                               | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `SoftwareID`                                                             | `*string`                                                                | :heavy_minus_sign:                                                       | An identifier for the client software, from its registration metadata.   |
+| `SoftwareVersion`                                                        | `*string`                                                                | :heavy_minus_sign:                                                       | The version of the client software, from its registration metadata.      |

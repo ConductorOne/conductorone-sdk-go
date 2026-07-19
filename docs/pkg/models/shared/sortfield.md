@@ -1,6 +1,6 @@
 # SortField
 
-Column to sort by. Unspecified (0) means sort by created_at desc (server default).
+Column to sort by. Unspecified (0) keeps the server's default order (app, then display name).
 
 ## Example Usage
 
@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.SortFieldAutomationSortFieldUnspecified
+value := shared.SortFieldAppResourceSortFieldUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.SortField("custom_value")
@@ -18,11 +18,9 @@ custom := shared.SortField("custom_value")
 
 ## Values
 
-| Name                                             | Value                                            |
-| ------------------------------------------------ | ------------------------------------------------ |
-| `SortFieldAutomationSortFieldUnspecified`        | AUTOMATION_SORT_FIELD_UNSPECIFIED                |
-| `SortFieldAutomationSortFieldDisplayName`        | AUTOMATION_SORT_FIELD_DISPLAY_NAME               |
-| `SortFieldAutomationSortFieldCreatedAt`          | AUTOMATION_SORT_FIELD_CREATED_AT                 |
-| `SortFieldAutomationSortFieldLastExecutedAt`     | AUTOMATION_SORT_FIELD_LAST_EXECUTED_AT           |
-| `SortFieldAutomationSortFieldEnabled`            | AUTOMATION_SORT_FIELD_ENABLED                    |
-| `SortFieldAutomationSortFieldPrimaryTriggerType` | AUTOMATION_SORT_FIELD_PRIMARY_TRIGGER_TYPE       |
+| Name                                           | Value                                          |
+| ---------------------------------------------- | ---------------------------------------------- |
+| `SortFieldAppResourceSortFieldUnspecified`     | APP_RESOURCE_SORT_FIELD_UNSPECIFIED            |
+| `SortFieldAppResourceSortFieldSecretCreatedAt` | APP_RESOURCE_SORT_FIELD_SECRET_CREATED_AT      |
+| `SortFieldAppResourceSortFieldSecretExpiresAt` | APP_RESOURCE_SORT_FIELD_SECRET_EXPIRES_AT      |
+| `SortFieldAppResourceSortFieldLastUsedAt`      | APP_RESOURCE_SORT_FIELD_LAST_USED_AT           |

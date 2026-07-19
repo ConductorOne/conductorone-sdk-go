@@ -1,8 +1,10 @@
 # Direction
 
-Direction to sort in. Unspecified falls back to ASC when sort_field is set;
- when sort_field is also unspecified, the server default order (created_at
- DESC) applies.
+Direction to sort in. Unspecified falls back to ASC when sort_field is set.
+ No defined_only validation here: protoc-gen-validate mis-resolves the
+ cross-package enum name map to this file's c1.models.app.v1 import alias
+ instead of c1.api.search.v1, which fails to compile. The query builder
+ already treats any unrecognized value as ASC, so this is safe to omit.
 
 ## Example Usage
 

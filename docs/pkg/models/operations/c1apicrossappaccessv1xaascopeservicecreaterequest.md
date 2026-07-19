@@ -1,0 +1,9 @@
+# C1APICrossAppAccessV1XAAScopeServiceCreateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `XAAScopeServiceCreateRequest`                                                                     | [*shared.XAAScopeServiceCreateRequest](../../../pkg/models/shared/xaascopeservicecreaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `AppID`                                                                                            | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

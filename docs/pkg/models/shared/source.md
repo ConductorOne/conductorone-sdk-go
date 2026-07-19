@@ -1,6 +1,6 @@
 # Source
 
-The source field.
+Whether the assignment is direct or conferred through a group.
 
 ## Example Usage
 
@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.SourceSourceUnspecified
+value := shared.SourceAssignmentSourceUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.Source("custom_value")
@@ -18,10 +18,8 @@ custom := shared.Source("custom_value")
 
 ## Values
 
-| Name                        | Value                       |
-| --------------------------- | --------------------------- |
-| `SourceSourceUnspecified`   | SOURCE_UNSPECIFIED          |
-| `SourceSourceC1`            | SOURCE_C1                   |
-| `SourceSourceJira`          | SOURCE_JIRA                 |
-| `SourceSourceSlack`         | SOURCE_SLACK                |
-| `SourceSourceCopilotAgents` | SOURCE_COPILOT_AGENTS       |
+| Name                                | Value                               |
+| ----------------------------------- | ----------------------------------- |
+| `SourceAssignmentSourceUnspecified` | ASSIGNMENT_SOURCE_UNSPECIFIED       |
+| `SourceAssignmentSourceDirect`      | ASSIGNMENT_SOURCE_DIRECT            |
+| `SourceAssignmentSourceGroup`       | ASSIGNMENT_SOURCE_GROUP             |

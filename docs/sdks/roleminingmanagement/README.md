@@ -9,6 +9,7 @@
 * [GetLatestRun](#getlatestrun) - Get Latest Run
 * [GetRoleMiningConfig](#getroleminingconfig) - Get Role Mining Config
 * [GetSuggestion](#getsuggestion) - Get Suggestion
+* [ListCustomAnalysisResults](#listcustomanalysisresults) - List Custom Analysis Results
 * [ListRuns](#listruns) - List Runs
 * [ListSuggestions](#listsuggestions) - List Suggestions
 * [SearchCohortUsers](#searchcohortusers) - Search Cohort Users
@@ -291,6 +292,60 @@ func main() {
 ### Response
 
 **[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceGetSuggestionResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicegetsuggestionresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListCustomAnalysisResults
+
+List recent custom analysis results in reverse chronological order.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.role_mining_management.v1.RoleMiningManagementService.ListCustomAnalysisResults" method="get" path="/api/v1/role-mining/custom-analysis" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RoleMiningManagement.ListCustomAnalysisResults(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListCustomAnalysisResultsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
+| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
+
+### Response
+
+**[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCustomAnalysisResultsResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicelistcustomanalysisresultsresponse.md), error**
 
 ### Errors
 

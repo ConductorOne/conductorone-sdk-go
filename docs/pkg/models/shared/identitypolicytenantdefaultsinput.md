@@ -1,0 +1,17 @@
+# IdentityPolicyTenantDefaultsInput
+
+IdentityPolicyTenantDefaults is the tenant-wide set of default identity
+ policies applied when no more specific policy matches a user.
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `CredentialInventoryPolicyID`                                                      | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default credential inventory policy (which credential types users may enroll). |
+| `EnrollmentRequirementID`                                                          | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default enrollment requirement.                                                |
+| `RecoveryPolicyID`                                                                 | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default recovery policy.                                                       |
+| `ResourcePolicyID`                                                                 | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default resource policy.                                                       |
+| `SessionPolicyID`                                                                  | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default session policy.                                                        |
+| `SignInPolicyID`                                                                   | `*string`                                                                          | :heavy_minus_sign:                                                                 | The default sign-in policy.                                                        |
+| `UniversalPromiseIds`                                                              | []`string`                                                                         | :heavy_minus_sign:                                                                 | Tenant-wide promises every user must satisfy (e.g. terms-of-service<br/> acceptance). |

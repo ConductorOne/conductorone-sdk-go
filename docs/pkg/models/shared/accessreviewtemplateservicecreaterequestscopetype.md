@@ -25,3 +25,4 @@ custom := shared.AccessReviewTemplateServiceCreateRequestScopeType("custom_value
 | `AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByAccessConflicts` | ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS                                              |
 | `AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByResource`        | ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE                                                      |
 | `AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByInheritance`     | ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE                                                   |
+| `AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByUsers`           | ACCESS_REVIEW_SCOPE_TYPE_BY_USERS                                                         |

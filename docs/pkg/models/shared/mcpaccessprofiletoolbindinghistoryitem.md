@@ -1,0 +1,12 @@
+# MCPAccessProfileToolBindingHistoryItem
+
+MCPAccessProfileToolBindingHistoryItem is a single binding added or removed in
+ a transaction.
+
+
+## Fields
+
+| Field                                                                                                                                            | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ChangeKind`                                                                                                                                     | [*shared.MCPAccessProfileToolBindingHistoryItemChangeKind](../../../pkg/models/shared/mcpaccessprofiletoolbindinghistoryitemchangekind.md)       | :heavy_minus_sign:                                                                                                                               | Whether this binding was added or removed.                                                                                                       |
+| `ListIndex`                                                                                                                                      | `*string`                                                                                                                                        | :heavy_minus_sign:                                                                                                                               | The identifier of the other side of the binding: the tool ID when viewing a<br/> toolset's history, or the toolset ID when viewing a tool's history. |

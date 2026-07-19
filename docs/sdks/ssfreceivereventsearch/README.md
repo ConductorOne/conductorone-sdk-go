@@ -9,6 +9,7 @@
 ## Search
 
 Search performs a full-text search across received SSF events with optional filters for stream, event type, outcome, and matched user.
+ Request a modest page_size (≤25) to keep responses small.
 
 ### Example Usage
 

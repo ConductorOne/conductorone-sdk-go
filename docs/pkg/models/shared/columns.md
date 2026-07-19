@@ -45,3 +45,7 @@ custom := shared.Columns("custom_value")
 | `ColumnsAccessReviewTaskColumnLastLogin`              | ACCESS_REVIEW_TASK_COLUMN_LAST_LOGIN                  |
 | `ColumnsAccessReviewTaskColumnResourceParent`         | ACCESS_REVIEW_TASK_COLUMN_RESOURCE_PARENT             |
 | `ColumnsAccessReviewTaskColumnResourceChildren`       | ACCESS_REVIEW_TASK_COLUMN_RESOURCE_CHILDREN           |
+| `ColumnsAccessReviewTaskColumnAppUserUsername`        | ACCESS_REVIEW_TASK_COLUMN_APP_USER_USERNAME           |
+| `ColumnsAccessReviewTaskColumnAccessHolderType`       | ACCESS_REVIEW_TASK_COLUMN_ACCESS_HOLDER_TYPE          |
+| `ColumnsAccessReviewTaskColumnRiskLevel`              | ACCESS_REVIEW_TASK_COLUMN_RISK_LEVEL                  |
+| `ColumnsAccessReviewTaskColumnComplianceFramework`    | ACCESS_REVIEW_TASK_COLUMN_COMPLIANCE_FRAMEWORK        |

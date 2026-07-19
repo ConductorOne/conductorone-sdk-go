@@ -1,0 +1,12 @@
+# TunnelCredentialsServiceUpdateBridgeRequest
+
+The TunnelCredentialsServiceUpdateBridgeRequest message.
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `Description`                                                                                          | `*string`                                                                                              | :heavy_minus_sign:                                                                                     | New description. Applied only when "description" is in update_mask.<br/> Empty clears the description. |
+| `DisplayName`                                                                                          | `*string`                                                                                              | :heavy_minus_sign:                                                                                     | New display name. Applied only when "display_name" is in update_mask.<br/> Must be non-empty when applied. |
+| `UpdateMask`                                                                                           | `*string`                                                                                              | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |

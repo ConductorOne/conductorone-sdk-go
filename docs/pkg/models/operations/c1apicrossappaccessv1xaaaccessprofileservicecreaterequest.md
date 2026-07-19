@@ -1,0 +1,9 @@
+# C1APICrossAppAccessV1XAAAccessProfileServiceCreateRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `XAAAccessProfileServiceCreateRequest`                                                                             | [*shared.XAAAccessProfileServiceCreateRequest](../../../pkg/models/shared/xaaaccessprofileservicecreaterequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `AppID`                                                                                                            | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

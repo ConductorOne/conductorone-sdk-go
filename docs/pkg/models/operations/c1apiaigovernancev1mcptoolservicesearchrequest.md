@@ -1,0 +1,10 @@
+# C1APIAiGovernanceV1MCPToolServiceSearchRequest
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `MCPToolServiceSearchRequest`                                                                    | [*shared.MCPToolServiceSearchRequest](../../../pkg/models/shared/mcptoolservicesearchrequest.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `AppID`                                                                                          | `string`                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `ConnectorID`                                                                                    | `string`                                                                                         | :heavy_check_mark:                                                                               | N/A                                                                                              |

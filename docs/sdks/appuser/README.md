@@ -7,6 +7,7 @@
 * [List](#list) - List
 * [ListAppUserCredentials](#listappusercredentials) - List App User Credentials
 * [ListAppUsersForUser](#listappusersforuser) - List App Users For User
+* [ListOwnedServiceAccounts](#listownedserviceaccounts) - List Owned Service Accounts
 * [Search](#search) - Search
 * [Update](#update) - Update
 
@@ -179,6 +180,62 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1AppUserServiceListAppUsersForUserResponse](../../pkg/models/operations/c1apiappv1appuserservicelistappusersforuserresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListOwnedServiceAccounts
+
+ListOwnedServiceAccounts returns the service accounts owned by the calling
+ user. The owner is the authenticated caller; it is not accepted as an input.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppUserService.ListOwnedServiceAccounts" method="post" path="/api/v1/app_users/owned_service_accounts" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.AppUser.ListOwnedServiceAccounts(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListOwnedServiceAccountsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                | :heavy_check_mark:                                                                                   | The context to use for the request.                                                                  |
+| `request`                                                                                            | [shared.ListOwnedServiceAccountsRequest](../../pkg/models/shared/listownedserviceaccountsrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `opts`                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                         | :heavy_minus_sign:                                                                                   | The options for this request.                                                                        |
+
+### Response
+
+**[*operations.C1APIAppV1AppUserServiceListOwnedServiceAccountsResponse](../../pkg/models/operations/c1apiappv1appuserservicelistownedserviceaccountsresponse.md), error**
 
 ### Errors
 

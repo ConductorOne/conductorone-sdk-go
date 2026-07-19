@@ -7849,6 +7849,38 @@ components:
             type: object
             x-speakeasy-entity: App_Owner_User
             x-speakeasy-name-override: AppOwnerUser
+        c1.api.app.v2.ConnectorOwnerEntitlement:
+            description: ConnectorOwnerEntitlement represents an entitlement ownership source for a connector.
+            properties:
+                appEntitlement:
+                    $ref: '#/components/schemas/c1.api.app.v1.AppEntitlement'
+                createdAt:
+                    format: date-time
+                    readOnly: false
+                    type: string
+                roleSlug:
+                    description: The roleSlug field.
+                    readOnly: false
+                    type: string
+            title: Connector Owner Entitlement
+            type: object
+            x-speakeasy-name-override: ConnectorOwnerEntitlement
+        c1.api.app.v2.ConnectorOwnerUser:
+            description: ConnectorOwnerUser represents a user ownership source for a connector.
+            properties:
+                createdAt:
+                    format: date-time
+                    readOnly: false
+                    type: string
+                roleSlug:
+                    description: The roleSlug field.
+                    readOnly: false
+                    type: string
+                user:
+                    $ref: '#/components/schemas/c1.api.user.v1.User'
+            title: Connector Owner User
+            type: object
+            x-speakeasy-name-override: ConnectorOwnerUser
         c1.api.app.v2.CreateEntitlementOwnerRequestInput:
             description: CreateEntitlementOwnerRequest is the request for creating an entitlement ownership source.
             properties:
@@ -7957,6 +7989,40 @@ components:
             title: Search App Entitlement User Owners Response
             type: object
             x-speakeasy-name-override: SearchAppEntitlementUserOwnersResponse
+        c1.api.app.v2.SearchConnectorEntitlementOwnersResponse:
+            description: SearchConnectorEntitlementOwnersResponse is the response for searching entitlement ownership sources on a connector.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v2.ConnectorOwnerEntitlement'
+                    nullable: true
+                    readOnly: false
+                    type: array
+                nextPageToken:
+                    description: The nextPageToken field.
+                    readOnly: false
+                    type: string
+            title: Search Connector Entitlement Owners Response
+            type: object
+            x-speakeasy-name-override: SearchConnectorEntitlementOwnersResponse
+        c1.api.app.v2.SearchConnectorUserOwnersResponse:
+            description: SearchConnectorUserOwnersResponse is the response for searching user ownership sources on a connector.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v2.ConnectorOwnerUser'
+                    nullable: true
+                    readOnly: false
+                    type: array
+                nextPageToken:
+                    description: The nextPageToken field.
+                    readOnly: false
+                    type: string
+            title: Search Connector User Owners Response
+            type: object
+            x-speakeasy-name-override: SearchConnectorUserOwnersResponse
         c1.api.app.v2.SearchEntitlementOwnersResponse:
             description: SearchEntitlementOwnersResponse is the response for searching entitlement ownership sources.
             properties:
@@ -41214,6 +41280,108 @@ paths:
                 - Connector Owner V2
             x-speakeasy-group: ConnectorOwnersV2
             x-speakeasy-name-override: Set
+            x-stability-level: draft
+    /api/v2/apps/{app_id}/connectors/{connector_id}/owners/entitlements:
+        get:
+            description: SearchEntitlementOwners searches for the entitlement ownership for a connector.
+            operationId: c1.api.app.v2.ConnectorOwners.SearchEntitlementOwners
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The appId field.
+                    readOnly: false
+                    type: string
+                - in: path
+                  name: connector_id
+                  required: true
+                  schema:
+                    description: The connectorId field.
+                    readOnly: false
+                    type: string
+                - in: query
+                  name: page_size
+                  schema:
+                    description: The pageSize field.
+                    format: int32
+                    readOnly: false
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: The pageToken field.
+                    readOnly: false
+                    type: string
+                - in: query
+                  name: role_slug
+                  schema:
+                    description: The roleSlug field.
+                    readOnly: false
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.app.v2.SearchConnectorEntitlementOwnersResponse'
+                    description: SearchConnectorEntitlementOwnersResponse is the response for searching entitlement ownership sources on a connector.
+            summary: Search Entitlement Owners
+            tags:
+                - Connector Owner V2
+            x-speakeasy-group: ConnectorOwnersV2
+            x-speakeasy-name-override: SearchEntitlementOwners
+            x-stability-level: draft
+    /api/v2/apps/{app_id}/connectors/{connector_id}/owners/users:
+        get:
+            description: SearchUserOwners searches for users who are owners of this connector.
+            operationId: c1.api.app.v2.ConnectorOwners.SearchUserOwners
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The appId field.
+                    readOnly: false
+                    type: string
+                - in: path
+                  name: connector_id
+                  required: true
+                  schema:
+                    description: The connectorId field.
+                    readOnly: false
+                    type: string
+                - in: query
+                  name: page_size
+                  schema:
+                    description: The pageSize field.
+                    format: int32
+                    readOnly: false
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: The pageToken field.
+                    readOnly: false
+                    type: string
+                - in: query
+                  name: role_slug
+                  schema:
+                    description: The roleSlug field.
+                    readOnly: false
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.app.v2.SearchConnectorUserOwnersResponse'
+                    description: SearchConnectorUserOwnersResponse is the response for searching user ownership sources on a connector.
+            summary: Search User Owners
+            tags:
+                - Connector Owner V2
+            x-speakeasy-group: ConnectorOwnersV2
+            x-speakeasy-name-override: SearchUserOwners
             x-stability-level: draft
     /api/v2/apps/{app_id}/entitlements/{entitlement_id}/owners:
         put:

@@ -1,0 +1,11 @@
+# C1APIUserV2UserOwnersV2SetResponse
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `ContentType`                                                                            | `string`                                                                                 | :heavy_check_mark:                                                                       | HTTP response content type for this operation                                            |
+| `SetUserOwnersV2Response`                                                                | [*shared.SetUserOwnersV2Response](../../../pkg/models/shared/setuserownersv2response.md) | :heavy_minus_sign:                                                                       | SetUserOwnersV2Response is the empty response for setting user owners.                   |
+| `StatusCode`                                                                             | `int`                                                                                    | :heavy_check_mark:                                                                       | HTTP response status code for this operation                                             |
+| `RawResponse`                                                                            | [*http.Response](https://pkg.go.dev/net/http#Response)                                   | :heavy_check_mark:                                                                       | Raw HTTP response; suitable for custom response parsing                                  |

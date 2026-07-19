@@ -1,6 +1,8 @@
 # UpdateOnboardingSettingsRequestStatus
 
-The new onboarding status to set.
+The new onboarding status to set. UNSPECIFIED leaves the core onboarding
+ status unchanged (set mcp_onboarding_status alone to retire the AIAM
+ briefing without touching the core wizard).
 
 ## Example Usage
 

@@ -1,0 +1,17 @@
+# HistoryAnnotation
+
+HistoryAnnotation is a single operator-provided key/value rendered with
+ per-key display metadata. Annotations are minted from the
+ Tx.*WithHistoryAnnotations / db.WithHistoryAnnotations call options.
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `DisplayLabel`                                                                                  | `*string`                                                                                       | :heavy_minus_sign:                                                                              | Server-rendered label, e.g. "Ticket".                                                           |
+| `DisplayURL`                                                                                    | `*string`                                                                                       | :heavy_minus_sign:                                                                              | Resolved from tenant config; "" if none. Frontend applies its own<br/> scheme allowlist.        |
+| `DisplayValue`                                                                                  | `*string`                                                                                       | :heavy_minus_sign:                                                                              | UI-friendly rendering (truncated / reshaped from raw_value).                                    |
+| `Key`                                                                                           | `*string`                                                                                       | :heavy_minus_sign:                                                                              | Storage-side key. Bounds: ^[a-z][a-z0-9_.-]{0,63}$.                                             |
+| `Kind`                                                                                          | [*shared.HistoryAnnotationKind](../../../pkg/models/shared/historyannotationkind.md)            | :heavy_minus_sign:                                                                              | The kind field.                                                                                 |
+| `RawValue`                                                                                      | `*string`                                                                                       | :heavy_minus_sign:                                                                              | Raw value as stored in ObjectHistory.annotations; storage-side values<br/> are capped at 512 bytes. |

@@ -1,0 +1,10 @@
+# C1APIAiGovernanceV1MCPServerServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `MCPServerServiceDeleteRequest`                                                                      | [*shared.MCPServerServiceDeleteRequest](../../../pkg/models/shared/mcpserverservicedeleterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `AppID`                                                                                              | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `ConnectorID`                                                                                        | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

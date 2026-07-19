@@ -5,6 +5,6 @@ The GetAppResponse message contains the details of the requested app in the app 
 
 ## Fields
 
-| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `App`                                                                                 | [*shared.App](../../../pkg/models/shared/app.md)                                      | :heavy_minus_sign:                                                                    | The App object provides all of the details for an app, as well as some configuration. |
+| Field                                            | Type                                             | Required                                         | Description                                      |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| `App`                                            | [*shared.App](../../../pkg/models/shared/app.md) | :heavy_minus_sign:                               | N/A                                              |

@@ -18,13 +18,14 @@ custom := shared.ResourceType("custom_value")
 
 ## Values
 
-| Name                      | Value                     |
-| ------------------------- | ------------------------- |
-| `ResourceTypeRole`        | ROLE                      |
-| `ResourceTypeGroup`       | GROUP                     |
-| `ResourceTypeLicense`     | LICENSE                   |
-| `ResourceTypeProject`     | PROJECT                   |
-| `ResourceTypeCatalog`     | CATALOG                   |
-| `ResourceTypeCustom`      | CUSTOM                    |
-| `ResourceTypeVault`       | VAULT                     |
-| `ResourceTypeProfileType` | PROFILE_TYPE              |
+| Name                        | Value                       |
+| --------------------------- | --------------------------- |
+| `ResourceTypeRole`          | ROLE                        |
+| `ResourceTypeGroup`         | GROUP                       |
+| `ResourceTypeLicense`       | LICENSE                     |
+| `ResourceTypeProject`       | PROJECT                     |
+| `ResourceTypeCatalog`       | CATALOG                     |
+| `ResourceTypeCustom`        | CUSTOM                      |
+| `ResourceTypeVault`         | VAULT                       |
+| `ResourceTypeProfileType`   | PROFILE_TYPE                |
+| `ResourceTypeSessionPolicy` | SESSION_POLICY              |

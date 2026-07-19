@@ -1,6 +1,7 @@
 # FunctionsServiceCreateFunctionRequestFunctionType
 
-The type of function to create, controlling its execution environment and capabilities.
+The type of function to create. Use FUNCTION_TYPE_ANY for user functions —
+ that is the type the Functions UI lists. Do not use any other value.
 
 ## Example Usage
 

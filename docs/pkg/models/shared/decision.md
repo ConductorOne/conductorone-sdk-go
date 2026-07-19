@@ -1,6 +1,8 @@
 # Decision
 
-Whether to run or cancel the paused executions.
+What to do with paused executions. UNSPECIFIED means clear the breaker
+ only (backward-compatible default). RUN or CANCEL creates a bulk action
+ to resolve them asynchronously.
 
 ## Example Usage
 

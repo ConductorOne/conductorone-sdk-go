@@ -5,6 +5,6 @@ UserNotificationSettings contains the calling user's personal notification prefe
 
 ## Fields
 
-| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `ChannelSettings`                                                           | [*shared.ChannelSettings](../../../pkg/models/shared/channelsettings.md)    | :heavy_minus_sign:                                                          | ChannelSettings groups notification preferences for all supported channels. |
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `ChannelSettings`                                                        | [*shared.ChannelSettings](../../../pkg/models/shared/channelsettings.md) | :heavy_minus_sign:                                                       | N/A                                                                      |

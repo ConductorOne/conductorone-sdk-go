@@ -1,0 +1,15 @@
+# McpOnboardingTarget
+
+McpOnboardingTarget is one server/app the admin chose to govern during the
+ AIAM briefing, plus its progress.
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `DisplayName`                                                                                | `*string`                                                                                    | :heavy_minus_sign:                                                                           | Snapshot of the human label at selection time.                                               |
+| `ID`                                                                                         | `*string`                                                                                    | :heavy_minus_sign:                                                                           | Identifies the target within the id space named by kind.                                     |
+| `Kind`                                                                                       | [*shared.McpOnboardingTargetKind](../../../pkg/models/shared/mcponboardingtargetkind.md)     | :heavy_minus_sign:                                                                           | The kind field.                                                                              |
+| `McpServerID`                                                                                | `*string`                                                                                    | :heavy_minus_sign:                                                                           | The registered MCP server a CATALOG_ENTRY target became, once registered.                    |
+| `Status`                                                                                     | [*shared.McpOnboardingTargetStatus](../../../pkg/models/shared/mcponboardingtargetstatus.md) | :heavy_minus_sign:                                                                           | The status field.                                                                            |
