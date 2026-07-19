@@ -1,0 +1,13 @@
+# TunnelApplianceLink
+
+The TunnelApplianceLink message.
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `AvgRtt`                                                                                             | `*string`                                                                                            | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `LeaseExpiresAt`                                                                                     | [*time.Time](https://pkg.go.dev/time#Time)                                                           | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `RelayAddress`                                                                                       | `*string`                                                                                            | :heavy_minus_sign:                                                                                   | Public address (host:port) of the relay server, suitable for use in<br/> client-side connection strings. |
+| `RelayID`                                                                                            | `*string`                                                                                            | :heavy_minus_sign:                                                                                   | Identifier of the wormhole relay server holding this Link.                                           |

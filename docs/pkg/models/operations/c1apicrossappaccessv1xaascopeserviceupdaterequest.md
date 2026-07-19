@@ -1,0 +1,10 @@
+# C1APICrossAppAccessV1XAAScopeServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `XAAScopeServiceUpdateRequest`                                                                     | [*shared.XAAScopeServiceUpdateRequest](../../../pkg/models/shared/xaascopeserviceupdaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `AppID`                                                                                            | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `ID`                                                                                               | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

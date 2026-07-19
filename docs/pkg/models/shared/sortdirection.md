@@ -1,6 +1,6 @@
 # SortDirection
 
-The sortDirection field.
+Direction for sort_by. UNSPECIFIED means ascending.
 
 ## Example Usage
 

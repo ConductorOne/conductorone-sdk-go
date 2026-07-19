@@ -15,3 +15,4 @@ The CohortEntitlement message.
 | `EntitlementDisplayName`              | `*string`                             | :heavy_minus_sign:                    | The entitlementDisplayName field.     |
 | `EntitlementID`                       | `*string`                             | :heavy_minus_sign:                    | The entitlementId field.              |
 | `GrantedCount`                        | `*int`                                | :heavy_minus_sign:                    | The grantedCount field.               |
+| `RiskLevelValueID`                    | `*string`                             | :heavy_minus_sign:                    | The riskLevelValueId field.           |

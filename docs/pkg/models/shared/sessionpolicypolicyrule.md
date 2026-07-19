@@ -1,0 +1,16 @@
+# SessionPolicyPolicyRule
+
+PolicyRule is one rung of the ordered continuous-evaluation cascade. Rules
+ are evaluated top to bottom on every request; the first enforced rule whose
+ condition matches supplies the outcome.
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `Description`                                                                                    | `*string`                                                                                        | :heavy_minus_sign:                                                                               | The description field.                                                                           |
+| `ID`                                                                                             | `*string`                                                                                        | :heavy_minus_sign:                                                                               | The id field.                                                                                    |
+| `MatchCel`                                                                                       | `*string`                                                                                        | :heavy_minus_sign:                                                                               | The matchCel field.                                                                              |
+| `Mode`                                                                                           | [*shared.SessionPolicyPolicyRuleMode](../../../pkg/models/shared/sessionpolicypolicyrulemode.md) | :heavy_minus_sign:                                                                               | The mode field.                                                                                  |
+| `Outcome`                                                                                        | [*shared.SessionPolicyPolicyOutcome](../../../pkg/models/shared/sessionpolicypolicyoutcome.md)   | :heavy_minus_sign:                                                                               | N/A                                                                                              |

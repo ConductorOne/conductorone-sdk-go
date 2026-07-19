@@ -9,6 +9,7 @@
 ## Search
 
 Search searches for function invocations with filtering and ordering support
+ Each invocation carries its input/output payloads, which can be large — request a small page_size (≤10) to keep responses small.
 
 ### Example Usage
 

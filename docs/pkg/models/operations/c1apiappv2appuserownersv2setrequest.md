@@ -1,0 +1,10 @@
+# C1APIAppV2AppUserOwnersV2SetRequest
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `SetAppUserOwnersV2Request`                                                                  | [*shared.SetAppUserOwnersV2Request](../../../pkg/models/shared/setappuserownersv2request.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |
+| `AppID`                                                                                      | `string`                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `UserID`                                                                                     | `string`                                                                                     | :heavy_check_mark:                                                                           | N/A                                                                                          |

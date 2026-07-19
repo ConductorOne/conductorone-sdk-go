@@ -16,7 +16,7 @@
 
 ## CreateExternal
 
-CreateExternal creates a secret vault for external email recipients.
+CreateExternal creates a secret using the requested Age suite.
 
 ### Example Usage
 
@@ -71,7 +71,7 @@ func main() {
 
 ## CreateInternal
 
-CreateInternal creates a secret vault for internal C1 users.
+CreateInternal creates a secret using the requested Age suite.
 
 ### Example Usage
 

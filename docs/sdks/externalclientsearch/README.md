@@ -9,6 +9,7 @@
 ## Search
 
 Search returns external client grants for all users in the tenant.
+ Request a modest page_size (≤25) to keep responses small.
 
 ### Example Usage
 

@@ -1,0 +1,9 @@
+# C1APIAiGovernanceV1MCPServerServiceRegisterRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `MCPServerServiceRegisterRequest`                                                                        | [*shared.MCPServerServiceRegisterRequest](../../../pkg/models/shared/mcpserverserviceregisterrequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `AppID`                                                                                                  | `string`                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

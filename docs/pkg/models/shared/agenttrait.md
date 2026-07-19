@@ -1,0 +1,11 @@
+# AgentTrait
+
+AgentTrait carries metadata for AI-agent resources surfaced in the Inventory.
+
+
+## Fields
+
+| Field                                                                                                                                     | Type                                                                                                                                      | Required                                                                                                                                  | Description                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `IdentityAppUserID`                                                                                                                       | `*string`                                                                                                                                 | :heavy_minus_sign:                                                                                                                        | The C1 app user ID of the service-account identity this agent authenticates as.<br/> Empty if the backing identity has not yet been resolved. |
+| `Status`                                                                                                                                  | [*shared.AgentTraitStatus](../../../pkg/models/shared/agenttraitstatus.md)                                                                | :heavy_minus_sign:                                                                                                                        | The agent's lifecycle status (READY, DISABLED, DELETED).                                                                                  |

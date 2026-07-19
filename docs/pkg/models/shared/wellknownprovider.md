@@ -27,3 +27,4 @@ custom := shared.WellKnownProvider("custom_value")
 | `WellKnownProviderWellKnownWorkloadProviderGitlabCi`       | WELL_KNOWN_WORKLOAD_PROVIDER_GITLAB_CI                     |
 | `WellKnownProviderWellKnownWorkloadProviderHcpTerraform`   | WELL_KNOWN_WORKLOAD_PROVIDER_HCP_TERRAFORM                 |
 | `WellKnownProviderWellKnownWorkloadProviderAwsIamOutbound` | WELL_KNOWN_WORKLOAD_PROVIDER_AWS_IAM_OUTBOUND              |
+| `WellKnownProviderWellKnownWorkloadProviderSpiffe`         | WELL_KNOWN_WORKLOAD_PROVIDER_SPIFFE                        |

@@ -1,0 +1,9 @@
+# C1APISignInPolicyV1SignInPolicyServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `SignInPolicyServiceUpdateRequest`                                                                         | [*shared.SignInPolicyServiceUpdateRequest](../../../pkg/models/shared/signinpolicyserviceupdaterequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `ID`                                                                                                       | `string`                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

@@ -51,7 +51,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.CreateEntitlementOwnerResponse != nil {
+    if res.CreateAppEntitlementOwnerResponse != nil {
         // handle response
     }
 }
@@ -111,7 +111,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.CreateUserOwnerResponse != nil {
+    if res.CreateAppUserOwnerResponse != nil {
         // handle response
     }
 }
@@ -172,7 +172,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.DeleteEntitlementOwnerResponse != nil {
+    if res.DeleteAppEntitlementOwnerResponse != nil {
         // handle response
     }
 }
@@ -232,7 +232,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.DeleteUserOwnerResponse != nil {
+    if res.DeleteAppUserOwnerResponse != nil {
         // handle response
     }
 }
@@ -293,7 +293,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.GetEntitlementOwnerResponse != nil {
+    if res.GetAppEntitlementOwnerResponse != nil {
         // handle response
     }
 }
@@ -353,7 +353,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.GetUserOwnerResponse != nil {
+    if res.GetAppUserOwnerResponse != nil {
         // handle response
     }
 }
@@ -411,7 +411,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.SearchEntitlementOwnersResponse != nil {
+    if res.SearchAppEntitlementOwnersResponse != nil {
         // handle response
     }
 }
@@ -469,7 +469,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    if res.SearchUserOwnersResponse != nil {
+    if res.SearchAppUserOwnersResponse != nil {
         // handle response
     }
 }
