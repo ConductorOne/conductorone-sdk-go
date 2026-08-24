@@ -2,6 +2,7 @@ package shared
 
 import (
 	"encoding/json"
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -42,7 +43,7 @@ func TestMarshalRoundTrip_IntegerStringTags(t *testing.T) {
 		},
 		{
 			name:   "Facets with count",
-			json:   `{"count":"5","displayName":"category","fieldName":"type"}`,
+			json:   `{"count":"5"}`,
 			target: &Facets{},
 			validate: func(t *testing.T, marshaled string) {
 				var m map[string]json.RawMessage
@@ -186,7 +187,12 @@ func TestMarshalRoundTrip_IntegerStringTags(t *testing.T) {
 				var m map[string]json.RawMessage
 				require.NoError(t, json.Unmarshal([]byte(marshaled), &m))
 				assert.Equal(t, `"5"`, string(m["const"]))
+				assert.Equal(t, `"1"`, string(m["gt"]))
+				assert.Equal(t, `"2"`, string(m["gte"]))
 				assert.Equal(t, `["3","4"]`, string(m["in"]))
+				assert.Equal(t, `"10"`, string(m["lt"]))
+				assert.Equal(t, `"9"`, string(m["lte"]))
+				assert.Equal(t, `["6","7"]`, string(m["notIn"]))
 			},
 		},
 		{
@@ -197,7 +203,12 @@ func TestMarshalRoundTrip_IntegerStringTags(t *testing.T) {
 				var m map[string]json.RawMessage
 				require.NoError(t, json.Unmarshal([]byte(marshaled), &m))
 				assert.Equal(t, `"5"`, string(m["const"]))
+				assert.Equal(t, `"1"`, string(m["gt"]))
+				assert.Equal(t, `"2"`, string(m["gte"]))
 				assert.Equal(t, `["3","4"]`, string(m["in"]))
+				assert.Equal(t, `"10"`, string(m["lt"]))
+				assert.Equal(t, `"9"`, string(m["lte"]))
+				assert.Equal(t, `["6","7"]`, string(m["notIn"]))
 			},
 		},
 		{
@@ -232,11 +243,18 @@ func TestMarshalRoundTrip_IntegerStringTags(t *testing.T) {
 			data, err := json.Marshal(tt.target)
 			require.NoError(t, err, "marshal should succeed")
 
+			// Lossless vs the original input: every table input is fully
+			// round-trippable (all fields are real, non-omitempty-dropped fields
+			// of the target type), so the marshaled output must equal the input.
+			assert.JSONEq(t, tt.json, string(data), "marshal should preserve the input")
+
 			// Validate the output
 			tt.validate(t, string(data))
 
-			// Verify full round-trip: unmarshal the marshaled data again
-			target2 := tt.target
+			// Verify full round-trip: unmarshal the marshaled data into a FRESH
+			// instance (not the already-populated target) so a marshal-drop bug
+			// cannot be masked by stale field values.
+			target2 := reflect.New(reflect.TypeOf(tt.target).Elem()).Interface().(interface{ MarshalJSON() ([]byte, error) })
 			err = json.Unmarshal(data, target2)
 			require.NoError(t, err, "second unmarshal should succeed")
 
@@ -273,17 +291,81 @@ func TestMarshalRoundTrip_UserServiceListResponse(t *testing.T) {
 	data, err := json.Marshal(resp)
 	require.NoError(t, err)
 
-	// Verify key fields are preserved
-	var check map[string]json.RawMessage
-	require.NoError(t, json.Unmarshal(data, &check))
-	assert.Contains(t, string(check["list"]), `"user-123"`)
-	assert.Contains(t, string(check["list"]), `"test@example.com"`)
-	assert.Equal(t, `"token123"`, string(check["nextPageToken"]))
-
-	// Verify second round-trip
+	// Verify key fields are preserved via structured assertions on a fresh
+	// decode of the marshaled output (not substring matching on raw JSON).
 	var resp2 UserServiceListResponse
 	require.NoError(t, json.Unmarshal(data, &resp2))
-	data2, err := json.Marshal(resp2)
+	require.Len(t, resp2.List, 1)
+	require.NotNil(t, resp2.List[0].User)
+	require.NotNil(t, resp2.List[0].User.GetID())
+	assert.Equal(t, "user-123", *resp2.List[0].User.GetID())
+	require.NotNil(t, resp2.List[0].User.GetEmail())
+	assert.Equal(t, "test@example.com", *resp2.List[0].User.GetEmail())
+	require.NotNil(t, resp2.GetNextPageToken())
+	assert.Equal(t, "token123", *resp2.GetNextPageToken())
+
+	// Verify second round-trip
+	var resp3 UserServiceListResponse
+	require.NoError(t, json.Unmarshal(data, &resp3))
+	data2, err := json.Marshal(resp3)
 	require.NoError(t, err)
 	assert.JSONEq(t, string(data), string(data2))
+}
+
+// TestMarshalRoundTrip_IntegerStringListResponse exercises the integer:"string"
+// path in a realistic list-response scenario. The literal "List Users" types
+// (User/UserView/UserServiceListResponse) carry no integer:"string" fields, so
+// this response type (with GraphAppGrantCount.GrantCount tagged integer:"string")
+// is used to cover the IGA-719 marshal-back path in a list response.
+func TestMarshalRoundTrip_IntegerStringListResponse(t *testing.T) {
+	input := `{
+		"appCount": 2,
+		"appGrantCounts": [
+			{"appId": "app-1", "grantCount": "7"},
+			{"appId": "app-2", "grantCount": "3"}
+		]
+	}`
+
+	var resp AppEntitlementSearchServiceCountGrantsForUserByAppResponse
+	err := json.Unmarshal([]byte(input), &resp)
+	require.NoError(t, err)
+
+	data, err := json.Marshal(resp)
+	require.NoError(t, err)
+
+	// grantCount must be serialized as a string, not a number.
+	var m map[string]json.RawMessage
+	require.NoError(t, json.Unmarshal(data, &m))
+	assert.Contains(t, string(m["appGrantCounts"]), `"grantCount":"7"`)
+	assert.Contains(t, string(m["appGrantCounts"]), `"grantCount":"3"`)
+
+	// Lossless round-trip vs the original input.
+	assert.JSONEq(t, input, string(data))
+}
+
+// TestUnmarshalIntegerString_RejectsBadInput verifies the error paths of the
+// integer:"string" unmarshal branch: a non-string value and an invalid string
+// must both be rejected with an error.
+func TestUnmarshalIntegerString_RejectsBadInput(t *testing.T) {
+	tests := []struct {
+		name string
+		json string
+	}{
+		{
+			name: "non-string number input",
+			json: `{"count":42}`,
+		},
+		{
+			name: "invalid string input",
+			json: `{"count":"abc"}`,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var f FacetValue
+			err := json.Unmarshal([]byte(tt.json), &f)
+			require.Error(t, err, "unmarshal of bad integer:\"string\" input should error")
+		})
+	}
 }
