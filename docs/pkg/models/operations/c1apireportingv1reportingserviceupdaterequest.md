@@ -1,0 +1,9 @@
+# C1APIReportingV1ReportingServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ReportingServiceUpdateRequest`                                                                      | [*shared.ReportingServiceUpdateRequest](../../../pkg/models/shared/reportingserviceupdaterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `ID`                                                                                                 | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

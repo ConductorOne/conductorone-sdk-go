@@ -1,0 +1,9 @@
+# C1APIFundsV1MyFundLimitsServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `MyFundLimitsServiceDeleteRequest`                                                                         | [*shared.MyFundLimitsServiceDeleteRequest](../../../pkg/models/shared/myfundlimitsservicedeleterequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `AppID`                                                                                                    | `string`                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

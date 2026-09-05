@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [CreateAccessProfileFromCohort](#createaccessprofilefromcohort) - Create Access Profile From Cohort
+* [EvaluateEntitlementSelection](#evaluateentitlementselection) - Evaluate Entitlement Selection
 * [GetCustomAnalysisResult](#getcustomanalysisresult) - Get Custom Analysis Result
 * [GetLatestRun](#getlatestrun) - Get Latest Run
 * [GetRoleMiningConfig](#getroleminingconfig) - Get Role Mining Config
@@ -75,9 +76,71 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## EvaluateEntitlementSelection
+
+Evaluate the exact cohort impact of an entitlement cutoff and manual overrides.
+ The analysis determines the eligible entitlements and cohort definition.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.role_mining_management.v1.RoleMiningManagementService.EvaluateEntitlementSelection" method="post" path="/api/v1/role-mining/custom-analysis/{analysis_id}/evaluate-entitlement-selection" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RoleMiningManagement.EvaluateEntitlementSelection(ctx, operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceEvaluateEntitlementSelectionRequest{
+        AnalysisID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.EvaluateEntitlementSelectionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                        | Type                                                                                                                                                                                                                             | Required                                                                                                                                                                                                                         | Description                                                                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                                                               | The context to use for the request.                                                                                                                                                                                              |
+| `request`                                                                                                                                                                                                                        | [operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceEvaluateEntitlementSelectionRequest](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementserviceevaluateentitlementselectionrequest.md) | :heavy_check_mark:                                                                                                                                                                                                               | The request object to use for the request.                                                                                                                                                                                       |
+| `opts`                                                                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                               | The options for this request.                                                                                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceEvaluateEntitlementSelectionResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementserviceevaluateentitlementselectionresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## GetCustomAnalysisResult
 
-Invokes the c1.api.role_mining_management.v1.RoleMiningManagementService.GetCustomAnalysisResult method.
+GetCustomAnalysisResult returns the status and results of a custom cohort
+ analysis started with TriggerCustomAnalysis, including entitlement
+ coverage, entitlement clusters, attribute facets, and cutoff impact
+ points. Requires the agentic role mining feature.
 
 ### Example Usage
 
@@ -576,7 +639,10 @@ func main() {
 
 ## TriggerCustomAnalysis
 
-Invokes the c1.api.role_mining_management.v1.RoleMiningManagementService.TriggerCustomAnalysis method.
+TriggerCustomAnalysis starts an asynchronous custom cohort analysis defined
+ by the given profile filters and returns the ID of the analysis result.
+ Requires the agentic role mining feature. Poll GetCustomAnalysisResult
+ until the analysis completes.
 
 ### Example Usage
 

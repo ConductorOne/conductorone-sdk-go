@@ -21,3 +21,4 @@ custom := shared.FunctionTypes("custom_value")
 | `FunctionTypesFunctionTypeUnspecified` | FUNCTION_TYPE_UNSPECIFIED              |
 | `FunctionTypesFunctionTypeAny`         | FUNCTION_TYPE_ANY                      |
 | `FunctionTypesFunctionTypeCodeMode`    | FUNCTION_TYPE_CODE_MODE                |
+| `FunctionTypesFunctionTypeConnector`   | FUNCTION_TYPE_CONNECTOR                |

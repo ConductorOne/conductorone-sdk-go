@@ -37,3 +37,6 @@ custom := shared.EventTypes("custom_value")
 | `EventTypesFindingAuditEventTypeEvidenceUpdated`       | FINDING_AUDIT_EVENT_TYPE_EVIDENCE_UPDATED              |
 | `EventTypesFindingAuditEventTypeRoutingEvaluated`      | FINDING_AUDIT_EVENT_TYPE_ROUTING_EVALUATED             |
 | `EventTypesFindingAuditEventTypeTransformed`           | FINDING_AUDIT_EVENT_TYPE_TRANSFORMED                   |
+| `EventTypesFindingAuditEventTypeReprocessRequested`    | FINDING_AUDIT_EVENT_TYPE_REPROCESS_REQUESTED           |
+| `EventTypesFindingAuditEventTypeReprocessCompleted`    | FINDING_AUDIT_EVENT_TYPE_REPROCESS_COMPLETED           |
+| `EventTypesFindingAuditEventTypeAssigneeChanged`       | FINDING_AUDIT_EVENT_TYPE_ASSIGNEE_CHANGED              |

@@ -1,0 +1,9 @@
+# C1APIFundsV1AppCapServiceSetLimitRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `AppCapServiceSetLimitRequest`                                                                     | [*shared.AppCapServiceSetLimitRequest](../../../pkg/models/shared/appcapservicesetlimitrequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `AppID`                                                                                            | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

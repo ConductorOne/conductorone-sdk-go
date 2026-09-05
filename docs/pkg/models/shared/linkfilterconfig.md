@@ -1,0 +1,13 @@
+# LinkFilterConfig
+
+LinkFilterConfig strips or annotates URLs and markdown images in tool output
+ whose host is not in allowed_hosts.
+
+
+## Fields
+
+| Field                                                                                                                     | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `Action`                                                                                                                  | [*shared.LinkFilterConfigAction](../../../pkg/models/shared/linkfilterconfigaction.md)                                    | :heavy_minus_sign:                                                                                                        | Action taken on a disallowed link. Unspecified = REDACT.                                                                  |
+| `AllowedHosts`                                                                                                            | []`string`                                                                                                                | :heavy_minus_sign:                                                                                                        | Hosts that are permitted. Empty = every host is disallowed. Matched<br/> case-insensitively; a leading "." allows subdomains. |
+| `BlockImages`                                                                                                             | `*bool`                                                                                                                   | :heavy_minus_sign:                                                                                                        | When true, markdown image links to disallowed hosts are also acted on.                                                    |

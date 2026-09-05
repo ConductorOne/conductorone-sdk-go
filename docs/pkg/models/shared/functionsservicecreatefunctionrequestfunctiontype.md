@@ -24,3 +24,4 @@ custom := shared.FunctionsServiceCreateFunctionRequestFunctionType("custom_value
 | `FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeUnspecified` | FUNCTION_TYPE_UNSPECIFIED                                                  |
 | `FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeAny`         | FUNCTION_TYPE_ANY                                                          |
 | `FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeCodeMode`    | FUNCTION_TYPE_CODE_MODE                                                    |
+| `FunctionsServiceCreateFunctionRequestFunctionTypeFunctionTypeConnector`   | FUNCTION_TYPE_CONNECTOR                                                    |

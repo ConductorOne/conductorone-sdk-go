@@ -1,0 +1,9 @@
+# C1APILlmGatewayV1ProviderCredentialServiceClearRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `ClearProviderCredentialRequest`                                                                       | [*shared.ClearProviderCredentialRequest](../../../pkg/models/shared/clearprovidercredentialrequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `SlotID`                                                                                               | `string`                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

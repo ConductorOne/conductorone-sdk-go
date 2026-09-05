@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [CreateSurfaceFeedback](#createsurfacefeedback) - Create Surface Feedback
+* [GetSurfaceProvenance](#getsurfaceprovenance) - Get Surface Provenance
 * [ListSurfaceFeedback](#listsurfacefeedback) - List Surface Feedback
 * [ListSurfaces](#listsurfaces) - List Surfaces
 * [SubmitAction](#submitaction) - Submit Action
@@ -60,6 +61,67 @@ func main() {
 ### Response
 
 **[*operations.C1APIA2uiV1A2UIServiceCreateSurfaceFeedbackResponse](../../pkg/models/operations/c1apia2uiv1a2uiservicecreatesurfacefeedbackresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSurfaceProvenance
+
+GetSurfaceProvenance returns, in plain terms, what the surface's report
+ was built from: every record its program touched, in the order it touched
+ them.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.a2ui.v1.A2UIService.GetSurfaceProvenance" method="get" path="/api/v1/a2ui/conversations/{conversation_id}/surfaces/{surface_id}/provenance" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.A2UI.GetSurfaceProvenance(ctx, operations.C1APIA2uiV1A2UIServiceGetSurfaceProvenanceRequest{
+        ConversationID: "<id>",
+        SurfaceID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.A2UIServiceGetSurfaceProvenanceResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                            | :heavy_check_mark:                                                                                                                               | The context to use for the request.                                                                                                              |
+| `request`                                                                                                                                        | [operations.C1APIA2uiV1A2UIServiceGetSurfaceProvenanceRequest](../../pkg/models/operations/c1apia2uiv1a2uiservicegetsurfaceprovenancerequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
+| `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIA2uiV1A2UIServiceGetSurfaceProvenanceResponse](../../pkg/models/operations/c1apia2uiv1a2uiservicegetsurfaceprovenanceresponse.md), error**
 
 ### Errors
 

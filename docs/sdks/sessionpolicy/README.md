@@ -9,9 +9,12 @@
 * [Create](#create) - Create
 * [Delete](#delete) - Delete
 * [Get](#get) - Get
+* [GetEffectiveSessionPolicy](#geteffectivesessionpolicy) - Get Effective Session Policy
 * [List](#list) - List
 * [ListAssignments](#listassignments) - List Assignments
+* [ListUserPolicies](#listuserpolicies) - List User Policies
 * [Search](#search) - Search
+* [SearchPolicyUsers](#searchpolicyusers) - Search Policy Users
 * [UnassignGroup](#unassigngroup) - Unassign Group
 * [UnassignUser](#unassignuser) - Unassign User
 * [Update](#update) - Update
@@ -306,6 +309,67 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## GetEffectiveSessionPolicy
+
+Returns the single effective session policy for a user and why it applies:
+ the assigned policy with the highest priority, else the tenant default,
+ else none. Read-only and diagnostic: it reflects current assignment state
+ rather than the resolver's cached resolution.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.session_policy.v1.SessionPolicyService.GetEffectiveSessionPolicy" method="get" path="/api/v1/users/{user_id}/effective-session-policy" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.SessionPolicy.GetEffectiveSessionPolicy(ctx, operations.C1APISessionPolicyV1SessionPolicyServiceGetEffectiveSessionPolicyRequest{
+        UserID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SessionPolicyServiceGetEffectiveSessionPolicyResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                      | Type                                                                                                                                                                                           | Required                                                                                                                                                                                       | Description                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                          | :heavy_check_mark:                                                                                                                                                                             | The context to use for the request.                                                                                                                                                            |
+| `request`                                                                                                                                                                                      | [operations.C1APISessionPolicyV1SessionPolicyServiceGetEffectiveSessionPolicyRequest](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicegeteffectivesessionpolicyrequest.md) | :heavy_check_mark:                                                                                                                                                                             | The request object to use for the request.                                                                                                                                                     |
+| `opts`                                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                             | The options for this request.                                                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APISessionPolicyV1SessionPolicyServiceGetEffectiveSessionPolicyResponse](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicegeteffectivesessionpolicyresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## List
 
 List all session policies in your tenant, one page at a time.
@@ -421,6 +485,67 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## ListUserPolicies
+
+Lists every session policy that applies to a user — direct,
+ group-conferred, and the tenant default when set — each with its source.
+ Candidates are returned in assignment order; the resolver's priority
+ tie-break happens at evaluation, not here.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.session_policy.v1.SessionPolicyService.ListUserPolicies" method="get" path="/api/v1/users/{user_id}/session-policies" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.SessionPolicy.ListUserPolicies(ctx, operations.C1APISessionPolicyV1SessionPolicyServiceListUserPoliciesRequest{
+        UserID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SessionPolicyServiceListUserPoliciesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                    | Type                                                                                                                                                                         | Required                                                                                                                                                                     | Description                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                        | :heavy_check_mark:                                                                                                                                                           | The context to use for the request.                                                                                                                                          |
+| `request`                                                                                                                                                                    | [operations.C1APISessionPolicyV1SessionPolicyServiceListUserPoliciesRequest](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicelistuserpoliciesrequest.md) | :heavy_check_mark:                                                                                                                                                           | The request object to use for the request.                                                                                                                                   |
+| `opts`                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                 | :heavy_minus_sign:                                                                                                                                                           | The options for this request.                                                                                                                                                |
+
+### Response
+
+**[*operations.C1APISessionPolicyV1SessionPolicyServiceListUserPoliciesResponse](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicelistuserpoliciesresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## Search
 
 Search session policies by name, or fetch a specific set by ID. Returns
@@ -470,6 +595,83 @@ func main() {
 ### Response
 
 **[*operations.C1APISessionPolicyV1SessionPolicyServiceSearchResponse](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicesearchresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchPolicyUsers
+
+Searches the users a policy applies to, expanded: direct assignments plus
+ per-user expansion of conferred groups, one page at a time. Served from
+ the asynchronously-replicated Postgres mirror of the binding store, so a
+ just-made assignment may not appear immediately; the user-scoped reads
+ (GetEffectiveSessionPolicy, ListUserPolicies) reflect current state.
+ Search, not List: the results are a filtered, server-paginated discovery
+ over the binding store (query and source facets), not a bounded
+ collection of a named object.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.session_policy.v1.SessionPolicyService.SearchPolicyUsers" method="post" path="/api/v1/session-policies/{id}/users/search" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.SessionPolicy.SearchPolicyUsers(ctx, operations.C1APISessionPolicyV1SessionPolicyServiceSearchPolicyUsersRequest{
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SessionPolicyServiceSearchPolicyUsersResponse != nil {
+        for {
+            // handle items
+
+            res, err = res.Next()
+
+            if err != nil {
+                // handle error
+            }
+
+            if res == nil {
+                break
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                          | :heavy_check_mark:                                                                                                                                                             | The context to use for the request.                                                                                                                                            |
+| `request`                                                                                                                                                                      | [operations.C1APISessionPolicyV1SessionPolicyServiceSearchPolicyUsersRequest](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicesearchpolicyusersrequest.md) | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `opts`                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                   | :heavy_minus_sign:                                                                                                                                                             | The options for this request.                                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APISessionPolicyV1SessionPolicyServiceSearchPolicyUsersResponse](../../pkg/models/operations/c1apisessionpolicyv1sessionpolicyservicesearchpolicyusersresponse.md), error**
 
 ### Errors
 

@@ -1,0 +1,11 @@
+# GetAppManagedStateBindingResponse
+
+GetAppManagedStateBindingResponse contains the managed state of a discovered application.
+
+
+## Fields
+
+| Field                                                                                                                         | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `AppManagementState`                                                                                                          | [*shared.AppManagedStateBindingView](../../../pkg/models/shared/appmanagedstatebindingview.md)                                | :heavy_minus_sign:                                                                                                            | N/A                                                                                                                           |
+| `Expanded`                                                                                                                    | [][shared.GetAppManagedStateBindingResponseExpanded](../../../pkg/models/shared/getappmanagedstatebindingresponseexpanded.md) | :heavy_minus_sign:                                                                                                            | Related objects requested through expand_mask. REST Get requests do not support expansions; REST Promote requests do.         |

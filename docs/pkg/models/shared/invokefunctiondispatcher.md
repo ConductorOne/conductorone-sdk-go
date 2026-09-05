@@ -1,0 +1,12 @@
+# InvokeFunctionDispatcher
+
+InvokeFunctionDispatcher runs a published C1 function by id.
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `Args`                                                                                                       | map[string]`string`                                                                                          | :heavy_minus_sign:                                                                                           | Arguments passed to the function, keyed by arg name (v0: verbatim values;<br/> CEL evaluation is a later phase). |
+| `FunctionCommitID`                                                                                           | `*string`                                                                                                    | :heavy_minus_sign:                                                                                           | Optional pinned function commit; empty floats to the published commit.                                       |
+| `FunctionID`                                                                                                 | `*string`                                                                                                    | :heavy_minus_sign:                                                                                           | ID of the published function to invoke.                                                                      |

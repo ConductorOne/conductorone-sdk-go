@@ -1,0 +1,11 @@
+# FundPolicyServiceSetOrgCeilingRequest
+
+The FundPolicyServiceSetOrgCeilingRequest message.
+
+
+## Fields
+
+| Field                                                                                                                            | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `Limit`                                                                                                                          | [*shared.SpendLimit](../../../pkg/models/shared/spendlimit.md)                                                                   | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              |
+| `Period`                                                                                                                         | [*shared.FundPolicyServiceSetOrgCeilingRequestPeriod](../../../pkg/models/shared/fundpolicyservicesetorgceilingrequestperiod.md) | :heavy_minus_sign:                                                                                                               | Optional period override for the ceiling. Only valid together with limit.                                                        |

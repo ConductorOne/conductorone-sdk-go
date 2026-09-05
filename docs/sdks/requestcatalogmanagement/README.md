@@ -20,6 +20,7 @@
 * [ListAllEntitlementIdsPerApp](#listallentitlementidsperapp) - List All Entitlement Ids Per App
 * [ListEntitlementsForAccess](#listentitlementsforaccess) - List Entitlements For Access
 * [ListEntitlementsPerCatalog](#listentitlementspercatalog) - List Entitlements Per Catalog
+* [PlanTypeChange](#plantypechange) - Plan Type Change
 * [RemoveAccessEntitlements](#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](#removeappentitlements) - Remove App Entitlements
 * [ResumePausedBundleAutomation](#resumepausedbundleautomation) - Resume Paused Bundle Automation
@@ -949,6 +950,66 @@ func main() {
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceListEntitlementsPerCatalogResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicelistentitlementspercatalogresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## PlanTypeChange
+
+PlanTypeChange reports settings that must be turned off before Update can
+ change an access profile to the requested type. It does not modify the
+ profile or any associated state.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.PlanTypeChange" method="post" path="/api/v1/catalogs/{request_catalog_id}/type-change/plan" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.PlanTypeChange(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServicePlanTypeChangeRequest{
+        RequestCatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.RequestCatalogManagementServicePlanTypeChangeResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                        | Type                                                                                                                                                                                             | Required                                                                                                                                                                                         | Description                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                            | :heavy_check_mark:                                                                                                                                                                               | The context to use for the request.                                                                                                                                                              |
+| `request`                                                                                                                                                                                        | [operations.C1APIRequestcatalogV1RequestCatalogManagementServicePlanTypeChangeRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceplantypechangerequest.md) | :heavy_check_mark:                                                                                                                                                                               | The request object to use for the request.                                                                                                                                                       |
+| `opts`                                                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                               | The options for this request.                                                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServicePlanTypeChangeResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceplantypechangeresponse.md), error**
 
 ### Errors
 

@@ -26,3 +26,10 @@ custom := shared.FindingTypes("custom_value")
 | `FindingTypesFindingTypeDecoyCredentialUsed`               | FINDING_TYPE_DECOY_CREDENTIAL_USED                         |
 | `FindingTypesFindingTypeCustom`                            | FINDING_TYPE_CUSTOM                                        |
 | `FindingTypesFindingTypeConnectorAnomalyDetectionDisabled` | FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED          |
+| `FindingTypesFindingTypeDeactivatedOwner`                  | FINDING_TYPE_DEACTIVATED_OWNER                             |
+| `FindingTypesFindingTypeUnusedSecret`                      | FINDING_TYPE_UNUSED_SECRET                                 |
+| `FindingTypesFindingTypeCredentialPubliclyExposed`         | FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED                   |
+| `FindingTypesFindingTypeDecoyPubliclyExposed`              | FINDING_TYPE_DECOY_PUBLICLY_EXPOSED                        |
+| `FindingTypesFindingTypeCredentialExpiring`                | FINDING_TYPE_CREDENTIAL_EXPIRING                           |
+| `FindingTypesFindingTypeConnectorSyncFailing`              | FINDING_TYPE_CONNECTOR_SYNC_FAILING                        |
+| `FindingTypesFindingTypeShadowMcp`                         | FINDING_TYPE_SHADOW_MCP                                    |
