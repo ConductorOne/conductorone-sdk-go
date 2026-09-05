@@ -1,0 +1,9 @@
+# C1APIFundsV1FundAssignmentServiceSetLimitRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `FundAssignmentServiceSetLimitRequest`                                                                             | [*shared.FundAssignmentServiceSetLimitRequest](../../../pkg/models/shared/fundassignmentservicesetlimitrequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `UserID`                                                                                                           | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

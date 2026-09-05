@@ -10,6 +10,7 @@
 * [GetByAppEntitlementID](#getbyappentitlementid) - Get By App Entitlement Id
 * [List](#list) - List
 * [ListRequestableConnectors](#listrequestableconnectors) - List Requestable Connectors
+* [SearchAccessProfiles](#searchaccessprofiles) - Search Access Profiles
 * [SearchRequestableConnectors](#searchrequestableconnectors) - Search Requestable Connectors
 * [Update](#update) - Update
 
@@ -369,6 +370,65 @@ func main() {
 ### Response
 
 **[*operations.C1APIAiGovernanceV1MCPAccessProfileServiceListRequestableConnectorsResponse](../../pkg/models/operations/c1apiaigovernancev1mcpaccessprofileservicelistrequestableconnectorsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchAccessProfiles
+
+SearchAccessProfiles returns the tenant's MCP toolsets (access profiles)
+ across every (app_id, connector_id), filtered by a case-insensitive search
+ over display_name and paginated. Backs the agent-config multi-select that
+ binds toolsets to a ClawAgent.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.ai_governance.v1.MCPAccessProfileService.SearchAccessProfiles" method="get" path="/api/v1/mcp_toolsets/search" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.MCPAccessProfile.SearchAccessProfiles(ctx, operations.C1APIAiGovernanceV1MCPAccessProfileServiceSearchAccessProfilesRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.MCPAccessProfileServiceSearchAccessProfilesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                | Type                                                                                                                                                                                     | Required                                                                                                                                                                                 | Description                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                       | The context to use for the request.                                                                                                                                                      |
+| `request`                                                                                                                                                                                | [operations.C1APIAiGovernanceV1MCPAccessProfileServiceSearchAccessProfilesRequest](../../pkg/models/operations/c1apiaigovernancev1mcpaccessprofileservicesearchaccessprofilesrequest.md) | :heavy_check_mark:                                                                                                                                                                       | The request object to use for the request.                                                                                                                                               |
+| `opts`                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                       | The options for this request.                                                                                                                                                            |
+
+### Response
+
+**[*operations.C1APIAiGovernanceV1MCPAccessProfileServiceSearchAccessProfilesResponse](../../pkg/models/operations/c1apiaigovernancev1mcpaccessprofileservicesearchaccessprofilesresponse.md), error**
 
 ### Errors
 

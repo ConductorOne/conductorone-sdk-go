@@ -779,9 +779,15 @@ func main() {
 
 ## UpdateFunction
 
-Update an existing function's metadata. Also the publish path: set
- function.published_commit_id and include "published_commit_id" in
- update_mask to make a commit the default runnable version.
+Update an existing function's metadata, code, or both. Also the publish
+ path: set function.published_commit_id and include "published_commit_id"
+ in update_mask to make a commit the default runnable version. To push a
+ new code commit, set content (and optionally commit_message); this is
+ independent of update_mask, since commits are versioned separately from
+ function metadata. A single request cannot publish the commit it just
+ created, since published_commit_id is validated against existing commits
+ before content is committed: publishing new code takes two calls, push
+ then publish with the returned commit.id.
 
 ### Example Usage
 

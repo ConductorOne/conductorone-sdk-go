@@ -14,6 +14,7 @@
 * [ProcessNow](#processnow) - Process Now
 * [Reassign](#reassign) - Reassign
 * [Restart](#restart) - Restart
+* [RetryProvisioning](#retryprovisioning) - Retry Provisioning
 * [SkipStep](#skipstep) - Skip Step
 * [UpdateGrantDuration](#updategrantduration) - Update Grant Duration
 * [UpdateRequestData](#updaterequestdata) - Update Request Data
@@ -596,6 +597,66 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskActionsServiceRestartResponse](../../pkg/models/operations/c1apitaskv1taskactionsservicerestartresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## RetryProvisioning
+
+Retry the provisioning of a task whose connector provisioning failed. Resets the
+ failed connector actions and re-drives the connector, preserving the already-collected
+ approvals. Only valid when the task's current provision step ended in an error.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskActionsService.RetryProvisioning" method="post" path="/api/v1/tasks/{task_id}/action/retry-provisioning" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.TaskActions.RetryProvisioning(ctx, operations.C1APITaskV1TaskActionsServiceRetryProvisioningRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskServiceActionResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                | Type                                                                                                                                                     | Required                                                                                                                                                 | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                    | :heavy_check_mark:                                                                                                                                       | The context to use for the request.                                                                                                                      |
+| `request`                                                                                                                                                | [operations.C1APITaskV1TaskActionsServiceRetryProvisioningRequest](../../pkg/models/operations/c1apitaskv1taskactionsserviceretryprovisioningrequest.md) | :heavy_check_mark:                                                                                                                                       | The request object to use for the request.                                                                                                               |
+| `opts`                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                             | :heavy_minus_sign:                                                                                                                                       | The options for this request.                                                                                                                            |
+
+### Response
+
+**[*operations.C1APITaskV1TaskActionsServiceRetryProvisioningResponse](../../pkg/models/operations/c1apitaskv1taskactionsserviceretryprovisioningresponse.md), error**
 
 ### Errors
 

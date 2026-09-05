@@ -1,0 +1,13 @@
+# TaskAuditAutomationTriggered
+
+TaskAuditAutomationTriggered attributes a system-created task to the
+ automation execution that created it.
+
+
+## Fields
+
+| Field                                                                                                                       | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `AutomationExecutionID`                                                                                                     | `*int64`                                                                                                                    | :heavy_minus_sign:                                                                                                          | The specific execution of the automation that created the task.                                                             |
+| `AutomationID`                                                                                                              | `*string`                                                                                                                   | :heavy_minus_sign:                                                                                                          | The automation that created the task.                                                                                       |
+| `AutomationName`                                                                                                            | `*string`                                                                                                                   | :heavy_minus_sign:                                                                                                          | The automation's display name as of task creation, so the event stays<br/> readable after the automation is renamed or deleted. |

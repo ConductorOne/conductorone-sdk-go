@@ -1,0 +1,9 @@
+# C1APIFundsV1MyFundLimitsServiceSetLimitRequest
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `MyFundLimitsServiceSetLimitRequest`                                                                           | [*shared.MyFundLimitsServiceSetLimitRequest](../../../pkg/models/shared/myfundlimitsservicesetlimitrequest.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
+| `AppID`                                                                                                        | `string`                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |

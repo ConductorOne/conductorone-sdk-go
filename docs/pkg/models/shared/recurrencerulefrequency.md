@@ -1,6 +1,7 @@
 # RecurrenceRuleFrequency
 
-The frequency field.
+Frequency of the recurrence: FREQUENCY_DAILY, FREQUENCY_WEEKLY, FREQUENCY_MONTHLY, or FREQUENCY_YEARLY.
+ Use FREQUENCY_NONE for a non-recurring schedule.
 
 ## Example Usage
 

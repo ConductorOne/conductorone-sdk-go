@@ -1,0 +1,9 @@
+# C1APIFundsV1FundRuleServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `FundRuleServiceDeleteRequest`                                                                     | [*shared.FundRuleServiceDeleteRequest](../../../pkg/models/shared/fundruleservicedeleterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `RuleID`                                                                                           | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

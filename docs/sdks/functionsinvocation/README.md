@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [Get](#get) - Get
+* [GetResultDownloadURL](#getresultdownloadurl) - Get Result Download Url
 * [List](#list) - List
 
 ## Get
@@ -59,6 +60,68 @@ func main() {
 ### Response
 
 **[*operations.C1APIFunctionsV1FunctionsInvocationServiceGetResponse](../../pkg/models/operations/c1apifunctionsv1functionsinvocationservicegetresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetResultDownloadURL
+
+GetResultDownloadURL mints a short-lived download URL for an invocation
+ result held outside the invocation row. The URL is generated at request
+ time and never persisted; the invocation object itself exposes only the
+ result's VFS path, size, checksum, media type, and expiry.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.functions.v1.FunctionsInvocationService.GetResultDownloadURL" method="get" path="/api/v1/functions/{function_id}/invocations/{id}/result/download-url" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.FunctionsInvocation.GetResultDownloadURL(ctx, operations.C1APIFunctionsV1FunctionsInvocationServiceGetResultDownloadURLRequest{
+        FunctionID: "<id>",
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.FunctionsInvocationServiceGetResultDownloadURLResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                | Type                                                                                                                                                                                     | Required                                                                                                                                                                                 | Description                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                    | :heavy_check_mark:                                                                                                                                                                       | The context to use for the request.                                                                                                                                                      |
+| `request`                                                                                                                                                                                | [operations.C1APIFunctionsV1FunctionsInvocationServiceGetResultDownloadURLRequest](../../pkg/models/operations/c1apifunctionsv1functionsinvocationservicegetresultdownloadurlrequest.md) | :heavy_check_mark:                                                                                                                                                                       | The request object to use for the request.                                                                                                                                               |
+| `opts`                                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                       | The options for this request.                                                                                                                                                            |
+
+### Response
+
+**[*operations.C1APIFunctionsV1FunctionsInvocationServiceGetResultDownloadURLResponse](../../pkg/models/operations/c1apifunctionsv1functionsinvocationservicegetresultdownloadurlresponse.md), error**
 
 ### Errors
 

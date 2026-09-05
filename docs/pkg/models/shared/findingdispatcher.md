@@ -1,0 +1,27 @@
+# FindingDispatcher
+
+FindingDispatcher is one dispatch that fires when a routing rule matches (the
+ "Then dispatch" authoring step). A rule carries zero-to-many; every enabled
+ dispatcher fires, order-independent.
+
+This message contains a oneof named kind. Only a single field of the following list may be set at a time:
+  - triggerAutomation
+  - invokeFunction
+  - webhook
+  - notify
+
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `DisplayName`                                                                                                    | `*string`                                                                                                        | :heavy_minus_sign:                                                                                               | Human-facing label. Optional.                                                                                    |
+| `Enabled`                                                                                                        | `*bool`                                                                                                          | :heavy_minus_sign:                                                                                               | Per-dispatcher kill switch.                                                                                      |
+| `InvokeFunction`                                                                                                 | [*shared.InvokeFunctionDispatcher](../../../pkg/models/shared/invokefunctiondispatcher.md)                       | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `Key`                                                                                                            | `*string`                                                                                                        | :heavy_minus_sign:                                                                                               | Stable id within the rule; survives edits, part of the dispatch idempotency<br/> key. Minted server-side when empty. |
+| `Notify`                                                                                                         | [*shared.NotifyDispatcher](../../../pkg/models/shared/notifydispatcher.md)                                       | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `NotifyOnOutcome`                                                                                                | [*shared.FindingDispatchOutcomeNotify](../../../pkg/models/shared/findingdispatchoutcomenotify.md)               | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `TierOverride`                                                                                                   | [*shared.TierOverride](../../../pkg/models/shared/tieroverride.md)                                               | :heavy_minus_sign:                                                                                               | Author tier override; may only tighten the derived tier.                                                         |
+| `TriggerAutomation`                                                                                              | [*shared.TriggerAutomationDispatcher](../../../pkg/models/shared/triggerautomationdispatcher.md)                 | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `Webhook`                                                                                                        | [*shared.WebhookDispatcher](../../../pkg/models/shared/webhookdispatcher.md)                                     | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |

@@ -9,6 +9,7 @@ This message contains a oneof named action. Only a single field of the following
   - unsuppress
   - assignOwner
   - reopen
+  - reprocess
 
 
 
@@ -20,6 +21,7 @@ This message contains a oneof named action. Only a single field of the following
 | `AssignOwner`                                                                        | [*shared.BulkAssignOwnerAction](../../../pkg/models/shared/bulkassignowneraction.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |
 | `Refs`                                                                               | [][shared.FindingRef](../../../pkg/models/shared/findingref.md)                      | :heavy_minus_sign:                                                                   | By-ID mode: specify individual finding refs.                                         |
 | `Reopen`                                                                             | [*shared.BulkReopenAction](../../../pkg/models/shared/bulkreopenaction.md)           | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `Reprocess`                                                                          | [*shared.BulkReprocessAction](../../../pkg/models/shared/bulkreprocessaction.md)     | :heavy_minus_sign:                                                                   | N/A                                                                                  |
 | `SearchRequest`                                                                      | [*shared.FindingSearchRequest](../../../pkg/models/shared/findingsearchrequest.md)   | :heavy_minus_sign:                                                                   | N/A                                                                                  |
 | `Snooze`                                                                             | [*shared.BulkSnoozeAction](../../../pkg/models/shared/bulksnoozeaction.md)           | :heavy_minus_sign:                                                                   | N/A                                                                                  |
 | `Suppress`                                                                           | [*shared.BulkSuppressAction](../../../pkg/models/shared/bulksuppressaction.md)       | :heavy_minus_sign:                                                                   | N/A                                                                                  |

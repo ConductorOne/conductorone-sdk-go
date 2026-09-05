@@ -1,0 +1,11 @@
+# SSOApplicationOIDCConfig
+
+SSOApplicationOIDCConfig is the OIDC-specific sign-in configuration.
+
+
+## Fields
+
+| Field                                                                                                               | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `ClaimMappings`                                                                                                     | [][shared.OIDCClaimMapping](../../../pkg/models/shared/oidcclaimmapping.md)                                         | :heavy_minus_sign:                                                                                                  | Custom claims released to this application, in addition to the standard<br/> claims its granted scopes already release. |
+| `IDTokenSignedResponseAlg`                                                                                          | [*shared.IDTokenSignedResponseAlg](../../../pkg/models/shared/idtokensignedresponsealg.md)                          | :heavy_minus_sign:                                                                                                  | The algorithm used to sign this application's id_token.                                                             |

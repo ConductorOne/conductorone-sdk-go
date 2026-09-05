@@ -1,0 +1,9 @@
+# C1APIFundsV1FundRuleServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `FundRuleServiceUpdateRequest`                                                                     | [*shared.FundRuleServiceUpdateRequest](../../../pkg/models/shared/fundruleserviceupdaterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `RuleID`                                                                                           | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

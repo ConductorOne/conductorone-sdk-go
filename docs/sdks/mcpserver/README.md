@@ -254,7 +254,7 @@ func main() {
 
 ## List
 
-List retrieves MCP servers for an app.
+List retrieves MCP servers, optionally narrowed to an app.
 
 ### Example Usage
 

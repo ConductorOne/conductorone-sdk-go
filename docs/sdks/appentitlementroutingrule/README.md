@@ -13,7 +13,10 @@
 
 ## CreateAppEntitlementRoutingRule
 
-Invokes the c1.api.app.v1.AppEntitlementRoutingRuleService.CreateAppEntitlementRoutingRule method.
+CreateAppEntitlementRoutingRule creates an entitlement configuration rule
+ for an application. Rules are evaluated in priority order and the first
+ rule whose condition matches supplies the entitlement's request settings.
+ An app can have at most 5 rules.
 
 ### Example Usage
 
@@ -71,7 +74,8 @@ func main() {
 
 ## DeleteAppEntitlementRoutingRule
 
-Invokes the c1.api.app.v1.AppEntitlementRoutingRuleService.DeleteAppEntitlementRoutingRule method.
+DeleteAppEntitlementRoutingRule deletes an entitlement configuration rule
+ by ID.
 
 ### Example Usage
 
@@ -130,7 +134,8 @@ func main() {
 
 ## GetAppEntitlementRoutingRule
 
-Invokes the c1.api.app.v1.AppEntitlementRoutingRuleService.GetAppEntitlementRoutingRule method.
+GetAppEntitlementRoutingRule returns a single entitlement configuration
+ rule by ID.
 
 ### Example Usage
 
@@ -189,7 +194,8 @@ func main() {
 
 ## ListAppEntitlementRoutingRules
 
-Invokes the c1.api.app.v1.AppEntitlementRoutingRuleService.ListAppEntitlementRoutingRules method.
+ListAppEntitlementRoutingRules returns an application's entitlement
+ configuration rules in evaluation order, by priority then by ID.
 
 ### Example Usage
 

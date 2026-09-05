@@ -1,0 +1,9 @@
+# C1APIReportingV1ReportingServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ReportingServiceDeleteRequest`                                                                      | [*shared.ReportingServiceDeleteRequest](../../../pkg/models/shared/reportingservicedeleterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `ID`                                                                                                 | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

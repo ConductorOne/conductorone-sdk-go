@@ -1,0 +1,9 @@
+# C1APIFundsV1FundAssignmentServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `FundAssignmentServiceDeleteRequest`                                                                           | [*shared.FundAssignmentServiceDeleteRequest](../../../pkg/models/shared/fundassignmentservicedeleterequest.md) | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
+| `UserID`                                                                                                       | `string`                                                                                                       | :heavy_check_mark:                                                                                             | N/A                                                                                                            |

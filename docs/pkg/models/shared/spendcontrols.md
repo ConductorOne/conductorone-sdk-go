@@ -1,0 +1,21 @@
+# SpendControls
+
+SpendControls is the one control shape carried by every authority scope.
+ Per-row resolution, identical everywhere: suspension present -> deny;
+ unexpired extension -> extension.limit; limit present -> limit;
+ otherwise this row states no opinion and resolution falls through.
+
+ Not a oneof: two transitions need the losing field to survive. Unsuspending
+ restores the limit it froze, and a lapsed extension falls back to its base
+ rather than to the next layer. Pinned by
+ TestControlsCoPresenceSurvivesEveryTransition in pkg/funds.
+
+
+## Fields
+
+| Field                                                                                                                                              | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Extension`                                                                                                                                        | [*shared.SpendExtension](../../../pkg/models/shared/spendextension.md)                                                                             | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |
+| `Limit`                                                                                                                                            | [*shared.SpendLimit](../../../pkg/models/shared/spendlimit.md)                                                                                     | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |
+| `Period`                                                                                                                                           | [*shared.SpendControlsPeriod](../../../pkg/models/shared/spendcontrolsperiod.md)                                                                   | :heavy_minus_sign:                                                                                                                                 | Only valid together with limit: a period without its amount would<br/> reinterpret some other layer's number in a cadence that layer never<br/> agreed to. |
+| `Suspension`                                                                                                                                       | [*shared.SpendSuspension](../../../pkg/models/shared/spendsuspension.md)                                                                           | :heavy_minus_sign:                                                                                                                                 | N/A                                                                                                                                                |

@@ -1,6 +1,6 @@
 # CreateAppResponse
 
-Returns the new app's values.
+CreateAppResponse contains the newly created application.
 
 
 ## Fields

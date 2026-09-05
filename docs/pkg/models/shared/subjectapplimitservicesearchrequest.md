@@ -1,0 +1,14 @@
+# SubjectAppLimitServiceSearchRequest
+
+The SubjectAppLimitServiceSearchRequest message.
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `AppIds`                                                                                       | []`string`                                                                                     | :heavy_minus_sign:                                                                             | Restrict to these apps; empty returns every app.                                               |
+| `PageSize`                                                                                     | `*int`                                                                                         | :heavy_minus_sign:                                                                             | The pageSize field.                                                                            |
+| `PageToken`                                                                                    | `*string`                                                                                      | :heavy_minus_sign:                                                                             | The pageToken field.                                                                           |
+| `States`                                                                                       | [*shared.SubjectAppLimitStateFilter](../../../pkg/models/shared/subjectapplimitstatefilter.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `UserIds`                                                                                      | []`string`                                                                                     | :heavy_minus_sign:                                                                             | Restrict to these subjects; empty returns every row in the tenant.                             |

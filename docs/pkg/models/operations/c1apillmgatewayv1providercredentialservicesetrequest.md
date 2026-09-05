@@ -1,0 +1,9 @@
+# C1APILlmGatewayV1ProviderCredentialServiceSetRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `SetProviderCredentialRequest`                                                                     | [*shared.SetProviderCredentialRequest](../../../pkg/models/shared/setprovidercredentialrequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `SlotID`                                                                                           | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

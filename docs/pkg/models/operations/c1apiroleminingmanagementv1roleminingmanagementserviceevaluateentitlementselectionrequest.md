@@ -1,0 +1,9 @@
+# C1APIRoleMiningManagementV1RoleMiningManagementServiceEvaluateEntitlementSelectionRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `EvaluateEntitlementSelectionRequest`                                                                            | [*shared.EvaluateEntitlementSelectionRequest](../../../pkg/models/shared/evaluateentitlementselectionrequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `AnalysisID`                                                                                                     | `string`                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
