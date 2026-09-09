@@ -15,7 +15,8 @@ Get the tenant's AI governance settings — the controls behind the admin
  /admin/settings/ai-governance page. Returns the full AIGovernanceSettings:
  allowed MCP client types, default client lifecycle, require_tool_approval,
  default tool classification, audit verbosity, auto-discovery toggle +
- interval, prefer_code_mode_over_direct_tools, and surface_requestable_tools.
+ interval, prefer_code_mode_over_direct_tools, surface_requestable_tools,
+ and untrusted_judge_disable.
 
 ### Example Usage
 
@@ -184,7 +185,8 @@ Update the tenant's AI governance settings. Requires update_mask listing
  which fields to apply (e.g. require_tool_approval,
  default_tool_classification, audit_verbosity, auto_discovery_enabled,
  discovery_interval, prefer_code_mode_over_direct_tools,
- surface_requestable_tools, allowed_client_types, default_client_lifecycle).
+ surface_requestable_tools, untrusted_judge_disable, allowed_client_types,
+ default_client_lifecycle).
  Only masked fields change. Returns the updated settings.
 
 ### Example Usage

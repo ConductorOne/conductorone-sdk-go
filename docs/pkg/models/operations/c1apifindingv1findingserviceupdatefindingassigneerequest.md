@@ -1,0 +1,9 @@
+# C1APIFindingV1FindingServiceUpdateFindingAssigneeRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `UpdateFindingAssigneeRequest`                                                                     | [*shared.UpdateFindingAssigneeRequest](../../../pkg/models/shared/updatefindingassigneerequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `FindingID`                                                                                        | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

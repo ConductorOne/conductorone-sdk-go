@@ -1,0 +1,13 @@
+# SSOApplicationServiceBatchImportSubjectCompatibilityRequest
+
+SSOApplicationServiceBatchImportSubjectCompatibilityRequest validates or
+ imports a bounded batch of per-user subject bindings.
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Apply`                                                                                                         | `*bool`                                                                                                         | :heavy_minus_sign:                                                                                              | When false, validate without writing. Clients should validate every batch<br/> before beginning the apply pass. |
+| `Entries`                                                                                                       | [][shared.SSOSubjectCompatibilityImportEntry](../../../pkg/models/shared/ssosubjectcompatibilityimportentry.md) | :heavy_minus_sign:                                                                                              | Client-parsed rows. Each request is bounded to 50 entries.                                                      |
+| `ImportID`                                                                                                      | `*string`                                                                                                       | :heavy_minus_sign:                                                                                              | Client-generated identifier shared by every batch from one source file.                                         |

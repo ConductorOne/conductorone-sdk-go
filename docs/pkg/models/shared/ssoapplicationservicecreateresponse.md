@@ -1,0 +1,12 @@
+# SSOApplicationServiceCreateResponse
+
+SSOApplicationServiceCreateResponse returns the created SSO application.
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Application`                                                                                               | [*shared.SSOApplication](../../../pkg/models/shared/ssoapplication.md)                                      | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `Client`                                                                                                    | [*shared.SSOApplicationOIDCClient](../../../pkg/models/shared/ssoapplicationoidcclient.md)                  | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `ClientSecret`                                                                                              | `*string`                                                                                                   | :heavy_minus_sign:                                                                                          | Confidential-client secret returned once. Empty for SAML and public OIDC<br/> clients. C1 stores only its hash. |

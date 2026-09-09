@@ -1,0 +1,9 @@
+# C1APIFundsV1MyFundLimitsServiceResumeRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `MyFundLimitsServiceResumeRequest`                                                                         | [*shared.MyFundLimitsServiceResumeRequest](../../../pkg/models/shared/myfundlimitsserviceresumerequest.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `AppID`                                                                                                    | `string`                                                                                                   | :heavy_check_mark:                                                                                         | N/A                                                                                                        |

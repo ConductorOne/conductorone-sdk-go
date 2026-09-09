@@ -10,6 +10,7 @@
 * [SearchAppEntitlementsWithExpired](#searchappentitlementswithexpired) - Search App Entitlements With Expired
 * [SearchGrants](#searchgrants) - Search Grants
 * [SearchGraph](#searchgraph) - Search Graph
+* [SearchReachableResourcesForUser](#searchreachableresourcesforuser) - Search Reachable Resources For User
 
 ## CountGrantsForUserByApp
 
@@ -363,6 +364,65 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1AppEntitlementSearchServiceSearchGraphResponse](../../pkg/models/operations/c1apiappv1appentitlementsearchservicesearchgraphresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchReachableResourcesForUser
+
+SearchReachableResourcesForUser returns the distinct app resources a user
+ can reach through any of their grants, deduplicated across entitlements
+ (a resource reachable via more than one grant appears once). Powers the
+ Resources lane of the access graph's list view: supports free-text search
+ over resource display name and narrowing to specific applications.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppEntitlementSearchService.SearchReachableResourcesForUser" method="post" path="/api/v1/search/graph/resources" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.AppEntitlementSearch.SearchReachableResourcesForUser(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.AppEntitlementSearchServiceSearchReachableResourcesForUserResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                | Type                                                                                                                                                                     | Required                                                                                                                                                                 | Description                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                    | :heavy_check_mark:                                                                                                                                                       | The context to use for the request.                                                                                                                                      |
+| `request`                                                                                                                                                                | [shared.AppEntitlementSearchServiceSearchReachableResourcesForUserRequest](../../pkg/models/shared/appentitlementsearchservicesearchreachableresourcesforuserrequest.md) | :heavy_check_mark:                                                                                                                                                       | The request object to use for the request.                                                                                                                               |
+| `opts`                                                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                             | :heavy_minus_sign:                                                                                                                                                       | The options for this request.                                                                                                                                            |
+
+### Response
+
+**[*operations.C1APIAppV1AppEntitlementSearchServiceSearchReachableResourcesForUserResponse](../../pkg/models/operations/c1apiappv1appentitlementsearchservicesearchreachableresourcesforuserresponse.md), error**
 
 ### Errors
 

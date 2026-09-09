@@ -22,3 +22,4 @@ custom := shared.AccountCriteriaScopeAppUserStatuses("custom_value")
 | `AccountCriteriaScopeAppUserStatusesAppUserStatusEnabled`     | APP_USER_STATUS_ENABLED                                       |
 | `AccountCriteriaScopeAppUserStatusesAppUserStatusDisabled`    | APP_USER_STATUS_DISABLED                                      |
 | `AccountCriteriaScopeAppUserStatusesAppUserStatusDeleted`     | APP_USER_STATUS_DELETED                                       |
+| `AccountCriteriaScopeAppUserStatusesAppUserStatusPending`     | APP_USER_STATUS_PENDING                                       |

@@ -1,0 +1,9 @@
+# C1APIFundsV1MyFundLimitsServicePauseRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `MyFundLimitsServicePauseRequest`                                                                        | [*shared.MyFundLimitsServicePauseRequest](../../../pkg/models/shared/myfundlimitsservicepauserequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `AppID`                                                                                                  | `string`                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

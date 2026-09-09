@@ -31,4 +31,5 @@ custom := shared.ProvisionInstanceState("custom_value")
 | `ProvisionInstanceStateProvisionInstanceStateExternalTicketWaiting`           | PROVISION_INSTANCE_STATE_EXTERNAL_TICKET_WAITING                              |
 | `ProvisionInstanceStateProvisionInstanceStateAccountLifecycleActions`         | PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS                            |
 | `ProvisionInstanceStateProvisionInstanceStateAccountLifecycleActionsWaiting`  | PROVISION_INSTANCE_STATE_ACCOUNT_LIFECYCLE_ACTIONS_WAITING                    |
+| `ProvisionInstanceStateProvisionInstanceStateDevicePlacement`                 | PROVISION_INSTANCE_STATE_DEVICE_PLACEMENT                                     |
 | `ProvisionInstanceStateProvisionInstanceStateDone`                            | PROVISION_INSTANCE_STATE_DONE                                                 |

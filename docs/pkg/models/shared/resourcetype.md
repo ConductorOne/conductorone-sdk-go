@@ -29,3 +29,4 @@ custom := shared.ResourceType("custom_value")
 | `ResourceTypeVault`         | VAULT                       |
 | `ResourceTypeProfileType`   | PROFILE_TYPE                |
 | `ResourceTypeSessionPolicy` | SESSION_POLICY              |
+| `ResourceTypeClawAgent`     | CLAW_AGENT                  |

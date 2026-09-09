@@ -45,3 +45,4 @@ custom := shared.Actions("custom_value")
 | `ActionsTaskActionTypeRollbackCancelled`                        | TASK_ACTION_TYPE_ROLLBACK_CANCELLED                             |
 | `ActionsTaskActionTypeUpdateRequestData`                        | TASK_ACTION_TYPE_UPDATE_REQUEST_DATA                            |
 | `ActionsTaskActionTypeUpdateGrantDuration`                      | TASK_ACTION_TYPE_UPDATE_GRANT_DURATION                          |
+| `ActionsTaskActionTypeRetryProvisioning`                        | TASK_ACTION_TYPE_RETRY_PROVISIONING                             |

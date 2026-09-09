@@ -5,6 +5,7 @@ The HooksServiceCreateRequest message.
 This message contains a oneof named hook_type. Only a single field of the following list may be set at a time:
   - function
   - builtinPattern
+  - jsonPatch
 
 
 
@@ -19,4 +20,6 @@ This message contains a oneof named hook_type. Only a single field of the follow
 | `Event`                                                                                                | [*shared.HooksServiceCreateRequestEvent](../../../pkg/models/shared/hooksservicecreaterequestevent.md) | :heavy_minus_sign:                                                                                     | The event field.                                                                                       |
 | `Filter`                                                                                               | [*shared.HookFilter](../../../pkg/models/shared/hookfilter.md)                                         | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
 | `Function`                                                                                             | [*shared.HookFunctionRef](../../../pkg/models/shared/hookfunctionref.md)                               | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `JSONPatch`                                                                                            | [*shared.JSONPatchConfig](../../../pkg/models/shared/jsonpatchconfig.md)                               | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `ManagedByGuardrails`                                                                                  | `*bool`                                                                                                | :heavy_minus_sign:                                                                                     | The managedByGuardrails field.                                                                         |
 | `Priority`                                                                                             | `*int`                                                                                                 | :heavy_minus_sign:                                                                                     | The priority field.                                                                                    |

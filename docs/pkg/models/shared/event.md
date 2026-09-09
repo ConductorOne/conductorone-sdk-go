@@ -23,3 +23,4 @@ custom := shared.Event("custom_value")
 | `EventHookEventTypeUnspecified` | HOOK_EVENT_TYPE_UNSPECIFIED     |
 | `EventHookEventTypePreToolUse`  | HOOK_EVENT_TYPE_PRE_TOOL_USE    |
 | `EventHookEventTypePostToolUse` | HOOK_EVENT_TYPE_POST_TOOL_USE   |
+| `EventHookEventTypePreOutput`   | HOOK_EVENT_TYPE_PRE_OUTPUT      |

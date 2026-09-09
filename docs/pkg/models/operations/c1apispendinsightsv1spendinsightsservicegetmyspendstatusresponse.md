@@ -1,0 +1,11 @@
+# C1APISpendinsightsV1SpendInsightsServiceGetMySpendStatusResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `ContentType`                                                                              | `string`                                                                                   | :heavy_check_mark:                                                                         | HTTP response content type for this operation                                              |
+| `GetMySpendStatusResponse`                                                                 | [*shared.GetMySpendStatusResponse](../../../pkg/models/shared/getmyspendstatusresponse.md) | :heavy_minus_sign:                                                                         | GetMySpendStatusResponse contains the caller's effective limits and optional denial.       |
+| `StatusCode`                                                                               | `int`                                                                                      | :heavy_check_mark:                                                                         | HTTP response status code for this operation                                               |
+| `RawResponse`                                                                              | [*http.Response](https://pkg.go.dev/net/http#Response)                                     | :heavy_check_mark:                                                                         | Raw HTTP response; suitable for custom response parsing                                    |

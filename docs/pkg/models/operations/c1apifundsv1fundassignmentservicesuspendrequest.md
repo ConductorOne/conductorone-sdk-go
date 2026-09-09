@@ -1,0 +1,9 @@
+# C1APIFundsV1FundAssignmentServiceSuspendRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `FundAssignmentServiceSuspendRequest`                                                                            | [*shared.FundAssignmentServiceSuspendRequest](../../../pkg/models/shared/fundassignmentservicesuspendrequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `UserID`                                                                                                         | `string`                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

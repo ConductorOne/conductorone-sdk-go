@@ -19,11 +19,12 @@ custom := shared.TaskTypeActionType("custom_value")
 
 ## Values
 
-| Name                                   | Value                                  |
-| -------------------------------------- | -------------------------------------- |
-| `TaskTypeActionTypeTypeUnspecified`    | TYPE_UNSPECIFIED                       |
-| `TaskTypeActionTypeTypeGrant`          | TYPE_GRANT                             |
-| `TaskTypeActionTypeTypeWorkflow`       | TYPE_WORKFLOW                          |
-| `TaskTypeActionTypeTypeResourceAction` | TYPE_RESOURCE_ACTION                   |
-| `TaskTypeActionTypeTypeToolCall`       | TYPE_TOOL_CALL                         |
-| `TaskTypeActionTypeTypeManual`         | TYPE_MANUAL                            |
+| Name                                    | Value                                   |
+| --------------------------------------- | --------------------------------------- |
+| `TaskTypeActionTypeTypeUnspecified`     | TYPE_UNSPECIFIED                        |
+| `TaskTypeActionTypeTypeGrant`           | TYPE_GRANT                              |
+| `TaskTypeActionTypeTypeWorkflow`        | TYPE_WORKFLOW                           |
+| `TaskTypeActionTypeTypeResourceAction`  | TYPE_RESOURCE_ACTION                    |
+| `TaskTypeActionTypeTypeToolCall`        | TYPE_TOOL_CALL                          |
+| `TaskTypeActionTypeTypeManual`          | TYPE_MANUAL                             |
+| `TaskTypeActionTypeTypeCredentialIssue` | TYPE_CREDENTIAL_ISSUE                   |
