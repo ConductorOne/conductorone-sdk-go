@@ -22,3 +22,4 @@ custom := shared.AccessReviewInclusionScopeAppUserStatuses("custom_value")
 | `AccessReviewInclusionScopeAppUserStatusesAppUserStatusEnabled`     | APP_USER_STATUS_ENABLED                                             |
 | `AccessReviewInclusionScopeAppUserStatusesAppUserStatusDisabled`    | APP_USER_STATUS_DISABLED                                            |
 | `AccessReviewInclusionScopeAppUserStatusesAppUserStatusDeleted`     | APP_USER_STATUS_DELETED                                             |
+| `AccessReviewInclusionScopeAppUserStatusesAppUserStatusPending`     | APP_USER_STATUS_PENDING                                             |

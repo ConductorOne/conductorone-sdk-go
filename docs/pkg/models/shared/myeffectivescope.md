@@ -1,0 +1,16 @@
+# MyEffectiveScope
+
+MyEffectiveScope describes one budget scope that applies to the caller.
+ Organization and application scopes never expose financial or authority data.
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `Financials`                                                                                   | [*shared.MyEffectiveScopeFinancials](../../../pkg/models/shared/myeffectivescopefinancials.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `PeriodEnd`                                                                                    | [*time.Time](https://pkg.go.dev/time#Time)                                                     | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `PeriodKey`                                                                                    | `*string`                                                                                      | :heavy_minus_sign:                                                                             | Stable key for the current budget period.                                                      |
+| `PeriodKind`                                                                                   | [*shared.MyEffectiveScopePeriodKind](../../../pkg/models/shared/myeffectivescopeperiodkind.md) | :heavy_minus_sign:                                                                             | Length of the current budget period.                                                           |
+| `PeriodStart`                                                                                  | [*time.Time](https://pkg.go.dev/time#Time)                                                     | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `Scope`                                                                                        | [*shared.AccountScope](../../../pkg/models/shared/accountscope.md)                             | :heavy_minus_sign:                                                                             | N/A                                                                                            |

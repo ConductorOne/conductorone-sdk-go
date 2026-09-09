@@ -1,0 +1,12 @@
+# PolicyScope
+
+Scopes a policy to an app or to a single entitlement within an app.
+
+
+## Fields
+
+| Field                                                                                                     | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `AppEntitlementID`                                                                                        | `*string`                                                                                                 | :heavy_minus_sign:                                                                                        | Optional. When set, the policy is scoped to this entitlement of app_id<br/> rather than to the whole app. |
+| `AppID`                                                                                                   | `*string`                                                                                                 | :heavy_minus_sign:                                                                                        | The ID of the app this policy is scoped to.                                                               |
+| `Slot`                                                                                                    | [*shared.Slot](../../../pkg/models/shared/slot.md)                                                        | :heavy_minus_sign:                                                                                        | Which of the object's local-policy slots this policy occupies. Part of the<br/> scope, and immutable with it. |

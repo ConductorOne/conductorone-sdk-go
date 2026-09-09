@@ -22,3 +22,4 @@ custom := shared.AppUserStatuses("custom_value")
 | `AppUserStatusesAppUserStatusEnabled`     | APP_USER_STATUS_ENABLED                   |
 | `AppUserStatusesAppUserStatusDisabled`    | APP_USER_STATUS_DISABLED                  |
 | `AppUserStatusesAppUserStatusDeleted`     | APP_USER_STATUS_DELETED                   |
+| `AppUserStatusesAppUserStatusPending`     | APP_USER_STATUS_PENDING                   |

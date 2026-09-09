@@ -1,0 +1,12 @@
+# SetProviderCredentialRequest
+
+The SetProviderCredentialRequest message.
+
+
+## Fields
+
+| Field                                                                                                                    | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `APIKey`                                                                                                                 | `*string`                                                                                                                | :heavy_minus_sign:                                                                                                       | The apiKey field.                                                                                                        |
+| `DisplayName`                                                                                                            | `*string`                                                                                                                | :heavy_minus_sign:                                                                                                       | The displayName field.                                                                                                   |
+| `HeaderStyle`                                                                                                            | [*shared.SetProviderCredentialRequestHeaderStyle](../../../pkg/models/shared/setprovidercredentialrequestheaderstyle.md) | :heavy_minus_sign:                                                                                                       | The headerStyle field.                                                                                                   |

@@ -1,0 +1,9 @@
+# C1APIFundsV1AppCapServiceUnsuspendRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `AppCapServiceUnsuspendRequest`                                                                      | [*shared.AppCapServiceUnsuspendRequest](../../../pkg/models/shared/appcapserviceunsuspendrequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `AppID`                                                                                              | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

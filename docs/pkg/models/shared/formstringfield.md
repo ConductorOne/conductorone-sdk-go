@@ -7,6 +7,7 @@ This message contains a oneof named view. Only a single field of the following l
   - passwordField
   - selectField
   - pickerField
+  - dateField
 
 
 
@@ -14,6 +15,7 @@ This message contains a oneof named view. Only a single field of the following l
 
 | Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `DateField`                                                          | [*shared.DateField](../../../pkg/models/shared/datefield.md)         | :heavy_minus_sign:                                                   | N/A                                                                  |
 | `DefaultValue`                                                       | `*string`                                                            | :heavy_minus_sign:                                                   | The defaultValue field.                                              |
 | `PasswordField`                                                      | [*shared.PasswordField](../../../pkg/models/shared/passwordfield.md) | :heavy_minus_sign:                                                   | N/A                                                                  |
 | `PickerField`                                                        | [*shared.PickerField](../../../pkg/models/shared/pickerfield.md)     | :heavy_minus_sign:                                                   | N/A                                                                  |

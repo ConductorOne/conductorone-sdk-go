@@ -68,7 +68,7 @@ func main() {
 
 ## CreateGrantTask
 
-Create a grant task
+Create a task to grant access. Specify the recipient using identityUserId (a C1 user ID) or appUserId (an application account ID); the recipient is not inferred from the caller.
 
 ### Example Usage
 
@@ -237,7 +237,7 @@ func main() {
 
 ## CreateRevokeTask
 
-Create a revoke task
+Create a task to revoke access. Specify the target using identityUserId (a C1 user ID) or appUserId (an application account ID); the target is not inferred from the caller.
 
 ### Example Usage
 

@@ -12,7 +12,9 @@
 
 ## Create
 
-Invokes the c1.api.hooks.v1.HooksService.Create method.
+Create creates a hook. The hook fires on the configured event, optionally
+ filtered by a CEL expression. Creating a Patch tool input hook requires the
+ preview feature to be enabled for the tenant.
 
 ### Example Usage
 
@@ -67,7 +69,8 @@ func main() {
 
 ## Delete
 
-Invokes the c1.api.hooks.v1.HooksService.Delete method.
+Delete removes a hook by ID. A hook referenced by a guardrail rule cannot
+ be deleted until the reference is removed.
 
 ### Example Usage
 
@@ -125,7 +128,7 @@ func main() {
 
 ## Get
 
-Invokes the c1.api.hooks.v1.HooksService.Get method.
+Get returns a hook by ID.
 
 ### Example Usage
 
@@ -183,7 +186,7 @@ func main() {
 
 ## List
 
-Invokes the c1.api.hooks.v1.HooksService.List method.
+List returns all hooks for the tenant, paginated.
 
 ### Example Usage
 
@@ -239,7 +242,9 @@ func main() {
 
 ## Update
 
-Invokes the c1.api.hooks.v1.HooksService.Update method.
+Update modifies a hook's display name, description, event, filter, priority,
+ or configuration. A hook referenced by a guardrail rule cannot stop being
+ managed by guardrails until the reference is removed.
 
 ### Example Usage
 

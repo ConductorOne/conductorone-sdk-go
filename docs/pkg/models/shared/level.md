@@ -1,6 +1,6 @@
 # Level
 
-The level field.
+The severity of this finding.
 
 ## Example Usage
 
@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.LevelAuthLevelUnspecified
+value := shared.LevelLevelUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.Level("custom_value")
@@ -18,11 +18,8 @@ custom := shared.Level("custom_value")
 
 ## Values
 
-| Name                         | Value                        |
-| ---------------------------- | ---------------------------- |
-| `LevelAuthLevelUnspecified`  | AUTH_LEVEL_UNSPECIFIED       |
-| `LevelAuthLevelNone`         | AUTH_LEVEL_NONE              |
-| `LevelAuthLevelSingleFactor` | AUTH_LEVEL_SINGLE_FACTOR     |
-| `LevelAuthLevelMultiFactor`  | AUTH_LEVEL_MULTI_FACTOR      |
-| `LevelAuthLevelPhr`          | AUTH_LEVEL_PHR               |
-| `LevelAuthLevelPhrh`         | AUTH_LEVEL_PHRH              |
+| Name                    | Value                   |
+| ----------------------- | ----------------------- |
+| `LevelLevelUnspecified` | LEVEL_UNSPECIFIED       |
+| `LevelLevelBlocking`    | LEVEL_BLOCKING          |
+| `LevelLevelWarning`     | LEVEL_WARNING           |

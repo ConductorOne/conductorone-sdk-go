@@ -12,6 +12,7 @@
 * [Revoke](#revoke) - Revoke
 * [SearchAuditEvents](#searchauditevents) - Search Audit Events
 * [SearchMySecrets](#searchmysecrets) - Search My Secrets
+* [SearchSecretsSharedWithMe](#searchsecretssharedwithme) - Search Secrets Shared With Me
 * [SetTextContent](#settextcontent) - Set Text Content
 
 ## CreateExternal
@@ -465,6 +466,65 @@ func main() {
 ### Response
 
 **[*operations.C1APISecretsV1PaperSecretServiceSearchMySecretsResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicesearchmysecretsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchSecretsSharedWithMe
+
+SearchSecretsSharedWithMe returns secrets shared with the current user.
+ Automatically scoped to current user - no user_id filter parameter.
+ INTERNAL secrets only: EXTERNAL secrets are addressed by email and are never
+ viewable through an authenticated C1 session, so returning them here would
+ surface rows that GetContent then denies.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.secrets.v1.PaperSecretService.SearchSecretsSharedWithMe" method="post" path="/api/v1/search/secrets/shared_with_me" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.PaperSecret.SearchSecretsSharedWithMe(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.PaperSecretServiceSearchResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                                      | :heavy_check_mark:                                                                                                                         | The context to use for the request.                                                                                                        |
+| `request`                                                                                                                                  | [shared.PaperSecretServiceSearchSecretsSharedWithMeRequest](../../pkg/models/shared/papersecretservicesearchsecretssharedwithmerequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
+| `opts`                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                               | :heavy_minus_sign:                                                                                                                         | The options for this request.                                                                                                              |
+
+### Response
+
+**[*operations.C1APISecretsV1PaperSecretServiceSearchSecretsSharedWithMeResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicesearchsecretssharedwithmeresponse.md), error**
 
 ### Errors
 

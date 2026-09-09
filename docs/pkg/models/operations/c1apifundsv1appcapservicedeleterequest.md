@@ -1,0 +1,9 @@
+# C1APIFundsV1AppCapServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `AppCapServiceDeleteRequest`                                                                   | [*shared.AppCapServiceDeleteRequest](../../../pkg/models/shared/appcapservicedeleterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `AppID`                                                                                        | `string`                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |

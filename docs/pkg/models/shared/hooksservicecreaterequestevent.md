@@ -23,3 +23,4 @@ custom := shared.HooksServiceCreateRequestEvent("custom_value")
 | `HooksServiceCreateRequestEventHookEventTypeUnspecified` | HOOK_EVENT_TYPE_UNSPECIFIED                              |
 | `HooksServiceCreateRequestEventHookEventTypePreToolUse`  | HOOK_EVENT_TYPE_PRE_TOOL_USE                             |
 | `HooksServiceCreateRequestEventHookEventTypePostToolUse` | HOOK_EVENT_TYPE_POST_TOOL_USE                            |
+| `HooksServiceCreateRequestEventHookEventTypePreOutput`   | HOOK_EVENT_TYPE_PRE_OUTPUT                               |

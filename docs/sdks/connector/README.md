@@ -259,7 +259,9 @@ func main() {
 
 ## ForceSync
 
-Trigger an immediate sync for a connector. The sync is queued and may not start instantly.
+Trigger an immediate sync for a connector. The sync is queued and may not start
+ instantly. Poll the connector's sync_status (or GetConnector) for progress; an empty
+ success response means the sync was accepted onto the queue, not that it has finished.
 
 ### Example Usage
 
