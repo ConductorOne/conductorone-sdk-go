@@ -553,6 +553,9 @@ components:
                         - SURFACE_ROLE_PROMPT
                     type: string
                     x-speakeasy-unknown-values: allow
+                savedReportId:
+                    description: Present after this surface has been promoted to a saved report.
+                    type: string
                 schemaVersion:
                     description: The schemaVersion field.
                     format: int64
@@ -2251,6 +2254,7 @@ components:
                             - ACCESS_REVIEW_TASK_COLUMN_ACCESS_HOLDER_TYPE
                             - ACCESS_REVIEW_TASK_COLUMN_RISK_LEVEL
                             - ACCESS_REVIEW_TASK_COLUMN_COMPLIANCE_FRAMEWORK
+                            - ACCESS_REVIEW_TASK_COLUMN_RESOURCE_DESCRIPTION
                         type: string
                         x-speakeasy-unknown-values: allow
                     type:
@@ -3057,6 +3061,7 @@ components:
                         - ACCESS_REVIEW_TASK_COLUMN_ACCESS_HOLDER_TYPE
                         - ACCESS_REVIEW_TASK_COLUMN_RISK_LEVEL
                         - ACCESS_REVIEW_TASK_COLUMN_COMPLIANCE_FRAMEWORK
+                        - ACCESS_REVIEW_TASK_COLUMN_RESOURCE_DESCRIPTION
                     type:
                         - string
                         - "null"
@@ -8267,6 +8272,18 @@ components:
                     type:
                         - array
                         - "null"
+                appResourceTypeRefs:
+                    description: |-
+                        Search for app entitlements whose resource type matches any of these real
+                         (app_id, id) AppResourceType pairs — unlike resource_type_ids, which
+                         matches by name and can't distinguish two apps' same-named or
+                         system-wide-shared-id resource types (e.g. Credential). Takes precedence
+                         over resource_type_ids when set.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.ResourceTypeRef'
+                    type:
+                        - array
+                        - "null"
                 appUserIds:
                     description: Search for app entitlements that are granted to any of these app user ids.
                     items:
@@ -11904,6 +11921,28 @@ components:
             title: Reorder App Entitlement Routing Rules Response
             type: object
             x-speakeasy-name-override: ReorderAppEntitlementRoutingRulesResponse
+        c1.api.app.v1.ResourceTypeRef:
+            description: |-
+                Pairs a resource type with the app that defines it. A resource type id (and
+                 even its display name) is only unique within its app -- some system-wide
+                 types like Credential reuse the same id across every app -- so this is the
+                 only way to select one unambiguously.
+
+                 Deliberately not c1.api.app.v1.AppResourceTypeRef (app_resource.proto):
+                 app_resource.proto can't be imported here without an import cycle through
+                 app_entitlement.proto. That other message is unrelated to this one --
+                 it's a distinct type kept only for its own (unrelated) callers -- so
+                 don't reuse it for entitlement/criteria resource-type scoping.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+            title: Resource Type Ref
+            type: object
+            x-speakeasy-name-override: ResourceTypeRef
         c1.api.app.v1.ResumeSyncRequestInput:
             description: The ResumeSyncRequest message contains the fields required to resume syncing for a connector.
             title: Resume Sync Request
@@ -14712,6 +14751,156 @@ components:
             title: Actor Object Permissions
             type: object
             x-speakeasy-name-override: UserActorObjectPermissions
+        c1.api.authzen.v1.AuthzenServer:
+            description: AuthzenServer is the customer-facing AuthZEN PDP endpoint for one App.
+            properties:
+                appId:
+                    description: App identifier.
+                    type: string
+                createdAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                displayName:
+                    description: The displayName field.
+                    type: string
+                evaluateEntitlementId:
+                    description: |-
+                        The minted "evaluate" entitlement (derived from the server id; returned
+                         for linking) -- grant it to a caller to let it POST the access
+                         evaluation endpoint.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+                mode:
+                    description: |-
+                        Configures the intended evaluation behavior: DISABLED and UNSPECIFIED
+                         deny requests, OBSERVE records policy decisions without enforcing them,
+                         and ENFORCE applies policy decisions. Evaluation endpoints are not served
+                         by this control-plane API.
+                    enum:
+                        - AUTHZEN_MODE_UNSPECIFIED
+                        - AUTHZEN_MODE_DISABLED
+                        - AUTHZEN_MODE_OBSERVE
+                        - AUTHZEN_MODE_ENFORCE
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                searchEntitlementId:
+                    description: |-
+                        The minted "search" entitlement (derived from the server id; returned
+                         for linking) -- grant it to a caller to let it POST the
+                         subject/resource/action search endpoints.
+                    type: string
+                updatedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+            title: Authzen Server
+            type: object
+            x-speakeasy-name-override: AuthzenServer
+        c1.api.authzen.v1.AuthzenServerRef:
+            description: The AuthzenServerRef message.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+            title: Authzen Server Ref
+            type: object
+            x-speakeasy-name-override: AuthzenServerRef
+        c1.api.authzen.v1.AuthzenServerServiceCreateRequestInput:
+            description: |-
+                AuthzenServerServiceCreateRequest creates an AuthZEN server for an app.
+                 The new server starts disabled and denies every PDP call until enabled.
+            properties:
+                displayName:
+                    description: Display name for the server. Defaults to "AuthZEN Server" when empty.
+                    type: string
+            title: Authzen Server Service Create Request
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceCreateRequest
+        c1.api.authzen.v1.AuthzenServerServiceCreateResponse:
+            description: |-
+                AuthzenServerServiceCreateResponse returns the newly minted server,
+                 including its capability entitlement ids.
+            properties:
+                authzenServer:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServer'
+                        - type: "null"
+            title: Authzen Server Service Create Response
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceCreateResponse
+        c1.api.authzen.v1.AuthzenServerServiceDeleteRequestInput:
+            description: AuthzenServerServiceDeleteRequest deletes the AuthZEN server for an app.
+            title: Authzen Server Service Delete Request
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceDeleteRequest
+        c1.api.authzen.v1.AuthzenServerServiceDeleteResponse:
+            description: |-
+                AuthzenServerServiceDeleteResponse confirms deletion. The server's
+                 entitlement stack cascade-deletes; a replacement server mints an all-new
+                 stack.
+            title: Authzen Server Service Delete Response
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceDeleteResponse
+        c1.api.authzen.v1.AuthzenServerServiceGetResponse:
+            description: AuthzenServerServiceGetResponse returns the requested AuthZEN server.
+            properties:
+                authzenServer:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServer'
+                        - type: "null"
+            title: Authzen Server Service Get Response
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceGetResponse
+        c1.api.authzen.v1.AuthzenServerServiceListResponse:
+            description: AuthzenServerServiceListResponse lists AuthZEN servers for an app.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServer'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: Token for next page.
+                    type: string
+            title: Authzen Server Service List Response
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceListResponse
+        c1.api.authzen.v1.AuthzenServerServiceUpdateRequestInput:
+            description: |-
+                AuthzenServerServiceUpdateRequest updates a server via update_mask. The only
+                 editable path is mode.
+            properties:
+                authzenServer:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServer'
+                        - type: "null"
+                updateMask:
+                    type:
+                        - string
+                        - "null"
+            title: Authzen Server Service Update Request
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceUpdateRequest
+        c1.api.authzen.v1.AuthzenServerServiceUpdateResponse:
+            description: AuthzenServerServiceUpdateResponse returns the updated server.
+            properties:
+                authzenServer:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServer'
+                        - type: "null"
+            title: Authzen Server Service Update Response
+            type: object
+            x-speakeasy-name-override: AuthzenServerServiceUpdateResponse
         c1.api.automations.v1.AccessConflictTrigger:
             description: |
                 The AccessConflictTrigger message.
@@ -15797,9 +15986,25 @@ components:
                         - array
                         - "null"
                 excludedResourceTypeIds:
-                    description: The excludedResourceTypeIds field.
+                    deprecated: true
+                    description: |-
+                        Deprecated: matched by resource type display name, which collides across
+                         apps/connectors. Not read by execution — replaced by
+                         excluded_resource_type_refs. Kept only for wire compatibility with
+                         existing stored rows; a criteria still carrying this without a ref
+                         degrades to excluding the entire named app(s) rather than failing closed,
+                         since the exclusion side warns instead of aborting the run.
                     items:
                         type: string
+                    type:
+                        - array
+                        - "null"
+                excludedResourceTypeRefs:
+                    description: |-
+                        The only field that scopes resource types; excluded_resource_type_ids is
+                         deprecated and ignored.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.ResourceTypeRef'
                     type:
                         - array
                         - "null"
@@ -15872,9 +16077,23 @@ components:
                         - array
                         - "null"
                 resourceTypeIds:
-                    description: The resourceTypeIds field.
+                    deprecated: true
+                    description: |-
+                        Deprecated: matched by resource type display name, which collides across
+                         apps/connectors. Not read by execution — replaced by resource_type_refs.
+                         Kept only for wire compatibility with existing stored rows; a criteria
+                         still carrying this without a ref fails closed at execution time.
                     items:
                         type: string
+                    type:
+                        - array
+                        - "null"
+                resourceTypeRefs:
+                    description: |-
+                        The only field that scopes resource types; resource_type_ids is deprecated
+                         and ignored.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.ResourceTypeRef'
                     type:
                         - array
                         - "null"
@@ -20309,6 +20528,151 @@ components:
             title: Directory View
             type: object
             x-speakeasy-name-override: DirectoryView
+        c1.api.edge.v1.Edge:
+            description: |-
+                Edge is one App-owned connection-routing configuration. It is the
+                 capability-neutral root for egress today and future LLM routing /
+                 credential-injection features; capability-specific config lands additively.
+            properties:
+                appId:
+                    description: App identifier.
+                    type: string
+                createdAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                displayName:
+                    description: The displayName field.
+                    type: string
+                egressConnectEntitlementId:
+                    description: |-
+                        The minted egress.connect entitlement (derived from the Edge id) -- grant
+                         it to a caller to let it open an authenticated egress connection.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+                mode:
+                    description: |-
+                        Global e-stop for the connection-routing configuration. DISABLED (and
+                         UNSPECIFIED) denies every capability; OBSERVE evaluates policy but serves
+                         the request, recording what ENFORCE would have answered; ENFORCE serves
+                         the policy decision.
+                    enum:
+                        - EDGE_MODE_UNSPECIFIED
+                        - EDGE_MODE_DISABLED
+                        - EDGE_MODE_OBSERVE
+                        - EDGE_MODE_ENFORCE
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                updatedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+            title: Edge
+            type: object
+            x-speakeasy-name-override: Edge
+        c1.api.edge.v1.EdgeRef:
+            description: The EdgeRef message.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+            title: Edge Ref
+            type: object
+            x-speakeasy-name-override: EdgeRef
+        c1.api.edge.v1.EdgeServiceCreateRequestInput:
+            description: |-
+                EdgeServiceCreateRequest creates an Edge for an app. The new Edge starts
+                 disabled and denies every capability until enabled.
+            properties:
+                displayName:
+                    description: Display name for the Edge. Defaults to "Edge" when empty.
+                    type: string
+            title: Edge Service Create Request
+            type: object
+            x-speakeasy-name-override: EdgeServiceCreateRequest
+        c1.api.edge.v1.EdgeServiceCreateResponse:
+            description: |-
+                EdgeServiceCreateResponse returns the newly minted Edge,
+                 including its capability entitlement id.
+            properties:
+                edge:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.Edge'
+                        - type: "null"
+            title: Edge Service Create Response
+            type: object
+            x-speakeasy-name-override: EdgeServiceCreateResponse
+        c1.api.edge.v1.EdgeServiceDeleteRequestInput:
+            description: EdgeServiceDeleteRequest deletes the Edge for an app.
+            title: Edge Service Delete Request
+            type: object
+            x-speakeasy-name-override: EdgeServiceDeleteRequest
+        c1.api.edge.v1.EdgeServiceDeleteResponse:
+            description: |-
+                EdgeServiceDeleteResponse confirms deletion. The Edge's entitlement
+                 stack cascade-deletes; a replacement Edge mints an all-new stack.
+            title: Edge Service Delete Response
+            type: object
+            x-speakeasy-name-override: EdgeServiceDeleteResponse
+        c1.api.edge.v1.EdgeServiceGetResponse:
+            description: EdgeServiceGetResponse returns the requested Edge.
+            properties:
+                edge:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.Edge'
+                        - type: "null"
+            title: Edge Service Get Response
+            type: object
+            x-speakeasy-name-override: EdgeServiceGetResponse
+        c1.api.edge.v1.EdgeServiceListResponse:
+            description: EdgeServiceListResponse lists Edges for an app.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.Edge'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: Token for next page.
+                    type: string
+            title: Edge Service List Response
+            type: object
+            x-speakeasy-name-override: EdgeServiceListResponse
+        c1.api.edge.v1.EdgeServiceUpdateRequestInput:
+            description: |-
+                EdgeServiceUpdateRequest updates an existing Edge via update_mask. The only
+                 editable path is mode.
+            properties:
+                edge:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.Edge'
+                        - type: "null"
+                updateMask:
+                    type:
+                        - string
+                        - "null"
+            title: Edge Service Update Request
+            type: object
+            x-speakeasy-name-override: EdgeServiceUpdateRequest
+        c1.api.edge.v1.EdgeServiceUpdateResponse:
+            description: EdgeServiceUpdateResponse returns the updated Edge.
+            properties:
+                edge:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.Edge'
+                        - type: "null"
+            title: Edge Service Update Response
+            type: object
+            x-speakeasy-name-override: EdgeServiceUpdateResponse
         c1.api.editor.v1.EditorMarker:
             description: The EditorMarker message.
             properties:
@@ -21256,6 +21620,7 @@ components:
                   - credentialExpiring
                   - connectorSyncFailing
                   - shadowMcp
+                  - shadowApp
 
 
                 This message contains a oneof named target. Only a single field of the following list may be set at a time:
@@ -21265,6 +21630,7 @@ components:
                   - appResourceTarget
                   - tenantTarget
                   - connectorTarget
+                  - usageResourceTarget
 
 
                 This message contains a oneof named evidence. Only a single field of the following list may be set at a time:
@@ -21481,6 +21847,10 @@ components:
                         - FINDING_SEVERITY_CRITICAL
                     type: string
                     x-speakeasy-unknown-values: allow
+                shadowApp:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.finding.v1.ShadowAppType'
+                        - type: "null"
                 shadowMcp:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.finding.v1.ShadowMcpType'
@@ -21557,6 +21927,10 @@ components:
                     type:
                         - string
                         - "null"
+                usageResourceTarget:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.usage_event.v1.UsageResourceRef'
+                        - type: "null"
             title: Finding
             type: object
             x-speakeasy-name-override: Finding
@@ -22008,6 +22382,7 @@ components:
                         - FINDING_TYPE_CREDENTIAL_EXPIRING
                         - FINDING_TYPE_CONNECTOR_SYNC_FAILING
                         - FINDING_TYPE_SHADOW_MCP
+                        - FINDING_TYPE_SHADOW_APP
                     type: string
                     x-speakeasy-unknown-values: allow
                 id:
@@ -22178,6 +22553,7 @@ components:
                             - FINDING_TYPE_CREDENTIAL_EXPIRING
                             - FINDING_TYPE_CONNECTOR_SYNC_FAILING
                             - FINDING_TYPE_SHADOW_MCP
+                            - FINDING_TYPE_SHADOW_APP
                         type: string
                         x-speakeasy-unknown-values: allow
                     type:
@@ -22335,6 +22711,7 @@ components:
                         - FINDING_TYPE_CREDENTIAL_EXPIRING
                         - FINDING_TYPE_CONNECTOR_SYNC_FAILING
                         - FINDING_TYPE_SHADOW_MCP
+                        - FINDING_TYPE_SHADOW_APP
                     type: string
                     x-speakeasy-unknown-values: allow
             title: Finding Settings Entry
@@ -22418,6 +22795,7 @@ components:
                         - FINDING_TYPE_CREDENTIAL_EXPIRING
                         - FINDING_TYPE_CONNECTOR_SYNC_FAILING
                         - FINDING_TYPE_SHADOW_MCP
+                        - FINDING_TYPE_SHADOW_APP
                     type: string
                     x-speakeasy-unknown-values: allow
                 id:
@@ -22472,6 +22850,7 @@ components:
                         - FINDING_TYPE_CREDENTIAL_EXPIRING
                         - FINDING_TYPE_CONNECTOR_SYNC_FAILING
                         - FINDING_TYPE_SHADOW_MCP
+                        - FINDING_TYPE_SHADOW_APP
                     type: string
                     x-speakeasy-unknown-values: allow
             title: Finding Type Setting
@@ -22737,6 +23116,15 @@ components:
             title: Set Tags
             type: object
             x-speakeasy-name-override: SetTags
+        c1.api.finding.v1.ShadowAppType:
+            description: |-
+                ShadowAppType: a UsageResource was discovered outside the tenant's
+                 governed connector reach. Dedup is the full UsageResource identity, so the
+                 type payload carries nothing beyond the discriminator itself -- the
+                 complete identity lives on usage_resource_target.
+            title: Shadow App Type
+            type: object
+            x-speakeasy-name-override: ShadowAppType
         c1.api.finding.v1.ShadowMcpEvidence:
             description: |-
                 ShadowMcpEvidence carries counts only -- occurrence detail (which users,
@@ -22753,6 +23141,69 @@ components:
             title: Shadow Mcp Evidence
             type: object
             x-speakeasy-name-override: ShadowMcpEvidence
+        c1.api.finding.v1.ShadowMcpOccurrence:
+            description: |-
+                ShadowMcpOccurrence is one device running a shadow-mcp finding's MCP
+                 product, resolved live from DeviceInventoryMcpObservation rather than
+                 stored on the Finding -- see ShadowMcpEvidence's own doc for why occurrence
+                 detail isn't persisted there.
+            properties:
+                deviceId:
+                    description: The deviceId field.
+                    type: string
+                firstSeenAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                harnessKind:
+                    description: The harnessKind field.
+                    type: string
+                lastSeenAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                userId:
+                    description: |-
+                        Resolved owner of the device (device_registration's user_principal_id).
+                         Empty when the device has no resolved owner.
+                    type: string
+            title: Shadow Mcp Occurrence
+            type: object
+            x-speakeasy-name-override: ShadowMcpOccurrence
+        c1.api.finding.v1.ShadowMcpOccurrenceServiceSearchRequest:
+            description: The ShadowMcpOccurrenceServiceSearchRequest message.
+            properties:
+                findingId:
+                    description: The shadow-mcp finding to resolve occurrences for.
+                    type: string
+                pageSize:
+                    description: The pageSize field.
+                    format: int32
+                    type: integer
+                pageToken:
+                    description: The pageToken field.
+                    type: string
+            title: Shadow Mcp Occurrence Service Search Request
+            type: object
+            x-speakeasy-name-override: ShadowMcpOccurrenceServiceSearchRequest
+        c1.api.finding.v1.ShadowMcpOccurrenceServiceSearchResponse:
+            description: The ShadowMcpOccurrenceServiceSearchResponse message.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.finding.v1.ShadowMcpOccurrence'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: The nextPageToken field.
+                    type: string
+            title: Shadow Mcp Occurrence Service Search Response
+            type: object
+            x-speakeasy-name-override: ShadowMcpOccurrenceServiceSearchResponse
         c1.api.finding.v1.ShadowMcpType:
             description: |-
                 ShadowMcpType: a device is running an MCP server that isn't reached through
@@ -24874,6 +25325,9 @@ components:
                         - PERIOD_KIND_YEARLY
                     type: string
                     x-speakeasy-unknown-values: allow
+                spendRemedyRequestPolicyId:
+                    description: Explicit approval policy for scoped spending changes. Empty disables requests.
+                    type: string
                 tenantId:
                     description: The tenantId field.
                     type: string
@@ -24922,6 +25376,9 @@ components:
                         - PERIOD_KIND_YEARLY
                     type: string
                     x-speakeasy-unknown-values: allow
+                spendRemedyRequestPolicyId:
+                    description: Optional grant policy for scoped spending changes. Empty disables requests.
+                    type: string
             title: Fund Policy Service Create Request
             type: object
             x-speakeasy-name-override: FundPolicyServiceCreateRequest
@@ -25252,6 +25709,23 @@ components:
             title: Fund Rule Service Update Response
             type: object
             x-speakeasy-name-override: FundRuleServiceUpdateResponse
+        c1.api.funds.v1.Money:
+            description: Money is a non-negative monetary value used by spending controls.
+            properties:
+                currencyCode:
+                    description: ISO 4217 currency code.
+                    type: string
+                nanos:
+                    description: Fractional nano-units, from zero through 999999999.
+                    format: int32
+                    type: integer
+                units:
+                    description: Whole currency units. The bound keeps nano-unit conversion within int64.
+                    format: int64
+                    type: string
+            title: Money
+            type: object
+            x-speakeasy-name-override: FundsMoney
         c1.api.funds.v1.MyFundLimit:
             description: |-
                 MyFundLimit is one of the caller's own per-app limits. It carries no user id:
@@ -25296,6 +25770,21 @@ components:
             title: My Fund Limit History Entry
             type: object
             x-speakeasy-name-override: MyFundLimitHistoryEntry
+        c1.api.funds.v1.MyFundLimitsServiceClearTemporaryLimitRequestInput:
+            description: The MyFundLimitsServiceClearTemporaryLimitRequest message.
+            title: My Fund Limits Service Clear Temporary Limit Request
+            type: object
+            x-speakeasy-name-override: MyFundLimitsServiceClearTemporaryLimitRequest
+        c1.api.funds.v1.MyFundLimitsServiceClearTemporaryLimitResponse:
+            description: The MyFundLimitsServiceClearTemporaryLimitResponse message.
+            properties:
+                limit:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimit'
+                        - type: "null"
+            title: My Fund Limits Service Clear Temporary Limit Response
+            type: object
+            x-speakeasy-name-override: MyFundLimitsServiceClearTemporaryLimitResponse
         c1.api.funds.v1.MyFundLimitsServiceDeleteRequestInput:
             description: The MyFundLimitsServiceDeleteRequest message.
             title: My Fund Limits Service Delete Request
@@ -25403,6 +25892,131 @@ components:
             title: My Fund Limits Service Set Limit Response
             type: object
             x-speakeasy-name-override: MyFundLimitsServiceSetLimitResponse
+        c1.api.funds.v1.MyFundLimitsServiceSetTemporaryLimitRequestInput:
+            description: The MyFundLimitsServiceSetTemporaryLimitRequest message.
+            properties:
+                extension:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendExtension'
+                        - type: "null"
+            title: My Fund Limits Service Set Temporary Limit Request
+            type: object
+            x-speakeasy-name-override: MyFundLimitsServiceSetTemporaryLimitRequest
+        c1.api.funds.v1.MyFundLimitsServiceSetTemporaryLimitResponse:
+            description: The MyFundLimitsServiceSetTemporaryLimitResponse message.
+            properties:
+                limit:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimit'
+                        - type: "null"
+            title: My Fund Limits Service Set Temporary Limit Response
+            type: object
+            x-speakeasy-name-override: MyFundLimitsServiceSetTemporaryLimitResponse
+        c1.api.funds.v1.SpendControls:
+            description: SpendControls retains coexisting base, extension and suspension state.
+            properties:
+                extension:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendExtension'
+                        - type: "null"
+                limit:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimit'
+                        - type: "null"
+                period:
+                    description: The period field.
+                    enum:
+                        - PERIOD_KIND_UNSPECIFIED
+                        - PERIOD_KIND_DAILY
+                        - PERIOD_KIND_WEEKLY
+                        - PERIOD_KIND_MONTHLY
+                        - PERIOD_KIND_QUARTERLY
+                        - PERIOD_KIND_YEARLY
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                suspension:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendSuspension'
+                        - type: "null"
+            title: Spend Controls
+            type: object
+            x-speakeasy-name-override: FundsSpendControls
+        c1.api.funds.v1.SpendExtension:
+            description: SpendExtension replaces the base total temporarily; it is not additive credit.
+            properties:
+                expiresAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                limit:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimit'
+                        - type: "null"
+                reason:
+                    description: The reason field.
+                    type: string
+            title: Spend Extension
+            type: object
+            x-speakeasy-name-override: FundsSpendExtension
+        c1.api.funds.v1.SpendLimit:
+            description: |
+                SpendLimit distinguishes an amount, unlimited tracking and blocked supply.
+
+                This message contains a oneof named kind. Only a single field of the following list may be set at a time:
+                  - unlimited
+                  - amount
+                  - blocked
+            properties:
+                amount:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimitAmount'
+                        - type: "null"
+                blocked:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimitBlocked'
+                        - type: "null"
+                unlimited:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimitUnlimited'
+                        - type: "null"
+            title: Spend Limit
+            type: object
+            x-speakeasy-name-override: FundsSpendLimit
+        c1.api.funds.v1.SpendLimitAmount:
+            description: The SpendLimitAmount message.
+            properties:
+                money:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.Money'
+                        - type: "null"
+            title: Spend Limit Amount
+            type: object
+            x-speakeasy-name-override: FundsSpendLimitAmount
+        c1.api.funds.v1.SpendLimitBlocked:
+            description: The SpendLimitBlocked message.
+            title: Spend Limit Blocked
+            type: object
+            x-speakeasy-name-override: FundsSpendLimitBlocked
+        c1.api.funds.v1.SpendLimitUnlimited:
+            description: The SpendLimitUnlimited message.
+            title: Spend Limit Unlimited
+            type: object
+            x-speakeasy-name-override: FundsSpendLimitUnlimited
+        c1.api.funds.v1.SpendSuspension:
+            description: SpendSuspension preserves the underlying controls while refusing new spend.
+            properties:
+                reason:
+                    description: The reason field.
+                    type: string
+                suspendedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+            title: Spend Suspension
+            type: object
+            x-speakeasy-name-override: FundsSpendSuspension
         c1.api.funds.v1.SubjectAppLimit:
             description: |-
                 SubjectAppLimit is one subject's per-app limit row as the admin plane
@@ -25633,6 +26247,444 @@ components:
             title: Subject App Limit State Filter
             type: object
             x-speakeasy-name-override: SubjectAppLimitStateFilter
+        c1.api.golink.v1.GoLink:
+            description: GoLink is the API representation of a go-link.
+            properties:
+                createdAt:
+                    format: date-time
+                    readOnly: true
+                    type:
+                        - string
+                        - "null"
+                currentVersion:
+                    description: The currentVersion field.
+                    format: int32
+                    readOnly: true
+                    type: integer
+                deletedAt:
+                    format: date-time
+                    readOnly: true
+                    type:
+                        - string
+                        - "null"
+                description:
+                    description: The description field.
+                    type: string
+                displayName:
+                    description: The displayName field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+                prerequisite:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkPrerequisite'
+                        - type: "null"
+                routes:
+                    description: The routes field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkRouteConfig'
+                    type:
+                        - array
+                        - "null"
+                status:
+                    description: The status field.
+                    enum:
+                        - GO_LINK_STATUS_UNSPECIFIED
+                        - GO_LINK_STATUS_ENABLED
+                        - GO_LINK_STATUS_DISABLED
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                target:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkTarget'
+                        - type: "null"
+                updatedAt:
+                    format: date-time
+                    readOnly: true
+                    type:
+                        - string
+                        - "null"
+            title: Go Link
+            type: object
+            x-speakeasy-name-override: GoLink
+        c1.api.golink.v1.GoLinkActionTarget:
+            description: The GoLinkActionTarget message.
+            properties:
+                actionId:
+                    description: The actionId field.
+                    type: string
+            title: Go Link Action Target
+            type: object
+            x-speakeasy-name-override: GoLinkActionTarget
+        c1.api.golink.v1.GoLinkChooserOption:
+            description: The GoLinkChooserOption message.
+            properties:
+                description:
+                    description: The description field.
+                    type: string
+                label:
+                    description: The label field.
+                    type: string
+                target:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkTarget'
+                        - type: "null"
+            title: Go Link Chooser Option
+            type: object
+            x-speakeasy-name-override: GoLinkChooserOption
+        c1.api.golink.v1.GoLinkChooserTarget:
+            description: The GoLinkChooserTarget message.
+            properties:
+                options:
+                    description: The options field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkChooserOption'
+                    type:
+                        - array
+                        - "null"
+            title: Go Link Chooser Target
+            type: object
+            x-speakeasy-name-override: GoLinkChooserTarget
+        c1.api.golink.v1.GoLinkPrerequisite:
+            description: The GoLinkPrerequisite message.
+            properties:
+                appEntitlementId:
+                    description: The appEntitlementId field.
+                    type: string
+                appId:
+                    description: The appId field.
+                    type: string
+            title: Go Link Prerequisite
+            type: object
+            x-speakeasy-name-override: GoLinkPrerequisite
+        c1.api.golink.v1.GoLinkRedirectTarget:
+            description: The GoLinkRedirectTarget message.
+            properties:
+                urlTemplate:
+                    description: |-
+                        URL template with named placeholders matching route parameters.
+                         e.g., "https://jira.internal/browse/{ticket_id}"
+                    type: string
+            title: Go Link Redirect Target
+            type: object
+            x-speakeasy-name-override: GoLinkRedirectTarget
+        c1.api.golink.v1.GoLinkRef:
+            description: The GoLinkRef message.
+            properties:
+                id:
+                    description: The id field.
+                    type: string
+            title: Go Link Ref
+            type: object
+            x-speakeasy-name-override: GoLinkRef
+        c1.api.golink.v1.GoLinkRouteConfig:
+            description: The GoLinkRouteConfig message.
+            properties:
+                isCanonical:
+                    description: The isCanonical field.
+                    type: boolean
+                routeTemplate:
+                    description: |-
+                        The route template with optional named parameters.
+                         Exact routes: "jira", "jira/create"
+                         Glob routes: "jira/{ticket_id}", "aws/{path}"
+                    type: string
+            title: Go Link Route Config
+            type: object
+            x-speakeasy-name-override: GoLinkRouteConfig
+        c1.api.golink.v1.GoLinkSearchServiceSearchRequest:
+            description: The GoLinkSearchServiceSearchRequest message.
+            properties:
+                ownerUserIds:
+                    description: |-
+                        Filter by owner user IDs. Joins against the C1 entitlement user binding to find
+                         GoLinks where any of these users hold the "owner" entitlement grant.
+                    items:
+                        type: string
+                    type:
+                        - array
+                        - "null"
+                pageSize:
+                    description: The pageSize field.
+                    format: int32
+                    type: integer
+                pageToken:
+                    description: The pageToken field.
+                    type: string
+                query:
+                    description: The query field.
+                    type: string
+                refs:
+                    description: The refs field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkRef'
+                    type:
+                        - array
+                        - "null"
+                status:
+                    description: Filter by status. If not set, returns all non-deleted GoLinks.
+                    enum:
+                        - GO_LINK_STATUS_UNSPECIFIED
+                        - GO_LINK_STATUS_ENABLED
+                        - GO_LINK_STATUS_DISABLED
+                    type:
+                        - string
+                        - "null"
+                    x-speakeasy-unknown-values: allow
+            title: Go Link Search Service Search Request
+            type: object
+            x-speakeasy-name-override: GoLinkSearchServiceSearchRequest
+        c1.api.golink.v1.GoLinkSearchServiceSearchResponse:
+            description: The GoLinkSearchServiceSearchResponse message.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkView'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: The nextPageToken field.
+                    type: string
+            title: Go Link Search Service Search Response
+            type: object
+            x-speakeasy-name-override: GoLinkSearchServiceSearchResponse
+        c1.api.golink.v1.GoLinkServiceCreateRequest:
+            description: The GoLinkServiceCreateRequest message.
+            properties:
+                description:
+                    description: The description field.
+                    type: string
+                displayName:
+                    description: The displayName field.
+                    type: string
+                prerequisite:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkPrerequisite'
+                        - type: "null"
+                routes:
+                    description: The routes field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkRouteConfig'
+                    type:
+                        - array
+                        - "null"
+                target:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkTarget'
+                        - type: "null"
+            title: Go Link Service Create Request
+            type: object
+            x-speakeasy-name-override: GoLinkServiceCreateRequest
+        c1.api.golink.v1.GoLinkServiceCreateResponse:
+            description: The GoLinkServiceCreateResponse message.
+            properties:
+                golink:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+            title: Go Link Service Create Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceCreateResponse
+        c1.api.golink.v1.GoLinkServiceDeleteRequestInput:
+            description: The GoLinkServiceDeleteRequest message.
+            title: Go Link Service Delete Request
+            type: object
+            x-speakeasy-name-override: GoLinkServiceDeleteRequest
+        c1.api.golink.v1.GoLinkServiceDeleteResponse:
+            description: The GoLinkServiceDeleteResponse message.
+            title: Go Link Service Delete Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceDeleteResponse
+        c1.api.golink.v1.GoLinkServiceGetResponse:
+            description: The GoLinkServiceGetResponse message.
+            properties:
+                golinkView:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkView'
+                        - type: "null"
+            title: Go Link Service Get Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceGetResponse
+        c1.api.golink.v1.GoLinkServiceListResponse:
+            description: The GoLinkServiceListResponse message.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkView'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: The nextPageToken field.
+                    type: string
+            title: Go Link Service List Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceListResponse
+        c1.api.golink.v1.GoLinkServiceListVersionsResponse:
+            description: The GoLinkServiceListVersionsResponse message.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkVersion'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: The nextPageToken field.
+                    type: string
+            title: Go Link Service List Versions Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceListVersionsResponse
+        c1.api.golink.v1.GoLinkServiceResolveRequest:
+            description: The GoLinkServiceResolveRequest message.
+            properties:
+                path:
+                    description: The path to resolve, e.g. "jira/PROJ-123", "aws/console", "j"
+                    type: string
+            title: Go Link Service Resolve Request
+            type: object
+            x-speakeasy-name-override: GoLinkServiceResolveRequest
+        c1.api.golink.v1.GoLinkServiceResolveResponse:
+            description: The GoLinkServiceResolveResponse message.
+            properties:
+                actionId:
+                    description: Set when outcome is ACTION. The action ID to trigger.
+                    type: string
+                chooserOptions:
+                    description: Set when outcome is CHOOSER. The chooser options to present to the user.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkChooserOption'
+                    type:
+                        - array
+                        - "null"
+                golink:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+                outcome:
+                    description: The outcome field.
+                    enum:
+                        - GO_LINK_RESOLVE_OUTCOME_UNSPECIFIED
+                        - GO_LINK_RESOLVE_OUTCOME_REDIRECT
+                        - GO_LINK_RESOLVE_OUTCOME_PREREQUISITE_MISSING
+                        - GO_LINK_RESOLVE_OUTCOME_CHOOSER
+                        - GO_LINK_RESOLVE_OUTCOME_ACTION
+                        - GO_LINK_RESOLVE_OUTCOME_NOT_FOUND
+                        - GO_LINK_RESOLVE_OUTCOME_DISABLED
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                prerequisite:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkPrerequisite'
+                        - type: "null"
+                redirectUrl:
+                    description: Set when outcome is REDIRECT. The fully resolved URL to redirect to.
+                    type: string
+                suggestions:
+                    description: Set when outcome is NOT_FOUND. Suggested GoLinks that might match the path.
+                    items:
+                        $ref: '#/components/schemas/c1.api.golink.v1.GoLinkView'
+                    type:
+                        - array
+                        - "null"
+            title: Go Link Service Resolve Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceResolveResponse
+        c1.api.golink.v1.GoLinkServiceUpdateRequestInput:
+            description: The GoLinkServiceUpdateRequest message.
+            properties:
+                golink:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+                updateMask:
+                    type:
+                        - string
+                        - "null"
+            title: Go Link Service Update Request
+            type: object
+            x-speakeasy-name-override: GoLinkServiceUpdateRequest
+        c1.api.golink.v1.GoLinkServiceUpdateResponse:
+            description: The GoLinkServiceUpdateResponse message.
+            properties:
+                golink:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+            title: Go Link Service Update Response
+            type: object
+            x-speakeasy-name-override: GoLinkServiceUpdateResponse
+        c1.api.golink.v1.GoLinkTarget:
+            description: |
+                The GoLinkTarget message.
+
+                This message contains a oneof named target. Only a single field of the following list may be set at a time:
+                  - redirect
+                  - action
+                  - chooser
+            properties:
+                action:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkActionTarget'
+                        - type: "null"
+                chooser:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkChooserTarget'
+                        - type: "null"
+                redirect:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLinkRedirectTarget'
+                        - type: "null"
+            title: Go Link Target
+            type: object
+            x-speakeasy-name-override: GoLinkTarget
+        c1.api.golink.v1.GoLinkVersion:
+            description: GoLinkVersion represents a point-in-time snapshot of a GoLink.
+            properties:
+                changedByUserId:
+                    description: The changedByUserId field.
+                    type: string
+                createdAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                golinkId:
+                    description: The golinkId field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+                snapshot:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+                version:
+                    description: The version field.
+                    format: int32
+                    type: integer
+            title: Go Link Version
+            type: object
+            x-speakeasy-name-override: GoLinkVersion
+        c1.api.golink.v1.GoLinkView:
+            description: GoLinkView wraps a GoLink with per-object permissions for the current user.
+            properties:
+                golink:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.golink.v1.GoLink'
+                        - type: "null"
+                objectPermissions:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.iam.v1.ActorObjectPermissions'
+                        - type: "null"
+            title: Go Link View
+            type: object
+            x-speakeasy-name-override: GoLinkView
         c1.api.history.v1.HistoryActor:
             description: |-
                 HistoryActor is a typed reference to whoever performed the change.
@@ -31094,6 +32146,9 @@ components:
                     type:
                         - string
                         - "null"
+                description:
+                    description: The description field.
+                    type: string
                 displayName:
                     description: The displayName field.
                     type: string
@@ -31105,6 +32160,10 @@ components:
                         Separate pointers: the last attempt may have failed while callers still need
                          the last renderable result.
                     type: string
+                latestRunSummary:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.reporting.v1.ReportRun'
+                        - type: "null"
                 latestSuccessfulRunId:
                     description: The latestSuccessfulRunId field.
                     type: string
@@ -31452,6 +32511,11 @@ components:
                         The conversation and surface are both required to address a rendered
                          surface; neither identifies one alone.
                     type: string
+                description:
+                    description: |-
+                        Optional user-facing context for a new report. Rejected while applying an
+                         edit, where metadata remains unchanged.
+                    type: string
                 displayName:
                     description: Required for a new report and rejected when report_id is set.
                     type: string
@@ -31492,6 +32556,9 @@ components:
                 Both editable fields are optional; an empty one leaves the stored value alone.
                  At least one must be set.
             properties:
+                description:
+                    description: The description field.
+                    type: string
                 displayName:
                     description: The displayName field.
                     type: string
@@ -34351,7 +35418,7 @@ components:
                     description: Fuzzy search by display name
                     type: string
                 secretType:
-                    description: Filter by secret type (optional)
+                    description: Filter by secret type. Unspecified returns all secret types.
                     enum:
                         - SECRET_TYPE_UNSPECIFIED
                         - SECRET_TYPE_TEXT
@@ -34359,7 +35426,7 @@ components:
                     type: string
                     x-speakeasy-unknown-values: allow
                 sharingMode:
-                    description: Filter by sharing mode (optional)
+                    description: Filter by sharing mode. Unspecified returns all sharing modes.
                     enum:
                         - PAPER_VAULT_SHARING_MODE_UNSPECIFIED
                         - PAPER_VAULT_SHARING_MODE_INTERNAL
@@ -34377,7 +35444,7 @@ components:
                     type: string
                     x-speakeasy-unknown-values: allow
                 statuses:
-                    description: Filter by status (optional)
+                    description: Filter by status. Empty returns all statuses.
                     items:
                         enum:
                             - SECRET_STATUS_UNSPECIFIED
@@ -34431,15 +35498,23 @@ components:
                     description: Fuzzy search by display name
                     type: string
                 secretType:
-                    description: Filter by secret type (optional)
+                    description: Filter by secret type. Unspecified returns all secret types.
                     enum:
                         - SECRET_TYPE_UNSPECIFIED
                         - SECRET_TYPE_TEXT
                         - SECRET_TYPE_FILE
                     type: string
                     x-speakeasy-unknown-values: allow
+                sharingMode:
+                    description: Filter by sharing mode. Unspecified returns internal secrets; external returns none.
+                    enum:
+                        - PAPER_VAULT_SHARING_MODE_UNSPECIFIED
+                        - PAPER_VAULT_SHARING_MODE_INTERNAL
+                        - PAPER_VAULT_SHARING_MODE_EXTERNAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
                 statuses:
-                    description: Filter by status (optional)
+                    description: Filter by status. Empty returns all statuses.
                     items:
                         enum:
                             - SECRET_STATUS_UNSPECIFIED
@@ -34555,7 +35630,18 @@ components:
 
                 This message contains a oneof named kind. Only a single field of the following list may be set at a time:
                   - functionId
+                  - ssoApplication
+                  - authzenServer
+                  - edge
             properties:
+                authzenServer:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerRef'
+                        - type: "null"
+                edge:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.EdgeRef'
+                        - type: "null"
                 functionId:
                     description: |-
                         Function ID. The function authenticates outbound c1-api calls as
@@ -34565,6 +35651,10 @@ components:
                     type:
                         - string
                         - "null"
+                ssoApplication:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.sso.v1.SSOApplicationRef'
+                        - type: "null"
             title: Service Principal Binding Subject
             type: object
             x-speakeasy-name-override: ServicePrincipalBindingSubject
@@ -36458,6 +37548,9 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.settings.v1.CIDRRestriction'
                         - type: "null"
+                enableIdleTimeout:
+                    description: Whether a browser session ends after idle_timeout without user activity.
+                    type: boolean
                 externalClientSource:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.settings.v1.CIDRRestriction'
@@ -36467,6 +37560,11 @@ components:
                         Enable external client registration (OAuth 2.0 DCR) for MCP clients
                          like Claude Desktop, Cursor, and other AI assistants.
                     type: boolean
+                idleTimeout:
+                    format: duration
+                    type:
+                        - string
+                        - "null"
                 maxSessionLength:
                     format: duration
                     type:
@@ -38276,6 +39374,92 @@ components:
             title: My Spend Block
             type: object
             x-speakeasy-name-override: MySpendBlock
+        c1.api.spendinsights.v1.MySpendUsageRow:
+            description: |-
+                MySpendUsageRow exposes only the caller's call-level usage. Operational
+                 company-funded calls are excluded. Missing amounts and counts are unknown.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                cacheReadTokens:
+                    description: The cacheReadTokens field.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                cacheWriteTokens:
+                    description: The cacheWriteTokens field.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                conversationId:
+                    description: The conversationId field.
+                    type: string
+                costNano:
+                    description: |-
+                        SETTLED is canonical settled fund spend, even when usage is incomplete.
+                         For SETTLE_DROPPED this is qualified usage cost, not settled fund spend.
+                         Absent when no exact amount is known; a present zero is measured zero.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                createdAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                currencyCode:
+                    description: The currencyCode field.
+                    type: string
+                finalizedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                inputTokens:
+                    description: Presence-aware billing inputs, not legacy provider token totals.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                modelId:
+                    description: The modelId field.
+                    type: string
+                outcome:
+                    description: The outcome field.
+                    enum:
+                        - MY_SPEND_USAGE_OUTCOME_UNSPECIFIED
+                        - MY_SPEND_USAGE_OUTCOME_SETTLED
+                        - MY_SPEND_USAGE_OUTCOME_SETTLE_DROPPED
+                        - MY_SPEND_USAGE_OUTCOME_NOT_GOVERNED
+                        - MY_SPEND_USAGE_OUTCOME_ZERO_PRICED
+                        - MY_SPEND_USAGE_OUTCOME_UNPRICED
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                outputTokens:
+                    description: The outputTokens field.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                reasoningTokens:
+                    description: The reasoningTokens field.
+                    format: int64
+                    type:
+                        - string
+                        - "null"
+                usageId:
+                    description: The usageId field.
+                    type: string
+                usageIncomplete:
+                    description: True when trustworthy complete billing inputs are unavailable.
+                    type: boolean
+            title: My Spend Usage Row
+            type: object
+            x-speakeasy-name-override: MySpendUsageRow
         c1.api.spendinsights.v1.RateBasisCount:
             description: RateBasisCount summarizes settled calls that used one recorded price basis.
             properties:
@@ -38435,6 +39619,54 @@ components:
             title: Search Denials Response
             type: object
             x-speakeasy-name-override: SearchDenialsResponse
+        c1.api.spendinsights.v1.SearchMySpendUsageRequest:
+            description: |-
+                SearchMySpendUsageRequest selects a half-open finalization-time interval.
+                 The caller's identity is always obtained from the authenticated session.
+                 Bounds must have microsecond precision; finer timestamps are rejected.
+            properties:
+                appId:
+                    description: Optional application filter; does not grant access to another user's calls.
+                    type: string
+                endTime:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                pageSize:
+                    description: Maximum rows per page. Zero uses the server default.
+                    format: int32
+                    type: integer
+                pageToken:
+                    description: |-
+                        Opaque position token from a previous response. Keep history selectors
+                         unchanged when continuing; concurrent writes may shift page boundaries.
+                         Caller authorization is applied independently on every request.
+                    type: string
+                startTime:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+            title: Search My Spend Usage Request
+            type: object
+            x-speakeasy-name-override: SearchMySpendUsageRequest
+        c1.api.spendinsights.v1.SearchMySpendUsageResponse:
+            description: SearchMySpendUsageResponse contains one page of caller-only usage.
+            properties:
+                list:
+                    description: The list field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.spendinsights.v1.MySpendUsageRow'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: The nextPageToken field.
+                    type: string
+            title: Search My Spend Usage Response
+            type: object
+            x-speakeasy-name-override: SearchMySpendUsageResponse
         c1.api.spendinsights.v1.TokenEconomics:
             description: TokenEconomics summarizes token usage and cost for settled calls.
             properties:
@@ -39465,6 +40697,18 @@ components:
             title: Sso Application Oidc Config
             type: object
             x-speakeasy-name-override: SSOApplicationOIDCConfig
+        c1.api.sso.v1.SSOApplicationRef:
+            description: The SSOApplicationRef message.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                id:
+                    description: The id field.
+                    type: string
+            title: Sso Application Ref
+            type: object
+            x-speakeasy-name-override: SSOApplicationRef
         c1.api.sso.v1.SSOApplicationSAMLConfig:
             description: SSOApplicationSAMLConfig is the SAML-specific sign-in configuration.
             properties:
@@ -41213,6 +42457,267 @@ components:
             title: Scope Role
             type: object
             x-speakeasy-name-override: ScopeRole
+        c1.api.task.v1.SpendRemedyAbsentTarget:
+            description: The SpendRemedyAbsentTarget message.
+            title: Spend Remedy Absent Target
+            type: object
+            x-speakeasy-name-override: SpendRemedyAbsentTarget
+        c1.api.task.v1.SpendRemedyControlsSnapshot:
+            description: The SpendRemedyControlsSnapshot message.
+            properties:
+                controls:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendControls'
+                        - type: "null"
+                period:
+                    description: The period field.
+                    enum:
+                        - PERIOD_KIND_UNSPECIFIED
+                        - PERIOD_KIND_DAILY
+                        - PERIOD_KIND_WEEKLY
+                        - PERIOD_KIND_MONTHLY
+                        - PERIOD_KIND_QUARTERLY
+                        - PERIOD_KIND_YEARLY
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                version:
+                    description: The version field.
+                    format: int64
+                    type: string
+            title: Spend Remedy Controls Snapshot
+            type: object
+            x-speakeasy-name-override: SpendRemedyControlsSnapshot
+        c1.api.task.v1.SpendRemedyPersonalExtensionRequest:
+            description: A proposed personal replacement total and absolute expiration.
+            properties:
+                expiresAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                total:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.Money'
+                        - type: "null"
+            title: Spend Remedy Personal Extension Request
+            type: object
+            x-speakeasy-name-override: SpendRemedyPersonalExtensionRequest
+        c1.api.task.v1.SpendRemedyRef:
+            description: SpendRemedyRef identifies a request, not permission to spend.
+            properties:
+                blockId:
+                    description: The blockId field.
+                    type: string
+                taskId:
+                    description: The taskId field.
+                    type: string
+            title: Spend Remedy Ref
+            type: object
+            x-speakeasy-name-override: SpendRemedyRef
+        c1.api.task.v1.SpendRemedyResumeRequest:
+            description: Resume carries no monetary terms or expiration.
+            title: Spend Remedy Resume Request
+            type: object
+            x-speakeasy-name-override: SpendRemedyResumeRequest
+        c1.api.task.v1.SpendRemedyReview:
+            description: |
+                SpendRemedyReview is returned only by the separately authorized review endpoint.
+
+                This message contains a oneof named change. Only a single field of the following list may be set at a time:
+                  - personalExtension
+                  - personalResume
+                  - appIncrease
+                  - appResume
+                  - orgIncrease
+                  - orgUnfreeze
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                appIncrease:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedySharedIncreaseRequest'
+                        - type: "null"
+                appResume:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyResumeRequest'
+                        - type: "null"
+                appliedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                authorityMatches:
+                    description: The authorityMatches field.
+                    type:
+                        - boolean
+                        - "null"
+                beneficiaryUserId:
+                    description: The beneficiaryUserId field.
+                    type: string
+                blockId:
+                    description: The blockId field.
+                    type: string
+                capturedTarget:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyReviewTarget'
+                        - type: "null"
+                createdAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                currentEffectiveLimit:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.SpendLimit'
+                        - type: "null"
+                currentTarget:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyReviewTarget'
+                        - type: "null"
+                orgIncrease:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedySharedIncreaseRequest'
+                        - type: "null"
+                orgUnfreeze:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyResumeRequest'
+                        - type: "null"
+                period:
+                    description: The period field.
+                    enum:
+                        - PERIOD_KIND_UNSPECIFIED
+                        - PERIOD_KIND_DAILY
+                        - PERIOD_KIND_WEEKLY
+                        - PERIOD_KIND_MONTHLY
+                        - PERIOD_KIND_QUARTERLY
+                        - PERIOD_KIND_YEARLY
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                periodEnd:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                periodKey:
+                    description: The periodKey field.
+                    type: string
+                personalExtension:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyPersonalExtensionRequest'
+                        - type: "null"
+                personalResume:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyResumeRequest'
+                        - type: "null"
+                reason:
+                    description: The reason field.
+                    type: string
+                requestPolicyId:
+                    description: The requestPolicyId field.
+                    type: string
+                requesterUserId:
+                    description: The requesterUserId field.
+                    type: string
+                taskId:
+                    description: The taskId field.
+                    type: string
+            title: Spend Remedy Review
+            type: object
+            x-speakeasy-name-override: SpendRemedyReview
+        c1.api.task.v1.SpendRemedyReviewTarget:
+            description: |
+                A missing row is not a deleted version. Current state may differ from capture.
+
+                This message contains a oneof named state. Only a single field of the following list may be set at a time:
+                  - absent
+                  - live
+                  - deleted
+            properties:
+                absent:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyAbsentTarget'
+                        - type: "null"
+                deleted:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyControlsSnapshot'
+                        - type: "null"
+                live:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyControlsSnapshot'
+                        - type: "null"
+            title: Spend Remedy Review Target
+            type: object
+            x-speakeasy-name-override: SpendRemedyReviewTarget
+        c1.api.task.v1.SpendRemedySharedIncreaseRequest:
+            description: A proposed shared replacement total, never an additive credit.
+            properties:
+                total:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.funds.v1.Money'
+                        - type: "null"
+            title: Spend Remedy Shared Increase Request
+            type: object
+            x-speakeasy-name-override: SpendRemedySharedIncreaseRequest
+        c1.api.task.v1.SpendRemedyStatus:
+            description: Requester-safe status contains no requested terms or shared financial controls.
+            properties:
+                appliedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                blockingReason:
+                    description: The blockingReason field.
+                    enum:
+                        - SPEND_DENY_REASON_UNSPECIFIED
+                        - SPEND_DENY_REASON_TENANT_FROZEN
+                        - SPEND_DENY_REASON_SUSPENDED_BY_ADMIN
+                        - SPEND_DENY_REASON_APP_SUSPENDED
+                        - SPEND_DENY_REASON_APP_PAUSED_BY_YOU
+                        - SPEND_DENY_REASON_NO_SUPPLY
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                blockingScope:
+                    description: The blockingScope field.
+                    enum:
+                        - SPEND_SCOPE_KIND_UNSPECIFIED
+                        - SPEND_SCOPE_KIND_TENANT
+                        - SPEND_SCOPE_KIND_SUBJECT
+                        - SPEND_SCOPE_KIND_APP
+                        - SPEND_SCOPE_KIND_SUBJECT_APP
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                currentRequest:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyRef'
+                        - type: "null"
+                remedy:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyRef'
+                        - type: "null"
+                state:
+                    description: The state field.
+                    enum:
+                        - SPEND_REMEDY_STATUS_STATE_UNSPECIFIED
+                        - SPEND_REMEDY_STATUS_STATE_PENDING
+                        - SPEND_REMEDY_STATUS_STATE_REJECTED
+                        - SPEND_REMEDY_STATUS_STATE_CANCELLED
+                        - SPEND_REMEDY_STATUS_STATE_EXPIRED
+                        - SPEND_REMEDY_STATUS_STATE_APPROVED_AWAITING_FULFILLMENT
+                        - SPEND_REMEDY_STATUS_STATE_FULFILLMENT_FAILED
+                        - SPEND_REMEDY_STATUS_STATE_APPLIED_RETRY_REQUIRED
+                        - SPEND_REMEDY_STATUS_STATE_APPLIED_STILL_BLOCKED
+                        - SPEND_REMEDY_STATUS_STATE_STALE
+                        - SPEND_REMEDY_STATUS_STATE_UNAVAILABLE
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                unavailableReason:
+                    description: The unavailableReason field.
+                    type: string
+            title: Spend Remedy Status
+            type: object
+            x-speakeasy-name-override: SpendRemedyStatus
         c1.api.task.v1.Task:
             description: A fully-fleged task object. Includes its policy, references to external apps, its type, its processing history, and more.
             properties:
@@ -44267,6 +45772,55 @@ components:
             title: Task Service Create Revoke Response
             type: object
             x-speakeasy-name-override: TaskServiceCreateRevokeResponse
+        c1.api.task.v1.TaskServiceCreateSpendRemedyRequest:
+            description: |
+                TaskServiceCreateSpendRemedyRequest requests a scoped change through the configured policy.
+                 Beneficiary, operation and authority are derived from the caller's verified refusal.
+
+                This message contains a oneof named requested_change. Only a single field of the following list may be set at a time:
+                  - personalExtension
+                  - sharedIncrease
+                  - resume
+            properties:
+                appId:
+                    description: |-
+                        Narrows delivered audience proof. An APP-scoped refusal may supply this
+                         context; other scopes require it. The verified receipt determines the app.
+                    type: string
+                blockId:
+                    description: The blockId field.
+                    type: string
+                personalExtension:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyPersonalExtensionRequest'
+                        - type: "null"
+                predecessorTaskId:
+                    description: Explicit reconsideration names the current closed request.
+                    type: string
+                reason:
+                    description: The reason field.
+                    type: string
+                resume:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyResumeRequest'
+                        - type: "null"
+                sharedIncrease:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedySharedIncreaseRequest'
+                        - type: "null"
+            title: Task Service Create Spend Remedy Request
+            type: object
+            x-speakeasy-name-override: TaskServiceCreateSpendRemedyRequest
+        c1.api.task.v1.TaskServiceCreateSpendRemedyResponse:
+            description: The TaskServiceCreateSpendRemedyResponse message.
+            properties:
+                task:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.TaskRef'
+                        - type: "null"
+            title: Task Service Create Spend Remedy Response
+            type: object
+            x-speakeasy-name-override: TaskServiceCreateSpendRemedyResponse
         c1.api.task.v1.TaskServiceGetResponse:
             description: The TaskServiceGetResponse returns a task view which has a task including JSONPATHs to the expanded items in the expanded array.
             properties:
@@ -44292,6 +45846,26 @@ components:
             title: Task Service Get Response
             type: object
             x-speakeasy-name-override: TaskServiceGetResponse
+        c1.api.task.v1.TaskServiceGetSpendRemedyReviewResponse:
+            description: The TaskServiceGetSpendRemedyReviewResponse message.
+            properties:
+                review:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyReview'
+                        - type: "null"
+            title: Task Service Get Spend Remedy Review Response
+            type: object
+            x-speakeasy-name-override: TaskServiceGetSpendRemedyReviewResponse
+        c1.api.task.v1.TaskServiceGetSpendRemedyStatusResponse:
+            description: The TaskServiceGetSpendRemedyStatusResponse message.
+            properties:
+                status:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.SpendRemedyStatus'
+                        - type: "null"
+            title: Task Service Get Spend Remedy Status Response
+            type: object
+            x-speakeasy-name-override: TaskServiceGetSpendRemedyStatusResponse
         c1.api.task.v1.TaskType:
             description: |
                 Task Type provides configuration for the type of task: certify, grant, or revoke
@@ -44435,6 +46009,7 @@ components:
                         - TYPE_TOOL_CALL
                         - TYPE_MANUAL
                         - TYPE_CREDENTIAL_ISSUE
+                        - TYPE_SPEND_REMEDY
                     readOnly: true
                     type: string
                     x-speakeasy-unknown-values: allow
@@ -45260,6 +46835,24 @@ components:
             title: Resource
             type: object
             x-speakeasy-name-override: Resource
+        c1.api.usage_event.v1.UsageResourceRef:
+            description: The UsageResourceRef message.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                connectorId:
+                    description: The connectorId field.
+                    type: string
+                resourceId:
+                    description: The resourceId field.
+                    type: string
+                resourceTypeId:
+                    description: The resourceTypeId field.
+                    type: string
+            title: Usage Resource Ref
+            type: object
+            x-speakeasy-name-override: UsageResourceRef
         c1.api.user.v1.ExpiringUserDelegationBinding:
             description: The ExpiringUserDelegationBinding message.
             properties:
@@ -50878,6 +52471,173 @@ paths:
                 - AppUsers
             x-speakeasy-group: AppUser
             x-speakeasy-name-override: ListAppUserCredentials
+    /api/v1/apps/{app_id}/authzen_servers:
+        get:
+            description: List retrieves AuthZEN servers for an app.
+            operationId: c1.api.authzen.v1.AuthzenServerService.List
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: query
+                  name: page_size
+                  schema:
+                    description: Page size (max 100).
+                    format: int32
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: Page token for pagination.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceListResponse'
+                    description: AuthzenServerServiceListResponse lists AuthZEN servers for an app.
+            summary: List
+            tags:
+                - AuthZEN Servers
+            x-speakeasy-group: AuthzenServer
+            x-speakeasy-name-override: List
+        post:
+            description: |-
+                Create mints an AuthZEN server (and its evaluate/search entitlements)
+                 for an app. The server starts disabled.
+            operationId: c1.api.authzen.v1.AuthzenServerService.Create
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceCreateRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceCreateResponse'
+                    description: |-
+                        AuthzenServerServiceCreateResponse returns the newly minted server,
+                         including its capability entitlement ids.
+            summary: Create
+            tags:
+                - AuthZEN Servers
+            x-speakeasy-group: AuthzenServer
+            x-speakeasy-name-override: Create
+    /api/v1/apps/{app_id}/authzen_servers/{id}:
+        delete:
+            description: |-
+                Delete soft-deletes an AuthZEN server and cascades its minted
+                 entitlement stack. Evaluation and search 404 immediately; discovery is
+                 static URL templating and deliberately never reads the database, so it
+                 keeps answering for any well-formed path.
+            operationId: c1.api.authzen.v1.AuthzenServerService.Delete
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: Server identifier.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceDeleteRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceDeleteResponse'
+                    description: |-
+                        AuthzenServerServiceDeleteResponse confirms deletion. The server's
+                         entitlement stack cascade-deletes; a replacement server mints an all-new
+                         stack.
+            summary: Delete
+            tags:
+                - AuthZEN Servers
+            x-speakeasy-group: AuthzenServer
+            x-speakeasy-name-override: Delete
+        get:
+            description: Get retrieves one AuthZEN server.
+            operationId: c1.api.authzen.v1.AuthzenServerService.Get
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: Server identifier.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceGetResponse'
+                    description: AuthzenServerServiceGetResponse returns the requested AuthZEN server.
+            summary: Get
+            tags:
+                - AuthZEN Servers
+            x-speakeasy-group: AuthzenServer
+            x-speakeasy-name-override: Get
+        post:
+            description: Update edits a server's mode via update_mask.
+            operationId: c1.api.authzen.v1.AuthzenServerService.Update
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: The id field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceUpdateRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.authzen.v1.AuthzenServerServiceUpdateResponse'
+                    description: AuthzenServerServiceUpdateResponse returns the updated server.
+            summary: Update
+            tags:
+                - AuthZEN Servers
+            x-speakeasy-group: AuthzenServer
+            x-speakeasy-name-override: Update
     /api/v1/apps/{app_id}/connectors:
         get:
             description: List connectors for an app.
@@ -52290,6 +54050,171 @@ paths:
                 - Connector
             x-speakeasy-group: Connector
             x-speakeasy-name-override: Create
+    /api/v1/apps/{app_id}/edges:
+        get:
+            description: List retrieves Edges for an app.
+            operationId: c1.api.edge.v1.EdgeService.List
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: query
+                  name: page_size
+                  schema:
+                    description: Page size (max 100).
+                    format: int32
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: Page token for pagination.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceListResponse'
+                    description: EdgeServiceListResponse lists Edges for an app.
+            summary: List
+            tags:
+                - Edge
+            x-speakeasy-group: Edge
+            x-speakeasy-name-override: List
+        post:
+            description: |-
+                Create mints an Edge (and its egress.connect entitlement) for an app.
+                 The Edge starts disabled.
+            operationId: c1.api.edge.v1.EdgeService.Create
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceCreateRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceCreateResponse'
+                    description: |-
+                        EdgeServiceCreateResponse returns the newly minted Edge,
+                         including its capability entitlement id.
+            summary: Create
+            tags:
+                - Edge
+            x-speakeasy-group: Edge
+            x-speakeasy-name-override: Create
+    /api/v1/apps/{app_id}/edges/{id}:
+        delete:
+            description: |-
+                Delete soft-deletes an Edge and cascades its minted entitlement
+                 stack. Egress requests 404 immediately; re-creating the Edge mints an
+                 all-new stack.
+            operationId: c1.api.edge.v1.EdgeService.Delete
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: Edge identifier.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceDeleteRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceDeleteResponse'
+                    description: |-
+                        EdgeServiceDeleteResponse confirms deletion. The Edge's entitlement
+                         stack cascade-deletes; a replacement Edge mints an all-new stack.
+            summary: Delete
+            tags:
+                - Edge
+            x-speakeasy-group: Edge
+            x-speakeasy-name-override: Delete
+        get:
+            description: Get retrieves one Edge.
+            operationId: c1.api.edge.v1.EdgeService.Get
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: Edge identifier.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceGetResponse'
+                    description: EdgeServiceGetResponse returns the requested Edge.
+            summary: Get
+            tags:
+                - Edge
+            x-speakeasy-group: Edge
+            x-speakeasy-name-override: Get
+        post:
+            description: Update edits an Edge's mode via update_mask.
+            operationId: c1.api.edge.v1.EdgeService.Update
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: App identifier.
+                    type: string
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: The id field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceUpdateRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.edge.v1.EdgeServiceUpdateResponse'
+                    description: EdgeServiceUpdateResponse returns the updated Edge.
+            summary: Update
+            tags:
+                - Edge
+            x-speakeasy-group: Edge
+            x-speakeasy-name-override: Update
     /api/v1/apps/{app_id}/entitlement_configuration_rules:
         get:
             description: |-
@@ -60340,6 +62265,61 @@ paths:
                 - My Fund Limits
             x-speakeasy-group: MyFundLimits
             x-speakeasy-name-override: Pause
+    /api/v1/funds/my/app-limits/{app_id}/temporary-limit:
+        delete:
+            description: Remove the temporary limit, using the current base rather than an old copy.
+            operationId: c1.api.funds.v1.MyFundLimitsService.ClearTemporaryLimit
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The appId field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimitsServiceClearTemporaryLimitRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimitsServiceClearTemporaryLimitResponse'
+                    description: Successful response
+            summary: Clear Temporary Limit
+            tags:
+                - My Fund Limits
+            x-speakeasy-group: MyFundLimits
+            x-speakeasy-name-override: ClearTemporaryLimit
+        post:
+            description: Temporarily replace this app's self limit, not the fund supplying it.
+            operationId: c1.api.funds.v1.MyFundLimitsService.SetTemporaryLimit
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The appId field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimitsServiceSetTemporaryLimitRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.funds.v1.MyFundLimitsServiceSetTemporaryLimitResponse'
+                    description: Successful response
+            summary: Set Temporary Limit
+            tags:
+                - My Fund Limits
+            x-speakeasy-group: MyFundLimits
+            x-speakeasy-name-override: SetTemporaryLimit
     /api/v1/funds/policy:
         delete:
             description: |-
@@ -60973,6 +62953,229 @@ paths:
             tags:
                 - Subject App Limits
             x-speakeasy-group: SubjectAppLimit
+            x-speakeasy-name-override: Search
+    /api/v1/golinks:
+        get:
+            description: List GoLinks with pagination.
+            operationId: c1.api.golink.v1.GoLinkService.List
+            parameters:
+                - in: query
+                  name: page_size
+                  schema:
+                    description: The pageSize field.
+                    format: int32
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: The pageToken field.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceListResponse'
+                    description: Successful response
+            summary: List
+            tags:
+                - Go Links
+            x-speakeasy-entity-missing-codes:
+                - 404
+            x-speakeasy-entity-operation:
+                terraform-datasource:
+                    - GoLink#read
+                    - GoLinks#read
+                terraform-resource: null
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: List
+        post:
+            description: Create a new GoLink.
+            operationId: c1.api.golink.v1.GoLinkService.Create
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceCreateRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceCreateResponse'
+                    description: Successful response
+            summary: Create
+            tags:
+                - Go Links
+            x-speakeasy-entity-missing-codes:
+                - 404
+            x-speakeasy-entity-operation:
+                terraform-resource: GoLink#create
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: Create
+    /api/v1/golinks/{golink_id}/versions:
+        get:
+            description: List version history for a GoLink.
+            operationId: c1.api.golink.v1.GoLinkService.ListVersions
+            parameters:
+                - in: path
+                  name: golink_id
+                  required: true
+                  schema:
+                    description: The golinkId field.
+                    type: string
+                - in: query
+                  name: page_size
+                  schema:
+                    description: The pageSize field.
+                    format: int32
+                    type: integer
+                - in: query
+                  name: page_token
+                  schema:
+                    description: The pageToken field.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceListVersionsResponse'
+                    description: Successful response
+            summary: List Versions
+            tags:
+                - Go Links
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: ListVersions
+    /api/v1/golinks/{id}:
+        delete:
+            description: Delete a GoLink. Caller must be the owner.
+            operationId: c1.api.golink.v1.GoLinkService.Delete
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: The id field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceDeleteRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceDeleteResponse'
+                    description: Successful response
+            summary: Delete
+            tags:
+                - Go Links
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: Delete
+        get:
+            description: Get a GoLink by ID.
+            operationId: c1.api.golink.v1.GoLinkService.Get
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: The id field.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceGetResponse'
+                    description: Successful response
+            summary: Get
+            tags:
+                - Go Links
+            x-speakeasy-entity-missing-codes:
+                - 404
+            x-speakeasy-entity-operation:
+                terraform-datasource: null
+                terraform-resource: GoLink#read
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: Get
+        patch:
+            description: Update a GoLink. Caller must be the owner.
+            operationId: c1.api.golink.v1.GoLinkService.Update
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                    description: The id field.
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceUpdateRequestInput'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceUpdateResponse'
+                    description: Successful response
+            summary: Update
+            tags:
+                - Go Links
+            x-speakeasy-entity-missing-codes:
+                - 404
+            x-speakeasy-entity-operation:
+                terraform-resource: GoLink#update
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: Update
+    /api/v1/golinks/resolve:
+        post:
+            description: |-
+                Resolve a path to a GoLink target.
+                 Returns the resolution outcome (redirect URL, action, chooser, prerequisite, etc.)
+            operationId: c1.api.golink.v1.GoLinkService.Resolve
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceResolveRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkServiceResolveResponse'
+                    description: Successful response
+            summary: Resolve
+            tags:
+                - Go Links
+            x-speakeasy-group: GoLink
+            x-speakeasy-name-override: Resolve
+    /api/v1/golinks/search:
+        post:
+            description: Search GoLinks by query string.
+            operationId: c1.api.golink.v1.GoLinkSearchService.Search
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.golink.v1.GoLinkSearchServiceSearchRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.golink.v1.GoLinkSearchServiceSearchResponse'
+                    description: Successful response
+            summary: Search
+            tags:
+                - Go Links
+            x-speakeasy-group: GoLinkSearch
             x-speakeasy-name-override: Search
     /api/v1/grants/feed:
         post:
@@ -64245,6 +66448,32 @@ paths:
                 terraform-resource: null
             x-speakeasy-group: SessionPolicy
             x-speakeasy-name-override: Search
+    /api/v1/search/shadow_mcp_occurrences:
+        post:
+            description: |-
+                Search returns the ungoverned, enabled observation rows behind one
+                 shadow-mcp finding -- the same present-set that produced its evidence
+                 counts. Authorized as VIEWER -- the same role required to read the
+                 finding itself.
+            operationId: c1.api.finding.v1.ShadowMcpOccurrenceService.Search
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.finding.v1.ShadowMcpOccurrenceServiceSearchRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.finding.v1.ShadowMcpOccurrenceServiceSearchResponse'
+                    description: Successful response
+            summary: Search
+            tags:
+                - Findings
+            x-speakeasy-group: ShadowMcpOccurrence
+            x-speakeasy-name-override: Search
+            x-stability-level: beta
     /api/v1/search/sign-in-policies:
         post:
             description: |-
@@ -65336,16 +67565,11 @@ paths:
     /api/v1/service_principals/bindings:
         post:
             description: |-
-                AddBinding links a tenant-scoped subject (a function today; future kinds
-                 tomorrow) to a service principal. Outbound c1-api calls made on the
-                 subject's behalf can then be minted as user:<service_principal_id> via
-                 an RFC 8693 token-exchange (act-as) flow. Many-aware: a subject may
-                 hold multiple bindings at the storage layer. Idempotent on
-                 (subject, service_principal_id) — adds the row if missing,
-                 resurrects it if soft-deleted, no-op if already active. Consumers
-                 that need 0-or-1 cardinality (Functions today) enforce it
-                 client-side via ListBindings + DeleteBinding. Requires the
-                 SERVICE_PRINCIPALS feature flag.
+                AddBinding associates a tenant-scoped subject with an existing service
+                 principal. Subjects support zero-to-many bindings; the same pair is
+                 idempotent and a soft-deleted pair is restored. Associations do not define
+                 runtime identity selection. Requires SERVICE_PRINCIPALS and the subject's
+                 feature flag, plus existing service-principal and subject permissions.
             operationId: c1.api.service_principal.v1.ServicePrincipalService.AddBinding
             requestBody:
                 content:
@@ -66799,6 +69023,29 @@ paths:
                 - Spend Insights
             x-speakeasy-group: SpendInsights
             x-speakeasy-name-override: GetMySpendStatus
+    /api/v1/spend-insights/my/usage/search:
+        post:
+            description: |-
+                Search the caller's retained, finalized AI calls. This is not an
+                 organization report or a provider invoice.
+            operationId: c1.api.spendinsights.v1.SpendInsightsService.SearchMySpendUsage
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.spendinsights.v1.SearchMySpendUsageRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.spendinsights.v1.SearchMySpendUsageResponse'
+                    description: SearchMySpendUsageResponse contains one page of caller-only usage.
+            summary: Search My Spend Usage
+            tags:
+                - Spend Insights
+            x-speakeasy-group: SpendInsights
+            x-speakeasy-name-override: SearchMySpendUsage
     /api/v1/spend-insights/overview:
         post:
             description: |-
@@ -67579,6 +69826,29 @@ paths:
                 terraform-resource: TaskRevoke#create
             x-speakeasy-group: Task
             x-speakeasy-name-override: CreateRevokeTask
+    /api/v1/task/spend-remedy:
+        post:
+            description: |-
+                Request a precise spending change for a refusal delivered to this caller.
+                 Repeated submissions return the canonical task; personal app restrictions need no approval.
+            operationId: c1.api.task.v1.TaskService.CreateSpendRemedyTask
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.task.v1.TaskServiceCreateSpendRemedyRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.task.v1.TaskServiceCreateSpendRemedyResponse'
+                    description: Successful response
+            summary: Create Spend Remedy Task
+            tags:
+                - Task
+            x-speakeasy-group: Task
+            x-speakeasy-name-override: CreateSpendRemedyTask
     /api/v1/tasks/{id}:
         get:
             description: Get a task by ID
@@ -68008,6 +70278,61 @@ paths:
                 - Task
             x-speakeasy-group: TaskActions
             x-speakeasy-name-override: UpdateRequestData
+    /api/v1/tasks/{task_id}/spend-remedy-review:
+        get:
+            description: |-
+                Read requested terms for an eligible independent reviewer or scoped Funds reader.
+                 Valid independent decision-makers can read frozen history, not unauthorized current controls.
+            operationId: c1.api.task.v1.TaskService.GetSpendRemedyReview
+            parameters:
+                - in: path
+                  name: task_id
+                  required: true
+                  schema:
+                    description: The taskId field.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.task.v1.TaskServiceGetSpendRemedyReviewResponse'
+                    description: Successful response
+            summary: Get Spend Remedy Review
+            tags:
+                - Task
+            x-speakeasy-group: Task
+            x-speakeasy-name-override: GetSpendRemedyReview
+    /api/v1/tasks/{task_id}/spend-remedy-status:
+        get:
+            description: |-
+                Read the caller-visible decision, durable effect, and current blocking scope.
+                 This never exposes another requester's terms or shared spending amounts.
+            operationId: c1.api.task.v1.TaskService.GetSpendRemedyStatus
+            parameters:
+                - in: path
+                  name: task_id
+                  required: true
+                  schema:
+                    description: The taskId field.
+                    type: string
+                - in: query
+                  name: app_id
+                  schema:
+                    description: The appId field.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.task.v1.TaskServiceGetSpendRemedyStatusResponse'
+                    description: Successful response
+            summary: Get Spend Remedy Status
+            tags:
+                - Task
+            x-speakeasy-group: Task
+            x-speakeasy-name-override: GetSpendRemedyStatus
     /api/v1/tb-control-plane/discovery:
         post:
             description: |-

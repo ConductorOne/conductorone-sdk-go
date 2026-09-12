@@ -2,7 +2,7 @@
 
 package shared
 
-// PaperSecretServiceSearchMySecretsRequestSecretType - Filter by secret type (optional)
+// PaperSecretServiceSearchMySecretsRequestSecretType - Filter by secret type. Unspecified returns all secret types.
 type PaperSecretServiceSearchMySecretsRequestSecretType string
 
 const (
@@ -26,7 +26,7 @@ func (e *PaperSecretServiceSearchMySecretsRequestSecretType) IsExact() bool {
 	return false
 }
 
-// PaperSecretServiceSearchMySecretsRequestSharingMode - Filter by sharing mode (optional)
+// PaperSecretServiceSearchMySecretsRequestSharingMode - Filter by sharing mode. Unspecified returns all sharing modes.
 type PaperSecretServiceSearchMySecretsRequestSharingMode string
 
 const (
@@ -112,13 +112,13 @@ type PaperSecretServiceSearchMySecretsRequest struct {
 	PageToken *string `json:"pageToken,omitempty"`
 	// Fuzzy search by display name
 	Query *string `json:"query,omitempty"`
-	// Filter by secret type (optional)
+	// Filter by secret type. Unspecified returns all secret types.
 	SecretType *PaperSecretServiceSearchMySecretsRequestSecretType `json:"secretType,omitempty"`
-	// Filter by sharing mode (optional)
+	// Filter by sharing mode. Unspecified returns all sharing modes.
 	SharingMode *PaperSecretServiceSearchMySecretsRequestSharingMode `json:"sharingMode,omitempty"`
 	// Sort order
 	SortBy *PaperSecretServiceSearchMySecretsRequestSortBy `json:"sortBy,omitempty"`
-	// Filter by status (optional)
+	// Filter by status. Empty returns all statuses.
 	Statuses []PaperSecretServiceSearchMySecretsRequestStatuses `json:"statuses,omitempty"`
 }
 

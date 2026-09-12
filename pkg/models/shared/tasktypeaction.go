@@ -46,6 +46,7 @@ const (
 	TaskTypeActionTypeTypeToolCall        TaskTypeActionType = "TYPE_TOOL_CALL"
 	TaskTypeActionTypeTypeManual          TaskTypeActionType = "TYPE_MANUAL"
 	TaskTypeActionTypeTypeCredentialIssue TaskTypeActionType = "TYPE_CREDENTIAL_ISSUE"
+	TaskTypeActionTypeTypeSpendRemedy     TaskTypeActionType = "TYPE_SPEND_REMEDY"
 )
 
 func (e TaskTypeActionType) ToPointer() *TaskTypeActionType {
@@ -56,7 +57,7 @@ func (e TaskTypeActionType) ToPointer() *TaskTypeActionType {
 func (e *TaskTypeActionType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "TYPE_UNSPECIFIED", "TYPE_GRANT", "TYPE_WORKFLOW", "TYPE_RESOURCE_ACTION", "TYPE_TOOL_CALL", "TYPE_MANUAL", "TYPE_CREDENTIAL_ISSUE":
+		case "TYPE_UNSPECIFIED", "TYPE_GRANT", "TYPE_WORKFLOW", "TYPE_RESOURCE_ACTION", "TYPE_TOOL_CALL", "TYPE_MANUAL", "TYPE_CREDENTIAL_ISSUE", "TYPE_SPEND_REMEDY":
 			return true
 		}
 	}

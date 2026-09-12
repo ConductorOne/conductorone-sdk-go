@@ -1,0 +1,16 @@
+# GoLinkInput
+
+GoLink is the API representation of a go-link.
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `Description`                                                                  | `*string`                                                                      | :heavy_minus_sign:                                                             | The description field.                                                         |
+| `DisplayName`                                                                  | `*string`                                                                      | :heavy_minus_sign:                                                             | The displayName field.                                                         |
+| `ID`                                                                           | `*string`                                                                      | :heavy_minus_sign:                                                             | The id field.                                                                  |
+| `Prerequisite`                                                                 | [*shared.GoLinkPrerequisite](../../../pkg/models/shared/golinkprerequisite.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| `Routes`                                                                       | [][shared.GoLinkRouteConfig](../../../pkg/models/shared/golinkrouteconfig.md)  | :heavy_minus_sign:                                                             | The routes field.                                                              |
+| `Status`                                                                       | [*shared.GoLinkStatus](../../../pkg/models/shared/golinkstatus.md)             | :heavy_minus_sign:                                                             | The status field.                                                              |
+| `Target`                                                                       | [*shared.GoLinkTargetInput](../../../pkg/models/shared/golinktargetinput.md)   | :heavy_minus_sign:                                                             | N/A                                                                            |

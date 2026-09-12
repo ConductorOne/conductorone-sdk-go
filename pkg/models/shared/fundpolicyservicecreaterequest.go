@@ -37,6 +37,8 @@ type FundPolicyServiceCreateRequest struct {
 	DefaultLimit *SpendLimit `json:"defaultLimit,omitempty"`
 	// The period field.
 	Period *FundPolicyServiceCreateRequestPeriod `json:"period,omitempty"`
+	// Optional grant policy for scoped spending changes. Empty disables requests.
+	SpendRemedyRequestPolicyID *string `json:"spendRemedyRequestPolicyId,omitempty"`
 }
 
 func (f *FundPolicyServiceCreateRequest) GetCurrencyCode() *string {
@@ -58,4 +60,11 @@ func (f *FundPolicyServiceCreateRequest) GetPeriod() *FundPolicyServiceCreateReq
 		return nil
 	}
 	return f.Period
+}
+
+func (f *FundPolicyServiceCreateRequest) GetSpendRemedyRequestPolicyID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.SpendRemedyRequestPolicyID
 }

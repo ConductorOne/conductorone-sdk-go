@@ -98,1703 +98,385 @@
 <body><h2 id="go-sdk-changes">Go SDK Changes:</h2>
 
 <ul>
-<li><code>ConductoroneApi.AccessReviewTemplate.Create()</code>:
+<li><code>ConductoroneApi.AuthzenServer.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AuthzenServer.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AuthzenServer.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AuthzenServer.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.AuthzenServer.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Edge.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Edge.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Edge.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Edge.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Edge.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.MyFundLimits.ClearTemporaryLimit()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.MyFundLimits.SetTemporaryLimit()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.Create()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.Delete()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.Get()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.List()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.ListVersions()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.Resolve()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLink.Update()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.GoLinkSearch.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.ShadowMcpOccurrence.Search()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.SpendInsights.SearchMySpendUsage()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateSpendRemedyTask()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.GetSpendRemedyReview()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.GetSpendRemedyStatus()</code>: <strong>Added</strong></li>
+<li><code>ConductoroneApi.A2Ui.ListSurfaces()</code>:  <code>response.Surfaces[].SavedReportId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.AccessReview.Create()</code>: <code>response.AccessReview.AccessReview.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>request.Request</code> <strong>Changed</strong> (Breaking ⚠️)
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>RecurrenceRule.Frequency</code> <strong>Changed</strong> (Breaking ⚠️)</li>
-<li><code>Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>response.AccessReviewTemplate</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.AccessReview.Get()</code>: <code>response.AccessReview.AccessReview.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>MsTeamsChannel</code> <strong>Added</strong></li>
-<li><code>RecurrenceRule.Frequency</code> <strong>Changed</strong></li>
-<li><code>Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-</ul></li>
-<li><code>ConductoroneApi.AccessReviewTemplate.Update()</code>:
+<li><code>ConductoroneApi.AccessReview.List()</code>: <code>response.List[].AccessReview.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>request.Request.AccessReviewTemplateServiceUpdateRequest.AccessReviewTemplate</code> <strong>Changed</strong> (Breaking ⚠️)
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>MsTeamsChannel</code> <strong>Added</strong></li>
-<li><code>RecurrenceRule.Frequency</code> <strong>Changed</strong> (Breaking ⚠️)</li>
-<li><code>Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.AccessReviewTemplate</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>MsTeamsChannel</code> <strong>Added</strong></li>
-<li><code>RecurrenceRule.Frequency</code> <strong>Changed</strong></li>
-<li><code>Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.A2Ui.GetSurfaceProvenance()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AccessReviewReport.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AccessReviewActions.GenerateReport()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpResource.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpResource.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpResource.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpResource.Search()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpResource.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpAccessProfile.SearchAccessProfiles()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementSearch.SearchReachableResourcesForUser()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SessionPolicy.GetEffectiveSessionPolicy()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SessionPolicy.ListUserPolicies()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SessionPolicy.SearchAppUserSessionPolicies()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SessionPolicy.SearchPolicyUsers()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppManagedState.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppManagedState.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppManagedState.Promote()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.BatchDeleteSubjectCompatibility()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.BatchImportSubjectCompatibility()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.Create()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.CreateClient()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.DeleteClient()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.ListClients()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.ParseSamlServiceProviderMetadata()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.RotateClientSecret()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.Search()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoApplication.UpdateClient()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.PlanTypeChange()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.UiConversations.EnsureOnboardingSession()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Feedback.CreateFeedback()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Finding.UpdateFindingAssignee()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FindingSettings.ListFindingSettings()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FindingSettings.UpdateFindingSettings()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FunctionsInvocation.GetResultDownloadUrl()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.SetLimit()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.Suspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppCap.Unsuspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.ClearExtension()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.GrantExtension()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.Search()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.SetLimit()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.Suspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundAssignment.Unsuspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.Pause()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.Resume()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.MyFundLimits.SetLimit()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.Create()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.FreezeTenant()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.SetOrgCeiling()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.UnfreezeTenant()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundPolicy.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.Create()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.Search()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.FundRule.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.Search()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.SetLimit()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.Suspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SubjectAppLimit.Unsuspend()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.GatewayKey.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.GatewayKey.Mint()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.GatewayKey.Revoke()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.ProviderCredential.Clear()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.ProviderCredential.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.ProviderCredential.Set()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.Delete()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.GetProgram()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.GetRunProvenance()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.List()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.Run()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.Save()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.Reporting.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.RoleMiningManagement.EvaluateEntitlementSelection()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.RoleMiningManagement.GetLatestCustomAnalysisResult()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.PaperSecret.SearchSecretsSharedWithMe()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoSettings.Get()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoSettings.ListHistory()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SsoSettings.Update()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.GetAttributionRollups()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.GetDenial()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.GetMySpendStatus()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.GetOverview()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.ResolveEffectiveLimits()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.SpendInsights.SearchDenials()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.TaskActions.RetryProvisioning()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.TbControlPlane.GetDiscoverySnapshot()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.TbControlPlane.GetEgressPolicy()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.TbControlPlane.PushDiscovery()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.TbControlPlane.SaveEgressPolicy()</code>: <strong>Added</strong></li>
-<li><code>ConductoroneApi.A2Ui.ListSurfaces()</code>: <code>response.Surfaces[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Components[].C1MetricCards</code> <strong>Added</strong></li>
-<li><code>Components[].C1Table</code> <strong>Added</strong></li>
-<li><code>HasReportProgram</code> <strong>Added</strong></li>
-<li><code>ReportEditTarget</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AccessReview.Create()</code>:
-
-<ul>
-<li><code>request.Request.ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>response.AccessReview.AccessReview</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>ExclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>Scope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.AccessReview.Get()</code>: <code>response.AccessReview.AccessReview</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>ExclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>Scope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AccessReview.List()</code>: <code>response.List[].AccessReview</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>ExclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>Scope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.AccessReview.Update()</code>:
 
 <ul>
-<li><code>request.Request.AccessReviewServiceUpdateRequest.AccessReview</code> <strong>Changed</strong>
+<li><code>request.Request.AccessReviewServiceUpdateRequest.AccessReview.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>ExclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>Scope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>response.AccessReview.AccessReview</code> <strong>Changed</strong>
+<li><code>response.AccessReview.AccessReview.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>ExclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>Scope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
 </ul></li>
-<li><code>ConductoroneApi.AccessReviewSetupEntitlement.GetCampaignScopeAndEntitlements()</code>:  <code>response.ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AccessReviewSetupEntitlement.SetCampaignScopeAndEntitlements()</code>:
+<li><code>ConductoroneApi.AccessReviewTemplate.Create()</code>:
 
 <ul>
-<li><code>request.Request.AccessReviewSetupEntitlementAndScopeServiceSetRequest.ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>response.ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AccessReviewSetupEntitlement.SetCampaignScopeByResourceType()</code>:
+<li><code>request.Request.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>request.Request.AccessReviewSetScopeByResourceTypeRequest.ScopeV2.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AccessReviewTemplate.Get()</code>: <code>response.AccessReviewTemplate</code> <strong>Changed</strong>
+<li><code>response.AccessReviewTemplate.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>ColumnConfig.OrderedColumns</code> <strong>Added</strong></li>
-<li><code>InclusionScope.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>MsTeamsChannel</code> <strong>Added</strong></li>
-<li><code>RecurrenceRule.Frequency</code> <strong>Changed</strong></li>
-<li><code>Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.GetScopeAndEntitlements()</code>:  <code>response.Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.SetScopeAndEntitlements()</code>:
+</ul></li>
+<li><code>ConductoroneApi.AccessReviewTemplate.Get()</code>: <code>response.AccessReviewTemplate.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>request.Request.AccessReviewTemplateSetupEntitlementServiceSetRequest.Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-<li><code>response.Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AccessReviewTemplateSetupEntitlement.SetScopeByResourceType()</code>:
+<li><code>ConductoroneApi.AccessReviewTemplate.Update()</code>:
 
 <ul>
-<li><code>request.Request.AccessReviewTemplateSetScopeByResourceTypeRequest.Scope.AccountCriteria.AppUserStatuses[].Enum(appUserStatusPending)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppUser.List()</code>: <code>response.List[].AppUser</code> <strong>Changed</strong>
+<li><code>request.Request.AccessReviewTemplateServiceUpdateRequest.AccessReviewTemplate.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AppUser.ListAppUsersForUser()</code>: <code>response.List[].AppUser</code> <strong>Changed</strong>
+<li><code>response.AccessReviewTemplate.ColumnConfig</code> <strong>Changed</strong>
 
 <ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
+<li><code>Columns[].Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
+<li><code>OrderedColumns[].Builtin.Enum(accessReviewTaskColumnResourceDescription)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AppUser.ListOwnedServiceAccounts()</code>: <code>response.List[].AppUser</code> <strong>Changed</strong>
+</ul></li>
+<li><code>ConductoroneApi.AppEntitlementSearch.Search()</code>:
 
 <ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
+<li><code>request.Request.AppResourceTypeRefs</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.AppUser.Search()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AgentStatuses</code> <strong>Added</strong></li>
-<li><code>NhiTypes</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.List[].AppUser</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.AppUser.Update()</code>: <code>response.AppUserView.AppUser</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Apps.Create()</code>:
-
-<ul>
-<li><code>request.Request.MatchBatonRef</code> <strong>Added</strong></li>
-<li><code>response.App.MatchBatonRef</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Apps.Get()</code>:  <code>response.App.MatchBatonRef</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.Apps.List()</code>:  <code>response.List[].MatchBatonRef</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.Apps.Update()</code>:
-
-<ul>
-<li><code>request.Request.UpdateAppRequest.App.MatchBatonRef</code> <strong>Added</strong></li>
-<li><code>response.App.MatchBatonRef</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpTool.Get()</code>: <code>response.Tool</code> <strong>Changed</strong>
-
-<ul>
-<li><code>RequestableViaToolset</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpTool.List()</code>: <code>response.Tools[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>RequestableViaToolset</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpTool.ListHistory()</code>: <code>response.List[].Snapshot</code> <strong>Changed</strong>
-
-<ul>
-<li><code>RequestableViaToolset</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpTool.Search()</code>:
-
-<ul>
-<li><code>request.Request.McpToolServiceSearchRequest.IncludeRequestable</code> <strong>Added</strong></li>
-<li><code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>RequestableViaToolset</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.McpTool.Update()</code>: <code>response.Tool</code> <strong>Changed</strong>
-
-<ul>
-<li><code>RequestableViaToolset</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfile.Create()</code>: <code>response.Profile</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfile.Get()</code>: <code>response.Profile</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfile.GetByAppEntitlementId()</code>: <code>response.Profile</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfile.List()</code>: <code>response.Profiles[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfile.Update()</code>: <code>response.Profile</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpAccessProfileToolBinding.GetAccessProfilesForTools()</code>: <code>response.AccessProfilesForTools[].AccessProfiles[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ConnectorDisplayName</code> <strong>Added</strong></li>
-<li><code>Requestable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlements.Create()</code>:
-
-<ul>
-<li><code>request.Request.CreateAppEntitlementRequest.ProvisionPolicy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DevicePlacement</code> <strong>Added</strong></li>
-<li><code>MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.AppEntitlementView.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlements.Get()</code>:  <code>response.AppEntitlementView.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlements.List()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AppUserId</code> <strong>Added</strong></li>
-<li><code>Q</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlements.ListForAppResource()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlements.ListForAppUser()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlements.ListUsers()</code>: <code>response.List[].AppUser.AppUser</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlements.Update()</code>:
-
-<ul>
-<li><code>request.Request.UpdateAppEntitlementRequest.Entitlement.DeprovisionerPolicy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DevicePlacement</code> <strong>Added</strong></li>
-<li><code>MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.AppEntitlementView.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlementSearch.Search()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementSearch.SearchAppEntitlementsForAppUser()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementSearch.SearchAppEntitlementsWithExpired()</code>: <code>response.List[].AppUser</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AgentStatus</code> <strong>Added</strong></li>
-<li><code>NhiDetail</code> <strong>Added</strong></li>
-<li><code>NhiType</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlementSearch.SearchGrants()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AppEntitlementUserBinding.AppUser.AppUser.AgentStatus</code> <strong>Added</strong></li>
-<li><code>AppEntitlementUserBinding.AppUser.AppUser.NhiDetail</code> <strong>Added</strong></li>
-<li><code>AppEntitlementUserBinding.AppUser.AppUser.NhiType</code> <strong>Added</strong></li>
-<li><code>Entitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppEntitlementUserBinding.SearchPastGrants()</code>:  <code>response.List[].History.Id</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpServer.Get()</code>:  <code>response.McpServer.EndpointUrlLocked</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpServer.GetCatalog()</code>: <code>response.CatalogEntry</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AuthModes[].ClientIdMode</code> <strong>Added</strong></li>
-<li><code>AuthModes[].OptionalScopes</code> <strong>Added</strong></li>
-<li><code>DefaultToolPrefix</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpServer.List()</code>:
-
-<ul>
-<li><code>request.Request.Query</code> <strong>Added</strong></li>
-<li><code>response.List[].EndpointUrlLocked</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpServer.ListCatalog()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AuthModes[].ClientIdMode</code> <strong>Added</strong></li>
-<li><code>AuthModes[].OptionalScopes</code> <strong>Added</strong></li>
-<li><code>DefaultToolPrefix</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.McpServer.Register()</code>:
-
-<ul>
-<li><code>request.Request.McpServerServiceRegisterRequest.AccessProfileIds</code> <strong>Added</strong></li>
-<li><code>response</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccessProfilesAttached</code> <strong>Added</strong></li>
-<li><code>McpServer.EndpointUrlLocked</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.McpServer.SearchWithToolCount()</code>:  <code>response.List[].McpServer.EndpointUrlLocked</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpServer.Update()</code>:  <code>response.McpServer.EndpointUrlLocked</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.McpServer.UpdateCredentials()</code>:  <code>response.McpServer.EndpointUrlLocked</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppResourceType.CreateManuallyManagedResourceType()</code>:
-
-<ul>
-<li><code>request.Request.CreateManuallyManagedResourceTypeRequest.ResourceType.Enum(clawAgent)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Auth.Introspect()</code>:  <code>response.DisabledModules</code> <strong>Added</strong></li>
 <li><code>ConductoroneApi.Automation.CreateAutomation()</code>:
 
 <ul>
-<li><code>request.Request.AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-<li><code>response.Automation.AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
+<li><code>request.Request.AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Automation.GetAutomation()</code>:  <code>response.Automation.AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.Automation.ListAutomations()</code>:  <code>response.List[].AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
+<li><code>response.Automation.AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
+</ul></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.GetAutomation()</code>: <code>response.Automation.AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Automation.ListAutomations()</code>: <code>response.List[].AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
+</ul></li>
 <li><code>ConductoroneApi.Automation.UpdateAutomation()</code>:
 
 <ul>
-<li><code>request.Request.UpdateAutomationRequest.Automation.AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-<li><code>response.Automation.AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.Create()</code>:
+<li><code>request.Request.UpdateAutomationRequest.Automation.AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
 
 <ul>
-<li><code>request.Request.Type</code> <strong>Added</strong></li>
-<li><code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>response.Automation.AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
 
 <ul>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Type</code> <strong>Added</strong></li>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
 </ul></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.Get()</code>: <code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Type</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.List()</code>: <code>response.List[].RequestCatalog</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Type</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.ListEntitlementsForAccess()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.ListEntitlementsPerCatalog()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.RequestCatalogManagement.Update()</code>:
-
-<ul>
-<li><code>request.Request.RequestCatalogManagementServiceUpdateRequest.Catalog</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Type</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.RequestCatalogView.RequestCatalog</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccessEntitlements[].DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Type</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.ConnectorCatalog.ConfigurationSchema()</code>: <code>response.FormSchema.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.Finding.BulkCreateFindingTasks()</code>:
 
 <ul>
-<li><code>request.Request.SearchRequest</code> <strong>Changed</strong>
+<li><code>request.Request.SearchRequest.FindingTypes[].Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Finding.BulkUpdateFindingState()</code>:
 
 <ul>
-<li><code>AssigneeIdentityUserIds</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeConnectorSyncFailing)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeCredentialExpiring)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeCredentialPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeDeactivatedOwner)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeDecoyPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeShadowMcp)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeUnusedSecret)</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.Finding.BulkUpdateFindingState()</code>: <code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AssignOwner.AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>Reprocess</code> <strong>Added</strong></li>
-<li><code>SearchRequest.AssigneeIdentityUserIds</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeConnectorSyncFailing)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeCredentialExpiring)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeCredentialPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeDeactivatedOwner)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeDecoyPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeShadowMcp)</code> <strong>Added</strong></li>
-<li><code>SearchRequest.FindingTypes[].Enum(findingTypeUnusedSecret)</code> <strong>Added</strong></li>
+<li><code>request.Request.SearchRequest.FindingTypes[].Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.Finding.CreateFinding()</code>: <code>response.Finding</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Annotations</code> <strong>Added</strong></li>
-<li><code>AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailingEvidence</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailing</code> <strong>Added</strong></li>
-<li><code>CredentialExpiringEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialExpiring</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwnerEvidence</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwner</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>ObjectPermissions</code> <strong>Added</strong></li>
-<li><code>ShadowMcpEvidence</code> <strong>Added</strong></li>
-<li><code>ShadowMcp</code> <strong>Added</strong></li>
-<li><code>UnusedSecretEvidence</code> <strong>Added</strong></li>
-<li><code>UnusedSecret</code> <strong>Added</strong></li>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.Finding.CreateFindingTask()</code>: <code>response.Finding</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Annotations</code> <strong>Added</strong></li>
-<li><code>AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailingEvidence</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailing</code> <strong>Added</strong></li>
-<li><code>CredentialExpiringEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialExpiring</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwnerEvidence</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwner</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>ObjectPermissions</code> <strong>Added</strong></li>
-<li><code>ShadowMcpEvidence</code> <strong>Added</strong></li>
-<li><code>ShadowMcp</code> <strong>Added</strong></li>
-<li><code>UnusedSecretEvidence</code> <strong>Added</strong></li>
-<li><code>UnusedSecret</code> <strong>Added</strong></li>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.Finding.GetFinding()</code>: <code>response.Finding</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Annotations</code> <strong>Added</strong></li>
-<li><code>AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailingEvidence</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailing</code> <strong>Added</strong></li>
-<li><code>CredentialExpiringEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialExpiring</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwnerEvidence</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwner</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>ObjectPermissions</code> <strong>Added</strong></li>
-<li><code>ShadowMcpEvidence</code> <strong>Added</strong></li>
-<li><code>ShadowMcp</code> <strong>Added</strong></li>
-<li><code>UnusedSecretEvidence</code> <strong>Added</strong></li>
-<li><code>UnusedSecret</code> <strong>Added</strong></li>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
+</ul></li>
+<li><code>ConductoroneApi.Finding.UpdateFindingAssignee()</code>: <code>response.Finding</code> <strong>Changed</strong>
+
+<ul>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.Finding.UpdateFindingState()</code>: <code>response.Finding</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Annotations</code> <strong>Added</strong></li>
-<li><code>AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailingEvidence</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailing</code> <strong>Added</strong></li>
-<li><code>CredentialExpiringEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialExpiring</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwnerEvidence</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwner</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>ObjectPermissions</code> <strong>Added</strong></li>
-<li><code>ShadowMcpEvidence</code> <strong>Added</strong></li>
-<li><code>ShadowMcp</code> <strong>Added</strong></li>
-<li><code>UnusedSecretEvidence</code> <strong>Added</strong></li>
-<li><code>UnusedSecret</code> <strong>Added</strong></li>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.FindingRoutingRule.CreateFindingRoutingRule()</code>:
 
 <ul>
-<li><code>request.Request.RoutingRule</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
+<li><code>request.Request.RoutingRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>response.RoutingRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>response.RoutingRule</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.FindingRoutingRule.GetFindingRoutingRule()</code>: <code>response.RoutingRule</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.FindingRoutingRule.ListFindingRoutingRules()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
-</ul></li>
+<li><code>ConductoroneApi.FindingRoutingRule.GetFindingRoutingRule()</code>:  <code>response.RoutingRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingRoutingRule.ListFindingRoutingRules()</code>:  <code>response.List[].FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 <li><code>ConductoroneApi.FindingRoutingRule.UpdateFindingRoutingRule()</code>:
 
 <ul>
-<li><code>request.Request.UpdateFindingRoutingRuleRequest.RoutingRule</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.RoutingRule</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Dispatchers</code> <strong>Added</strong></li>
-<li><code>FindingType</code> <strong>Added</strong></li>
-</ul></li>
+<li><code>request.Request.UpdateFindingRoutingRuleRequest.RoutingRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>response.RoutingRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.FindingSearch.Search()</code>:
 
 <ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AssigneeIdentityUserIds</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeConnectorSyncFailing)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeCredentialExpiring)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeCredentialPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeDeactivatedOwner)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeDecoyPubliclyExposed)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeShadowMcp)</code> <strong>Added</strong></li>
-<li><code>FindingTypes[].Enum(findingTypeUnusedSecret)</code> <strong>Added</strong></li>
-</ul></li>
+<li><code>request.Request.FindingTypes[].Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 <li><code>response.List[]</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Annotations</code> <strong>Added</strong></li>
-<li><code>AssigneeIdentityUserId</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailingEvidence</code> <strong>Added</strong></li>
-<li><code>ConnectorSyncFailing</code> <strong>Added</strong></li>
-<li><code>CredentialExpiringEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialExpiring</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>CredentialPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwnerEvidence</code> <strong>Added</strong></li>
-<li><code>DeactivatedOwner</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposedEvidence</code> <strong>Added</strong></li>
-<li><code>DecoyPubliclyExposed</code> <strong>Added</strong></li>
-<li><code>ObjectPermissions</code> <strong>Added</strong></li>
-<li><code>ShadowMcpEvidence</code> <strong>Added</strong></li>
-<li><code>ShadowMcp</code> <strong>Added</strong></li>
-<li><code>UnusedSecretEvidence</code> <strong>Added</strong></li>
-<li><code>UnusedSecret</code> <strong>Added</strong></li>
+<li><code>ShadowApp</code> <strong>Added</strong></li>
+<li><code>UsageResourceTarget</code> <strong>Added</strong></li>
 </ul></li>
+</ul></li>
+<li><code>ConductoroneApi.FindingSettings.ListFindingSettings()</code>:  <code>response.List[].FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingSettings.UpdateFindingSettings()</code>:
+
+<ul>
+<li><code>request.Request.Settings[].FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>response.List[].FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
 <li><code>ConductoroneApi.FindingTransformationRule.CreateFindingTransformationRule()</code>:
 
 <ul>
-<li><code>request.Request.TransformationRule.FindingType</code> <strong>Added</strong></li>
-<li><code>response.TransformationRule.FindingType</code> <strong>Added</strong></li>
+<li><code>request.Request.TransformationRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>response.TransformationRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.FindingTransformationRule.GetFindingTransformationRule()</code>:  <code>response.TransformationRule.FindingType</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.FindingTransformationRule.ListFindingTransformationRules()</code>:  <code>response.List[].FindingType</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingTransformationRule.GetFindingTransformationRule()</code>:  <code>response.TransformationRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FindingTransformationRule.ListFindingTransformationRules()</code>:  <code>response.List[].FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 <li><code>ConductoroneApi.FindingTransformationRule.UpdateFindingTransformationRule()</code>:
 
 <ul>
-<li><code>request.Request.UpdateFindingTransformationRuleRequest.TransformationRule.FindingType</code> <strong>Added</strong></li>
-<li><code>response.TransformationRule.FindingType</code> <strong>Added</strong></li>
+<li><code>request.Request.UpdateFindingTransformationRuleRequest.TransformationRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
+<li><code>response.TransformationRule.FindingType.Enum(findingTypeShadowApp)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Functions.CreateFunction()</code>:
+<li><code>ConductoroneApi.FundPolicy.Create()</code>:
 
 <ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.Function</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>HookRefs</code> <strong>Added</strong></li>
-<li><code>WorkflowTemplateRefs</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.Functions.GetFunction()</code>: <code>response.Function</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>HookRefs</code> <strong>Added</strong></li>
-<li><code>WorkflowTemplateRefs</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Functions.ListFunctions()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>HookRefs</code> <strong>Added</strong></li>
-<li><code>WorkflowTemplateRefs</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Functions.UpdateFunction()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>CommitMessage</code> <strong>Added</strong></li>
-<li><code>Content</code> <strong>Added</strong></li>
-<li><code>Function.BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>Function.FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Commit</code> <strong>Added</strong></li>
-<li><code>Function.BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>Function.FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>Function.HookRefs</code> <strong>Added</strong></li>
-<li><code>Function.WorkflowTemplateRefs</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.FunctionsInvocation.Get()</code>: <code>response.Invocation</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ResultRef</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancellationRequested)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancelled)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusUnknown)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.FunctionsInvocation.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ResultRef</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancellationRequested)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancelled)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusUnknown)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.FunctionsInvocationSearch.Search()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ResultRef</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancellationRequested)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusCancelled)</code> <strong>Added</strong></li>
-<li><code>Status.Enum(functionInvocationStatusUnknown)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Hooks.Create()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.Hook</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.Hooks.Get()</code>: <code>response.Hook</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Hooks.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Hooks.Update()</code>:
-
-<ul>
-<li><code>request.Request.HooksServiceUpdateRequest.Hook</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.Hook</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.Policies.Create()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.Policy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.Policies.Get()</code>: <code>response.Policy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Policies.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Policies.Update()</code>:
-
-<ul>
-<li><code>request.Request.UpdatePolicyRequest.Policy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.Policy</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestSchema.Create()</code>:
-
-<ul>
-<li><code>request.Request.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.RequestSchema.Form.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestSchema.Get()</code>: <code>response.RequestSchema.Form.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestSchema.Update()</code>:
-
-<ul>
-<li><code>request.Request.RequestSchemaServiceUpdateRequest.RequestSchema.Form.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.RequestSchema.Form.Fields[].StringField</code> <strong>Changed</strong>
-
-<ul>
-<li><code>DateField</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.RoleMiningManagement.GetCustomAnalysisResult()</code>: <code>response</code> <strong>Changed</strong>
-
-<ul>
-<li><code>CompletedAt</code> <strong>Added</strong></li>
-<li><code>CreatedAt</code> <strong>Added</strong></li>
-<li><code>CreatedByUserId</code> <strong>Added</strong></li>
-<li><code>CutoffImpactPoints</code> <strong>Added</strong></li>
-<li><code>ProfileFilters</code> <strong>Added</strong></li>
-<li><code>SupersededByResultId</code> <strong>Added</strong></li>
-<li><code>TerminalReason</code> <strong>Added</strong></li>
-<li><code>UpdatedAt</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.RoleMiningManagement.ListCustomAnalysisResults()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>CreatedByUserId</code> <strong>Added</strong></li>
-<li><code>SupersededByResultId</code> <strong>Added</strong></li>
-<li><code>TerminalReason</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AppSearch.Search()</code>:  <code>response.List[].MatchBatonRef</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AutomationSearch.SearchAutomationTemplateVersions()</code>:  <code>response.List[].AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AutomationSearch.SearchAutomations()</code>:  <code>response.List[].AutomationSteps[].CreateRevokeTasksV2.GrantSourceFilter</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.FindingAudit.Search()</code>:
-
-<ul>
-<li><code>request.Request.EventTypes[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Enum(findingAuditEventTypeAssigneeChanged)</code> <strong>Added</strong></li>
-<li><code>Enum(findingAuditEventTypeReprocessCompleted)</code> <strong>Added</strong></li>
-<li><code>Enum(findingAuditEventTypeReprocessRequested)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.List[].EventType</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Enum(findingAuditEventTypeAssigneeChanged)</code> <strong>Added</strong></li>
-<li><code>Enum(findingAuditEventTypeReprocessCompleted)</code> <strong>Added</strong></li>
-<li><code>Enum(findingAuditEventTypeReprocessRequested)</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.FunctionsSearch.Search()</code>:
-
-<ul>
-<li><code>request.Request.FunctionTypes[].Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BrowserEnabled</code> <strong>Added</strong></li>
-<li><code>FunctionType.Enum(functionTypeConnector)</code> <strong>Added</strong></li>
-<li><code>HookRefs</code> <strong>Added</strong></li>
-<li><code>WorkflowTemplateRefs</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.HooksSearch.Search()</code>: <code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BuiltinPattern.BlockOutput</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.BlockToolCall</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.EncodedContentGuard</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.LinkFilter</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PreToolBlock</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.PromptInjectionScan</code> <strong>Added</strong></li>
-<li><code>BuiltinPattern.SecretsMasking</code> <strong>Added</strong></li>
-<li><code>Event.Enum(hookEventTypePreOutput)</code> <strong>Added</strong></li>
-<li><code>JsonPatch</code> <strong>Added</strong></li>
-<li><code>ManagedByGuardrails</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.ExternalClientSearch.Search()</code>:  <code>response.List[].ClientIdType.Enum(clientIdTypeApp)</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.PolicySearch.Search()</code>:
-
-<ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>ScopeAppEntitlementId</code> <strong>Added</strong></li>
-<li><code>ScopeAppId</code> <strong>Added</strong></li>
-<li><code>ScopeObjectType</code> <strong>Added</strong></li>
-<li><code>ScopeSlot</code> <strong>Added</strong></li>
-<li><code>ScopeView</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.List[]</code> <strong>Changed</strong>
-
-<ul>
-<li><code>BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Form.Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>PolicySteps.Map&lt;PolicySteps&gt;.Steps[].Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Scope</code> <strong>Added</strong></li>
-</ul></li>
+<li><code>request.Request.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.RequestCatalogSearch.SearchEntitlements()</code>:  <code>response.List[].Entitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.TaskSearch.Search()</code>:
+<li><code>ConductoroneApi.FundPolicy.FreezeTenant()</code>:  <code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FundPolicy.Get()</code>:  <code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FundPolicy.ListHistory()</code>:  <code>response.List[].Snapshot.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FundPolicy.SetOrgCeiling()</code>:  <code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FundPolicy.UnfreezeTenant()</code>:  <code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.FundPolicy.Update()</code>:
 
 <ul>
-<li><code>request.Request</code> <strong>Changed</strong>
-
-<ul>
-<li><code>AccountStatuses</code> <strong>Added</strong></li>
-<li><code>TaskTypes[].Action.CredentialIssue</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.List[].Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.UserSearch.Search()</code>:
-
-<ul>
-<li><code>request.Request.SourceAppIds</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.AiGovernanceSettings.Get()</code>:  <code>response.AiGovernanceSettings.UntrustedJudgeDisable</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AiGovernanceSettings.ListHistory()</code>:  <code>response.List[].Snapshot.UntrustedJudgeDisable</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AiGovernanceSettings.Update()</code>:
-
-<ul>
-<li><code>request.Request.AiGovernanceSettings.UntrustedJudgeDisable</code> <strong>Added</strong></li>
-<li><code>response.AiGovernanceSettings.UntrustedJudgeDisable</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.OrgNotificationSettings.Get()</code>: <code>response.OrgNotificationSettings.ChannelSettings</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.OrgNotificationSettings.Update()</code>:
-
-<ul>
-<li><code>request.Request.ChannelSettings</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
+<li><code>request.Request.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
+<li><code>response.Policy.SpendRemedyRequestPolicyId</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>response.OrgNotificationSettings.ChannelSettings</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Reporting.Get()</code>: <code>response</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
+<li><code>LatestRun.SurfaceSnapshot.SavedReportId</code> <strong>Added</strong></li>
+<li><code>Report.Description</code> <strong>Added</strong></li>
+<li><code>Report.LatestRunSummary</code> <strong>Added</strong></li>
 </ul></li>
-</ul></li>
-<li><code>ConductoroneApi.UserNotificationSettings.Get()</code>: <code>response.UserNotificationSettings.ChannelSettings</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Reporting.List()</code>: <code>response.List[]</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
+<li><code>Description</code> <strong>Added</strong></li>
+<li><code>LatestRunSummary</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.UserNotificationSettings.Update()</code>:
-
-<ul>
-<li><code>request.Request.ChannelSettings</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Reporting.Run()</code>:  <code>response.Run.SurfaceSnapshot.SavedReportId</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Reporting.Save()</code>:
 
 <ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>response.UserNotificationSettings.ChannelSettings</code> <strong>Changed</strong>
+<li><code>request.Request.Description</code> <strong>Added</strong></li>
+<li><code>response.Report</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Email.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Email.System</code> <strong>Added</strong></li>
-<li><code>Slack.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Slack.System</code> <strong>Added</strong></li>
-<li><code>Teams.RequestCreated</code> <strong>Added</strong></li>
-<li><code>Teams.System</code> <strong>Added</strong></li>
+<li><code>Description</code> <strong>Added</strong></li>
+<li><code>LatestRunSummary</code> <strong>Added</strong></li>
 </ul></li>
-</ul></li>
-<li><code>ConductoroneApi.RequestSettings.Get()</code>:  <code>response.RequestSettings.MaxBulkEntitlementSelection</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.RequestSettings.Update()</code>:
-
-<ul>
-<li><code>request.Request.RequestSettings.MaxBulkEntitlementSelection</code> <strong>Added</strong></li>
-<li><code>response.RequestSettings.MaxBulkEntitlementSelection</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Task.CreateActionTask()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Reporting.Update()</code>:
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.Task.CreateGrantTask()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>request.Request.ReportingServiceUpdateRequest.Description</code> <strong>Added</strong></li>
+<li><code>response.Report</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>Description</code> <strong>Added</strong></li>
+<li><code>LatestRunSummary</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Task.CreateOffboardingTask()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Task.CreateResourceActionTask()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.AutomationSearch.SearchAutomationTemplateVersions()</code>: <code>response.List[].AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Task.CreateRevokeTask()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.AutomationSearch.SearchAutomations()</code>: <code>response.List[].AutomationSteps[].CreateRevokeTasksV2</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>ExclusionCriteria.ExcludedResourceTypeRefs</code> <strong>Added</strong></li>
+<li><code>InclusionCriteria.ResourceTypeRefs</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.Task.Get()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.PaperSecret.SearchSecretsSharedWithMe()</code>:
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>request.Request.SharingMode</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskAudit.List()</code>:
+<li><code>ConductoroneApi.TaskSearch.Search()</code>:  <code>response.List[].Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Principal.AddBinding()</code>:
 
 <ul>
-<li><code>request.Request.ExcludeComments</code> <strong>Added</strong></li>
-<li><code>response</code> <strong>Changed</strong>
-
-<ul>
-<li><code>List[].AccountDeleted</code> <strong>Added</strong></li>
-<li><code>List[].ActionSubmitted.Action.ActionType.Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>List[].AutomationTriggered</code> <strong>Added</strong></li>
-<li><code>List[].ConditionalPolicyExecutionResult.ChainDepth</code> <strong>Added</strong></li>
-<li><code>List[].ConditionalPolicyExecutionResult.OutcomePolicyId</code> <strong>Added</strong></li>
-<li><code>List[].ConditionalPolicyExecutionResult.PolicyId</code> <strong>Added</strong></li>
-<li><code>List[].ProvisionEntitlementMergeCompleted</code> <strong>Added</strong></li>
-<li><code>List[].ProvisionEntitlementMergeTimedOut</code> <strong>Added</strong></li>
-<li><code>List[].ProvisionWaitingForEntitlementMerge</code> <strong>Added</strong></li>
-<li><code>List[].WebhookSuccess.Comment</code> <strong>Added</strong></li>
-<li><code>TotalCount</code> <strong>Added</strong></li>
-</ul></li>
-</ul></li>
-<li><code>ConductoroneApi.TaskActions.Approve()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>request.Request.Subject</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>AuthzenServer</code> <strong>Added</strong></li>
+<li><code>Edge</code> <strong>Added</strong></li>
+<li><code>SsoApplication</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.ApproveWithStepUp()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.Close()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Principal.DeleteBinding()</code>:
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.TaskActions.Comment()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>request.Request.Subject</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>AuthzenServer</code> <strong>Added</strong></li>
+<li><code>Edge</code> <strong>Added</strong></li>
+<li><code>SsoApplication</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.Deny()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.EscalateToEmergencyAccess()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.Principal.ListBindings()</code>:
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.TaskActions.HardReset()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>request.Request.Subject</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>AuthzenServer</code> <strong>Added</strong></li>
+<li><code>Edge</code> <strong>Added</strong></li>
+<li><code>SsoApplication</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.ProcessNow()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.Reassign()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.SessionSettings.Get()</code>: <code>response.SessionSettings</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>EnableIdleTimeout</code> <strong>Added</strong></li>
+<li><code>IdleTimeout</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.Restart()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>ConductoroneApi.SessionSettings.Update()</code>:
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
-</ul></li>
-<li><code>ConductoroneApi.TaskActions.SkipStep()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>request.Request.SessionSettings</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>EnableIdleTimeout</code> <strong>Added</strong></li>
+<li><code>IdleTimeout</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.UpdateGrantDuration()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
+<li><code>response.SessionSettings</code> <strong>Changed</strong>
 
 <ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
+<li><code>EnableIdleTimeout</code> <strong>Added</strong></li>
+<li><code>IdleTimeout</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.TaskActions.UpdateRequestData()</code>: <code>response.TaskView.Task</code> <strong>Changed</strong>
-
-<ul>
-<li><code>Actions[].Enum(taskActionTypeRetryProvisioning)</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.DateField</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.ExcludeUserIds</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.IncludeDeactivated</code> <strong>Added</strong></li>
-<li><code>Form.Fields[].StringField.PickerField.C1UserPicker.UserIds</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.Provision.ProvisionPolicy.MultiStep.ProvisionSteps[].DevicePlacement</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.State.Enum(provisionInstanceStateDevicePlacement)</code> <strong>Added</strong></li>
-<li><code>Policy.Current.Provision.WaitingOn</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.BaselinePolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].PolicyId</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Rules[].StepKey</code> <strong>Added</strong></li>
-<li><code>Policy.Policy.Scope</code> <strong>Added</strong></li>
-<li><code>Type.Action.ActionInstance.ConnectorActionRef.Operation.Enum(operationIssueCredential)</code> <strong>Added</strong></li>
-<li><code>Type.Action.CredentialIssue</code> <strong>Added</strong></li>
-<li><code>Type.Action.Type.Enum(typeCredentialIssue)</code> <strong>Added</strong></li>
 </ul></li>
-<li><code>ConductoroneApi.ConnectorOwnersV2.CreateEntitlementOwner()</code>:  <code>response.ConnectorOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.ConnectorOwnersV2.GetEntitlementOwner()</code>:  <code>response.ConnectorOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.ConnectorOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementOwnersV2.CreateEntitlementOwner()</code>:  <code>response.AppEntitlementOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementOwnersV2.GetEntitlementOwner()</code>:  <code>response.AppEntitlementOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppEntitlementOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppOwnersV2.CreateEntitlementOwner()</code>:  <code>response.AppOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppOwnersV2.GetEntitlementOwner()</code>:  <code>response.AppOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppResourceOwnersV2.CreateEntitlementOwner()</code>:  <code>response.AppResourceOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppResourceOwnersV2.GetEntitlementOwner()</code>:  <code>response.AppResourceOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppResourceOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppUserOwnersV2.CreateEntitlementOwner()</code>:  <code>response.AppUserOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.AppUserOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.UserOwnersV2.CreateEntitlementOwner()</code>:  <code>response.UserOwnerEntitlement.AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
-<li><code>ConductoroneApi.UserOwnersV2.SearchEntitlementOwners()</code>:  <code>response.List[].AppEntitlement.DeprovisionerPolicy.DevicePlacement</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateActionTask()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateGrantTask()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateOffboardingTask()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateResourceActionTask()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.CreateRevokeTask()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.Task.Get()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Approve()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.ApproveWithStepUp()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Close()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Comment()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Deny()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.EscalateToEmergencyAccess()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.HardReset()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.ProcessNow()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Reassign()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.Restart()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.RetryProvisioning()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.SkipStep()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.UpdateGrantDuration()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
+<li><code>ConductoroneApi.TaskActions.UpdateRequestData()</code>:  <code>response.TaskView.Task.Type.Action.Type.Enum(typeSpendRemedy)</code> <strong>Added</strong></li>
 </ul>
 </body>
 </html>
