@@ -1,0 +1,12 @@
+# SpendRemedyControlsSnapshot
+
+The SpendRemedyControlsSnapshot message.
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `Controls`                                                                                                   | [*shared.FundsSpendControls](../../../pkg/models/shared/fundsspendcontrols.md)                               | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `Period`                                                                                                     | [*shared.SpendRemedyControlsSnapshotPeriod](../../../pkg/models/shared/spendremedycontrolssnapshotperiod.md) | :heavy_minus_sign:                                                                                           | The period field.                                                                                            |
+| `Version`                                                                                                    | `*int64`                                                                                                     | :heavy_minus_sign:                                                                                           | The version field.                                                                                           |

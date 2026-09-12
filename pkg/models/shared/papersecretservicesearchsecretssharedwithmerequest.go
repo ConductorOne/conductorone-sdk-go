@@ -2,7 +2,7 @@
 
 package shared
 
-// PaperSecretServiceSearchSecretsSharedWithMeRequestSecretType - Filter by secret type (optional)
+// PaperSecretServiceSearchSecretsSharedWithMeRequestSecretType - Filter by secret type. Unspecified returns all secret types.
 type PaperSecretServiceSearchSecretsSharedWithMeRequestSecretType string
 
 const (
@@ -20,6 +20,30 @@ func (e *PaperSecretServiceSearchSecretsSharedWithMeRequestSecretType) IsExact()
 	if e != nil {
 		switch *e {
 		case "SECRET_TYPE_UNSPECIFIED", "SECRET_TYPE_TEXT", "SECRET_TYPE_FILE":
+			return true
+		}
+	}
+	return false
+}
+
+// PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode - Filter by sharing mode. Unspecified returns internal secrets; external returns none.
+type PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode string
+
+const (
+	PaperSecretServiceSearchSecretsSharedWithMeRequestSharingModePaperVaultSharingModeUnspecified PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode = "PAPER_VAULT_SHARING_MODE_UNSPECIFIED"
+	PaperSecretServiceSearchSecretsSharedWithMeRequestSharingModePaperVaultSharingModeInternal    PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode = "PAPER_VAULT_SHARING_MODE_INTERNAL"
+	PaperSecretServiceSearchSecretsSharedWithMeRequestSharingModePaperVaultSharingModeExternal    PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode = "PAPER_VAULT_SHARING_MODE_EXTERNAL"
+)
+
+func (e PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode) ToPointer() *PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "PAPER_VAULT_SHARING_MODE_UNSPECIFIED", "PAPER_VAULT_SHARING_MODE_INTERNAL", "PAPER_VAULT_SHARING_MODE_EXTERNAL":
 			return true
 		}
 	}
@@ -65,9 +89,11 @@ type PaperSecretServiceSearchSecretsSharedWithMeRequest struct {
 	PageToken *string `json:"pageToken,omitempty"`
 	// Fuzzy search by display name
 	Query *string `json:"query,omitempty"`
-	// Filter by secret type (optional)
+	// Filter by secret type. Unspecified returns all secret types.
 	SecretType *PaperSecretServiceSearchSecretsSharedWithMeRequestSecretType `json:"secretType,omitempty"`
-	// Filter by status (optional)
+	// Filter by sharing mode. Unspecified returns internal secrets; external returns none.
+	SharingMode *PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode `json:"sharingMode,omitempty"`
+	// Filter by status. Empty returns all statuses.
 	Statuses []PaperSecretServiceSearchSecretsSharedWithMeRequestStatuses `json:"statuses,omitempty"`
 }
 
@@ -104,6 +130,13 @@ func (p *PaperSecretServiceSearchSecretsSharedWithMeRequest) GetSecretType() *Pa
 		return nil
 	}
 	return p.SecretType
+}
+
+func (p *PaperSecretServiceSearchSecretsSharedWithMeRequest) GetSharingMode() *PaperSecretServiceSearchSecretsSharedWithMeRequestSharingMode {
+	if p == nil {
+		return nil
+	}
+	return p.SharingMode
 }
 
 func (p *PaperSecretServiceSearchSecretsSharedWithMeRequest) GetStatuses() []PaperSecretServiceSearchSecretsSharedWithMeRequestStatuses {

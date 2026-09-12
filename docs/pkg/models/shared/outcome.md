@@ -1,6 +1,6 @@
 # Outcome
 
-The action ConductorOne took in response to this event.
+The outcome field.
 
 ## Example Usage
 
@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.OutcomeSsfEventOutcomeUnspecified
+value := shared.OutcomeGoLinkResolveOutcomeUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.Outcome("custom_value")
@@ -18,13 +18,12 @@ custom := shared.Outcome("custom_value")
 
 ## Values
 
-| Name                                        | Value                                       |
-| ------------------------------------------- | ------------------------------------------- |
-| `OutcomeSsfEventOutcomeUnspecified`         | SSF_EVENT_OUTCOME_UNSPECIFIED               |
-| `OutcomeSsfEventOutcomeSessionsRevoked`     | SSF_EVENT_OUTCOME_SESSIONS_REVOKED          |
-| `OutcomeSsfEventOutcomeLogged`              | SSF_EVENT_OUTCOME_LOGGED                    |
-| `OutcomeSsfEventOutcomePrincipalNotFound`   | SSF_EVENT_OUTCOME_PRINCIPAL_NOT_FOUND       |
-| `OutcomeSsfEventOutcomeVerified`            | SSF_EVENT_OUTCOME_VERIFIED                  |
-| `OutcomeSsfEventOutcomeStreamStatusUpdated` | SSF_EVENT_OUTCOME_STREAM_STATUS_UPDATED     |
-| `OutcomeSsfEventOutcomeUnrecognized`        | SSF_EVENT_OUTCOME_UNRECOGNIZED              |
-| `OutcomeSsfEventOutcomeError`               | SSF_EVENT_OUTCOME_ERROR                     |
+| Name                                             | Value                                            |
+| ------------------------------------------------ | ------------------------------------------------ |
+| `OutcomeGoLinkResolveOutcomeUnspecified`         | GO_LINK_RESOLVE_OUTCOME_UNSPECIFIED              |
+| `OutcomeGoLinkResolveOutcomeRedirect`            | GO_LINK_RESOLVE_OUTCOME_REDIRECT                 |
+| `OutcomeGoLinkResolveOutcomePrerequisiteMissing` | GO_LINK_RESOLVE_OUTCOME_PREREQUISITE_MISSING     |
+| `OutcomeGoLinkResolveOutcomeChooser`             | GO_LINK_RESOLVE_OUTCOME_CHOOSER                  |
+| `OutcomeGoLinkResolveOutcomeAction`              | GO_LINK_RESOLVE_OUTCOME_ACTION                   |
+| `OutcomeGoLinkResolveOutcomeNotFound`            | GO_LINK_RESOLVE_OUTCOME_NOT_FOUND                |
+| `OutcomeGoLinkResolveOutcomeDisabled`            | GO_LINK_RESOLVE_OUTCOME_DISABLED                 |

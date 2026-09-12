@@ -1,0 +1,16 @@
+# SpendRemedyStatus
+
+Requester-safe status contains no requested terms or shared financial controls.
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `AppliedAt`                                                                            | [*time.Time](https://pkg.go.dev/time#Time)                                             | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `BlockingReason`                                                                       | [*shared.BlockingReason](../../../pkg/models/shared/blockingreason.md)                 | :heavy_minus_sign:                                                                     | The blockingReason field.                                                              |
+| `BlockingScope`                                                                        | [*shared.BlockingScope](../../../pkg/models/shared/blockingscope.md)                   | :heavy_minus_sign:                                                                     | The blockingScope field.                                                               |
+| `CurrentRequest`                                                                       | [*shared.SpendRemedyRef](../../../pkg/models/shared/spendremedyref.md)                 | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `Remedy`                                                                               | [*shared.SpendRemedyRef](../../../pkg/models/shared/spendremedyref.md)                 | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `State`                                                                                | [*shared.SpendRemedyStatusState](../../../pkg/models/shared/spendremedystatusstate.md) | :heavy_minus_sign:                                                                     | The state field.                                                                       |
+| `UnavailableReason`                                                                    | `*string`                                                                              | :heavy_minus_sign:                                                                     | The unavailableReason field.                                                           |

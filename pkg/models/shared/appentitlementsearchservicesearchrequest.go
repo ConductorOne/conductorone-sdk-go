@@ -35,6 +35,12 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	Alias *string `json:"alias,omitempty"`
 	// Search for app entitlements contained in any of these apps.
 	AppIds []string `json:"appIds,omitempty"`
+	// Search for app entitlements whose resource type matches any of these real
+	//  (app_id, id) AppResourceType pairs — unlike resource_type_ids, which
+	//  matches by name and can't distinguish two apps' same-named or
+	//  system-wide-shared-id resource types (e.g. Credential). Takes precedence
+	//  over resource_type_ids when set.
+	AppResourceTypeRefs []ResourceTypeRef `json:"appResourceTypeRefs,omitempty"`
 	// Search for app entitlements that are granted to any of these app user ids.
 	AppUserIds []string `json:"appUserIds,omitempty"`
 	// Search for app entitlements that are part of these compliance frameworks.
@@ -103,6 +109,13 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetAppIds() []string {
 		return nil
 	}
 	return a.AppIds
+}
+
+func (a *AppEntitlementSearchServiceSearchRequest) GetAppResourceTypeRefs() []ResourceTypeRef {
+	if a == nil {
+		return nil
+	}
+	return a.AppResourceTypeRefs
 }
 
 func (a *AppEntitlementSearchServiceSearchRequest) GetAppUserIds() []string {

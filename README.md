@@ -369,6 +369,14 @@ func main() {
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
+### [AuthzenServer](docs/sdks/authzenserver/README.md)
+
+* [Create](docs/sdks/authzenserver/README.md#create) - Create
+* [Delete](docs/sdks/authzenserver/README.md#delete) - Delete
+* [Get](docs/sdks/authzenserver/README.md#get) - Get
+* [List](docs/sdks/authzenserver/README.md#list) - List
+* [Update](docs/sdks/authzenserver/README.md#update) - Update
+
 ### [Automation](docs/sdks/automation/README.md)
 
 * [ClearAutomationCircuitBreaker](docs/sdks/automation/README.md#clearautomationcircuitbreaker) - Clear Automation Circuit Breaker
@@ -478,6 +486,14 @@ func main() {
 * [Get](docs/sdks/directory/README.md#get) - Get
 * [List](docs/sdks/directory/README.md#list) - List
 * [Update](docs/sdks/directory/README.md#update) - Update
+
+### [Edge](docs/sdks/edge/README.md)
+
+* [Create](docs/sdks/edge/README.md#create) - Create
+* [Delete](docs/sdks/edge/README.md#delete) - Delete
+* [Get](docs/sdks/edge/README.md#get) - Get
+* [List](docs/sdks/edge/README.md#list) - List
+* [Update](docs/sdks/edge/README.md#update) - Update
 
 ### [Export](docs/sdks/export/README.md)
 
@@ -609,6 +625,20 @@ func main() {
 * [Mint](docs/sdks/gatewaykey/README.md#mint) - Mint
 * [Revoke](docs/sdks/gatewaykey/README.md#revoke) - Revoke
 
+### [GoLink](docs/sdks/golink/README.md)
+
+* [Create](docs/sdks/golink/README.md#create) - Create
+* [Delete](docs/sdks/golink/README.md#delete) - Delete
+* [Get](docs/sdks/golink/README.md#get) - Get
+* [List](docs/sdks/golink/README.md#list) - List
+* [ListVersions](docs/sdks/golink/README.md#listversions) - List Versions
+* [Resolve](docs/sdks/golink/README.md#resolve) - Resolve
+* [Update](docs/sdks/golink/README.md#update) - Update
+
+### [GoLinkSearch](docs/sdks/golinksearch/README.md)
+
+* [Search](docs/sdks/golinksearch/README.md#search) - Search
+
 ### [Hooks](docs/sdks/hooks/README.md)
 
 * [Create](docs/sdks/hooks/README.md#create) - Create
@@ -697,12 +727,14 @@ func main() {
 
 ### [MyFundLimits](docs/sdks/myfundlimits/README.md)
 
+* [ClearTemporaryLimit](docs/sdks/myfundlimits/README.md#cleartemporarylimit) - Clear Temporary Limit
 * [Delete](docs/sdks/myfundlimits/README.md#delete) - Delete
 * [List](docs/sdks/myfundlimits/README.md#list) - List
 * [ListHistory](docs/sdks/myfundlimits/README.md#listhistory) - List History
 * [Pause](docs/sdks/myfundlimits/README.md#pause) - Pause
 * [Resume](docs/sdks/myfundlimits/README.md#resume) - Resume
 * [SetLimit](docs/sdks/myfundlimits/README.md#setlimit) - Set Limit
+* [SetTemporaryLimit](docs/sdks/myfundlimits/README.md#settemporarylimit) - Set Temporary Limit
 
 ### [OnboardingSettings](docs/sdks/onboardingsettings/README.md)
 
@@ -915,6 +947,10 @@ func main() {
 * [TestSourceIP](docs/sdks/sessionsettings/README.md#testsourceip) - Test Source Ip
 * [Update](docs/sdks/sessionsettings/README.md#update) - Update
 
+### [ShadowMcpOccurrence](docs/sdks/shadowmcpoccurrence/README.md)
+
+* [Search](docs/sdks/shadowmcpoccurrence/README.md#search) - Search
+
 ### [SignInPolicy](docs/sdks/signinpolicy/README.md)
 
 * [Create](docs/sdks/signinpolicy/README.md#create) - Create
@@ -932,6 +968,7 @@ func main() {
 * [GetOverview](docs/sdks/spendinsights/README.md#getoverview) - Get Overview
 * [ResolveEffectiveLimits](docs/sdks/spendinsights/README.md#resolveeffectivelimits) - Resolve Effective Limits
 * [SearchDenials](docs/sdks/spendinsights/README.md#searchdenials) - Search Denials
+* [SearchMySpendUsage](docs/sdks/spendinsights/README.md#searchmyspendusage) - Search My Spend Usage
 
 ### [SSFReceiverEvent](docs/sdks/ssfreceiverevent/README.md)
 
@@ -1012,7 +1049,10 @@ func main() {
 * [CreateOffboardingTask](docs/sdks/task/README.md#createoffboardingtask) - Create Offboarding Task
 * [CreateResourceActionTask](docs/sdks/task/README.md#createresourceactiontask) - Create Resource Action Task
 * [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Create Revoke Task
+* [CreateSpendRemedyTask](docs/sdks/task/README.md#createspendremedytask) - Create Spend Remedy Task
 * [Get](docs/sdks/task/README.md#get) - Get
+* [GetSpendRemedyReview](docs/sdks/task/README.md#getspendremedyreview) - Get Spend Remedy Review
+* [GetSpendRemedyStatus](docs/sdks/task/README.md#getspendremedystatus) - Get Spend Remedy Status
 
 ### [TaskActions](docs/sdks/taskactions/README.md)
 
