@@ -12,6 +12,7 @@
 * [ListCatalog](#listcatalog) - List Catalog
 * [ListConnections](#listconnections) - List Connections
 * [Register](#register) - Register
+* [ResolveMcpIdentifier](#resolvemcpidentifier) - Resolve Mcp Identifier
 * [ResyncTools](#resynctools) - Resync Tools
 * [SearchWithToolCount](#searchwithtoolcount) - Search With Tool Count
 * [TestConnection](#testconnection) - Test Connection
@@ -478,6 +479,66 @@ func main() {
 ### Response
 
 **[*operations.C1APIAiGovernanceV1MCPServerServiceRegisterResponse](../../pkg/models/operations/c1apiaigovernancev1mcpserverserviceregisterresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ResolveMcpIdentifier
+
+ResolveMcpIdentifier classifies a shadow-MCP finding's raw identifier as
+ already-registered, a known catalog entry, or unmatched -- driving
+ whether a remediation UI offers to notify the user (already registered)
+ or connect it (catalog or custom), and pre-selecting the catalog entry
+ in the former case.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.ai_governance.v1.MCPServerService.ResolveMcpIdentifier" method="get" path="/api/v1/mcp_servers/resolve_identifier" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.MCPServer.ResolveMcpIdentifier(ctx, operations.C1APIAiGovernanceV1MCPServerServiceResolveMCPIdentifierRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.MCPServerServiceResolveMCPIdentifierResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                  | Type                                                                                                                                                                       | Required                                                                                                                                                                   | Description                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                      | :heavy_check_mark:                                                                                                                                                         | The context to use for the request.                                                                                                                                        |
+| `request`                                                                                                                                                                  | [operations.C1APIAiGovernanceV1MCPServerServiceResolveMCPIdentifierRequest](../../pkg/models/operations/c1apiaigovernancev1mcpserverserviceresolvemcpidentifierrequest.md) | :heavy_check_mark:                                                                                                                                                         | The request object to use for the request.                                                                                                                                 |
+| `opts`                                                                                                                                                                     | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                               | :heavy_minus_sign:                                                                                                                                                         | The options for this request.                                                                                                                                              |
+
+### Response
+
+**[*operations.C1APIAiGovernanceV1MCPServerServiceResolveMCPIdentifierResponse](../../pkg/models/operations/c1apiaigovernancev1mcpserverserviceresolvemcpidentifierresponse.md), error**
 
 ### Errors
 
