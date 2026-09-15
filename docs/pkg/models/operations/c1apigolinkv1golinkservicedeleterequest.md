@@ -1,0 +1,9 @@
+# C1APIGolinkV1GoLinkServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `GoLinkServiceDeleteRequest`                                                                   | [*shared.GoLinkServiceDeleteRequest](../../../pkg/models/shared/golinkservicedeleterequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `ID`                                                                                           | `string`                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |

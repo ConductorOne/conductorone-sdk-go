@@ -64,10 +64,12 @@ type ConductoroneAPI struct {
 	Apps                                 *Apps
 	Connector                            *Connector
 	AppAccessRequestsDefaults            *AppAccessRequestsDefaults
+	AuthzenServer                        *AuthzenServer
 	MCPResource                          *MCPResource
 	MCPTool                              *MCPTool
 	MCPAccessProfile                     *MCPAccessProfile
 	MCPAccessProfileToolBinding          *MCPAccessProfileToolBinding
+	Edge                                 *Edge
 	AppEntitlementRoutingRule            *AppEntitlementRoutingRule
 	AppEntitlements                      *AppEntitlements
 	AppEntitlementSearch                 *AppEntitlementSearch
@@ -118,6 +120,8 @@ type ConductoroneAPI struct {
 	FundPolicy                           *FundPolicy
 	FundRule                             *FundRule
 	SubjectAppLimit                      *SubjectAppLimit
+	GoLink                               *GoLink
+	GoLinkSearch                         *GoLinkSearch
 	Hooks                                *Hooks
 	PersonalClient                       *PersonalClient
 	PersonalDevice                       *PersonalDevice
@@ -144,11 +148,13 @@ type ConductoroneAPI struct {
 	HooksSearch                          *HooksSearch
 	ExternalClientSearch                 *ExternalClientSearch
 	PersonalClientSearch                 *PersonalClientSearch
+	VirtualMCPServerMySearch             *VirtualMCPServerMySearch
 	PolicySearch                         *PolicySearch
 	RequestCatalogSearch                 *RequestCatalogSearch
 	RoleMiningManagementSearch           *RoleMiningManagementSearch
 	PaperSecretAdmin                     *PaperSecretAdmin
 	PaperSecret                          *PaperSecret
+	ShadowMcpOccurrence                  *ShadowMcpOccurrence
 	SignInPolicy                         *SignInPolicy
 	SSFReceiverEventSearch               *SSFReceiverEventSearch
 	StepUpProvider                       *StepUpProvider
@@ -186,6 +192,7 @@ type ConductoroneAPI struct {
 	TerraformExport                      *TerraformExport
 	User                                 *User
 	Vault                                *Vault
+	VirtualMCPServer                     *VirtualMCPServer
 	Webhooks                             *Webhooks
 	ConnectorOwnersV2                    *ConnectorOwnersV2
 	AppEntitlementOwnersV2               *AppEntitlementOwnersV2
@@ -281,9 +288,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk := &ConductoroneAPI{
-		SDKVersion: "1.29.1",
+		SDKVersion: "1.29.2",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.29.1 2.918.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:  "speakeasy-sdk/go 1.29.2 2.918.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{
@@ -322,10 +329,12 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.Apps = newApps(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Connector = newConnector(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppAccessRequestsDefaults = newAppAccessRequestsDefaults(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.AuthzenServer = newAuthzenServer(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MCPResource = newMCPResource(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MCPTool = newMCPTool(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MCPAccessProfile = newMCPAccessProfile(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MCPAccessProfileToolBinding = newMCPAccessProfileToolBinding(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.Edge = newEdge(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppEntitlementRoutingRule = newAppEntitlementRoutingRule(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppEntitlements = newAppEntitlements(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppEntitlementSearch = newAppEntitlementSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
@@ -376,6 +385,8 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.FundPolicy = newFundPolicy(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.FundRule = newFundRule(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.SubjectAppLimit = newSubjectAppLimit(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.GoLink = newGoLink(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.GoLinkSearch = newGoLinkSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Hooks = newHooks(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PersonalClient = newPersonalClient(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PersonalDevice = newPersonalDevice(sdk, sdk.sdkConfiguration, sdk.hooks)
@@ -402,11 +413,13 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.HooksSearch = newHooksSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ExternalClientSearch = newExternalClientSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PersonalClientSearch = newPersonalClientSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.VirtualMCPServerMySearch = newVirtualMCPServerMySearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PolicySearch = newPolicySearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.RequestCatalogSearch = newRequestCatalogSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.RoleMiningManagementSearch = newRoleMiningManagementSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PaperSecretAdmin = newPaperSecretAdmin(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.PaperSecret = newPaperSecret(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ShadowMcpOccurrence = newShadowMcpOccurrence(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.SignInPolicy = newSignInPolicy(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.SSFReceiverEventSearch = newSSFReceiverEventSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.StepUpProvider = newStepUpProvider(sdk, sdk.sdkConfiguration, sdk.hooks)
@@ -444,6 +457,7 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TerraformExport = newTerraformExport(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.User = newUser(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Vault = newVault(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.VirtualMCPServer = newVirtualMCPServer(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Webhooks = newWebhooks(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ConnectorOwnersV2 = newConnectorOwnersV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.AppEntitlementOwnersV2 = newAppEntitlementOwnersV2(sdk, sdk.sdkConfiguration, sdk.hooks)

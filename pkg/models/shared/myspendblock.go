@@ -34,32 +34,6 @@ func (e *MySpendBlockReason) IsExact() bool {
 	return false
 }
 
-// MySpendBlockScopeKind - Budget scope that denied the calls.
-type MySpendBlockScopeKind string
-
-const (
-	MySpendBlockScopeKindSpendBlockScopeKindUnspecified MySpendBlockScopeKind = "SPEND_BLOCK_SCOPE_KIND_UNSPECIFIED"
-	MySpendBlockScopeKindSpendBlockScopeKindTenant      MySpendBlockScopeKind = "SPEND_BLOCK_SCOPE_KIND_TENANT"
-	MySpendBlockScopeKindSpendBlockScopeKindSubject     MySpendBlockScopeKind = "SPEND_BLOCK_SCOPE_KIND_SUBJECT"
-	MySpendBlockScopeKindSpendBlockScopeKindApp         MySpendBlockScopeKind = "SPEND_BLOCK_SCOPE_KIND_APP"
-	MySpendBlockScopeKindSpendBlockScopeKindSubjectApp  MySpendBlockScopeKind = "SPEND_BLOCK_SCOPE_KIND_SUBJECT_APP"
-)
-
-func (e MySpendBlockScopeKind) ToPointer() *MySpendBlockScopeKind {
-	return &e
-}
-
-// IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *MySpendBlockScopeKind) IsExact() bool {
-	if e != nil {
-		switch *e {
-		case "SPEND_BLOCK_SCOPE_KIND_UNSPECIFIED", "SPEND_BLOCK_SCOPE_KIND_TENANT", "SPEND_BLOCK_SCOPE_KIND_SUBJECT", "SPEND_BLOCK_SCOPE_KIND_APP", "SPEND_BLOCK_SCOPE_KIND_SUBJECT_APP":
-			return true
-		}
-	}
-	return false
-}
-
 // MySpendBlockState - Whether this denial episode remains open.
 type MySpendBlockState string
 
@@ -87,10 +61,14 @@ func (e *MySpendBlockState) IsExact() bool {
 // MySpendBlock is a caller-visible denial projection. Organization and
 //
 //	application episodes omit account amounts.
+//	Its field ledger was intentionally reset while the service is STABILITY_ALPHA.
 type MySpendBlock struct {
 	// Best-effort lower bound for refused calls in this episode. Concurrent
 	//  retry exhaustion can under-report.
 	AttemptCount *int64 `integer:"string" json:"attemptCount,omitempty"`
+	// Trusted app of the denied attempt after caller-scoped audience proof.
+	//  This is only a selector and never grants access to the episode.
+	AttemptedAppID *string `json:"attemptedAppId,omitempty"`
 	// Authoritative user-facing explanation for this refusal.
 	AudienceMessage *string `json:"audienceMessage,omitempty"`
 	// Unique identifier for this denial episode.
@@ -99,14 +77,14 @@ type MySpendBlock struct {
 	FirstDeniedAt *time.Time           `json:"firstDeniedAt,omitempty"`
 	LastDeniedAt  *time.Time           `json:"lastDeniedAt,omitempty"`
 	Money         *DenialMoneySnapshot `json:"money,omitempty"`
+	PeriodEnd     *time.Time           `json:"periodEnd,omitempty"`
 	// Stable key for the denied budget period.
 	PeriodKey *string `json:"periodKey,omitempty"`
 	// Reason the calls were denied.
 	Reason *MySpendBlockReason `json:"reason,omitempty"`
-	// Application ID for APP and SUBJECT_APP scopes.
-	ScopeAppID *string `json:"scopeAppId,omitempty"`
-	// Budget scope that denied the calls.
-	ScopeKind *MySpendBlockScopeKind `json:"scopeKind,omitempty"`
+	// Current access request task linked to this episode, when one exists.
+	RequestTaskID *string       `json:"requestTaskId,omitempty"`
+	Scope         *AccountScope `json:"scope,omitempty"`
 	// Whether this denial episode remains open.
 	State *MySpendBlockState `json:"state,omitempty"`
 }
@@ -127,6 +105,13 @@ func (m *MySpendBlock) GetAttemptCount() *int64 {
 		return nil
 	}
 	return m.AttemptCount
+}
+
+func (m *MySpendBlock) GetAttemptedAppID() *string {
+	if m == nil {
+		return nil
+	}
+	return m.AttemptedAppID
 }
 
 func (m *MySpendBlock) GetAudienceMessage() *string {
@@ -171,6 +156,13 @@ func (m *MySpendBlock) GetMoney() *DenialMoneySnapshot {
 	return m.Money
 }
 
+func (m *MySpendBlock) GetPeriodEnd() *time.Time {
+	if m == nil {
+		return nil
+	}
+	return m.PeriodEnd
+}
+
 func (m *MySpendBlock) GetPeriodKey() *string {
 	if m == nil {
 		return nil
@@ -185,18 +177,18 @@ func (m *MySpendBlock) GetReason() *MySpendBlockReason {
 	return m.Reason
 }
 
-func (m *MySpendBlock) GetScopeAppID() *string {
+func (m *MySpendBlock) GetRequestTaskID() *string {
 	if m == nil {
 		return nil
 	}
-	return m.ScopeAppID
+	return m.RequestTaskID
 }
 
-func (m *MySpendBlock) GetScopeKind() *MySpendBlockScopeKind {
+func (m *MySpendBlock) GetScope() *AccountScope {
 	if m == nil {
 		return nil
 	}
-	return m.ScopeKind
+	return m.Scope
 }
 
 func (m *MySpendBlock) GetState() *MySpendBlockState {

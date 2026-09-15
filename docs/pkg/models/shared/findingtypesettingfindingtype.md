@@ -35,3 +35,4 @@ custom := shared.FindingTypeSettingFindingType("custom_value")
 | `FindingTypeSettingFindingTypeFindingTypeCredentialExpiring`                | FINDING_TYPE_CREDENTIAL_EXPIRING                                            |
 | `FindingTypeSettingFindingTypeFindingTypeConnectorSyncFailing`              | FINDING_TYPE_CONNECTOR_SYNC_FAILING                                         |
 | `FindingTypeSettingFindingTypeFindingTypeShadowMcp`                         | FINDING_TYPE_SHADOW_MCP                                                     |
+| `FindingTypeSettingFindingTypeFindingTypeShadowApp`                         | FINDING_TYPE_SHADOW_APP                                                     |
