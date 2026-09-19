@@ -2,6 +2,33 @@
 
 package shared
 
+// Transport - Denormalized from DeviceInventoryMcpObservation.transport at detection
+//
+//	time. Distinguishes a locally-launched (STDIO) product, which has no
+//	address to connect to, from a remote one, which does.
+type Transport string
+
+const (
+	TransportShadowMcpTransportUnspecified Transport = "SHADOW_MCP_TRANSPORT_UNSPECIFIED"
+	TransportShadowMcpTransportStdio       Transport = "SHADOW_MCP_TRANSPORT_STDIO"
+	TransportShadowMcpTransportRemote      Transport = "SHADOW_MCP_TRANSPORT_REMOTE"
+)
+
+func (e Transport) ToPointer() *Transport {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Transport) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "SHADOW_MCP_TRANSPORT_UNSPECIFIED", "SHADOW_MCP_TRANSPORT_STDIO", "SHADOW_MCP_TRANSPORT_REMOTE":
+			return true
+		}
+	}
+	return false
+}
+
 // ShadowMcpType - ShadowMcpType: a device is running an MCP server that isn't reached through
 //
 //	the tenant's governed MCP gateway. Dedup is mcp_identifier -- one finding
@@ -12,6 +39,10 @@ type ShadowMcpType struct {
 	//  that runs it. Maps to DeviceInventoryMcpObservation.logical_product_key;
 	//  display name is resolved from there, not duplicated here.
 	McpIdentifier *string `json:"mcpIdentifier,omitempty"`
+	// Denormalized from DeviceInventoryMcpObservation.transport at detection
+	//  time. Distinguishes a locally-launched (STDIO) product, which has no
+	//  address to connect to, from a remote one, which does.
+	Transport *Transport `json:"transport,omitempty"`
 }
 
 func (s *ShadowMcpType) GetMcpIdentifier() *string {
@@ -19,4 +50,11 @@ func (s *ShadowMcpType) GetMcpIdentifier() *string {
 		return nil
 	}
 	return s.McpIdentifier
+}
+
+func (s *ShadowMcpType) GetTransport() *Transport {
+	if s == nil {
+		return nil
+	}
+	return s.Transport
 }

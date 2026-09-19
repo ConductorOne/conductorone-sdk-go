@@ -1,6 +1,6 @@
 # PaperSecretServiceSearchMySecretsRequestSecretType
 
-Filter by secret type (optional)
+Filter by secret type. Unspecified returns all secret types.
 
 ## Example Usage
 

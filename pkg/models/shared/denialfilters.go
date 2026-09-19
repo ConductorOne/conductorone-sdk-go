@@ -93,7 +93,13 @@ type DenialFilters struct {
 	AuthorityID *string `json:"authorityId,omitempty"`
 	// Optional authority type to match. Set authority_id with this field.
 	AuthorityKind *DenialFiltersAuthorityKind `json:"authorityKind,omitempty"`
-	EndTime       *time.Time                  `json:"endTime,omitempty"`
+	// Optional current user departments to match. Only subject-scoped denials
+	//  with a live, non-deleted user row can match; organization-scoped,
+	//  application-scoped, missing-user, and deleted-user denials are excluded.
+	//  Department is resolved from scope_user_id at read time, not captured from
+	//  the denial event.
+	Departments []string   `json:"departments,omitempty"`
+	EndTime     *time.Time `json:"endTime,omitempty"`
 	// Optional application scope ID to match.
 	ScopeAppID *string `json:"scopeAppId,omitempty"`
 	// Optional budget scope to match.
@@ -128,6 +134,13 @@ func (d *DenialFilters) GetAuthorityKind() *DenialFiltersAuthorityKind {
 		return nil
 	}
 	return d.AuthorityKind
+}
+
+func (d *DenialFilters) GetDepartments() []string {
+	if d == nil {
+		return nil
+	}
+	return d.Departments
 }
 
 func (d *DenialFilters) GetEndTime() *time.Time {

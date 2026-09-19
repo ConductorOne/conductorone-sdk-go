@@ -6,10 +6,10 @@
 
 * [CreateExternal](#createexternal) - Create External
 * [CreateInternal](#createinternal) - Create Internal
+* [Delete](#delete) - Delete
 * [Get](#get) - Get
 * [GetByShareCode](#getbysharecode) - Get By Share Code
 * [GetContent](#getcontent) - Get Content
-* [Revoke](#revoke) - Revoke
 * [SearchAuditEvents](#searchauditevents) - Search Audit Events
 * [SearchMySecrets](#searchmysecrets) - Search My Secrets
 * [SearchSecretsSharedWithMe](#searchsecretssharedwithme) - Search Secrets Shared With Me
@@ -118,6 +118,65 @@ func main() {
 ### Response
 
 **[*operations.C1APISecretsV1PaperSecretServiceCreateInternalResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicecreateinternalresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## Delete
+
+Delete soft-deletes a Paper Vault and deletes its content. It never
+ revokes the credential that may have been stored in the vault.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.secrets.v1.PaperSecretService.Delete" method="delete" path="/api/v1/secrets/{vault_id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.PaperSecret.Delete(ctx, operations.C1APISecretsV1PaperSecretServiceDeleteRequest{
+        VaultID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.PaperSecretServiceDeleteResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                    | :heavy_check_mark:                                                                                                                       | The context to use for the request.                                                                                                      |
+| `request`                                                                                                                                | [operations.C1APISecretsV1PaperSecretServiceDeleteRequest](../../pkg/models/operations/c1apisecretsv1papersecretservicedeleterequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
+| `opts`                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                             | :heavy_minus_sign:                                                                                                                       | The options for this request.                                                                                                            |
+
+### Response
+
+**[*operations.C1APISecretsV1PaperSecretServiceDeleteResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicedeleteresponse.md), error**
 
 ### Errors
 
@@ -296,64 +355,6 @@ func main() {
 ### Response
 
 **[*operations.C1APISecretsV1PaperSecretServiceGetContentResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicegetcontentresponse.md), error**
-
-### Errors
-
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
-
-## Revoke
-
-Revoke soft-deletes a secret (sets Vault.deleted_at, deletes content).
-
-### Example Usage
-
-<!-- UsageSnippet language="go" operationID="c1.api.secrets.v1.PaperSecretService.Revoke" method="delete" path="/api/v1/secrets/{vault_id}" -->
-```go
-package main
-
-import(
-	"context"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-
-    s := conductoronesdkgo.New(
-        conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
-        }),
-    )
-
-    res, err := s.PaperSecret.Revoke(ctx, operations.C1APISecretsV1PaperSecretServiceRevokeRequest{
-        VaultID: "<id>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PaperSecretServiceRevokeResponse != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                    | :heavy_check_mark:                                                                                                                       | The context to use for the request.                                                                                                      |
-| `request`                                                                                                                                | [operations.C1APISecretsV1PaperSecretServiceRevokeRequest](../../pkg/models/operations/c1apisecretsv1papersecretservicerevokerequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `opts`                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                             | :heavy_minus_sign:                                                                                                                       | The options for this request.                                                                                                            |
-
-### Response
-
-**[*operations.C1APISecretsV1PaperSecretServiceRevokeResponse](../../pkg/models/operations/c1apisecretsv1papersecretservicerevokeresponse.md), error**
 
 ### Errors
 

@@ -128,6 +128,11 @@ func main() {
 
 * [Test](docs/sdks/accountprovisionpolicytest/README.md#test) - Test
 
+### [AgentClassifier](docs/sdks/agentclassifier/README.md)
+
+* [GetAgentClassifierPolicy](docs/sdks/agentclassifier/README.md#getagentclassifierpolicy) - Get Agent Classifier Policy
+* [UpdateAgentClassifierPolicy](docs/sdks/agentclassifier/README.md#updateagentclassifierpolicy) - Update Agent Classifier Policy
+
 ### [AIGovernanceSettings](docs/sdks/aigovernancesettings/README.md)
 
 * [Get](docs/sdks/aigovernancesettings/README.md#get) - Get
@@ -321,6 +326,10 @@ func main() {
 * [Search](docs/sdks/appsearch/README.md#search) - Search
 * [SearchUserOwnership](docs/sdks/appsearch/README.md#searchuserownership) - Search User Ownership
 
+### [AppSecretAdmin](docs/sdks/appsecretadmin/README.md)
+
+* [Revoke](docs/sdks/appsecretadmin/README.md#revoke) - Revoke
+
 ### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
 
 * [Get](docs/sdks/appusagecontrols/README.md#get) - Get
@@ -369,6 +378,14 @@ func main() {
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
+### [AuthzenServer](docs/sdks/authzenserver/README.md)
+
+* [Create](docs/sdks/authzenserver/README.md#create) - Create
+* [Delete](docs/sdks/authzenserver/README.md#delete) - Delete
+* [Get](docs/sdks/authzenserver/README.md#get) - Get
+* [List](docs/sdks/authzenserver/README.md#list) - List
+* [Update](docs/sdks/authzenserver/README.md#update) - Update
+
 ### [Automation](docs/sdks/automation/README.md)
 
 * [ClearAutomationCircuitBreaker](docs/sdks/automation/README.md#clearautomationcircuitbreaker) - Clear Automation Circuit Breaker
@@ -402,6 +419,24 @@ func main() {
 ### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
 
 * [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
+### [Classifier](docs/sdks/classifier/README.md)
+
+* [CreateClassifier](docs/sdks/classifier/README.md#createclassifier) - Create Classifier
+* [CreateClassifierBinding](docs/sdks/classifier/README.md#createclassifierbinding) - Create Classifier Binding
+* [DeleteClassifier](docs/sdks/classifier/README.md#deleteclassifier) - Delete Classifier
+* [DeleteClassifierBinding](docs/sdks/classifier/README.md#deleteclassifierbinding) - Delete Classifier Binding
+* [GetClassifier](docs/sdks/classifier/README.md#getclassifier) - Get Classifier
+* [ListClassifierBindings](docs/sdks/classifier/README.md#listclassifierbindings) - List Classifier Bindings
+* [ListClassifiers](docs/sdks/classifier/README.md#listclassifiers) - List Classifiers
+* [UpdateClassifier](docs/sdks/classifier/README.md#updateclassifier) - Update Classifier
+
+### [ClassifierTemplate](docs/sdks/classifiertemplate/README.md)
+
+* [AddClassifierRuleFromTemplate](docs/sdks/classifiertemplate/README.md#addclassifierrulefromtemplate) - Add Classifier Rule From Template
+* [GetClassifierTemplate](docs/sdks/classifiertemplate/README.md#getclassifiertemplate) - Get Classifier Template
+* [InstantiateClassifierTemplate](docs/sdks/classifiertemplate/README.md#instantiateclassifiertemplate) - Instantiate Classifier Template
+* [ListClassifierTemplates](docs/sdks/classifiertemplate/README.md#listclassifiertemplates) - List Classifier Templates
 
 ### [Connector](docs/sdks/connector/README.md)
 
@@ -478,6 +513,14 @@ func main() {
 * [Get](docs/sdks/directory/README.md#get) - Get
 * [List](docs/sdks/directory/README.md#list) - List
 * [Update](docs/sdks/directory/README.md#update) - Update
+
+### [Edge](docs/sdks/edge/README.md)
+
+* [Create](docs/sdks/edge/README.md#create) - Create
+* [Delete](docs/sdks/edge/README.md#delete) - Delete
+* [Get](docs/sdks/edge/README.md#get) - Get
+* [List](docs/sdks/edge/README.md#list) - List
+* [Update](docs/sdks/edge/README.md#update) - Update
 
 ### [Export](docs/sdks/export/README.md)
 
@@ -609,6 +652,20 @@ func main() {
 * [Mint](docs/sdks/gatewaykey/README.md#mint) - Mint
 * [Revoke](docs/sdks/gatewaykey/README.md#revoke) - Revoke
 
+### [GoLink](docs/sdks/golink/README.md)
+
+* [Create](docs/sdks/golink/README.md#create) - Create
+* [Delete](docs/sdks/golink/README.md#delete) - Delete
+* [Get](docs/sdks/golink/README.md#get) - Get
+* [List](docs/sdks/golink/README.md#list) - List
+* [ListVersions](docs/sdks/golink/README.md#listversions) - List Versions
+* [Resolve](docs/sdks/golink/README.md#resolve) - Resolve
+* [Update](docs/sdks/golink/README.md#update) - Update
+
+### [GoLinkSearch](docs/sdks/golinksearch/README.md)
+
+* [Search](docs/sdks/golinksearch/README.md#search) - Search
+
 ### [Hooks](docs/sdks/hooks/README.md)
 
 * [Create](docs/sdks/hooks/README.md#create) - Create
@@ -697,12 +754,14 @@ func main() {
 
 ### [MyFundLimits](docs/sdks/myfundlimits/README.md)
 
+* [ClearTemporaryLimit](docs/sdks/myfundlimits/README.md#cleartemporarylimit) - Clear Temporary Limit
 * [Delete](docs/sdks/myfundlimits/README.md#delete) - Delete
 * [List](docs/sdks/myfundlimits/README.md#list) - List
 * [ListHistory](docs/sdks/myfundlimits/README.md#listhistory) - List History
 * [Pause](docs/sdks/myfundlimits/README.md#pause) - Pause
 * [Resume](docs/sdks/myfundlimits/README.md#resume) - Resume
 * [SetLimit](docs/sdks/myfundlimits/README.md#setlimit) - Set Limit
+* [SetTemporaryLimit](docs/sdks/myfundlimits/README.md#settemporarylimit) - Set Temporary Limit
 
 ### [OnboardingSettings](docs/sdks/onboardingsettings/README.md)
 
@@ -723,10 +782,10 @@ func main() {
 
 * [CreateExternal](docs/sdks/papersecret/README.md#createexternal) - Create External
 * [CreateInternal](docs/sdks/papersecret/README.md#createinternal) - Create Internal
+* [Delete](docs/sdks/papersecret/README.md#delete) - Delete
 * [Get](docs/sdks/papersecret/README.md#get) - Get
 * [GetByShareCode](docs/sdks/papersecret/README.md#getbysharecode) - Get By Share Code
 * [GetContent](docs/sdks/papersecret/README.md#getcontent) - Get Content
-* [Revoke](docs/sdks/papersecret/README.md#revoke) - Revoke
 * [SearchAuditEvents](docs/sdks/papersecret/README.md#searchauditevents) - Search Audit Events
 * [SearchMySecrets](docs/sdks/papersecret/README.md#searchmysecrets) - Search My Secrets
 * [SearchSecretsSharedWithMe](docs/sdks/papersecret/README.md#searchsecretssharedwithme) - Search Secrets Shared With Me
@@ -734,8 +793,8 @@ func main() {
 
 ### [PaperSecretAdmin](docs/sdks/papersecretadmin/README.md)
 
+* [Delete](docs/sdks/papersecretadmin/README.md#delete) - Delete
 * [Get](docs/sdks/papersecretadmin/README.md#get) - Get
-* [Revoke](docs/sdks/papersecretadmin/README.md#revoke) - Revoke
 * [Search](docs/sdks/papersecretadmin/README.md#search) - Search
 * [SearchAuditEvents](docs/sdks/papersecretadmin/README.md#searchauditevents) - Search Audit Events
 
@@ -872,6 +931,8 @@ func main() {
 * [GetLatestRun](docs/sdks/roleminingmanagement/README.md#getlatestrun) - Get Latest Run
 * [GetRoleMiningConfig](docs/sdks/roleminingmanagement/README.md#getroleminingconfig) - Get Role Mining Config
 * [GetSuggestion](docs/sdks/roleminingmanagement/README.md#getsuggestion) - Get Suggestion
+* [ListCohortFilterAttributeValues](docs/sdks/roleminingmanagement/README.md#listcohortfilterattributevalues) - List Cohort Filter Attribute Values
+* [ListCohortFilterAttributes](docs/sdks/roleminingmanagement/README.md#listcohortfilterattributes) - List Cohort Filter Attributes
 * [ListCustomAnalysisResults](docs/sdks/roleminingmanagement/README.md#listcustomanalysisresults) - List Custom Analysis Results
 * [ListRuns](docs/sdks/roleminingmanagement/README.md#listruns) - List Runs
 * [ListSuggestions](docs/sdks/roleminingmanagement/README.md#listsuggestions) - List Suggestions
@@ -915,6 +976,10 @@ func main() {
 * [TestSourceIP](docs/sdks/sessionsettings/README.md#testsourceip) - Test Source Ip
 * [Update](docs/sdks/sessionsettings/README.md#update) - Update
 
+### [ShadowMcpOccurrence](docs/sdks/shadowmcpoccurrence/README.md)
+
+* [Search](docs/sdks/shadowmcpoccurrence/README.md#search) - Search
+
 ### [SignInPolicy](docs/sdks/signinpolicy/README.md)
 
 * [Create](docs/sdks/signinpolicy/README.md#create) - Create
@@ -928,10 +993,13 @@ func main() {
 
 * [GetAttributionRollups](docs/sdks/spendinsights/README.md#getattributionrollups) - Get Attribution Rollups
 * [GetDenial](docs/sdks/spendinsights/README.md#getdenial) - Get Denial
+* [GetMySpendForecast](docs/sdks/spendinsights/README.md#getmyspendforecast) - Get My Spend Forecast
+* [GetMySpendHistory](docs/sdks/spendinsights/README.md#getmyspendhistory) - Get My Spend History
 * [GetMySpendStatus](docs/sdks/spendinsights/README.md#getmyspendstatus) - Get My Spend Status
 * [GetOverview](docs/sdks/spendinsights/README.md#getoverview) - Get Overview
 * [ResolveEffectiveLimits](docs/sdks/spendinsights/README.md#resolveeffectivelimits) - Resolve Effective Limits
 * [SearchDenials](docs/sdks/spendinsights/README.md#searchdenials) - Search Denials
+* [SearchMySpendUsage](docs/sdks/spendinsights/README.md#searchmyspendusage) - Search My Spend Usage
 
 ### [SSFReceiverEvent](docs/sdks/ssfreceiverevent/README.md)
 
@@ -1012,7 +1080,9 @@ func main() {
 * [CreateOffboardingTask](docs/sdks/task/README.md#createoffboardingtask) - Create Offboarding Task
 * [CreateResourceActionTask](docs/sdks/task/README.md#createresourceactiontask) - Create Resource Action Task
 * [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Create Revoke Task
+* [CreateSpendRemedyTask](docs/sdks/task/README.md#createspendremedytask) - Create Spend Remedy Task
 * [Get](docs/sdks/task/README.md#get) - Get
+* [GetSpendRemedyReview](docs/sdks/task/README.md#getspendremedyreview) - Get Spend Remedy Review
 
 ### [TaskActions](docs/sdks/taskactions/README.md)
 
@@ -1043,6 +1113,12 @@ func main() {
 
 * [GetDiscoverySnapshot](docs/sdks/tbcontrolplane/README.md#getdiscoverysnapshot) - Get Discovery Snapshot
 * [GetEgressPolicy](docs/sdks/tbcontrolplane/README.md#getegresspolicy) - Get Egress Policy
+* [GetTrafficSummary](docs/sdks/tbcontrolplane/README.md#gettrafficsummary) - Get Traffic Summary
+* [GetUsageAttribution](docs/sdks/tbcontrolplane/README.md#getusageattribution) - Get Usage Attribution
+* [GetUsageSummary](docs/sdks/tbcontrolplane/README.md#getusagesummary) - Get Usage Summary
+* [ListTopAgents](docs/sdks/tbcontrolplane/README.md#listtopagents) - List Top Agents
+* [ListTopTools](docs/sdks/tbcontrolplane/README.md#listtoptools) - List Top Tools
+* [ListTrafficEvents](docs/sdks/tbcontrolplane/README.md#listtrafficevents) - List Traffic Events
 * [PushDiscovery](docs/sdks/tbcontrolplane/README.md#pushdiscovery) - Push Discovery
 * [SaveEgressPolicy](docs/sdks/tbcontrolplane/README.md#saveegresspolicy) - Save Egress Policy
 
@@ -1065,6 +1141,18 @@ func main() {
 ### [TerraformExport](docs/sdks/terraformexport/README.md)
 
 * [GetSchema](docs/sdks/terraformexport/README.md#getschema) - Get Schema
+
+### [ToolGates](docs/sdks/toolgates/README.md)
+
+* [Create](docs/sdks/toolgates/README.md#create) - Create
+* [Delete](docs/sdks/toolgates/README.md#delete) - Delete
+* [Get](docs/sdks/toolgates/README.md#get) - Get
+* [List](docs/sdks/toolgates/README.md#list) - List
+* [Update](docs/sdks/toolgates/README.md#update) - Update
+
+### [ToolGatesSearch](docs/sdks/toolgatessearch/README.md)
+
+* [Search](docs/sdks/toolgatessearch/README.md#search) - Search
 
 ### [TunnelCredentials](docs/sdks/tunnelcredentials/README.md)
 
@@ -1120,6 +1208,30 @@ func main() {
 * [Delete](docs/sdks/vault/README.md#delete) - Delete
 * [Get](docs/sdks/vault/README.md#get) - Get
 * [Update](docs/sdks/vault/README.md#update) - Update
+
+### [VirtualMCPServer](docs/sdks/virtualmcpserver/README.md)
+
+* [Create](docs/sdks/virtualmcpserver/README.md#create) - Create
+* [Delete](docs/sdks/virtualmcpserver/README.md#delete) - Delete
+* [Get](docs/sdks/virtualmcpserver/README.md#get) - Get
+* [List](docs/sdks/virtualmcpserver/README.md#list) - List
+* [Update](docs/sdks/virtualmcpserver/README.md#update) - Update
+
+### [VirtualMCPServerMySearch](docs/sdks/virtualmcpservermysearch/README.md)
+
+* [Search](docs/sdks/virtualmcpservermysearch/README.md#search) - NOTE: Only shows Virtual MCP Servers available to the current user.
+
+### [VirtualMCPToolBinding](docs/sdks/virtualmcptoolbinding/README.md)
+
+* [CreateBindings](docs/sdks/virtualmcptoolbinding/README.md#createbindings) - Create Bindings
+* [DeleteBindings](docs/sdks/virtualmcptoolbinding/README.md#deletebindings) - Delete Bindings
+* [List](docs/sdks/virtualmcptoolbinding/README.md#list) - List
+
+### [VirtualMCPToolsetBinding](docs/sdks/virtualmcptoolsetbinding/README.md)
+
+* [CreateBindings](docs/sdks/virtualmcptoolsetbinding/README.md#createbindings) - Create Bindings
+* [DeleteBindings](docs/sdks/virtualmcptoolsetbinding/README.md#deletebindings) - Delete Bindings
+* [List](docs/sdks/virtualmcptoolsetbinding/README.md#list) - List
 
 ### [Webhooks](docs/sdks/webhooks/README.md)
 

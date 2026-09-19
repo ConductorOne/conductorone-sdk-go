@@ -75,6 +75,8 @@ type A2UISurface struct {
 	ReportEditTarget *A2UIReportEditTarget `json:"reportEditTarget,omitempty"`
 	// The role field.
 	Role *A2UISurfaceRole `json:"role,omitempty"`
+	// Present after this surface has been promoted to a saved report.
+	SavedReportID *string `json:"savedReportId,omitempty"`
 	// The schemaVersion field.
 	SchemaVersion *int64 `integer:"string" json:"schemaVersion,omitempty"`
 	// The sendDataModel field.
@@ -160,6 +162,13 @@ func (a *A2UISurface) GetRole() *A2UISurfaceRole {
 		return nil
 	}
 	return a.Role
+}
+
+func (a *A2UISurface) GetSavedReportID() *string {
+	if a == nil {
+		return nil
+	}
+	return a.SavedReportID
 }
 
 func (a *A2UISurface) GetSchemaVersion() *int64 {
