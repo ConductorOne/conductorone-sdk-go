@@ -32,7 +32,8 @@ func (e *FunctionsServiceCreateFunctionRequestFunctionType) IsExact() bool {
 // The FunctionsServiceCreateFunctionRequest message.
 type FunctionsServiceCreateFunctionRequest struct {
 	// browser_enabled creates the function as browser-capable. See
-	//  Function.browser_enabled.
+	//  Function.browser_enabled. Rejected on FUNCTION_TYPE_ANY: browser
+	//  support is code-mode-only today.
 	BrowserEnabled *bool `json:"browserEnabled,omitempty"`
 	// The commit message describing the initial code submission.
 	CommitMessage *string `json:"commitMessage,omitempty"`

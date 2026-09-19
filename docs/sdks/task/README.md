@@ -9,7 +9,9 @@
 * [CreateOffboardingTask](#createoffboardingtask) - Create Offboarding Task
 * [CreateResourceActionTask](#createresourceactiontask) - Create Resource Action Task
 * [CreateRevokeTask](#createrevoketask) - Create Revoke Task
+* [CreateSpendRemedyTask](#createspendremedytask) - Create Spend Remedy Task
 * [Get](#get) - Get
+* [GetSpendRemedyReview](#getspendremedyreview) - Get Spend Remedy Review
 
 ## CreateActionTask
 
@@ -290,6 +292,62 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
+## CreateSpendRemedyTask
+
+Request a precise spending change for a refusal delivered to this caller.
+ Repeated submissions return the canonical task; personal app restrictions need no approval.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.CreateSpendRemedyTask" method="post" path="/api/v1/task/spend-remedy" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Task.CreateSpendRemedyTask(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskServiceCreateSpendRemedyResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |
+| `request`                                                                                                    | [shared.TaskServiceCreateSpendRemedyRequest](../../pkg/models/shared/taskservicecreatespendremedyrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `opts`                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                 | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |
+
+### Response
+
+**[*operations.C1APITaskV1TaskServiceCreateSpendRemedyTaskResponse](../../pkg/models/operations/c1apitaskv1taskservicecreatespendremedytaskresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
 ## Get
 
 Get a task by ID
@@ -341,6 +399,65 @@ func main() {
 ### Response
 
 **[*operations.C1APITaskV1TaskServiceGetResponse](../../pkg/models/operations/c1apitaskv1taskservicegetresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## GetSpendRemedyReview
+
+Read the requester's own immutable terms or reviewer-authorized financial context.
+ Requesters never receive shared controls; former decision-makers receive frozen history only.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.task.v1.TaskService.GetSpendRemedyReview" method="get" path="/api/v1/tasks/{task_id}/spend-remedy-review" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Task.GetSpendRemedyReview(ctx, operations.C1APITaskV1TaskServiceGetSpendRemedyReviewRequest{
+        TaskID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.TaskServiceGetSpendRemedyReviewResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                            | :heavy_check_mark:                                                                                                                               | The context to use for the request.                                                                                                              |
+| `request`                                                                                                                                        | [operations.C1APITaskV1TaskServiceGetSpendRemedyReviewRequest](../../pkg/models/operations/c1apitaskv1taskservicegetspendremedyreviewrequest.md) | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
+| `opts`                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                     | :heavy_minus_sign:                                                                                                                               | The options for this request.                                                                                                                    |
+
+### Response
+
+**[*operations.C1APITaskV1TaskServiceGetSpendRemedyReviewResponse](../../pkg/models/operations/c1apitaskv1taskservicegetspendremedyreviewresponse.md), error**
 
 ### Errors
 
