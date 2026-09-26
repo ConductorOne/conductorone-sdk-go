@@ -35,3 +35,5 @@ custom := shared.FindingTransformationRuleFindingType("custom_value")
 | `FindingTransformationRuleFindingTypeFindingTypeCredentialExpiring`                | FINDING_TYPE_CREDENTIAL_EXPIRING                                                   |
 | `FindingTransformationRuleFindingTypeFindingTypeConnectorSyncFailing`              | FINDING_TYPE_CONNECTOR_SYNC_FAILING                                                |
 | `FindingTransformationRuleFindingTypeFindingTypeShadowMcp`                         | FINDING_TYPE_SHADOW_MCP                                                            |
+| `FindingTransformationRuleFindingTypeFindingTypeShadowApp`                         | FINDING_TYPE_SHADOW_APP                                                            |
+| `FindingTransformationRuleFindingTypeFindingTypeMcpGatewayToolCallRisk`            | FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK                                            |

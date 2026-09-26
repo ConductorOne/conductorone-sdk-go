@@ -1,0 +1,9 @@
+# C1APIAuthzenV1AuthzenServerServiceCreateRequest
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `AuthzenServerServiceCreateRequest`                                                                          | [*shared.AuthzenServerServiceCreateRequest](../../../pkg/models/shared/authzenserverservicecreaterequest.md) | :heavy_minus_sign:                                                                                           | N/A                                                                                                          |
+| `AppID`                                                                                                      | `string`                                                                                                     | :heavy_check_mark:                                                                                           | N/A                                                                                                          |

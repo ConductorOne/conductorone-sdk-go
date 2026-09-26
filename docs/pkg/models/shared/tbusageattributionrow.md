@@ -1,0 +1,13 @@
+# TBUsageAttributionRow
+
+TBUsageAttributionRow is one attribution-id group.
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `AttributionID`                                                                               | `*string`                                                                                     | :heavy_minus_sign:                                                                            | Empty string means unattributed -- the source attribution_* column was<br/> empty for these rows. |
+| `InputTokens`                                                                                 | `*string`                                                                                     | :heavy_minus_sign:                                                                            | The inputTokens field.                                                                        |
+| `OutputTokens`                                                                                | `*string`                                                                                     | :heavy_minus_sign:                                                                            | The outputTokens field.                                                                       |
+| `RequestCount`                                                                                | `*string`                                                                                     | :heavy_minus_sign:                                                                            | The requestCount field.                                                                       |

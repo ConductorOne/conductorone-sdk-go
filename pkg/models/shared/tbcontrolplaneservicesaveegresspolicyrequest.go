@@ -2,21 +2,21 @@
 
 package shared
 
-// DefaultOutcome - The defaultOutcome field.
-type DefaultOutcome string
+// TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome - The defaultOutcome field.
+type TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome string
 
 const (
-	DefaultOutcomeTbEgressOutcomeUnspecified DefaultOutcome = "TB_EGRESS_OUTCOME_UNSPECIFIED"
-	DefaultOutcomeTbEgressOutcomeAllowed     DefaultOutcome = "TB_EGRESS_OUTCOME_ALLOWED"
-	DefaultOutcomeTbEgressOutcomeDenied      DefaultOutcome = "TB_EGRESS_OUTCOME_DENIED"
+	TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcomeTbEgressOutcomeUnspecified TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome = "TB_EGRESS_OUTCOME_UNSPECIFIED"
+	TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcomeTbEgressOutcomeAllowed     TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome = "TB_EGRESS_OUTCOME_ALLOWED"
+	TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcomeTbEgressOutcomeDenied      TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome = "TB_EGRESS_OUTCOME_DENIED"
 )
 
-func (e DefaultOutcome) ToPointer() *DefaultOutcome {
+func (e TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome) ToPointer() *TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *DefaultOutcome) IsExact() bool {
+func (e *TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "TB_EGRESS_OUTCOME_UNSPECIFIED", "TB_EGRESS_OUTCOME_ALLOWED", "TB_EGRESS_OUTCOME_DENIED":
@@ -31,7 +31,7 @@ type TBControlPlaneServiceSaveEgressPolicyRequest struct {
 	// The defaultDenyReason field.
 	DefaultDenyReason *string `json:"defaultDenyReason,omitempty"`
 	// The defaultOutcome field.
-	DefaultOutcome *DefaultOutcome `json:"defaultOutcome,omitempty"`
+	DefaultOutcome *TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome `json:"defaultOutcome,omitempty"`
 	// The rules field.
 	Rules []TBEgressRule `json:"rules,omitempty"`
 	// The tbInstanceId field.
@@ -45,7 +45,7 @@ func (t *TBControlPlaneServiceSaveEgressPolicyRequest) GetDefaultDenyReason() *s
 	return t.DefaultDenyReason
 }
 
-func (t *TBControlPlaneServiceSaveEgressPolicyRequest) GetDefaultOutcome() *DefaultOutcome {
+func (t *TBControlPlaneServiceSaveEgressPolicyRequest) GetDefaultOutcome() *TBControlPlaneServiceSaveEgressPolicyRequestDefaultOutcome {
 	if t == nil {
 		return nil
 	}

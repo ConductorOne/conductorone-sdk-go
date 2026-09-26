@@ -1,0 +1,16 @@
+# TBControlPlaneServiceGetUsageSummaryResponse
+
+The TBControlPlaneServiceGetUsageSummaryResponse message.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `ModelBreakdown`                                                                      | [][shared.TBUsageModelBreakdown](../../../pkg/models/shared/tbusagemodelbreakdown.md) | :heavy_minus_sign:                                                                    | The modelBreakdown field.                                                             |
+| `Series`                                                                              | [][shared.TBUsageSummaryBucket](../../../pkg/models/shared/tbusagesummarybucket.md)   | :heavy_minus_sign:                                                                    | The series field.                                                                     |
+| `TotalCacheReadTokens`                                                                | `*string`                                                                             | :heavy_minus_sign:                                                                    | The totalCacheReadTokens field.                                                       |
+| `TotalCacheWriteTokens`                                                               | `*string`                                                                             | :heavy_minus_sign:                                                                    | The totalCacheWriteTokens field.                                                      |
+| `TotalInputTokens`                                                                    | `*string`                                                                             | :heavy_minus_sign:                                                                    | The totalInputTokens field.                                                           |
+| `TotalOutputTokens`                                                                   | `*string`                                                                             | :heavy_minus_sign:                                                                    | The totalOutputTokens field.                                                          |
+| `TotalRequests`                                                                       | `*string`                                                                             | :heavy_minus_sign:                                                                    | The totalRequests field.                                                              |
