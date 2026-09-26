@@ -58,6 +58,7 @@ func (e *GetCustomAnalysisResultResponseTerminalReason) IsExact() bool {
 
 // The GetCustomAnalysisResultResponse message.
 type GetCustomAnalysisResultResponse struct {
+	AccessScope *AccessScope `json:"accessScope,omitempty"`
 	// The appsAnalyzed field.
 	AppsAnalyzed *int `json:"appsAnalyzed,omitempty"`
 	// Cluster results.
@@ -83,6 +84,7 @@ type GetCustomAnalysisResultResponse struct {
 	// Cohort filters this analysis ran with, echoed back so an exact-ID restore
 	//  is self-contained.
 	ProfileFilters []ProfileFilter `json:"profileFilters,omitempty"`
+	ResourceScope  *ResourceScope  `json:"resourceScope,omitempty"`
 	// The status field.
 	Status *GetCustomAnalysisResultResponseStatus `json:"status,omitempty"`
 	// Newer result that superseded this analysis, when applicable.
@@ -101,6 +103,13 @@ func (g *GetCustomAnalysisResultResponse) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (g *GetCustomAnalysisResultResponse) GetAccessScope() *AccessScope {
+	if g == nil {
+		return nil
+	}
+	return g.AccessScope
 }
 
 func (g *GetCustomAnalysisResultResponse) GetAppsAnalyzed() *int {
@@ -192,6 +201,13 @@ func (g *GetCustomAnalysisResultResponse) GetProfileFilters() []ProfileFilter {
 		return nil
 	}
 	return g.ProfileFilters
+}
+
+func (g *GetCustomAnalysisResultResponse) GetResourceScope() *ResourceScope {
+	if g == nil {
+		return nil
+	}
+	return g.ResourceScope
 }
 
 func (g *GetCustomAnalysisResultResponse) GetStatus() *GetCustomAnalysisResultResponseStatus {

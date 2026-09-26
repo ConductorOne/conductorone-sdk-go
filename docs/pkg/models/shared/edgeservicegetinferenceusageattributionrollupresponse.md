@@ -1,0 +1,11 @@
+# EdgeServiceGetInferenceUsageAttributionRollupResponse
+
+The EdgeServiceGetInferenceUsageAttributionRollupResponse message.
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `EdgeCount`                                                                                                                    | `*int64`                                                                                                                       | :heavy_minus_sign:                                                                                                             | Number of authorized Edges included. Zero means the caller manages no<br/> Edges, as distinct from Edges that have no traffic yet. |
+| `Rows`                                                                                                                         | [][shared.TBUsageAttributionRow](../../../pkg/models/shared/tbusageattributionrow.md)                                          | :heavy_minus_sign:                                                                                                             | Ordered by (input_tokens + output_tokens) descending, limited to<br/> page_size.                                               |

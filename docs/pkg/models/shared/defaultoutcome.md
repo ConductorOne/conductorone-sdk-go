@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.DefaultOutcomeTbEgressOutcomeUnspecified
+value := shared.DefaultOutcomeAgentClassifierRuleOutcomeUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.DefaultOutcome("custom_value")
@@ -18,8 +18,8 @@ custom := shared.DefaultOutcome("custom_value")
 
 ## Values
 
-| Name                                       | Value                                      |
-| ------------------------------------------ | ------------------------------------------ |
-| `DefaultOutcomeTbEgressOutcomeUnspecified` | TB_EGRESS_OUTCOME_UNSPECIFIED              |
-| `DefaultOutcomeTbEgressOutcomeAllowed`     | TB_EGRESS_OUTCOME_ALLOWED                  |
-| `DefaultOutcomeTbEgressOutcomeDenied`      | TB_EGRESS_OUTCOME_DENIED                   |
+| Name                                                  | Value                                                 |
+| ----------------------------------------------------- | ----------------------------------------------------- |
+| `DefaultOutcomeAgentClassifierRuleOutcomeUnspecified` | AGENT_CLASSIFIER_RULE_OUTCOME_UNSPECIFIED             |
+| `DefaultOutcomeAgentClassifierRuleOutcomeAllowed`     | AGENT_CLASSIFIER_RULE_OUTCOME_ALLOWED                 |
+| `DefaultOutcomeAgentClassifierRuleOutcomeDenied`      | AGENT_CLASSIFIER_RULE_OUTCOME_DENIED                  |

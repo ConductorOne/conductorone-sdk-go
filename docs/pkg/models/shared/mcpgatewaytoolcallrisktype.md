@@ -1,0 +1,13 @@
+# McpGatewayToolCallRiskType
+
+McpGatewayToolCallRiskType: the discriminator carries no payload beyond
+ itself -- the specific detection rule and subject live on
+ McpGatewayToolCallRiskEvidence, since which fields are meaningful (a
+ tool-call trace vs. a volume baseline vs. an unregistered server) varies
+ per rule, not per dedup identity.
+
+
+## Fields
+
+| Field       | Type        | Required    | Description |
+| ----------- | ----------- | ----------- | ----------- |

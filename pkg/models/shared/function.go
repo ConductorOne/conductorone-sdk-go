@@ -40,6 +40,11 @@ type Function struct {
 	//  the deployed image contents and executor arguments, so an update that
 	//  touches it triggers a redeployment, same as secrets or the outbound
 	//  network allowlist.
+	//
+	//  Scope today: code-mode functions only. Regular (ANY) functions run
+	//  pre-compiled binaries and the executor's compiled path has no browser
+	//  support; setting this on FUNCTION_TYPE_ANY is rejected. Connector-type
+	//  functions may join code-mode in the future.
 	BrowserEnabled *bool      `json:"browserEnabled,omitempty"`
 	CreatedAt      *time.Time `json:"createdAt,omitempty"`
 	DeletedAt      *time.Time `json:"deletedAt,omitempty"`
@@ -237,6 +242,11 @@ type FunctionInput struct {
 	//  the deployed image contents and executor arguments, so an update that
 	//  touches it triggers a redeployment, same as secrets or the outbound
 	//  network allowlist.
+	//
+	//  Scope today: code-mode functions only. Regular (ANY) functions run
+	//  pre-compiled binaries and the executor's compiled path has no browser
+	//  support; setting this on FUNCTION_TYPE_ANY is rejected. Connector-type
+	//  functions may join code-mode in the future.
 	BrowserEnabled *bool `json:"browserEnabled,omitempty"`
 	// The description field.
 	Description *string `json:"description,omitempty"`
