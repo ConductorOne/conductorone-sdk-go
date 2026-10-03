@@ -44,6 +44,9 @@ const (
 	FindingTypesFindingTypeCredentialExpiring                FindingTypes = "FINDING_TYPE_CREDENTIAL_EXPIRING"
 	FindingTypesFindingTypeConnectorSyncFailing              FindingTypes = "FINDING_TYPE_CONNECTOR_SYNC_FAILING"
 	FindingTypesFindingTypeShadowMcp                         FindingTypes = "FINDING_TYPE_SHADOW_MCP"
+	FindingTypesFindingTypeShadowApp                         FindingTypes = "FINDING_TYPE_SHADOW_APP"
+	FindingTypesFindingTypeMcpGatewayToolCallRisk            FindingTypes = "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK"
+	FindingTypesFindingTypeEdge                              FindingTypes = "FINDING_TYPE_EDGE"
 )
 
 func (e FindingTypes) ToPointer() *FindingTypes {
@@ -54,7 +57,7 @@ func (e FindingTypes) ToPointer() *FindingTypes {
 func (e *FindingTypes) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "FINDING_TYPE_UNSPECIFIED", "FINDING_TYPE_SIMILAR_USERNAME_MATCH", "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION", "FINDING_TYPE_NHI_UNOWNED", "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED", "FINDING_TYPE_DECOY_CREDENTIAL_USED", "FINDING_TYPE_CUSTOM", "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED", "FINDING_TYPE_DEACTIVATED_OWNER", "FINDING_TYPE_UNUSED_SECRET", "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED", "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED", "FINDING_TYPE_CREDENTIAL_EXPIRING", "FINDING_TYPE_CONNECTOR_SYNC_FAILING", "FINDING_TYPE_SHADOW_MCP":
+		case "FINDING_TYPE_UNSPECIFIED", "FINDING_TYPE_SIMILAR_USERNAME_MATCH", "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION", "FINDING_TYPE_NHI_UNOWNED", "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED", "FINDING_TYPE_DECOY_CREDENTIAL_USED", "FINDING_TYPE_CUSTOM", "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED", "FINDING_TYPE_DEACTIVATED_OWNER", "FINDING_TYPE_UNUSED_SECRET", "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED", "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED", "FINDING_TYPE_CREDENTIAL_EXPIRING", "FINDING_TYPE_CONNECTOR_SYNC_FAILING", "FINDING_TYPE_SHADOW_MCP", "FINDING_TYPE_SHADOW_APP", "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK", "FINDING_TYPE_EDGE":
 			return true
 		}
 	}
@@ -197,6 +200,10 @@ type FindingSearchRequest struct {
 	// Filter by decoy IDs (OR within field). Matches findings whose
 	//  target.decoy_target.decoy_id is in this list.
 	DecoyIds []string `json:"decoyIds,omitempty"`
+	// Filter by Edge IDs (OR within field): Edge findings (FINDING_TYPE_EDGE)
+	//  raised on any listed Edge. Edge findings carry no app_id, so do not pair
+	//  this with app_ids. Empty = not applied.
+	EdgeIds []string `json:"edgeIds,omitempty"`
 	// Filter by finding type (OR within field).
 	FindingTypes []FindingTypes `json:"findingTypes,omitempty"`
 	// When true, includes findings with no assignee. An explicit predicate for
@@ -302,6 +309,13 @@ func (f *FindingSearchRequest) GetDecoyIds() []string {
 		return nil
 	}
 	return f.DecoyIds
+}
+
+func (f *FindingSearchRequest) GetEdgeIds() []string {
+	if f == nil {
+		return nil
+	}
+	return f.EdgeIds
 }
 
 func (f *FindingSearchRequest) GetFindingTypes() []FindingTypes {

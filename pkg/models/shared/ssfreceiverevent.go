@@ -74,26 +74,26 @@ func (e *MatchMethod) IsExact() bool {
 	return false
 }
 
-// Outcome - The action ConductorOne took in response to this event.
-type Outcome string
+// SSFReceiverEventOutcome - The action ConductorOne took in response to this event.
+type SSFReceiverEventOutcome string
 
 const (
-	OutcomeSsfEventOutcomeUnspecified         Outcome = "SSF_EVENT_OUTCOME_UNSPECIFIED"
-	OutcomeSsfEventOutcomeSessionsRevoked     Outcome = "SSF_EVENT_OUTCOME_SESSIONS_REVOKED"
-	OutcomeSsfEventOutcomeLogged              Outcome = "SSF_EVENT_OUTCOME_LOGGED"
-	OutcomeSsfEventOutcomePrincipalNotFound   Outcome = "SSF_EVENT_OUTCOME_PRINCIPAL_NOT_FOUND"
-	OutcomeSsfEventOutcomeVerified            Outcome = "SSF_EVENT_OUTCOME_VERIFIED"
-	OutcomeSsfEventOutcomeStreamStatusUpdated Outcome = "SSF_EVENT_OUTCOME_STREAM_STATUS_UPDATED"
-	OutcomeSsfEventOutcomeUnrecognized        Outcome = "SSF_EVENT_OUTCOME_UNRECOGNIZED"
-	OutcomeSsfEventOutcomeError               Outcome = "SSF_EVENT_OUTCOME_ERROR"
+	SSFReceiverEventOutcomeSsfEventOutcomeUnspecified         SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_UNSPECIFIED"
+	SSFReceiverEventOutcomeSsfEventOutcomeSessionsRevoked     SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_SESSIONS_REVOKED"
+	SSFReceiverEventOutcomeSsfEventOutcomeLogged              SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_LOGGED"
+	SSFReceiverEventOutcomeSsfEventOutcomePrincipalNotFound   SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_PRINCIPAL_NOT_FOUND"
+	SSFReceiverEventOutcomeSsfEventOutcomeVerified            SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_VERIFIED"
+	SSFReceiverEventOutcomeSsfEventOutcomeStreamStatusUpdated SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_STREAM_STATUS_UPDATED"
+	SSFReceiverEventOutcomeSsfEventOutcomeUnrecognized        SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_UNRECOGNIZED"
+	SSFReceiverEventOutcomeSsfEventOutcomeError               SSFReceiverEventOutcome = "SSF_EVENT_OUTCOME_ERROR"
 )
 
-func (e Outcome) ToPointer() *Outcome {
+func (e SSFReceiverEventOutcome) ToPointer() *SSFReceiverEventOutcome {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *Outcome) IsExact() bool {
+func (e *SSFReceiverEventOutcome) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "SSF_EVENT_OUTCOME_UNSPECIFIED", "SSF_EVENT_OUTCOME_SESSIONS_REVOKED", "SSF_EVENT_OUTCOME_LOGGED", "SSF_EVENT_OUTCOME_PRINCIPAL_NOT_FOUND", "SSF_EVENT_OUTCOME_VERIFIED", "SSF_EVENT_OUTCOME_STREAM_STATUS_UPDATED", "SSF_EVENT_OUTCOME_UNRECOGNIZED", "SSF_EVENT_OUTCOME_ERROR":
@@ -115,7 +115,7 @@ type SSFReceiverEvent struct {
 	// The ConductorOne user ID that the event subject was resolved to, if any.
 	MatchedUserID *string `json:"matchedUserId,omitempty"`
 	// The action ConductorOne took in response to this event.
-	Outcome *Outcome `json:"outcome,omitempty"`
+	Outcome *SSFReceiverEventOutcome `json:"outcome,omitempty"`
 	// Human-readable details about the outcome (e.g., error message or revocation summary).
 	OutcomeDetail *string    `json:"outcomeDetail,omitempty"`
 	ReceivedAt    *time.Time `json:"receivedAt,omitempty"`
@@ -179,7 +179,7 @@ func (s *SSFReceiverEvent) GetMatchedUserID() *string {
 	return s.MatchedUserID
 }
 
-func (s *SSFReceiverEvent) GetOutcome() *Outcome {
+func (s *SSFReceiverEvent) GetOutcome() *SSFReceiverEventOutcome {
 	if s == nil {
 		return nil
 	}

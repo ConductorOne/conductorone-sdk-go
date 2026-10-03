@@ -58,6 +58,7 @@ func (e *TerminalReason) IsExact() bool {
 
 // CustomAnalysisResultView is a lightweight summary of a past custom analysis run.
 type CustomAnalysisResultView struct {
+	AccessScope *AccessScope `json:"accessScope,omitempty"`
 	// Number of users in the cohort.
 	CohortSize  *int       `json:"cohortSize,omitempty"`
 	CompletedAt *time.Time `json:"completedAt,omitempty"`
@@ -70,6 +71,7 @@ type CustomAnalysisResultView struct {
 	ID *string `json:"id,omitempty"`
 	// Profile filters that defined the cohort for this analysis.
 	ProfileFilters []ProfileFilter `json:"profileFilters,omitempty"`
+	ResourceScope  *ResourceScope  `json:"resourceScope,omitempty"`
 	// Execution status of this analysis (e.g., running, completed, failed).
 	Status *CustomAnalysisResultViewStatus `json:"status,omitempty"`
 	// Number of role suggestions generated.
@@ -89,6 +91,13 @@ func (c *CustomAnalysisResultView) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (c *CustomAnalysisResultView) GetAccessScope() *AccessScope {
+	if c == nil {
+		return nil
+	}
+	return c.AccessScope
 }
 
 func (c *CustomAnalysisResultView) GetCohortSize() *int {
@@ -138,6 +147,13 @@ func (c *CustomAnalysisResultView) GetProfileFilters() []ProfileFilter {
 		return nil
 	}
 	return c.ProfileFilters
+}
+
+func (c *CustomAnalysisResultView) GetResourceScope() *ResourceScope {
+	if c == nil {
+		return nil
+	}
+	return c.ResourceScope
 }
 
 func (c *CustomAnalysisResultView) GetStatus() *CustomAnalysisResultViewStatus {
