@@ -1,0 +1,9 @@
+# C1APIAiGovernanceV1VirtualMCPServerServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `VirtualMCPServerServiceUpdateRequest`                                                                             | [*shared.VirtualMCPServerServiceUpdateRequest](../../../pkg/models/shared/virtualmcpserverserviceupdaterequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `ID`                                                                                                               | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

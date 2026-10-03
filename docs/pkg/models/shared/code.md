@@ -39,3 +39,5 @@ custom := shared.Code("custom_value")
 | `CodeRequestCatalogTypeChangeImpactCodeAutomationExclusions`                 | REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_AUTOMATION_EXCLUSIONS                |
 | `CodeRequestCatalogTypeChangeImpactCodeEnrolledMembers`                      | REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLED_MEMBERS                     |
 | `CodeRequestCatalogTypeChangeImpactCodeCatalogMembershipGrants`              | REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CATALOG_MEMBERSHIP_GRANTS            |
+| `CodeRequestCatalogTypeChangeImpactCodeRoleMembershipEntitlements`           | REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ROLE_MEMBERSHIP_ENTITLEMENTS         |
+| `CodeRequestCatalogTypeChangeImpactCodeContainingCatalogs`                   | REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CONTAINING_CATALOGS                  |

@@ -107,7 +107,9 @@ func main() {
 
 ### [AccessReviewSetupEntitlement](docs/sdks/accessreviewsetupentitlement/README.md)
 
+* [AddCampaignEntitlements](docs/sdks/accessreviewsetupentitlement/README.md#addcampaignentitlements) - Add Campaign Entitlements
 * [GetCampaignScopeAndEntitlements](docs/sdks/accessreviewsetupentitlement/README.md#getcampaignscopeandentitlements) - Get Campaign Scope And Entitlements
+* [RemoveCampaignEntitlements](docs/sdks/accessreviewsetupentitlement/README.md#removecampaignentitlements) - Remove Campaign Entitlements
 * [SetCampaignScopeAndEntitlements](docs/sdks/accessreviewsetupentitlement/README.md#setcampaignscopeandentitlements) - Set Campaign Scope And Entitlements
 * [SetCampaignScopeByResourceType](docs/sdks/accessreviewsetupentitlement/README.md#setcampaignscopebyresourcetype) - Set Campaign Scope By Resource Type
 
@@ -127,6 +129,11 @@ func main() {
 ### [AccountProvisionPolicyTest](docs/sdks/accountprovisionpolicytest/README.md)
 
 * [Test](docs/sdks/accountprovisionpolicytest/README.md#test) - Test
+
+### [AgentClassifier](docs/sdks/agentclassifier/README.md)
+
+* [GetAgentClassifierPolicy](docs/sdks/agentclassifier/README.md#getagentclassifierpolicy) - Get Agent Classifier Policy
+* [UpdateAgentClassifierPolicy](docs/sdks/agentclassifier/README.md#updateagentclassifierpolicy) - Update Agent Classifier Policy
 
 ### [AIGovernanceSettings](docs/sdks/aigovernancesettings/README.md)
 
@@ -321,6 +328,10 @@ func main() {
 * [Search](docs/sdks/appsearch/README.md#search) - Search
 * [SearchUserOwnership](docs/sdks/appsearch/README.md#searchuserownership) - Search User Ownership
 
+### [AppSecretAdmin](docs/sdks/appsecretadmin/README.md)
+
+* [Revoke](docs/sdks/appsecretadmin/README.md#revoke) - Revoke
+
 ### [AppUsageControls](docs/sdks/appusagecontrols/README.md)
 
 * [Get](docs/sdks/appusagecontrols/README.md#get) - Get
@@ -369,6 +380,19 @@ func main() {
 
 * [Introspect](docs/sdks/auth/README.md#introspect) - Introspect
 
+### [AuthzenServer](docs/sdks/authzenserver/README.md)
+
+* [Create](docs/sdks/authzenserver/README.md#create) - Create
+* [CreateAuthzenPolicy](docs/sdks/authzenserver/README.md#createauthzenpolicy) - Create Authzen Policy
+* [Delete](docs/sdks/authzenserver/README.md#delete) - Delete
+* [DeleteAuthzenPolicy](docs/sdks/authzenserver/README.md#deleteauthzenpolicy) - Delete Authzen Policy
+* [Get](docs/sdks/authzenserver/README.md#get) - Get
+* [GetAuthzenPolicy](docs/sdks/authzenserver/README.md#getauthzenpolicy) - Get Authzen Policy
+* [List](docs/sdks/authzenserver/README.md#list) - List
+* [ListAuthzenPolicies](docs/sdks/authzenserver/README.md#listauthzenpolicies) - List Authzen Policies
+* [TestAuthzenPolicy](docs/sdks/authzenserver/README.md#testauthzenpolicy) - Test Authzen Policy
+* [Update](docs/sdks/authzenserver/README.md#update) - Update
+
 ### [Automation](docs/sdks/automation/README.md)
 
 * [ClearAutomationCircuitBreaker](docs/sdks/automation/README.md#clearautomationcircuitbreaker) - Clear Automation Circuit Breaker
@@ -402,6 +426,24 @@ func main() {
 ### [AWSExternalIDSettings](docs/sdks/awsexternalidsettings/README.md)
 
 * [Get](docs/sdks/awsexternalidsettings/README.md#get) - Get
+
+### [Classifier](docs/sdks/classifier/README.md)
+
+* [CreateClassifier](docs/sdks/classifier/README.md#createclassifier) - Create Classifier
+* [CreateClassifierBinding](docs/sdks/classifier/README.md#createclassifierbinding) - Create Classifier Binding
+* [DeleteClassifier](docs/sdks/classifier/README.md#deleteclassifier) - Delete Classifier
+* [DeleteClassifierBinding](docs/sdks/classifier/README.md#deleteclassifierbinding) - Delete Classifier Binding
+* [GetClassifier](docs/sdks/classifier/README.md#getclassifier) - Get Classifier
+* [ListClassifierBindings](docs/sdks/classifier/README.md#listclassifierbindings) - List Classifier Bindings
+* [ListClassifiers](docs/sdks/classifier/README.md#listclassifiers) - List Classifiers
+* [UpdateClassifier](docs/sdks/classifier/README.md#updateclassifier) - Update Classifier
+
+### [ClassifierTemplate](docs/sdks/classifiertemplate/README.md)
+
+* [AddClassifierRuleFromTemplate](docs/sdks/classifiertemplate/README.md#addclassifierrulefromtemplate) - Add Classifier Rule From Template
+* [GetClassifierTemplate](docs/sdks/classifiertemplate/README.md#getclassifiertemplate) - Get Classifier Template
+* [InstantiateClassifierTemplate](docs/sdks/classifiertemplate/README.md#instantiateclassifiertemplate) - Instantiate Classifier Template
+* [ListClassifierTemplates](docs/sdks/classifiertemplate/README.md#listclassifiertemplates) - List Classifier Templates
 
 ### [Connector](docs/sdks/connector/README.md)
 
@@ -479,6 +521,34 @@ func main() {
 * [List](docs/sdks/directory/README.md#list) - List
 * [Update](docs/sdks/directory/README.md#update) - Update
 
+### [Edge](docs/sdks/edge/README.md)
+
+* [CheckInferenceVaultAccess](docs/sdks/edge/README.md#checkinferencevaultaccess) - Check Inference Vault Access
+* [Create](docs/sdks/edge/README.md#create) - Create
+* [Delete](docs/sdks/edge/README.md#delete) - Delete
+* [Get](docs/sdks/edge/README.md#get) - Get
+* [GetEgressTrafficEvent](docs/sdks/edge/README.md#getegresstrafficevent) - Get Egress Traffic Event
+* [GetEgressTrafficSummary](docs/sdks/edge/README.md#getegresstrafficsummary) - Get Egress Traffic Summary
+* [GetEgressTrafficSummaryRollup](docs/sdks/edge/README.md#getegresstrafficsummaryrollup) - Get Egress Traffic Summary Rollup
+* [GetInferenceUsageAttribution](docs/sdks/edge/README.md#getinferenceusageattribution) - Get Inference Usage Attribution
+* [GetInferenceUsageAttributionRollup](docs/sdks/edge/README.md#getinferenceusageattributionrollup) - Get Inference Usage Attribution Rollup
+* [GetInferenceUsageSummary](docs/sdks/edge/README.md#getinferenceusagesummary) - Get Inference Usage Summary
+* [GetInferenceUsageSummaryRollup](docs/sdks/edge/README.md#getinferenceusagesummaryrollup) - Get Inference Usage Summary Rollup
+* [List](docs/sdks/edge/README.md#list) - List
+* [ListEdgesRollup](docs/sdks/edge/README.md#listedgesrollup) - List Edges Rollup
+* [ListEgressDenialSummary](docs/sdks/edge/README.md#listegressdenialsummary) - List Egress Denial Summary
+* [ListEgressTopAgents](docs/sdks/edge/README.md#listegresstopagents) - List Egress Top Agents
+* [ListEgressTopAgentsRollup](docs/sdks/edge/README.md#listegresstopagentsrollup) - List Egress Top Agents Rollup
+* [ListEgressTopDestinations](docs/sdks/edge/README.md#listegresstopdestinations) - List Egress Top Destinations
+* [ListEgressTopToolsRollup](docs/sdks/edge/README.md#listegresstoptoolsrollup) - List Egress Top Tools Rollup
+* [ListEgressTrafficEvents](docs/sdks/edge/README.md#listegresstrafficevents) - List Egress Traffic Events
+* [ListInferenceCatalog](docs/sdks/edge/README.md#listinferencecatalog) - List Inference Catalog
+* [ListInferenceRoutes](docs/sdks/edge/README.md#listinferenceroutes) - List Inference Routes
+* [ListInferenceTopAgents](docs/sdks/edge/README.md#listinferencetopagents) - List Inference Top Agents
+* [ListInferenceTopTools](docs/sdks/edge/README.md#listinferencetoptools) - List Inference Top Tools
+* [ListInferenceTrafficEvents](docs/sdks/edge/README.md#listinferencetrafficevents) - List Inference Traffic Events
+* [Update](docs/sdks/edge/README.md#update) - Update
+
 ### [Export](docs/sdks/export/README.md)
 
 * [Create](docs/sdks/export/README.md#create) - Create
@@ -528,7 +598,9 @@ func main() {
 
 ### [FindingSettings](docs/sdks/findingsettings/README.md)
 
+* [GetEdgeFindingSettings](docs/sdks/findingsettings/README.md#getedgefindingsettings) - Get Edge Finding Settings
 * [ListFindingSettings](docs/sdks/findingsettings/README.md#listfindingsettings) - List Finding Settings
+* [UpdateEdgeFindingSettings](docs/sdks/findingsettings/README.md#updateedgefindingsettings) - Update Edge Finding Settings
 * [UpdateFindingSettings](docs/sdks/findingsettings/README.md#updatefindingsettings) - Update Finding Settings
 
 ### [FindingTransformationRule](docs/sdks/findingtransformationrule/README.md)
@@ -608,6 +680,20 @@ func main() {
 * [List](docs/sdks/gatewaykey/README.md#list) - List
 * [Mint](docs/sdks/gatewaykey/README.md#mint) - Mint
 * [Revoke](docs/sdks/gatewaykey/README.md#revoke) - Revoke
+
+### [GoLink](docs/sdks/golink/README.md)
+
+* [Create](docs/sdks/golink/README.md#create) - Create
+* [Delete](docs/sdks/golink/README.md#delete) - Delete
+* [Get](docs/sdks/golink/README.md#get) - Get
+* [List](docs/sdks/golink/README.md#list) - List
+* [ListVersions](docs/sdks/golink/README.md#listversions) - List Versions
+* [Resolve](docs/sdks/golink/README.md#resolve) - Resolve
+* [Update](docs/sdks/golink/README.md#update) - Update
+
+### [GoLinkSearch](docs/sdks/golinksearch/README.md)
+
+* [Search](docs/sdks/golinksearch/README.md#search) - Search
 
 ### [Hooks](docs/sdks/hooks/README.md)
 
@@ -697,12 +783,14 @@ func main() {
 
 ### [MyFundLimits](docs/sdks/myfundlimits/README.md)
 
+* [ClearTemporaryLimit](docs/sdks/myfundlimits/README.md#cleartemporarylimit) - Clear Temporary Limit
 * [Delete](docs/sdks/myfundlimits/README.md#delete) - Delete
 * [List](docs/sdks/myfundlimits/README.md#list) - List
 * [ListHistory](docs/sdks/myfundlimits/README.md#listhistory) - List History
 * [Pause](docs/sdks/myfundlimits/README.md#pause) - Pause
 * [Resume](docs/sdks/myfundlimits/README.md#resume) - Resume
 * [SetLimit](docs/sdks/myfundlimits/README.md#setlimit) - Set Limit
+* [SetTemporaryLimit](docs/sdks/myfundlimits/README.md#settemporarylimit) - Set Temporary Limit
 
 ### [OnboardingSettings](docs/sdks/onboardingsettings/README.md)
 
@@ -723,10 +811,10 @@ func main() {
 
 * [CreateExternal](docs/sdks/papersecret/README.md#createexternal) - Create External
 * [CreateInternal](docs/sdks/papersecret/README.md#createinternal) - Create Internal
+* [Delete](docs/sdks/papersecret/README.md#delete) - Delete
 * [Get](docs/sdks/papersecret/README.md#get) - Get
 * [GetByShareCode](docs/sdks/papersecret/README.md#getbysharecode) - Get By Share Code
 * [GetContent](docs/sdks/papersecret/README.md#getcontent) - Get Content
-* [Revoke](docs/sdks/papersecret/README.md#revoke) - Revoke
 * [SearchAuditEvents](docs/sdks/papersecret/README.md#searchauditevents) - Search Audit Events
 * [SearchMySecrets](docs/sdks/papersecret/README.md#searchmysecrets) - Search My Secrets
 * [SearchSecretsSharedWithMe](docs/sdks/papersecret/README.md#searchsecretssharedwithme) - Search Secrets Shared With Me
@@ -734,8 +822,8 @@ func main() {
 
 ### [PaperSecretAdmin](docs/sdks/papersecretadmin/README.md)
 
+* [Delete](docs/sdks/papersecretadmin/README.md#delete) - Delete
 * [Get](docs/sdks/papersecretadmin/README.md#get) - Get
-* [Revoke](docs/sdks/papersecretadmin/README.md#revoke) - Revoke
 * [Search](docs/sdks/papersecretadmin/README.md#search) - Search
 * [SearchAuditEvents](docs/sdks/papersecretadmin/README.md#searchauditevents) - Search Audit Events
 
@@ -840,6 +928,7 @@ func main() {
 * [RemoveAccessEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#removeappentitlements) - Remove App Entitlements
 * [ResumePausedBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#resumepausedbundleautomation) - Resume Paused Bundle Automation
+* [SearchScopeRoleBindingsPerCatalog](docs/sdks/requestcatalogmanagement/README.md#searchscoperolebindingspercatalog) - Search Scope Role Bindings Per Catalog
 * [SetBundleAutomation](docs/sdks/requestcatalogmanagement/README.md#setbundleautomation) - Set Bundle Automation
 * [Update](docs/sdks/requestcatalogmanagement/README.md#update) - Update
 * [UpdateAppEntitlements](docs/sdks/requestcatalogmanagement/README.md#updateappentitlements) - Update App Entitlements
@@ -865,6 +954,7 @@ func main() {
 
 ### [RoleMiningManagement](docs/sdks/roleminingmanagement/README.md)
 
+* [CountEntitlementSelectionFilterAttributeValues](docs/sdks/roleminingmanagement/README.md#countentitlementselectionfilterattributevalues) - Count Entitlement Selection Filter Attribute Values
 * [CreateAccessProfileFromCohort](docs/sdks/roleminingmanagement/README.md#createaccessprofilefromcohort) - Create Access Profile From Cohort
 * [EvaluateEntitlementSelection](docs/sdks/roleminingmanagement/README.md#evaluateentitlementselection) - Evaluate Entitlement Selection
 * [GetCustomAnalysisResult](docs/sdks/roleminingmanagement/README.md#getcustomanalysisresult) - Get Custom Analysis Result
@@ -872,6 +962,8 @@ func main() {
 * [GetLatestRun](docs/sdks/roleminingmanagement/README.md#getlatestrun) - Get Latest Run
 * [GetRoleMiningConfig](docs/sdks/roleminingmanagement/README.md#getroleminingconfig) - Get Role Mining Config
 * [GetSuggestion](docs/sdks/roleminingmanagement/README.md#getsuggestion) - Get Suggestion
+* [ListCohortFilterAttributeValues](docs/sdks/roleminingmanagement/README.md#listcohortfilterattributevalues) - List Cohort Filter Attribute Values
+* [ListCohortFilterAttributes](docs/sdks/roleminingmanagement/README.md#listcohortfilterattributes) - List Cohort Filter Attributes
 * [ListCustomAnalysisResults](docs/sdks/roleminingmanagement/README.md#listcustomanalysisresults) - List Custom Analysis Results
 * [ListRuns](docs/sdks/roleminingmanagement/README.md#listruns) - List Runs
 * [ListSuggestions](docs/sdks/roleminingmanagement/README.md#listsuggestions) - List Suggestions
@@ -915,6 +1007,10 @@ func main() {
 * [TestSourceIP](docs/sdks/sessionsettings/README.md#testsourceip) - Test Source Ip
 * [Update](docs/sdks/sessionsettings/README.md#update) - Update
 
+### [ShadowMcpOccurrence](docs/sdks/shadowmcpoccurrence/README.md)
+
+* [Search](docs/sdks/shadowmcpoccurrence/README.md#search) - Search
+
 ### [SignInPolicy](docs/sdks/signinpolicy/README.md)
 
 * [Create](docs/sdks/signinpolicy/README.md#create) - Create
@@ -928,10 +1024,13 @@ func main() {
 
 * [GetAttributionRollups](docs/sdks/spendinsights/README.md#getattributionrollups) - Get Attribution Rollups
 * [GetDenial](docs/sdks/spendinsights/README.md#getdenial) - Get Denial
+* [GetMySpendForecast](docs/sdks/spendinsights/README.md#getmyspendforecast) - Get My Spend Forecast
+* [GetMySpendHistory](docs/sdks/spendinsights/README.md#getmyspendhistory) - Get My Spend History
 * [GetMySpendStatus](docs/sdks/spendinsights/README.md#getmyspendstatus) - Get My Spend Status
 * [GetOverview](docs/sdks/spendinsights/README.md#getoverview) - Get Overview
 * [ResolveEffectiveLimits](docs/sdks/spendinsights/README.md#resolveeffectivelimits) - Resolve Effective Limits
 * [SearchDenials](docs/sdks/spendinsights/README.md#searchdenials) - Search Denials
+* [SearchMySpendUsage](docs/sdks/spendinsights/README.md#searchmyspendusage) - Search My Spend Usage
 
 ### [SSFReceiverEvent](docs/sdks/ssfreceiverevent/README.md)
 
@@ -1012,7 +1111,9 @@ func main() {
 * [CreateOffboardingTask](docs/sdks/task/README.md#createoffboardingtask) - Create Offboarding Task
 * [CreateResourceActionTask](docs/sdks/task/README.md#createresourceactiontask) - Create Resource Action Task
 * [CreateRevokeTask](docs/sdks/task/README.md#createrevoketask) - Create Revoke Task
+* [CreateSpendRemedyTask](docs/sdks/task/README.md#createspendremedytask) - Create Spend Remedy Task
 * [Get](docs/sdks/task/README.md#get) - Get
+* [GetSpendRemedyReview](docs/sdks/task/README.md#getspendremedyreview) - Get Spend Remedy Review
 
 ### [TaskActions](docs/sdks/taskactions/README.md)
 
@@ -1039,13 +1140,6 @@ func main() {
 
 * [Search](docs/sdks/tasksearch/README.md#search) - Search
 
-### [TBControlPlane](docs/sdks/tbcontrolplane/README.md)
-
-* [GetDiscoverySnapshot](docs/sdks/tbcontrolplane/README.md#getdiscoverysnapshot) - Get Discovery Snapshot
-* [GetEgressPolicy](docs/sdks/tbcontrolplane/README.md#getegresspolicy) - Get Egress Policy
-* [PushDiscovery](docs/sdks/tbcontrolplane/README.md#pushdiscovery) - Push Discovery
-* [SaveEgressPolicy](docs/sdks/tbcontrolplane/README.md#saveegresspolicy) - Save Egress Policy
-
 ### [TenantAuthConfig](docs/sdks/tenantauthconfig/README.md)
 
 * [Create](docs/sdks/tenantauthconfig/README.md#create) - Create
@@ -1065,6 +1159,18 @@ func main() {
 ### [TerraformExport](docs/sdks/terraformexport/README.md)
 
 * [GetSchema](docs/sdks/terraformexport/README.md#getschema) - Get Schema
+
+### [ToolGates](docs/sdks/toolgates/README.md)
+
+* [Create](docs/sdks/toolgates/README.md#create) - Create
+* [Delete](docs/sdks/toolgates/README.md#delete) - Delete
+* [Get](docs/sdks/toolgates/README.md#get) - Get
+* [List](docs/sdks/toolgates/README.md#list) - List
+* [Update](docs/sdks/toolgates/README.md#update) - Update
+
+### [ToolGatesSearch](docs/sdks/toolgatessearch/README.md)
+
+* [Search](docs/sdks/toolgatessearch/README.md#search) - Search
 
 ### [TunnelCredentials](docs/sdks/tunnelcredentials/README.md)
 
@@ -1089,6 +1195,15 @@ func main() {
 * [Introspect](docs/sdks/user/README.md#introspect) - Introspect
 * [List](docs/sdks/user/README.md#list) - List
 * [SetExpiringUserDelegationBindingByAdmin](docs/sdks/user/README.md#setexpiringuserdelegationbindingbyadmin) - Set Expiring User Delegation Binding By Admin
+
+### [UserAttributeManagement](docs/sdks/userattributemanagement/README.md)
+
+* [Create](docs/sdks/userattributemanagement/README.md#create) - Create
+* [Delete](docs/sdks/userattributemanagement/README.md#delete) - Delete
+* [Get](docs/sdks/userattributemanagement/README.md#get) - Get
+* [List](docs/sdks/userattributemanagement/README.md#list) - List
+* [ListAttributeTypes](docs/sdks/userattributemanagement/README.md#listattributetypes) - List Attribute Types
+* [Update](docs/sdks/userattributemanagement/README.md#update) - Update
 
 ### [UserDeveloperPreferences](docs/sdks/userdeveloperpreferences/README.md)
 
@@ -1120,6 +1235,30 @@ func main() {
 * [Delete](docs/sdks/vault/README.md#delete) - Delete
 * [Get](docs/sdks/vault/README.md#get) - Get
 * [Update](docs/sdks/vault/README.md#update) - Update
+
+### [VirtualMCPServer](docs/sdks/virtualmcpserver/README.md)
+
+* [Create](docs/sdks/virtualmcpserver/README.md#create) - Create
+* [Delete](docs/sdks/virtualmcpserver/README.md#delete) - Delete
+* [Get](docs/sdks/virtualmcpserver/README.md#get) - Get
+* [List](docs/sdks/virtualmcpserver/README.md#list) - List
+* [Update](docs/sdks/virtualmcpserver/README.md#update) - Update
+
+### [VirtualMCPServerMySearch](docs/sdks/virtualmcpservermysearch/README.md)
+
+* [Search](docs/sdks/virtualmcpservermysearch/README.md#search) - NOTE: Only shows Virtual MCP Servers available to the current user.
+
+### [VirtualMCPToolBinding](docs/sdks/virtualmcptoolbinding/README.md)
+
+* [CreateBindings](docs/sdks/virtualmcptoolbinding/README.md#createbindings) - Create Bindings
+* [DeleteBindings](docs/sdks/virtualmcptoolbinding/README.md#deletebindings) - Delete Bindings
+* [List](docs/sdks/virtualmcptoolbinding/README.md#list) - List
+
+### [VirtualMCPToolsetBinding](docs/sdks/virtualmcptoolsetbinding/README.md)
+
+* [CreateBindings](docs/sdks/virtualmcptoolsetbinding/README.md#createbindings) - Create Bindings
+* [DeleteBindings](docs/sdks/virtualmcptoolsetbinding/README.md#deletebindings) - Delete Bindings
+* [List](docs/sdks/virtualmcptoolsetbinding/README.md#list) - List
 
 ### [Webhooks](docs/sdks/webhooks/README.md)
 

@@ -1717,12 +1717,13 @@ func (s *MCPServer) Register(ctx context.Context, request operations.C1APIAiGove
 }
 
 // ResyncTools - Resync Tools
-// ResyncTools re-runs per-identity tool discovery for the calling user's
+// ResyncTools requests tool discovery for an external MCP server using the
 //
-//	own credential on a per-user MCP server, so a session opened before the
-//	user connected (or after their visible tools changed) doesn't have to
-//	wait for the next unrelated MCPTool/AppEntitlementUserBinding change to
-//	pick it up.
+//	caller's own credential for per-user servers, or the configured shared
+//	credential for callers with MCP management permission for the app.
+//	Requires external MCP discovery decoupling to be enabled for the tenant.
+//	Discovery runs asynchronously; accepting this request does not mean that
+//	tools have finished loading or grant the caller access to execute them.
 func (s *MCPServer) ResyncTools(ctx context.Context, request operations.C1APIAiGovernanceV1MCPServerServiceResyncToolsRequest, opts ...operations.Option) (*operations.C1APIAiGovernanceV1MCPServerServiceResyncToolsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

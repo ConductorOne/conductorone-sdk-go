@@ -1,0 +1,9 @@
+# C1APISecretsV1PaperSecretServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `PaperSecretServiceDeleteRequest`                                                                        | [*shared.PaperSecretServiceDeleteRequest](../../../pkg/models/shared/papersecretservicedeleterequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `VaultID`                                                                                                | `string`                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
