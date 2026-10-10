@@ -1,6 +1,6 @@
 # Kind
 
-The kind field.
+Type of configuration.
 
 ## Example Usage
 

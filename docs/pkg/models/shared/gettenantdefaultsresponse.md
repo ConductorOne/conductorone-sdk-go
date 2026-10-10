@@ -1,11 +1,11 @@
 # GetTenantDefaultsResponse
 
-GetTenantDefaultsResponse contains the tenant-default subset of AI governance
- settings applied to newly registered MCP servers and tools.
+GetTenantDefaultsResponse contains tenant defaults used by
+ legacy MCP servers.
 
 
 ## Fields
 
-| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `RequireToolApproval`                                                                         | `*bool`                                                                                       | :heavy_minus_sign:                                                                            | Whether newly discovered tools require admin approval before they can be<br/> granted or invoked. |
+| Field                                                                                                                                                   | Type                                                                                                                                                    | Required                                                                                                                                                | Description                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RequireToolApproval`                                                                                                                                   | `*bool`                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                      | Whether newly discovered tools require approval on MCP servers without a<br/> saved registration access level, unless overridden by the per-server setting. |

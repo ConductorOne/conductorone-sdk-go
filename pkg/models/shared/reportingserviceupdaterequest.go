@@ -6,6 +6,8 @@ package shared
 //
 //	At least one must be set.
 type ReportingServiceUpdateRequest struct {
+	// The description field.
+	Description *string `json:"description,omitempty"`
 	// The displayName field.
 	DisplayName *string `json:"displayName,omitempty"`
 	// Required with parameter_values. Prevents values prepared for one source
@@ -15,6 +17,13 @@ type ReportingServiceUpdateRequest struct {
 	// Editing this does not re-plan, so it may drift from
 	//  program.planned_from_prompt — that drift is how a stale report is detected.
 	Prompt *string `json:"prompt,omitempty"`
+}
+
+func (r *ReportingServiceUpdateRequest) GetDescription() *string {
+	if r == nil {
+		return nil
+	}
+	return r.Description
 }
 
 func (r *ReportingServiceUpdateRequest) GetDisplayName() *string {

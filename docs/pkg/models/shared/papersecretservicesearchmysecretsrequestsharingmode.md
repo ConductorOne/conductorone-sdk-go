@@ -1,6 +1,6 @@
 # PaperSecretServiceSearchMySecretsRequestSharingMode
 
-Filter by sharing mode (optional)
+Filter by sharing mode. Unspecified returns all sharing modes.
 
 ## Example Usage
 
