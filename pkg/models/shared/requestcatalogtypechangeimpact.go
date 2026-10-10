@@ -6,26 +6,26 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
-// Category - How the target type treats the current state.
-type Category string
+// RequestCatalogTypeChangeImpactCategory - How the target type treats the current state.
+type RequestCatalogTypeChangeImpactCategory string
 
 const (
-	CategoryRequestCatalogTypeChangeImpactCategoryUnspecified    Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_UNSPECIFIED"
-	CategoryRequestCatalogTypeChangeImpactCategoryBlocksChange   Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_BLOCKS_CHANGE"
-	CategoryRequestCatalogTypeChangeImpactCategoryWillDisable    Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_DISABLE"
-	CategoryRequestCatalogTypeChangeImpactCategoryWillRemove     Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_REMOVE"
-	CategoryRequestCatalogTypeChangeImpactCategoryInformational  Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_INFORMATIONAL"
-	CategoryRequestCatalogTypeChangeImpactCategoryNeedsAttention Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NEEDS_ATTENTION"
-	CategoryRequestCatalogTypeChangeImpactCategoryNotSupported   Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NOT_SUPPORTED"
-	CategoryRequestCatalogTypeChangeImpactCategoryIgnored        Category = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_IGNORED"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryUnspecified    RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_UNSPECIFIED"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryBlocksChange   RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_BLOCKS_CHANGE"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryWillDisable    RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_DISABLE"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryWillRemove     RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_REMOVE"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryInformational  RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_INFORMATIONAL"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryNeedsAttention RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NEEDS_ATTENTION"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryNotSupported   RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NOT_SUPPORTED"
+	RequestCatalogTypeChangeImpactCategoryRequestCatalogTypeChangeImpactCategoryIgnored        RequestCatalogTypeChangeImpactCategory = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_IGNORED"
 )
 
-func (e Category) ToPointer() *Category {
+func (e RequestCatalogTypeChangeImpactCategory) ToPointer() *RequestCatalogTypeChangeImpactCategory {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *Category) IsExact() bool {
+func (e *RequestCatalogTypeChangeImpactCategory) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_UNSPECIFIED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_BLOCKS_CHANGE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_DISABLE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_WILL_REMOVE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_INFORMATIONAL", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NEEDS_ATTENTION", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_NOT_SUPPORTED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CATEGORY_IGNORED":
@@ -58,6 +58,8 @@ const (
 	CodeRequestCatalogTypeChangeImpactCodeAutomationExclusions              Code = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_AUTOMATION_EXCLUSIONS"
 	CodeRequestCatalogTypeChangeImpactCodeEnrolledMembers                   Code = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLED_MEMBERS"
 	CodeRequestCatalogTypeChangeImpactCodeCatalogMembershipGrants           Code = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CATALOG_MEMBERSHIP_GRANTS"
+	CodeRequestCatalogTypeChangeImpactCodeRoleMembershipEntitlements        Code = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ROLE_MEMBERSHIP_ENTITLEMENTS"
+	CodeRequestCatalogTypeChangeImpactCodeContainingCatalogs                Code = "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CONTAINING_CATALOGS"
 )
 
 func (e Code) ToPointer() *Code {
@@ -68,7 +70,7 @@ func (e Code) ToPointer() *Code {
 func (e *Code) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNSPECIFIED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_SAME_TYPE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CURRENT_TYPE_UNSPECIFIED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CURRENT_TYPE_UNKNOWN", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_ENTITLEMENT_MISSING", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_PUBLISHED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_VISIBLE_TO_EVERYONE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_VISIBILITY_BINDINGS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_REQUEST_BUNDLE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNENROLLMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNENROLLMENT_ENTITLEMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_REQUEST_SCHEMA", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_REQUEST_DEFAULTS_OVERRIDE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_BUNDLE_AUTOMATION", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_ENTITLEMENT_AUTOMATION", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_AUTOMATION_EXCLUSIONS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLED_MEMBERS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CATALOG_MEMBERSHIP_GRANTS":
+		case "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNSPECIFIED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_SAME_TYPE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CURRENT_TYPE_UNSPECIFIED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CURRENT_TYPE_UNKNOWN", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_ENTITLEMENT_MISSING", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_PUBLISHED", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_VISIBLE_TO_EVERYONE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_VISIBILITY_BINDINGS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_REQUEST_BUNDLE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNENROLLMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_UNENROLLMENT_ENTITLEMENT_BEHAVIOR", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_REQUEST_SCHEMA", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_REQUEST_DEFAULTS_OVERRIDE", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_BUNDLE_AUTOMATION", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_MEMBERSHIP_ENTITLEMENT_AUTOMATION", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_AUTOMATION_EXCLUSIONS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ENROLLED_MEMBERS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CATALOG_MEMBERSHIP_GRANTS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_ROLE_MEMBERSHIP_ENTITLEMENTS", "REQUEST_CATALOG_TYPE_CHANGE_IMPACT_CODE_CONTAINING_CATALOGS":
 			return true
 		}
 	}
@@ -78,7 +80,7 @@ func (e *Code) IsExact() bool {
 // RequestCatalogTypeChangeImpact - Stable machine-readable impact produced by access profile type planning.
 type RequestCatalogTypeChangeImpact struct {
 	// How the target type treats the current state.
-	Category *Category `json:"category,omitempty"`
+	Category *RequestCatalogTypeChangeImpactCategory `json:"category,omitempty"`
 	// Stable reason identifier for rendering, diagnostics, and tests.
 	Code *Code `json:"code,omitempty"`
 	// Number of affected objects. Zero means the impact describes one setting.
@@ -101,7 +103,7 @@ func (r *RequestCatalogTypeChangeImpact) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (r *RequestCatalogTypeChangeImpact) GetCategory() *Category {
+func (r *RequestCatalogTypeChangeImpact) GetCategory() *RequestCatalogTypeChangeImpactCategory {
 	if r == nil {
 		return nil
 	}

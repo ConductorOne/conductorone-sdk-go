@@ -1,0 +1,11 @@
+# EdgeServiceListEgressTopToolsRollupResponse
+
+The EdgeServiceListEgressTopToolsRollupResponse message.
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `EdgeCount`                                                                                                                    | `*int64`                                                                                                                       | :heavy_minus_sign:                                                                                                             | Number of authorized Edges included. Zero means the caller manages no<br/> Edges, as distinct from Edges that have no traffic yet. |
+| `Tools`                                                                                                                        | [][shared.TBTopTool](../../../pkg/models/shared/tbtoptool.md)                                                                  | :heavy_minus_sign:                                                                                                             | Ordered by call_count descending, limited to page_size. No pagination<br/> cursor -- this is a fixed top-N, not a full list.   |

@@ -1,0 +1,12 @@
+# EdgeFindingSubcategorySettingsEntry
+
+EdgeFindingSubcategorySettingsEntry is a requested change to one
+ subcategory.
+
+
+## Fields
+
+| Field                                                                                                                                  | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `Enabled`                                                                                                                              | `*bool`                                                                                                                                | :heavy_minus_sign:                                                                                                                     | Target state. Required: an omitted field must not read as false.                                                                       |
+| `Subcategory`                                                                                                                          | [*shared.EdgeFindingSubcategorySettingsEntrySubcategory](../../../pkg/models/shared/edgefindingsubcategorysettingsentrysubcategory.md) | :heavy_minus_sign:                                                                                                                     | The subcategory field.                                                                                                                 |

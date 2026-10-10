@@ -1,6 +1,7 @@
 # MCPServerViewRequireToolApproval
 
-Per-server override for tool auto-approval.
+Per-server override for tool approval on MCP servers without a saved
+ registration access level. UNSPECIFIED inherits the tenant setting.
 
 ## Example Usage
 
