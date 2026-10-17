@@ -15,13 +15,16 @@ type Report struct {
 	// The createdByUserId field.
 	CreatedByUserID *string    `json:"createdByUserId,omitempty"`
 	DeletedAt       *time.Time `json:"deletedAt,omitempty"`
+	// The description field.
+	Description *string `json:"description,omitempty"`
 	// The displayName field.
 	DisplayName *string `json:"displayName,omitempty"`
 	// The id field.
 	ID *string `json:"id,omitempty"`
 	// Separate pointers: the last attempt may have failed while callers still need
 	//  the last renderable result.
-	LatestRunID *string `json:"latestRunId,omitempty"`
+	LatestRunID      *string    `json:"latestRunId,omitempty"`
+	LatestRunSummary *ReportRun `json:"latestRunSummary,omitempty"`
 	// The latestSuccessfulRunId field.
 	LatestSuccessfulRunID *string        `json:"latestSuccessfulRunId,omitempty"`
 	ParameterSchema       map[string]any `json:"parameterSchema,omitempty"`
@@ -66,6 +69,13 @@ func (r *Report) GetDeletedAt() *time.Time {
 	return r.DeletedAt
 }
 
+func (r *Report) GetDescription() *string {
+	if r == nil {
+		return nil
+	}
+	return r.Description
+}
+
 func (r *Report) GetDisplayName() *string {
 	if r == nil {
 		return nil
@@ -85,6 +95,13 @@ func (r *Report) GetLatestRunID() *string {
 		return nil
 	}
 	return r.LatestRunID
+}
+
+func (r *Report) GetLatestRunSummary() *ReportRun {
+	if r == nil {
+		return nil
+	}
+	return r.LatestRunSummary
 }
 
 func (r *Report) GetLatestSuccessfulRunID() *string {

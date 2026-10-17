@@ -1,6 +1,6 @@
 # ClawLLMRateSnapshotSource
 
-The source field.
+Provenance of the recorded prices.
 
 ## Example Usage
 

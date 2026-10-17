@@ -28,3 +28,4 @@ custom := shared.TaskTypeActionType("custom_value")
 | `TaskTypeActionTypeTypeToolCall`        | TYPE_TOOL_CALL                          |
 | `TaskTypeActionTypeTypeManual`          | TYPE_MANUAL                             |
 | `TaskTypeActionTypeTypeCredentialIssue` | TYPE_CREDENTIAL_ISSUE                   |
+| `TaskTypeActionTypeTypeSpendRemedy`     | TYPE_SPEND_REMEDY                       |

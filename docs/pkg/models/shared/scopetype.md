@@ -26,3 +26,4 @@ custom := shared.ScopeType("custom_value")
 | `ScopeTypeAccessReviewScopeTypeByResource`        | ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE              |
 | `ScopeTypeAccessReviewScopeTypeByInheritance`     | ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE           |
 | `ScopeTypeAccessReviewScopeTypeByUsers`           | ACCESS_REVIEW_SCOPE_TYPE_BY_USERS                 |
+| `ScopeTypeAccessReviewScopeTypeByAccessProfiles`  | ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES       |

@@ -33,10 +33,12 @@ func (e *FundPolicyServiceCreateRequestPeriod) IsExact() bool {
 type FundPolicyServiceCreateRequest struct {
 	// Empty defaults to USD. Any other value is refused: spend governance is
 	//  USD-only today; multi-currency requires an FX source. Immutable once set.
-	CurrencyCode *string     `json:"currencyCode,omitempty"`
-	DefaultLimit *SpendLimit `json:"defaultLimit,omitempty"`
+	CurrencyCode *string          `json:"currencyCode,omitempty"`
+	DefaultLimit *FundsSpendLimit `json:"defaultLimit,omitempty"`
 	// The period field.
 	Period *FundPolicyServiceCreateRequestPeriod `json:"period,omitempty"`
+	// Optional grant policy for scoped spending changes. Empty disables requests.
+	SpendRemedyRequestPolicyID *string `json:"spendRemedyRequestPolicyId,omitempty"`
 }
 
 func (f *FundPolicyServiceCreateRequest) GetCurrencyCode() *string {
@@ -46,7 +48,7 @@ func (f *FundPolicyServiceCreateRequest) GetCurrencyCode() *string {
 	return f.CurrencyCode
 }
 
-func (f *FundPolicyServiceCreateRequest) GetDefaultLimit() *SpendLimit {
+func (f *FundPolicyServiceCreateRequest) GetDefaultLimit() *FundsSpendLimit {
 	if f == nil {
 		return nil
 	}
@@ -58,4 +60,11 @@ func (f *FundPolicyServiceCreateRequest) GetPeriod() *FundPolicyServiceCreateReq
 		return nil
 	}
 	return f.Period
+}
+
+func (f *FundPolicyServiceCreateRequest) GetSpendRemedyRequestPolicyID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.SpendRemedyRequestPolicyID
 }
