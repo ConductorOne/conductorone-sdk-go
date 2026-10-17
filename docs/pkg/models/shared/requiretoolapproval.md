@@ -1,7 +1,7 @@
 # RequireToolApproval
 
-Optional per-server override for tool auto-approval. See
- MCPServerView.require_tool_approval for semantics.
+Optional per-server override for tool approval when registering without an
+ access level. See MCPServerView.require_tool_approval for semantics.
 
 ## Example Usage
 

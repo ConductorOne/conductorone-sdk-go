@@ -7,6 +7,9 @@ type ReportingServiceSaveRequest struct {
 	// The conversation and surface are both required to address a rendered
 	//  surface; neither identifies one alone.
 	ConversationID *string `json:"conversationId,omitempty"`
+	// Optional user-facing context for a new report. Rejected while applying an
+	//  edit, where metadata remains unchanged.
+	Description *string `json:"description,omitempty"`
 	// Required for a new report and rejected when report_id is set.
 	DisplayName *string `json:"displayName,omitempty"`
 	// Required with report_id. A stale source version is rejected rather than
@@ -28,6 +31,13 @@ func (r *ReportingServiceSaveRequest) GetConversationID() *string {
 		return nil
 	}
 	return r.ConversationID
+}
+
+func (r *ReportingServiceSaveRequest) GetDescription() *string {
+	if r == nil {
+		return nil
+	}
+	return r.Description
 }
 
 func (r *ReportingServiceSaveRequest) GetDisplayName() *string {

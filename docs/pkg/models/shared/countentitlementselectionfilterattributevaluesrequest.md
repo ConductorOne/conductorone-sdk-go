@@ -1,0 +1,11 @@
+# CountEntitlementSelectionFilterAttributeValuesRequest
+
+The CountEntitlementSelectionFilterAttributeValuesRequest message.
+
+
+## Fields
+
+| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `Selection`                                                                                                        | [*shared.EvaluateEntitlementSelectionRequest1](../../../pkg/models/shared/evaluateentitlementselectionrequest1.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
+| `Values`                                                                                                           | []`string`                                                                                                         | :heavy_minus_sign:                                                                                                 | The values field.                                                                                                  |

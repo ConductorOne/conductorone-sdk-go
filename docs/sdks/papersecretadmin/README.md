@@ -4,10 +4,68 @@
 
 ### Available Operations
 
+* [Delete](#delete) - Delete
 * [Get](#get) - Get
-* [Revoke](#revoke) - Revoke
 * [Search](#search) - Search
 * [SearchAuditEvents](#searchauditevents) - Search Audit Events
+
+## Delete
+
+Delete allows an admin to delete any Paper Vault.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.secrets.v1.PaperSecretAdminService.Delete" method="delete" path="/api/v1/secrets-admin/{vault_id}" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.PaperSecretAdmin.Delete(ctx, operations.C1APISecretsV1PaperSecretAdminServiceDeleteRequest{
+        VaultID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.PaperSecretAdminServiceDeleteResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                              | :heavy_check_mark:                                                                                                                                 | The context to use for the request.                                                                                                                |
+| `request`                                                                                                                                          | [operations.C1APISecretsV1PaperSecretAdminServiceDeleteRequest](../../pkg/models/operations/c1apisecretsv1papersecretadminservicedeleterequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
+| `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
+
+### Response
+
+**[*operations.C1APISecretsV1PaperSecretAdminServiceDeleteResponse](../../pkg/models/operations/c1apisecretsv1papersecretadminservicedeleteresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Get
 
@@ -60,64 +118,6 @@ func main() {
 ### Response
 
 **[*operations.C1APISecretsV1PaperSecretAdminServiceGetResponse](../../pkg/models/operations/c1apisecretsv1papersecretadminservicegetresponse.md), error**
-
-### Errors
-
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
-
-## Revoke
-
-Revoke allows admin to revoke any secret (not just their own).
-
-### Example Usage
-
-<!-- UsageSnippet language="go" operationID="c1.api.secrets.v1.PaperSecretAdminService.Revoke" method="delete" path="/api/v1/secrets-admin/{vault_id}" -->
-```go
-package main
-
-import(
-	"context"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
-	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
-	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
-	"log"
-)
-
-func main() {
-    ctx := context.Background()
-
-    s := conductoronesdkgo.New(
-        conductoronesdkgo.WithSecurity(shared.Security{
-            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-            Oauth: "<YOUR_OAUTH_HERE>",
-        }),
-    )
-
-    res, err := s.PaperSecretAdmin.Revoke(ctx, operations.C1APISecretsV1PaperSecretAdminServiceRevokeRequest{
-        VaultID: "<id>",
-    })
-    if err != nil {
-        log.Fatal(err)
-    }
-    if res.PaperSecretAdminServiceRevokeResponse != nil {
-        // handle response
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                              | :heavy_check_mark:                                                                                                                                 | The context to use for the request.                                                                                                                |
-| `request`                                                                                                                                          | [operations.C1APISecretsV1PaperSecretAdminServiceRevokeRequest](../../pkg/models/operations/c1apisecretsv1papersecretadminservicerevokerequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `opts`                                                                                                                                             | [][operations.Option](../../pkg/models/operations/option.md)                                                                                       | :heavy_minus_sign:                                                                                                                                 | The options for this request.                                                                                                                      |
-
-### Response
-
-**[*operations.C1APISecretsV1PaperSecretAdminServiceRevokeResponse](../../pkg/models/operations/c1apisecretsv1papersecretadminservicerevokeresponse.md), error**
 
 ### Errors
 

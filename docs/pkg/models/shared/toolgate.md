@@ -1,0 +1,21 @@
+# ToolGate
+
+The ToolGate message.
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `CreatedAt`                                                            | [*time.Time](https://pkg.go.dev/time#Time)                             | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `DeletedAt`                                                            | [*time.Time](https://pkg.go.dev/time#Time)                             | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `Description`                                                          | `*string`                                                              | :heavy_minus_sign:                                                     | The description field.                                                 |
+| `DisplayName`                                                          | `*string`                                                              | :heavy_minus_sign:                                                     | The displayName field.                                                 |
+| `Enabled`                                                              | `*bool`                                                                | :heavy_minus_sign:                                                     | The enabled field.                                                     |
+| `Filter`                                                               | [*shared.ToolGateFilter](../../../pkg/models/shared/toolgatefilter.md) | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `GrantPolicyID`                                                        | `*string`                                                              | :heavy_minus_sign:                                                     | The grantPolicyId field.                                               |
+| `ID`                                                                   | `*string`                                                              | :heavy_minus_sign:                                                     | The id field.                                                          |
+| `ManagedByGuardrails`                                                  | `*bool`                                                                | :heavy_minus_sign:                                                     | The managedByGuardrails field.                                         |
+| `Priority`                                                             | `*int`                                                                 | :heavy_minus_sign:                                                     | The priority field.                                                    |
+| `TenantID`                                                             | `*string`                                                              | :heavy_minus_sign:                                                     | The tenantId field.                                                    |
+| `UpdatedAt`                                                            | [*time.Time](https://pkg.go.dev/time#Time)                             | :heavy_minus_sign:                                                     | N/A                                                                    |

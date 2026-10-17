@@ -487,11 +487,12 @@ func main() {
 
 ## ResyncTools
 
-ResyncTools re-runs per-identity tool discovery for the calling user's
- own credential on a per-user MCP server, so a session opened before the
- user connected (or after their visible tools changed) doesn't have to
- wait for the next unrelated MCPTool/AppEntitlementUserBinding change to
- pick it up.
+ResyncTools requests tool discovery for an external MCP server using the
+ caller's own credential for per-user servers, or the configured shared
+ credential for callers with MCP management permission for the app.
+ Requires external MCP discovery decoupling to be enabled for the tenant.
+ Discovery runs asynchronously; accepting this request does not mean that
+ tools have finished loading or grant the caller access to execute them.
 
 ### Example Usage
 

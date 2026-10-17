@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.DenialFiltersScopeKindSpendBlockScopeKindUnspecified
+value := shared.DenialFiltersScopeKindSpendScopeKindUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.DenialFiltersScopeKind("custom_value")
@@ -18,10 +18,10 @@ custom := shared.DenialFiltersScopeKind("custom_value")
 
 ## Values
 
-| Name                                                   | Value                                                  |
-| ------------------------------------------------------ | ------------------------------------------------------ |
-| `DenialFiltersScopeKindSpendBlockScopeKindUnspecified` | SPEND_BLOCK_SCOPE_KIND_UNSPECIFIED                     |
-| `DenialFiltersScopeKindSpendBlockScopeKindTenant`      | SPEND_BLOCK_SCOPE_KIND_TENANT                          |
-| `DenialFiltersScopeKindSpendBlockScopeKindSubject`     | SPEND_BLOCK_SCOPE_KIND_SUBJECT                         |
-| `DenialFiltersScopeKindSpendBlockScopeKindApp`         | SPEND_BLOCK_SCOPE_KIND_APP                             |
-| `DenialFiltersScopeKindSpendBlockScopeKindSubjectApp`  | SPEND_BLOCK_SCOPE_KIND_SUBJECT_APP                     |
+| Name                                              | Value                                             |
+| ------------------------------------------------- | ------------------------------------------------- |
+| `DenialFiltersScopeKindSpendScopeKindUnspecified` | SPEND_SCOPE_KIND_UNSPECIFIED                      |
+| `DenialFiltersScopeKindSpendScopeKindTenant`      | SPEND_SCOPE_KIND_TENANT                           |
+| `DenialFiltersScopeKindSpendScopeKindSubject`     | SPEND_SCOPE_KIND_SUBJECT                          |
+| `DenialFiltersScopeKindSpendScopeKindApp`         | SPEND_SCOPE_KIND_APP                              |
+| `DenialFiltersScopeKindSpendScopeKindSubjectApp`  | SPEND_SCOPE_KIND_SUBJECT_APP                      |

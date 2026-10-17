@@ -1,7 +1,8 @@
 # MCPServerServiceResyncToolsRequest
 
-MCPServerServiceResyncToolsRequest re-runs tool discovery for the calling
- user's own credential on a per-user MCP server.
+MCPServerServiceResyncToolsRequest re-runs tool discovery for an external MCP
+ server using the caller's own credential, or the configured shared credential
+ when the caller has MCP management permission for the app.
 
 
 ## Fields

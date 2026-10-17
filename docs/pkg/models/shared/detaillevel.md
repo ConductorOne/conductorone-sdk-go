@@ -1,6 +1,10 @@
-# DetailLevel
+# ~~DetailLevel~~
 
-How much the notification reveals. Defaults to SUMMARY.
+Deprecated: no longer honored. Every finding notification renders full
+ detail. Still accepted and round-tripped so a stored value is not
+ destroyed.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ## Example Usage
 

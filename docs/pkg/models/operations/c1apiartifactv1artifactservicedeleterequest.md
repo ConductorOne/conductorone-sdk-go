@@ -1,0 +1,9 @@
+# C1APIArtifactV1ArtifactServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ArtifactServiceDeleteRequest`                                                                     | [*shared.ArtifactServiceDeleteRequest](../../../pkg/models/shared/artifactservicedeleterequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `ID`                                                                                               | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
