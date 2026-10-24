@@ -1,0 +1,14 @@
+# EdgeEgressRuleWarning
+
+EdgeEgressRuleWarning is one non-blocking concern about a rule list.
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `AuthzenServerID`                                                                            | `*string`                                                                                    | :heavy_minus_sign:                                                                           | The AuthzenServer an AUTHZEN rule names, for the AUTHZEN warning kinds.                      |
+| `Kind`                                                                                       | [*shared.EdgeEgressRuleWarningKind](../../../pkg/models/shared/edgeegressrulewarningkind.md) | :heavy_minus_sign:                                                                           | The kind field.                                                                              |
+| `Message`                                                                                    | `*string`                                                                                    | :heavy_minus_sign:                                                                           | Human-readable explanation, including how to fix it.                                         |
+| `RuleIndex`                                                                                  | `*int`                                                                                       | :heavy_minus_sign:                                                                           | Zero-based rule index, or -1 for a warning about the whole list.                             |
+| `ServicePrincipalIds`                                                                        | []`string`                                                                                   | :heavy_minus_sign:                                                                           | The service principals bound to the Edge that lack the grant.                                |

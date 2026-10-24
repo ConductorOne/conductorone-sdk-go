@@ -1,0 +1,9 @@
+# C1APIAiGovernanceV1ClassifierServiceDeleteClassifierBindingRequest
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `DeleteClassifierBindingRequest`                                                                       | [*shared.DeleteClassifierBindingRequest](../../../pkg/models/shared/deleteclassifierbindingrequest.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `ID`                                                                                                   | `string`                                                                                               | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

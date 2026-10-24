@@ -1,0 +1,11 @@
+# AccessReviewSetTemplateScopeByExcludedResourceTypeResponse
+
+AccessReviewSetTemplateScopeByExcludedResourceTypeResponse contains the resulting excluded resource types and scope.
+
+
+## Fields
+
+| Field                                                                                                                       | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `ExcludedResourceTypes`                                                                                                     | [][shared.AccessReviewTemplateExcludedResourceType](../../../pkg/models/shared/accessreviewtemplateexcludedresourcetype.md) | :heavy_minus_sign:                                                                                                          | The current resource types excluded from scope.                                                                             |
+| `Scope`                                                                                                                     | [*shared.AccessReviewScopeV2](../../../pkg/models/shared/accessreviewscopev2.md)                                            | :heavy_minus_sign:                                                                                                          | N/A                                                                                                                         |

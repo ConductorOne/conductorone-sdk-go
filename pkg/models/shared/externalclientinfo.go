@@ -15,6 +15,7 @@ const (
 	ClientIDTypeClientIDTypeDcr         ClientIDType = "CLIENT_ID_TYPE_DCR"
 	ClientIDTypeClientIDTypeMetadataURL ClientIDType = "CLIENT_ID_TYPE_METADATA_URL"
 	ClientIDTypeClientIDTypeApp         ClientIDType = "CLIENT_ID_TYPE_APP"
+	ClientIDTypeClientIDTypeStatic      ClientIDType = "CLIENT_ID_TYPE_STATIC"
 )
 
 func (e ClientIDType) ToPointer() *ClientIDType {
@@ -25,7 +26,7 @@ func (e ClientIDType) ToPointer() *ClientIDType {
 func (e *ClientIDType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "CLIENT_ID_TYPE_UNSPECIFIED", "CLIENT_ID_TYPE_DCR", "CLIENT_ID_TYPE_METADATA_URL", "CLIENT_ID_TYPE_APP":
+		case "CLIENT_ID_TYPE_UNSPECIFIED", "CLIENT_ID_TYPE_DCR", "CLIENT_ID_TYPE_METADATA_URL", "CLIENT_ID_TYPE_APP", "CLIENT_ID_TYPE_STATIC":
 			return true
 		}
 	}

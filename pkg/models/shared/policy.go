@@ -85,6 +85,10 @@ type Policy struct {
 	// Ordered conditional routing rules. Evaluated top-to-bottom; the first
 	//  matching rule selects a step sequence from policy_steps. If no rule matches
 	//  (or if this array is empty), the baseline entry in policy_steps is used.
+	//  The public Create and Update APIs enforce the tenant's conditional-rules-per-policy quota
+	//  (default 16), excluding the baseline. Through the public Update API, an existing
+	//  above-quota policy may keep or reduce its rule count, but cannot increase it.
+	//  Contact support to adjust this tenant quota. The rule-count quota is not a policy-size limit.
 	Rules []Rule       `json:"rules,omitempty"`
 	Scope *PolicyScope `json:"scope,omitempty"`
 	// Whether this policy is a builtin system policy. Builtin system policies cannot be edited.
@@ -253,6 +257,10 @@ type PolicyInput struct {
 	// Ordered conditional routing rules. Evaluated top-to-bottom; the first
 	//  matching rule selects a step sequence from policy_steps. If no rule matches
 	//  (or if this array is empty), the baseline entry in policy_steps is used.
+	//  The public Create and Update APIs enforce the tenant's conditional-rules-per-policy quota
+	//  (default 16), excluding the baseline. Through the public Update API, an existing
+	//  above-quota policy may keep or reduce its rule count, but cannot increase it.
+	//  Contact support to adjust this tenant quota. The rule-count quota is not a policy-size limit.
 	Rules []Rule       `json:"rules,omitempty"`
 	Scope *PolicyScope `json:"scope,omitempty"`
 }

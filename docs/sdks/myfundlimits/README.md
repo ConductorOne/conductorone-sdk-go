@@ -4,12 +4,72 @@
 
 ### Available Operations
 
+* [ClearTemporaryLimit](#cleartemporarylimit) - Clear Temporary Limit
 * [Delete](#delete) - Delete
 * [List](#list) - List
 * [ListHistory](#listhistory) - List History
 * [Pause](#pause) - Pause
 * [Resume](#resume) - Resume
 * [SetLimit](#setlimit) - Set Limit
+* [SetTemporaryLimit](#settemporarylimit) - Set Temporary Limit
+
+## ClearTemporaryLimit
+
+Remove the temporary limit, using the current base rather than an old copy.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.funds.v1.MyFundLimitsService.ClearTemporaryLimit" method="delete" path="/api/v1/funds/my/app-limits/{app_id}/temporary-limit" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.MyFundLimits.ClearTemporaryLimit(ctx, operations.C1APIFundsV1MyFundLimitsServiceClearTemporaryLimitRequest{
+        AppID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.MyFundLimitsServiceClearTemporaryLimitResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                            | :heavy_check_mark:                                                                                                                                               | The context to use for the request.                                                                                                                              |
+| `request`                                                                                                                                                        | [operations.C1APIFundsV1MyFundLimitsServiceClearTemporaryLimitRequest](../../pkg/models/operations/c1apifundsv1myfundlimitsservicecleartemporarylimitrequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
+| `opts`                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | The options for this request.                                                                                                                                    |
+
+### Response
+
+**[*operations.C1APIFundsV1MyFundLimitsServiceClearTemporaryLimitResponse](../../pkg/models/operations/c1apifundsv1myfundlimitsservicecleartemporarylimitresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## Delete
 
@@ -361,6 +421,64 @@ func main() {
 ### Response
 
 **[*operations.C1APIFundsV1MyFundLimitsServiceSetLimitResponse](../../pkg/models/operations/c1apifundsv1myfundlimitsservicesetlimitresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SetTemporaryLimit
+
+Temporarily replace this app's self limit, not the fund supplying it.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.funds.v1.MyFundLimitsService.SetTemporaryLimit" method="post" path="/api/v1/funds/my/app-limits/{app_id}/temporary-limit" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.MyFundLimits.SetTemporaryLimit(ctx, operations.C1APIFundsV1MyFundLimitsServiceSetTemporaryLimitRequest{
+        AppID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.MyFundLimitsServiceSetTemporaryLimitResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                    | Type                                                                                                                                                         | Required                                                                                                                                                     | Description                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                        | :heavy_check_mark:                                                                                                                                           | The context to use for the request.                                                                                                                          |
+| `request`                                                                                                                                                    | [operations.C1APIFundsV1MyFundLimitsServiceSetTemporaryLimitRequest](../../pkg/models/operations/c1apifundsv1myfundlimitsservicesettemporarylimitrequest.md) | :heavy_check_mark:                                                                                                                                           | The request object to use for the request.                                                                                                                   |
+| `opts`                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                 | :heavy_minus_sign:                                                                                                                                           | The options for this request.                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIFundsV1MyFundLimitsServiceSetTemporaryLimitResponse](../../pkg/models/operations/c1apifundsv1myfundlimitsservicesettemporarylimitresponse.md), error**
 
 ### Errors
 

@@ -1,0 +1,12 @@
+# MCPAccessProvisioningConfig
+
+MCPAccessProvisioningConfig selects a shared toolset and how users receive access.
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `AccessLevel`                                                                                          | [*shared.AccessLevel](../../../pkg/models/shared/accesslevel.md)                                       | :heavy_minus_sign:                                                                                     | Unspecified defaults to read-only access.                                                              |
+| `Automatic`                                                                                            | [*shared.MCPAutomaticAccessProvisioning](../../../pkg/models/shared/mcpautomaticaccessprovisioning.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `Request`                                                                                              | [*shared.MCPRequestAccessProvisioning](../../../pkg/models/shared/mcprequestaccessprovisioning.md)     | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
