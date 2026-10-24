@@ -56,7 +56,8 @@ type CreateAppEntitlementRequest struct {
 	// The ID of the policy to use for certification tasks.
 	CertifyPolicyID *string `json:"certifyPolicyId,omitempty"`
 	// The IDs of compliance frameworks to associate with this entitlement (e.g., SOX, HIPAA).
-	ComplianceFrameworkValueIds []string `json:"complianceFrameworkValueIds,omitempty"`
+	ComplianceFrameworkValueIds []string              `json:"complianceFrameworkValueIds,omitempty"`
+	DeprovisionerPolicy         *ProvisionPolicyInput `json:"deprovisionerPolicy,omitempty"`
 	// The description of the new entitlement.
 	Description *string `json:"description,omitempty"`
 	// The display name of the new entitlement.
@@ -132,6 +133,13 @@ func (c *CreateAppEntitlementRequest) GetComplianceFrameworkValueIds() []string 
 		return nil
 	}
 	return c.ComplianceFrameworkValueIds
+}
+
+func (c *CreateAppEntitlementRequest) GetDeprovisionerPolicy() *ProvisionPolicyInput {
+	if c == nil {
+		return nil
+	}
+	return c.DeprovisionerPolicy
 }
 
 func (c *CreateAppEntitlementRequest) GetDescription() *string {

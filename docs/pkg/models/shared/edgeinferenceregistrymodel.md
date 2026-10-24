@@ -1,0 +1,14 @@
+# EdgeInferenceRegistryModel
+
+EdgeInferenceRegistryModel is a model C1 has registered for use.
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `ContextWindowTokens`                                                                       | `*int64`                                                                                    | :heavy_minus_sign:                                                                          | Zero when unknown.                                                                          |
+| `DisplayName`                                                                               | `*string`                                                                                   | :heavy_minus_sign:                                                                          | The displayName field.                                                                      |
+| `ModelID`                                                                                   | `*string`                                                                                   | :heavy_minus_sign:                                                                          | Registry model id, written to EdgeInferenceRoute.registry_model_id.                         |
+| `RouteID`                                                                                   | `*string`                                                                                   | :heavy_minus_sign:                                                                          | Suggested route id: the model's name in route id form.                                      |
+| `ServeOptions`                                                                              | [][shared.EdgeInferenceServeOption](../../../pkg/models/shared/edgeinferenceserveoption.md) | :heavy_minus_sign:                                                                          | Ways to serve the model, in C1's preferred order.                                           |

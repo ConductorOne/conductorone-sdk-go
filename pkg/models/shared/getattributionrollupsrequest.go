@@ -40,11 +40,12 @@ func (e *Dimension) IsExact() bool {
 // GetAttributionRollupsRequest specifies how to group settled spend.
 type GetAttributionRollupsRequest struct {
 	// Dimension used to group settled calls.
-	Dimension *Dimension `json:"dimension,omitempty"`
-	EndTime   *time.Time `json:"endTime,omitempty"`
+	Dimension *Dimension          `json:"dimension,omitempty"`
+	EndTime   *time.Time          `json:"endTime,omitempty"`
+	Filters   *AttributionFilters `json:"filters,omitempty"`
 	// Maximum number of groups to return. The default is 25 and the maximum is 100.
 	PageSize *int `json:"pageSize,omitempty"`
-	// Pagination token from a previous response with the same window and dimension.
+	// Pagination token from a previous response with the same window, dimension, and filters.
 	PageToken *string    `json:"pageToken,omitempty"`
 	StartTime *time.Time `json:"startTime,omitempty"`
 }
@@ -72,6 +73,13 @@ func (g *GetAttributionRollupsRequest) GetEndTime() *time.Time {
 		return nil
 	}
 	return g.EndTime
+}
+
+func (g *GetAttributionRollupsRequest) GetFilters() *AttributionFilters {
+	if g == nil {
+		return nil
+	}
+	return g.Filters
 }
 
 func (g *GetAttributionRollupsRequest) GetPageSize() *int {

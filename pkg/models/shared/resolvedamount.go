@@ -6,9 +6,9 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
-// The ResolvedAmount message.
+// ResolvedAmount records the admitted nano-unit limit.
 type ResolvedAmount struct {
-	// The amountNano field.
+	// Admitted limit, in nano-units.
 	AmountNano *int64 `integer:"string" json:"amountNano,omitempty"`
 }
 

@@ -1,0 +1,10 @@
+# C1APIEdgeV1EdgeServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `EdgeServiceUpdateRequest`                                                                 | [*shared.EdgeServiceUpdateRequest](../../../pkg/models/shared/edgeserviceupdaterequest.md) | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `AppID`                                                                                    | `string`                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `ID`                                                                                       | `string`                                                                                   | :heavy_check_mark:                                                                         | N/A                                                                                        |

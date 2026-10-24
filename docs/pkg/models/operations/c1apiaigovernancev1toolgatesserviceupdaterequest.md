@@ -1,0 +1,9 @@
+# C1APIAiGovernanceV1ToolGatesServiceUpdateRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ToolGatesServiceUpdateRequest`                                                                      | [*shared.ToolGatesServiceUpdateRequest](../../../pkg/models/shared/toolgatesserviceupdaterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `ID`                                                                                                 | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

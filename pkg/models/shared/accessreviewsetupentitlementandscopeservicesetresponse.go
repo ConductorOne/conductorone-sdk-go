@@ -40,11 +40,31 @@ func (a *AccessReviewSetupEntitlementAndScopeServiceSetResponseExpanded) GetAddi
 
 // The AccessReviewSetupEntitlementAndScopeServiceSetResponse message.
 type AccessReviewSetupEntitlementAndScopeServiceSetResponse struct {
+	// The entitlements excluded from a user-first campaign's scope. Only returned by
+	//  GetCampaignScopeAndEntitlements, and only when scope_v2 sets excluded_specific_resources.
+	ExcludedEntitlements []AccessReviewExcludedEntitlement `json:"excludedEntitlements,omitempty"`
+	// The resource types excluded from a user-first campaign's scope. Only returned by
+	//  GetCampaignScopeAndEntitlements, and only when scope_v2 sets excluded_resource_type_selections.
+	ExcludedResourceTypes []AccessReviewExcludedResourceType `json:"excludedResourceTypes,omitempty"`
 	// Related objects requested via the expand mask.
 	Expanded []AccessReviewSetupEntitlementAndScopeServiceSetResponseExpanded `json:"expanded,omitempty"`
 	// The current list of setup entitlements for the campaign.
 	List    []AccessReviewSetupEntitlementView `json:"list,omitempty"`
 	ScopeV2 *AccessReviewScopeV2               `json:"scopeV2,omitempty"`
+}
+
+func (a *AccessReviewSetupEntitlementAndScopeServiceSetResponse) GetExcludedEntitlements() []AccessReviewExcludedEntitlement {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludedEntitlements
+}
+
+func (a *AccessReviewSetupEntitlementAndScopeServiceSetResponse) GetExcludedResourceTypes() []AccessReviewExcludedResourceType {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludedResourceTypes
 }
 
 func (a *AccessReviewSetupEntitlementAndScopeServiceSetResponse) GetExpanded() []AccessReviewSetupEntitlementAndScopeServiceSetResponseExpanded {

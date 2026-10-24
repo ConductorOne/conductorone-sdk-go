@@ -39,17 +39,24 @@ func (e *FunctionInvocationStatus) IsExact() bool {
 // The FunctionInvocation message.
 type FunctionInvocation struct {
 	// The commitId field.
-	CommitID  *string    `json:"commitId,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
+	CommitID *string `json:"commitId,omitempty"`
+	// The conversationId field.
+	ConversationID *string    `json:"conversationId,omitempty"`
+	CreatedAt      *time.Time `json:"createdAt,omitempty"`
 	// The error field.
 	Error *string `json:"error,omitempty"`
 	// The functionId field.
 	FunctionID *string `json:"functionId,omitempty"`
 	// The id field.
-	ID        *string                      `json:"id,omitempty"`
-	Input     map[string]any               `json:"input,omitempty"`
-	Output    map[string]any               `json:"output,omitempty"`
-	ResultRef *FunctionInvocationResultRef `json:"resultRef,omitempty"`
+	ID    *string        `json:"id,omitempty"`
+	Input map[string]any `json:"input,omitempty"`
+	// The networkCallerUserId field.
+	NetworkCallerUserID *string                `json:"networkCallerUserId,omitempty"`
+	NetworkConfig       *FunctionNetworkConfig `json:"networkConfig,omitempty"`
+	// The networkPolicyRevision field.
+	NetworkPolicyRevision *string                      `json:"networkPolicyRevision,omitempty"`
+	Output                map[string]any               `json:"output,omitempty"`
+	ResultRef             *FunctionInvocationResultRef `json:"resultRef,omitempty"`
 	// The status field.
 	Status    *FunctionInvocationStatus `json:"status,omitempty"`
 	UpdatedAt *time.Time                `json:"updatedAt,omitempty"`
@@ -71,6 +78,13 @@ func (f *FunctionInvocation) GetCommitID() *string {
 		return nil
 	}
 	return f.CommitID
+}
+
+func (f *FunctionInvocation) GetConversationID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.ConversationID
 }
 
 func (f *FunctionInvocation) GetCreatedAt() *time.Time {
@@ -106,6 +120,27 @@ func (f *FunctionInvocation) GetInput() map[string]any {
 		return nil
 	}
 	return f.Input
+}
+
+func (f *FunctionInvocation) GetNetworkCallerUserID() *string {
+	if f == nil {
+		return nil
+	}
+	return f.NetworkCallerUserID
+}
+
+func (f *FunctionInvocation) GetNetworkConfig() *FunctionNetworkConfig {
+	if f == nil {
+		return nil
+	}
+	return f.NetworkConfig
+}
+
+func (f *FunctionInvocation) GetNetworkPolicyRevision() *string {
+	if f == nil {
+		return nil
+	}
+	return f.NetworkPolicyRevision
 }
 
 func (f *FunctionInvocation) GetOutput() map[string]any {

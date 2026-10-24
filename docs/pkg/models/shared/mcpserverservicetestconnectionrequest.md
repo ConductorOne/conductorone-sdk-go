@@ -1,9 +1,8 @@
 # MCPServerServiceTestConnectionRequest
 
-MCPServerServiceTestConnectionRequest exercises an
- MCPServerExternalConfig against the upstream server and reports whether
- the supplied URL + transport + credentials accept a real MCP
- initialize + tools/list.
+MCPServerServiceTestConnectionRequest exercises a configured external or
+ hosted MCP server against the upstream and reports whether credentials accept
+ a real initialize + tools/list round trip.
 
 
 ## Fields
@@ -13,4 +12,5 @@ MCPServerServiceTestConnectionRequest exercises an
 | `AppID`                                                                                                                        | `*string`                                                                                                                      | :heavy_minus_sign:                                                                                                             | App ID of an existing external MCP connector. When set together with<br/> connector_id, the request runs in edit mode (see above). |
 | `ConnectorID`                                                                                                                  | `*string`                                                                                                                      | :heavy_minus_sign:                                                                                                             | Connector ID of an existing external MCP connector. When set together<br/> with app_id, the request runs in edit mode (see above). |
 | `ExternalConfig`                                                                                                               | [*shared.MCPServerExternalConfig](../../../pkg/models/shared/mcpserverexternalconfig.md)                                       | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
+| `HostedConfig`                                                                                                                 | [*shared.MCPServerHostedConfig](../../../pkg/models/shared/mcpserverhostedconfig.md)                                           | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |
 | `UpdateMask`                                                                                                                   | `*string`                                                                                                                      | :heavy_minus_sign:                                                                                                             | N/A                                                                                                                            |

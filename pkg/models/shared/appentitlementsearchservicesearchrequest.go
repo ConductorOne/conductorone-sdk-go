@@ -33,20 +33,36 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
 	// Search for app entitlements that have this alias (exact match).
 	Alias *string `json:"alias,omitempty"`
+	// Return entitlements whose annotations match at least one entry (exact key and value).
+	//  Honored by Search and SearchCount; ignored by GetSearchTerms and data export.
+	AnnotationMatches []AnnotationMatch `json:"annotationMatches,omitempty"`
 	// Search for app entitlements contained in any of these apps.
 	AppIds []string `json:"appIds,omitempty"`
+	// Search for app entitlements whose resource type matches any of these real
+	//  (app_id, id) AppResourceType pairs — unlike resource_type_ids, which
+	//  matches by name and can't distinguish two apps' same-named or
+	//  system-wide-shared-id resource types (e.g. Credential). Takes precedence
+	//  over resource_type_ids when set.
+	AppResourceTypeRefs []ResourceTypeRef `json:"appResourceTypeRefs,omitempty"`
 	// Search for app entitlements that are granted to any of these app user ids.
 	AppUserIds []string `json:"appUserIds,omitempty"`
 	// Search for app entitlements that are part of these compliance frameworks.
 	ComplianceFrameworkIds []string `json:"complianceFrameworkIds,omitempty"`
 	// Filter results to entitlements with this exact display name.
 	DisplayName *string `json:"displayName,omitempty"`
+	// Filter for entitlements whose slug is in this list (e.g. "read_only")
+	EntitlementSlugs []string `json:"entitlementSlugs,omitempty"`
 	// Exclude app entitlements from the results that are in these app IDs.
 	ExcludeAppIds []string `json:"excludeAppIds,omitempty"`
 	// Exclude entitlements from results that are granted to any of these app users.
 	ExcludeAppUserIds []string `json:"excludeAppUserIds,omitempty"`
+	// Exclude app entitlements that have automation enabled.
+	ExcludeAutomationEnabled *bool `json:"excludeAutomationEnabled,omitempty"`
 	// If true, exclude immutable entitlements (e.g., system-managed entitlements that cannot be modified).
 	ExcludeImmutable *bool `json:"excludeImmutable,omitempty"`
+	// Exclude access profile membership entitlements that cannot be added to a Catalog access profile
+	//  (Catalog and Hybrid profile memberships). Role profile memberships and all other entitlements are kept.
+	ExcludeNonRoleProfileMemberships *bool `json:"excludeNonRoleProfileMemberships,omitempty"`
 	// Exclude entitlements with any of these resource type IDs from results.
 	ExcludeResourceTypeIds []string `json:"excludeResourceTypeIds,omitempty"`
 	// Exclude these specific entitlements from results.
@@ -60,6 +76,9 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	MembershipType []MembershipType `json:"membershipType,omitempty"`
 	// If true, restrict results to entitlements that have at least one expiring grant.
 	OnlyGetExpiring *bool `json:"onlyGetExpiring,omitempty"`
+	// Filter by users that have an explicit ownership binding to the entitlement.
+	//  This filter applies to every caller, including administrators.
+	OwnerUserIds []string `json:"ownerUserIds,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
 	PageSize *int `json:"pageSize,omitempty"`
 	// The pageToken field.
@@ -74,6 +93,9 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	RequestSchemaIds []string `json:"requestSchemaIds,omitempty"`
 	// Search for app entitlements that belongs to these resources.
 	ResourceIds []string `json:"resourceIds,omitempty"`
+	// Return entitlements whose resource profile matches at least one entry (exact top-level key, text form of the value).
+	//  Honored by Search and SearchCount; ignored by GetSearchTerms and data export.
+	ResourceProfileMatches []ResourceProfileMatch `json:"resourceProfileMatches,omitempty"`
 	// Filter results to entitlements whose resource types have any of these trait IDs.
 	ResourceTraitIds []string `json:"resourceTraitIds,omitempty"`
 	// Search for app entitlements that are for items with resources types that have matching names. Example names are "group", "role", and "app".
@@ -98,11 +120,25 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetAlias() *string {
 	return a.Alias
 }
 
+func (a *AppEntitlementSearchServiceSearchRequest) GetAnnotationMatches() []AnnotationMatch {
+	if a == nil {
+		return nil
+	}
+	return a.AnnotationMatches
+}
+
 func (a *AppEntitlementSearchServiceSearchRequest) GetAppIds() []string {
 	if a == nil {
 		return nil
 	}
 	return a.AppIds
+}
+
+func (a *AppEntitlementSearchServiceSearchRequest) GetAppResourceTypeRefs() []ResourceTypeRef {
+	if a == nil {
+		return nil
+	}
+	return a.AppResourceTypeRefs
 }
 
 func (a *AppEntitlementSearchServiceSearchRequest) GetAppUserIds() []string {
@@ -126,6 +162,13 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetDisplayName() *string {
 	return a.DisplayName
 }
 
+func (a *AppEntitlementSearchServiceSearchRequest) GetEntitlementSlugs() []string {
+	if a == nil {
+		return nil
+	}
+	return a.EntitlementSlugs
+}
+
 func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeAppIds() []string {
 	if a == nil {
 		return nil
@@ -140,11 +183,25 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeAppUserIds() []stri
 	return a.ExcludeAppUserIds
 }
 
+func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeAutomationEnabled() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludeAutomationEnabled
+}
+
 func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeImmutable() *bool {
 	if a == nil {
 		return nil
 	}
 	return a.ExcludeImmutable
+}
+
+func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeNonRoleProfileMemberships() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludeNonRoleProfileMemberships
 }
 
 func (a *AppEntitlementSearchServiceSearchRequest) GetExcludeResourceTypeIds() []string {
@@ -196,6 +253,13 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetOnlyGetExpiring() *bool {
 	return a.OnlyGetExpiring
 }
 
+func (a *AppEntitlementSearchServiceSearchRequest) GetOwnerUserIds() []string {
+	if a == nil {
+		return nil
+	}
+	return a.OwnerUserIds
+}
+
 func (a *AppEntitlementSearchServiceSearchRequest) GetPageSize() *int {
 	if a == nil {
 		return nil
@@ -243,6 +307,13 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetResourceIds() []string {
 		return nil
 	}
 	return a.ResourceIds
+}
+
+func (a *AppEntitlementSearchServiceSearchRequest) GetResourceProfileMatches() []ResourceProfileMatch {
+	if a == nil {
+		return nil
+	}
+	return a.ResourceProfileMatches
 }
 
 func (a *AppEntitlementSearchServiceSearchRequest) GetResourceTraitIds() []string {
