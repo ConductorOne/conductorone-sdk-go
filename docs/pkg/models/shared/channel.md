@@ -1,6 +1,6 @@
 # Channel
 
-Release channel for this catalog entry.
+Release channel; higher values are less stable.
 
 ## Example Usage
 

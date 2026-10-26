@@ -93,8 +93,11 @@ type App struct {
 	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
 	// When enabled, resource ownership is sourced from the connector.
-	EnableConnectorSourcedOwnership *bool   `json:"enableConnectorSourcedOwnership,omitempty"`
-	FieldMask                       *string `json:"fieldMask,omitempty"`
+	EnableConnectorSourcedOwnership *bool `json:"enableConnectorSourcedOwnership,omitempty"`
+	// When true, entitlements in this app default their description to their resource's description from the
+	//  connector. Entitlements whose description was manually edited keep that text.
+	EntitlementsUseResourceDescription *bool   `json:"entitlementsUseResourceDescription,omitempty"`
+	FieldMask                          *string `json:"fieldMask,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -234,6 +237,13 @@ func (a *App) GetEnableConnectorSourcedOwnership() *bool {
 		return nil
 	}
 	return a.EnableConnectorSourcedOwnership
+}
+
+func (a *App) GetEntitlementsUseResourceDescription() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EntitlementsUseResourceDescription
 }
 
 func (a *App) GetFieldMask() *string {
@@ -382,6 +392,9 @@ type AppInput struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// When enabled, resource ownership is sourced from the connector.
 	EnableConnectorSourcedOwnership *bool `json:"enableConnectorSourcedOwnership,omitempty"`
+	// When true, entitlements in this app default their description to their resource's description from the
+	//  connector. Entitlements whose description was manually edited keep that text.
+	EntitlementsUseResourceDescription *bool `json:"entitlementsUseResourceDescription,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -464,6 +477,13 @@ func (a *AppInput) GetEnableConnectorSourcedOwnership() *bool {
 		return nil
 	}
 	return a.EnableConnectorSourcedOwnership
+}
+
+func (a *AppInput) GetEntitlementsUseResourceDescription() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EntitlementsUseResourceDescription
 }
 
 func (a *AppInput) GetGrantPolicyID() *string {

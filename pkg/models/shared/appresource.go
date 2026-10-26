@@ -77,6 +77,9 @@ type AppResource struct {
 	GrantCount *int64 `integer:"string" json:"grantCount,omitempty"`
 	// The id of the resource.
 	ID *string `json:"id,omitempty"`
+	// Whether the resource was created manually in ConductorOne rather than synced from a connector.
+	//  Only manually created resources can be deleted in ConductorOne.
+	IsManuallyManaged *bool `json:"isManuallyManaged,omitempty"`
 	// The matchBatonId field.
 	MatchBatonID *string `json:"matchBatonId,omitempty"`
 	// Axis-2 detail refining nhi_type (e.g. "aws.role.lambda"). Read-only;
@@ -195,6 +198,13 @@ func (a *AppResource) GetID() *string {
 		return nil
 	}
 	return a.ID
+}
+
+func (a *AppResource) GetIsManuallyManaged() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.IsManuallyManaged
 }
 
 func (a *AppResource) GetMatchBatonID() *string {

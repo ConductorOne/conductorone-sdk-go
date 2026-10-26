@@ -34,8 +34,9 @@ func newReporting(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 // Delete
 // Delete removes a report by ID. The report's saved program is removed with
 //
-//	it, so the report can no longer be re-run. Only the report's creator can
-//	delete it.
+//	it, so the report can no longer be re-run. Any caller holding this
+//	permission may delete any report in the tenant; the read-only
+//	administrator's role does not carry it.
 func (s *Reporting) Delete(ctx context.Context, request operations.C1APIReportingV1ReportingServiceDeleteRequest, opts ...operations.Option) (*operations.C1APIReportingV1ReportingServiceDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -249,7 +250,8 @@ func (s *Reporting) Delete(ctx context.Context, request operations.C1APIReportin
 // Get
 // Get returns a report by ID, including its latest run and latest successful
 //
-//	run. Reports are visible only to the user who created them.
+//	run. Reports are not scoped by author: reaching this service is the scope,
+//	and only tenant administrators hold its roles.
 func (s *Reporting) Get(ctx context.Context, request operations.C1APIReportingV1ReportingServiceGetRequest, opts ...operations.Option) (*operations.C1APIReportingV1ReportingServiceGetResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -456,7 +458,8 @@ func (s *Reporting) Get(ctx context.Context, request operations.C1APIReportingV1
 // GetProgram - Get Program
 // GetProgram returns the report's current durable source without attaching it
 //
-//	to the notification-driven report response. Reports are creator-scoped.
+//	to the notification-driven report response. Scoped like Get: any caller who
+//	may reach this service.
 func (s *Reporting) GetProgram(ctx context.Context, request operations.C1APIReportingV1ReportingServiceGetProgramRequest, opts ...operations.Option) (*operations.C1APIReportingV1ReportingServiceGetProgramResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -874,7 +877,9 @@ func (s *Reporting) GetRunProvenance(ctx context.Context, request operations.C1A
 }
 
 // List
-// List returns reports created by the caller, newest first.
+// List returns every report in the tenant, newest first, each carrying the
+//
+//	user who saved it. It is not filtered by author.
 func (s *Reporting) List(ctx context.Context, request operations.C1APIReportingV1ReportingServiceListRequest, opts ...operations.Option) (*operations.C1APIReportingV1ReportingServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1514,9 +1519,10 @@ func (s *Reporting) Save(ctx context.Context, request *shared.ReportingServiceSa
 }
 
 // Update
-// Update modifies a report's display name, prompt, or parameter values.
+// Update modifies a report's display name, prompt, or parameter values. Any
 //
-//	Only the report's creator can update it.
+//	caller holding this permission may update any report in the tenant; the
+//	read-only administrator's role does not carry it.
 func (s *Reporting) Update(ctx context.Context, request operations.C1APIReportingV1ReportingServiceUpdateRequest, opts ...operations.Option) (*operations.C1APIReportingV1ReportingServiceUpdateResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

@@ -2410,6 +2410,7 @@ func (s *SessionPolicy) SearchPolicyUsers(ctx context.Context, request operation
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -2532,6 +2533,9 @@ func (s *SessionPolicy) SearchPolicyUsers(ctx context.Context, request operation
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APISessionPolicyV1SessionPolicyServiceSearchPolicyUsersResponse, error) {
+		if request.SessionPolicyServiceSearchPolicyUsersRequest == nil {
+			request.SessionPolicyServiceSearchPolicyUsersRequest = &shared.SessionPolicyServiceSearchPolicyUsersRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -2570,7 +2574,7 @@ func (s *SessionPolicy) SearchPolicyUsers(ctx context.Context, request operation
 		request.SessionPolicyServiceSearchPolicyUsersRequest.PageToken = &nCVal
 
 		return s.SearchPolicyUsers(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

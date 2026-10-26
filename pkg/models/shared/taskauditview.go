@@ -151,6 +151,7 @@ func (e *TaskAuditViewSource) IsExact() bool {
 //   - provisionEntitlementMergeTimedOut
 //   - accountDeleted
 //   - automationTriggered
+//   - actionOutcome
 type TaskAuditView struct {
 	AccessRequestOutcome                 *TaskAuditAccessRequestOutcome                 `json:"accessRequestOutcome,omitempty"`
 	AccountDeleted                       *TaskAuditAccountDeleted                       `json:"accountDeleted,omitempty"`
@@ -159,6 +160,7 @@ type TaskAuditView struct {
 	ActionInstanceCreated                *TaskAuditActionInstanceCreated                `json:"actionInstanceCreated,omitempty"`
 	ActionInstanceFailed                 *TaskAuditActionInstanceFailed                 `json:"actionInstanceFailed,omitempty"`
 	ActionInstanceSucceeded              *TaskAuditActionInstanceSucceeded              `json:"actionInstanceSucceeded,omitempty"`
+	ActionOutcome                        *TaskAuditActionOutcome                        `json:"actionOutcome,omitempty"`
 	ActionResult                         *TaskAuditConnectorActionResult                `json:"actionResult,omitempty"`
 	ActionSubmitted                      *TaskAuditActionSubmitted                      `json:"actionSubmitted,omitempty"`
 	ApprovalAutoAcceptedByPolicy         *TaskAuditApprovalAutoAcceptedByPolicy         `json:"approvalAutoAcceptedByPolicy,omitempty"`
@@ -295,6 +297,13 @@ func (t *TaskAuditView) GetActionInstanceSucceeded() *TaskAuditActionInstanceSuc
 		return nil
 	}
 	return t.ActionInstanceSucceeded
+}
+
+func (t *TaskAuditView) GetActionOutcome() *TaskAuditActionOutcome {
+	if t == nil {
+		return nil
+	}
+	return t.ActionOutcome
 }
 
 func (t *TaskAuditView) GetActionResult() *TaskAuditConnectorActionResult {

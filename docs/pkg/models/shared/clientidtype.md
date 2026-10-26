@@ -24,3 +24,4 @@ custom := shared.ClientIDType("custom_value")
 | `ClientIDTypeClientIDTypeDcr`         | CLIENT_ID_TYPE_DCR                    |
 | `ClientIDTypeClientIDTypeMetadataURL` | CLIENT_ID_TYPE_METADATA_URL           |
 | `ClientIDTypeClientIDTypeApp`         | CLIENT_ID_TYPE_APP                    |
+| `ClientIDTypeClientIDTypeStatic`      | CLIENT_ID_TYPE_STATIC                 |

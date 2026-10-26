@@ -78,6 +78,7 @@ func (s *AppResourceSearch) SearchAppResourceTypes(ctx context.Context, request 
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -200,6 +201,9 @@ func (s *AppResourceSearch) SearchAppResourceTypes(ctx context.Context, request 
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIAppV1AppResourceSearchSearchAppResourceTypesResponse, error) {
+		if request == nil {
+			request = &shared.SearchAppResourceTypesRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -238,7 +242,7 @@ func (s *AppResourceSearch) SearchAppResourceTypes(ctx context.Context, request 
 		request.PageToken = &nCVal
 
 		return s.SearchAppResourceTypes(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)
@@ -334,6 +338,7 @@ func (s *AppResourceSearch) SearchAppResources(ctx context.Context, request *sha
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -456,6 +461,9 @@ func (s *AppResourceSearch) SearchAppResources(ctx context.Context, request *sha
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIAppV1AppResourceSearchSearchAppResourcesResponse, error) {
+		if request == nil {
+			request = &shared.SearchAppResourcesRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -494,7 +502,7 @@ func (s *AppResourceSearch) SearchAppResources(ctx context.Context, request *sha
 		request.PageToken = &nCVal
 
 		return s.SearchAppResources(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

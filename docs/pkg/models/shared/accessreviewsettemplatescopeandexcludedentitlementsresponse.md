@@ -1,0 +1,11 @@
+# AccessReviewSetTemplateScopeAndExcludedEntitlementsResponse
+
+AccessReviewSetTemplateScopeAndExcludedEntitlementsResponse contains the resulting excluded entitlements and scope.
+
+
+## Fields
+
+| Field                                                                                                                     | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `ExcludedEntitlements`                                                                                                    | [][shared.AccessReviewTemplateExcludedEntitlement](../../../pkg/models/shared/accessreviewtemplateexcludedentitlement.md) | :heavy_minus_sign:                                                                                                        | The current entitlements excluded from scope.                                                                             |
+| `Scope`                                                                                                                   | [*shared.AccessReviewScopeV2](../../../pkg/models/shared/accessreviewscopev2.md)                                          | :heavy_minus_sign:                                                                                                        | N/A                                                                                                                       |

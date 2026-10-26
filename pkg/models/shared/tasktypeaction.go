@@ -46,6 +46,7 @@ const (
 	TaskTypeActionTypeTypeToolCall        TaskTypeActionType = "TYPE_TOOL_CALL"
 	TaskTypeActionTypeTypeManual          TaskTypeActionType = "TYPE_MANUAL"
 	TaskTypeActionTypeTypeCredentialIssue TaskTypeActionType = "TYPE_CREDENTIAL_ISSUE"
+	TaskTypeActionTypeTypeSpendRemedy     TaskTypeActionType = "TYPE_SPEND_REMEDY"
 )
 
 func (e TaskTypeActionType) ToPointer() *TaskTypeActionType {
@@ -56,7 +57,7 @@ func (e TaskTypeActionType) ToPointer() *TaskTypeActionType {
 func (e *TaskTypeActionType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "TYPE_UNSPECIFIED", "TYPE_GRANT", "TYPE_WORKFLOW", "TYPE_RESOURCE_ACTION", "TYPE_TOOL_CALL", "TYPE_MANUAL", "TYPE_CREDENTIAL_ISSUE":
+		case "TYPE_UNSPECIFIED", "TYPE_GRANT", "TYPE_WORKFLOW", "TYPE_RESOURCE_ACTION", "TYPE_TOOL_CALL", "TYPE_MANUAL", "TYPE_CREDENTIAL_ISSUE", "TYPE_SPEND_REMEDY":
 			return true
 		}
 	}
@@ -70,7 +71,9 @@ func (e *TaskTypeActionType) IsExact() bool {
 //   - toolCall
 //   - finding
 //   - credentialIssue
+//   - accessProfileComponent
 type TaskTypeAction struct {
+	AccessProfileComponent *AccessProfileComponentTarget `json:"accessProfileComponent,omitempty"`
 	// The ID of the admin-authored action to execute. Empty for synthesized
 	//  action tickets (e.g. scope-role grants) — those carry dispatch
 	//  configuration on action_instance and target_object instead.
@@ -99,11 +102,16 @@ type TaskTypeAction struct {
 	// The outcome field.
 	Outcome     *TaskTypeActionOutcome `json:"outcome,omitempty"`
 	OutcomeTime *time.Time             `json:"outcomeTime,omitempty"`
-	ScopeRole   *ScopeRole             `json:"scopeRole,omitempty"`
-	ToolCall    *GatedToolCallTarget   `json:"toolCall,omitempty"`
+	// The resource was created, but some requested effects remain unconfirmed.
+	PartialResult *bool                `json:"partialResult,omitempty"`
+	ScopeRole     *ScopeRole           `json:"scopeRole,omitempty"`
+	Source        *TaskActionSource    `json:"source,omitempty"`
+	ToolCall      *GatedToolCallTarget `json:"toolCall,omitempty"`
 	// Flavor of action the ticket represents — mirrors the snapshot's
 	//  target_ref variant.
 	Type *TaskTypeActionType `json:"type,omitempty"`
+	// Selected members whose addition the connector could not confirm.
+	UnaddedMemberCount *int64 `json:"unaddedMemberCount,omitempty"`
 }
 
 func (t TaskTypeAction) MarshalJSON() ([]byte, error) {
@@ -115,6 +123,13 @@ func (t *TaskTypeAction) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (t *TaskTypeAction) GetAccessProfileComponent() *AccessProfileComponentTarget {
+	if t == nil {
+		return nil
+	}
+	return t.AccessProfileComponent
 }
 
 func (t *TaskTypeAction) GetActionID() *string {
@@ -194,11 +209,25 @@ func (t *TaskTypeAction) GetOutcomeTime() *time.Time {
 	return t.OutcomeTime
 }
 
+func (t *TaskTypeAction) GetPartialResult() *bool {
+	if t == nil {
+		return nil
+	}
+	return t.PartialResult
+}
+
 func (t *TaskTypeAction) GetScopeRole() *ScopeRole {
 	if t == nil {
 		return nil
 	}
 	return t.ScopeRole
+}
+
+func (t *TaskTypeAction) GetSource() *TaskActionSource {
+	if t == nil {
+		return nil
+	}
+	return t.Source
 }
 
 func (t *TaskTypeAction) GetToolCall() *GatedToolCallTarget {
@@ -213,4 +242,11 @@ func (t *TaskTypeAction) GetType() *TaskTypeActionType {
 		return nil
 	}
 	return t.Type
+}
+
+func (t *TaskTypeAction) GetUnaddedMemberCount() *int64 {
+	if t == nil {
+		return nil
+	}
+	return t.UnaddedMemberCount
 }

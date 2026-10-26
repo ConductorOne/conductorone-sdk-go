@@ -53,3 +53,4 @@ custom := shared.Builtin("custom_value")
 | `BuiltinAccessReviewTaskColumnAccessHolderType`       | ACCESS_REVIEW_TASK_COLUMN_ACCESS_HOLDER_TYPE          |
 | `BuiltinAccessReviewTaskColumnRiskLevel`              | ACCESS_REVIEW_TASK_COLUMN_RISK_LEVEL                  |
 | `BuiltinAccessReviewTaskColumnComplianceFramework`    | ACCESS_REVIEW_TASK_COLUMN_COMPLIANCE_FRAMEWORK        |
+| `BuiltinAccessReviewTaskColumnResourceDescription`    | ACCESS_REVIEW_TASK_COLUMN_RESOURCE_DESCRIPTION        |
