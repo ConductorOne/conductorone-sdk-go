@@ -29,7 +29,7 @@ func (e *XAAScopeServiceCreateRequestClassification) IsExact() bool {
 	return false
 }
 
-// XAAScopeServiceCreateRequestState - Initial state. UNSPECIFIED defaults to PENDING_REVIEW.
+// XAAScopeServiceCreateRequestState - Initial state: PENDING_REVIEW, ENABLED or DISABLED. UNSPECIFIED defaults to PENDING_REVIEW.
 type XAAScopeServiceCreateRequestState string
 
 const (
@@ -65,7 +65,7 @@ type XAAScopeServiceCreateRequest struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// The literal OAuth scope string. Immutable after creation.
 	ScopeValue *string `json:"scopeValue,omitempty"`
-	// Initial state. UNSPECIFIED defaults to PENDING_REVIEW.
+	// Initial state: PENDING_REVIEW, ENABLED or DISABLED. UNSPECIFIED defaults to PENDING_REVIEW.
 	State *XAAScopeServiceCreateRequestState `json:"state,omitempty"`
 	// The resource server this scope belongs to.
 	XaaResourceServerID *string `json:"xaaResourceServerId,omitempty"`

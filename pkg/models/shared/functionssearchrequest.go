@@ -35,7 +35,8 @@ type FunctionsSearchRequest struct {
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// The query field.
-	Query *string `json:"query,omitempty"`
+	Query       *string      `json:"query,omitempty"`
+	SortOptions *SortOptions `json:"sortOptions,omitempty"`
 }
 
 func (f *FunctionsSearchRequest) GetFunctionTypes() []FunctionTypes {
@@ -64,4 +65,11 @@ func (f *FunctionsSearchRequest) GetQuery() *string {
 		return nil
 	}
 	return f.Query
+}
+
+func (f *FunctionsSearchRequest) GetSortOptions() *SortOptions {
+	if f == nil {
+		return nil
+	}
+	return f.SortOptions
 }

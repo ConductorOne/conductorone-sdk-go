@@ -30,3 +30,4 @@ custom := shared.WorkloadFederationServiceCreateProviderRequestWellKnownProvider
 | `WorkloadFederationServiceCreateProviderRequestWellKnownProviderWellKnownWorkloadProviderHcpTerraform`   | WELL_KNOWN_WORKLOAD_PROVIDER_HCP_TERRAFORM                                                               |
 | `WorkloadFederationServiceCreateProviderRequestWellKnownProviderWellKnownWorkloadProviderAwsIamOutbound` | WELL_KNOWN_WORKLOAD_PROVIDER_AWS_IAM_OUTBOUND                                                            |
 | `WorkloadFederationServiceCreateProviderRequestWellKnownProviderWellKnownWorkloadProviderSpiffe`         | WELL_KNOWN_WORKLOAD_PROVIDER_SPIFFE                                                                      |
+| `WorkloadFederationServiceCreateProviderRequestWellKnownProviderWellKnownWorkloadProviderC1Edge`         | WELL_KNOWN_WORKLOAD_PROVIDER_C1_EDGE                                                                     |

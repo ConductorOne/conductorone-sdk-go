@@ -1,10 +1,10 @@
 # ResolvedAmount
 
-The ResolvedAmount message.
+ResolvedAmount records the admitted nano-unit limit.
 
 
 ## Fields
 
-| Field                 | Type                  | Required              | Description           |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| `AmountNano`          | `*int64`              | :heavy_minus_sign:    | The amountNano field. |
+| Field                          | Type                           | Required                       | Description                    |
+| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
+| `AmountNano`                   | `*int64`                       | :heavy_minus_sign:             | Admitted limit, in nano-units. |

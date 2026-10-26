@@ -7,7 +7,10 @@ import (
 	"time"
 )
 
-// AccessReviewServiceCreateRequestScopeType - The type of scoping method for the campaign (e.g., by entitlements, by access conflicts, or by resource).
+// AccessReviewServiceCreateRequestScopeType - How the campaign's scope is defined, such as by entitlements or by users. Treated as
+//
+//	ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS when unset. Some scope types require a feature to be
+//	enabled for your tenant. See AccessReviewScopeType for the available values.
 type AccessReviewServiceCreateRequestScopeType string
 
 const (
@@ -17,6 +20,7 @@ const (
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByResource        AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE"
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByInheritance     AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE"
 	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByUsers           AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS"
+	AccessReviewServiceCreateRequestScopeTypeAccessReviewScopeTypeByAccessProfiles  AccessReviewServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES"
 )
 
 func (e AccessReviewServiceCreateRequestScopeType) ToPointer() *AccessReviewServiceCreateRequestScopeType {
@@ -27,7 +31,7 @@ func (e AccessReviewServiceCreateRequestScopeType) ToPointer() *AccessReviewServ
 func (e *AccessReviewServiceCreateRequestScopeType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS":
+		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES":
 			return true
 		}
 	}
@@ -49,7 +53,9 @@ type AccessReviewServiceCreateRequest struct {
 	OwnerIds []string `json:"ownerIds,omitempty"`
 	// The ID of the review policy that governs task assignment and resolution.
 	PolicyID *string `json:"policyId,omitempty"`
-	// The type of scoping method for the campaign (e.g., by entitlements, by access conflicts, or by resource).
+	// How the campaign's scope is defined, such as by entitlements or by users. Treated as
+	//  ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS when unset. Some scope types require a feature to be
+	//  enabled for your tenant. See AccessReviewScopeType for the available values.
 	ScopeType *AccessReviewServiceCreateRequestScopeType `json:"scopeType,omitempty"`
 	ScopeV2   *AccessReviewScopeV2                       `json:"scopeV2,omitempty"`
 }

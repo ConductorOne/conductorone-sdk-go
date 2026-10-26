@@ -1,0 +1,16 @@
+# EdgeFindingType
+
+EdgeFindingType identifies an Edge finding: one rule matching one subject on
+ one Edge. Target: TenantTarget.
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `AppID`                                                                                        | `*string`                                                                                      | :heavy_minus_sign:                                                                             | The app the Edge belongs to.                                                                   |
+| `Category`                                                                                     | [*shared.EdgeFindingTypeCategory](../../../pkg/models/shared/edgefindingtypecategory.md)       | :heavy_minus_sign:                                                                             | The category field.                                                                            |
+| `EdgeID`                                                                                       | `*string`                                                                                      | :heavy_minus_sign:                                                                             | The Edge (app resource id) whose traffic matched.                                              |
+| `RuleID`                                                                                       | `*string`                                                                                      | :heavy_minus_sign:                                                                             | Stable rule id, e.g. "EDGE-DEST-FIRST-SEEN".                                                   |
+| `Subcategory`                                                                                  | [*shared.EdgeFindingTypeSubcategory](../../../pkg/models/shared/edgefindingtypesubcategory.md) | :heavy_minus_sign:                                                                             | Set only for EDGE_FINDING_CATEGORY_AI_USAGE.                                                   |
+| `Subject`                                                                                      | `*string`                                                                                      | :heavy_minus_sign:                                                                             | What the finding is about, e.g. a destination host.                                            |

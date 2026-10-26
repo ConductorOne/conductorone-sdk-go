@@ -40,11 +40,31 @@ func (a *AccessReviewTemplateSetupEntitlementServiceSetResponseExpanded) GetAddi
 
 // The AccessReviewTemplateSetupEntitlementServiceSetResponse message.
 type AccessReviewTemplateSetupEntitlementServiceSetResponse struct {
+	// The entitlements excluded from a user-first template's scope. Only returned by
+	//  GetScopeAndEntitlements, and only when scope sets excluded_specific_resources.
+	ExcludedEntitlements []AccessReviewTemplateExcludedEntitlement `json:"excludedEntitlements,omitempty"`
+	// The resource types excluded from a user-first template's scope. Only returned by
+	//  GetScopeAndEntitlements, and only when scope sets excluded_resource_type_selections.
+	ExcludedResourceTypes []AccessReviewTemplateExcludedResourceType `json:"excludedResourceTypes,omitempty"`
 	// Related objects requested via the expand mask.
 	Expanded []AccessReviewTemplateSetupEntitlementServiceSetResponseExpanded `json:"expanded,omitempty"`
 	// The current list of setup entitlements for the template.
 	List  []AccessReviewTemplateSetupEntitlementView `json:"list,omitempty"`
 	Scope *AccessReviewScopeV2                       `json:"scope,omitempty"`
+}
+
+func (a *AccessReviewTemplateSetupEntitlementServiceSetResponse) GetExcludedEntitlements() []AccessReviewTemplateExcludedEntitlement {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludedEntitlements
+}
+
+func (a *AccessReviewTemplateSetupEntitlementServiceSetResponse) GetExcludedResourceTypes() []AccessReviewTemplateExcludedResourceType {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludedResourceTypes
 }
 
 func (a *AccessReviewTemplateSetupEntitlementServiceSetResponse) GetExpanded() []AccessReviewTemplateSetupEntitlementServiceSetResponseExpanded {
