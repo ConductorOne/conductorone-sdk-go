@@ -297,6 +297,7 @@ func (s *AppEntitlementSearch) Search(ctx context.Context, request *shared.AppEn
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -419,6 +420,9 @@ func (s *AppEntitlementSearch) Search(ctx context.Context, request *shared.AppEn
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIAppV1AppEntitlementSearchServiceSearchResponse, error) {
+		if request == nil {
+			request = &shared.AppEntitlementSearchServiceSearchRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -457,7 +461,7 @@ func (s *AppEntitlementSearch) Search(ctx context.Context, request *shared.AppEn
 		request.PageToken = &nCVal
 
 		return s.Search(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

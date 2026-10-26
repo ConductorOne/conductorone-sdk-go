@@ -78,6 +78,7 @@ func (s *WebhooksSearch) Search(ctx context.Context, request *shared.WebhooksSea
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -200,6 +201,9 @@ func (s *WebhooksSearch) Search(ctx context.Context, request *shared.WebhooksSea
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIWebhooksV1WebhooksSearchSearchResponse, error) {
+		if request == nil {
+			request = &shared.WebhooksSearchRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -238,7 +242,7 @@ func (s *WebhooksSearch) Search(ctx context.Context, request *shared.WebhooksSea
 		request.PageToken = &nCVal
 
 		return s.Search(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

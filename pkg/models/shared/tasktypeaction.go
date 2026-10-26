@@ -71,7 +71,9 @@ func (e *TaskTypeActionType) IsExact() bool {
 //   - toolCall
 //   - finding
 //   - credentialIssue
+//   - accessProfileComponent
 type TaskTypeAction struct {
+	AccessProfileComponent *AccessProfileComponentTarget `json:"accessProfileComponent,omitempty"`
 	// The ID of the admin-authored action to execute. Empty for synthesized
 	//  action tickets (e.g. scope-role grants) — those carry dispatch
 	//  configuration on action_instance and target_object instead.
@@ -103,6 +105,7 @@ type TaskTypeAction struct {
 	// The resource was created, but some requested effects remain unconfirmed.
 	PartialResult *bool                `json:"partialResult,omitempty"`
 	ScopeRole     *ScopeRole           `json:"scopeRole,omitempty"`
+	Source        *TaskActionSource    `json:"source,omitempty"`
 	ToolCall      *GatedToolCallTarget `json:"toolCall,omitempty"`
 	// Flavor of action the ticket represents — mirrors the snapshot's
 	//  target_ref variant.
@@ -120,6 +123,13 @@ func (t *TaskTypeAction) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (t *TaskTypeAction) GetAccessProfileComponent() *AccessProfileComponentTarget {
+	if t == nil {
+		return nil
+	}
+	return t.AccessProfileComponent
 }
 
 func (t *TaskTypeAction) GetActionID() *string {
@@ -211,6 +221,13 @@ func (t *TaskTypeAction) GetScopeRole() *ScopeRole {
 		return nil
 	}
 	return t.ScopeRole
+}
+
+func (t *TaskTypeAction) GetSource() *TaskActionSource {
+	if t == nil {
+		return nil
+	}
+	return t.Source
 }
 
 func (t *TaskTypeAction) GetToolCall() *GatedToolCallTarget {

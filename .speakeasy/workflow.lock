@@ -1,4 +1,4 @@
-speakeasyVersion: 1.790.2
+speakeasyVersion: 1.803.2
 sources:
     my-source:
         sourceNamespace: my-source
@@ -14,7 +14,7 @@ targets:
         sourceRevisionDigest: sha256:728c39df95975075bff604ce091ef9bc2398f1a759c211d1c5dfd7687232169e
         sourceBlobDigest: sha256:bee0f63744a8752f3ce4f62e74a018dd16faea53e6f5fcabaa7896459fc5a0e1
         codeSamplesNamespace: my-source-go-code-samples
-        codeSamplesRevisionDigest: sha256:1e3b5969b8f7c60b910762f06cfd81d800c01e9293a46c78f1b7ef4999772ff6
+        codeSamplesRevisionDigest: sha256:893130f4de4eef59de897709719f329748ffcae9f53a23c7d634d1cef1a1b172
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

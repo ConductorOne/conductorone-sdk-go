@@ -33,6 +33,9 @@ type AppEntitlementSearchServiceSearchRequest struct {
 	AccessReviewID *string `json:"accessReviewId,omitempty"`
 	// Search for app entitlements that have this alias (exact match).
 	Alias *string `json:"alias,omitempty"`
+	// With exclude_automation_enabled, keep ConductorOne group membership entitlements, which are always
+	//  automation-enabled. Group exclusion entitlements stay excluded.
+	AllowAutomationEnabledC1Groups *bool `json:"allowAutomationEnabledC1Groups,omitempty"`
 	// Return entitlements whose annotations match at least one entry (exact key and value).
 	//  Honored by Search and SearchCount; ignored by GetSearchTerms and data export.
 	AnnotationMatches []AnnotationMatch `json:"annotationMatches,omitempty"`
@@ -118,6 +121,13 @@ func (a *AppEntitlementSearchServiceSearchRequest) GetAlias() *string {
 		return nil
 	}
 	return a.Alias
+}
+
+func (a *AppEntitlementSearchServiceSearchRequest) GetAllowAutomationEnabledC1Groups() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.AllowAutomationEnabledC1Groups
 }
 
 func (a *AppEntitlementSearchServiceSearchRequest) GetAnnotationMatches() []AnnotationMatch {

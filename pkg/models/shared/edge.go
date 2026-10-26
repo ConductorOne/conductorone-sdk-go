@@ -87,7 +87,8 @@ type Edge struct {
 	//  Edge has never touched the feature -- egress is not destination-restricted
 	//  -- even though egress_rules reads empty either way; true with an empty
 	//  egress_rules means every destination is deliberately denied.
-	EgressRulesConfigured *bool `json:"egressRulesConfigured,omitempty"`
+	EgressRulesConfigured *bool             `json:"egressRulesConfigured,omitempty"`
+	EgressTLS             *EdgeTLSSelection `json:"egressTls,omitempty"`
 	// The capabilities this Edge currently serves. A request naming a resource
 	//  for a capability outside this set is denied, independent of mode. At
 	//  least one kind is required.
@@ -189,6 +190,13 @@ func (e *Edge) GetEgressRulesConfigured() *bool {
 		return nil
 	}
 	return e.EgressRulesConfigured
+}
+
+func (e *Edge) GetEgressTLS() *EdgeTLSSelection {
+	if e == nil {
+		return nil
+	}
+	return e.EgressTLS
 }
 
 func (e *Edge) GetEnabledKinds() []EnabledKinds {

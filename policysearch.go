@@ -78,6 +78,7 @@ func (s *PolicySearch) Search(ctx context.Context, request *shared.SearchPolicie
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -200,6 +201,9 @@ func (s *PolicySearch) Search(ctx context.Context, request *shared.SearchPolicie
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIPolicyV1PolicySearchSearchResponse, error) {
+		if request == nil {
+			request = &shared.SearchPoliciesRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -238,7 +242,7 @@ func (s *PolicySearch) Search(ctx context.Context, request *shared.SearchPolicie
 		request.PageToken = &nCVal
 
 		return s.Search(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

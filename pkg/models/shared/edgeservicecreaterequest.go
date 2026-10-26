@@ -30,7 +30,8 @@ func (e *EdgeServiceCreateRequestEnabledKinds) IsExact() bool {
 //	disabled and denies every capability until enabled.
 type EdgeServiceCreateRequest struct {
 	// Display name for the Edge. Defaults to "Edge" when empty.
-	DisplayName *string `json:"displayName,omitempty"`
+	DisplayName *string           `json:"displayName,omitempty"`
+	EgressTLS   *EdgeTLSSelection `json:"egressTls,omitempty"`
 	// The capabilities this Edge will serve. Each mints its own entitlement
 	//  stack; there is no default.
 	EnabledKinds []EdgeServiceCreateRequestEnabledKinds `json:"enabledKinds,omitempty"`
@@ -41,6 +42,13 @@ func (e *EdgeServiceCreateRequest) GetDisplayName() *string {
 		return nil
 	}
 	return e.DisplayName
+}
+
+func (e *EdgeServiceCreateRequest) GetEgressTLS() *EdgeTLSSelection {
+	if e == nil {
+		return nil
+	}
+	return e.EgressTLS
 }
 
 func (e *EdgeServiceCreateRequest) GetEnabledKinds() []EdgeServiceCreateRequestEnabledKinds {

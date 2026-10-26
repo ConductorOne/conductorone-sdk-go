@@ -16,6 +16,9 @@ type TaskActionInstance struct {
 	//  TaskTypeAction.display_name; repeated here so clients that walk the
 	//  instance see a self-contained view.
 	DisplayName *string `json:"displayName,omitempty"`
+	// Instructions for completing the action manually, captured at
+	//  ticket-creation time.
+	RequestInstructions *string `json:"requestInstructions,omitempty"`
 }
 
 func (t *TaskActionInstance) GetBatonResourceActionRef() *BatonResourceActionRef {
@@ -37,4 +40,11 @@ func (t *TaskActionInstance) GetDisplayName() *string {
 		return nil
 	}
 	return t.DisplayName
+}
+
+func (t *TaskActionInstance) GetRequestInstructions() *string {
+	if t == nil {
+		return nil
+	}
+	return t.RequestInstructions
 }

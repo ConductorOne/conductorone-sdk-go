@@ -87,7 +87,14 @@ func CreateToolOutputBoolean(boolean bool) ToolOutput {
 	}
 }
 
-func (u *ToolOutput) UnmarshalJSON(data []byte) error {
+func (u *ToolOutput) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = ToolOutput{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var str string = ""
 	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {

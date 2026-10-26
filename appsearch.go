@@ -78,6 +78,7 @@ func (s *AppSearch) Search(ctx context.Context, request *shared.SearchAppsReques
 	if timeout == nil {
 		timeout = s.sdkConfiguration.Timeout
 	}
+	paginationCtx := ctx
 
 	if timeout != nil {
 		var cancel context.CancelFunc
@@ -200,6 +201,9 @@ func (s *AppSearch) Search(ctx context.Context, request *shared.SearchAppsReques
 		RawResponse: httpRes,
 	}
 	res.Next = func() (*operations.C1APIAppV1AppSearchSearchResponse, error) {
+		if request == nil {
+			request = &shared.SearchAppsRequest{}
+		}
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
 			return nil, err
@@ -238,7 +242,7 @@ func (s *AppSearch) Search(ctx context.Context, request *shared.SearchAppsReques
 		request.PageToken = &nCVal
 
 		return s.Search(
-			ctx,
+			paginationCtx,
 			request,
 			opts...,
 		)

@@ -5,7 +5,7 @@ package shared
 // EdgeServiceUpdateRequest updates an existing Edge via update_mask. Editable
 //
 //	paths: mode, enabled_kinds, egress_rules, credential_injections,
-//	inference_routes, allow_inference_bearer_tokens. The legacy inference mask
+//	inference_routes, allow_inference_bearer_tokens, egress_tls. The legacy inference mask
 //	may clear or replace one graph.
 type EdgeServiceUpdateRequest struct {
 	Edge       *Edge   `json:"edge,omitempty"`
