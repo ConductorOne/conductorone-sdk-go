@@ -11,6 +11,7 @@ permissions:
     paths:
       - RELEASES.md
       - '*/RELEASES.md'
+  workflow_dispatch:
 jobs:
   publish:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/sdk-publish.yaml@v15
