@@ -1,0 +1,9 @@
+# C1APIDirectoryV1DirectoryMergeRuleServiceSetDirectoryMergeRulesRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `SetDirectoryMergeRulesRequest`                                                                      | [*shared.SetDirectoryMergeRulesRequest](../../../pkg/models/shared/setdirectorymergerulesrequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `AppID`                                                                                              | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

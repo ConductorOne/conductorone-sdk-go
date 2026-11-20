@@ -115,6 +115,9 @@ type SearchPoliciesRequest struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// The policy IDs to exclude from the search.
 	ExcludePolicyIds []string `json:"excludePolicyIds,omitempty"`
+	// Include the builtin access profile owner certify policy, which is otherwise
+	//  hidden because it can only be used by access profile campaigns.
+	IncludeAccessProfileOwnerPolicy *bool `json:"includeAccessProfileOwnerPolicy,omitempty"`
 	// The includeDeleted field.
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// The pageSize where 0 <= pageSize <= 100. Values < 10 will be set to 10. A value of 0 returns the default page size (currently 25)
@@ -158,6 +161,13 @@ func (s *SearchPoliciesRequest) GetExcludePolicyIds() []string {
 		return nil
 	}
 	return s.ExcludePolicyIds
+}
+
+func (s *SearchPoliciesRequest) GetIncludeAccessProfileOwnerPolicy() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.IncludeAccessProfileOwnerPolicy
 }
 
 func (s *SearchPoliciesRequest) GetIncludeDeleted() *bool {

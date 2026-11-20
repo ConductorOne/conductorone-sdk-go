@@ -1,6 +1,6 @@
 # TargetType
 
-Requested type. UNSPECIFIED and the deprecated PROFILE value are rejected.
+The type to preview: CATALOG, BUNDLE, or CATALOG_AND_BUNDLE.
 
 ## Example Usage
 

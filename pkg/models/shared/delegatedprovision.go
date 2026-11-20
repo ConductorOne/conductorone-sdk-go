@@ -8,7 +8,7 @@ type DelegatedProvision struct {
 	AppID *string `json:"appId,omitempty"`
 	// The ID of the entitlement we are delegating provisioning to.
 	EntitlementID *string `json:"entitlementId,omitempty"`
-	// If true, a binding will be automatically created from the entitlement of the parent app.
+	// No longer supported; create an app entitlement proxy binding instead. Ignored when creating an app entitlement, and always returned as false.
 	Implicit *bool `json:"implicit,omitempty"`
 }
 

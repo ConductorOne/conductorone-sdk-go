@@ -23,3 +23,4 @@ custom := shared.ErrorState("custom_value")
 | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | `ErrorStateAccessReviewErrorStateUnspecified`               | ACCESS_REVIEW_ERROR_STATE_UNSPECIFIED                       |
 | `ErrorStateAccessReviewErrorStateSelectionQuotaExceedError` | ACCESS_REVIEW_ERROR_STATE_SELECTION_QUOTA_EXCEED_ERROR      |
+| `ErrorStateAccessReviewErrorStateDuplicationFailed`         | ACCESS_REVIEW_ERROR_STATE_DUPLICATION_FAILED                |

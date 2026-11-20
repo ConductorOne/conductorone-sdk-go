@@ -8,6 +8,7 @@
 * [DeleteManuallyManagedAppResource](#deletemanuallymanagedappresource) - Delete Manually Managed App Resource
 * [Get](#get) - Get
 * [List](#list) - List
+* [SearchAppEntitlementResourceBindings](#searchappentitlementresourcebindings) - Search App Entitlement Resource Bindings
 * [Update](#update) - Update
 
 ## CreateManuallyManagedAppResource
@@ -241,6 +242,65 @@ func main() {
 ### Response
 
 **[*operations.C1APIAppV1AppResourceServiceListResponse](../../pkg/models/operations/c1apiappv1appresourceservicelistresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchAppEntitlementResourceBindings
+
+Search the non-user grantees of an app entitlement, such as groups granted the entitlement,
+ or the entitlements an app resource is granted. User grantees are returned by the grants search.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.app.v1.AppResourceService.SearchAppEntitlementResourceBindings" method="post" path="/api/v1/apps/{app_id}/entitlement_resource_bindings/search" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.AppResource.SearchAppEntitlementResourceBindings(ctx, operations.C1APIAppV1AppResourceServiceSearchAppEntitlementResourceBindingsRequest{
+        AppID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SearchAppEntitlementResourceBindingsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                    | Type                                                                                                                                                                                         | Required                                                                                                                                                                                     | Description                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                           | The context to use for the request.                                                                                                                                                          |
+| `request`                                                                                                                                                                                    | [operations.C1APIAppV1AppResourceServiceSearchAppEntitlementResourceBindingsRequest](../../pkg/models/operations/c1apiappv1appresourceservicesearchappentitlementresourcebindingsrequest.md) | :heavy_check_mark:                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                   |
+| `opts`                                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                           | The options for this request.                                                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIAppV1AppResourceServiceSearchAppEntitlementResourceBindingsResponse](../../pkg/models/operations/c1apiappv1appresourceservicesearchappentitlementresourcebindingsresponse.md), error**
 
 ### Errors
 

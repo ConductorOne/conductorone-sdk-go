@@ -12,6 +12,8 @@ package shared
 //   - channelName
 //   - channelNameCel
 type SendSlackMessage struct {
+	// Allow a private channel retry if Slack restricts public channel creation. Defaults to false.
+	AllowPrivateChannelFallback *bool `json:"allowPrivateChannelFallback,omitempty"`
 	// The body field.
 	Body *string `json:"body,omitempty"`
 	// When true, the channel value (channel_name / channel_name_cel) is a Slack
@@ -33,6 +35,13 @@ type SendSlackMessage struct {
 	UserIdsCel *string `json:"userIdsCel,omitempty"`
 	// The userRefs field.
 	UserRefs []UserRef `json:"userRefs,omitempty"`
+}
+
+func (s *SendSlackMessage) GetAllowPrivateChannelFallback() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.AllowPrivateChannelFallback
 }
 
 func (s *SendSlackMessage) GetBody() *string {

@@ -1,6 +1,6 @@
 # XAAScopeServiceCreateRequestState
 
-Initial state. UNSPECIFIED defaults to PENDING_REVIEW.
+Initial state: PENDING_REVIEW, ENABLED or DISABLED. UNSPECIFIED defaults to PENDING_REVIEW.
 
 ## Example Usage
 

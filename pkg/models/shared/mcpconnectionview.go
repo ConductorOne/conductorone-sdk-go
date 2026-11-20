@@ -7,28 +7,28 @@ import (
 	"time"
 )
 
-// AuthMethod - Auth method on the connector. Drives the FE connect-flow choice:
+// MCPConnectionViewAuthMethod - Auth method on the connector. Drives the FE connect-flow choice:
 //
 //	OAUTH2 → redirect via CreateAuthorizeURL; BEARER_TOKEN / CUSTOM_HEADER
 //	→ form dialog via SubmitUserCredential.
-type AuthMethod string
+type MCPConnectionViewAuthMethod string
 
 const (
-	AuthMethodMcpServerAuthMethodUnspecified  AuthMethod = "MCP_SERVER_AUTH_METHOD_UNSPECIFIED"
-	AuthMethodMcpServerAuthMethodNone         AuthMethod = "MCP_SERVER_AUTH_METHOD_NONE"
-	AuthMethodMcpServerAuthMethodBearerToken  AuthMethod = "MCP_SERVER_AUTH_METHOD_BEARER_TOKEN"
-	AuthMethodMcpServerAuthMethodOauth2       AuthMethod = "MCP_SERVER_AUTH_METHOD_OAUTH2"
-	AuthMethodMcpServerAuthMethodCustomHeader AuthMethod = "MCP_SERVER_AUTH_METHOD_CUSTOM_HEADER"
-	AuthMethodMcpServerAuthMethodAwsSigv4     AuthMethod = "MCP_SERVER_AUTH_METHOD_AWS_SIGV4"
-	AuthMethodMcpServerAuthMethodBasicAuth    AuthMethod = "MCP_SERVER_AUTH_METHOD_BASIC_AUTH"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodUnspecified  MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_UNSPECIFIED"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodNone         MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_NONE"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodBearerToken  MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_BEARER_TOKEN"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodOauth2       MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_OAUTH2"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodCustomHeader MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_CUSTOM_HEADER"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodAwsSigv4     MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_AWS_SIGV4"
+	MCPConnectionViewAuthMethodMcpServerAuthMethodBasicAuth    MCPConnectionViewAuthMethod = "MCP_SERVER_AUTH_METHOD_BASIC_AUTH"
 )
 
-func (e AuthMethod) ToPointer() *AuthMethod {
+func (e MCPConnectionViewAuthMethod) ToPointer() *MCPConnectionViewAuthMethod {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *AuthMethod) IsExact() bool {
+func (e *MCPConnectionViewAuthMethod) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "MCP_SERVER_AUTH_METHOD_UNSPECIFIED", "MCP_SERVER_AUTH_METHOD_NONE", "MCP_SERVER_AUTH_METHOD_BEARER_TOKEN", "MCP_SERVER_AUTH_METHOD_OAUTH2", "MCP_SERVER_AUTH_METHOD_CUSTOM_HEADER", "MCP_SERVER_AUTH_METHOD_AWS_SIGV4", "MCP_SERVER_AUTH_METHOD_BASIC_AUTH":
@@ -75,7 +75,7 @@ type MCPConnectionView struct {
 	// Auth method on the connector. Drives the FE connect-flow choice:
 	//  OAUTH2 → redirect via CreateAuthorizeURL; BEARER_TOKEN / CUSTOM_HEADER
 	//  → form dialog via SubmitUserCredential.
-	AuthMethod *AuthMethod `json:"authMethod,omitempty"`
+	AuthMethod *MCPConnectionViewAuthMethod `json:"authMethod,omitempty"`
 	// Email of the external identity (from OAuth ID token). Empty for
 	//  non-OAuth connections (no upstream identity to surface).
 	AuthorizedAsEmail *string `json:"authorizedAsEmail,omitempty"`
@@ -113,7 +113,7 @@ func (m *MCPConnectionView) GetAppID() *string {
 	return m.AppID
 }
 
-func (m *MCPConnectionView) GetAuthMethod() *AuthMethod {
+func (m *MCPConnectionView) GetAuthMethod() *MCPConnectionViewAuthMethod {
 	if m == nil {
 		return nil
 	}

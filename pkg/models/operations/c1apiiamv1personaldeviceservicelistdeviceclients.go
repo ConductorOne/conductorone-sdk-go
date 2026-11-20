@@ -8,7 +8,9 @@ import (
 )
 
 type C1APIIamV1PersonalDeviceServiceListDeviceClientsRequest struct {
-	DeviceID string `pathParam:"style=simple,explode=false,name=device_id"`
+	DeviceID  string  `pathParam:"style=simple,explode=false,name=device_id"`
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (c *C1APIIamV1PersonalDeviceServiceListDeviceClientsRequest) GetDeviceID() string {
@@ -16,6 +18,20 @@ func (c *C1APIIamV1PersonalDeviceServiceListDeviceClientsRequest) GetDeviceID() 
 		return ""
 	}
 	return c.DeviceID
+}
+
+func (c *C1APIIamV1PersonalDeviceServiceListDeviceClientsRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIIamV1PersonalDeviceServiceListDeviceClientsRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
 }
 
 // #region class-body-c1apiiamv1personaldeviceservicelistdeviceclientsrequest

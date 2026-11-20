@@ -7,6 +7,32 @@ import (
 	"time"
 )
 
+type AccessProfileReviewKinds string
+
+const (
+	AccessProfileReviewKindsAccessProfileReviewKindUnspecified           AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_UNSPECIFIED"
+	AccessProfileReviewKindsAccessProfileReviewKindMembershipCel         AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_MEMBERSHIP_CEL"
+	AccessProfileReviewKindsAccessProfileReviewKindMembershipEntitlement AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_MEMBERSHIP_ENTITLEMENT"
+	AccessProfileReviewKindsAccessProfileReviewKindManualEnrollment      AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_MANUAL_ENROLLMENT"
+	AccessProfileReviewKindsAccessProfileReviewKindExclusion             AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_EXCLUSION"
+	AccessProfileReviewKindsAccessProfileReviewKindComposition           AccessProfileReviewKinds = "ACCESS_PROFILE_REVIEW_KIND_COMPOSITION"
+)
+
+func (e AccessProfileReviewKinds) ToPointer() *AccessProfileReviewKinds {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AccessProfileReviewKinds) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "ACCESS_PROFILE_REVIEW_KIND_UNSPECIFIED", "ACCESS_PROFILE_REVIEW_KIND_MEMBERSHIP_CEL", "ACCESS_PROFILE_REVIEW_KIND_MEMBERSHIP_ENTITLEMENT", "ACCESS_PROFILE_REVIEW_KIND_MANUAL_ENROLLMENT", "ACCESS_PROFILE_REVIEW_KIND_EXCLUSION", "ACCESS_PROFILE_REVIEW_KIND_COMPOSITION":
+			return true
+		}
+	}
+	return false
+}
+
 type AccountStatuses string
 
 const (
@@ -157,8 +183,6 @@ func (e *GrantOutcomes) IsExact() bool {
 }
 
 // PendingActionFilter - Filter tasks by pending action status. Only applies when exactly one access_review_id is specified.
-//
-//	Requires the REVIEWS_PENDING_ACTIONS feature flag to be enabled.
 type PendingActionFilter string
 
 const (
@@ -241,17 +265,18 @@ func (e *TaskSearchRequestSortBy) IsExact() bool {
 type StepApprovalTypes string
 
 const (
-	StepApprovalTypesStepApprovalTypeUnspecified       StepApprovalTypes = "STEP_APPROVAL_TYPE_UNSPECIFIED"
-	StepApprovalTypesStepApprovalTypeUsers             StepApprovalTypes = "STEP_APPROVAL_TYPE_USERS"
-	StepApprovalTypesStepApprovalTypeManager           StepApprovalTypes = "STEP_APPROVAL_TYPE_MANAGER"
-	StepApprovalTypesStepApprovalTypeAppOwners         StepApprovalTypes = "STEP_APPROVAL_TYPE_APP_OWNERS"
-	StepApprovalTypesStepApprovalTypeGroup             StepApprovalTypes = "STEP_APPROVAL_TYPE_GROUP"
-	StepApprovalTypesStepApprovalTypeSelf              StepApprovalTypes = "STEP_APPROVAL_TYPE_SELF"
-	StepApprovalTypesStepApprovalTypeEntitlementOwners StepApprovalTypes = "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS"
-	StepApprovalTypesStepApprovalTypeExpression        StepApprovalTypes = "STEP_APPROVAL_TYPE_EXPRESSION"
-	StepApprovalTypesStepApprovalTypeWebhook           StepApprovalTypes = "STEP_APPROVAL_TYPE_WEBHOOK"
-	StepApprovalTypesStepApprovalTypeResourceOwners    StepApprovalTypes = "STEP_APPROVAL_TYPE_RESOURCE_OWNERS"
-	StepApprovalTypesStepApprovalTypeAgent             StepApprovalTypes = "STEP_APPROVAL_TYPE_AGENT"
+	StepApprovalTypesStepApprovalTypeUnspecified         StepApprovalTypes = "STEP_APPROVAL_TYPE_UNSPECIFIED"
+	StepApprovalTypesStepApprovalTypeUsers               StepApprovalTypes = "STEP_APPROVAL_TYPE_USERS"
+	StepApprovalTypesStepApprovalTypeManager             StepApprovalTypes = "STEP_APPROVAL_TYPE_MANAGER"
+	StepApprovalTypesStepApprovalTypeAppOwners           StepApprovalTypes = "STEP_APPROVAL_TYPE_APP_OWNERS"
+	StepApprovalTypesStepApprovalTypeGroup               StepApprovalTypes = "STEP_APPROVAL_TYPE_GROUP"
+	StepApprovalTypesStepApprovalTypeSelf                StepApprovalTypes = "STEP_APPROVAL_TYPE_SELF"
+	StepApprovalTypesStepApprovalTypeEntitlementOwners   StepApprovalTypes = "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS"
+	StepApprovalTypesStepApprovalTypeExpression          StepApprovalTypes = "STEP_APPROVAL_TYPE_EXPRESSION"
+	StepApprovalTypesStepApprovalTypeWebhook             StepApprovalTypes = "STEP_APPROVAL_TYPE_WEBHOOK"
+	StepApprovalTypesStepApprovalTypeResourceOwners      StepApprovalTypes = "STEP_APPROVAL_TYPE_RESOURCE_OWNERS"
+	StepApprovalTypesStepApprovalTypeAgent               StepApprovalTypes = "STEP_APPROVAL_TYPE_AGENT"
+	StepApprovalTypesStepApprovalTypeAccessProfileOwners StepApprovalTypes = "STEP_APPROVAL_TYPE_ACCESS_PROFILE_OWNERS"
 )
 
 func (e StepApprovalTypes) ToPointer() *StepApprovalTypes {
@@ -262,7 +287,7 @@ func (e StepApprovalTypes) ToPointer() *StepApprovalTypes {
 func (e *StepApprovalTypes) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "STEP_APPROVAL_TYPE_UNSPECIFIED", "STEP_APPROVAL_TYPE_USERS", "STEP_APPROVAL_TYPE_MANAGER", "STEP_APPROVAL_TYPE_APP_OWNERS", "STEP_APPROVAL_TYPE_GROUP", "STEP_APPROVAL_TYPE_SELF", "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS", "STEP_APPROVAL_TYPE_EXPRESSION", "STEP_APPROVAL_TYPE_WEBHOOK", "STEP_APPROVAL_TYPE_RESOURCE_OWNERS", "STEP_APPROVAL_TYPE_AGENT":
+		case "STEP_APPROVAL_TYPE_UNSPECIFIED", "STEP_APPROVAL_TYPE_USERS", "STEP_APPROVAL_TYPE_MANAGER", "STEP_APPROVAL_TYPE_APP_OWNERS", "STEP_APPROVAL_TYPE_GROUP", "STEP_APPROVAL_TYPE_SELF", "STEP_APPROVAL_TYPE_ENTITLEMENT_OWNERS", "STEP_APPROVAL_TYPE_EXPRESSION", "STEP_APPROVAL_TYPE_WEBHOOK", "STEP_APPROVAL_TYPE_RESOURCE_OWNERS", "STEP_APPROVAL_TYPE_AGENT", "STEP_APPROVAL_TYPE_ACCESS_PROFILE_OWNERS":
 			return true
 		}
 	}
@@ -294,6 +319,10 @@ func (e *TaskStates) IsExact() bool {
 
 // TaskSearchRequest - Search for tasks based on a plethora filters.
 type TaskSearchRequest struct {
+	// Only certify tasks reviewing these access profiles. Combined with other filters using AND.
+	AccessProfileIds []string `json:"accessProfileIds,omitempty"`
+	// Only these access-profile review kinds. Multiple kinds are alternatives; empty means all kinds.
+	AccessProfileReviewKinds []AccessProfileReviewKinds `json:"accessProfileReviewKinds,omitempty"`
 	// Search tasks that belong to any of the access reviews included in this list.
 	AccessReviewIds []string `json:"accessReviewIds,omitempty"`
 	// Search tasks that have any of these account owners.
@@ -354,7 +383,6 @@ type TaskSearchRequest struct {
 	// The pageToken field.
 	PageToken *string `json:"pageToken,omitempty"`
 	// Filter tasks by pending action status. Only applies when exactly one access_review_id is specified.
-	//  Requires the REVIEWS_PENDING_ACTIONS feature flag to be enabled.
 	PendingActionFilter *PendingActionFilter `json:"pendingActionFilter,omitempty"`
 	// Search tasks that were acted on by any of these users.
 	PreviouslyActedOnIds []string `json:"previouslyActedOnIds,omitempty"`
@@ -391,6 +419,20 @@ func (t *TaskSearchRequest) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (t *TaskSearchRequest) GetAccessProfileIds() []string {
+	if t == nil {
+		return nil
+	}
+	return t.AccessProfileIds
+}
+
+func (t *TaskSearchRequest) GetAccessProfileReviewKinds() []AccessProfileReviewKinds {
+	if t == nil {
+		return nil
+	}
+	return t.AccessProfileReviewKinds
 }
 
 func (t *TaskSearchRequest) GetAccessReviewIds() []string {

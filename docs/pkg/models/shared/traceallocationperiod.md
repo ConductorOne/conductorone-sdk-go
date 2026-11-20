@@ -1,6 +1,6 @@
 # TraceAllocationPeriod
 
-The period field.
+Length of the budget period.
 
 ## Example Usage
 

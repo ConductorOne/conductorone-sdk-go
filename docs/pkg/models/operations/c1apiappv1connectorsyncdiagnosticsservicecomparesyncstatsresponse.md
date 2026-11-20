@@ -1,0 +1,11 @@
+# C1APIAppV1ConnectorSyncDiagnosticsServiceCompareSyncStatsResponse
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `CompareSyncStatsResponse`                                                                  | [*shared.CompareSyncStatsResponse](../../../pkg/models/shared/comparesyncstatsresponse.md)  | :heavy_minus_sign:                                                                          | CompareSyncStatsResponse contains count deltas only, without synced records or file access. |
+| `ContentType`                                                                               | `string`                                                                                    | :heavy_check_mark:                                                                          | HTTP response content type for this operation                                               |
+| `StatusCode`                                                                                | `int`                                                                                       | :heavy_check_mark:                                                                          | HTTP response status code for this operation                                                |
+| `RawResponse`                                                                               | [*http.Response](https://pkg.go.dev/net/http#Response)                                      | :heavy_check_mark:                                                                          | Raw HTTP response; suitable for custom response parsing                                     |

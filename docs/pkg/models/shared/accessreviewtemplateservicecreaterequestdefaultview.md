@@ -18,10 +18,11 @@ custom := shared.AccessReviewTemplateServiceCreateRequestDefaultView("custom_val
 
 ## Values
 
-| Name                                                                                  | Value                                                                                 |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnspecified`  | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED                                                   |
-| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByApp`        | ACCESS_REVIEW_VIEW_TYPE_BY_APP                                                        |
-| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByUser`       | ACCESS_REVIEW_VIEW_TYPE_BY_USER                                                       |
-| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnstructured` | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED                                                  |
-| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByResource`   | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE                                                   |
+| Name                                                                                     | Value                                                                                    |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnspecified`     | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED                                                      |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByApp`           | ACCESS_REVIEW_VIEW_TYPE_BY_APP                                                           |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByUser`          | ACCESS_REVIEW_VIEW_TYPE_BY_USER                                                          |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnstructured`    | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED                                                     |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByResource`      | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE                                                      |
+| `AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByAccessProfile` | ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE                                                |

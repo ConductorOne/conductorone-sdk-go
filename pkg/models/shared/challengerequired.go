@@ -2,26 +2,26 @@
 
 package shared
 
-type Types string
+type ChallengeRequiredTypes string
 
 const (
-	TypesCredentialTypeUnspecified        Types = "CREDENTIAL_TYPE_UNSPECIFIED"
-	TypesCredentialTypePasskey            Types = "CREDENTIAL_TYPE_PASSKEY"
-	TypesCredentialTypePassword           Types = "CREDENTIAL_TYPE_PASSWORD"
-	TypesCredentialTypeTotp               Types = "CREDENTIAL_TYPE_TOTP"
-	TypesCredentialTypeEmailOtp           Types = "CREDENTIAL_TYPE_EMAIL_OTP"
-	TypesCredentialTypeRecoveryCode       Types = "CREDENTIAL_TYPE_RECOVERY_CODE"
-	TypesCredentialTypeDelegatedGoogle    Types = "CREDENTIAL_TYPE_DELEGATED_GOOGLE"
-	TypesCredentialTypeDelegatedMicrosoft Types = "CREDENTIAL_TYPE_DELEGATED_MICROSOFT"
-	TypesCredentialTypeUpstreamIdp        Types = "CREDENTIAL_TYPE_UPSTREAM_IDP"
+	ChallengeRequiredTypesCredentialTypeUnspecified        ChallengeRequiredTypes = "CREDENTIAL_TYPE_UNSPECIFIED"
+	ChallengeRequiredTypesCredentialTypePasskey            ChallengeRequiredTypes = "CREDENTIAL_TYPE_PASSKEY"
+	ChallengeRequiredTypesCredentialTypePassword           ChallengeRequiredTypes = "CREDENTIAL_TYPE_PASSWORD"
+	ChallengeRequiredTypesCredentialTypeTotp               ChallengeRequiredTypes = "CREDENTIAL_TYPE_TOTP"
+	ChallengeRequiredTypesCredentialTypeEmailOtp           ChallengeRequiredTypes = "CREDENTIAL_TYPE_EMAIL_OTP"
+	ChallengeRequiredTypesCredentialTypeRecoveryCode       ChallengeRequiredTypes = "CREDENTIAL_TYPE_RECOVERY_CODE"
+	ChallengeRequiredTypesCredentialTypeDelegatedGoogle    ChallengeRequiredTypes = "CREDENTIAL_TYPE_DELEGATED_GOOGLE"
+	ChallengeRequiredTypesCredentialTypeDelegatedMicrosoft ChallengeRequiredTypes = "CREDENTIAL_TYPE_DELEGATED_MICROSOFT"
+	ChallengeRequiredTypesCredentialTypeUpstreamIdp        ChallengeRequiredTypes = "CREDENTIAL_TYPE_UPSTREAM_IDP"
 )
 
-func (e Types) ToPointer() *Types {
+func (e ChallengeRequiredTypes) ToPointer() *ChallengeRequiredTypes {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *Types) IsExact() bool {
+func (e *ChallengeRequiredTypes) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "CREDENTIAL_TYPE_UNSPECIFIED", "CREDENTIAL_TYPE_PASSKEY", "CREDENTIAL_TYPE_PASSWORD", "CREDENTIAL_TYPE_TOTP", "CREDENTIAL_TYPE_EMAIL_OTP", "CREDENTIAL_TYPE_RECOVERY_CODE", "CREDENTIAL_TYPE_DELEGATED_GOOGLE", "CREDENTIAL_TYPE_DELEGATED_MICROSOFT", "CREDENTIAL_TYPE_UPSTREAM_IDP":
@@ -34,10 +34,10 @@ func (e *Types) IsExact() bool {
 // ChallengeRequired asks for an additional factor before the sign-in completes.
 type ChallengeRequired struct {
 	// The credential types that may satisfy the challenge.
-	Types []Types `json:"types,omitempty"`
+	Types []ChallengeRequiredTypes `json:"types,omitempty"`
 }
 
-func (c *ChallengeRequired) GetTypes() []Types {
+func (c *ChallengeRequired) GetTypes() []ChallengeRequiredTypes {
 	if c == nil {
 		return nil
 	}

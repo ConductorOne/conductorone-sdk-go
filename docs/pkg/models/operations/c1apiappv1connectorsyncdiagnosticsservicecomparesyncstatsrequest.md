@@ -1,0 +1,10 @@
+# C1APIAppV1ConnectorSyncDiagnosticsServiceCompareSyncStatsRequest
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `CompareSyncStatsRequest`                                                                | [*shared.CompareSyncStatsRequest](../../../pkg/models/shared/comparesyncstatsrequest.md) | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `AppID`                                                                                  | `string`                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |
+| `ConnectorID`                                                                            | `string`                                                                                 | :heavy_check_mark:                                                                       | N/A                                                                                      |

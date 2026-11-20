@@ -8,7 +8,23 @@ import (
 )
 
 type C1APIWorkloadFederationV1WorkloadFederationServiceListTrustsRequest struct {
-	ServicePrincipalID string `pathParam:"style=simple,explode=false,name=service_principal_id"`
+	PageSize           *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken          *string `queryParam:"style=form,explode=true,name=page_token"`
+	ServicePrincipalID string  `pathParam:"style=simple,explode=false,name=service_principal_id"`
+}
+
+func (c *C1APIWorkloadFederationV1WorkloadFederationServiceListTrustsRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIWorkloadFederationV1WorkloadFederationServiceListTrustsRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
 }
 
 func (c *C1APIWorkloadFederationV1WorkloadFederationServiceListTrustsRequest) GetServicePrincipalID() string {

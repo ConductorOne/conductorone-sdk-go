@@ -4,9 +4,10 @@ package shared
 
 // The ConnectorServiceUpdateRequest message contains the fields required to update a connector.
 type ConnectorServiceUpdateRequest struct {
-	Connector  *ConnectorInput      `json:"connector,omitempty"`
-	ExpandMask *ConnectorExpandMask `json:"expandMask,omitempty"`
-	UpdateMask *string              `json:"updateMask,omitempty"`
+	Connector     *ConnectorInput      `json:"connector,omitempty"`
+	ExpandMask    *ConnectorExpandMask `json:"expandMask,omitempty"`
+	Justification *ChangeJustification `json:"justification,omitempty"`
+	UpdateMask    *string              `json:"updateMask,omitempty"`
 }
 
 func (c *ConnectorServiceUpdateRequest) GetConnector() *ConnectorInput {
@@ -21,6 +22,13 @@ func (c *ConnectorServiceUpdateRequest) GetExpandMask() *ConnectorExpandMask {
 		return nil
 	}
 	return c.ExpandMask
+}
+
+func (c *ConnectorServiceUpdateRequest) GetJustification() *ChangeJustification {
+	if c == nil {
+		return nil
+	}
+	return c.Justification
 }
 
 func (c *ConnectorServiceUpdateRequest) GetUpdateMask() *string {

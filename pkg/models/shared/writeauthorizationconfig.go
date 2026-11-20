@@ -28,6 +28,32 @@ func (e *BlockedClassifications) IsExact() bool {
 	return false
 }
 
+type BlockedMutatingClassifications string
+
+const (
+	BlockedMutatingClassificationsToolClassificationUnspecified BlockedMutatingClassifications = "TOOL_CLASSIFICATION_UNSPECIFIED"
+	BlockedMutatingClassificationsToolClassificationRead        BlockedMutatingClassifications = "TOOL_CLASSIFICATION_READ"
+	BlockedMutatingClassificationsToolClassificationWrite       BlockedMutatingClassifications = "TOOL_CLASSIFICATION_WRITE"
+	BlockedMutatingClassificationsToolClassificationDestructive BlockedMutatingClassifications = "TOOL_CLASSIFICATION_DESTRUCTIVE"
+	BlockedMutatingClassificationsToolClassificationSensitive   BlockedMutatingClassifications = "TOOL_CLASSIFICATION_SENSITIVE"
+	BlockedMutatingClassificationsToolClassificationDangerous   BlockedMutatingClassifications = "TOOL_CLASSIFICATION_DANGEROUS"
+)
+
+func (e BlockedMutatingClassifications) ToPointer() *BlockedMutatingClassifications {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BlockedMutatingClassifications) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TOOL_CLASSIFICATION_UNSPECIFIED", "TOOL_CLASSIFICATION_READ", "TOOL_CLASSIFICATION_WRITE", "TOOL_CLASSIFICATION_DESTRUCTIVE", "TOOL_CLASSIFICATION_SENSITIVE", "TOOL_CLASSIFICATION_DANGEROUS":
+			return true
+		}
+	}
+	return false
+}
+
 // WriteAuthorizationConfig blocks tool calls whose ToolClassification is in
 //
 //	blocked_classifications, optionally permitting them within business hours.
@@ -35,7 +61,11 @@ type WriteAuthorizationConfig struct {
 	// Tool classifications to block. Must have at least one entry; a hook
 	//  with no blocked classifications would be a silent misconfiguration.
 	BlockedClassifications []BlockedClassifications `json:"blockedClassifications,omitempty"`
-	BusinessHours          *BusinessHours           `json:"businessHours,omitempty"`
+	// Tool classifications to block only when the call mutates external state.
+	//  Empty is valid (the pre-existing behavior: only blocked_classifications
+	//  applies), so unlike blocked_classifications this list has no min_items.
+	BlockedMutatingClassifications []BlockedMutatingClassifications `json:"blockedMutatingClassifications,omitempty"`
+	BusinessHours                  *BusinessHours                   `json:"businessHours,omitempty"`
 }
 
 func (w *WriteAuthorizationConfig) GetBlockedClassifications() []BlockedClassifications {
@@ -43,6 +73,13 @@ func (w *WriteAuthorizationConfig) GetBlockedClassifications() []BlockedClassifi
 		return nil
 	}
 	return w.BlockedClassifications
+}
+
+func (w *WriteAuthorizationConfig) GetBlockedMutatingClassifications() []BlockedMutatingClassifications {
+	if w == nil {
+		return nil
+	}
+	return w.BlockedMutatingClassifications
 }
 
 func (w *WriteAuthorizationConfig) GetBusinessHours() *BusinessHours {

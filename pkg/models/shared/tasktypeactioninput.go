@@ -9,12 +9,22 @@ package shared
 //   - toolCall
 //   - finding
 //   - credentialIssue
+//   - accessProfileComponent
 type TaskTypeActionInput struct {
-	ActionInstance  *TaskActionInstanceInput    `json:"actionInstance,omitempty"`
-	CredentialIssue *CredentialIssueTargetInput `json:"credentialIssue,omitempty"`
-	Finding         *FindingTargetInput         `json:"finding,omitempty"`
-	ScopeRole       *ScopeRoleInput             `json:"scopeRole,omitempty"`
-	ToolCall        *GatedToolCallTargetInput   `json:"toolCall,omitempty"`
+	AccessProfileComponent *AccessProfileComponentTargetInput `json:"accessProfileComponent,omitempty"`
+	ActionInstance         *TaskActionInstanceInput           `json:"actionInstance,omitempty"`
+	CredentialIssue        *CredentialIssueTargetInput        `json:"credentialIssue,omitempty"`
+	Finding                *FindingTargetInput                `json:"finding,omitempty"`
+	ScopeRole              *ScopeRoleInput                    `json:"scopeRole,omitempty"`
+	Source                 *TaskActionSourceInput             `json:"source,omitempty"`
+	ToolCall               *GatedToolCallTargetInput          `json:"toolCall,omitempty"`
+}
+
+func (t *TaskTypeActionInput) GetAccessProfileComponent() *AccessProfileComponentTargetInput {
+	if t == nil {
+		return nil
+	}
+	return t.AccessProfileComponent
 }
 
 func (t *TaskTypeActionInput) GetActionInstance() *TaskActionInstanceInput {
@@ -43,6 +53,13 @@ func (t *TaskTypeActionInput) GetScopeRole() *ScopeRoleInput {
 		return nil
 	}
 	return t.ScopeRole
+}
+
+func (t *TaskTypeActionInput) GetSource() *TaskActionSourceInput {
+	if t == nil {
+		return nil
+	}
+	return t.Source
 }
 
 func (t *TaskTypeActionInput) GetToolCall() *GatedToolCallTargetInput {

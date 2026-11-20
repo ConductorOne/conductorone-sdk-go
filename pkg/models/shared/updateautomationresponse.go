@@ -5,6 +5,8 @@ package shared
 // The UpdateAutomationResponse message.
 type UpdateAutomationResponse struct {
 	Automation *Automation `json:"automation,omitempty"`
+	// Set when turning the automation off started a bulk cancel of its queued runs.
+	BulkActionID *string `json:"bulkActionId,omitempty"`
 	// One-time absolute webhook URL for capability URL authentication, shown once when the trigger is saved.
 	//  Contains the full URL including the embedded token (e.g. https://tenant.conductorone.com/api/v1/webhooks/incoming/{id}/t/{token}).
 	//  Populated only when the webhook trigger uses capability URL authentication.
@@ -19,6 +21,13 @@ func (u *UpdateAutomationResponse) GetAutomation() *Automation {
 		return nil
 	}
 	return u.Automation
+}
+
+func (u *UpdateAutomationResponse) GetBulkActionID() *string {
+	if u == nil {
+		return nil
+	}
+	return u.BulkActionID
 }
 
 func (u *UpdateAutomationResponse) GetWebhookCapabilityURL() *string {

@@ -60,11 +60,12 @@ func (e *AccessReviewTemplateAutoCloseDecision) IsExact() bool {
 type AccessReviewTemplateDefaultView string
 
 const (
-	AccessReviewTemplateDefaultViewAccessReviewViewTypeUnspecified  AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
-	AccessReviewTemplateDefaultViewAccessReviewViewTypeByApp        AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
-	AccessReviewTemplateDefaultViewAccessReviewViewTypeByUser       AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
-	AccessReviewTemplateDefaultViewAccessReviewViewTypeUnstructured AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
-	AccessReviewTemplateDefaultViewAccessReviewViewTypeByResource   AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeUnspecified     AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeByApp           AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeByUser          AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeUnstructured    AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeByResource      AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	AccessReviewTemplateDefaultViewAccessReviewViewTypeByAccessProfile AccessReviewTemplateDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE"
 )
 
 func (e AccessReviewTemplateDefaultView) ToPointer() *AccessReviewTemplateDefaultView {
@@ -75,7 +76,7 @@ func (e AccessReviewTemplateDefaultView) ToPointer() *AccessReviewTemplateDefaul
 func (e *AccessReviewTemplateDefaultView) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE":
+		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE", "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE":
 			return true
 		}
 	}
@@ -92,6 +93,7 @@ const (
 	AccessReviewTemplateScopeTypeAccessReviewScopeTypeByResource        AccessReviewTemplateScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE"
 	AccessReviewTemplateScopeTypeAccessReviewScopeTypeByInheritance     AccessReviewTemplateScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE"
 	AccessReviewTemplateScopeTypeAccessReviewScopeTypeByUsers           AccessReviewTemplateScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS"
+	AccessReviewTemplateScopeTypeAccessReviewScopeTypeByAccessProfiles  AccessReviewTemplateScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES"
 )
 
 func (e AccessReviewTemplateScopeType) ToPointer() *AccessReviewTemplateScopeType {
@@ -102,7 +104,7 @@ func (e AccessReviewTemplateScopeType) ToPointer() *AccessReviewTemplateScopeTyp
 func (e *AccessReviewTemplateScopeType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS":
+		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES":
 			return true
 		}
 	}
@@ -139,6 +141,7 @@ type AccessReviewTemplate struct {
 	// Auto-start configuration
 	//  next_scheduled_campaign_at will be used as the scheduled start date
 	AutoStartCampaign *bool                     `json:"autoStartCampaign,omitempty"`
+	CampaignSchedule  *CampaignSchedule         `json:"campaignSchedule,omitempty"`
 	ColumnConfig      *AccessReviewColumnConfig `json:"columnConfig,omitempty"`
 	CreatedAt         *time.Time                `json:"createdAt,omitempty"`
 	// The defaultView field.
@@ -234,6 +237,13 @@ func (a *AccessReviewTemplate) GetAutoStartCampaign() *bool {
 		return nil
 	}
 	return a.AutoStartCampaign
+}
+
+func (a *AccessReviewTemplate) GetCampaignSchedule() *CampaignSchedule {
+	if a == nil {
+		return nil
+	}
+	return a.CampaignSchedule
 }
 
 func (a *AccessReviewTemplate) GetColumnConfig() *AccessReviewColumnConfig {
@@ -434,6 +444,7 @@ type AccessReviewTemplateInput struct {
 	// Auto-start configuration
 	//  next_scheduled_campaign_at will be used as the scheduled start date
 	AutoStartCampaign *bool                     `json:"autoStartCampaign,omitempty"`
+	CampaignSchedule  *CampaignSchedule         `json:"campaignSchedule,omitempty"`
 	ColumnConfig      *AccessReviewColumnConfig `json:"columnConfig,omitempty"`
 	// The defaultView field.
 	DefaultView *AccessReviewTemplateDefaultView `json:"defaultView,omitempty"`
@@ -526,6 +537,13 @@ func (a *AccessReviewTemplateInput) GetAutoStartCampaign() *bool {
 		return nil
 	}
 	return a.AutoStartCampaign
+}
+
+func (a *AccessReviewTemplateInput) GetCampaignSchedule() *CampaignSchedule {
+	if a == nil {
+		return nil
+	}
+	return a.CampaignSchedule
 }
 
 func (a *AccessReviewTemplateInput) GetColumnConfig() *AccessReviewColumnConfig {

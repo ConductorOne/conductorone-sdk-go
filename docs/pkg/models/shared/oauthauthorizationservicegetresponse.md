@@ -1,0 +1,12 @@
+# OAuthAuthorizationServiceGetResponse
+
+The OAuthAuthorizationServiceGetResponse message.
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `Authentication`                                                                                                       | [*shared.OAuthAuthorizationClientAuthentication](../../../pkg/models/shared/oauthauthorizationclientauthentication.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `Authorization`                                                                                                        | [*shared.OAuthAuthorization](../../../pkg/models/shared/oauthauthorization.md)                                         | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `Client`                                                                                                               | [*shared.ExternalOAuthClientInfo](../../../pkg/models/shared/externaloauthclientinfo.md)                               | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |

@@ -93,8 +93,11 @@ type App struct {
 	// The app's display name.
 	DisplayName *string `json:"displayName,omitempty"`
 	// When enabled, resource ownership is sourced from the connector.
-	EnableConnectorSourcedOwnership *bool   `json:"enableConnectorSourcedOwnership,omitempty"`
-	FieldMask                       *string `json:"fieldMask,omitempty"`
+	EnableConnectorSourcedOwnership *bool `json:"enableConnectorSourcedOwnership,omitempty"`
+	// When true, entitlements in this app default their description to their resource's description from the
+	//  connector. Entitlements whose description was manually edited keep that text.
+	EntitlementsUseResourceDescription *bool   `json:"entitlementsUseResourceDescription,omitempty"`
+	FieldMask                          *string `json:"fieldMask,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -113,6 +116,7 @@ type App struct {
 	LogoURI       *string           `json:"logoUri,omitempty"`
 	MatchBatonRef *AppMatchBatonRef `json:"matchBatonRef,omitempty"`
 	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
+	//  Must be between 0 and 1,000,000 (USD per seat per month). On update, -1 resets the cost to its default.
 	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
 	// The ID of the app that created this app, if any.
 	ParentAppID *string `json:"parentAppId,omitempty"`
@@ -234,6 +238,13 @@ func (a *App) GetEnableConnectorSourcedOwnership() *bool {
 		return nil
 	}
 	return a.EnableConnectorSourcedOwnership
+}
+
+func (a *App) GetEntitlementsUseResourceDescription() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EntitlementsUseResourceDescription
 }
 
 func (a *App) GetFieldMask() *string {
@@ -382,6 +393,9 @@ type AppInput struct {
 	DisplayName *string `json:"displayName,omitempty"`
 	// When enabled, resource ownership is sourced from the connector.
 	EnableConnectorSourcedOwnership *bool `json:"enableConnectorSourcedOwnership,omitempty"`
+	// When true, entitlements in this app default their description to their resource's description from the
+	//  connector. Entitlements whose description was manually edited keep that text.
+	EntitlementsUseResourceDescription *bool `json:"entitlementsUseResourceDescription,omitempty"`
 	// The ID of the Grant Policy associated with this App.
 	GrantPolicyID *string `json:"grantPolicyId,omitempty"`
 	// The URL of an icon to display for the app.
@@ -394,6 +408,7 @@ type AppInput struct {
 	IsManuallyManaged *bool             `json:"isManuallyManaged,omitempty"`
 	MatchBatonRef     *AppMatchBatonRef `json:"matchBatonRef,omitempty"`
 	// The cost of an app per-seat, so that total cost can be calculated by the grant count.
+	//  Must be between 0 and 1,000,000 (USD per seat per month). On update, -1 resets the cost to its default.
 	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
 	// When enabled, revoking a grant also revokes the grants that source it.
 	RevokeGrantSources *bool `json:"revokeGrantSources,omitempty"`
@@ -464,6 +479,13 @@ func (a *AppInput) GetEnableConnectorSourcedOwnership() *bool {
 		return nil
 	}
 	return a.EnableConnectorSourcedOwnership
+}
+
+func (a *AppInput) GetEntitlementsUseResourceDescription() *bool {
+	if a == nil {
+		return nil
+	}
+	return a.EntitlementsUseResourceDescription
 }
 
 func (a *AppInput) GetGrantPolicyID() *string {

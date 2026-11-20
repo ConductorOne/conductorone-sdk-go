@@ -2,9 +2,9 @@
 
 package shared
 
-// CurrentType - Current stored type. UNSPECIFIED means the profile predates type backfill
+// CurrentType - The profile's current type. UNSPECIFIED means the profile has not been
 //
-//	or contains an unknown future value.
+//	assigned a type yet; it behaves as Hybrid.
 type CurrentType string
 
 const (
@@ -58,8 +58,8 @@ func (e *RequestCatalogManagementServicePlanTypeChangeResponseTargetType) IsExac
 
 // RequestCatalogManagementServicePlanTypeChangeResponse - Describes behavior affected by an access profile type change.
 type RequestCatalogManagementServicePlanTypeChangeResponse struct {
-	// Current stored type. UNSPECIFIED means the profile predates type backfill
-	//  or contains an unknown future value.
+	// The profile's current type. UNSPECIFIED means the profile has not been
+	//  assigned a type yet; it behaves as Hybrid.
 	CurrentType *CurrentType `json:"currentType,omitempty"`
 	// Deterministically ordered behavior affected by the transition. These
 	//  impacts describe what the target type does not support; the change does not

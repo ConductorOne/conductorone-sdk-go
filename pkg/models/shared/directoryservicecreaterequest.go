@@ -14,6 +14,7 @@ type DirectoryServiceCreateRequest struct {
 	CelExpression *DirectoryAccountFilterCel `json:"celExpression,omitempty"`
 	ExpandMask    *DirectoryExpandMask       `json:"expandMask,omitempty"`
 	MergeConfig   *DirectoryMergeConfig      `json:"mergeConfig,omitempty"`
+	MergeRules    *DirectoryMergeRuleList    `json:"mergeRules,omitempty"`
 }
 
 func (d *DirectoryServiceCreateRequest) GetAll() *DirectoryAccountFilterAll {
@@ -49,4 +50,11 @@ func (d *DirectoryServiceCreateRequest) GetMergeConfig() *DirectoryMergeConfig {
 		return nil
 	}
 	return d.MergeConfig
+}
+
+func (d *DirectoryServiceCreateRequest) GetMergeRules() *DirectoryMergeRuleList {
+	if d == nil {
+		return nil
+	}
+	return d.MergeRules
 }

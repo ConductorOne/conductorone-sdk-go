@@ -7,6 +7,9 @@ type FormStringMapField struct {
 	// The defaultValue field.
 	DefaultValue map[string]string `json:"defaultValue,omitempty"`
 	Rules        *StringMapRules   `json:"rules,omitempty"`
+	// If secret, the map's values are write-only and rendered masked. Keys stay
+	//  readable.
+	Secret *bool `json:"secret,omitempty"`
 }
 
 func (f *FormStringMapField) GetDefaultValue() map[string]string {
@@ -21,4 +24,11 @@ func (f *FormStringMapField) GetRules() *StringMapRules {
 		return nil
 	}
 	return f.Rules
+}
+
+func (f *FormStringMapField) GetSecret() *bool {
+	if f == nil {
+		return nil
+	}
+	return f.Secret
 }

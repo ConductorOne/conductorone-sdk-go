@@ -7,6 +7,28 @@ import (
 	"net/http"
 )
 
+type C1APIDecoyV1DecoyServiceListRequest struct {
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
+}
+
+func (c *C1APIDecoyV1DecoyServiceListRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIDecoyV1DecoyServiceListRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
+}
+
+// #region class-body-c1apidecoyv1decoyservicelistrequest
+// #endregion class-body-c1apidecoyv1decoyservicelistrequest
+
 type C1APIDecoyV1DecoyServiceListResponse struct {
 	// HTTP response content type for this operation
 	ContentType string

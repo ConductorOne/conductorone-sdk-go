@@ -7,6 +7,28 @@ import (
 	"net/http"
 )
 
+type C1APIIamV1PersonalClientServiceListRequest struct {
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
+}
+
+func (c *C1APIIamV1PersonalClientServiceListRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIIamV1PersonalClientServiceListRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
+}
+
+// #region class-body-c1apiiamv1personalclientservicelistrequest
+// #endregion class-body-c1apiiamv1personalclientservicelistrequest
+
 type C1APIIamV1PersonalClientServiceListResponse struct {
 	// HTTP response content type for this operation
 	ContentType string

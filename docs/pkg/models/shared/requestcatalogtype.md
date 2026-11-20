@@ -1,9 +1,13 @@
 # RequestCatalogType
 
-The type of this access profile. Reports CATALOG_AND_BUNDLE for a profile
- created before the type was recorded; UNSPECIFIED only for a tenant whose
- backfill has not been run. Updates require the access profile types feature
- and an update mask containing "type".
+The type of this access profile: CATALOG (shown as Catalog in the UI),
+ BUNDLE (Role), or CATALOG_AND_BUNDLE (Hybrid). UNSPECIFIED means the
+ profile has not been assigned a type yet; it behaves as Hybrid.
+
+ To change the type, call Update with "type" in the update mask and send
+ CATALOG, BUNDLE, or CATALOG_AND_BUNDLE. Settings the new type doesn't
+ support must be turned off first; PlanTypeChange lists them. Changing the
+ type requires access profile types to be enabled for your tenant.
 
 ## Example Usage
 

@@ -1,0 +1,10 @@
+# C1APIAiGovernanceV1MCPPromptServiceSearchRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `MCPPromptServiceSearchRequest`                                                                      | [*shared.MCPPromptServiceSearchRequest](../../../pkg/models/shared/mcppromptservicesearchrequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `AppID`                                                                                              | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `ConnectorID`                                                                                        | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

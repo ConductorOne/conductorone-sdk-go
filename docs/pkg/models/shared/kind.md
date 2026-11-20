@@ -1,6 +1,6 @@
 # Kind
 
-The kind field.
+The type of credential.
 
 ## Example Usage
 
@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.KindAuthorityKindUnspecified
+value := shared.KindAPIKeyKindUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.Kind("custom_value")
@@ -18,14 +18,14 @@ custom := shared.Kind("custom_value")
 
 ## Values
 
-| Name                                  | Value                                 |
-| ------------------------------------- | ------------------------------------- |
-| `KindAuthorityKindUnspecified`        | AUTHORITY_KIND_UNSPECIFIED            |
-| `KindAuthorityKindFundPolicy`         | AUTHORITY_KIND_FUND_POLICY            |
-| `KindAuthorityKindFundAssignment`     | AUTHORITY_KIND_FUND_ASSIGNMENT        |
-| `KindAuthorityKindFundRule`           | AUTHORITY_KIND_FUND_RULE              |
-| `KindAuthorityKindTenantAppCap`       | AUTHORITY_KIND_TENANT_APP_CAP         |
-| `KindAuthorityKindSubjectAppLimit`    | AUTHORITY_KIND_SUBJECT_APP_LIMIT      |
-| `KindAuthorityKindEntitlementBinding` | AUTHORITY_KIND_ENTITLEMENT_BINDING    |
-| `KindAuthorityKindAppUser`            | AUTHORITY_KIND_APP_USER               |
-| `KindAuthorityKindUser`               | AUTHORITY_KIND_USER                   |
+| Name                               | Value                              |
+| ---------------------------------- | ---------------------------------- |
+| `KindAPIKeyKindUnspecified`        | API_KEY_KIND_UNSPECIFIED           |
+| `KindAPIKeyKindPersonal`           | API_KEY_KIND_PERSONAL              |
+| `KindAPIKeyKindDevice`             | API_KEY_KIND_DEVICE                |
+| `KindAPIKeyKindServicePrincipal`   | API_KEY_KIND_SERVICE_PRINCIPAL     |
+| `KindAPIKeyKindWorkloadFederation` | API_KEY_KIND_WORKLOAD_FEDERATION   |
+| `KindAPIKeyKindConnectedApp`       | API_KEY_KIND_CONNECTED_APP         |
+| `KindAPIKeyKindConnector`          | API_KEY_KIND_CONNECTOR             |
+| `KindAPIKeyKindFunction`           | API_KEY_KIND_FUNCTION              |
+| `KindAPIKeyKindOtherSystem`        | API_KEY_KIND_OTHER_SYSTEM          |

@@ -1,0 +1,12 @@
+# AccessReviewSetCampaignScopeByExcludedResourceTypeRequest
+
+AccessReviewSetCampaignScopeByExcludedResourceTypeRequest replaces a user-first campaign's scope and excluded resource types.
+ To mark the excluded resource types as the active exclusion type, scope_v2 must set excluded_resource_type_selections.
+
+
+## Fields
+
+| Field                                                                                                                 | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `ExcludedResourceTypes`                                                                                               | [][shared.AccessReviewExcludedResourceTypeInput](../../../pkg/models/shared/accessreviewexcludedresourcetypeinput.md) | :heavy_minus_sign:                                                                                                    | The resource types to exclude from scope. Replaces all previously excluded resource types.                            |
+| `ScopeV2`                                                                                                             | [*shared.AccessReviewScopeV2](../../../pkg/models/shared/accessreviewscopev2.md)                                      | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |

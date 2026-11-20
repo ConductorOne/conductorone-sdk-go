@@ -8,8 +8,10 @@ import (
 )
 
 type C1APIAppV1AppEntitlementsListAutomationExclusionsRequest struct {
-	AppEntitlementID string `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
-	AppID            string `pathParam:"style=simple,explode=false,name=app_id"`
+	AppEntitlementID string  `pathParam:"style=simple,explode=false,name=app_entitlement_id"`
+	AppID            string  `pathParam:"style=simple,explode=false,name=app_id"`
+	PageSize         *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken        *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (c *C1APIAppV1AppEntitlementsListAutomationExclusionsRequest) GetAppEntitlementID() string {
@@ -24,6 +26,20 @@ func (c *C1APIAppV1AppEntitlementsListAutomationExclusionsRequest) GetAppID() st
 		return ""
 	}
 	return c.AppID
+}
+
+func (c *C1APIAppV1AppEntitlementsListAutomationExclusionsRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIAppV1AppEntitlementsListAutomationExclusionsRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
 }
 
 // #region class-body-c1apiappv1appentitlementslistautomationexclusionsrequest

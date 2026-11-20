@@ -1,9 +1,0 @@
-# C1APISecretsV1PaperSecretAdminServiceRevokeRequest
-
-
-## Fields
-
-| Field                                                                                                              | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `PaperSecretAdminServiceRevokeRequest`                                                                             | [*shared.PaperSecretAdminServiceRevokeRequest](../../../pkg/models/shared/papersecretadminservicerevokerequest.md) | :heavy_minus_sign:                                                                                                 | N/A                                                                                                                |
-| `VaultID`                                                                                                          | `string`                                                                                                           | :heavy_check_mark:                                                                                                 | N/A                                                                                                                |

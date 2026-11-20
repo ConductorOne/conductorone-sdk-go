@@ -115,7 +115,11 @@ func (e *Oauth2Mode) IsExact() bool {
 	return false
 }
 
-// MCPServerViewRequireToolApproval - Per-server override for tool auto-approval.
+// MCPServerViewRequireToolApproval - Deprecated and ignored: set tool_enablement on the MCP registration config instead.
+//
+//	Always UNSPECIFIED in responses.
+//
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 type MCPServerViewRequireToolApproval string
 
 const (
@@ -346,7 +350,10 @@ type MCPServerView struct {
 	Oauth2TokenEndpointAuthMethod *string `json:"oauth2TokenEndpointAuthMethod,omitempty"`
 	// OAuth2 token URL. Read-only; derived from stored config.
 	Oauth2TokenURL *string `json:"oauth2TokenUrl,omitempty"`
-	// Per-server override for tool auto-approval.
+	// Deprecated and ignored: set tool_enablement on the MCP registration config instead.
+	//  Always UNSPECIFIED in responses.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RequireToolApproval *MCPServerViewRequireToolApproval `json:"requireToolApproval,omitempty"`
 	// Whether this is a hosted MCP server.
 	ServerType *MCPServerViewServerType `json:"serverType,omitempty"`
@@ -804,7 +811,10 @@ type MCPServerViewInput struct {
 	// Opaque catalog entry ID for hosted MCP servers (27-character KSUID).
 	//  Obtain valid IDs from the ListCatalog or GetCatalog RPCs.
 	McpServerCatalogID *string `json:"mcpServerCatalogId,omitempty"`
-	// Per-server override for tool auto-approval.
+	// Deprecated and ignored: set tool_enablement on the MCP registration config instead.
+	//  Always UNSPECIFIED in responses.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RequireToolApproval *MCPServerViewRequireToolApproval `json:"requireToolApproval,omitempty"`
 	// Whether this is a hosted MCP server.
 	ServerType *MCPServerViewServerType `json:"serverType,omitempty"`

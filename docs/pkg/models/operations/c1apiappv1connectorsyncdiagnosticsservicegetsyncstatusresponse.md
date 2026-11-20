@@ -1,0 +1,11 @@
+# C1APIAppV1ConnectorSyncDiagnosticsServiceGetSyncStatusResponse
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `ContentType`                                                                        | `string`                                                                             | :heavy_check_mark:                                                                   | HTTP response content type for this operation                                        |
+| `GetSyncStatusResponse`                                                              | [*shared.GetSyncStatusResponse](../../../pkg/models/shared/getsyncstatusresponse.md) | :heavy_minus_sign:                                                                   | GetSyncStatusResponse contains the current diagnostic status.                        |
+| `StatusCode`                                                                         | `int`                                                                                | :heavy_check_mark:                                                                   | HTTP response status code for this operation                                         |
+| `RawResponse`                                                                        | [*http.Response](https://pkg.go.dev/net/http#Response)                               | :heavy_check_mark:                                                                   | Raw HTTP response; suitable for custom response parsing                              |

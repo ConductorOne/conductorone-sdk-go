@@ -53,7 +53,7 @@ type CreateAppRequest struct {
 	// Instructions shown to users in the access request form when requesting access for this app.
 	Instructions  *string           `json:"instructions,omitempty"`
 	MatchBatonRef *AppMatchBatonRef `json:"matchBatonRef,omitempty"`
-	// Creates the app with this monthly cost per seat.
+	// Creates the app with this monthly cost per seat. Must be between 0 and 1,000,000 (USD).
 	MonthlyCostUsd *int `json:"monthlyCostUsd,omitempty"`
 	// Initial user owners for ordinary API creation. Requests with `match_baton_ref` must leave this empty; Terraform manages owners with `conductorone_app_owner_user`.
 	Owners []string `json:"owners,omitempty"`

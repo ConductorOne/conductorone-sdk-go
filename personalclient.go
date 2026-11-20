@@ -662,7 +662,7 @@ func (s *PersonalClient) Get(ctx context.Context, request operations.C1APIIamV1P
 
 // List - NOTE: Only shows personal clients for the current user.
 // List returns all personal client credentials owned by the calling user.
-func (s *PersonalClient) List(ctx context.Context, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceListResponse, error) {
+func (s *PersonalClient) List(ctx context.Context, request operations.C1APIIamV1PersonalClientServiceListRequest, opts ...operations.Option) (*operations.C1APIIamV1PersonalClientServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -713,6 +713,10 @@ func (s *PersonalClient) List(ctx context.Context, opts ...operations.Option) (*
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

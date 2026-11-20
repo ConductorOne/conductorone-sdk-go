@@ -1,0 +1,10 @@
+# C1APIAppV1ConnectorSyncDiagnosticsServiceGetSyncChangeTimelineRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `GetSyncChangeTimelineRequest`                                                                     | [*shared.GetSyncChangeTimelineRequest](../../../pkg/models/shared/getsyncchangetimelinerequest.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `AppID`                                                                                            | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `ConnectorID`                                                                                      | `string`                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |

@@ -4,6 +4,7 @@
 
 ### Available Operations
 
+* [CountEntitlementSelectionFilterAttributeValues](#countentitlementselectionfilterattributevalues) - Count Entitlement Selection Filter Attribute Values
 * [CreateAccessProfileFromCohort](#createaccessprofilefromcohort) - Create Access Profile From Cohort
 * [EvaluateEntitlementSelection](#evaluateentitlementselection) - Evaluate Entitlement Selection
 * [GetCustomAnalysisResult](#getcustomanalysisresult) - Get Custom Analysis Result
@@ -11,6 +12,8 @@
 * [GetLatestRun](#getlatestrun) - Get Latest Run
 * [GetRoleMiningConfig](#getroleminingconfig) - Get Role Mining Config
 * [GetSuggestion](#getsuggestion) - Get Suggestion
+* [ListCohortFilterAttributeValues](#listcohortfilterattributevalues) - List Cohort Filter Attribute Values
+* [ListCohortFilterAttributes](#listcohortfilterattributes) - List Cohort Filter Attributes
 * [ListCustomAnalysisResults](#listcustomanalysisresults) - List Custom Analysis Results
 * [ListRuns](#listruns) - List Runs
 * [ListSuggestions](#listsuggestions) - List Suggestions
@@ -19,6 +22,66 @@
 * [TriggerCustomAnalysis](#triggercustomanalysis) - Trigger Custom Analysis
 * [UpdateRoleMiningConfig](#updateroleminingconfig) - Update Role Mining Config
 * [UpdateSuggestionState](#updatesuggestionstate) - Update Suggestion State
+
+## CountEntitlementSelectionFilterAttributeValues
+
+CountEntitlementSelectionFilterAttributeValues returns exact cohort and
+ selected-holder counts for one bounded page of custom attribute values.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.role_mining_management.v1.RoleMiningManagementService.CountEntitlementSelectionFilterAttributeValues" method="post" path="/api/v1/role-mining/custom-analysis/{selection_analysis_id}/filter-attributes/{attribute}/value-counts" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RoleMiningManagement.CountEntitlementSelectionFilterAttributeValues(ctx, operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceCountEntitlementSelectionFilterAttributeValuesRequest{
+        Attribute: "<value>",
+        SelectionAnalysisID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.CountEntitlementSelectionFilterAttributeValuesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                                                                                   | The context to use for the request.                                                                                                                                                                                                                                  |
+| `request`                                                                                                                                                                                                                                                            | [operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceCountEntitlementSelectionFilterAttributeValuesRequest](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicecountentitlementselectionfilterattributevaluesrequest.md) | :heavy_check_mark:                                                                                                                                                                                                                                                   | The request object to use for the request.                                                                                                                                                                                                                           |
+| `opts`                                                                                                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                                   | The options for this request.                                                                                                                                                                                                                                        |
+
+### Response
+
+**[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceCountEntitlementSelectionFilterAttributeValuesResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicecountentitlementselectionfilterattributevaluesresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## CreateAccessProfileFromCohort
 
@@ -411,6 +474,122 @@ func main() {
 ### Response
 
 **[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceGetSuggestionResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicegetsuggestionresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListCohortFilterAttributeValues
+
+ListCohortFilterAttributeValues pages one attribute's values for the
+ custom-analysis editor.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.role_mining_management.v1.RoleMiningManagementService.ListCohortFilterAttributeValues" method="get" path="/api/v1/role-mining/filter-attributes/{attribute}/values" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RoleMiningManagement.ListCohortFilterAttributeValues(ctx, operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributeValuesRequest{
+        Attribute: "<value>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListCohortFilterAttributeValuesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                              | Type                                                                                                                                                                                                                                   | Required                                                                                                                                                                                                                               | Description                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                                                     | The context to use for the request.                                                                                                                                                                                                    |
+| `request`                                                                                                                                                                                                                              | [operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributeValuesRequest](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicelistcohortfilterattributevaluesrequest.md) | :heavy_check_mark:                                                                                                                                                                                                                     | The request object to use for the request.                                                                                                                                                                                             |
+| `opts`                                                                                                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                                                     | The options for this request.                                                                                                                                                                                                          |
+
+### Response
+
+**[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributeValuesResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicelistcohortfilterattributevaluesresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ListCohortFilterAttributes
+
+ListCohortFilterAttributes is the catalog used by the custom-analysis
+ editor. It is intentionally independent from value enumeration.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.role_mining_management.v1.RoleMiningManagementService.ListCohortFilterAttributes" method="get" path="/api/v1/role-mining/filter-attributes" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RoleMiningManagement.ListCohortFilterAttributes(ctx, operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributesRequest{})
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.ListCohortFilterAttributesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                         | Required                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                           | The context to use for the request.                                                                                                                                                                                          |
+| `request`                                                                                                                                                                                                                    | [operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributesRequest](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicelistcohortfilterattributesrequest.md) | :heavy_check_mark:                                                                                                                                                                                                           | The request object to use for the request.                                                                                                                                                                                   |
+| `opts`                                                                                                                                                                                                                       | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                           | The options for this request.                                                                                                                                                                                                |
+
+### Response
+
+**[*operations.C1APIRoleMiningManagementV1RoleMiningManagementServiceListCohortFilterAttributesResponse](../../pkg/models/operations/c1apiroleminingmanagementv1roleminingmanagementservicelistcohortfilterattributesresponse.md), error**
 
 ### Errors
 
