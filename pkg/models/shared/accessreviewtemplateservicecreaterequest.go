@@ -55,11 +55,12 @@ func (e *AccessReviewTemplateServiceCreateRequestAutoCloseDecision) IsExact() bo
 type AccessReviewTemplateServiceCreateRequestDefaultView string
 
 const (
-	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnspecified  AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
-	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByApp        AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
-	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByUser       AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
-	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnstructured AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
-	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByResource   AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnspecified     AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByApp           AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByUser          AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeUnstructured    AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByResource      AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	AccessReviewTemplateServiceCreateRequestDefaultViewAccessReviewViewTypeByAccessProfile AccessReviewTemplateServiceCreateRequestDefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE"
 )
 
 func (e AccessReviewTemplateServiceCreateRequestDefaultView) ToPointer() *AccessReviewTemplateServiceCreateRequestDefaultView {
@@ -70,14 +71,17 @@ func (e AccessReviewTemplateServiceCreateRequestDefaultView) ToPointer() *Access
 func (e *AccessReviewTemplateServiceCreateRequestDefaultView) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE":
+		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE", "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE":
 			return true
 		}
 	}
 	return false
 }
 
-// AccessReviewTemplateServiceCreateRequestScopeType - The scopeType field.
+// AccessReviewTemplateServiceCreateRequestScopeType - How the template's scope is defined, such as by entitlements or by users. Campaigns created
+//
+//	from the template use this scope type. Treated as ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS
+//	when unset. See AccessReviewScopeType for the available values.
 type AccessReviewTemplateServiceCreateRequestScopeType string
 
 const (
@@ -87,6 +91,7 @@ const (
 	AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByResource        AccessReviewTemplateServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE"
 	AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByInheritance     AccessReviewTemplateServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE"
 	AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByUsers           AccessReviewTemplateServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS"
+	AccessReviewTemplateServiceCreateRequestScopeTypeAccessReviewScopeTypeByAccessProfiles  AccessReviewTemplateServiceCreateRequestScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES"
 )
 
 func (e AccessReviewTemplateServiceCreateRequestScopeType) ToPointer() *AccessReviewTemplateServiceCreateRequestScopeType {
@@ -97,7 +102,7 @@ func (e AccessReviewTemplateServiceCreateRequestScopeType) ToPointer() *AccessRe
 func (e *AccessReviewTemplateServiceCreateRequestScopeType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS":
+		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES":
 			return true
 		}
 	}
@@ -147,7 +152,9 @@ type AccessReviewTemplateServiceCreateRequest struct {
 	ReviewInstructions      *string                  `json:"reviewInstructions,omitempty"`
 	ReviewerAttributeConfig *ReviewerAttributeConfig `json:"reviewerAttributeConfig,omitempty"`
 	Scope                   *AccessReviewScopeV2     `json:"scope,omitempty"`
-	// The scopeType field.
+	// How the template's scope is defined, such as by entitlements or by users. Campaigns created
+	//  from the template use this scope type. Treated as ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS
+	//  when unset. See AccessReviewScopeType for the available values.
 	ScopeType       *AccessReviewTemplateServiceCreateRequestScopeType `json:"scopeType,omitempty"`
 	SignatureConfig *ReviewSignatureConfig                             `json:"signatureConfig,omitempty"`
 	// The usePolicyOverride field.

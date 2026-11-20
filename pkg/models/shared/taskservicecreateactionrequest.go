@@ -10,6 +10,8 @@ type TaskServiceCreateActionRequest struct {
 	Description *string         `json:"description,omitempty"`
 	ExpandMask  *TaskExpandMask `json:"expandMask,omitempty"`
 	FormValues  map[string]any  `json:"formValues,omitempty"`
+	// If true, rejects the request with FAILED_PRECONDITION unless the action is a current group-creation template. Defaults to false.
+	GroupOnly *bool `json:"groupOnly,omitempty"`
 }
 
 func (t *TaskServiceCreateActionRequest) GetActionID() *string {
@@ -38,4 +40,11 @@ func (t *TaskServiceCreateActionRequest) GetFormValues() map[string]any {
 		return nil
 	}
 	return t.FormValues
+}
+
+func (t *TaskServiceCreateActionRequest) GetGroupOnly() *bool {
+	if t == nil {
+		return nil
+	}
+	return t.GroupOnly
 }

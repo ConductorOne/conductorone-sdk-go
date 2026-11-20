@@ -1295,7 +1295,7 @@ func (s *WorkloadFederation) GetTrust(ctx context.Context, request operations.C1
 
 // ListProviders - List Providers
 // ListProviders lists all providers for the tenant.
-func (s *WorkloadFederation) ListProviders(ctx context.Context, opts ...operations.Option) (*operations.C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersResponse, error) {
+func (s *WorkloadFederation) ListProviders(ctx context.Context, request operations.C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersRequest, opts ...operations.Option) (*operations.C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1346,6 +1346,10 @@ func (s *WorkloadFederation) ListProviders(ctx context.Context, opts ...operatio
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
@@ -1551,6 +1555,10 @@ func (s *WorkloadFederation) ListTrusts(ctx context.Context, request operations.
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

@@ -7,10 +7,19 @@ package shared
 //	channel_id is set; a name is resolved at send time, so an unresolvable name
 //	fails the dispatch rather than the rule edit.
 type SlackChannelTarget struct {
+	// Allow a private channel retry if Slack restricts public channel creation. Defaults to false.
+	AllowPrivateChannelFallback *bool `json:"allowPrivateChannelFallback,omitempty"`
 	// The channelId field.
 	ChannelID *string `json:"channelId,omitempty"`
 	// The channelName field.
 	ChannelName *string `json:"channelName,omitempty"`
+}
+
+func (s *SlackChannelTarget) GetAllowPrivateChannelFallback() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.AllowPrivateChannelFallback
 }
 
 func (s *SlackChannelTarget) GetChannelID() *string {

@@ -50,3 +50,7 @@ custom := shared.AccessReviewReportColumnConfigColumns("custom_value")
 | `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnSubjectUsername`           | ACCESS_REVIEW_REPORT_COLUMN_SUBJECT_USERNAME                                             |
 | `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnAppAccountStatus`          | ACCESS_REVIEW_REPORT_COLUMN_APP_ACCOUNT_STATUS                                           |
 | `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnAccountOwnerAccountStatus` | ACCESS_REVIEW_REPORT_COLUMN_ACCOUNT_OWNER_ACCOUNT_STATUS                                 |
+| `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnAccessProfile`             | ACCESS_REVIEW_REPORT_COLUMN_ACCESS_PROFILE                                               |
+| `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnReviewItemType`            | ACCESS_REVIEW_REPORT_COLUMN_REVIEW_ITEM_TYPE                                             |
+| `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnReviewItem`                | ACCESS_REVIEW_REPORT_COLUMN_REVIEW_ITEM                                                  |
+| `AccessReviewReportColumnConfigColumnsAccessReviewReportColumnRemediationTask`           | ACCESS_REVIEW_REPORT_COLUMN_REMEDIATION_TASK                                             |

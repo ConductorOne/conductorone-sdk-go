@@ -63,6 +63,8 @@ type CreatePolicyRequest struct {
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	ReassignTasksToDelegates *bool `json:"reassignTasksToDelegates,omitempty"`
 	// Conditional routing rules. See the Policy message for details on evaluation order.
+	//  The public Create API enforces the tenant's conditional-rules-per-policy quota
+	//  (default 16), excluding the baseline. Contact support to adjust this tenant quota.
 	Rules []Rule       `json:"rules,omitempty"`
 	Scope *PolicyScope `json:"scope,omitempty"`
 }

@@ -10,7 +10,7 @@ import (
 type C1APIRequestcatalogV1RequestCatalogSearchServiceSearchEntitlementsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// The RequestCatalogSearchServiceSearchEntitlementsResponse message contains a list of results and a nextPageToken if applicable.
+	// A page of matching entitlements and a continuation token when more candidates remain.
 	RequestCatalogSearchServiceSearchEntitlementsResponse *shared.RequestCatalogSearchServiceSearchEntitlementsResponse
 	// HTTP response status code for this operation
 	StatusCode int

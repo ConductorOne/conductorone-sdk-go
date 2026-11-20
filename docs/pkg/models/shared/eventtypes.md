@@ -40,3 +40,4 @@ custom := shared.EventTypes("custom_value")
 | `EventTypesFindingAuditEventTypeReprocessRequested`    | FINDING_AUDIT_EVENT_TYPE_REPROCESS_REQUESTED           |
 | `EventTypesFindingAuditEventTypeReprocessCompleted`    | FINDING_AUDIT_EVENT_TYPE_REPROCESS_COMPLETED           |
 | `EventTypesFindingAuditEventTypeAssigneeChanged`       | FINDING_AUDIT_EVENT_TYPE_ASSIGNEE_CHANGED              |
+| `EventTypesFindingAuditEventTypeHistoryImported`       | FINDING_AUDIT_EVENT_TYPE_HISTORY_IMPORTED              |

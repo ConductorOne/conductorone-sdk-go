@@ -1,0 +1,13 @@
+# UserAttributeManagementServiceCreateRequest
+
+The UserAttributeManagementServiceCreateRequest message.
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `AttributeType`                                                                                            | [*shared.UserAttributeType](../../../pkg/models/shared/userattributetype.md)                               | :heavy_check_mark:                                                                                         | N/A                                                                                                        |
+| `ExpandMask`                                                                                               | [*shared.UserAttributeMapConfigExpandMask](../../../pkg/models/shared/userattributemapconfigexpandmask.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `Fallbacks`                                                                                                | [][shared.UserAttributeMappingFallback](../../../pkg/models/shared/userattributemappingfallback.md)        | :heavy_minus_sign:                                                                                         | The fallbacks field.                                                                                       |
+| `ProfileTypeIds`                                                                                           | []`string`                                                                                                 | :heavy_minus_sign:                                                                                         | The profileTypeIds field.                                                                                  |

@@ -5,6 +5,8 @@ package shared
 // The LocalUserInvitationServiceCreateResponse message.
 type LocalUserInvitationServiceCreateResponse struct {
 	Invitation *LocalUserInvitation `json:"invitation,omitempty"`
+	// Link the invitee opens to accept. Returned only here; C1 stores just a hash of its secret.
+	InvitationURL *string `json:"invitationUrl,omitempty"`
 }
 
 func (l *LocalUserInvitationServiceCreateResponse) GetInvitation() *LocalUserInvitation {
@@ -12,4 +14,11 @@ func (l *LocalUserInvitationServiceCreateResponse) GetInvitation() *LocalUserInv
 		return nil
 	}
 	return l.Invitation
+}
+
+func (l *LocalUserInvitationServiceCreateResponse) GetInvitationURL() *string {
+	if l == nil {
+		return nil
+	}
+	return l.InvitationURL
 }

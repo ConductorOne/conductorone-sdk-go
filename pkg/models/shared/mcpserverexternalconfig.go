@@ -2,9 +2,9 @@
 
 package shared
 
-// RequireToolApproval - Optional per-server override for tool auto-approval. See
+// RequireToolApproval - Deprecated and ignored: set tool_enablement on the register request instead.
 //
-//	MCPServerView.require_tool_approval for semantics.
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 type RequireToolApproval string
 
 const (
@@ -96,8 +96,9 @@ type MCPServerExternalConfig struct {
 	CustomHeader *MCPServerAuthCustomHeader `json:"customHeader,omitempty"`
 	None         *MCPServerAuthNone         `json:"none,omitempty"`
 	Oauth2       *MCPServerAuthOAuth2       `json:"oauth2,omitempty"`
-	// Optional per-server override for tool auto-approval. See
-	//  MCPServerView.require_tool_approval for semantics.
+	// Deprecated and ignored: set tool_enablement on the register request instead.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RequireToolApproval *RequireToolApproval `json:"requireToolApproval,omitempty"`
 	// Token sharing model. SHARED = admin authorizes once; PER_USER = each user
 	//  authenticates independently. PER_USER is supported for OAuth2

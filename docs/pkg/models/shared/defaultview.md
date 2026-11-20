@@ -18,10 +18,11 @@ custom := shared.DefaultView("custom_value")
 
 ## Values
 
-| Name                                          | Value                                         |
-| --------------------------------------------- | --------------------------------------------- |
-| `DefaultViewAccessReviewViewTypeUnspecified`  | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED           |
-| `DefaultViewAccessReviewViewTypeByApp`        | ACCESS_REVIEW_VIEW_TYPE_BY_APP                |
-| `DefaultViewAccessReviewViewTypeByUser`       | ACCESS_REVIEW_VIEW_TYPE_BY_USER               |
-| `DefaultViewAccessReviewViewTypeUnstructured` | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED          |
-| `DefaultViewAccessReviewViewTypeByResource`   | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE           |
+| Name                                             | Value                                            |
+| ------------------------------------------------ | ------------------------------------------------ |
+| `DefaultViewAccessReviewViewTypeUnspecified`     | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED              |
+| `DefaultViewAccessReviewViewTypeByApp`           | ACCESS_REVIEW_VIEW_TYPE_BY_APP                   |
+| `DefaultViewAccessReviewViewTypeByUser`          | ACCESS_REVIEW_VIEW_TYPE_BY_USER                  |
+| `DefaultViewAccessReviewViewTypeUnstructured`    | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED             |
+| `DefaultViewAccessReviewViewTypeByResource`      | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE              |
+| `DefaultViewAccessReviewViewTypeByAccessProfile` | ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE        |

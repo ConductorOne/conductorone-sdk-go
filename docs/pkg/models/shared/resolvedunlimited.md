@@ -1,6 +1,6 @@
 # ResolvedUnlimited
 
-The ResolvedUnlimited message.
+ResolvedUnlimited records accounting without a finite admission limit.
 
 
 ## Fields

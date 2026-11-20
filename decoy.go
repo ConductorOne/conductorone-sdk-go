@@ -665,7 +665,7 @@ func (s *Decoy) Get(ctx context.Context, request operations.C1APIDecoyV1DecoySer
 
 // List
 // List returns decoys for the tenant, paginated.
-func (s *Decoy) List(ctx context.Context, opts ...operations.Option) (*operations.C1APIDecoyV1DecoyServiceListResponse, error) {
+func (s *Decoy) List(ctx context.Context, request operations.C1APIDecoyV1DecoyServiceListRequest, opts ...operations.Option) (*operations.C1APIDecoyV1DecoyServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -716,6 +716,10 @@ func (s *Decoy) List(ctx context.Context, opts ...operations.Option) (*operation
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

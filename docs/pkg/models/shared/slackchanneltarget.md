@@ -7,7 +7,8 @@ SlackChannelTarget names one Slack channel. Exactly one of channel_name /
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ChannelID`            | `*string`              | :heavy_minus_sign:     | The channelId field.   |
-| `ChannelName`          | `*string`              | :heavy_minus_sign:     | The channelName field. |
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `AllowPrivateChannelFallback`                                                                | `*bool`                                                                                      | :heavy_minus_sign:                                                                           | Allow a private channel retry if Slack restricts public channel creation. Defaults to false. |
+| `ChannelID`                                                                                  | `*string`                                                                                    | :heavy_minus_sign:                                                                           | The channelId field.                                                                         |
+| `ChannelName`                                                                                | `*string`                                                                                    | :heavy_minus_sign:                                                                           | The channelName field.                                                                       |

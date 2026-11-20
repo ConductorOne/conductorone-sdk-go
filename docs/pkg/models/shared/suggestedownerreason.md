@@ -1,0 +1,14 @@
+# SuggestedOwnerReason
+
+The SuggestedOwnerReason message.
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `Denominator`                                                                              | `*int64`                                                                                   | :heavy_minus_sign:                                                                         | The denominator field.                                                                     |
+| `Kind`                                                                                     | [*shared.SuggestedOwnerReasonKind](../../../pkg/models/shared/suggestedownerreasonkind.md) | :heavy_minus_sign:                                                                         | The kind field.                                                                            |
+| `Numerator`                                                                                | `*int64`                                                                                   | :heavy_minus_sign:                                                                         | The numerator field.                                                                       |
+| `Percent`                                                                                  | `*int64`                                                                                   | :heavy_minus_sign:                                                                         | 0..100, derived from numerator / denominator.                                              |
+| `RelatedID`                                                                                | `*string`                                                                                  | :heavy_minus_sign:                                                                         | Entitlement, sibling resource or replaced user ID; never free text.                        |

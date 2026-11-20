@@ -32,17 +32,12 @@ func newPrincipal(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, h
 }
 
 // AddBinding - Add Binding
-// AddBinding links a tenant-scoped subject (a function today; future kinds
+// AddBinding associates a tenant-scoped subject with an existing service
 //
-//	tomorrow) to a service principal. Outbound c1-api calls made on the
-//	subject's behalf can then be minted as user:<service_principal_id> via
-//	an RFC 8693 token-exchange (act-as) flow. Many-aware: a subject may
-//	hold multiple bindings at the storage layer. Idempotent on
-//	(subject, service_principal_id) — adds the row if missing,
-//	resurrects it if soft-deleted, no-op if already active. Consumers
-//	that need 0-or-1 cardinality (Functions today) enforce it
-//	client-side via ListBindings + DeleteBinding. Requires the
-//	SERVICE_PRINCIPALS feature flag.
+//	principal. Subjects support zero-to-many bindings; the same pair is
+//	idempotent and a soft-deleted pair is restored. Associations do not define
+//	runtime identity selection. Requires SERVICE_PRINCIPALS and the subject's
+//	feature flag, plus existing service-principal and subject permissions.
 func (s *Principal) AddBinding(ctx context.Context, request *shared.ServicePrincipalServiceAddBindingRequest, opts ...operations.Option) (*operations.C1APIServicePrincipalV1ServicePrincipalServiceAddBindingResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -1517,7 +1512,7 @@ func (s *Principal) GetCredential(ctx context.Context, request operations.C1APIS
 
 // List
 // List lists service principals for the tenant.
-func (s *Principal) List(ctx context.Context, opts ...operations.Option) (*operations.C1APIServicePrincipalV1ServicePrincipalServiceListResponse, error) {
+func (s *Principal) List(ctx context.Context, request operations.C1APIServicePrincipalV1ServicePrincipalServiceListRequest, opts ...operations.Option) (*operations.C1APIServicePrincipalV1ServicePrincipalServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -1568,6 +1563,10 @@ func (s *Principal) List(ctx context.Context, opts ...operations.Option) (*opera
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
@@ -1987,6 +1986,10 @@ func (s *Principal) ListCredentials(ctx context.Context, request operations.C1AP
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

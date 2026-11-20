@@ -198,6 +198,7 @@ import(
 	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -211,7 +212,7 @@ func main() {
         }),
     )
 
-    res, err := s.StepUpProvider.List(ctx)
+    res, err := s.StepUpProvider.List(ctx, operations.C1APIStepupV1StepUpProviderServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -223,10 +224,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
-| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                    | :heavy_check_mark:                                                                                                                       | The context to use for the request.                                                                                                      |
+| `request`                                                                                                                                | [operations.C1APIStepupV1StepUpProviderServiceListRequest](../../pkg/models/operations/c1apistepupv1stepupproviderservicelistrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
+| `opts`                                                                                                                                   | [][operations.Option](../../pkg/models/operations/option.md)                                                                             | :heavy_minus_sign:                                                                                                                       | The options for this request.                                                                                                            |
 
 ### Response
 

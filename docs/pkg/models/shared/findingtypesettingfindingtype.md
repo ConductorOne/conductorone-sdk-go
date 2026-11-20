@@ -35,3 +35,8 @@ custom := shared.FindingTypeSettingFindingType("custom_value")
 | `FindingTypeSettingFindingTypeFindingTypeCredentialExpiring`                | FINDING_TYPE_CREDENTIAL_EXPIRING                                            |
 | `FindingTypeSettingFindingTypeFindingTypeConnectorSyncFailing`              | FINDING_TYPE_CONNECTOR_SYNC_FAILING                                         |
 | `FindingTypeSettingFindingTypeFindingTypeShadowMcp`                         | FINDING_TYPE_SHADOW_MCP                                                     |
+| `FindingTypeSettingFindingTypeFindingTypeShadowApp`                         | FINDING_TYPE_SHADOW_APP                                                     |
+| `FindingTypeSettingFindingTypeFindingTypeMcpGatewayToolCallRisk`            | FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK                                     |
+| `FindingTypeSettingFindingTypeFindingTypeEdge`                              | FINDING_TYPE_EDGE                                                           |
+| `FindingTypeSettingFindingTypeFindingTypeAccessConflict`                    | FINDING_TYPE_ACCESS_CONFLICT                                                |
+| `FindingTypeSettingFindingTypeFindingTypeConnectorHostOutdated`             | FINDING_TYPE_CONNECTOR_HOST_OUTDATED                                        |

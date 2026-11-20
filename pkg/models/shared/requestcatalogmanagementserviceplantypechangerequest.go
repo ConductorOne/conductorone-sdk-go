@@ -2,7 +2,7 @@
 
 package shared
 
-// TargetType - Requested type. UNSPECIFIED and the deprecated PROFILE value are rejected.
+// TargetType - The type to preview: CATALOG, BUNDLE, or CATALOG_AND_BUNDLE.
 type TargetType string
 
 const (
@@ -30,7 +30,7 @@ func (e *TargetType) IsExact() bool {
 
 // RequestCatalogManagementServicePlanTypeChangeRequest - Requests a side-effect-free plan for changing an access profile's type.
 type RequestCatalogManagementServicePlanTypeChangeRequest struct {
-	// Requested type. UNSPECIFIED and the deprecated PROFILE value are rejected.
+	// The type to preview: CATALOG, BUNDLE, or CATALOG_AND_BUNDLE.
 	TargetType *TargetType `json:"targetType,omitempty"`
 }
 

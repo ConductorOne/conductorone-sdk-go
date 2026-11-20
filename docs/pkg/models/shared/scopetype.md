@@ -1,6 +1,7 @@
 # ScopeType
 
-this sets the scope type for the access review
+How the campaign's scope is defined, such as by entitlements or by users.
+ See AccessReviewScopeType for the available values.
 
 ## Example Usage
 
@@ -26,3 +27,4 @@ custom := shared.ScopeType("custom_value")
 | `ScopeTypeAccessReviewScopeTypeByResource`        | ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE              |
 | `ScopeTypeAccessReviewScopeTypeByInheritance`     | ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE           |
 | `ScopeTypeAccessReviewScopeTypeByUsers`           | ACCESS_REVIEW_SCOPE_TYPE_BY_USERS                 |
+| `ScopeTypeAccessReviewScopeTypeByAccessProfiles`  | ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES       |

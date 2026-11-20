@@ -34,7 +34,7 @@ type RequestSchemaServiceCreateRequest struct {
 	FieldGroups []FormFieldGroup `json:"fieldGroups,omitempty"`
 	// Dependencies between fields that control conditional visibility or validation.
 	FieldRelationships []FieldRelationship `json:"fieldRelationships,omitempty"`
-	// The form fields that users must fill out when requesting access.
+	// The form fields that users must fill out when requesting access. Fields are optional; a form with no fields can still control whether the justification field is shown.
 	Fields []FormField `json:"fields,omitempty"`
 	// Controls whether the justification field is shown or hidden on the request form.
 	JustificationVisibility *RequestSchemaServiceCreateRequestJustificationVisibility `json:"justificationVisibility,omitempty"`

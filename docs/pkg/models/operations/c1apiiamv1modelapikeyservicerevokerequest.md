@@ -1,0 +1,9 @@
+# C1APIIamV1ModelAPIKeyServiceRevokeRequest
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `ModelAPIKeyServiceRevokeRequest`                                                                        | [*shared.ModelAPIKeyServiceRevokeRequest](../../../pkg/models/shared/modelapikeyservicerevokerequest.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `ID`                                                                                                     | `string`                                                                                                 | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

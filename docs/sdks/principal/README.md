@@ -20,16 +20,11 @@
 
 ## AddBinding
 
-AddBinding links a tenant-scoped subject (a function today; future kinds
- tomorrow) to a service principal. Outbound c1-api calls made on the
- subject's behalf can then be minted as user:<service_principal_id> via
- an RFC 8693 token-exchange (act-as) flow. Many-aware: a subject may
- hold multiple bindings at the storage layer. Idempotent on
- (subject, service_principal_id) — adds the row if missing,
- resurrects it if soft-deleted, no-op if already active. Consumers
- that need 0-or-1 cardinality (Functions today) enforce it
- client-side via ListBindings + DeleteBinding. Requires the
- SERVICE_PRINCIPALS feature flag.
+AddBinding associates a tenant-scoped subject with an existing service
+ principal. Subjects support zero-to-many bindings; the same pair is
+ idempotent and a soft-deleted pair is restored. Associations do not define
+ runtime identity selection. Requires SERVICE_PRINCIPALS and the subject's
+ feature flag, plus existing service-principal and subject permissions.
 
 ### Example Usage
 
@@ -442,6 +437,7 @@ import(
 	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -455,7 +451,7 @@ func main() {
         }),
     )
 
-    res, err := s.Principal.List(ctx)
+    res, err := s.Principal.List(ctx, operations.C1APIServicePrincipalV1ServicePrincipalServiceListRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -467,10 +463,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
-| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                            | :heavy_check_mark:                                                                                                                                               | The context to use for the request.                                                                                                                              |
+| `request`                                                                                                                                                        | [operations.C1APIServicePrincipalV1ServicePrincipalServiceListRequest](../../pkg/models/operations/c1apiserviceprincipalv1serviceprincipalservicelistrequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
+| `opts`                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | The options for this request.                                                                                                                                    |
 
 ### Response
 

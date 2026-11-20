@@ -24,6 +24,7 @@
 * [RemoveAccessEntitlements](#removeaccessentitlements) - Remove Access Entitlements
 * [RemoveAppEntitlements](#removeappentitlements) - Remove App Entitlements
 * [ResumePausedBundleAutomation](#resumepausedbundleautomation) - Resume Paused Bundle Automation
+* [SearchScopeRoleBindingsPerCatalog](#searchscoperolebindingspercatalog) - Search Scope Role Bindings Per Catalog
 * [SetBundleAutomation](#setbundleautomation) - Set Bundle Automation
 * [Update](#update) - Update
 * [UpdateAppEntitlements](#updateappentitlements) - Update App Entitlements
@@ -1184,6 +1185,67 @@ func main() {
 ### Response
 
 **[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceResumePausedBundleAutomationResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementserviceresumepausedbundleautomationresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## SearchScopeRoleBindingsPerCatalog
+
+Search scope-role bindings in a catalog, grouped by (app, scope) (one entry per scope with
+ all role IDs aggregated). When app_id is provided the result is scoped to that app; when
+ omitted the result spans every app in the catalog, ordered by (app_id, scope_id) so a client
+ groupBy(app_id) produces contiguous app sections across page boundaries.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.requestcatalog.v1.RequestCatalogManagementService.SearchScopeRoleBindingsPerCatalog" method="get" path="/api/v1/catalogs/{catalog_id}/scope_role_bindings" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.RequestCatalogManagement.SearchScopeRoleBindingsPerCatalog(ctx, operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSearchScopeRoleBindingsPerCatalogRequest{
+        CatalogID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.RequestCatalogManagementServiceSearchScopeRoleBindingsPerCatalogResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                              | Type                                                                                                                                                                                                                                   | Required                                                                                                                                                                                                                               | Description                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                                                     | The context to use for the request.                                                                                                                                                                                                    |
+| `request`                                                                                                                                                                                                                              | [operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSearchScopeRoleBindingsPerCatalogRequest](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesearchscoperolebindingspercatalogrequest.md) | :heavy_check_mark:                                                                                                                                                                                                                     | The request object to use for the request.                                                                                                                                                                                             |
+| `opts`                                                                                                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                                                           | :heavy_minus_sign:                                                                                                                                                                                                                     | The options for this request.                                                                                                                                                                                                          |
+
+### Response
+
+**[*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSearchScopeRoleBindingsPerCatalogResponse](../../pkg/models/operations/c1apirequestcatalogv1requestcatalogmanagementservicesearchscoperolebindingspercatalogresponse.md), error**
 
 ### Errors
 

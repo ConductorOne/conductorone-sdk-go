@@ -1982,6 +1982,10 @@ func (s *Functions) ListCommits(ctx context.Context, request operations.C1APIFun
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
+
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err
 	}
@@ -2135,7 +2139,7 @@ func (s *Functions) ListCommits(ctx context.Context, request operations.C1APIFun
 
 // ListFunctions - List Functions
 // List retrieves all functions with pagination
-func (s *Functions) ListFunctions(ctx context.Context, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListFunctionsResponse, error) {
+func (s *Functions) ListFunctions(ctx context.Context, request operations.C1APIFunctionsV1FunctionsServiceListFunctionsRequest, opts ...operations.Option) (*operations.C1APIFunctionsV1FunctionsServiceListFunctionsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -2186,6 +2190,10 @@ func (s *Functions) ListFunctions(ctx context.Context, opts ...operations.Option
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

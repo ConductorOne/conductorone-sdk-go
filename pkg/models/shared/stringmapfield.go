@@ -6,6 +6,9 @@ package shared
 type StringMapField struct {
 	// The optional field.
 	Optional *bool `json:"optional,omitempty"`
+	// If secret, the map's values are write-only in the UI and a masked form is
+	//  used. Keys stay readable.
+	Secret *bool `json:"secret,omitempty"`
 }
 
 func (s *StringMapField) GetOptional() *bool {
@@ -13,4 +16,11 @@ func (s *StringMapField) GetOptional() *bool {
 		return nil
 	}
 	return s.Optional
+}
+
+func (s *StringMapField) GetSecret() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.Secret
 }

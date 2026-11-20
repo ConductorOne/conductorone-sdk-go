@@ -1,0 +1,14 @@
+# CompareSyncStatsResponse
+
+CompareSyncStatsResponse contains count deltas only, without synced records or file access.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `C1zSizeDelta`                                                                        | `*int64`                                                                              | :heavy_minus_sign:                                                                    | Recorded file-size difference in bytes; this does not provide access to the file.     |
+| `LargeDecrease`                                                                       | []`string`                                                                            | :heavy_minus_sign:                                                                    | Resource types with a large decrease in at least one count category.                  |
+| `PerType`                                                                             | [][shared.SyncResourceTypeDelta](../../../pkg/models/shared/syncresourcetypedelta.md) | :heavy_minus_sign:                                                                    | Union of resource types from all three count maps, ordered by identifier.             |
+| `TypesAdded`                                                                          | []`string`                                                                            | :heavy_minus_sign:                                                                    | Resource types present only on the after side.                                        |
+| `TypesRemoved`                                                                        | []`string`                                                                            | :heavy_minus_sign:                                                                    | Resource types present only on the before side.                                       |

@@ -238,7 +238,7 @@ func (s *AutomationExecution) GetAutomationExecution(ctx context.Context, reques
 
 // ListAutomationExecutions - List Automation Executions
 // List all automation executions in the tenant with pagination support.
-func (s *AutomationExecution) ListAutomationExecutions(ctx context.Context, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsResponse, error) {
+func (s *AutomationExecution) ListAutomationExecutions(ctx context.Context, request operations.C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsRequest, opts ...operations.Option) (*operations.C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -289,6 +289,10 @@ func (s *AutomationExecution) ListAutomationExecutions(ctx context.Context, opts
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

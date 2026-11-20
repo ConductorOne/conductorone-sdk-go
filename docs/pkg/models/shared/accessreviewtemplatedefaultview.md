@@ -18,10 +18,11 @@ custom := shared.AccessReviewTemplateDefaultView("custom_value")
 
 ## Values
 
-| Name                                                              | Value                                                             |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `AccessReviewTemplateDefaultViewAccessReviewViewTypeUnspecified`  | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED                               |
-| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByApp`        | ACCESS_REVIEW_VIEW_TYPE_BY_APP                                    |
-| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByUser`       | ACCESS_REVIEW_VIEW_TYPE_BY_USER                                   |
-| `AccessReviewTemplateDefaultViewAccessReviewViewTypeUnstructured` | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED                              |
-| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByResource`   | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE                               |
+| Name                                                                 | Value                                                                |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeUnspecified`     | ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED                                  |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByApp`           | ACCESS_REVIEW_VIEW_TYPE_BY_APP                                       |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByUser`          | ACCESS_REVIEW_VIEW_TYPE_BY_USER                                      |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeUnstructured`    | ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED                                 |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByResource`      | ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE                                  |
+| `AccessReviewTemplateDefaultViewAccessReviewViewTypeByAccessProfile` | ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE                            |

@@ -35,7 +35,7 @@ func newGatewayKey(rootSDK *ConductoroneAPI, sdkConfig config.SDKConfiguration, 
 // List returns the tenant's LLM gateway API keys. Only key metadata and a
 //
 //	key prefix are returned, never the full key.
-func (s *GatewayKey) List(ctx context.Context, opts ...operations.Option) (*operations.C1APILlmGatewayV1GatewayKeyServiceListResponse, error) {
+func (s *GatewayKey) List(ctx context.Context, request operations.C1APILlmGatewayV1GatewayKeyServiceListRequest, opts ...operations.Option) (*operations.C1APILlmGatewayV1GatewayKeyServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -86,6 +86,10 @@ func (s *GatewayKey) List(ctx context.Context, opts ...operations.Option) (*oper
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

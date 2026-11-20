@@ -49,3 +49,4 @@ custom := shared.Columns("custom_value")
 | `ColumnsAccessReviewTaskColumnAccessHolderType`       | ACCESS_REVIEW_TASK_COLUMN_ACCESS_HOLDER_TYPE          |
 | `ColumnsAccessReviewTaskColumnRiskLevel`              | ACCESS_REVIEW_TASK_COLUMN_RISK_LEVEL                  |
 | `ColumnsAccessReviewTaskColumnComplianceFramework`    | ACCESS_REVIEW_TASK_COLUMN_COMPLIANCE_FRAMEWORK        |
+| `ColumnsAccessReviewTaskColumnResourceDescription`    | ACCESS_REVIEW_TASK_COLUMN_RESOURCE_DESCRIPTION        |

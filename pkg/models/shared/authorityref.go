@@ -6,27 +6,27 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
-// Kind - The kind field.
-type Kind string
+// AuthorityRefKind - Type of configuration.
+type AuthorityRefKind string
 
 const (
-	KindAuthorityKindUnspecified        Kind = "AUTHORITY_KIND_UNSPECIFIED"
-	KindAuthorityKindFundPolicy         Kind = "AUTHORITY_KIND_FUND_POLICY"
-	KindAuthorityKindFundAssignment     Kind = "AUTHORITY_KIND_FUND_ASSIGNMENT"
-	KindAuthorityKindFundRule           Kind = "AUTHORITY_KIND_FUND_RULE"
-	KindAuthorityKindTenantAppCap       Kind = "AUTHORITY_KIND_TENANT_APP_CAP"
-	KindAuthorityKindSubjectAppLimit    Kind = "AUTHORITY_KIND_SUBJECT_APP_LIMIT"
-	KindAuthorityKindEntitlementBinding Kind = "AUTHORITY_KIND_ENTITLEMENT_BINDING"
-	KindAuthorityKindAppUser            Kind = "AUTHORITY_KIND_APP_USER"
-	KindAuthorityKindUser               Kind = "AUTHORITY_KIND_USER"
+	AuthorityRefKindAuthorityKindUnspecified        AuthorityRefKind = "AUTHORITY_KIND_UNSPECIFIED"
+	AuthorityRefKindAuthorityKindFundPolicy         AuthorityRefKind = "AUTHORITY_KIND_FUND_POLICY"
+	AuthorityRefKindAuthorityKindFundAssignment     AuthorityRefKind = "AUTHORITY_KIND_FUND_ASSIGNMENT"
+	AuthorityRefKindAuthorityKindFundRule           AuthorityRefKind = "AUTHORITY_KIND_FUND_RULE"
+	AuthorityRefKindAuthorityKindTenantAppCap       AuthorityRefKind = "AUTHORITY_KIND_TENANT_APP_CAP"
+	AuthorityRefKindAuthorityKindSubjectAppLimit    AuthorityRefKind = "AUTHORITY_KIND_SUBJECT_APP_LIMIT"
+	AuthorityRefKindAuthorityKindEntitlementBinding AuthorityRefKind = "AUTHORITY_KIND_ENTITLEMENT_BINDING"
+	AuthorityRefKindAuthorityKindAppUser            AuthorityRefKind = "AUTHORITY_KIND_APP_USER"
+	AuthorityRefKindAuthorityKindUser               AuthorityRefKind = "AUTHORITY_KIND_USER"
 )
 
-func (e Kind) ToPointer() *Kind {
+func (e AuthorityRefKind) ToPointer() *AuthorityRefKind {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *Kind) IsExact() bool {
+func (e *AuthorityRefKind) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "AUTHORITY_KIND_UNSPECIFIED", "AUTHORITY_KIND_FUND_POLICY", "AUTHORITY_KIND_FUND_ASSIGNMENT", "AUTHORITY_KIND_FUND_RULE", "AUTHORITY_KIND_TENANT_APP_CAP", "AUTHORITY_KIND_SUBJECT_APP_LIMIT", "AUTHORITY_KIND_ENTITLEMENT_BINDING", "AUTHORITY_KIND_APP_USER", "AUTHORITY_KIND_USER":
@@ -36,26 +36,23 @@ func (e *Kind) IsExact() bool {
 	return false
 }
 
-// AuthorityRef identifies one authority row at the revision admission read.
-//
-//	The reservation already carries tenant_id; the remaining fields are the
-//	row's typed primary-key components. Absent rows have version zero.
+// AuthorityRef identifies a configuration and the revision admission read.
 type AuthorityRef struct {
-	// The absent field.
+	// Whether admission found no configuration of this kind.
 	Absent *bool `json:"absent,omitempty"`
-	// The appEntitlementId field.
+	// Application entitlement ID, for entitlement-binding authorities.
 	AppEntitlementID *string `json:"appEntitlementId,omitempty"`
-	// The appId field.
+	// Application ID the configuration applies to.
 	AppID *string `json:"appId,omitempty"`
-	// The appUserId field.
+	// Application user ID, for application-user authorities.
 	AppUserID *string `json:"appUserId,omitempty"`
-	// The kind field.
-	Kind *Kind `json:"kind,omitempty"`
-	// The ruleId field.
+	// Type of configuration.
+	Kind *AuthorityRefKind `json:"kind,omitempty"`
+	// Fund rule ID, for fund-rule authorities.
 	RuleID *string `json:"ruleId,omitempty"`
-	// The userId field.
+	// User ID the configuration applies to.
 	UserID *string `json:"userId,omitempty"`
-	// The version field.
+	// Configuration revision read during admission.
 	Version *int64 `integer:"string" json:"version,omitempty"`
 }
 
@@ -98,7 +95,7 @@ func (a *AuthorityRef) GetAppUserID() *string {
 	return a.AppUserID
 }
 
-func (a *AuthorityRef) GetKind() *Kind {
+func (a *AuthorityRef) GetKind() *AuthorityRefKind {
 	if a == nil {
 		return nil
 	}

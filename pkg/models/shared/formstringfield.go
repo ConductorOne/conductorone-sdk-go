@@ -17,10 +17,12 @@ type FormStringField struct {
 	PasswordField *PasswordField `json:"passwordField,omitempty"`
 	PickerField   *PickerField   `json:"pickerField,omitempty"`
 	// The placeholder field.
-	Placeholder *string      `json:"placeholder,omitempty"`
-	Rules       *StringRules `json:"rules,omitempty"`
-	SelectField *SelectField `json:"selectField,omitempty"`
-	TextField   *TextField   `json:"textField,omitempty"`
+	Placeholder *string `json:"placeholder,omitempty"`
+	// Shown when the value does not match rules.pattern. Empty uses the default message.
+	RegexErrorMessage *string      `json:"regexErrorMessage,omitempty"`
+	Rules             *StringRules `json:"rules,omitempty"`
+	SelectField       *SelectField `json:"selectField,omitempty"`
+	TextField         *TextField   `json:"textField,omitempty"`
 }
 
 func (f *FormStringField) GetDateField() *DateField {
@@ -56,6 +58,13 @@ func (f *FormStringField) GetPlaceholder() *string {
 		return nil
 	}
 	return f.Placeholder
+}
+
+func (f *FormStringField) GetRegexErrorMessage() *string {
+	if f == nil {
+		return nil
+	}
+	return f.RegexErrorMessage
 }
 
 func (f *FormStringField) GetRules() *StringRules {

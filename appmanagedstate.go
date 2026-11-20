@@ -448,7 +448,7 @@ func (s *AppManagedState) List(ctx context.Context, request operations.C1APIAppV
 // Promote an unmanaged application into a managed application.
 //
 //	Returns AlreadyExists when the application is already managed. The new application inherits source owners when user_ids is omitted.
-//	Concurrent promotion requests are not supported.
+//	Concurrent promotion requests for the same application are not supported; racing requests for the same application may fail instead of returning AlreadyExists.
 func (s *AppManagedState) Promote(ctx context.Context, request operations.C1APIAppV1AppManagedStateServicePromoteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppManagedStateServicePromoteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

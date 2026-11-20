@@ -7,7 +7,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.StateFilterMcpResourceStateUnspecified
+value := shared.StateFilterMcpPromptStateUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.StateFilter("custom_value")
@@ -16,10 +16,10 @@ custom := shared.StateFilter("custom_value")
 
 ## Values
 
-| Name                                       | Value                                      |
-| ------------------------------------------ | ------------------------------------------ |
-| `StateFilterMcpResourceStateUnspecified`   | MCP_RESOURCE_STATE_UNSPECIFIED             |
-| `StateFilterMcpResourceStatePendingReview` | MCP_RESOURCE_STATE_PENDING_REVIEW          |
-| `StateFilterMcpResourceStateApproved`      | MCP_RESOURCE_STATE_APPROVED                |
-| `StateFilterMcpResourceStateDisabled`      | MCP_RESOURCE_STATE_DISABLED                |
-| `StateFilterMcpResourceStateRemoved`       | MCP_RESOURCE_STATE_REMOVED                 |
+| Name                                     | Value                                    |
+| ---------------------------------------- | ---------------------------------------- |
+| `StateFilterMcpPromptStateUnspecified`   | MCP_PROMPT_STATE_UNSPECIFIED             |
+| `StateFilterMcpPromptStatePendingReview` | MCP_PROMPT_STATE_PENDING_REVIEW          |
+| `StateFilterMcpPromptStateApproved`      | MCP_PROMPT_STATE_APPROVED                |
+| `StateFilterMcpPromptStateDisabled`      | MCP_PROMPT_STATE_DISABLED                |
+| `StateFilterMcpPromptStateRemoved`       | MCP_PROMPT_STATE_REMOVED                 |

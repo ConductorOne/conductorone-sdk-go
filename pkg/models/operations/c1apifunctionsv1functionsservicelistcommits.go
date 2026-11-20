@@ -8,7 +8,9 @@ import (
 )
 
 type C1APIFunctionsV1FunctionsServiceListCommitsRequest struct {
-	FunctionID string `pathParam:"style=simple,explode=false,name=function_id"`
+	FunctionID string  `pathParam:"style=simple,explode=false,name=function_id"`
+	PageSize   *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken  *string `queryParam:"style=form,explode=true,name=page_token"`
 }
 
 func (c *C1APIFunctionsV1FunctionsServiceListCommitsRequest) GetFunctionID() string {
@@ -16,6 +18,20 @@ func (c *C1APIFunctionsV1FunctionsServiceListCommitsRequest) GetFunctionID() str
 		return ""
 	}
 	return c.FunctionID
+}
+
+func (c *C1APIFunctionsV1FunctionsServiceListCommitsRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIFunctionsV1FunctionsServiceListCommitsRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
 }
 
 // #region class-body-c1apifunctionsv1functionsservicelistcommitsrequest

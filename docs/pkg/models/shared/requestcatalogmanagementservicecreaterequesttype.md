@@ -1,13 +1,8 @@
 # RequestCatalogManagementServiceCreateRequestType
 
-The type of access profile to create. Leave unset for
- REQUEST_CATALOG_TYPE_CATALOG_AND_BUNDLE, which is what every profile
- created before this field existed is. Setting it requires the
- ACCESS_PROFILE_TYPES feature.
-
- PROFILE is rejected rather than resolved: it is deprecated, has no stored
- counterpart, and shares wire number 2 with the stored BUNDLE, so honoring
- it would silently persist a type the caller did not ask for.
+The type of access profile to create: CATALOG (shown as Catalog in the
+ UI), BUNDLE (Role), or CATALOG_AND_BUNDLE (Hybrid). Omit it or send
+ UNSPECIFIED to create a Hybrid profile.
 
 ## Example Usage
 

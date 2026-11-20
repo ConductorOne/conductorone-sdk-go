@@ -1,6 +1,6 @@
 # SortDirection
 
-Direction for sort_by. UNSPECIFIED means ascending.
+Primary sort direction. UNSPECIFIED means ascending; sort_by UNSPECIFIED always uses name ascending.
 
 ## Example Usage
 

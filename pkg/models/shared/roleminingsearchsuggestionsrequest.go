@@ -52,6 +52,8 @@ func (e *RoleMiningSearchSuggestionsRequestStates) IsExact() bool {
 
 // The RoleMiningSearchSuggestionsRequest message.
 type RoleMiningSearchSuggestionsRequest struct {
+	// Filter to suggestions that overlap this access profile, at any position in existing_profile_matches.
+	CatalogID *string `json:"catalogId,omitempty"`
 	// Filter by cohort type (e.g. "department", "job_title", "manager").
 	CohortTypes []string `json:"cohortTypes,omitempty"`
 	// Filter by match type against existing access profiles.
@@ -64,6 +66,13 @@ type RoleMiningSearchSuggestionsRequest struct {
 	Query *string `json:"query,omitempty"`
 	// Filter by suggestion state.
 	States []RoleMiningSearchSuggestionsRequestStates `json:"states,omitempty"`
+}
+
+func (r *RoleMiningSearchSuggestionsRequest) GetCatalogID() *string {
+	if r == nil {
+		return nil
+	}
+	return r.CatalogID
 }
 
 func (r *RoleMiningSearchSuggestionsRequest) GetCohortTypes() []string {

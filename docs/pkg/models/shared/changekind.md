@@ -1,7 +1,6 @@
 # ChangeKind
 
-Storage-model enum re-exported here for wire compatibility with the
- storage row. UNSPECIFIED should never appear on the wire.
+UNSPECIFIED should never appear on the wire.
 
 ## Example Usage
 

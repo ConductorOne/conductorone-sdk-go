@@ -4,8 +4,17 @@ package shared
 
 // The TaskAuditPolicyProvisionError message.
 type TaskAuditPolicyProvisionError struct {
+	// Optional comment supplied by the provisioning callback.
+	Comment *string `json:"comment,omitempty"`
 	// The error field.
 	Error *string `json:"error,omitempty"`
+}
+
+func (t *TaskAuditPolicyProvisionError) GetComment() *string {
+	if t == nil {
+		return nil
+	}
+	return t.Comment
 }
 
 func (t *TaskAuditPolicyProvisionError) GetError() *string {

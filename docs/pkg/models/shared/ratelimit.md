@@ -1,0 +1,12 @@
+# RateLimit
+
+RateLimit is one limit applied to API requests.
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `Limit`                                                                                                  | `*int64`                                                                                                 | :heavy_minus_sign:                                                                                       | The number of requests allowed: per hour for WINDOW_PER_HOUR, or at the same time for WINDOW_CONCURRENT. |
+| `Scope`                                                                                                  | [*shared.RateLimitScope](../../../pkg/models/shared/ratelimitscope.md)                                   | :heavy_minus_sign:                                                                                       | Whose requests the limit counts.                                                                         |
+| `Window`                                                                                                 | [*shared.Window](../../../pkg/models/shared/window.md)                                                   | :heavy_minus_sign:                                                                                       | How the limit counts requests.                                                                           |

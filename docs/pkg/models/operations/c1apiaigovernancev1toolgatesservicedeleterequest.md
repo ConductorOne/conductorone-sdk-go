@@ -1,0 +1,9 @@
+# C1APIAiGovernanceV1ToolGatesServiceDeleteRequest
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `ToolGatesServiceDeleteRequest`                                                                      | [*shared.ToolGatesServiceDeleteRequest](../../../pkg/models/shared/toolgatesservicedeleterequest.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `ID`                                                                                                 | `string`                                                                                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

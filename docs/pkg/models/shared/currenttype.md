@@ -1,7 +1,7 @@
 # CurrentType
 
-Current stored type. UNSPECIFIED means the profile predates type backfill
- or contains an unknown future value.
+The profile's current type. UNSPECIFIED means the profile has not been
+ assigned a type yet; it behaves as Hybrid.
 
 ## Example Usage
 
