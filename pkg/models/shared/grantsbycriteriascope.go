@@ -65,7 +65,8 @@ type GrantsByCriteriaScope struct {
 	// The sourceFilter field.
 	SourceFilter *SourceFilter `json:"sourceFilter,omitempty"`
 	// The typeFilter field.
-	TypeFilter *TypeFilter `json:"typeFilter,omitempty"`
+	TypeFilter     *TypeFilter `json:"typeFilter,omitempty"`
+	UsedWithinLast *string     `json:"usedWithinLast,omitempty"`
 }
 
 func (g *GrantsByCriteriaScope) GetAccessProfileFilter() *GrantAccessProfileFilter {
@@ -115,4 +116,11 @@ func (g *GrantsByCriteriaScope) GetTypeFilter() *TypeFilter {
 		return nil
 	}
 	return g.TypeFilter
+}
+
+func (g *GrantsByCriteriaScope) GetUsedWithinLast() *string {
+	if g == nil {
+		return nil
+	}
+	return g.UsedWithinLast
 }

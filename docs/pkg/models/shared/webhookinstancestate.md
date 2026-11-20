@@ -28,3 +28,4 @@ custom := shared.WebhookInstanceState("custom_value")
 | `WebhookInstanceStateWebhookStateProcessResponse` | WEBHOOK_STATE_PROCESS_RESPONSE                    |
 | `WebhookInstanceStateWebhookStateSuccess`         | WEBHOOK_STATE_SUCCESS                             |
 | `WebhookInstanceStateWebhookStateFatalError`      | WEBHOOK_STATE_FATAL_ERROR                         |
+| `WebhookInstanceStateWebhookStateCanceled`        | WEBHOOK_STATE_CANCELED                            |

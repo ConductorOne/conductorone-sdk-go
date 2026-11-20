@@ -16,8 +16,9 @@
 ## Delete
 
 Delete removes a report by ID. The report's saved program is removed with
- it, so the report can no longer be re-run. Only the report's creator can
- delete it.
+ it, so the report can no longer be re-run. Any caller holding this
+ permission may delete any report in the tenant; the read-only
+ administrator's role does not carry it.
 
 ### Example Usage
 
@@ -76,7 +77,8 @@ func main() {
 ## Get
 
 Get returns a report by ID, including its latest run and latest successful
- run. Reports are visible only to the user who created them.
+ run. Reports are not scoped by author: reaching this service is the scope,
+ and only tenant administrators hold its roles.
 
 ### Example Usage
 
@@ -135,7 +137,8 @@ func main() {
 ## GetProgram
 
 GetProgram returns the report's current durable source without attaching it
- to the notification-driven report response. Reports are creator-scoped.
+ to the notification-driven report response. Scoped like Get: any caller who
+ may reach this service.
 
 ### Example Usage
 
@@ -255,7 +258,8 @@ func main() {
 
 ## List
 
-List returns reports created by the caller, newest first.
+List returns every report in the tenant, newest first, each carrying the
+ user who saved it. It is not filtered by author.
 
 ### Example Usage
 
@@ -429,8 +433,9 @@ func main() {
 
 ## Update
 
-Update modifies a report's display name, prompt, or parameter values.
- Only the report's creator can update it.
+Update modifies a report's display name, prompt, or parameter values. Any
+ caller holding this permission may update any report in the tenant; the
+ read-only administrator's role does not carry it.
 
 ### Example Usage
 

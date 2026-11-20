@@ -32,13 +32,13 @@ func (e *FilterType) IsExact() bool {
 type GrantAccessProfileFilter struct {
 	// Access profile IDs to EXCLUDE from the campaign
 	//  Used when filter_type = EXCLUDE_SPECIFIC
-	//  Max 32 profile IDs
+	//  Max 64 profile IDs
 	ExcludedAccessProfileIds []string `json:"excludedAccessProfileIds,omitempty"`
 	// The filterType field.
 	FilterType *FilterType `json:"filterType,omitempty"`
 	// Access profile IDs to INCLUDE in the campaign
 	//  Used when filter_type = INCLUDE_SPECIFIC
-	//  Max 32 profile IDs
+	//  Max 64 profile IDs
 	IncludedAccessProfileIds []string `json:"includedAccessProfileIds,omitempty"`
 }
 

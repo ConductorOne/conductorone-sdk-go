@@ -7,6 +7,28 @@ import (
 	"net/http"
 )
 
+type C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsRequest struct {
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
+}
+
+func (c *C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
+}
+
+// #region class-body-c1apiautomationsv1automationexecutionservicelistautomationexecutionsrequest
+// #endregion class-body-c1apiautomationsv1automationexecutionservicelistautomationexecutionsrequest
+
 type C1APIAutomationsV1AutomationExecutionServiceListAutomationExecutionsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string

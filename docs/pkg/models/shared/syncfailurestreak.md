@@ -1,0 +1,14 @@
+# SyncFailureStreak
+
+SyncFailureStreak summarizes only the returned history window.
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `FailedRuns`                                                                              | `*int`                                                                                    | :heavy_minus_sign:                                                                        | Number of errored runs in the window.                                                     |
+| `FailureRatio`                                                                            | `*float64`                                                                                | :heavy_minus_sign:                                                                        | Failed runs divided by finished runs; zero when no qualifying runs are present.           |
+| `FinishedRuns`                                                                            | `*int`                                                                                    | :heavy_minus_sign:                                                                        | Number of terminal successful or errored runs used as the denominator.                    |
+| `FirstFailedAt`                                                                           | [*time.Time](https://pkg.go.dev/time#Time)                                                | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `FirstFailedLifecycleID`                                                                  | `*string`                                                                                 | :heavy_minus_sign:                                                                        | First failure after the most recent success in the window, absent if none is established. |

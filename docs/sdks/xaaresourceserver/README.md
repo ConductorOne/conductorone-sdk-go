@@ -9,6 +9,7 @@
 * [Get](#get) - Get
 * [List](#list) - List
 * [ListHistory](#listhistory) - List History
+* [ResyncScopes](#resyncscopes) - Resync Scopes
 * [Search](#search) - Search
 * [Update](#update) - Update
 
@@ -304,6 +305,68 @@ func main() {
 ### Response
 
 **[*operations.C1APICrossAppAccessV1XAAResourceServerServiceListHistoryResponse](../../pkg/models/operations/c1apicrossappaccessv1xaaresourceserverservicelisthistoryresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## ResyncScopes
+
+Start another scope discovery run for a resource server. The run imports
+ newly advertised scopes as PENDING_REVIEW; its outcome appears in Get's
+ scope_discovery_status. A request while a run is in progress queues one
+ more run.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.cross_app_access.v1.XAAResourceServerService.ResyncScopes" method="post" path="/api/v1/apps/{app_id}/xaa/resource_servers/{id}/resync_scopes" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.XAAResourceServer.ResyncScopes(ctx, operations.C1APICrossAppAccessV1XAAResourceServerServiceResyncScopesRequest{
+        AppID: "<id>",
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.XAAResourceServerServiceResyncScopesResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                          | :heavy_check_mark:                                                                                                                                                             | The context to use for the request.                                                                                                                                            |
+| `request`                                                                                                                                                                      | [operations.C1APICrossAppAccessV1XAAResourceServerServiceResyncScopesRequest](../../pkg/models/operations/c1apicrossappaccessv1xaaresourceserverserviceresyncscopesrequest.md) | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `opts`                                                                                                                                                                         | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                   | :heavy_minus_sign:                                                                                                                                                             | The options for this request.                                                                                                                                                  |
+
+### Response
+
+**[*operations.C1APICrossAppAccessV1XAAResourceServerServiceResyncScopesResponse](../../pkg/models/operations/c1apicrossappaccessv1xaaresourceserverserviceresyncscopesresponse.md), error**
 
 ### Errors
 

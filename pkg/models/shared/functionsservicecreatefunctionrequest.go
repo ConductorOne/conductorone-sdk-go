@@ -31,9 +31,6 @@ func (e *FunctionsServiceCreateFunctionRequestFunctionType) IsExact() bool {
 
 // The FunctionsServiceCreateFunctionRequest message.
 type FunctionsServiceCreateFunctionRequest struct {
-	// browser_enabled creates the function as browser-capable. See
-	//  Function.browser_enabled.
-	BrowserEnabled *bool `json:"browserEnabled,omitempty"`
 	// The commit message describing the initial code submission.
 	CommitMessage *string `json:"commitMessage,omitempty"`
 	// A description of what the function does.
@@ -57,13 +54,6 @@ type FunctionsServiceCreateFunctionRequest struct {
 	//
 	//  The handler MUST return a JSON object — not a primitive, array, or null.
 	InitialContent map[string]string `json:"initialContent,omitempty"`
-}
-
-func (f *FunctionsServiceCreateFunctionRequest) GetBrowserEnabled() *bool {
-	if f == nil {
-		return nil
-	}
-	return f.BrowserEnabled
 }
 
 func (f *FunctionsServiceCreateFunctionRequest) GetCommitMessage() *string {

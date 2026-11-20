@@ -1,0 +1,21 @@
+# OAuthAuthorization
+
+OAuthAuthorization defines a confidential OAuth client's delegated access to
+ the ConductorOne API. It controls who may consent and which roles they may
+ approve. Each user's consent is separate and cannot exceed that user's permissions.
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `AccessMode`                                                                      | [*shared.AccessMode](../../../pkg/models/shared/accessmode.md)                    | :heavy_minus_sign:                                                                | The accessMode field.                                                             |
+| `ClientID`                                                                        | `*string`                                                                         | :heavy_minus_sign:                                                                | The OAuth protocol client registered for this authorization.                      |
+| `CreatedAt`                                                                       | [*time.Time](https://pkg.go.dev/time#Time)                                        | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Disabled`                                                                        | `*bool`                                                                           | :heavy_minus_sign:                                                                | Whether authorization and token use are disabled. New authorizations are enabled. |
+| `DisplayName`                                                                     | `*string`                                                                         | :heavy_minus_sign:                                                                | The displayName field.                                                            |
+| `ID`                                                                              | `*string`                                                                         | :heavy_minus_sign:                                                                | The id field.                                                                     |
+| `ScopedRoleIds`                                                                   | []`string`                                                                        | :heavy_minus_sign:                                                                | The maximum role selection a user may approve when consenting.                    |
+| `UpdatedAt`                                                                       | [*time.Time](https://pkg.go.dev/time#Time)                                        | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `UseEntitlementAppID`                                                             | `*string`                                                                         | :heavy_minus_sign:                                                                | The C1 app containing the entitlement that governs use of this authorization.     |
+| `UseEntitlementID`                                                                | `*string`                                                                         | :heavy_minus_sign:                                                                | The native Use entitlement that governs eligibility for this authorization.       |

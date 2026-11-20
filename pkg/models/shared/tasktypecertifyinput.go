@@ -7,7 +7,8 @@ package shared
 // This message contains a oneof named principal. Only a single field of the following list may be set at a time:
 //   - resource
 type TaskTypeCertifyInput struct {
-	Resource *AppResourceRef `json:"resource,omitempty"`
+	Resource      *AppResourceRef     `json:"resource,omitempty"`
+	ReviewSubject *ReviewSubjectInput `json:"reviewSubject,omitempty"`
 }
 
 func (t *TaskTypeCertifyInput) GetResource() *AppResourceRef {
@@ -15,4 +16,11 @@ func (t *TaskTypeCertifyInput) GetResource() *AppResourceRef {
 		return nil
 	}
 	return t.Resource
+}
+
+func (t *TaskTypeCertifyInput) GetReviewSubject() *ReviewSubjectInput {
+	if t == nil {
+		return nil
+	}
+	return t.ReviewSubject
 }

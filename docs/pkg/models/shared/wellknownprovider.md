@@ -28,3 +28,4 @@ custom := shared.WellKnownProvider("custom_value")
 | `WellKnownProviderWellKnownWorkloadProviderHcpTerraform`   | WELL_KNOWN_WORKLOAD_PROVIDER_HCP_TERRAFORM                 |
 | `WellKnownProviderWellKnownWorkloadProviderAwsIamOutbound` | WELL_KNOWN_WORKLOAD_PROVIDER_AWS_IAM_OUTBOUND              |
 | `WellKnownProviderWellKnownWorkloadProviderSpiffe`         | WELL_KNOWN_WORKLOAD_PROVIDER_SPIFFE                        |
+| `WellKnownProviderWellKnownWorkloadProviderC1Edge`         | WELL_KNOWN_WORKLOAD_PROVIDER_C1_EDGE                       |

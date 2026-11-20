@@ -7,6 +7,34 @@ import (
 	"time"
 )
 
+// CompileStatus - Compile state of the published commit for the function's current
+//
+//	configuration. Populated by GetFunction only; unset in list responses.
+type CompileStatus string
+
+const (
+	CompileStatusFunctionCompileStatusUnspecified CompileStatus = "FUNCTION_COMPILE_STATUS_UNSPECIFIED"
+	CompileStatusFunctionCompileStatusNotCompiled CompileStatus = "FUNCTION_COMPILE_STATUS_NOT_COMPILED"
+	CompileStatusFunctionCompileStatusCompiling   CompileStatus = "FUNCTION_COMPILE_STATUS_COMPILING"
+	CompileStatusFunctionCompileStatusReady       CompileStatus = "FUNCTION_COMPILE_STATUS_READY"
+	CompileStatusFunctionCompileStatusFailed      CompileStatus = "FUNCTION_COMPILE_STATUS_FAILED"
+)
+
+func (e CompileStatus) ToPointer() *CompileStatus {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CompileStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FUNCTION_COMPILE_STATUS_UNSPECIFIED", "FUNCTION_COMPILE_STATUS_NOT_COMPILED", "FUNCTION_COMPILE_STATUS_COMPILING", "FUNCTION_COMPILE_STATUS_READY", "FUNCTION_COMPILE_STATUS_FAILED":
+			return true
+		}
+	}
+	return false
+}
+
 // FunctionType - The functionType field.
 type FunctionType string
 
@@ -34,15 +62,13 @@ func (e *FunctionType) IsExact() bool {
 
 // Function represents a customer-provided code extension in the API
 type Function struct {
-	// browser_enabled marks the function as browser-capable: the executor
-	//  supervises a headless Chromium plus a default-deny egress proxy and
-	//  exposes CDP on loopback to the function's sandbox. Toggling it changes
-	//  the deployed image contents and executor arguments, so an update that
-	//  touches it triggers a redeployment, same as secrets or the outbound
-	//  network allowlist.
-	BrowserEnabled *bool      `json:"browserEnabled,omitempty"`
-	CreatedAt      *time.Time `json:"createdAt,omitempty"`
-	DeletedAt      *time.Time `json:"deletedAt,omitempty"`
+	// Compiler output when compile_status is FUNCTION_COMPILE_STATUS_FAILED.
+	CompileError *string `json:"compileError,omitempty"`
+	// Compile state of the published commit for the function's current
+	//  configuration. Populated by GetFunction only; unset in list responses.
+	CompileStatus *CompileStatus `json:"compileStatus,omitempty"`
+	CreatedAt     *time.Time     `json:"createdAt,omitempty"`
+	DeletedAt     *time.Time     `json:"deletedAt,omitempty"`
 	// The description field.
 	Description *string `json:"description,omitempty"`
 	// The displayName field.
@@ -59,7 +85,8 @@ type Function struct {
 	// The id field.
 	ID *string `json:"id,omitempty"`
 	// The isDraft field.
-	IsDraft *bool `json:"isDraft,omitempty"`
+	IsDraft       *bool                  `json:"isDraft,omitempty"`
+	NetworkConfig *FunctionNetworkConfig `json:"networkConfig,omitempty"`
 	// The outboundNetworkAllowlist field.
 	OutboundNetworkAllowlist []string `json:"outboundNetworkAllowlist,omitempty"`
 	// Number of pre-warmed Lambda instances. 0 (default) leaves the function
@@ -103,11 +130,18 @@ func (f *Function) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (f *Function) GetBrowserEnabled() *bool {
+func (f *Function) GetCompileError() *string {
 	if f == nil {
 		return nil
 	}
-	return f.BrowserEnabled
+	return f.CompileError
+}
+
+func (f *Function) GetCompileStatus() *CompileStatus {
+	if f == nil {
+		return nil
+	}
+	return f.CompileStatus
 }
 
 func (f *Function) GetCreatedAt() *time.Time {
@@ -173,6 +207,13 @@ func (f *Function) GetIsDraft() *bool {
 	return f.IsDraft
 }
 
+func (f *Function) GetNetworkConfig() *FunctionNetworkConfig {
+	if f == nil {
+		return nil
+	}
+	return f.NetworkConfig
+}
+
 func (f *Function) GetOutboundNetworkAllowlist() []string {
 	if f == nil {
 		return nil
@@ -231,13 +272,6 @@ func (f *Function) GetWorkflowTemplateRefs() []string {
 
 // FunctionInput - Function represents a customer-provided code extension in the API
 type FunctionInput struct {
-	// browser_enabled marks the function as browser-capable: the executor
-	//  supervises a headless Chromium plus a default-deny egress proxy and
-	//  exposes CDP on loopback to the function's sandbox. Toggling it changes
-	//  the deployed image contents and executor arguments, so an update that
-	//  touches it triggers a redeployment, same as secrets or the outbound
-	//  network allowlist.
-	BrowserEnabled *bool `json:"browserEnabled,omitempty"`
 	// The description field.
 	Description *string `json:"description,omitempty"`
 	// The displayName field.
@@ -249,7 +283,8 @@ type FunctionInput struct {
 	// The id field.
 	ID *string `json:"id,omitempty"`
 	// The isDraft field.
-	IsDraft *bool `json:"isDraft,omitempty"`
+	IsDraft       *bool                  `json:"isDraft,omitempty"`
+	NetworkConfig *FunctionNetworkConfig `json:"networkConfig,omitempty"`
 	// The outboundNetworkAllowlist field.
 	OutboundNetworkAllowlist []string `json:"outboundNetworkAllowlist,omitempty"`
 	// Number of pre-warmed Lambda instances. 0 (default) leaves the function
@@ -269,13 +304,6 @@ type FunctionInput struct {
 	ScopedRoleIds []string `json:"scopedRoleIds,omitempty"`
 	// The secret field.
 	Secret map[string]string `json:"secret,omitempty"`
-}
-
-func (f *FunctionInput) GetBrowserEnabled() *bool {
-	if f == nil {
-		return nil
-	}
-	return f.BrowserEnabled
 }
 
 func (f *FunctionInput) GetDescription() *string {
@@ -318,6 +346,13 @@ func (f *FunctionInput) GetIsDraft() *bool {
 		return nil
 	}
 	return f.IsDraft
+}
+
+func (f *FunctionInput) GetNetworkConfig() *FunctionNetworkConfig {
+	if f == nil {
+		return nil
+	}
+	return f.NetworkConfig
 }
 
 func (f *FunctionInput) GetOutboundNetworkAllowlist() []string {

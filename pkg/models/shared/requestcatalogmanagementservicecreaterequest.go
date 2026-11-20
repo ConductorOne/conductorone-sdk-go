@@ -26,15 +26,10 @@ func (e *RequestCatalogManagementServiceCreateRequestEnrollmentBehavior) IsExact
 	return false
 }
 
-// RequestCatalogManagementServiceCreateRequestType - The type of access profile to create. Leave unset for
+// RequestCatalogManagementServiceCreateRequestType - The type of access profile to create: CATALOG (shown as Catalog in the
 //
-//	REQUEST_CATALOG_TYPE_CATALOG_AND_BUNDLE, which is what every profile
-//	created before this field existed is. Setting it requires the
-//	ACCESS_PROFILE_TYPES feature.
-//
-//	PROFILE is rejected rather than resolved: it is deprecated, has no stored
-//	counterpart, and shares wire number 2 with the stored BUNDLE, so honoring
-//	it would silently persist a type the caller did not ask for.
+//	UI), BUNDLE (Role), or CATALOG_AND_BUNDLE (Hybrid). Omit it or send
+//	UNSPECIFIED to create a Hybrid profile.
 type RequestCatalogManagementServiceCreateRequestType string
 
 const (
@@ -131,14 +126,9 @@ type RequestCatalogManagementServiceCreateRequest struct {
 	Published *bool `json:"published,omitempty"`
 	// Whether all the entitlements in the catalog can be requests at once. Your tenant must have the bundles feature to use this.
 	RequestBundle *bool `json:"requestBundle,omitempty"`
-	// The type of access profile to create. Leave unset for
-	//  REQUEST_CATALOG_TYPE_CATALOG_AND_BUNDLE, which is what every profile
-	//  created before this field existed is. Setting it requires the
-	//  ACCESS_PROFILE_TYPES feature.
-	//
-	//  PROFILE is rejected rather than resolved: it is deprecated, has no stored
-	//  counterpart, and shares wire number 2 with the stored BUNDLE, so honoring
-	//  it would silently persist a type the caller did not ask for.
+	// The type of access profile to create: CATALOG (shown as Catalog in the
+	//  UI), BUNDLE (Role), or CATALOG_AND_BUNDLE (Hybrid). Omit it or send
+	//  UNSPECIFIED to create a Hybrid profile.
 	Type *RequestCatalogManagementServiceCreateRequestType `json:"type,omitempty"`
 	// Defines how to handle the revocation of the entitlements in the catalog during unenrollment.
 	UnenrollmentBehavior *RequestCatalogManagementServiceCreateRequestUnenrollmentBehavior `json:"unenrollmentBehavior,omitempty"`

@@ -1,0 +1,14 @@
+# EdgeRollupItem
+
+EdgeRollupItem identifies one authorized Edge and what it serves.
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `AppID`                                                                                         | `*string`                                                                                       | :heavy_minus_sign:                                                                              | The appId field.                                                                                |
+| `DisplayName`                                                                                   | `*string`                                                                                       | :heavy_minus_sign:                                                                              | The displayName field.                                                                          |
+| `EnabledKinds`                                                                                  | [][shared.EdgeRollupItemEnabledKinds](../../../pkg/models/shared/edgerollupitemenabledkinds.md) | :heavy_minus_sign:                                                                              | The enabledKinds field.                                                                         |
+| `ID`                                                                                            | `*string`                                                                                       | :heavy_minus_sign:                                                                              | The id field.                                                                                   |
+| `Mode`                                                                                          | [*shared.EdgeRollupItemMode](../../../pkg/models/shared/edgerollupitemmode.md)                  | :heavy_minus_sign:                                                                              | The mode field.                                                                                 |

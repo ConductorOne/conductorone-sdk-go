@@ -1,0 +1,10 @@
+# AppUserMergeRulesServiceResetToDefaultsRequest
+
+The AppUserMergeRulesServiceResetToDefaultsRequest message identifies the application whose rules to reset.
+
+
+## Fields
+
+| Field                                                                                                                                        | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ExpectedRuleSetVersion`                                                                                                                     | `*int64`                                                                                                                                     | :heavy_minus_sign:                                                                                                                           | The rule_set_version the reset is based on. If the stored version differs, the reset<br/> fails with FAILED_PRECONDITION and nothing is changed. |

@@ -51,21 +51,21 @@ func (e *MCPResourceServiceSearchRequestSortBy) IsExact() bool {
 	return false
 }
 
-// SortDirection - Direction for sort_by. UNSPECIFIED means ascending.
-type SortDirection string
+// MCPResourceServiceSearchRequestSortDirection - Direction for sort_by. UNSPECIFIED means ascending.
+type MCPResourceServiceSearchRequestSortDirection string
 
 const (
-	SortDirectionSortDirectionUnspecified SortDirection = "SORT_DIRECTION_UNSPECIFIED"
-	SortDirectionSortDirectionAsc         SortDirection = "SORT_DIRECTION_ASC"
-	SortDirectionSortDirectionDesc        SortDirection = "SORT_DIRECTION_DESC"
+	MCPResourceServiceSearchRequestSortDirectionSortDirectionUnspecified MCPResourceServiceSearchRequestSortDirection = "SORT_DIRECTION_UNSPECIFIED"
+	MCPResourceServiceSearchRequestSortDirectionSortDirectionAsc         MCPResourceServiceSearchRequestSortDirection = "SORT_DIRECTION_ASC"
+	MCPResourceServiceSearchRequestSortDirectionSortDirectionDesc        MCPResourceServiceSearchRequestSortDirection = "SORT_DIRECTION_DESC"
 )
 
-func (e SortDirection) ToPointer() *SortDirection {
+func (e MCPResourceServiceSearchRequestSortDirection) ToPointer() *MCPResourceServiceSearchRequestSortDirection {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *SortDirection) IsExact() bool {
+func (e *MCPResourceServiceSearchRequestSortDirection) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "SORT_DIRECTION_UNSPECIFIED", "SORT_DIRECTION_ASC", "SORT_DIRECTION_DESC":
@@ -75,22 +75,22 @@ func (e *SortDirection) IsExact() bool {
 	return false
 }
 
-type StateFilter string
+type MCPResourceServiceSearchRequestStateFilter string
 
 const (
-	StateFilterMcpResourceStateUnspecified   StateFilter = "MCP_RESOURCE_STATE_UNSPECIFIED"
-	StateFilterMcpResourceStatePendingReview StateFilter = "MCP_RESOURCE_STATE_PENDING_REVIEW"
-	StateFilterMcpResourceStateApproved      StateFilter = "MCP_RESOURCE_STATE_APPROVED"
-	StateFilterMcpResourceStateDisabled      StateFilter = "MCP_RESOURCE_STATE_DISABLED"
-	StateFilterMcpResourceStateRemoved       StateFilter = "MCP_RESOURCE_STATE_REMOVED"
+	MCPResourceServiceSearchRequestStateFilterMcpResourceStateUnspecified   MCPResourceServiceSearchRequestStateFilter = "MCP_RESOURCE_STATE_UNSPECIFIED"
+	MCPResourceServiceSearchRequestStateFilterMcpResourceStatePendingReview MCPResourceServiceSearchRequestStateFilter = "MCP_RESOURCE_STATE_PENDING_REVIEW"
+	MCPResourceServiceSearchRequestStateFilterMcpResourceStateApproved      MCPResourceServiceSearchRequestStateFilter = "MCP_RESOURCE_STATE_APPROVED"
+	MCPResourceServiceSearchRequestStateFilterMcpResourceStateDisabled      MCPResourceServiceSearchRequestStateFilter = "MCP_RESOURCE_STATE_DISABLED"
+	MCPResourceServiceSearchRequestStateFilterMcpResourceStateRemoved       MCPResourceServiceSearchRequestStateFilter = "MCP_RESOURCE_STATE_REMOVED"
 )
 
-func (e StateFilter) ToPointer() *StateFilter {
+func (e MCPResourceServiceSearchRequestStateFilter) ToPointer() *MCPResourceServiceSearchRequestStateFilter {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *StateFilter) IsExact() bool {
+func (e *MCPResourceServiceSearchRequestStateFilter) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "MCP_RESOURCE_STATE_UNSPECIFIED", "MCP_RESOURCE_STATE_PENDING_REVIEW", "MCP_RESOURCE_STATE_APPROVED", "MCP_RESOURCE_STATE_DISABLED", "MCP_RESOURCE_STATE_REMOVED":
@@ -115,14 +115,16 @@ type MCPResourceServiceSearchRequest struct {
 	PageToken *string `json:"pageToken,omitempty"`
 	// Optional text query matched against name, title, description, and uri.
 	Query *string `json:"query,omitempty"`
+	// Optional filter by specific resource refs. Other filters still apply.
+	Refs []MCPResourceRef `json:"refs,omitempty"`
 	// Sort order for results. UNSPECIFIED sorts by resource name ascending.
 	SortBy *MCPResourceServiceSearchRequestSortBy `json:"sortBy,omitempty"`
 	// Direction for sort_by. UNSPECIFIED means ascending.
-	SortDirection *SortDirection `json:"sortDirection,omitempty"`
+	SortDirection *MCPResourceServiceSearchRequestSortDirection `json:"sortDirection,omitempty"`
 	// Optional filter by resource state. An empty list defaults to
 	//  PENDING_REVIEW, APPROVED, and DISABLED (REMOVED is hidden unless
 	//  explicitly requested).
-	StateFilter []StateFilter `json:"stateFilter,omitempty"`
+	StateFilter []MCPResourceServiceSearchRequestStateFilter `json:"stateFilter,omitempty"`
 }
 
 func (m *MCPResourceServiceSearchRequest) GetIncludeGrantStatus() *bool {
@@ -160,6 +162,13 @@ func (m *MCPResourceServiceSearchRequest) GetQuery() *string {
 	return m.Query
 }
 
+func (m *MCPResourceServiceSearchRequest) GetRefs() []MCPResourceRef {
+	if m == nil {
+		return nil
+	}
+	return m.Refs
+}
+
 func (m *MCPResourceServiceSearchRequest) GetSortBy() *MCPResourceServiceSearchRequestSortBy {
 	if m == nil {
 		return nil
@@ -167,14 +176,14 @@ func (m *MCPResourceServiceSearchRequest) GetSortBy() *MCPResourceServiceSearchR
 	return m.SortBy
 }
 
-func (m *MCPResourceServiceSearchRequest) GetSortDirection() *SortDirection {
+func (m *MCPResourceServiceSearchRequest) GetSortDirection() *MCPResourceServiceSearchRequestSortDirection {
 	if m == nil {
 		return nil
 	}
 	return m.SortDirection
 }
 
-func (m *MCPResourceServiceSearchRequest) GetStateFilter() []StateFilter {
+func (m *MCPResourceServiceSearchRequest) GetStateFilter() []MCPResourceServiceSearchRequestStateFilter {
 	if m == nil {
 		return nil
 	}

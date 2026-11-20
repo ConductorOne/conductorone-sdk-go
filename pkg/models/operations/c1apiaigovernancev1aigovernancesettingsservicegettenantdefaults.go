@@ -10,8 +10,8 @@ import (
 type C1APIAIGovernanceV1AIGovernanceSettingsServiceGetTenantDefaultsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// GetTenantDefaultsResponse contains the tenant-default subset of AI governance
-	//  settings applied to newly registered MCP servers and tools.
+	// GetTenantDefaultsResponse contains tenant defaults used by
+	//  legacy MCP servers.
 	GetTenantDefaultsResponse *shared.GetTenantDefaultsResponse
 	// HTTP response status code for this operation
 	StatusCode int

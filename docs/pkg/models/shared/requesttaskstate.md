@@ -9,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.RequestTaskStateTicketStateUnspecified
+value := shared.RequestTaskStateTaskStateUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.RequestTaskState("custom_value")
@@ -18,8 +18,8 @@ custom := shared.RequestTaskState("custom_value")
 
 ## Values
 
-| Name                                     | Value                                    |
-| ---------------------------------------- | ---------------------------------------- |
-| `RequestTaskStateTicketStateUnspecified` | TICKET_STATE_UNSPECIFIED                 |
-| `RequestTaskStateTicketStateOpen`        | TICKET_STATE_OPEN                        |
-| `RequestTaskStateTicketStateClosed`      | TICKET_STATE_CLOSED                      |
+| Name                                   | Value                                  |
+| -------------------------------------- | -------------------------------------- |
+| `RequestTaskStateTaskStateUnspecified` | TASK_STATE_UNSPECIFIED                 |
+| `RequestTaskStateTaskStateOpen`        | TASK_STATE_OPEN                        |
+| `RequestTaskStateTaskStateClosed`      | TASK_STATE_CLOSED                      |

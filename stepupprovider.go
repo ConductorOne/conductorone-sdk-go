@@ -662,7 +662,7 @@ func (s *StepUpProvider) Get(ctx context.Context, request operations.C1APIStepup
 
 // List
 // List returns all step-up authentication providers configured for the tenant.
-func (s *StepUpProvider) List(ctx context.Context, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceListResponse, error) {
+func (s *StepUpProvider) List(ctx context.Context, request operations.C1APIStepupV1StepUpProviderServiceListRequest, opts ...operations.Option) (*operations.C1APIStepupV1StepUpProviderServiceListResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -713,6 +713,10 @@ func (s *StepUpProvider) List(ctx context.Context, opts ...operations.Option) (*
 	}
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
+
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	if err := utils.PopulateSecurity(ctx, req, s.sdkConfiguration.Security); err != nil {
 		return nil, err

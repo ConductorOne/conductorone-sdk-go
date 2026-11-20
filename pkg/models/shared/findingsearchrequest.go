@@ -26,6 +26,46 @@ func (e *FindingSearchRequestAppUserTypes) IsExact() bool {
 	return false
 }
 
+type ExcludeFindingTypes string
+
+const (
+	ExcludeFindingTypesFindingTypeUnspecified                       ExcludeFindingTypes = "FINDING_TYPE_UNSPECIFIED"
+	ExcludeFindingTypesFindingTypeSimilarUsernameMatch              ExcludeFindingTypes = "FINDING_TYPE_SIMILAR_USERNAME_MATCH"
+	ExcludeFindingTypesFindingTypeServiceAccountMisclassification   ExcludeFindingTypes = "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION"
+	ExcludeFindingTypesFindingTypeNhiUnowned                        ExcludeFindingTypes = "FINDING_TYPE_NHI_UNOWNED"
+	ExcludeFindingTypesFindingTypeServiceAccountUnowned             ExcludeFindingTypes = "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED"
+	ExcludeFindingTypesFindingTypeDecoyCredentialUsed               ExcludeFindingTypes = "FINDING_TYPE_DECOY_CREDENTIAL_USED"
+	ExcludeFindingTypesFindingTypeCustom                            ExcludeFindingTypes = "FINDING_TYPE_CUSTOM"
+	ExcludeFindingTypesFindingTypeConnectorAnomalyDetectionDisabled ExcludeFindingTypes = "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED"
+	ExcludeFindingTypesFindingTypeDeactivatedOwner                  ExcludeFindingTypes = "FINDING_TYPE_DEACTIVATED_OWNER"
+	ExcludeFindingTypesFindingTypeUnusedSecret                      ExcludeFindingTypes = "FINDING_TYPE_UNUSED_SECRET"
+	ExcludeFindingTypesFindingTypeCredentialPubliclyExposed         ExcludeFindingTypes = "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED"
+	ExcludeFindingTypesFindingTypeDecoyPubliclyExposed              ExcludeFindingTypes = "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED"
+	ExcludeFindingTypesFindingTypeCredentialExpiring                ExcludeFindingTypes = "FINDING_TYPE_CREDENTIAL_EXPIRING"
+	ExcludeFindingTypesFindingTypeConnectorSyncFailing              ExcludeFindingTypes = "FINDING_TYPE_CONNECTOR_SYNC_FAILING"
+	ExcludeFindingTypesFindingTypeShadowMcp                         ExcludeFindingTypes = "FINDING_TYPE_SHADOW_MCP"
+	ExcludeFindingTypesFindingTypeShadowApp                         ExcludeFindingTypes = "FINDING_TYPE_SHADOW_APP"
+	ExcludeFindingTypesFindingTypeMcpGatewayToolCallRisk            ExcludeFindingTypes = "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK"
+	ExcludeFindingTypesFindingTypeEdge                              ExcludeFindingTypes = "FINDING_TYPE_EDGE"
+	ExcludeFindingTypesFindingTypeAccessConflict                    ExcludeFindingTypes = "FINDING_TYPE_ACCESS_CONFLICT"
+	ExcludeFindingTypesFindingTypeConnectorHostOutdated             ExcludeFindingTypes = "FINDING_TYPE_CONNECTOR_HOST_OUTDATED"
+)
+
+func (e ExcludeFindingTypes) ToPointer() *ExcludeFindingTypes {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ExcludeFindingTypes) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FINDING_TYPE_UNSPECIFIED", "FINDING_TYPE_SIMILAR_USERNAME_MATCH", "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION", "FINDING_TYPE_NHI_UNOWNED", "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED", "FINDING_TYPE_DECOY_CREDENTIAL_USED", "FINDING_TYPE_CUSTOM", "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED", "FINDING_TYPE_DEACTIVATED_OWNER", "FINDING_TYPE_UNUSED_SECRET", "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED", "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED", "FINDING_TYPE_CREDENTIAL_EXPIRING", "FINDING_TYPE_CONNECTOR_SYNC_FAILING", "FINDING_TYPE_SHADOW_MCP", "FINDING_TYPE_SHADOW_APP", "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK", "FINDING_TYPE_EDGE", "FINDING_TYPE_ACCESS_CONFLICT", "FINDING_TYPE_CONNECTOR_HOST_OUTDATED":
+			return true
+		}
+	}
+	return false
+}
+
 type FindingTypes string
 
 const (
@@ -44,6 +84,11 @@ const (
 	FindingTypesFindingTypeCredentialExpiring                FindingTypes = "FINDING_TYPE_CREDENTIAL_EXPIRING"
 	FindingTypesFindingTypeConnectorSyncFailing              FindingTypes = "FINDING_TYPE_CONNECTOR_SYNC_FAILING"
 	FindingTypesFindingTypeShadowMcp                         FindingTypes = "FINDING_TYPE_SHADOW_MCP"
+	FindingTypesFindingTypeShadowApp                         FindingTypes = "FINDING_TYPE_SHADOW_APP"
+	FindingTypesFindingTypeMcpGatewayToolCallRisk            FindingTypes = "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK"
+	FindingTypesFindingTypeEdge                              FindingTypes = "FINDING_TYPE_EDGE"
+	FindingTypesFindingTypeAccessConflict                    FindingTypes = "FINDING_TYPE_ACCESS_CONFLICT"
+	FindingTypesFindingTypeConnectorHostOutdated             FindingTypes = "FINDING_TYPE_CONNECTOR_HOST_OUTDATED"
 )
 
 func (e FindingTypes) ToPointer() *FindingTypes {
@@ -54,7 +99,7 @@ func (e FindingTypes) ToPointer() *FindingTypes {
 func (e *FindingTypes) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "FINDING_TYPE_UNSPECIFIED", "FINDING_TYPE_SIMILAR_USERNAME_MATCH", "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION", "FINDING_TYPE_NHI_UNOWNED", "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED", "FINDING_TYPE_DECOY_CREDENTIAL_USED", "FINDING_TYPE_CUSTOM", "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED", "FINDING_TYPE_DEACTIVATED_OWNER", "FINDING_TYPE_UNUSED_SECRET", "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED", "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED", "FINDING_TYPE_CREDENTIAL_EXPIRING", "FINDING_TYPE_CONNECTOR_SYNC_FAILING", "FINDING_TYPE_SHADOW_MCP":
+		case "FINDING_TYPE_UNSPECIFIED", "FINDING_TYPE_SIMILAR_USERNAME_MATCH", "FINDING_TYPE_SERVICE_ACCOUNT_MISCLASSIFICATION", "FINDING_TYPE_NHI_UNOWNED", "FINDING_TYPE_SERVICE_ACCOUNT_UNOWNED", "FINDING_TYPE_DECOY_CREDENTIAL_USED", "FINDING_TYPE_CUSTOM", "FINDING_TYPE_CONNECTOR_ANOMALY_DETECTION_DISABLED", "FINDING_TYPE_DEACTIVATED_OWNER", "FINDING_TYPE_UNUSED_SECRET", "FINDING_TYPE_CREDENTIAL_PUBLICLY_EXPOSED", "FINDING_TYPE_DECOY_PUBLICLY_EXPOSED", "FINDING_TYPE_CREDENTIAL_EXPIRING", "FINDING_TYPE_CONNECTOR_SYNC_FAILING", "FINDING_TYPE_SHADOW_MCP", "FINDING_TYPE_SHADOW_APP", "FINDING_TYPE_MCP_GATEWAY_TOOL_CALL_RISK", "FINDING_TYPE_EDGE", "FINDING_TYPE_ACCESS_CONFLICT", "FINDING_TYPE_CONNECTOR_HOST_OUTDATED":
 			return true
 		}
 	}
@@ -197,6 +242,13 @@ type FindingSearchRequest struct {
 	// Filter by decoy IDs (OR within field). Matches findings whose
 	//  target.decoy_target.decoy_id is in this list.
 	DecoyIds []string `json:"decoyIds,omitempty"`
+	// Filter by Edge IDs (OR within field): Edge findings (FINDING_TYPE_EDGE)
+	//  raised on any listed Edge. Edge findings carry no app_id, so do not pair
+	//  this with app_ids. Empty = not applied.
+	EdgeIds []string `json:"edgeIds,omitempty"`
+	// Exclude findings of these types. Applied together with every other filter,
+	//  including finding_types. Empty = not applied.
+	ExcludeFindingTypes []ExcludeFindingTypes `json:"excludeFindingTypes,omitempty"`
 	// Filter by finding type (OR within field).
 	FindingTypes []FindingTypes `json:"findingTypes,omitempty"`
 	// When true, includes findings with no assignee. An explicit predicate for
@@ -228,10 +280,18 @@ type FindingSearchRequest struct {
 	ScopeToAppOwner *bool `json:"scopeToAppOwner,omitempty"`
 	// Filter by severities (OR within field).
 	Severities []Severities `json:"severities,omitempty"`
+	// Filter by the detector source that raised the finding (OR within field),
+	//  matching Finding.source_detector_id exactly, e.g.
+	//  "access_conflict:<monitor_id>". Empty = not applied.
+	SourceDetectorIds []string `json:"sourceDetectorIds,omitempty"`
 	// Filter by source kind (OR within field).
 	SourceKinds []SourceKinds `json:"sourceKinds,omitempty"`
 	// Filter by states (OR within field).
 	States []States `json:"states,omitempty"`
+	// Filter by the identity users findings are about (OR within field): matches
+	//  findings whose target is an IdentityUserTarget for one of these users. Not
+	//  the assignee; see assignee_identity_user_ids. Empty = not applied.
+	TargetIdentityUserIds []string `json:"targetIdentityUserIds,omitempty"`
 }
 
 func (f *FindingSearchRequest) GetAppIds() []string {
@@ -304,6 +364,20 @@ func (f *FindingSearchRequest) GetDecoyIds() []string {
 	return f.DecoyIds
 }
 
+func (f *FindingSearchRequest) GetEdgeIds() []string {
+	if f == nil {
+		return nil
+	}
+	return f.EdgeIds
+}
+
+func (f *FindingSearchRequest) GetExcludeFindingTypes() []ExcludeFindingTypes {
+	if f == nil {
+		return nil
+	}
+	return f.ExcludeFindingTypes
+}
+
 func (f *FindingSearchRequest) GetFindingTypes() []FindingTypes {
 	if f == nil {
 		return nil
@@ -374,6 +448,13 @@ func (f *FindingSearchRequest) GetSeverities() []Severities {
 	return f.Severities
 }
 
+func (f *FindingSearchRequest) GetSourceDetectorIds() []string {
+	if f == nil {
+		return nil
+	}
+	return f.SourceDetectorIds
+}
+
 func (f *FindingSearchRequest) GetSourceKinds() []SourceKinds {
 	if f == nil {
 		return nil
@@ -386,4 +467,11 @@ func (f *FindingSearchRequest) GetStates() []States {
 		return nil
 	}
 	return f.States
+}
+
+func (f *FindingSearchRequest) GetTargetIdentityUserIds() []string {
+	if f == nil {
+		return nil
+	}
+	return f.TargetIdentityUserIds
 }

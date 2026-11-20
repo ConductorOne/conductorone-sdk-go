@@ -60,11 +60,12 @@ func (e *AutoCloseDecision) IsExact() bool {
 type DefaultView string
 
 const (
-	DefaultViewAccessReviewViewTypeUnspecified  DefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
-	DefaultViewAccessReviewViewTypeByApp        DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
-	DefaultViewAccessReviewViewTypeByUser       DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
-	DefaultViewAccessReviewViewTypeUnstructured DefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
-	DefaultViewAccessReviewViewTypeByResource   DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	DefaultViewAccessReviewViewTypeUnspecified     DefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED"
+	DefaultViewAccessReviewViewTypeByApp           DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_APP"
+	DefaultViewAccessReviewViewTypeByUser          DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_USER"
+	DefaultViewAccessReviewViewTypeUnstructured    DefaultView = "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED"
+	DefaultViewAccessReviewViewTypeByResource      DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE"
+	DefaultViewAccessReviewViewTypeByAccessProfile DefaultView = "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE"
 )
 
 func (e DefaultView) ToPointer() *DefaultView {
@@ -75,7 +76,7 @@ func (e DefaultView) ToPointer() *DefaultView {
 func (e *DefaultView) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE":
+		case "ACCESS_REVIEW_VIEW_TYPE_UNSPECIFIED", "ACCESS_REVIEW_VIEW_TYPE_BY_APP", "ACCESS_REVIEW_VIEW_TYPE_BY_USER", "ACCESS_REVIEW_VIEW_TYPE_UNSTRUCTURED", "ACCESS_REVIEW_VIEW_TYPE_BY_RESOURCE", "ACCESS_REVIEW_VIEW_TYPE_BY_ACCESS_PROFILE":
 			return true
 		}
 	}
@@ -90,6 +91,7 @@ type ErrorState string
 const (
 	ErrorStateAccessReviewErrorStateUnspecified               ErrorState = "ACCESS_REVIEW_ERROR_STATE_UNSPECIFIED"
 	ErrorStateAccessReviewErrorStateSelectionQuotaExceedError ErrorState = "ACCESS_REVIEW_ERROR_STATE_SELECTION_QUOTA_EXCEED_ERROR"
+	ErrorStateAccessReviewErrorStateDuplicationFailed         ErrorState = "ACCESS_REVIEW_ERROR_STATE_DUPLICATION_FAILED"
 )
 
 func (e ErrorState) ToPointer() *ErrorState {
@@ -100,14 +102,16 @@ func (e ErrorState) ToPointer() *ErrorState {
 func (e *ErrorState) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_ERROR_STATE_UNSPECIFIED", "ACCESS_REVIEW_ERROR_STATE_SELECTION_QUOTA_EXCEED_ERROR":
+		case "ACCESS_REVIEW_ERROR_STATE_UNSPECIFIED", "ACCESS_REVIEW_ERROR_STATE_SELECTION_QUOTA_EXCEED_ERROR", "ACCESS_REVIEW_ERROR_STATE_DUPLICATION_FAILED":
 			return true
 		}
 	}
 	return false
 }
 
-// ScopeType - this sets the scope type for the access review
+// ScopeType - How the campaign's scope is defined, such as by entitlements or by users.
+//
+//	See AccessReviewScopeType for the available values.
 type ScopeType string
 
 const (
@@ -117,6 +121,7 @@ const (
 	ScopeTypeAccessReviewScopeTypeByResource        ScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE"
 	ScopeTypeAccessReviewScopeTypeByInheritance     ScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE"
 	ScopeTypeAccessReviewScopeTypeByUsers           ScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS"
+	ScopeTypeAccessReviewScopeTypeByAccessProfiles  ScopeType = "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES"
 )
 
 func (e ScopeType) ToPointer() *ScopeType {
@@ -127,7 +132,7 @@ func (e ScopeType) ToPointer() *ScopeType {
 func (e *ScopeType) IsExact() bool {
 	if e != nil {
 		switch *e {
-		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS":
+		case "ACCESS_REVIEW_SCOPE_TYPE_UNSPECIFIED", "ACCESS_REVIEW_SCOPE_TYPE_BY_ENTITLEMENTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_CONFLICTS", "ACCESS_REVIEW_SCOPE_TYPE_BY_RESOURCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_INHERITANCE", "ACCESS_REVIEW_SCOPE_TYPE_BY_USERS", "ACCESS_REVIEW_SCOPE_TYPE_BY_ACCESS_PROFILES":
 			return true
 		}
 	}
@@ -193,6 +198,7 @@ type AccessReview struct {
 	Bindings                 *BindingObjectSetup       `json:"bindings,omitempty"`
 	CampaignHealth           *CampaignHealthSnapshot   `json:"campaignHealth,omitempty"`
 	CampaignInsights         *CampaignInsights         `json:"campaignInsights,omitempty"`
+	CampaignSchedule         *CampaignSchedule         `json:"campaignSchedule,omitempty"`
 	ClosedAt                 *time.Time                `json:"closedAt,omitempty"`
 	ColumnConfig             *AccessReviewColumnConfig `json:"columnConfig,omitempty"`
 	CompletionDate           *time.Time                `json:"completionDate,omitempty"`
@@ -228,7 +234,8 @@ type AccessReview struct {
 	ReviewerAttributeConfig *ReviewerAttributeConfig `json:"reviewerAttributeConfig,omitempty"`
 	ScheduledStartDate      *time.Time               `json:"scheduledStartDate,omitempty"`
 	Scope                   *AccessReviewScope       `json:"scope,omitempty"`
-	// this sets the scope type for the access review
+	// How the campaign's scope is defined, such as by entitlements or by users.
+	//  See AccessReviewScopeType for the available values.
 	ScopeType *ScopeType           `json:"scopeType,omitempty"`
 	ScopeV2   *AccessReviewScopeV2 `json:"scopeV2,omitempty"`
 	// Internal version counter incremented when the campaign scope changes.
@@ -323,6 +330,13 @@ func (a *AccessReview) GetCampaignInsights() *CampaignInsights {
 		return nil
 	}
 	return a.CampaignInsights
+}
+
+func (a *AccessReview) GetCampaignSchedule() *CampaignSchedule {
+	if a == nil {
+		return nil
+	}
+	return a.CampaignSchedule
 }
 
 func (a *AccessReview) GetClosedAt() *time.Time {
@@ -574,6 +588,7 @@ type AccessReviewInput struct {
 	Bindings                 *BindingObjectSetup       `json:"bindings,omitempty"`
 	CampaignHealth           *CampaignHealthSnapshot   `json:"campaignHealth,omitempty"`
 	CampaignInsights         *CampaignInsights         `json:"campaignInsights,omitempty"`
+	CampaignSchedule         *CampaignSchedule         `json:"campaignSchedule,omitempty"`
 	ClosedAt                 *time.Time                `json:"closedAt,omitempty"`
 	ColumnConfig             *AccessReviewColumnConfig `json:"columnConfig,omitempty"`
 	CompletionDate           *time.Time                `json:"completionDate,omitempty"`
@@ -605,7 +620,8 @@ type AccessReviewInput struct {
 	ReviewerAttributeConfig *ReviewerAttributeConfig `json:"reviewerAttributeConfig,omitempty"`
 	ScheduledStartDate      *time.Time               `json:"scheduledStartDate,omitempty"`
 	Scope                   *AccessReviewScope       `json:"scope,omitempty"`
-	// this sets the scope type for the access review
+	// How the campaign's scope is defined, such as by entitlements or by users.
+	//  See AccessReviewScopeType for the available values.
 	ScopeType *ScopeType           `json:"scopeType,omitempty"`
 	ScopeV2   *AccessReviewScopeV2 `json:"scopeV2,omitempty"`
 	// Internal version counter incremented when the campaign scope changes.
@@ -699,6 +715,13 @@ func (a *AccessReviewInput) GetCampaignInsights() *CampaignInsights {
 		return nil
 	}
 	return a.CampaignInsights
+}
+
+func (a *AccessReviewInput) GetCampaignSchedule() *CampaignSchedule {
+	if a == nil {
+		return nil
+	}
+	return a.CampaignSchedule
 }
 
 func (a *AccessReviewInput) GetClosedAt() *time.Time {

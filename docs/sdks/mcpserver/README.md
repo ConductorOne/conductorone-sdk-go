@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [Delete](#delete) - Delete
+* [Disconnect](#disconnect) - Disconnect
 * [DiscoverOIDCEndpoints](#discoveroidcendpoints) - Discover Oidc Endpoints
 * [Get](#get) - Get
 * [GetCatalog](#getcatalog) - Get Catalog
@@ -72,6 +73,68 @@ func main() {
 ### Response
 
 **[*operations.C1APIAiGovernanceV1MCPServerServiceDeleteResponse](../../pkg/models/operations/c1apiaigovernancev1mcpserverservicedeleteresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
+
+## Disconnect
+
+Disconnect removes the calling user's stored per-user credential/connection
+ for an MCP server (OAuth2, bearer token, custom header, or basic auth).
+ After this call the user must reconnect before tool calls that use their
+ credential can succeed.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.ai_governance.v1.MCPServerService.Disconnect" method="post" path="/api/v1/apps/{app_id}/mcp_servers/{connector_id}/disconnect" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.MCPServer.Disconnect(ctx, operations.C1APIAiGovernanceV1MCPServerServiceDisconnectRequest{
+        AppID: "<id>",
+        ConnectorID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.MCPServerServiceDisconnectResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                  | :heavy_check_mark:                                                                                                                                     | The context to use for the request.                                                                                                                    |
+| `request`                                                                                                                                              | [operations.C1APIAiGovernanceV1MCPServerServiceDisconnectRequest](../../pkg/models/operations/c1apiaigovernancev1mcpserverservicedisconnectrequest.md) | :heavy_check_mark:                                                                                                                                     | The request object to use for the request.                                                                                                             |
+| `opts`                                                                                                                                                 | [][operations.Option](../../pkg/models/operations/option.md)                                                                                           | :heavy_minus_sign:                                                                                                                                     | The options for this request.                                                                                                                          |
+
+### Response
+
+**[*operations.C1APIAiGovernanceV1MCPServerServiceDisconnectResponse](../../pkg/models/operations/c1apiaigovernancev1mcpserverservicedisconnectresponse.md), error**
 
 ### Errors
 
@@ -487,11 +550,12 @@ func main() {
 
 ## ResyncTools
 
-ResyncTools re-runs per-identity tool discovery for the calling user's
- own credential on a per-user MCP server, so a session opened before the
- user connected (or after their visible tools changed) doesn't have to
- wait for the next unrelated MCPTool/AppEntitlementUserBinding change to
- pick it up.
+ResyncTools requests tool discovery for an external MCP server using the
+ caller's own credential for per-user servers, or the configured shared
+ credential for callers with MCP management permission for the app.
+ Requires external MCP discovery decoupling to be enabled for the tenant.
+ Discovery runs asynchronously; accepting this request does not mean that
+ tools have finished loading or grant the caller access to execute them.
 
 ### Example Usage
 

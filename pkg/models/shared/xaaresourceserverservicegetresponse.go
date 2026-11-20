@@ -4,7 +4,8 @@ package shared
 
 // XAAResourceServerServiceGetResponse returns a single resource server.
 type XAAResourceServerServiceGetResponse struct {
-	ResourceServer *XAAResourceServer `json:"resourceServer,omitempty"`
+	ResourceServer       *XAAResourceServer       `json:"resourceServer,omitempty"`
+	ScopeDiscoveryStatus *XAAScopeDiscoveryStatus `json:"scopeDiscoveryStatus,omitempty"`
 }
 
 func (x *XAAResourceServerServiceGetResponse) GetResourceServer() *XAAResourceServer {
@@ -12,4 +13,11 @@ func (x *XAAResourceServerServiceGetResponse) GetResourceServer() *XAAResourceSe
 		return nil
 	}
 	return x.ResourceServer
+}
+
+func (x *XAAResourceServerServiceGetResponse) GetScopeDiscoveryStatus() *XAAScopeDiscoveryStatus {
+	if x == nil {
+		return nil
+	}
+	return x.ScopeDiscoveryStatus
 }

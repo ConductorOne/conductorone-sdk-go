@@ -13,8 +13,8 @@
 
 Get the tenant's AI governance settings — the controls behind the admin
  /admin/settings/ai-governance page. Returns the full AIGovernanceSettings:
- allowed MCP client types, default client lifecycle, require_tool_approval,
- default tool classification, audit verbosity, auto-discovery toggle +
+ allowed MCP client types, default client lifecycle, default tool
+ classification, audit verbosity, auto-discovery toggle +
  interval, prefer_code_mode_over_direct_tools, surface_requestable_tools,
  and untrusted_judge_disable.
 
@@ -70,9 +70,7 @@ func main() {
 
 ## GetTenantDefaults
 
-Get the tenant-default subset of AI governance settings. Currently returns
- only require_tool_approval — the default applied to newly registered MCP
- servers/tools. Use Get for the full settings object.
+Get the legacy tenant-default subset of AI governance settings.
 
 ### Example Usage
 
@@ -182,8 +180,8 @@ func main() {
 ## Update
 
 Update the tenant's AI governance settings. Requires update_mask listing
- which fields to apply (e.g. require_tool_approval,
- default_tool_classification, audit_verbosity, auto_discovery_enabled,
+ which fields to apply (e.g. default_tool_classification,
+ audit_verbosity, auto_discovery_enabled,
  discovery_interval, prefer_code_mode_over_direct_tools,
  surface_requestable_tools, untrusted_judge_disable, allowed_client_types,
  default_client_lifecycle).

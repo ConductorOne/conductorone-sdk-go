@@ -4,12 +4,21 @@ package shared
 
 // The SlackNotifications message.
 type SlackNotifications struct {
+	// Allow a private channel retry if Slack restricts public channel creation. Defaults to false.
+	AllowPrivateChannelFallback *bool `json:"allowPrivateChannelFallback,omitempty"`
 	// The channelId field.
 	ChannelID *string `json:"channelId,omitempty"`
 	// The channelName field.
 	ChannelName *string `json:"channelName,omitempty"`
 	// The enabled field.
 	Enabled *bool `json:"enabled,omitempty"`
+}
+
+func (s *SlackNotifications) GetAllowPrivateChannelFallback() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.AllowPrivateChannelFallback
 }
 
 func (s *SlackNotifications) GetChannelID() *string {

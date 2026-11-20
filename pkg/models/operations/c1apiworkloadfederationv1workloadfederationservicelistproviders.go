@@ -7,6 +7,28 @@ import (
 	"net/http"
 )
 
+type C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersRequest struct {
+	PageSize  *int    `queryParam:"style=form,explode=true,name=page_size"`
+	PageToken *string `queryParam:"style=form,explode=true,name=page_token"`
+}
+
+func (c *C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersRequest) GetPageSize() *int {
+	if c == nil {
+		return nil
+	}
+	return c.PageSize
+}
+
+func (c *C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersRequest) GetPageToken() *string {
+	if c == nil {
+		return nil
+	}
+	return c.PageToken
+}
+
+// #region class-body-c1apiworkloadfederationv1workloadfederationservicelistprovidersrequest
+// #endregion class-body-c1apiworkloadfederationv1workloadfederationservicelistprovidersrequest
+
 type C1APIWorkloadFederationV1WorkloadFederationServiceListProvidersResponse struct {
 	// HTTP response content type for this operation
 	ContentType string

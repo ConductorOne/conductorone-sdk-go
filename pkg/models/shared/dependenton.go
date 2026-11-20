@@ -2,12 +2,23 @@
 
 package shared
 
-// DependentOn means the fields in field_names are only valid if all fields
+// DependentOn means the fields in field_names are only valid if every
 //
-//	in dependency_field_names are also present
+//	dependency is satisfied
 type DependentOn struct {
-	// The fields that must be present for the primary field_names to be valid
+	// The fields that must all be satisfied for the primary field_names to be valid
+	Dependencies []Dependency `json:"dependencies,omitempty"`
+	// Deprecated: use dependencies. Each name is read as a presence-only dependency.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	DependencyFieldNames []string `json:"dependencyFieldNames,omitempty"`
+}
+
+func (d *DependentOn) GetDependencies() []Dependency {
+	if d == nil {
+		return nil
+	}
+	return d.Dependencies
 }
 
 func (d *DependentOn) GetDependencyFieldNames() []string {

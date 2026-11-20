@@ -52,9 +52,10 @@ type TaskTypeCertify struct {
 	// The ID of the user.
 	IdentityUserID *string `json:"identityUserId,omitempty"`
 	// The outcome of the certification.
-	Outcome     *TaskTypeCertifyOutcome `json:"outcome,omitempty"`
-	OutcomeTime *time.Time              `json:"outcomeTime,omitempty"`
-	Resource    *AppResourceRef         `json:"resource,omitempty"`
+	Outcome       *TaskTypeCertifyOutcome `json:"outcome,omitempty"`
+	OutcomeTime   *time.Time              `json:"outcomeTime,omitempty"`
+	Resource      *AppResourceRef         `json:"resource,omitempty"`
+	ReviewSubject *ReviewSubject          `json:"reviewSubject,omitempty"`
 }
 
 func (t TaskTypeCertify) MarshalJSON() ([]byte, error) {
@@ -129,4 +130,11 @@ func (t *TaskTypeCertify) GetResource() *AppResourceRef {
 		return nil
 	}
 	return t.Resource
+}
+
+func (t *TaskTypeCertify) GetReviewSubject() *ReviewSubject {
+	if t == nil {
+		return nil
+	}
+	return t.ReviewSubject
 }

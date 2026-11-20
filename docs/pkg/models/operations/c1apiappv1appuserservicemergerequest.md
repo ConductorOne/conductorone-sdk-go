@@ -1,0 +1,10 @@
+# C1APIAppV1AppUserServiceMergeRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `AppUserServiceMergeRequest`                                                                   | [*shared.AppUserServiceMergeRequest](../../../pkg/models/shared/appuserservicemergerequest.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `AppID`                                                                                        | `string`                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `TargetAppUserID`                                                                              | `string`                                                                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |

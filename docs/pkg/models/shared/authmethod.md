@@ -1,8 +1,6 @@
 # AuthMethod
 
-Auth method on the connector. Drives the FE connect-flow choice:
- OAUTH2 → redirect via CreateAuthorizeURL; BEARER_TOKEN / CUSTOM_HEADER
- → form dialog via SubmitUserCredential.
+Token-endpoint authentication method. Populated for static clients.
 
 ## Example Usage
 
@@ -11,7 +9,7 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 )
 
-value := shared.AuthMethodMcpServerAuthMethodUnspecified
+value := shared.AuthMethodExternalOAuthClientAuthMethodUnspecified
 
 // Open enum: custom values can be created with a direct type cast
 custom := shared.AuthMethod("custom_value")
@@ -20,12 +18,9 @@ custom := shared.AuthMethod("custom_value")
 
 ## Values
 
-| Name                                        | Value                                       |
-| ------------------------------------------- | ------------------------------------------- |
-| `AuthMethodMcpServerAuthMethodUnspecified`  | MCP_SERVER_AUTH_METHOD_UNSPECIFIED          |
-| `AuthMethodMcpServerAuthMethodNone`         | MCP_SERVER_AUTH_METHOD_NONE                 |
-| `AuthMethodMcpServerAuthMethodBearerToken`  | MCP_SERVER_AUTH_METHOD_BEARER_TOKEN         |
-| `AuthMethodMcpServerAuthMethodOauth2`       | MCP_SERVER_AUTH_METHOD_OAUTH2               |
-| `AuthMethodMcpServerAuthMethodCustomHeader` | MCP_SERVER_AUTH_METHOD_CUSTOM_HEADER        |
-| `AuthMethodMcpServerAuthMethodAwsSigv4`     | MCP_SERVER_AUTH_METHOD_AWS_SIGV4            |
-| `AuthMethodMcpServerAuthMethodBasicAuth`    | MCP_SERVER_AUTH_METHOD_BASIC_AUTH           |
+| Name                                                       | Value                                                      |
+| ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `AuthMethodExternalOAuthClientAuthMethodUnspecified`       | EXTERNAL_O_AUTH_CLIENT_AUTH_METHOD_UNSPECIFIED             |
+| `AuthMethodExternalOAuthClientAuthMethodClientSecretBasic` | EXTERNAL_O_AUTH_CLIENT_AUTH_METHOD_CLIENT_SECRET_BASIC     |
+| `AuthMethodExternalOAuthClientAuthMethodClientSecretPost`  | EXTERNAL_O_AUTH_CLIENT_AUTH_METHOD_CLIENT_SECRET_POST      |
+| `AuthMethodExternalOAuthClientAuthMethodPrivateKeyJwt`     | EXTERNAL_O_AUTH_CLIENT_AUTH_METHOD_PRIVATE_KEY_JWT         |

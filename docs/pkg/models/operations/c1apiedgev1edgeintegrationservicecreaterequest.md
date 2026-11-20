@@ -1,0 +1,9 @@
+# C1APIEdgeV1EdgeIntegrationServiceCreateRequest
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `EdgeIntegrationServiceCreateRequest`                                                                            | [*shared.EdgeIntegrationServiceCreateRequest](../../../pkg/models/shared/edgeintegrationservicecreaterequest.md) | :heavy_minus_sign:                                                                                               | N/A                                                                                                              |
+| `IntegrationAppID`                                                                                               | `string`                                                                                                         | :heavy_check_mark:                                                                                               | N/A                                                                                                              |

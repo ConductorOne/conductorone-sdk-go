@@ -4,6 +4,8 @@ package shared
 
 // The SlackChannel message.
 type SlackChannel struct {
+	// Allow a private channel retry if Slack restricts public channel creation. Defaults to false.
+	AllowPrivateChannelFallback *bool `json:"allowPrivateChannelFallback,omitempty"`
 	// Existing Slack channel ID (e.g. "C0123ABCD"). Set with is_channel_id=true to
 	//  target an existing channel instead of creating one by name.
 	ChannelID *string `json:"channelId,omitempty"`
@@ -15,6 +17,13 @@ type SlackChannel struct {
 	IsChannelID *bool `json:"isChannelId,omitempty"`
 	// Channel name to create/resolve. Required unless is_channel_id is true.
 	Name *string `json:"name,omitempty"`
+}
+
+func (s *SlackChannel) GetAllowPrivateChannelFallback() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.AllowPrivateChannelFallback
 }
 
 func (s *SlackChannel) GetChannelID() *string {

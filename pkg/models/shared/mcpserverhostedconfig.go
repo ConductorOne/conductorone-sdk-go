@@ -2,9 +2,9 @@
 
 package shared
 
-// MCPServerHostedConfigRequireToolApproval - Optional per-server override for tool auto-approval. See
+// MCPServerHostedConfigRequireToolApproval - Deprecated and ignored: set tool_enablement on the register request instead.
 //
-//	MCPServerView.require_tool_approval for semantics.
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 type MCPServerHostedConfigRequireToolApproval string
 
 const (
@@ -82,8 +82,9 @@ type MCPServerHostedConfig struct {
 	McpServerCatalogID *string              `json:"mcpServerCatalogId,omitempty"`
 	None               *MCPServerAuthNone   `json:"none,omitempty"`
 	Oauth2             *MCPServerAuthOAuth2 `json:"oauth2,omitempty"`
-	// Optional per-server override for tool auto-approval. See
-	//  MCPServerView.require_tool_approval for semantics.
+	// Deprecated and ignored: set tool_enablement on the register request instead.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RequireToolApproval *MCPServerHostedConfigRequireToolApproval `json:"requireToolApproval,omitempty"`
 	// Source app ID (optional, for connector-backed servers).
 	SourceAppID *string `json:"sourceAppId,omitempty"`

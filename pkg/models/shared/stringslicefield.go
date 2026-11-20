@@ -6,12 +6,14 @@ package shared
 //
 // This message contains a oneof named view. Only a single field of the following list may be set at a time:
 //   - chipsField
+//   - multiSelectField
 //   - pickerField
 type StringSliceField struct {
 	ChipsField *ChipsField `json:"chipsField,omitempty"`
 	// The defaultValues field.
-	DefaultValues []string     `json:"defaultValues,omitempty"`
-	PickerField   *PickerField `json:"pickerField,omitempty"`
+	DefaultValues    []string          `json:"defaultValues,omitempty"`
+	MultiSelectField *MultiSelectField `json:"multiSelectField,omitempty"`
+	PickerField      *PickerField      `json:"pickerField,omitempty"`
 	// The placeholder field.
 	Placeholder *string        `json:"placeholder,omitempty"`
 	Rules       *RepeatedRules `json:"rules,omitempty"`
@@ -29,6 +31,13 @@ func (s *StringSliceField) GetDefaultValues() []string {
 		return nil
 	}
 	return s.DefaultValues
+}
+
+func (s *StringSliceField) GetMultiSelectField() *MultiSelectField {
+	if s == nil {
+		return nil
+	}
+	return s.MultiSelectField
 }
 
 func (s *StringSliceField) GetPickerField() *PickerField {

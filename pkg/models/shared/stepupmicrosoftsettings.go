@@ -30,6 +30,9 @@ func (e *ValidationMode) IsExact() bool {
 type StepUpMicrosoftSettings struct {
 	// Authentication context IDs (C1-C99). Required for ACRS mode; ignored for OIDC mode.
 	ConditionalAccessIds []string `json:"conditionalAccessIds,omitempty"`
+	// Reject step-up unless the ID token's auth_time claim shows the user signed in after the
+	//  step-up started. Requires the auth_time optional claim on the Entra app registration's ID token.
+	RequireFreshAuthentication *bool `json:"requireFreshAuthentication,omitempty"`
 	// Microsoft Entra tenant ID (GUID or domain). Used for response validation.
 	Tenant *string `json:"tenant,omitempty"`
 	// Validation approach. See MicrosoftValidationMode for details on each mode.
@@ -41,6 +44,13 @@ func (s *StepUpMicrosoftSettings) GetConditionalAccessIds() []string {
 		return nil
 	}
 	return s.ConditionalAccessIds
+}
+
+func (s *StepUpMicrosoftSettings) GetRequireFreshAuthentication() *bool {
+	if s == nil {
+		return nil
+	}
+	return s.RequireFreshAuthentication
 }
 
 func (s *StepUpMicrosoftSettings) GetTenant() *string {

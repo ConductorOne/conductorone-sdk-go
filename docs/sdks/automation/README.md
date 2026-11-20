@@ -4,6 +4,7 @@
 
 ### Available Operations
 
+* [CancelPendingAutomationExecutions](#cancelpendingautomationexecutions) - Cancel Pending Automation Executions
 * [ClearAutomationCircuitBreaker](#clearautomationcircuitbreaker) - Clear Automation Circuit Breaker
 * [CreateAutomation](#createautomation) - Create Automation
 * [DeleteAutomation](#deleteautomation) - Delete Automation
@@ -12,6 +13,68 @@
 * [ListAutomations](#listautomations) - List Automations
 * [ResolvePausedAutomationExecutions](#resolvepausedautomationexecutions) - Resolve Paused Automation Executions
 * [UpdateAutomation](#updateautomation) - Update Automation
+
+## CancelPendingAutomationExecutions
+
+Cancel the queued runs of an automation that have not started yet.
+ Cancellation runs asynchronously; the response returns a bulk action ID
+ for tracking progress. Runs that have already started and runs started
+ manually are not affected. Idempotent: runs that are no longer queued are
+ skipped.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="c1.api.automations.v1.AutomationService.CancelPendingAutomationExecutions" method="post" path="/api/v1/automations/{id}/executions/cancel_pending" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
+	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := conductoronesdkgo.New(
+        conductoronesdkgo.WithSecurity(shared.Security{
+            BearerAuth: "<YOUR_BEARER_TOKEN_HERE>",
+            Oauth: "<YOUR_OAUTH_HERE>",
+        }),
+    )
+
+    res, err := s.Automation.CancelPendingAutomationExecutions(ctx, operations.C1APIAutomationsV1AutomationServiceCancelPendingAutomationExecutionsRequest{
+        ID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.CancelPendingAutomationExecutionsResponse != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                            | Type                                                                                                                                                                                                 | Required                                                                                                                                                                                             | Description                                                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                                                                | :heavy_check_mark:                                                                                                                                                                                   | The context to use for the request.                                                                                                                                                                  |
+| `request`                                                                                                                                                                                            | [operations.C1APIAutomationsV1AutomationServiceCancelPendingAutomationExecutionsRequest](../../pkg/models/operations/c1apiautomationsv1automationservicecancelpendingautomationexecutionsrequest.md) | :heavy_check_mark:                                                                                                                                                                                   | The request object to use for the request.                                                                                                                                                           |
+| `opts`                                                                                                                                                                                               | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                   | The options for this request.                                                                                                                                                                        |
+
+### Response
+
+**[*operations.C1APIAutomationsV1AutomationServiceCancelPendingAutomationExecutionsResponse](../../pkg/models/operations/c1apiautomationsv1automationservicecancelpendingautomationexecutionsresponse.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
 ## ClearAutomationCircuitBreaker
 
@@ -323,6 +386,7 @@ import(
 	"context"
 	"github.com/conductorone/conductorone-sdk-go/pkg/models/shared"
 	conductoronesdkgo "github.com/conductorone/conductorone-sdk-go"
+	"github.com/conductorone/conductorone-sdk-go/pkg/models/operations"
 	"log"
 )
 
@@ -336,7 +400,7 @@ func main() {
         }),
     )
 
-    res, err := s.Automation.ListAutomations(ctx)
+    res, err := s.Automation.ListAutomations(ctx, operations.C1APIAutomationsV1AutomationServiceListAutomationsRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -348,10 +412,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |
-| `opts`                                                       | [][operations.Option](../../pkg/models/operations/option.md) | :heavy_minus_sign:                                           | The options for this request.                                |
+| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                                            | :heavy_check_mark:                                                                                                                                               | The context to use for the request.                                                                                                                              |
+| `request`                                                                                                                                                        | [operations.C1APIAutomationsV1AutomationServiceListAutomationsRequest](../../pkg/models/operations/c1apiautomationsv1automationservicelistautomationsrequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
+| `opts`                                                                                                                                                           | [][operations.Option](../../pkg/models/operations/option.md)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | The options for this request.                                                                                                                                    |
 
 ### Response
 
