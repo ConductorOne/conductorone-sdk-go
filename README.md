@@ -371,6 +371,7 @@ func main() {
 ### [AppUserMergeRules](docs/sdks/appusermergerules/README.md)
 
 * [Get](docs/sdks/appusermergerules/README.md#get) - Get
+* [ListSources](docs/sdks/appusermergerules/README.md#listsources) - List Sources
 * [ResetToDefaults](docs/sdks/appusermergerules/README.md#resettodefaults) - Reset To Defaults
 * [Update](docs/sdks/appusermergerules/README.md#update) - Update
 
@@ -449,6 +450,7 @@ func main() {
 
 ### [AutomationExecutionActions](docs/sdks/automationexecutionactions/README.md)
 
+* [RetryAutomationExecutions](docs/sdks/automationexecutionactions/README.md#retryautomationexecutions) - Retry Automation Executions
 * [TerminateAutomation](docs/sdks/automationexecutionactions/README.md#terminateautomation) - Terminate Automation
 
 ### [AutomationExecutionSearch](docs/sdks/automationexecutionsearch/README.md)

@@ -61,6 +61,33 @@ func (e *EdgeMode) IsExact() bool {
 	return false
 }
 
+// ResponseInspectionProfile - Default inspection profile for hosted egress response bodies. Unspecified
+//
+//	means strict. Requests always use strict inspection. Web balanced requires
+//	a runtime that supports it; older runtimes retain strict inspection.
+type ResponseInspectionProfile string
+
+const (
+	ResponseInspectionProfileEdgeResponseInspectionProfileUnspecified ResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED"
+	ResponseInspectionProfileEdgeResponseInspectionProfileStrict      ResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_STRICT"
+	ResponseInspectionProfileEdgeResponseInspectionProfileWebBalanced ResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED"
+)
+
+func (e ResponseInspectionProfile) ToPointer() *ResponseInspectionProfile {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ResponseInspectionProfile) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED", "EDGE_RESPONSE_INSPECTION_PROFILE_STRICT", "EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED":
+			return true
+		}
+	}
+	return false
+}
+
 // Edge is an application-owned configuration for egress and inference services.
 type Edge struct {
 	// Opt in to short-lived inference Bearer credentials; false by default.
@@ -97,6 +124,11 @@ type Edge struct {
 	// The id field.
 	ID        *string             `json:"id,omitempty"`
 	Inference *EdgeInferenceRoute `json:"inference,omitempty"`
+	// Provider connections saved with or without routes, at most one per catalog entry. update_mask
+	//  "inference_connections" replaces the set. The Edge runtime uses them only to list a provider's
+	//  models; they never serve inference. The Edge runtime service principal must hold each Vault's
+	//  OpenSecret grant.
+	InferenceConnections []EdgeInferenceConnection `json:"inferenceConnections,omitempty"`
 	// The minted inference.invoke entitlement (derived from the Edge id). Empty
 	//  when inference is not in enabled_kinds.
 	InferenceInvokeEntitlementID *string `json:"inferenceInvokeEntitlementId,omitempty"`
@@ -115,6 +147,10 @@ type Edge struct {
 	//  operator can stage an Edge ahead of destination-level policy support,
 	//  which does not exist yet.
 	Mode *EdgeMode `json:"mode,omitempty"`
+	// Default inspection profile for hosted egress response bodies. Unspecified
+	//  means strict. Requests always use strict inspection. Web balanced requires
+	//  a runtime that supports it; older runtimes retain strict inspection.
+	ResponseInspectionProfile *ResponseInspectionProfile `json:"responseInspectionProfile,omitempty"`
 	// The `audience` to send when exchanging a token for access to this Edge.
 	//  Every Edge deployment in the tenant shares it, so it names the service;
 	//  `token_resources` identify its service endpoints.
@@ -235,6 +271,13 @@ func (e *Edge) GetInference() *EdgeInferenceRoute {
 	return e.Inference
 }
 
+func (e *Edge) GetInferenceConnections() []EdgeInferenceConnection {
+	if e == nil {
+		return nil
+	}
+	return e.InferenceConnections
+}
+
 func (e *Edge) GetInferenceInvokeEntitlementID() *string {
 	if e == nil {
 		return nil
@@ -261,6 +304,13 @@ func (e *Edge) GetMode() *EdgeMode {
 		return nil
 	}
 	return e.Mode
+}
+
+func (e *Edge) GetResponseInspectionProfile() *ResponseInspectionProfile {
+	if e == nil {
+		return nil
+	}
+	return e.ResponseInspectionProfile
 }
 
 func (e *Edge) GetTokenAudience() *string {
