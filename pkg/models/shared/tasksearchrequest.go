@@ -81,6 +81,35 @@ func (e *TaskSearchRequestAccountTypes) IsExact() bool {
 	return false
 }
 
+type AttentionCauses string
+
+const (
+	AttentionCausesTaskAttentionCauseUnspecified             AttentionCauses = "TASK_ATTENTION_CAUSE_UNSPECIFIED"
+	AttentionCausesTaskAttentionCauseFailed                  AttentionCauses = "TASK_ATTENTION_CAUSE_FAILED"
+	AttentionCausesTaskAttentionCauseNoAssignee              AttentionCauses = "TASK_ATTENTION_CAUSE_NO_ASSIGNEE"
+	AttentionCausesTaskAttentionCauseWaitingOnIntegration    AttentionCauses = "TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION"
+	AttentionCausesTaskAttentionCauseWaitingForAccount       AttentionCauses = "TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT"
+	AttentionCausesTaskAttentionCauseWaitingOnLock           AttentionCauses = "TASK_ATTENTION_CAUSE_WAITING_ON_LOCK"
+	AttentionCausesTaskAttentionCauseMultipleAppAccounts     AttentionCauses = "TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS"
+	AttentionCausesTaskAttentionCauseSubjectDeleted          AttentionCauses = "TASK_ATTENTION_CAUSE_SUBJECT_DELETED"
+	AttentionCausesTaskAttentionCauseWaitingOnExternalTicket AttentionCauses = "TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET"
+)
+
+func (e AttentionCauses) ToPointer() *AttentionCauses {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *AttentionCauses) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "TASK_ATTENTION_CAUSE_UNSPECIFIED", "TASK_ATTENTION_CAUSE_FAILED", "TASK_ATTENTION_CAUSE_NO_ASSIGNEE", "TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION", "TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT", "TASK_ATTENTION_CAUSE_WAITING_ON_LOCK", "TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS", "TASK_ATTENTION_CAUSE_SUBJECT_DELETED", "TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET":
+			return true
+		}
+	}
+	return false
+}
+
 type CertifyOutcomes string
 
 const (
@@ -347,6 +376,8 @@ type TaskSearchRequest struct {
 	AssignedOrStepApproverUserID *string `json:"assignedOrStepApproverUserId,omitempty"`
 	// Search tasks by  List of UserIDs which are currently assigned these Tasks
 	AssigneesInIds []string `json:"assigneesInIds,omitempty"`
+	// Only stuck tasks with any of these causes. Empty applies no filter. Requires a super admin.
+	AttentionCauses []AttentionCauses `json:"attentionCauses,omitempty"`
 	// Search tasks by certify outcome
 	CertifyOutcomes []CertifyOutcomes `json:"certifyOutcomes,omitempty"`
 	CreatedAfter    *time.Time        `json:"createdAfter,omitempty"`
@@ -370,8 +401,10 @@ type TaskSearchRequest struct {
 	// Whether or not to include deleted tasks.
 	IncludeDeleted *bool `json:"includeDeleted,omitempty"`
 	// Search tasks where the user would see this task in the My Work section
-	MyWorkUserIds     []string `json:"myWorkUserIds,omitempty"`
-	OlderThanDuration *string  `json:"olderThanDuration,omitempty"`
+	MyWorkUserIds []string `json:"myWorkUserIds,omitempty"`
+	// When true, only open tasks that are stuck. False applies no filter. Requires a super admin.
+	NeedsAttention    *bool   `json:"needsAttention,omitempty"`
+	OlderThanDuration *string `json:"olderThanDuration,omitempty"`
 	// Search tasks that were created by any of the users in this array.
 	OpenerIds []string `json:"openerIds,omitempty"`
 	// Search tasks that were opened by this user, or that the user is the subject of.
@@ -519,6 +552,13 @@ func (t *TaskSearchRequest) GetAssigneesInIds() []string {
 	return t.AssigneesInIds
 }
 
+func (t *TaskSearchRequest) GetAttentionCauses() []AttentionCauses {
+	if t == nil {
+		return nil
+	}
+	return t.AttentionCauses
+}
+
 func (t *TaskSearchRequest) GetCertifyOutcomes() []CertifyOutcomes {
 	if t == nil {
 		return nil
@@ -615,6 +655,13 @@ func (t *TaskSearchRequest) GetMyWorkUserIds() []string {
 		return nil
 	}
 	return t.MyWorkUserIds
+}
+
+func (t *TaskSearchRequest) GetNeedsAttention() *bool {
+	if t == nil {
+		return nil
+	}
+	return t.NeedsAttention
 }
 
 func (t *TaskSearchRequest) GetOlderThanDuration() *string {

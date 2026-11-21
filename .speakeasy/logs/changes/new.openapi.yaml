@@ -12787,6 +12787,19 @@ components:
             title: App User Merge Rules Service Get Response
             type: object
             x-speakeasy-name-override: AppUserMergeRulesServiceGetResponse
+        c1.api.app.v1.AppUserMergeRulesServiceListSourcesResponse:
+            description: The AppUserMergeRulesServiceListSourcesResponse message contains the records that make up an account.
+            properties:
+                sources:
+                    description: 'The account''s records: records from the application''s connectors first, then records from other applications.'
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.AppUserSource'
+                    type:
+                        - array
+                        - "null"
+            title: App User Merge Rules Service List Sources Response
+            type: object
+            x-speakeasy-name-override: AppUserMergeRulesServiceListSourcesResponse
         c1.api.app.v1.AppUserMergeRulesServiceResetToDefaultsRequestInput:
             description: The AppUserMergeRulesServiceResetToDefaultsRequest message identifies the application whose rules to reset.
             properties:
@@ -13147,6 +13160,145 @@ components:
             title: App User Service Update Response
             type: object
             x-speakeasy-name-override: AppUserServiceUpdateResponse
+        c1.api.app.v1.AppUserSource:
+            description: One record that makes up an account.
+            properties:
+                kind:
+                    description: Where the record came from.
+                    enum:
+                        - KIND_UNSPECIFIED
+                        - KIND_CONNECTOR
+                        - KIND_EXTERNAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                reason:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReason'
+                        - type: "null"
+                recordId:
+                    description: The record's ID in its source. For a connector record, this is the connector's resource ID without its resource type.
+                    type: string
+                resourceTypeId:
+                    description: For a connector record, the connector resource type of the record, such as "user". Empty for an external record.
+                    type: string
+                sourceId:
+                    description: For a connector record, the ID of the connector. For an external record, the ID of the application the record came from.
+                    type: string
+            title: App User Source
+            type: object
+            x-speakeasy-name-override: AppUserSource
+        c1.api.app.v1.AppUserSourceReason:
+            description: |
+                Why a record is on its account.
+
+                This message contains a oneof named reason. Only a single field of the following list may be set at a time:
+                  - created
+                  - ruleMatch
+                  - merged
+                  - legacy
+                  - resourceIdMatch
+            properties:
+                created:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonCreated'
+                        - type: "null"
+                legacy:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonLegacy'
+                        - type: "null"
+                merged:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonMerged'
+                        - type: "null"
+                placedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                resourceIdMatch:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonResourceIdMatch'
+                        - type: "null"
+                ruleMatch:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonRuleMatch'
+                        - type: "null"
+            title: App User Source Reason
+            type: object
+            x-speakeasy-name-override: AppUserSourceReason
+        c1.api.app.v1.AppUserSourceReasonCreated:
+            description: 'The AppUserSourceReasonCreated message is empty: the account was created from the record.'
+            title: App User Source Reason Created
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonCreated
+        c1.api.app.v1.AppUserSourceReasonLegacy:
+            description: 'The AppUserSourceReasonLegacy message is empty: no reason was recorded when the record was placed.'
+            title: App User Source Reason Legacy
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonLegacy
+        c1.api.app.v1.AppUserSourceReasonMerged:
+            description: The merge that moved a record onto its account.
+            properties:
+                actorUserId:
+                    description: The ID of the user who confirmed the merge.
+                    type: string
+                previousAppUserId:
+                    description: The ID of the account the record was moved off.
+                    type: string
+            title: App User Source Reason Merged
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonMerged
+        c1.api.app.v1.AppUserSourceReasonResourceIdMatch:
+            description: The connector resource ID that joined a record to its account.
+            properties:
+                resourceId:
+                    description: The connector resource ID shared with a record already on the account.
+                    type: string
+            title: App User Source Reason Resource Id Match
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonResourceIdMatch
+        c1.api.app.v1.AppUserSourceReasonRuleMatch:
+            description: |
+                The account merge rule that matched a record to its account.
+
+                This message contains a oneof named rule. Only a single field of the following list may be set at a time:
+                  - builtin
+                  - cel
+            properties:
+                builtin:
+                    description: |-
+                        The built-in rule that matched.
+                        This field is part of the `rule` oneof.
+                        See the documentation for `c1.api.app.v1.AppUserSourceReasonRuleMatch` for more details.
+                    enum:
+                        - APP_USER_MERGE_BUILTIN_RULE_UNSPECIFIED
+                        - APP_USER_MERGE_BUILTIN_RULE_PRIMARY_EMAIL
+                        - APP_USER_MERGE_BUILTIN_RULE_ANY_EMAIL
+                        - APP_USER_MERGE_BUILTIN_RULE_USERNAME
+                    type:
+                        - string
+                        - "null"
+                    x-speakeasy-unknown-values: allow
+                cel:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserMergeCelRule'
+                        - type: "null"
+                matchedField:
+                    description: The field of the incoming record that produced the value, when known.
+                    type: string
+                matchedKey:
+                    description: The value both sides produced.
+                    type: string
+                ruleId:
+                    description: The ID of the rule that matched.
+                    type: string
+                ruleSetVersion:
+                    description: The rule_set_version in force when the record was matched.
+                    format: int64
+                    type: string
+            title: App User Source Reason Rule Match
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonRuleMatch
         c1.api.app.v1.AppUserStatus:
             description: The satus of the applicaiton user.
             properties:
@@ -19756,6 +19908,11 @@ components:
                 isDraft:
                     description: The isDraft field.
                     type: boolean
+                lastRetriedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
                 state:
                     description: The state field.
                     enum:
@@ -21270,6 +21427,49 @@ components:
             title: Resolve Paused Automation Executions Response
             type: object
             x-speakeasy-name-override: ResolvePausedAutomationExecutionsResponse
+        c1.api.automations.v1.RetryAutomationExecutionResult:
+            description: The RetryAutomationExecutionResult message.
+            properties:
+                executionId:
+                    description: The automation execution this result is for.
+                    format: int64
+                    type: string
+                retried:
+                    description: True when the execution was queued to resume from its failed step.
+                    type: boolean
+                skippedReason:
+                    description: Why the execution was not retried. Empty when retried is true.
+                    type: string
+            title: Retry Automation Execution Result
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionResult
+        c1.api.automations.v1.RetryAutomationExecutionsRequest:
+            description: The RetryAutomationExecutionsRequest message.
+            properties:
+                executionIds:
+                    description: The failed automation executions to retry. Up to 50 per request.
+                    items:
+                        format: int64
+                        type: string
+                    type:
+                        - array
+                        - "null"
+            title: Retry Automation Executions Request
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionsRequest
+        c1.api.automations.v1.RetryAutomationExecutionsResponse:
+            description: The RetryAutomationExecutionsResponse message.
+            properties:
+                results:
+                    description: One result per requested execution, in request order.
+                    items:
+                        $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionResult'
+                    type:
+                        - array
+                        - "null"
+            title: Retry Automation Executions Response
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionsResponse
         c1.api.automations.v1.RunAutomation:
             description: |
                 RunAutomation: kick off the execution of an automation template.
@@ -22993,6 +23193,50 @@ components:
             title: Totp Constraints
             type: object
             x-speakeasy-name-override: TOTPConstraints
+        c1.api.credentialvending.v1.CredentialInput:
+            description: |-
+                A credential input described using ConductorOne's shared form field contract.
+                 Discovery includes labels, rendering hints and connector restrictions. When
+                 configuring a requester input, provide the field name, type and supported
+                 rules: string choices, unique string-list choices with item-count bounds,
+                 integer choices or inclusive bounds, or a boolean. Maps are fixed-only.
+                 Provider configuration, including CEL, is not supported for credential inputs.
+                 Names contain 1–256 bytes. Strings contain at most 4096 bytes, allowed
+                 sets and lists at most 1024 entries, and integers must be within the exact JSON
+                 integer range (-9007199254740991 through 9007199254740991). Saved arguments
+                 and requester policies together are limited to 64 KiB.
+            properties:
+                defaultValue:
+                    type:
+                        - string
+                        - number
+                        - object
+                        - array
+                        - boolean
+                        - "null"
+                field:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.form.v1.Field'
+                        - type: "null"
+            required:
+                - field
+            title: Credential Input
+            type: object
+            x-speakeasy-name-override: CredentialInput
+        c1.api.credentialvending.v1.CredentialRequesterArgumentView:
+            description: The connector definition and offering restrictions for one requester input.
+            properties:
+                field:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialInput'
+                        - type: "null"
+                policy:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialInput'
+                        - type: "null"
+            title: Credential Requester Argument View
+            type: object
+            x-speakeasy-name-override: CredentialRequesterArgumentView
         c1.api.cross_app_access.v1.XAAAccessProfile:
             description: XAAAccessProfile is a requestable bundle of scopes for one resource server.
             properties:
@@ -25483,6 +25727,17 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceRoute'
                         - type: "null"
+                inferenceConnections:
+                    description: |-
+                        Provider connections saved with or without routes, at most one per catalog entry. update_mask
+                         "inference_connections" replaces the set. The Edge runtime uses them only to list a provider's
+                         models; they never serve inference. The Edge runtime service principal must hold each Vault's
+                         OpenSecret grant.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceConnection'
+                    type:
+                        - array
+                        - "null"
                 inferenceInvokeEntitlementId:
                     description: |-
                         The minted inference.invoke entitlement (derived from the Edge id). Empty
@@ -25517,6 +25772,17 @@ components:
                         - EDGE_MODE_DISABLED
                         - EDGE_MODE_OBSERVE
                         - EDGE_MODE_ENFORCE
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                responseInspectionProfile:
+                    description: |-
+                        Default inspection profile for hosted egress response bodies. Unspecified
+                         means strict. Requests always use strict inspection. Web balanced requires
+                         a runtime that supports it; older runtimes retain strict inspection.
+                    enum:
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_STRICT
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED
                     type: string
                     x-speakeasy-unknown-values: allow
                 tokenAudience:
@@ -25904,6 +26170,17 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.edge.v1.EdgeEgressRequestMatch'
                         - type: "null"
+                responseInspectionProfile:
+                    description: |-
+                        Response-body inspection override, only applied to ALLOW rules.
+                         Unspecified inherits the Edge's profile; DENY and AUTHZEN clear this field.
+                         Requests always use strict inspection.
+                    enum:
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_STRICT
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED
+                    type: string
+                    x-speakeasy-unknown-values: allow
                 skipContentInspection:
                     description: |-
                         When true, decoding is optional for destinations matching this rule; inspection
@@ -26250,6 +26527,27 @@ components:
             title: Edge Inference Circuit Breaker
             type: object
             x-speakeasy-name-override: EdgeInferenceCircuitBreaker
+        c1.api.edge.v1.EdgeInferenceConnection:
+            description: EdgeInferenceConnection is a Vault-backed credential for one inference catalog provider.
+            properties:
+                catalogEntryId:
+                    description: Catalog entry, e.g. anthropic. Unique within the Edge.
+                    type: string
+                region:
+                    description: The region field.
+                    type: string
+                secretId:
+                    description: The secretId field.
+                    type: string
+                variantId:
+                    description: Catalog variant of the entry; it sets the provider profile and destination.
+                    type: string
+                vaultBoundaryId:
+                    description: The vaultBoundaryId field.
+                    type: string
+            title: Edge Inference Connection
+            type: object
+            x-speakeasy-name-override: EdgeInferenceConnection
         c1.api.edge.v1.EdgeInferenceCredentialFailurePolicy:
             description: The EdgeInferenceCredentialFailurePolicy message.
             properties:
@@ -27975,7 +28273,8 @@ components:
             description: |-
                 EdgeServiceUpdateRequest updates an existing Edge via update_mask. Editable
                  paths: mode, enabled_kinds, egress_rules, egress_unmatched_rule, egress_checks,
-                 credential_injections, inference_routes, allow_inference_bearer_tokens, egress_tls.
+                 credential_injections, inference_routes, inference_connections, allow_inference_bearer_tokens,
+                 egress_tls, response_inspection_profile.
                  The legacy inference mask may clear or replace one graph.
             properties:
                 edge:
@@ -43608,8 +43907,21 @@ components:
                 displayName:
                     description: The displayName field.
                     type: string
+                fixedArgs:
+                    additionalProperties: true
+                    type:
+                        - object
+                        - "null"
+                fixedArgumentDisplayNames:
+                    additionalProperties:
+                        type: string
+                    description: Connector display labels for fixed arguments, keyed by argument name.
+                    type: object
                 id:
                     description: The id field.
+                    type: string
+                inputConfigurationHash:
+                    description: The inputConfigurationHash field.
                     type: string
                 maxDuration:
                     format: duration
@@ -43633,6 +43945,13 @@ components:
                          another user's app account.
                     items:
                         type: string
+                    type:
+                        - array
+                        - "null"
+                requesterArguments:
+                    description: The requesterArguments field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialRequesterArgumentView'
                     type:
                         - array
                         - "null"
@@ -53676,6 +53995,12 @@ components:
                     type:
                         - string
                         - "null"
+                fixedArgs:
+                    additionalProperties: true
+                    readOnly: true
+                    type:
+                        - object
+                        - "null"
                 identityAppUserId:
                     description: The app user tying the recipient to the connector identity.
                     readOnly: true
@@ -54877,6 +55202,33 @@ components:
             title: Task Actions Service Update Request Data Request
             type: object
             x-speakeasy-name-override: TaskActionsServiceUpdateRequestDataRequest
+        c1.api.task.v1.TaskAttention:
+            description: Why an open task cannot progress without intervention.
+            properties:
+                attentionAt:
+                    format: date-time
+                    readOnly: true
+                    type:
+                        - string
+                        - "null"
+                cause:
+                    description: Why the task cannot progress.
+                    enum:
+                        - TASK_ATTENTION_CAUSE_UNSPECIFIED
+                        - TASK_ATTENTION_CAUSE_FAILED
+                        - TASK_ATTENTION_CAUSE_NO_ASSIGNEE
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION
+                        - TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_LOCK
+                        - TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS
+                        - TASK_ATTENTION_CAUSE_SUBJECT_DELETED
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET
+                    readOnly: true
+                    type: string
+                    x-speakeasy-unknown-values: allow
+            title: Task Attention
+            type: object
+            x-speakeasy-name-override: TaskAttention
         c1.api.task.v1.TaskAuditAccessRequestOutcome:
             description: The TaskAuditAccessRequestOutcome message.
             properties:
@@ -56404,7 +56756,7 @@ components:
             description: The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
             properties:
                 paths:
-                    description: A list of paths to expand in the response. May be any combination of "*", "access_review_id", "user_id", "created_by_user_id", "app_id", "app_user_id", "app_entitlement_ids", "step_approver_ids", "approver_ids", "identity_user_id", "insight_ids", "app_user_last_usage", "entitlement_scope_bindings", "scope_role_resources", and "resource".
+                    description: A list of paths to expand in the response. May be any combination of "*", "access_review_id", "user_id", "created_by_user_id", "app_id", "app_user_id", "app_entitlement_ids", "step_approver_ids", "approver_ids", "identity_user_id", "insight_ids", "app_user_last_usage", "entitlement_scope_bindings", "scope_role_resources", "resource", and "credential_issue".
                     items:
                         type: string
                     type:
@@ -56643,6 +56995,24 @@ components:
                     type:
                         - array
                         - "null"
+                attentionCauses:
+                    description: Only stuck tasks with any of these causes. Empty applies no filter. Requires a super admin.
+                    items:
+                        enum:
+                            - TASK_ATTENTION_CAUSE_UNSPECIFIED
+                            - TASK_ATTENTION_CAUSE_FAILED
+                            - TASK_ATTENTION_CAUSE_NO_ASSIGNEE
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION
+                            - TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_LOCK
+                            - TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS
+                            - TASK_ATTENTION_CAUSE_SUBJECT_DELETED
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET
+                        type: string
+                        x-speakeasy-unknown-values: allow
+                    type:
+                        - array
+                        - "null"
                 certifyOutcomes:
                     description: Search tasks by certify outcome
                     items:
@@ -56747,6 +57117,9 @@ components:
                     type:
                         - array
                         - "null"
+                needsAttention:
+                    description: When true, only open tasks that are stuck. False applies no filter. Requires a super admin.
+                    type: boolean
                 olderThanDuration:
                     format: duration
                     type:
@@ -57704,8 +58077,18 @@ components:
                     description: JSONPATH expression indicating the location of the ApproverUsers objects in the expanded array. These are the users who have approved or denied this task.
                     readOnly: true
                     type: string
+                attention:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.TaskAttention'
+                        - type: "null"
                 createdByUserPath:
                     description: JSONPATH expression indicating the location of the object of the User that created the ticket in the expanded array
+                    readOnly: true
+                    type: string
+                credentialIssuePath:
+                    description: |-
+                        JSONPath locating the CredentialIssueView in the response's expanded array.
+                         Present when credential_issue expansion is requested for a credential-issuance task.
                     readOnly: true
                     type: string
                 entitlementsPath:
@@ -64231,6 +64614,36 @@ paths:
                 - AppUsers
             x-speakeasy-group: AppUser
             x-speakeasy-name-override: ListAppUserCredentials
+    /api/v1/apps/{app_id}/app_users/{app_user_id}/sources:
+        get:
+            description: List the records that make up an account, with why each record is on the account.
+            operationId: c1.api.app.v1.AppUserMergeRulesService.ListSources
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The ID of the application.
+                    type: string
+                - in: path
+                  name: app_user_id
+                  required: true
+                  schema:
+                    description: The ID of the account.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.app.v1.AppUserMergeRulesServiceListSourcesResponse'
+                    description: The AppUserMergeRulesServiceListSourcesResponse message contains the records that make up an account.
+            summary: List Sources
+            tags:
+                - App Account Merge Rules
+            x-speakeasy-group: AppUserMergeRules
+            x-speakeasy-name-override: ListSources
+            x-stability-level: draft
     /api/v1/apps/{app_id}/app_users/{target_app_user_id}/merge:
         post:
             description: |-
@@ -73022,6 +73435,29 @@ paths:
                 - Automations
             x-speakeasy-group: AutomationExecutionActions
             x-speakeasy-name-override: TerminateAutomation
+    /api/v1/automation_executions/actions/retry:
+        post:
+            description: |-
+                Retry failed automation executions from the step that failed, without re-running steps that already succeeded.
+                 Executions that are not in a failed state are skipped and reported in the response. Retries run asynchronously.
+            operationId: c1.api.automations.v1.AutomationExecutionActionsService.RetryAutomationExecutions
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionsRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionsResponse'
+                    description: Successful response
+            summary: Retry Automation Executions
+            tags:
+                - Automations
+            x-speakeasy-group: AutomationExecutionActions
+            x-speakeasy-name-override: RetryAutomationExecutions
     /api/v1/automations:
         get:
             description: List all automations in the tenant with pagination support.

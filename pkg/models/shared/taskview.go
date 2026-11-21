@@ -13,9 +13,13 @@ type TaskView struct {
 	// JSONPATH expression indicating the location of the AppUser object in the expanded array
 	AppUserPath *string `json:"appUserPath,omitempty"`
 	// JSONPATH expression indicating the location of the ApproverUsers objects in the expanded array. These are the users who have approved or denied this task.
-	ApproversPath *string `json:"approversPath,omitempty"`
+	ApproversPath *string        `json:"approversPath,omitempty"`
+	Attention     *TaskAttention `json:"attention,omitempty"`
 	// JSONPATH expression indicating the location of the object of the User that created the ticket in the expanded array
 	CreatedByUserPath *string `json:"createdByUserPath,omitempty"`
+	// JSONPath locating the CredentialIssueView in the response's expanded array.
+	//  Present when credential_issue expansion is requested for a credential-issuance task.
+	CredentialIssuePath *string `json:"credentialIssuePath,omitempty"`
 	// JSONPATH expression indicating the location of the Entitlements objects in the expanded array
 	EntitlementsPath *string `json:"entitlementsPath,omitempty"`
 	// JSONPATH expression indicating the location of the User object of the User that this task is targeting in the expanded array. This is the user that is the identity when the target of a task is an app user.
@@ -73,11 +77,25 @@ func (t *TaskView) GetApproversPath() *string {
 	return t.ApproversPath
 }
 
+func (t *TaskView) GetAttention() *TaskAttention {
+	if t == nil {
+		return nil
+	}
+	return t.Attention
+}
+
 func (t *TaskView) GetCreatedByUserPath() *string {
 	if t == nil {
 		return nil
 	}
 	return t.CreatedByUserPath
+}
+
+func (t *TaskView) GetCredentialIssuePath() *string {
+	if t == nil {
+		return nil
+	}
+	return t.CredentialIssuePath
 }
 
 func (t *TaskView) GetEntitlementsPath() *string {
