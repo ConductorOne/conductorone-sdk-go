@@ -180,6 +180,7 @@ type ConductoroneAPI struct {
 	TaskSearch                           *TaskSearch
 	ToolGatesSearch                      *ToolGatesSearch
 	UserSearch                           *UserSearch
+	VirtualMCPServer                     *VirtualMCPServer
 	WebhooksSearch                       *WebhooksSearch
 	WorkloadFederation                   *WorkloadFederation
 	XAAClientAudienceMapping             *XAAClientAudienceMapping
@@ -215,7 +216,6 @@ type ConductoroneAPI struct {
 	UserAttributeManagement              *UserAttributeManagement
 	User                                 *User
 	Vault                                *Vault
-	VirtualMCPServer                     *VirtualMCPServer
 	VirtualMCPToolBinding                *VirtualMCPToolBinding
 	VirtualMCPToolsetBinding             *VirtualMCPToolsetBinding
 	Webhooks                             *Webhooks
@@ -313,9 +313,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk := &ConductoroneAPI{
-		SDKVersion: "1.30.0",
+		SDKVersion: "1.31.0",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 1.30.0 2.918.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
+			UserAgent:  "speakeasy-sdk/go 1.31.0 2.918.3 0.1.0-alpha github.com/conductorone/conductorone-sdk-go",
 			ServerList: ServerList,
 			ServerVariables: []map[string]string{
 				{
@@ -470,6 +470,7 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.TaskSearch = newTaskSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ToolGatesSearch = newToolGatesSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.UserSearch = newUserSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.VirtualMCPServer = newVirtualMCPServer(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.WebhooksSearch = newWebhooksSearch(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.WorkloadFederation = newWorkloadFederation(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.XAAClientAudienceMapping = newXAAClientAudienceMapping(sdk, sdk.sdkConfiguration, sdk.hooks)
@@ -505,7 +506,6 @@ func New(opts ...SDKOption) *ConductoroneAPI {
 	sdk.UserAttributeManagement = newUserAttributeManagement(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.User = newUser(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Vault = newVault(sdk, sdk.sdkConfiguration, sdk.hooks)
-	sdk.VirtualMCPServer = newVirtualMCPServer(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.VirtualMCPToolBinding = newVirtualMCPToolBinding(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.VirtualMCPToolsetBinding = newVirtualMCPToolsetBinding(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.Webhooks = newWebhooks(sdk, sdk.sdkConfiguration, sdk.hooks)

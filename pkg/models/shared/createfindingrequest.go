@@ -2,24 +2,24 @@
 
 package shared
 
-// Severity of the finding. Must be a defined, non-unspecified value.
-type Severity string
+// CreateFindingRequestSeverity - Severity of the finding. Must be a defined, non-unspecified value.
+type CreateFindingRequestSeverity string
 
 const (
-	SeverityFindingSeverityUnspecified Severity = "FINDING_SEVERITY_UNSPECIFIED"
-	SeverityFindingSeverityInfo        Severity = "FINDING_SEVERITY_INFO"
-	SeverityFindingSeverityLow         Severity = "FINDING_SEVERITY_LOW"
-	SeverityFindingSeverityMedium      Severity = "FINDING_SEVERITY_MEDIUM"
-	SeverityFindingSeverityHigh        Severity = "FINDING_SEVERITY_HIGH"
-	SeverityFindingSeverityCritical    Severity = "FINDING_SEVERITY_CRITICAL"
+	CreateFindingRequestSeverityFindingSeverityUnspecified CreateFindingRequestSeverity = "FINDING_SEVERITY_UNSPECIFIED"
+	CreateFindingRequestSeverityFindingSeverityInfo        CreateFindingRequestSeverity = "FINDING_SEVERITY_INFO"
+	CreateFindingRequestSeverityFindingSeverityLow         CreateFindingRequestSeverity = "FINDING_SEVERITY_LOW"
+	CreateFindingRequestSeverityFindingSeverityMedium      CreateFindingRequestSeverity = "FINDING_SEVERITY_MEDIUM"
+	CreateFindingRequestSeverityFindingSeverityHigh        CreateFindingRequestSeverity = "FINDING_SEVERITY_HIGH"
+	CreateFindingRequestSeverityFindingSeverityCritical    CreateFindingRequestSeverity = "FINDING_SEVERITY_CRITICAL"
 )
 
-func (e Severity) ToPointer() *Severity {
+func (e CreateFindingRequestSeverity) ToPointer() *CreateFindingRequestSeverity {
 	return &e
 }
 
 // IsExact returns true if the value matches a known enum value, false otherwise.
-func (e *Severity) IsExact() bool {
+func (e *CreateFindingRequestSeverity) IsExact() bool {
 	if e != nil {
 		switch *e {
 		case "FINDING_SEVERITY_UNSPECIFIED", "FINDING_SEVERITY_INFO", "FINDING_SEVERITY_LOW", "FINDING_SEVERITY_MEDIUM", "FINDING_SEVERITY_HIGH", "FINDING_SEVERITY_CRITICAL":
@@ -61,8 +61,8 @@ type CreateFindingRequest struct {
 	//  this finding.
 	RemediationDescription *string `json:"remediationDescription,omitempty"`
 	// Severity of the finding. Must be a defined, non-unspecified value.
-	Severity     *Severity     `json:"severity,omitempty"`
-	TenantTarget *TenantTarget `json:"tenantTarget,omitempty"`
+	Severity     *CreateFindingRequestSeverity `json:"severity,omitempty"`
+	TenantTarget *TenantTarget                 `json:"tenantTarget,omitempty"`
 }
 
 func (c *CreateFindingRequest) GetAnnotations() map[string]string {
@@ -135,7 +135,7 @@ func (c *CreateFindingRequest) GetRemediationDescription() *string {
 	return c.RemediationDescription
 }
 
-func (c *CreateFindingRequest) GetSeverity() *Severity {
+func (c *CreateFindingRequest) GetSeverity() *CreateFindingRequestSeverity {
 	if c == nil {
 		return nil
 	}

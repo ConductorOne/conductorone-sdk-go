@@ -871,6 +871,8 @@ func (s *Webhooks) List(ctx context.Context, request operations.C1APIWebhooksV1W
 
 // Test
 // Send a sample event to the webhook URL to verify that the endpoint is reachable and responding correctly.
+//
+//	Returns FAILED_PRECONDITION if the webhook has been deleted, and NOT_FOUND if the webhook does not exist.
 func (s *Webhooks) Test(ctx context.Context, request operations.C1APIWebhooksV1WebhooksServiceTestRequest, opts ...operations.Option) (*operations.C1APIWebhooksV1WebhooksServiceTestResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

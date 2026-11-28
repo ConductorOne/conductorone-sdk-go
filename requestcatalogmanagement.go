@@ -1305,6 +1305,8 @@ func (s *RequestCatalogManagement) Delete(ctx context.Context, request operation
 
 // DeleteBundleAutomation - Delete Bundle Automation
 // Delete the bundle automation rule for a catalog, stopping automatic membership syncing.
+//
+//	A deleted bundle automation is no longer returned or reconciled; set it again to create a new one.
 func (s *RequestCatalogManagement) DeleteBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceDeleteBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -2145,7 +2147,7 @@ func (s *RequestCatalogManagement) Get(ctx context.Context, request operations.C
 }
 
 // GetBundleAutomation - Get Bundle Automation
-// Get bundle automation
+// Get bundle automation. A deleted bundle automation is returned as if it had never been created.
 func (s *RequestCatalogManagement) GetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceGetBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
@@ -4452,6 +4454,8 @@ func (s *RequestCatalogManagement) SearchScopeRoleBindingsPerCatalog(ctx context
 
 // SetBundleAutomation - Set Bundle Automation
 // Create or update the bundle automation rule for a catalog that automatically syncs catalog membership.
+//
+//	Setting a deleted bundle automation creates it again as a new bundle automation.
 func (s *RequestCatalogManagement) SetBundleAutomation(ctx context.Context, request operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationRequest, opts ...operations.Option) (*operations.C1APIRequestcatalogV1RequestCatalogManagementServiceSetBundleAutomationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

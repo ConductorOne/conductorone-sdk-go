@@ -6,7 +6,8 @@ package shared
 //
 //	the credential, the terms asked for, and the offering it came from.
 type CredentialIssueTarget struct {
-	Duration *string `json:"duration,omitempty"`
+	Duration  *string        `json:"duration,omitempty"`
+	FixedArgs map[string]any `json:"fixedArgs,omitempty"`
 	// The app user tying the recipient to the connector identity.
 	IdentityAppUserID *string `json:"identityAppUserId,omitempty"`
 	// The connector-side identity the credential is minted against.
@@ -26,6 +27,13 @@ func (c *CredentialIssueTarget) GetDuration() *string {
 		return nil
 	}
 	return c.Duration
+}
+
+func (c *CredentialIssueTarget) GetFixedArgs() map[string]any {
+	if c == nil {
+		return nil
+	}
+	return c.FixedArgs
 }
 
 func (c *CredentialIssueTarget) GetIdentityAppUserID() *string {

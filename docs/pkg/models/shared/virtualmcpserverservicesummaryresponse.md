@@ -1,0 +1,15 @@
+# VirtualMCPServerServiceSummaryResponse
+
+VirtualMCPServerServiceSummaryResponse contains tenant-wide counts for
+ Virtual MCP Servers that are not deleted.
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ActiveCount`                                                                                  | `*int64`                                                                                       | :heavy_minus_sign:                                                                             | Number of active servers.                                                                      |
+| `ActiveWithoutRequirementsCount`                                                               | `*int64`                                                                                       | :heavy_minus_sign:                                                                             | Number of active servers that require neither DPoP nor device trust.                           |
+| `DisabledCount`                                                                                | `*int64`                                                                                       | :heavy_minus_sign:                                                                             | Number of disabled servers.                                                                    |
+| `MappedSources`                                                                                | [][shared.VirtualMCPMappedSource](../../../pkg/models/shared/virtualmcpmappedsource.md)        | :heavy_minus_sign:                                                                             | Distinct mapped sources used by servers. Use these values to build source<br/> filters for Search. |
+| `UsersWithAccessCount`                                                                         | `*int64`                                                                                       | :heavy_minus_sign:                                                                             | Number of distinct users with a `use` grant on at least one active server.                     |

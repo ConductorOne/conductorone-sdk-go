@@ -1,6 +1,7 @@
 # Severity
 
-Severity of the finding. Must be a defined, non-unspecified value.
+Effective severity for new findings from this monitor. This is medium until
+ configured severity is enabled for your tenant, even if another value is stored.
 
 ## Example Usage
 

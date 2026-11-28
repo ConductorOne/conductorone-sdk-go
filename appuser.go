@@ -873,11 +873,14 @@ func (s *AppUser) ListOwnedServiceAccounts(ctx context.Context, request *shared.
 }
 
 // Merge
-// Merge one app user (the source) into another app user in the same app (the target).
+// This endpoint is deprecated and will be removed. Manual app user merges are moving to merge plans.
 //
+//	Merge one app user (the source) into another app user in the same app (the target).
 //	The source's connector and external source records, and its lookup bindings, move to
 //	the target in one transaction. Grants, owners, and the target's identity user binding
 //	stay as they are. The source is removed by the next uplift. A merge cannot be undone.
+//
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppUser) Merge(ctx context.Context, request operations.C1APIAppV1AppUserServiceMergeRequest, opts ...operations.Option) (*operations.C1APIAppV1AppUserServiceMergeResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

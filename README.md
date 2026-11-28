@@ -364,13 +364,14 @@ func main() {
 * [ListAppUserCredentials](docs/sdks/appuser/README.md#listappusercredentials) - List App User Credentials
 * [ListAppUsersForUser](docs/sdks/appuser/README.md#listappusersforuser) - List App Users For User
 * [ListOwnedServiceAccounts](docs/sdks/appuser/README.md#listownedserviceaccounts) - List Owned Service Accounts
-* [Merge](docs/sdks/appuser/README.md#merge) - Merge
+* [~~Merge~~](docs/sdks/appuser/README.md#merge) - Merge :warning: **Deprecated**
 * [Search](docs/sdks/appuser/README.md#search) - Search
 * [Update](docs/sdks/appuser/README.md#update) - Update
 
 ### [AppUserMergeRules](docs/sdks/appusermergerules/README.md)
 
 * [Get](docs/sdks/appusermergerules/README.md#get) - Get
+* [ListSources](docs/sdks/appusermergerules/README.md#listsources) - List Sources
 * [ResetToDefaults](docs/sdks/appusermergerules/README.md#resettodefaults) - Reset To Defaults
 * [Update](docs/sdks/appusermergerules/README.md#update) - Update
 
@@ -449,6 +450,7 @@ func main() {
 
 ### [AutomationExecutionActions](docs/sdks/automationexecutionactions/README.md)
 
+* [RetryAutomationExecutions](docs/sdks/automationexecutionactions/README.md#retryautomationexecutions) - Retry Automation Executions
 * [TerminateAutomation](docs/sdks/automationexecutionactions/README.md#terminateautomation) - Terminate Automation
 
 ### [AutomationExecutionSearch](docs/sdks/automationexecutionsearch/README.md)
@@ -1372,6 +1374,8 @@ func main() {
 * [Delete](docs/sdks/virtualmcpserver/README.md#delete) - Delete
 * [Get](docs/sdks/virtualmcpserver/README.md#get) - Get
 * [List](docs/sdks/virtualmcpserver/README.md#list) - List
+* [Search](docs/sdks/virtualmcpserver/README.md#search) - Search
+* [Summary](docs/sdks/virtualmcpserver/README.md#summary) - Summary
 * [Update](docs/sdks/virtualmcpserver/README.md#update) - Update
 
 ### [VirtualMCPServerMySearch](docs/sdks/virtualmcpservermysearch/README.md)

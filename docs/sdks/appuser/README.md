@@ -8,7 +8,7 @@
 * [ListAppUserCredentials](#listappusercredentials) - List App User Credentials
 * [ListAppUsersForUser](#listappusersforuser) - List App Users For User
 * [ListOwnedServiceAccounts](#listownedserviceaccounts) - List Owned Service Accounts
-* [Merge](#merge) - Merge
+* [~~Merge~~](#merge) - Merge :warning: **Deprecated**
 * [Search](#search) - Search
 * [Update](#update) - Update
 
@@ -244,12 +244,15 @@ func main() {
 | ------------------ | ------------------ | ------------------ |
 | sdkerrors.SDKError | 4XX, 5XX           | \*/\*              |
 
-## Merge
+## ~~Merge~~
 
-Merge one app user (the source) into another app user in the same app (the target).
+This endpoint is deprecated and will be removed. Manual app user merges are moving to merge plans.
+ Merge one app user (the source) into another app user in the same app (the target).
  The source's connector and external source records, and its lookup bindings, move to
  the target in one transaction. Grants, owners, and the target's identity user binding
  stay as they are. The source is removed by the next uplift. A merge cannot be undone.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

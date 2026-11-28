@@ -2,16 +2,56 @@
 
 package shared
 
+// ConflictMonitorUpdateRequestSeverity - Configured severity for new findings. Unset preserves the stored value.
+//
+//	Explicit values replace the stored configuration, even when responses use medium.
+//	Monitor responses and new findings use medium until configured severity is
+//	enabled for your tenant.
+type ConflictMonitorUpdateRequestSeverity string
+
+const (
+	ConflictMonitorUpdateRequestSeverityFindingSeverityUnspecified ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_UNSPECIFIED"
+	ConflictMonitorUpdateRequestSeverityFindingSeverityInfo        ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_INFO"
+	ConflictMonitorUpdateRequestSeverityFindingSeverityLow         ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_LOW"
+	ConflictMonitorUpdateRequestSeverityFindingSeverityMedium      ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_MEDIUM"
+	ConflictMonitorUpdateRequestSeverityFindingSeverityHigh        ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_HIGH"
+	ConflictMonitorUpdateRequestSeverityFindingSeverityCritical    ConflictMonitorUpdateRequestSeverity = "FINDING_SEVERITY_CRITICAL"
+)
+
+func (e ConflictMonitorUpdateRequestSeverity) ToPointer() *ConflictMonitorUpdateRequestSeverity {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ConflictMonitorUpdateRequestSeverity) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FINDING_SEVERITY_UNSPECIFIED", "FINDING_SEVERITY_INFO", "FINDING_SEVERITY_LOW", "FINDING_SEVERITY_MEDIUM", "FINDING_SEVERITY_HIGH", "FINDING_SEVERITY_CRITICAL":
+			return true
+		}
+	}
+	return false
+}
+
 // ConflictMonitorUpdateRequest - The request message for updating an existing conflict monitor.
 type ConflictMonitorUpdateRequest struct {
 	// The updated description for the conflict monitor.
 	Description *string `json:"description,omitempty"`
 	// The updated human-readable name for the conflict monitor.
 	DisplayName *string `json:"displayName,omitempty"`
-	// When true, the rule flags users who are in set A but NOT in set B ("is not
-	//  in"), instead of the default A-and-B intersection.
+	// Deprecated: use rule. Read only when rule is unset. When true, the rule
+	//  flags users who are in set A but NOT in set B ("is not in"), instead of
+	//  the default A-and-B intersection.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	NegateGroupB       *bool                             `json:"negateGroupB,omitempty"`
 	NotificationConfig *AccessConflictNotificationConfig `json:"notificationConfig,omitempty"`
+	Rule               *ConflictMonitorRule              `json:"rule,omitempty"`
+	// Configured severity for new findings. Unset preserves the stored value.
+	//  Explicit values replace the stored configuration, even when responses use medium.
+	//  Monitor responses and new findings use medium until configured severity is
+	//  enabled for your tenant.
+	Severity *ConflictMonitorUpdateRequestSeverity `json:"severity,omitempty"`
 }
 
 func (c *ConflictMonitorUpdateRequest) GetDescription() *string {
@@ -40,4 +80,18 @@ func (c *ConflictMonitorUpdateRequest) GetNotificationConfig() *AccessConflictNo
 		return nil
 	}
 	return c.NotificationConfig
+}
+
+func (c *ConflictMonitorUpdateRequest) GetRule() *ConflictMonitorRule {
+	if c == nil {
+		return nil
+	}
+	return c.Rule
+}
+
+func (c *ConflictMonitorUpdateRequest) GetSeverity() *ConflictMonitorUpdateRequestSeverity {
+	if c == nil {
+		return nil
+	}
+	return c.Severity
 }

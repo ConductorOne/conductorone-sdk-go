@@ -379,6 +379,7 @@ func main() {
 ## DeleteBundleAutomation
 
 Delete the bundle automation rule for a catalog, stopping automatic membership syncing.
+ A deleted bundle automation is no longer returned or reconciled; set it again to create a new one.
 
 ### Example Usage
 
@@ -612,7 +613,7 @@ func main() {
 
 ## GetBundleAutomation
 
-Get bundle automation
+Get bundle automation. A deleted bundle automation is returned as if it had never been created.
 
 ### Example Usage
 
@@ -1256,6 +1257,7 @@ func main() {
 ## SetBundleAutomation
 
 Create or update the bundle automation rule for a catalog that automatically syncs catalog membership.
+ Setting a deleted bundle automation creates it again as a new bundle automation.
 
 ### Example Usage
 

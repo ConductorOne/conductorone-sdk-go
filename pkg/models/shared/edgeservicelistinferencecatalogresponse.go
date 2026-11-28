@@ -5,6 +5,12 @@ package shared
 // EdgeServiceListInferenceCatalogResponse contains every catalog entry.
 type EdgeServiceListInferenceCatalogResponse struct {
 	CapabilitySummary *EdgeCapabilitySummary `json:"capabilitySummary,omitempty"`
+	// Models each saved provider connection reported through its Edge, as last discovered, including for an Edge
+	//  that is off. Only suggestions. Empty unless model discovery is enabled for the tenant.
+	DiscoveredConnectionModels []EdgeInferenceConnectionDiscoveredModels `json:"discoveredConnectionModels,omitempty"`
+	// Models each saved inference target reported through its Edge, as last discovered. Only suggestions: an
+	//  entry here does not change how a route is served. Empty unless model discovery is enabled for the tenant.
+	DiscoveredTargetModels []EdgeInferenceTargetDiscoveredModels `json:"discoveredTargetModels,omitempty"`
 	// The entries field.
 	Entries []EdgeInferenceCatalogEntry `json:"entries,omitempty"`
 	// C1's registered models grouped by family, with the ways an Edge can serve each.
@@ -18,6 +24,20 @@ func (e *EdgeServiceListInferenceCatalogResponse) GetCapabilitySummary() *EdgeCa
 		return nil
 	}
 	return e.CapabilitySummary
+}
+
+func (e *EdgeServiceListInferenceCatalogResponse) GetDiscoveredConnectionModels() []EdgeInferenceConnectionDiscoveredModels {
+	if e == nil {
+		return nil
+	}
+	return e.DiscoveredConnectionModels
+}
+
+func (e *EdgeServiceListInferenceCatalogResponse) GetDiscoveredTargetModels() []EdgeInferenceTargetDiscoveredModels {
+	if e == nil {
+		return nil
+	}
+	return e.DiscoveredTargetModels
 }
 
 func (e *EdgeServiceListInferenceCatalogResponse) GetEntries() []EdgeInferenceCatalogEntry {
