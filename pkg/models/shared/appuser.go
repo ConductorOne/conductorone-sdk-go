@@ -117,8 +117,12 @@ type AppUser struct {
 	NhiDetail *string `json:"nhiDetail,omitempty"`
 	// NHI classification when this app user carries the non-human-identity trait.
 	//  Read-only; translated from the model's nhi_trait at the API boundary.
-	NhiType   *AppUserNhiType `json:"nhiType,omitempty"`
-	Profile   map[string]any  `json:"profile,omitempty"`
+	NhiType *AppUserNhiType `json:"nhiType,omitempty"`
+	Profile map[string]any  `json:"profile,omitempty"`
+	// The connectors and other applications this account has records from, with each record's ID: the
+	//  application's connectors first, then other applications, each sorted by ID. Reasons aren't included here;
+	//  ListSources returns each record with the reason it's on the account.
+	Sources   []AppUserSource `json:"sources,omitempty"`
 	Status    *AppUserStatus  `json:"status,omitempty"`
 	UpdatedAt *time.Time      `json:"updatedAt,omitempty"`
 	// The username field of the application user.
@@ -241,6 +245,13 @@ func (a *AppUser) GetProfile() map[string]any {
 		return nil
 	}
 	return a.Profile
+}
+
+func (a *AppUser) GetSources() []AppUserSource {
+	if a == nil {
+		return nil
+	}
+	return a.Sources
 }
 
 func (a *AppUser) GetStatus() *AppUserStatus {

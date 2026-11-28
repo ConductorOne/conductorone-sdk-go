@@ -79,6 +79,33 @@ func (e *ExemptResponseCredentialKinds) IsExact() bool {
 	return false
 }
 
+// EdgeEgressRuleResponseInspectionProfile - Response-body inspection override, only applied to ALLOW rules.
+//
+//	Unspecified inherits the Edge's profile; DENY and AUTHZEN clear this field.
+//	Requests always use strict inspection.
+type EdgeEgressRuleResponseInspectionProfile string
+
+const (
+	EdgeEgressRuleResponseInspectionProfileEdgeResponseInspectionProfileUnspecified EdgeEgressRuleResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED"
+	EdgeEgressRuleResponseInspectionProfileEdgeResponseInspectionProfileStrict      EdgeEgressRuleResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_STRICT"
+	EdgeEgressRuleResponseInspectionProfileEdgeResponseInspectionProfileWebBalanced EdgeEgressRuleResponseInspectionProfile = "EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED"
+)
+
+func (e EdgeEgressRuleResponseInspectionProfile) ToPointer() *EdgeEgressRuleResponseInspectionProfile {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *EdgeEgressRuleResponseInspectionProfile) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED", "EDGE_RESPONSE_INSPECTION_PROFILE_STRICT", "EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED":
+			return true
+		}
+	}
+	return false
+}
+
 // The EdgeEgressRule message.
 //
 // This message contains a oneof named pdp. Only a single field of the following list may be set at a time:
@@ -123,6 +150,10 @@ type EdgeEgressRule struct {
 	MaxInspectedBodyBytes *string                 `json:"maxInspectedBodyBytes,omitempty"`
 	Principal             *EdgeEgressPrincipal    `json:"principal,omitempty"`
 	Request               *EdgeEgressRequestMatch `json:"request,omitempty"`
+	// Response-body inspection override, only applied to ALLOW rules.
+	//  Unspecified inherits the Edge's profile; DENY and AUTHZEN clear this field.
+	//  Requests always use strict inspection.
+	ResponseInspectionProfile *EdgeEgressRuleResponseInspectionProfile `json:"responseInspectionProfile,omitempty"`
 	// When true, decoding is optional for destinations matching this rule; inspection
 	//  is not. Despite the name, this does NOT skip content inspection: every detector,
 	//  guardrail and header scan still runs and any finding still denies. It only
@@ -204,6 +235,13 @@ func (e *EdgeEgressRule) GetRequest() *EdgeEgressRequestMatch {
 		return nil
 	}
 	return e.Request
+}
+
+func (e *EdgeEgressRule) GetResponseInspectionProfile() *EdgeEgressRuleResponseInspectionProfile {
+	if e == nil {
+		return nil
+	}
+	return e.ResponseInspectionProfile
 }
 
 func (e *EdgeEgressRule) GetSkipContentInspection() *bool {

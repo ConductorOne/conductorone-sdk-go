@@ -9,10 +9,15 @@ type CredentialOfferingView struct {
 	// The appId field.
 	AppID *string `json:"appId,omitempty"`
 	// The displayName field.
-	DisplayName *string `json:"displayName,omitempty"`
+	DisplayName *string        `json:"displayName,omitempty"`
+	FixedArgs   map[string]any `json:"fixedArgs,omitempty"`
+	// Connector display labels for fixed arguments, keyed by argument name.
+	FixedArgumentDisplayNames map[string]string `json:"fixedArgumentDisplayNames,omitempty"`
 	// The id field.
-	ID          *string `json:"id,omitempty"`
-	MaxDuration *string `json:"maxDuration,omitempty"`
+	ID *string `json:"id,omitempty"`
+	// The inputConfigurationHash field.
+	InputConfigurationHash *string `json:"inputConfigurationHash,omitempty"`
+	MaxDuration            *string `json:"maxDuration,omitempty"`
 	// The Access Profile that publishes this offering. An offering can be
 	//  published through multiple profiles, so requests must retain this binding.
 	RequestCatalogID *string `json:"requestCatalogId,omitempty"`
@@ -23,7 +28,9 @@ type CredentialOfferingView struct {
 	//  populated only when the search has a target user. It never includes
 	//  another user's app account.
 	RequesterAppUserIds []string `json:"requesterAppUserIds,omitempty"`
-	RetrievalWindow     *string  `json:"retrievalWindow,omitempty"`
+	// The requesterArguments field.
+	RequesterArguments []CredentialRequesterArgumentView `json:"requesterArguments,omitempty"`
+	RetrievalWindow    *string                           `json:"retrievalWindow,omitempty"`
 }
 
 func (c *CredentialOfferingView) GetAllowedViews() *int {
@@ -47,11 +54,32 @@ func (c *CredentialOfferingView) GetDisplayName() *string {
 	return c.DisplayName
 }
 
+func (c *CredentialOfferingView) GetFixedArgs() map[string]any {
+	if c == nil {
+		return nil
+	}
+	return c.FixedArgs
+}
+
+func (c *CredentialOfferingView) GetFixedArgumentDisplayNames() map[string]string {
+	if c == nil {
+		return nil
+	}
+	return c.FixedArgumentDisplayNames
+}
+
 func (c *CredentialOfferingView) GetID() *string {
 	if c == nil {
 		return nil
 	}
 	return c.ID
+}
+
+func (c *CredentialOfferingView) GetInputConfigurationHash() *string {
+	if c == nil {
+		return nil
+	}
+	return c.InputConfigurationHash
 }
 
 func (c *CredentialOfferingView) GetMaxDuration() *string {
@@ -80,6 +108,13 @@ func (c *CredentialOfferingView) GetRequesterAppUserIds() []string {
 		return nil
 	}
 	return c.RequesterAppUserIds
+}
+
+func (c *CredentialOfferingView) GetRequesterArguments() []CredentialRequesterArgumentView {
+	if c == nil {
+		return nil
+	}
+	return c.RequesterArguments
 }
 
 func (c *CredentialOfferingView) GetRetrievalWindow() *string {

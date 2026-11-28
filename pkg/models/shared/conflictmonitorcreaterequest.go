@@ -2,6 +2,36 @@
 
 package shared
 
+// ConflictMonitorCreateRequestSeverity - Configured severity for new findings. Defaults to medium when unset.
+//
+//	The value is stored, but monitor responses and new findings use medium until
+//	configured severity is enabled for your tenant.
+type ConflictMonitorCreateRequestSeverity string
+
+const (
+	ConflictMonitorCreateRequestSeverityFindingSeverityUnspecified ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_UNSPECIFIED"
+	ConflictMonitorCreateRequestSeverityFindingSeverityInfo        ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_INFO"
+	ConflictMonitorCreateRequestSeverityFindingSeverityLow         ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_LOW"
+	ConflictMonitorCreateRequestSeverityFindingSeverityMedium      ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_MEDIUM"
+	ConflictMonitorCreateRequestSeverityFindingSeverityHigh        ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_HIGH"
+	ConflictMonitorCreateRequestSeverityFindingSeverityCritical    ConflictMonitorCreateRequestSeverity = "FINDING_SEVERITY_CRITICAL"
+)
+
+func (e ConflictMonitorCreateRequestSeverity) ToPointer() *ConflictMonitorCreateRequestSeverity {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ConflictMonitorCreateRequestSeverity) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FINDING_SEVERITY_UNSPECIFIED", "FINDING_SEVERITY_INFO", "FINDING_SEVERITY_LOW", "FINDING_SEVERITY_MEDIUM", "FINDING_SEVERITY_HIGH", "FINDING_SEVERITY_CRITICAL":
+			return true
+		}
+	}
+	return false
+}
+
 // ConflictMonitorCreateRequest - The request message for creating a new conflict monitor.
 type ConflictMonitorCreateRequest struct {
 	// An optional description explaining the purpose of this Separation of Duty rule.
@@ -9,6 +39,11 @@ type ConflictMonitorCreateRequest struct {
 	// The human-readable name for the conflict monitor.
 	DisplayName        string                            `json:"displayName"`
 	NotificationConfig *AccessConflictNotificationConfig `json:"notificationConfig,omitempty"`
+	Rule               *ConflictMonitorRule              `json:"rule,omitempty"`
+	// Configured severity for new findings. Defaults to medium when unset.
+	//  The value is stored, but monitor responses and new findings use medium until
+	//  configured severity is enabled for your tenant.
+	Severity *ConflictMonitorCreateRequestSeverity `json:"severity,omitempty"`
 }
 
 func (c *ConflictMonitorCreateRequest) GetDescription() *string {
@@ -30,4 +65,18 @@ func (c *ConflictMonitorCreateRequest) GetNotificationConfig() *AccessConflictNo
 		return nil
 	}
 	return c.NotificationConfig
+}
+
+func (c *ConflictMonitorCreateRequest) GetRule() *ConflictMonitorRule {
+	if c == nil {
+		return nil
+	}
+	return c.Rule
+}
+
+func (c *ConflictMonitorCreateRequest) GetSeverity() *ConflictMonitorCreateRequestSeverity {
+	if c == nil {
+		return nil
+	}
+	return c.Severity
 }

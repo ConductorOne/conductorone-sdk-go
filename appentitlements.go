@@ -881,7 +881,10 @@ func (s *AppEntitlements) CreateAutomation(ctx context.Context, request operatio
 }
 
 // Delete
-// Delete an app entitlement by ID.
+// Delete an app entitlement by ID. Returns 404 Not Found when the app has no
+//
+//	entitlement with that ID. Deleting an entitlement that is already deleted
+//	succeeds and changes nothing.
 func (s *AppEntitlements) Delete(ctx context.Context, request operations.C1APIAppV1AppEntitlementsDeleteRequest, opts ...operations.Option) (*operations.C1APIAppV1AppEntitlementsDeleteResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{

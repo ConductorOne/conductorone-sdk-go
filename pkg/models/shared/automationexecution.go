@@ -53,7 +53,8 @@ type AutomationExecution struct {
 	// The id field.
 	ID *int64 `integer:"string" json:"id,omitempty"`
 	// The isDraft field.
-	IsDraft *bool `json:"isDraft,omitempty"`
+	IsDraft       *bool      `json:"isDraft,omitempty"`
+	LastRetriedAt *time.Time `json:"lastRetriedAt,omitempty"`
 	// The state field.
 	State     *AutomationExecutionState `json:"state,omitempty"`
 	UpdatedAt *time.Time                `json:"updatedAt,omitempty"`
@@ -131,6 +132,13 @@ func (a *AutomationExecution) GetIsDraft() *bool {
 		return nil
 	}
 	return a.IsDraft
+}
+
+func (a *AutomationExecution) GetLastRetriedAt() *time.Time {
+	if a == nil {
+		return nil
+	}
+	return a.LastRetriedAt
 }
 
 func (a *AutomationExecution) GetState() *AutomationExecutionState {

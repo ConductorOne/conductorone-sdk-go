@@ -15,10 +15,10 @@ toolOutput := shared.CreateToolOutputStr(string{/* values here */})
 toolOutput := shared.CreateToolOutputNumber(float64{/* values here */})
 ```
 
-### Three
+### GatedToolCallTarget3
 
 ```go
-toolOutput := shared.CreateToolOutputThree(shared.Three{/* values here */})
+toolOutput := shared.CreateToolOutputGatedToolCallTarget3(shared.GatedToolCallTarget3{/* values here */})
 ```
 
 ### 
@@ -43,8 +43,8 @@ switch toolOutput.Type {
 		// toolOutput.Str is populated
 	case shared.ToolOutputTypeNumber:
 		// toolOutput.Number is populated
-	case shared.ToolOutputTypeThree:
-		// toolOutput.Three is populated
+	case shared.ToolOutputTypeGatedToolCallTarget3:
+		// toolOutput.GatedToolCallTarget3 is populated
 	case shared.ToolOutputTypeArrayOfAny:
 		// toolOutput.ArrayOfAny is populated
 	case shared.ToolOutputTypeBoolean:

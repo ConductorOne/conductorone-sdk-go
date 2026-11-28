@@ -63,7 +63,7 @@ type EdgeInferenceCatalogEntry struct {
 	IconKey *string `json:"iconKey,omitempty"`
 	// Entry identifier.
 	ID *string `json:"id,omitempty"`
-	// Content type the credential secret must have for API key entries.
+	// Required content type for a Vault credential secret used by this entry.
 	SecretContentType *string `json:"secretContentType,omitempty"`
 	// The variants field.
 	Variants []EdgeInferenceCatalogVariant `json:"variants,omitempty"`

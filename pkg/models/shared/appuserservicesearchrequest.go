@@ -166,8 +166,14 @@ type AppUserServiceSearchRequest struct {
 	// A list of app user IDs to remove from the results.
 	ExcludeAppUserIds []string `json:"excludeAppUserIds,omitempty"`
 	// When true, excludes app users belonging to soft-deleted apps.
-	ExcludeDeletedApps *bool              `json:"excludeDeletedApps,omitempty"`
-	ExpandMask         *AppUserExpandMask `json:"expandMask,omitempty"`
+	ExcludeDeletedApps *bool `json:"excludeDeletedApps,omitempty"`
+	// Remove accounts with a record from any of these other applications.
+	ExcludeSourceAppIds []string `json:"excludeSourceAppIds,omitempty"`
+	// Remove accounts with a record from any of these connectors of the application. Together with
+	//  exclude_source_app_ids, this finds accounts that share no source with a given set, such as accounts that
+	//  could be merged with another.
+	ExcludeSourceConnectorIds []string           `json:"excludeSourceConnectorIds,omitempty"`
+	ExpandMask                *AppUserExpandMask `json:"expandMask,omitempty"`
 	// Restrict to app users whose NHI trait classification (nhi_type) matches one of
 	//  these values. When empty, nhi_type is not used as a filter.
 	NhiTypes []NhiTypes `json:"nhiTypes,omitempty"`
@@ -181,6 +187,13 @@ type AppUserServiceSearchRequest struct {
 	Refs []AppUserRef `json:"refs,omitempty"`
 	// Ordering of the results. Defaults to display-name ordering.
 	SortBy *SortBy `json:"sortBy,omitempty"`
+	// Restrict results to accounts with a record from at least one of these other applications,
+	//  whose accounts are bound to this application, or from one of the connectors in source_connector_ids.
+	SourceAppIds []string `json:"sourceAppIds,omitempty"`
+	// Restrict results to accounts with a record from at least one of these connectors of the
+	//  application, or from at least one of the applications in source_app_ids. When both are
+	//  empty, sources aren't used to include accounts.
+	SourceConnectorIds []string `json:"sourceConnectorIds,omitempty"`
 	// A list of user IDs to restrict the search by.
 	UserIds []string `json:"userIds,omitempty"`
 	// When true, restrict results to app users that have at least one open finding
@@ -261,6 +274,20 @@ func (a *AppUserServiceSearchRequest) GetExcludeDeletedApps() *bool {
 	return a.ExcludeDeletedApps
 }
 
+func (a *AppUserServiceSearchRequest) GetExcludeSourceAppIds() []string {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludeSourceAppIds
+}
+
+func (a *AppUserServiceSearchRequest) GetExcludeSourceConnectorIds() []string {
+	if a == nil {
+		return nil
+	}
+	return a.ExcludeSourceConnectorIds
+}
+
 func (a *AppUserServiceSearchRequest) GetExpandMask() *AppUserExpandMask {
 	if a == nil {
 		return nil
@@ -308,6 +335,20 @@ func (a *AppUserServiceSearchRequest) GetSortBy() *SortBy {
 		return nil
 	}
 	return a.SortBy
+}
+
+func (a *AppUserServiceSearchRequest) GetSourceAppIds() []string {
+	if a == nil {
+		return nil
+	}
+	return a.SourceAppIds
+}
+
+func (a *AppUserServiceSearchRequest) GetSourceConnectorIds() []string {
+	if a == nil {
+		return nil
+	}
+	return a.SourceConnectorIds
 }
 
 func (a *AppUserServiceSearchRequest) GetUserIds() []string {

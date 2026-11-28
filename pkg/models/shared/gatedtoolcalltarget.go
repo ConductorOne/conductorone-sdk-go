@@ -8,36 +8,39 @@ import (
 	"github.com/conductorone/conductorone-sdk-go/pkg/utils"
 )
 
-type Three struct {
+type GatedToolCallTarget3 struct {
 }
 
-func (t Three) MarshalJSON() ([]byte, error) {
-	return utils.MarshalJSON(t, "", false)
+func (g GatedToolCallTarget3) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(g, "", false)
 }
 
-func (t *Three) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
+func (g *GatedToolCallTarget3) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
+// #region class-body-gatedtoolcalltarget3
+// #endregion class-body-gatedtoolcalltarget3
+
 type ToolOutputType string
 
 const (
-	ToolOutputTypeStr        ToolOutputType = "str"
-	ToolOutputTypeNumber     ToolOutputType = "number"
-	ToolOutputTypeThree      ToolOutputType = "3"
-	ToolOutputTypeArrayOfAny ToolOutputType = "arrayOfAny"
-	ToolOutputTypeBoolean    ToolOutputType = "boolean"
+	ToolOutputTypeStr                  ToolOutputType = "str"
+	ToolOutputTypeNumber               ToolOutputType = "number"
+	ToolOutputTypeGatedToolCallTarget3 ToolOutputType = "GatedToolCallTarget_3"
+	ToolOutputTypeArrayOfAny           ToolOutputType = "arrayOfAny"
+	ToolOutputTypeBoolean              ToolOutputType = "boolean"
 )
 
 type ToolOutput struct {
-	Str        *string  `queryParam:"inline" union:"member"`
-	Number     *float64 `queryParam:"inline" union:"member"`
-	Three      *Three   `queryParam:"inline" union:"member"`
-	ArrayOfAny []any    `queryParam:"inline" union:"member"`
-	Boolean    *bool    `queryParam:"inline" union:"member"`
+	Str                  *string               `queryParam:"inline" union:"member"`
+	Number               *float64              `queryParam:"inline" union:"member"`
+	GatedToolCallTarget3 *GatedToolCallTarget3 `queryParam:"inline" union:"member"`
+	ArrayOfAny           []any                 `queryParam:"inline" union:"member"`
+	Boolean              *bool                 `queryParam:"inline" union:"member"`
 
 	Type ToolOutputType
 }
@@ -60,12 +63,12 @@ func CreateToolOutputNumber(number float64) ToolOutput {
 	}
 }
 
-func CreateToolOutputThree(three Three) ToolOutput {
-	typ := ToolOutputTypeThree
+func CreateToolOutputGatedToolCallTarget3(gatedToolCallTarget3 GatedToolCallTarget3) ToolOutput {
+	typ := ToolOutputTypeGatedToolCallTarget3
 
 	return ToolOutput{
-		Three: &three,
-		Type:  typ,
+		GatedToolCallTarget3: &gatedToolCallTarget3,
+		Type:                 typ,
 	}
 }
 
@@ -103,10 +106,10 @@ func (u *ToolOutput) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var three Three = Three{}
-	if err := utils.UnmarshalJSON(data, &three, "", true, nil); err == nil {
-		u.Three = &three
-		u.Type = ToolOutputTypeThree
+	var gatedToolCallTarget3 GatedToolCallTarget3 = GatedToolCallTarget3{}
+	if err := utils.UnmarshalJSON(data, &gatedToolCallTarget3, "", true, nil); err == nil {
+		u.GatedToolCallTarget3 = &gatedToolCallTarget3
+		u.Type = ToolOutputTypeGatedToolCallTarget3
 		return nil
 	}
 
@@ -136,8 +139,8 @@ func (u ToolOutput) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.Number, "", true)
 	}
 
-	if u.Three != nil {
-		return utils.MarshalJSON(u.Three, "", true)
+	if u.GatedToolCallTarget3 != nil {
+		return utils.MarshalJSON(u.GatedToolCallTarget3, "", true)
 	}
 
 	if u.ArrayOfAny != nil {

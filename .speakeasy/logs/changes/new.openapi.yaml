@@ -1824,14 +1824,30 @@ components:
                     description: The unique identifier of this conflict monitor.
                     type: string
                 negateGroupB:
-                    description: |-
-                        When true, the rule flags users who are in set A but NOT in set B ("is not
-                         in"), instead of the default A-and-B intersection.
+                    deprecated: true
+                    description: 'Deprecated: use rule. True when rule is holds_a_without_b.'
                     type: boolean
                 notificationConfig:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.accessconflict.v1.NotificationConfig'
                         - type: "null"
+                rule:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.accessconflict.v1.ConflictMonitorRule'
+                        - type: "null"
+                severity:
+                    description: |-
+                        Effective severity for new findings from this monitor. This is medium until
+                         configured severity is enabled for your tenant, even if another value is stored.
+                    enum:
+                        - FINDING_SEVERITY_UNSPECIFIED
+                        - FINDING_SEVERITY_INFO
+                        - FINDING_SEVERITY_LOW
+                        - FINDING_SEVERITY_MEDIUM
+                        - FINDING_SEVERITY_HIGH
+                        - FINDING_SEVERITY_CRITICAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
                 updatedAt:
                     format: date-time
                     type:
@@ -1853,6 +1869,24 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.accessconflict.v1.NotificationConfig'
                         - type: "null"
+                rule:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.accessconflict.v1.ConflictMonitorRule'
+                        - type: "null"
+                severity:
+                    description: |-
+                        Configured severity for new findings. Defaults to medium when unset.
+                         The value is stored, but monitor responses and new findings use medium until
+                         configured severity is enabled for your tenant.
+                    enum:
+                        - FINDING_SEVERITY_UNSPECIFIED
+                        - FINDING_SEVERITY_INFO
+                        - FINDING_SEVERITY_LOW
+                        - FINDING_SEVERITY_MEDIUM
+                        - FINDING_SEVERITY_HIGH
+                        - FINDING_SEVERITY_CRITICAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
             required:
                 - displayName
             title: Conflict Monitor Create Request
@@ -1868,6 +1902,16 @@ components:
             title: Conflict Monitor Delete Response
             type: object
             x-speakeasy-name-override: ConflictMonitorDeleteResponse
+        c1.api.accessconflict.v1.ConflictMonitorHoldsAWithoutBRule:
+            description: A conflict when the user holds anything in group A and nothing in group B.
+            title: Conflict Monitor Holds A Without B Rule
+            type: object
+            x-speakeasy-name-override: ConflictMonitorHoldsAWithoutBRule
+        c1.api.accessconflict.v1.ConflictMonitorHoldsBothRule:
+            description: A conflict when the user holds anything in group A and anything in group B.
+            title: Conflict Monitor Holds Both Rule
+            type: object
+            x-speakeasy-name-override: ConflictMonitorHoldsBothRule
         c1.api.accessconflict.v1.ConflictMonitorRef:
             description: The ConflictMonitorRef message.
             properties:
@@ -1877,6 +1921,26 @@ components:
             title: Conflict Monitor Ref
             type: object
             x-speakeasy-name-override: ConflictMonitorRef
+        c1.api.accessconflict.v1.ConflictMonitorRule:
+            description: |
+                The rule a conflict monitor detects. A rule's entitlement lists are set
+                 through the monitor's entitlement bindings (groups A and B).
+
+                This message contains a oneof named type. Only a single field of the following list may be set at a time:
+                  - holdsBoth
+                  - holdsAWithoutB
+            properties:
+                holdsAWithoutB:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.accessconflict.v1.ConflictMonitorHoldsAWithoutBRule'
+                        - type: "null"
+                holdsBoth:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.accessconflict.v1.ConflictMonitorHoldsBothRule'
+                        - type: "null"
+            title: Conflict Monitor Rule
+            type: object
+            x-speakeasy-name-override: ConflictMonitorRule
         c1.api.accessconflict.v1.ConflictMonitorUpdateRequestInput:
             description: The request message for updating an existing conflict monitor.
             properties:
@@ -1887,14 +1951,35 @@ components:
                     description: The updated human-readable name for the conflict monitor.
                     type: string
                 negateGroupB:
+                    deprecated: true
                     description: |-
-                        When true, the rule flags users who are in set A but NOT in set B ("is not
-                         in"), instead of the default A-and-B intersection.
+                        Deprecated: use rule. Read only when rule is unset. When true, the rule
+                         flags users who are in set A but NOT in set B ("is not in"), instead of
+                         the default A-and-B intersection.
                     type: boolean
                 notificationConfig:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.accessconflict.v1.NotificationConfig'
                         - type: "null"
+                rule:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.accessconflict.v1.ConflictMonitorRule'
+                        - type: "null"
+                severity:
+                    description: |-
+                        Configured severity for new findings. Unset preserves the stored value.
+                         Explicit values replace the stored configuration, even when responses use medium.
+                         Monitor responses and new findings use medium until configured severity is
+                         enabled for your tenant.
+                    enum:
+                        - FINDING_SEVERITY_UNSPECIFIED
+                        - FINDING_SEVERITY_INFO
+                        - FINDING_SEVERITY_LOW
+                        - FINDING_SEVERITY_MEDIUM
+                        - FINDING_SEVERITY_HIGH
+                        - FINDING_SEVERITY_CRITICAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
             title: Conflict Monitor Update Request
             type: object
             x-speakeasy-name-override: ConflictMonitorUpdateRequest
@@ -9560,6 +9645,111 @@ components:
             title: Virtual Mcp Server Service List Response
             type: object
             x-speakeasy-name-override: VirtualMCPServerServiceListResponse
+        c1.api.ai_governance.v1.VirtualMCPServerServiceSearchRequest:
+            description: |-
+                VirtualMCPServerServiceSearchRequest searches the tenant's Virtual MCP
+                 Servers. A server must match every filter that is set.
+            properties:
+                assignedToolsOnly:
+                    description: |-
+                        When true, match only servers composed from assigned tools. Cannot be
+                         combined with a mapped source filter.
+                    type: boolean
+                mappedSourceAppId:
+                    description: |-
+                        Application of the mapped source to match. Set together with
+                         mapped_source_connector_id.
+                    type: string
+                mappedSourceConnectorId:
+                    description: |-
+                        Connector of the mapped source to match. Set together with
+                         mapped_source_app_id.
+                    type: string
+                pageSize:
+                    description: Maximum number of results to return. The maximum is 100.
+                    format: int32
+                    type: integer
+                pageToken:
+                    description: Pagination token returned by a previous request.
+                    type: string
+                query:
+                    description: Case-insensitive text that the display name or slug must contain.
+                    type: string
+                requirement:
+                    description: Connection requirements to match. Unspecified matches any requirements.
+                    enum:
+                        - VIRTUAL_MCP_SERVER_REQUIREMENT_FILTER_UNSPECIFIED
+                        - VIRTUAL_MCP_SERVER_REQUIREMENT_FILTER_NONE
+                        - VIRTUAL_MCP_SERVER_REQUIREMENT_FILTER_DPOP_ONLY
+                        - VIRTUAL_MCP_SERVER_REQUIREMENT_FILTER_DEVICE_TRUST
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                states:
+                    description: Lifecycle states to include. Empty matches every state.
+                    items:
+                        enum:
+                            - VIRTUAL_MCP_SERVER_STATE_UNSPECIFIED
+                            - VIRTUAL_MCP_SERVER_STATE_ACTIVE
+                            - VIRTUAL_MCP_SERVER_STATE_DISABLED
+                        type: string
+                        x-speakeasy-unknown-values: allow
+                    type:
+                        - array
+                        - "null"
+            title: Virtual Mcp Server Service Search Request
+            type: object
+            x-speakeasy-name-override: VirtualMCPServerServiceSearchRequest
+        c1.api.ai_governance.v1.VirtualMCPServerServiceSearchResponse:
+            description: |-
+                VirtualMCPServerServiceSearchResponse contains one page of matching Virtual
+                 MCP Servers, ordered by display name and then ID.
+            properties:
+                list:
+                    description: Matching Virtual MCP Servers in this page.
+                    items:
+                        $ref: '#/components/schemas/c1.api.ai_governance.v1.VirtualMCPServer'
+                    type:
+                        - array
+                        - "null"
+                nextPageToken:
+                    description: Token to retrieve the next page. Empty when there are no more results.
+                    type: string
+            title: Virtual Mcp Server Service Search Response
+            type: object
+            x-speakeasy-name-override: VirtualMCPServerServiceSearchResponse
+        c1.api.ai_governance.v1.VirtualMCPServerServiceSummaryResponse:
+            description: |-
+                VirtualMCPServerServiceSummaryResponse contains tenant-wide counts for
+                 Virtual MCP Servers that are not deleted.
+            properties:
+                activeCount:
+                    description: Number of active servers.
+                    format: int64
+                    type: string
+                activeWithoutRequirementsCount:
+                    description: Number of active servers that require neither DPoP nor device trust.
+                    format: int64
+                    type: string
+                disabledCount:
+                    description: Number of disabled servers.
+                    format: int64
+                    type: string
+                mappedSources:
+                    description: |-
+                        Distinct mapped sources used by servers. Use these values to build source
+                         filters for Search.
+                    items:
+                        $ref: '#/components/schemas/c1.api.ai_governance.v1.VirtualMCPMappedSource'
+                    type:
+                        - array
+                        - "null"
+                usersWithAccessCount:
+                    description: Number of distinct users with a `use` grant on at least one active server.
+                    format: int64
+                    type: string
+            title: Virtual Mcp Server Service Summary Response
+            type: object
+            x-speakeasy-name-override: VirtualMCPServerServiceSummaryResponse
         c1.api.ai_governance.v1.VirtualMCPServerServiceUpdateRequestInput:
             description: VirtualMCPServerServiceUpdateRequest updates mutable Virtual MCP Server fields.
             properties:
@@ -12568,6 +12758,17 @@ components:
                     type:
                         - object
                         - "null"
+                sources:
+                    description: |-
+                        The connectors and other applications this account has records from, with each record's ID: the
+                         application's connectors first, then other applications, each sorted by ID. Reasons aren't included here;
+                         ListSources returns each record with the reason it's on the account.
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.AppUserSource'
+                    readOnly: true
+                    type:
+                        - array
+                        - "null"
                 status:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.app.v1.AppUserStatus'
@@ -12787,6 +12988,19 @@ components:
             title: App User Merge Rules Service Get Response
             type: object
             x-speakeasy-name-override: AppUserMergeRulesServiceGetResponse
+        c1.api.app.v1.AppUserMergeRulesServiceListSourcesResponse:
+            description: The AppUserMergeRulesServiceListSourcesResponse message contains the records that make up an account.
+            properties:
+                sources:
+                    description: 'The account''s records: records from the application''s connectors first, then records from other applications.'
+                    items:
+                        $ref: '#/components/schemas/c1.api.app.v1.AppUserSource'
+                    type:
+                        - array
+                        - "null"
+            title: App User Merge Rules Service List Sources Response
+            type: object
+            x-speakeasy-name-override: AppUserMergeRulesServiceListSourcesResponse
         c1.api.app.v1.AppUserMergeRulesServiceResetToDefaultsRequestInput:
             description: The AppUserMergeRulesServiceResetToDefaultsRequest message identifies the application whose rules to reset.
             properties:
@@ -13011,6 +13225,23 @@ components:
                 excludeDeletedApps:
                     description: When true, excludes app users belonging to soft-deleted apps.
                     type: boolean
+                excludeSourceAppIds:
+                    description: Remove accounts with a record from any of these other applications.
+                    items:
+                        type: string
+                    type:
+                        - array
+                        - "null"
+                excludeSourceConnectorIds:
+                    description: |-
+                        Remove accounts with a record from any of these connectors of the application. Together with
+                         exclude_source_app_ids, this finds accounts that share no source with a given set, such as accounts that
+                         could be merged with another.
+                    items:
+                        type: string
+                    type:
+                        - array
+                        - "null"
                 expandMask:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.app.v1.AppUserExpandMask'
@@ -13054,6 +13285,25 @@ components:
                         - APP_USER_SEARCH_SORT_BY_APP
                     type: string
                     x-speakeasy-unknown-values: allow
+                sourceAppIds:
+                    description: |-
+                        Restrict results to accounts with a record from at least one of these other applications,
+                         whose accounts are bound to this application, or from one of the connectors in source_connector_ids.
+                    items:
+                        type: string
+                    type:
+                        - array
+                        - "null"
+                sourceConnectorIds:
+                    description: |-
+                        Restrict results to accounts with a record from at least one of these connectors of the
+                         application, or from at least one of the applications in source_app_ids. When both are
+                         empty, sources aren't used to include accounts.
+                    items:
+                        type: string
+                    type:
+                        - array
+                        - "null"
                 userIds:
                     description: A list of user IDs to restrict the search by.
                     items:
@@ -13147,6 +13397,151 @@ components:
             title: App User Service Update Response
             type: object
             x-speakeasy-name-override: AppUserServiceUpdateResponse
+        c1.api.app.v1.AppUserSource:
+            description: One record that makes up an account.
+            properties:
+                kind:
+                    description: Where the record came from.
+                    enum:
+                        - KIND_UNSPECIFIED
+                        - KIND_CONNECTOR
+                        - KIND_EXTERNAL
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                reason:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReason'
+                        - type: "null"
+                recordId:
+                    description: The record's ID in its source. For a connector record, this is the connector's resource ID without its resource type.
+                    type: string
+                resourceTypeId:
+                    description: For a connector record, the connector resource type of the record, such as "user". Empty for an external record.
+                    type: string
+                sourceId:
+                    description: For a connector record, the ID of the connector. For an external record, the ID of the application the record came from.
+                    type: string
+            title: App User Source
+            type: object
+            x-speakeasy-name-override: AppUserSource
+        c1.api.app.v1.AppUserSourceReason:
+            description: |
+                Why a record is on its account.
+
+                This message contains a oneof named reason. Only a single field of the following list may be set at a time:
+                  - created
+                  - ruleMatch
+                  - merged
+                  - legacy
+                  - resourceIdMatch
+            properties:
+                created:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonCreated'
+                        - type: "null"
+                legacy:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonLegacy'
+                        - type: "null"
+                merged:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonMerged'
+                        - type: "null"
+                placedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                resourceIdMatch:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonResourceIdMatch'
+                        - type: "null"
+                ruleMatch:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserSourceReasonRuleMatch'
+                        - type: "null"
+            title: App User Source Reason
+            type: object
+            x-speakeasy-name-override: AppUserSourceReason
+        c1.api.app.v1.AppUserSourceReasonCreated:
+            description: 'The AppUserSourceReasonCreated message is empty: the account was created from the record.'
+            title: App User Source Reason Created
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonCreated
+        c1.api.app.v1.AppUserSourceReasonLegacy:
+            description: 'The AppUserSourceReasonLegacy message is empty: no reason was recorded when the record was placed.'
+            title: App User Source Reason Legacy
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonLegacy
+        c1.api.app.v1.AppUserSourceReasonMerged:
+            description: The merge that moved a record onto its account.
+            properties:
+                actorUserId:
+                    description: The ID of the user who confirmed the merge.
+                    type: string
+                mergeRecordId:
+                    description: The ID of the merge's record in the merge history.
+                    type: string
+                planId:
+                    description: The ID of the merge batch the merge belonged to.
+                    type: string
+                previousAppUserId:
+                    description: The ID of the account the record was moved off.
+                    type: string
+            title: App User Source Reason Merged
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonMerged
+        c1.api.app.v1.AppUserSourceReasonResourceIdMatch:
+            description: The connector resource ID that joined a record to its account.
+            properties:
+                resourceId:
+                    description: The connector resource ID shared with a record already on the account.
+                    type: string
+            title: App User Source Reason Resource Id Match
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonResourceIdMatch
+        c1.api.app.v1.AppUserSourceReasonRuleMatch:
+            description: |
+                The account merge rule that matched a record to its account.
+
+                This message contains a oneof named rule. Only a single field of the following list may be set at a time:
+                  - builtin
+                  - cel
+            properties:
+                builtin:
+                    description: |-
+                        The built-in rule that matched.
+                        This field is part of the `rule` oneof.
+                        See the documentation for `c1.api.app.v1.AppUserSourceReasonRuleMatch` for more details.
+                    enum:
+                        - APP_USER_MERGE_BUILTIN_RULE_UNSPECIFIED
+                        - APP_USER_MERGE_BUILTIN_RULE_PRIMARY_EMAIL
+                        - APP_USER_MERGE_BUILTIN_RULE_ANY_EMAIL
+                        - APP_USER_MERGE_BUILTIN_RULE_USERNAME
+                    type:
+                        - string
+                        - "null"
+                    x-speakeasy-unknown-values: allow
+                cel:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.app.v1.AppUserMergeCelRule'
+                        - type: "null"
+                matchedField:
+                    description: The field of the incoming record that produced the value, when known.
+                    type: string
+                matchedKey:
+                    description: The value both sides produced.
+                    type: string
+                ruleId:
+                    description: The ID of the rule that matched.
+                    type: string
+                ruleSetVersion:
+                    description: The rule_set_version in force when the record was matched.
+                    format: int64
+                    type: string
+            title: App User Source Reason Rule Match
+            type: object
+            x-speakeasy-name-override: AppUserSourceReasonRuleMatch
         c1.api.app.v1.AppUserStatus:
             description: The satus of the applicaiton user.
             properties:
@@ -19756,6 +20151,11 @@ components:
                 isDraft:
                     description: The isDraft field.
                     type: boolean
+                lastRetriedAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
                 state:
                     description: The state field.
                     enum:
@@ -21270,6 +21670,49 @@ components:
             title: Resolve Paused Automation Executions Response
             type: object
             x-speakeasy-name-override: ResolvePausedAutomationExecutionsResponse
+        c1.api.automations.v1.RetryAutomationExecutionResult:
+            description: The RetryAutomationExecutionResult message.
+            properties:
+                executionId:
+                    description: The automation execution this result is for.
+                    format: int64
+                    type: string
+                retried:
+                    description: True when the execution was queued to resume from its failed step.
+                    type: boolean
+                skippedReason:
+                    description: Why the execution was not retried. Empty when retried is true.
+                    type: string
+            title: Retry Automation Execution Result
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionResult
+        c1.api.automations.v1.RetryAutomationExecutionsRequest:
+            description: The RetryAutomationExecutionsRequest message.
+            properties:
+                executionIds:
+                    description: The failed automation executions to retry. Up to 50 per request.
+                    items:
+                        format: int64
+                        type: string
+                    type:
+                        - array
+                        - "null"
+            title: Retry Automation Executions Request
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionsRequest
+        c1.api.automations.v1.RetryAutomationExecutionsResponse:
+            description: The RetryAutomationExecutionsResponse message.
+            properties:
+                results:
+                    description: One result per requested execution, in request order.
+                    items:
+                        $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionResult'
+                    type:
+                        - array
+                        - "null"
+            title: Retry Automation Executions Response
+            type: object
+            x-speakeasy-name-override: RetryAutomationExecutionsResponse
         c1.api.automations.v1.RunAutomation:
             description: |
                 RunAutomation: kick off the execution of an automation template.
@@ -22993,6 +23436,50 @@ components:
             title: Totp Constraints
             type: object
             x-speakeasy-name-override: TOTPConstraints
+        c1.api.credentialvending.v1.CredentialInput:
+            description: |-
+                A credential input described using ConductorOne's shared form field contract.
+                 Discovery includes labels, rendering hints and connector restrictions. When
+                 configuring a requester input, provide the field name, type and supported
+                 rules: string choices, unique string-list choices with item-count bounds,
+                 integer choices or inclusive bounds, or a boolean. Maps are fixed-only.
+                 Provider configuration, including CEL, is not supported for credential inputs.
+                 Names contain 1–256 bytes. Strings contain at most 4096 bytes, allowed
+                 sets and lists at most 1024 entries, and integers must be within the exact JSON
+                 integer range (-9007199254740991 through 9007199254740991). Saved arguments
+                 and requester policies together are limited to 64 KiB.
+            properties:
+                defaultValue:
+                    type:
+                        - string
+                        - number
+                        - object
+                        - array
+                        - boolean
+                        - "null"
+                field:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.form.v1.Field'
+                        - type: "null"
+            required:
+                - field
+            title: Credential Input
+            type: object
+            x-speakeasy-name-override: CredentialInput
+        c1.api.credentialvending.v1.CredentialRequesterArgumentView:
+            description: The connector definition and offering restrictions for one requester input.
+            properties:
+                field:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialInput'
+                        - type: "null"
+                policy:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialInput'
+                        - type: "null"
+            title: Credential Requester Argument View
+            type: object
+            x-speakeasy-name-override: CredentialRequesterArgumentView
         c1.api.cross_app_access.v1.XAAAccessProfile:
             description: XAAAccessProfile is a requestable bundle of scopes for one resource server.
             properties:
@@ -25483,6 +25970,17 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceRoute'
                         - type: "null"
+                inferenceConnections:
+                    description: |-
+                        Provider connections saved with or without routes, at most one per catalog entry. update_mask
+                         "inference_connections" replaces the set. The Edge runtime uses them only to list a provider's
+                         models; they never serve inference. The Edge runtime service principal must hold each Vault's
+                         OpenSecret grant.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceConnection'
+                    type:
+                        - array
+                        - "null"
                 inferenceInvokeEntitlementId:
                     description: |-
                         The minted inference.invoke entitlement (derived from the Edge id). Empty
@@ -25517,6 +26015,17 @@ components:
                         - EDGE_MODE_DISABLED
                         - EDGE_MODE_OBSERVE
                         - EDGE_MODE_ENFORCE
+                    type: string
+                    x-speakeasy-unknown-values: allow
+                responseInspectionProfile:
+                    description: |-
+                        Default inspection profile for hosted egress response bodies. Unspecified
+                         means strict. Requests always use strict inspection. Web balanced requires
+                         a runtime that supports it; older runtimes retain strict inspection.
+                    enum:
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_STRICT
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED
                     type: string
                     x-speakeasy-unknown-values: allow
                 tokenAudience:
@@ -25904,6 +26413,17 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.edge.v1.EdgeEgressRequestMatch'
                         - type: "null"
+                responseInspectionProfile:
+                    description: |-
+                        Response-body inspection override, only applied to ALLOW rules.
+                         Unspecified inherits the Edge's profile; DENY and AUTHZEN clear this field.
+                         Requests always use strict inspection.
+                    enum:
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_UNSPECIFIED
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_STRICT
+                        - EDGE_RESPONSE_INSPECTION_PROFILE_WEB_BALANCED
+                    type: string
+                    x-speakeasy-unknown-values: allow
                 skipContentInspection:
                     description: |-
                         When true, decoding is optional for destinations matching this rule; inspection
@@ -26120,7 +26640,7 @@ components:
                     description: Entry identifier.
                     type: string
                 secretContentType:
-                    description: Content type the credential secret must have for API key entries.
+                    description: Required content type for a Vault credential secret used by this entry.
                     type: string
                 variants:
                     description: The variants field.
@@ -26250,6 +26770,61 @@ components:
             title: Edge Inference Circuit Breaker
             type: object
             x-speakeasy-name-override: EdgeInferenceCircuitBreaker
+        c1.api.edge.v1.EdgeInferenceConnection:
+            description: EdgeInferenceConnection is a Vault-backed credential for one inference catalog provider.
+            properties:
+                catalogEntryId:
+                    description: Catalog entry, e.g. anthropic. Unique within the Edge.
+                    type: string
+                region:
+                    description: The region field.
+                    type: string
+                secretId:
+                    description: The secretId field.
+                    type: string
+                variantId:
+                    description: Catalog variant of the entry; it sets the provider profile and destination.
+                    type: string
+                vaultBoundaryId:
+                    description: The vaultBoundaryId field.
+                    type: string
+                vertexChat:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceVertexChatConfig'
+                        - type: "null"
+            title: Edge Inference Connection
+            type: object
+            x-speakeasy-name-override: EdgeInferenceConnection
+        c1.api.edge.v1.EdgeInferenceConnectionDiscoveredModels:
+            description: EdgeInferenceConnectionDiscoveredModels is the last discovery result for one saved provider connection.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                connectionId:
+                    description: The connection's catalog provider id (EdgeInferenceConnection.catalog_entry_id).
+                    type: string
+                discoveredAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                edgeId:
+                    description: The edgeId field.
+                    type: string
+                error:
+                    description: Set when the last attempt failed; models then keeps the last successful answer, if any.
+                    type: string
+                models:
+                    description: The models field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceDiscoveredModel'
+                    type:
+                        - array
+                        - "null"
+            title: Edge Inference Connection Discovered Models
+            type: object
+            x-speakeasy-name-override: EdgeInferenceConnectionDiscoveredModels
         c1.api.edge.v1.EdgeInferenceCredentialFailurePolicy:
             description: The EdgeInferenceCredentialFailurePolicy message.
             properties:
@@ -26307,6 +26882,46 @@ components:
             title: Edge Inference Decision Judge
             type: object
             x-speakeasy-name-override: EdgeInferenceDecisionJudge
+        c1.api.edge.v1.EdgeInferenceDiscoveredModel:
+            description: EdgeInferenceDiscoveredModel is one model a target reported.
+            properties:
+                contextLength:
+                    description: Token limits the target reported. Zero means not reported.
+                    format: uint32
+                    type: integer
+                displayName:
+                    description: The displayName field.
+                    type: string
+                id:
+                    description: Upstream model id the target accepts.
+                    type: string
+                knownToC1:
+                    description: True when a C1 registered model already serves this id.
+                    type: boolean
+                maxOutputTokens:
+                    description: The maxOutputTokens field.
+                    format: uint32
+                    type: integer
+                registeredModelId:
+                    description: The registeredModelId field.
+                    type: string
+                suggestedMatchModelId:
+                    description: A registered model C1 believes is the same model; a suggestion only.
+                    type: string
+                vertexAvailability:
+                    description: |-
+                        Last check with the target's credential: available, not_found_or_not_enabled,
+                         forbidden, or unknown. Empty when not reported.
+                    type: string
+                vertexLaunchStage:
+                    description: 'Model Garden launch stage: GA, PUBLIC_PREVIEW, or EXPERIMENTAL, when reported.'
+                    type: string
+                vertexNeedsAccess:
+                    description: True when Model Garden lists a request-access step for the model.
+                    type: boolean
+            title: Edge Inference Discovered Model
+            type: object
+            x-speakeasy-name-override: EdgeInferenceDiscoveredModel
         c1.api.edge.v1.EdgeInferenceHandoffNotes:
             description: The EdgeInferenceHandoffNotes message.
             properties:
@@ -26724,6 +27339,7 @@ components:
                     description: |-
                         Empty only for credential-source targets on a route following a C1 tier; tier publication supplies
                          the model and validates the expanded target in full. Ordinary targets must supply a model.
+                         Vertex model IDs can contain up to 128 characters on each side of the slash.
                     type: string
                 upstreamPath:
                     description: The upstreamPath field.
@@ -26731,9 +27347,46 @@ components:
                 vaultBoundaryId:
                     description: The vaultBoundaryId field.
                     type: string
+                vertexChat:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceVertexChatConfig'
+                        - type: "null"
             title: Edge Inference Target
             type: object
             x-speakeasy-name-override: EdgeInferenceTarget
+        c1.api.edge.v1.EdgeInferenceTargetDiscoveredModels:
+            description: EdgeInferenceTargetDiscoveredModels is the last discovery result for one saved inference target.
+            properties:
+                appId:
+                    description: The appId field.
+                    type: string
+                discoveredAt:
+                    format: date-time
+                    type:
+                        - string
+                        - "null"
+                edgeId:
+                    description: The edgeId field.
+                    type: string
+                error:
+                    description: Set when the last attempt failed; models then keeps the last successful answer, if any.
+                    type: string
+                models:
+                    description: The models field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceDiscoveredModel'
+                    type:
+                        - array
+                        - "null"
+                routeId:
+                    description: The routeId field.
+                    type: string
+                targetId:
+                    description: The targetId field.
+                    type: string
+            title: Edge Inference Target Discovered Models
+            type: object
+            x-speakeasy-name-override: EdgeInferenceTargetDiscoveredModels
         c1.api.edge.v1.EdgeInferenceTierOption:
             description: EdgeInferenceTierOption is a C1 tier and the model it uses for the caller's tenant.
             properties:
@@ -26781,6 +27434,18 @@ components:
             title: Edge Inference Unserved Target
             type: object
             x-speakeasy-name-override: EdgeInferenceUnservedTarget
+        c1.api.edge.v1.EdgeInferenceVertexChatConfig:
+            description: EdgeInferenceVertexChatConfig selects the Google Cloud project and location for Vertex AI MaaS Chat.
+            properties:
+                location:
+                    description: Serving location. Only global is currently supported.
+                    type: string
+                projectId:
+                    description: ID of the serving project, which may differ from the service account's project.
+                    type: string
+            title: Edge Inference Vertex Chat Config
+            type: object
+            x-speakeasy-name-override: EdgeInferenceVertexChatConfig
         c1.api.edge.v1.EdgeIntegration:
             description: |
                 EdgeIntegration is reusable application-owned Edge capability configuration.
@@ -27675,6 +28340,24 @@ components:
                     oneOf:
                         - $ref: '#/components/schemas/c1.api.edge.v1.EdgeCapabilitySummary'
                         - type: "null"
+                discoveredConnectionModels:
+                    description: |-
+                        Models each saved provider connection reported through its Edge, as last discovered, including for an Edge
+                         that is off. Only suggestions. Empty unless model discovery is enabled for the tenant.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceConnectionDiscoveredModels'
+                    type:
+                        - array
+                        - "null"
+                discoveredTargetModels:
+                    description: |-
+                        Models each saved inference target reported through its Edge, as last discovered. Only suggestions: an
+                         entry here does not change how a route is served. Empty unless model discovery is enabled for the tenant.
+                    items:
+                        $ref: '#/components/schemas/c1.api.edge.v1.EdgeInferenceTargetDiscoveredModels'
+                    type:
+                        - array
+                        - "null"
                 entries:
                     description: The entries field.
                     items:
@@ -27975,7 +28658,8 @@ components:
             description: |-
                 EdgeServiceUpdateRequest updates an existing Edge via update_mask. Editable
                  paths: mode, enabled_kinds, egress_rules, egress_unmatched_rule, egress_checks,
-                 credential_injections, inference_routes, allow_inference_bearer_tokens, egress_tls.
+                 credential_injections, inference_routes, inference_connections, allow_inference_bearer_tokens,
+                 egress_tls, response_inspection_profile.
                  The legacy inference mask may clear or replace one graph.
             properties:
                 edge:
@@ -43608,8 +44292,21 @@ components:
                 displayName:
                     description: The displayName field.
                     type: string
+                fixedArgs:
+                    additionalProperties: true
+                    type:
+                        - object
+                        - "null"
+                fixedArgumentDisplayNames:
+                    additionalProperties:
+                        type: string
+                    description: Connector display labels for fixed arguments, keyed by argument name.
+                    type: object
                 id:
                     description: The id field.
+                    type: string
+                inputConfigurationHash:
+                    description: The inputConfigurationHash field.
                     type: string
                 maxDuration:
                     format: duration
@@ -43633,6 +44330,13 @@ components:
                          another user's app account.
                     items:
                         type: string
+                    type:
+                        - array
+                        - "null"
+                requesterArguments:
+                    description: The requesterArguments field.
+                    items:
+                        $ref: '#/components/schemas/c1.api.credentialvending.v1.CredentialRequesterArgumentView'
                     type:
                         - array
                         - "null"
@@ -53676,6 +54380,12 @@ components:
                     type:
                         - string
                         - "null"
+                fixedArgs:
+                    additionalProperties: true
+                    readOnly: true
+                    type:
+                        - object
+                        - "null"
                 identityAppUserId:
                     description: The app user tying the recipient to the connector identity.
                     readOnly: true
@@ -54877,6 +55587,33 @@ components:
             title: Task Actions Service Update Request Data Request
             type: object
             x-speakeasy-name-override: TaskActionsServiceUpdateRequestDataRequest
+        c1.api.task.v1.TaskAttention:
+            description: Why an open task cannot progress without intervention.
+            properties:
+                attentionAt:
+                    format: date-time
+                    readOnly: true
+                    type:
+                        - string
+                        - "null"
+                cause:
+                    description: Why the task cannot progress.
+                    enum:
+                        - TASK_ATTENTION_CAUSE_UNSPECIFIED
+                        - TASK_ATTENTION_CAUSE_FAILED
+                        - TASK_ATTENTION_CAUSE_NO_ASSIGNEE
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION
+                        - TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_LOCK
+                        - TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS
+                        - TASK_ATTENTION_CAUSE_SUBJECT_DELETED
+                        - TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET
+                    readOnly: true
+                    type: string
+                    x-speakeasy-unknown-values: allow
+            title: Task Attention
+            type: object
+            x-speakeasy-name-override: TaskAttention
         c1.api.task.v1.TaskAuditAccessRequestOutcome:
             description: The TaskAuditAccessRequestOutcome message.
             properties:
@@ -56404,7 +57141,7 @@ components:
             description: The task expand mask is an array of strings that specifes the related objects the requester wishes to have returned when making a request where the expand mask is part of the input. Use '*' to view all possible responses.
             properties:
                 paths:
-                    description: A list of paths to expand in the response. May be any combination of "*", "access_review_id", "user_id", "created_by_user_id", "app_id", "app_user_id", "app_entitlement_ids", "step_approver_ids", "approver_ids", "identity_user_id", "insight_ids", "app_user_last_usage", "entitlement_scope_bindings", "scope_role_resources", and "resource".
+                    description: A list of paths to expand in the response. May be any combination of "*", "access_review_id", "user_id", "created_by_user_id", "app_id", "app_user_id", "app_entitlement_ids", "step_approver_ids", "approver_ids", "identity_user_id", "insight_ids", "app_user_last_usage", "entitlement_scope_bindings", "scope_role_resources", "resource", and "credential_issue".
                     items:
                         type: string
                     type:
@@ -56643,6 +57380,24 @@ components:
                     type:
                         - array
                         - "null"
+                attentionCauses:
+                    description: Only stuck tasks with any of these causes. Empty applies no filter. Requires a super admin.
+                    items:
+                        enum:
+                            - TASK_ATTENTION_CAUSE_UNSPECIFIED
+                            - TASK_ATTENTION_CAUSE_FAILED
+                            - TASK_ATTENTION_CAUSE_NO_ASSIGNEE
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_INTEGRATION
+                            - TASK_ATTENTION_CAUSE_WAITING_FOR_ACCOUNT
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_LOCK
+                            - TASK_ATTENTION_CAUSE_MULTIPLE_APP_ACCOUNTS
+                            - TASK_ATTENTION_CAUSE_SUBJECT_DELETED
+                            - TASK_ATTENTION_CAUSE_WAITING_ON_EXTERNAL_TICKET
+                        type: string
+                        x-speakeasy-unknown-values: allow
+                    type:
+                        - array
+                        - "null"
                 certifyOutcomes:
                     description: Search tasks by certify outcome
                     items:
@@ -56747,6 +57502,9 @@ components:
                     type:
                         - array
                         - "null"
+                needsAttention:
+                    description: When true, only open tasks that are stuck. False applies no filter. Requires a super admin.
+                    type: boolean
                 olderThanDuration:
                     format: duration
                     type:
@@ -57704,8 +58462,18 @@ components:
                     description: JSONPATH expression indicating the location of the ApproverUsers objects in the expanded array. These are the users who have approved or denied this task.
                     readOnly: true
                     type: string
+                attention:
+                    oneOf:
+                        - $ref: '#/components/schemas/c1.api.task.v1.TaskAttention'
+                        - type: "null"
                 createdByUserPath:
                     description: JSONPATH expression indicating the location of the object of the User that created the ticket in the expanded array
+                    readOnly: true
+                    type: string
+                credentialIssuePath:
+                    description: |-
+                        JSONPath locating the CredentialIssueView in the response's expanded array.
+                         Present when credential_issue expansion is requested for a credential-issuance task.
                     readOnly: true
                     type: string
                 entitlementsPath:
@@ -64231,10 +64999,42 @@ paths:
                 - AppUsers
             x-speakeasy-group: AppUser
             x-speakeasy-name-override: ListAppUserCredentials
+    /api/v1/apps/{app_id}/app_users/{app_user_id}/sources:
+        get:
+            description: List the records that make up an account, with why each record is on the account.
+            operationId: c1.api.app.v1.AppUserMergeRulesService.ListSources
+            parameters:
+                - in: path
+                  name: app_id
+                  required: true
+                  schema:
+                    description: The ID of the application.
+                    type: string
+                - in: path
+                  name: app_user_id
+                  required: true
+                  schema:
+                    description: The ID of the account.
+                    type: string
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.app.v1.AppUserMergeRulesServiceListSourcesResponse'
+                    description: The AppUserMergeRulesServiceListSourcesResponse message contains the records that make up an account.
+            summary: List Sources
+            tags:
+                - App Account Merge Rules
+            x-speakeasy-group: AppUserMergeRules
+            x-speakeasy-name-override: ListSources
+            x-stability-level: draft
     /api/v1/apps/{app_id}/app_users/{target_app_user_id}/merge:
         post:
+            deprecated: true
             description: |-
-                Merge one app user (the source) into another app user in the same app (the target).
+                This endpoint is deprecated and will be removed. Manual app user merges are moving to merge plans.
+                 Merge one app user (the source) into another app user in the same app (the target).
                  The source's connector and external source records, and its lookup bindings, move to
                  the target in one transaction. Grants, owners, and the target's identity user binding
                  stay as they are. The source is removed by the next uplift. A merge cannot be undone.
@@ -64269,6 +65069,7 @@ paths:
                 - AppUsers
             x-speakeasy-group: AppUser
             x-speakeasy-name-override: Merge
+            x-sunset: "2027-03-01"
     /api/v1/apps/{app_id}/authzen_policies:
         get:
             description: |-
@@ -68879,7 +69680,10 @@ paths:
             x-speakeasy-name-override: Remove
     /api/v1/apps/{app_id}/entitlements/{id}:
         delete:
-            description: Delete an app entitlement by ID.
+            description: |-
+                Delete an app entitlement by ID. Returns 404 Not Found when the app has no
+                 entitlement with that ID. Deleting an entitlement that is already deleted
+                 succeeds and changes nothing.
             operationId: c1.api.app.v1.AppEntitlements.Delete
             parameters:
                 - in: path
@@ -73022,6 +73826,29 @@ paths:
                 - Automations
             x-speakeasy-group: AutomationExecutionActions
             x-speakeasy-name-override: TerminateAutomation
+    /api/v1/automation_executions/actions/retry:
+        post:
+            description: |-
+                Retry failed automation executions from the step that failed, without re-running steps that already succeeded.
+                 Executions that are not in a failed state are skipped and reported in the response. Retries run asynchronously.
+            operationId: c1.api.automations.v1.AutomationExecutionActionsService.RetryAutomationExecutions
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionsRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.automations.v1.RetryAutomationExecutionsResponse'
+                    description: Successful response
+            summary: Retry Automation Executions
+            tags:
+                - Automations
+            x-speakeasy-group: AutomationExecutionActions
+            x-speakeasy-name-override: RetryAutomationExecutions
     /api/v1/automations:
         get:
             description: List all automations in the tenant with pagination support.
@@ -73881,7 +74708,9 @@ paths:
             x-speakeasy-name-override: Update
     /api/v1/catalogs/{request_catalog_id}/bundle_automation:
         delete:
-            description: Delete the bundle automation rule for a catalog, stopping automatic membership syncing.
+            description: |-
+                Delete the bundle automation rule for a catalog, stopping automatic membership syncing.
+                 A deleted bundle automation is no longer returned or reconciled; set it again to create a new one.
             operationId: c1.api.requestcatalog.v1.RequestCatalogManagementService.DeleteBundleAutomation
             parameters:
                 - in: path
@@ -73912,7 +74741,7 @@ paths:
             x-speakeasy-group: RequestCatalogManagement
             x-speakeasy-name-override: DeleteBundleAutomation
         get:
-            description: Get bundle automation
+            description: Get bundle automation. A deleted bundle automation is returned as if it had never been created.
             operationId: c1.api.requestcatalog.v1.RequestCatalogManagementService.GetBundleAutomation
             parameters:
                 - in: path
@@ -73939,7 +74768,9 @@ paths:
             x-speakeasy-group: RequestCatalogManagement
             x-speakeasy-name-override: GetBundleAutomation
         post:
-            description: Create or update the bundle automation rule for a catalog that automatically syncs catalog membership.
+            description: |-
+                Create or update the bundle automation rule for a catalog that automatically syncs catalog membership.
+                 Setting a deleted bundle automation creates it again as a new bundle automation.
             operationId: c1.api.requestcatalog.v1.RequestCatalogManagementService.SetBundleAutomation
             parameters:
                 - in: path
@@ -82318,6 +83149,53 @@ paths:
                 outputs:
                     nextCursor: $.nextPageToken
                 type: cursor
+    /api/v1/search/virtual_mcp_servers:
+        post:
+            description: |-
+                Search the tenant's Virtual MCP Servers by text, state, source, and
+                 connection requirements. Results are ordered by display name and ID and
+                 may briefly lag recent writes.
+            operationId: c1.api.ai_governance.v1.VirtualMCPServerService.Search
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/c1.api.ai_governance.v1.VirtualMCPServerServiceSearchRequest'
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.ai_governance.v1.VirtualMCPServerServiceSearchResponse'
+                    description: |-
+                        VirtualMCPServerServiceSearchResponse contains one page of matching Virtual
+                         MCP Servers, ordered by display name and then ID.
+            summary: Search
+            tags:
+                - Virtual MCP Servers
+            x-speakeasy-group: VirtualMCPServer
+            x-speakeasy-name-override: Search
+    /api/v1/search/virtual_mcp_servers/summary:
+        get:
+            description: |-
+                Summary returns tenant-wide Virtual MCP Server counts, the number of users
+                 with access, and the distinct mapped sources in use. Values may briefly lag
+                 recent writes.
+            operationId: c1.api.ai_governance.v1.VirtualMCPServerService.Summary
+            responses:
+                "200":
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/c1.api.ai_governance.v1.VirtualMCPServerServiceSummaryResponse'
+                    description: |-
+                        VirtualMCPServerServiceSummaryResponse contains tenant-wide counts for
+                         Virtual MCP Servers that are not deleted.
+            summary: Summary
+            tags:
+                - Virtual MCP Servers
+            x-speakeasy-group: VirtualMCPServer
+            x-speakeasy-name-override: Summary
     /api/v1/search/webhooks:
         post:
             description: Search for webhook subscriptions by query string or specific webhook references.
@@ -87472,7 +88350,9 @@ paths:
             x-speakeasy-name-override: Update
     /api/v1/webhooks/{id}/test:
         post:
-            description: Send a sample event to the webhook URL to verify that the endpoint is reachable and responding correctly.
+            description: |-
+                Send a sample event to the webhook URL to verify that the endpoint is reachable and responding correctly.
+                 Returns FAILED_PRECONDITION if the webhook has been deleted, and NOT_FOUND if the webhook does not exist.
             operationId: c1.api.webhooks.v1.WebhooksService.Test
             parameters:
                 - in: path

@@ -7,6 +7,35 @@ import (
 	"time"
 )
 
+// Severity - Effective severity for new findings from this monitor. This is medium until
+//
+//	configured severity is enabled for your tenant, even if another value is stored.
+type Severity string
+
+const (
+	SeverityFindingSeverityUnspecified Severity = "FINDING_SEVERITY_UNSPECIFIED"
+	SeverityFindingSeverityInfo        Severity = "FINDING_SEVERITY_INFO"
+	SeverityFindingSeverityLow         Severity = "FINDING_SEVERITY_LOW"
+	SeverityFindingSeverityMedium      Severity = "FINDING_SEVERITY_MEDIUM"
+	SeverityFindingSeverityHigh        Severity = "FINDING_SEVERITY_HIGH"
+	SeverityFindingSeverityCritical    Severity = "FINDING_SEVERITY_CRITICAL"
+)
+
+func (e Severity) ToPointer() *Severity {
+	return &e
+}
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Severity) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "FINDING_SEVERITY_UNSPECIFIED", "FINDING_SEVERITY_INFO", "FINDING_SEVERITY_LOW", "FINDING_SEVERITY_MEDIUM", "FINDING_SEVERITY_HIGH", "FINDING_SEVERITY_CRITICAL":
+			return true
+		}
+	}
+	return false
+}
+
 // ConflictMonitor - A conflict monitor defines a Separation of Duty rule between two entitlement sets.
 //
 //	It detects when any user holds entitlements from both set A and set B simultaneously.
@@ -25,11 +54,16 @@ type ConflictMonitor struct {
 	EntitlementSetBID *string `json:"entitlementSetBId,omitempty"`
 	// The unique identifier of this conflict monitor.
 	ID *string `json:"id,omitempty"`
-	// When true, the rule flags users who are in set A but NOT in set B ("is not
-	//  in"), instead of the default A-and-B intersection.
+	// Deprecated: use rule. True when rule is holds_a_without_b.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	NegateGroupB       *bool                             `json:"negateGroupB,omitempty"`
 	NotificationConfig *AccessConflictNotificationConfig `json:"notificationConfig,omitempty"`
-	UpdatedAt          *time.Time                        `json:"updatedAt,omitempty"`
+	Rule               *ConflictMonitorRule              `json:"rule,omitempty"`
+	// Effective severity for new findings from this monitor. This is medium until
+	//  configured severity is enabled for your tenant, even if another value is stored.
+	Severity  *Severity  `json:"severity,omitempty"`
+	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
 }
 
 func (c ConflictMonitor) MarshalJSON() ([]byte, error) {
@@ -111,6 +145,20 @@ func (c *ConflictMonitor) GetNotificationConfig() *AccessConflictNotificationCon
 		return nil
 	}
 	return c.NotificationConfig
+}
+
+func (c *ConflictMonitor) GetRule() *ConflictMonitorRule {
+	if c == nil {
+		return nil
+	}
+	return c.Rule
+}
+
+func (c *ConflictMonitor) GetSeverity() *Severity {
+	if c == nil {
+		return nil
+	}
+	return c.Severity
 }
 
 func (c *ConflictMonitor) GetUpdatedAt() *time.Time {

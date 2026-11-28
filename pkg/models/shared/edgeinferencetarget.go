@@ -62,11 +62,13 @@ type EdgeInferenceTarget struct {
 	TargetID *string `json:"targetId,omitempty"`
 	// Empty only for credential-source targets on a route following a C1 tier; tier publication supplies
 	//  the model and validates the expanded target in full. Ordinary targets must supply a model.
+	//  Vertex model IDs can contain up to 128 characters on each side of the slash.
 	UpstreamModelID *string `json:"upstreamModelId,omitempty"`
 	// The upstreamPath field.
 	UpstreamPath *string `json:"upstreamPath,omitempty"`
 	// The vaultBoundaryId field.
-	VaultBoundaryID *string `json:"vaultBoundaryId,omitempty"`
+	VaultBoundaryID *string                        `json:"vaultBoundaryId,omitempty"`
+	VertexChat      *EdgeInferenceVertexChatConfig `json:"vertexChat,omitempty"`
 }
 
 func (e *EdgeInferenceTarget) GetCatalogEntryID() *string {
@@ -200,4 +202,11 @@ func (e *EdgeInferenceTarget) GetVaultBoundaryID() *string {
 		return nil
 	}
 	return e.VaultBoundaryID
+}
+
+func (e *EdgeInferenceTarget) GetVertexChat() *EdgeInferenceVertexChatConfig {
+	if e == nil {
+		return nil
+	}
+	return e.VertexChat
 }
